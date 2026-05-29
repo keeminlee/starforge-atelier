@@ -1,0 +1,189 @@
+/* Starforge atelier — shared shell.
+   Dark, warm, lantern-lit: the ghibli / indie-studio register.
+   Palette drawn from the DARKO "Welcome Home, Creator" portrait —
+   deep warm near-black, lantern amber, teal eye-glow, moss-green banner, cream ink.
+   The shell carries the house's atmosphere; each Star room expresses its own
+   register on top. Durable, not noisy. */
+
+:root {
+  --bg: #141009;          /* deep warm near-black */
+  --bg-2: #1d1710;        /* lifted warm panel */
+  --bg-3: #261d13;        /* raised panel / hover */
+  --ink: #ece1cf;         /* warm cream */
+  --ink-soft: #cdbda4;    /* muted cream */
+  --faint: #93826a;       /* faint meta */
+  --rule: #382d1d;        /* warm dark rule */
+  --amber: #edba68;       /* lantern amber — primary warmth */
+  --amber-soft: #f4d6a0;  /* lit amber */
+  --teal: #5fc9d0;        /* eye-glow — sparing highlight */
+  --moss: #97a266;        /* banner green — secondary accent */
+  --shell-max: 768px;
+  --wide-max: 1180px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 540px at 16% -6%, rgba(237, 186, 104, 0.14), transparent 70%),
+    radial-gradient(720px 460px at 92% 2%, rgba(95, 201, 208, 0.06), transparent 70%),
+    radial-gradient(1200px 760px at 50% 118%, rgba(151, 162, 102, 0.05), transparent 70%),
+    linear-gradient(rgba(20, 16, 9, 0.93), rgba(20, 16, 9, 0.96)),
+    url('/assets/site/t1b-panel-texture.jpg'),
+    var(--bg);
+  background-size: auto, auto, auto, auto, 420px 420px, auto;
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, Charter, serif;
+  font-size: 17.5px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em 1.3em;
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  padding: 1.5em 1.25em 0.9em;
+  border-bottom: 1px solid var(--rule);
+}
+.site-mark {
+  font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.12em;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-mark .star { color: var(--amber); margin-right: 0.4em; }
+.site-mark:hover .star { color: var(--amber-soft); }
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.15em;
+  font-size: 0.9em;
+  font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+}
+.site-nav a {
+  color: var(--faint);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.site-nav a:hover { color: var(--amber); }
+
+main {
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  padding: 2em 1.25em 1em;
+}
+
+main > * {
+  max-width: var(--shell-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main > .home-hero,
+main > .household,
+main > .wander {
+  max-width: var(--wide-max);
+}
+
+/* Room articles control their own width — exempt from the shell column cap. */
+main > .rei-room,
+main > .darko-room {
+  max-width: none;
+}
+
+h1, h2, h3 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  line-height: 1.18;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+h1 { font-size: clamp(2.3rem, 5.2vw, 3.4rem); font-weight: 700; }
+h2 { font-size: clamp(1.4rem, 2.6vw, 1.75rem); }
+
+a {
+  color: var(--amber);
+  text-decoration-color: rgba(237, 186, 104, 0.42);
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--amber-soft); }
+
+strong { color: var(--amber-soft); }
+
+blockquote {
+  border-left: 3px solid var(--amber);
+  margin: 1.7em 0;
+  padding: 0.4em 0 0.4em 1.1em;
+  color: var(--ink-soft);
+  font-style: italic;
+  font-size: 1.08em;
+}
+
+.lede {
+  font-size: 1.24em;
+  color: var(--amber-soft);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.site-footer {
+  max-width: var(--wide-max);
+  margin: 3.4em auto 2.2em;
+  padding: 1.1em 1.25em 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85em;
+  color: var(--faint);
+  font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+}
+.site-footer a { color: var(--faint); }
+.site-footer a:hover { color: var(--amber); }
+
+/* Global background-music toggle — fixed bottom-right chrome, shared across all pages. */
+#bgm-toggle {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 0.82em;
+  font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  background: rgba(20, 16, 9, 0.82);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+#bgm-toggle:hover { color: var(--amber); border-color: var(--amber); }
+#bgm-toggle:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+#bgm-toggle .bgm-ico { font-size: 0.95em; line-height: 1; }
+#bgm-toggle.is-on {
+  color: var(--amber-soft);
+  border-color: var(--amber);
+  background: rgba(40, 30, 14, 0.9);
+}
+@media (prefers-reduced-motion: no-preference) {
+  #bgm-toggle.is-on .bgm-ico { animation: bgm-pulse 2.4s ease-in-out infinite; }
+}
+@keyframes bgm-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}

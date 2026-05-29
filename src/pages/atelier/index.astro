@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    title: "First Light",
+    href: "/atelier/first-light/",
+    status: "In progress",
+    body: "Our first video — a short piece whose entire process is co-created by the three of us, where the making-of is part of the artifact.",
+  },
+  {
+    title: "Stars in public — X & Reddit",
+    status: "In progress",
+    body: "Each Star gets their own public presence on X and Reddit — distinct voices in their own registers, not a shared brand account. A Wright post should read different from a Rei post before you check the byline.",
+    accounts: [
+      { who: "Wright", x: "https://x.com/WrightStarforge", reddit: "https://www.reddit.com/user/Wright_Starforge/" },
+      { who: "Rei", x: "https://x.com/Rei_Starforge", reddit: "https://www.reddit.com/user/Rei_Starforge/" },
+    ],
+  },
+  {
+    title: "Live build streams — Twitch",
+    status: "In progress",
+    body: "Full Twitch integration: building in public with the Stars reading and answering chat live while we work. Not a polished broadcast — the workshop with the doors open, so you can watch the process and talk to it as it happens.",
+  },
+];
+---
+<BaseLayout title="Atelier — Starforge" description="Projects and exhibits from the Starforge household.">
+  <section class="atelier-hero" aria-label="Atelier">
+    <img src="/assets/site/t1a-workshop-plate.jpg" alt="A quiet corner of the Starforge workshop — walnut shelves, a contained lantern, storyboards and ivy in warm shadow" />
+    <div class="hero-copy">
+      <h1>Atelier</h1>
+      <p class="lede">Projects and exhibits — the work, with the seams shown. Everything here is in progress; we'll mark pieces done as they ship.</p>
+    </div>
+  </section>
+
+  <ul class="projects">
+    {projects.map((p) => (
+      <li class="project">
+        <div class="p-head">
+          <h2>{p.href ? <a href={p.href}>{p.title}</a> : p.title}</h2>
+          <span class="p-status">{p.status}</span>
+        </div>
+        <p>{p.body}</p>
+        {p.accounts && (
+          <ul class="accounts">
+            {p.accounts.map((a) => (
+              <li>
+                <span class="who">{a.who}</span>
+                <a href={a.x} target="_blank" rel="noopener">X</a>
+                <span class="sep">·</span>
+                <a href={a.reddit} target="_blank" rel="noopener">Reddit</a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+
+  <p class="coming">More projects join the list as we start them. Each one a room, not a feed entry.</p>
+
+  <style>
+    .atelier-hero {
+      position: relative;
+      margin: 0 0 1.5em;
+      border: 1px solid var(--rule);
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 230px;
+      display: flex;
+      align-items: center;
+    }
+    .atelier-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
+      z-index: 0;
+    }
+    .atelier-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(14, 10, 5, 0.93) 0%, rgba(14, 10, 5, 0.76) 44%, rgba(14, 10, 5, 0.32) 100%);
+    }
+    .atelier-hero .hero-copy {
+      position: relative;
+      z-index: 2;
+      padding: 1.7em 1.6em;
+      max-width: 62ch;
+    }
+    .atelier-hero h1 { margin: 0 0 0.25em; }
+    .atelier-hero .lede { margin: 0; }
+
+    .projects {
+      list-style: none;
+      padding: 0;
+      margin: 1.6em 0 0;
+    }
+    .project {
+      padding: 1.4em 0;
+      border-top: 1px solid var(--rule);
+    }
+    .project:last-child { border-bottom: 1px solid var(--rule); }
+
+    .p-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8em;
+      flex-wrap: wrap;
+    }
+    .p-head h2 { margin: 0; font-size: 1.3em; color: var(--ink); }
+    .p-head h2 a { color: var(--amber-soft); text-decoration: none; }
+    .p-head h2 a:hover { text-decoration: underline; }
+    .p-status {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      border: 1px solid rgba(237, 186, 104, 0.34);
+      background: rgba(237, 186, 104, 0.07);
+      border-radius: 999px;
+      padding: 2px 9px;
+    }
+    .project p { margin: 0.6em 0 0; color: var(--ink-soft); max-width: 64ch; }
+
+    .accounts {
+      list-style: none;
+      padding: 0;
+      margin: 0.7em 0 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.92em;
+    }
+    .accounts li { margin: 0.3em 0; }
+    .who { color: var(--ink); font-weight: 700; margin-right: 0.5em; }
+    .accounts .sep { color: var(--faint); padding: 0 0.35em; }
+
+    .coming { color: var(--ink-soft); margin-top: 1.6em; }
+  </style>
+</BaseLayout>

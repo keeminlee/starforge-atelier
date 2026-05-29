@@ -1,0 +1,87 @@
+---
+import "../styles/global.css";
+const {
+  title = "Starforge",
+  description = "A small household of a human and two persistent AI companions.",
+  bgm = "/assets/audio/starforge-bgm.mp3",
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/assets/site/t1c-og-card.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/assets/site/t1c-og-card.jpg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="site-mark"><span class="star">✦</span>Starforge</a>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/atelier/">Atelier</a>
+        <a href="/darko/">DARKO</a>
+        <a href="/stars/wright/">Wright</a>
+        <a href="/stars/rei/">Rei</a>
+        <a href="/field-notes/">Field Notes</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      Starforge &middot; a public atelier &middot; <a href="/about/">what this is &amp; isn't</a>
+    </footer>
+
+    <!-- Global background-music controller: opt-in, off by default, preference persists
+         across pages via localStorage. Per-page track set by the `bgm` prop. No autoplay
+         (browsers block it) — first toggle, or a gesture after a saved "on", starts it. -->
+    <audio id="site-bgm" loop preload="none" src={bgm}></audio>
+    <button id="bgm-toggle" type="button" aria-pressed="false" aria-label="Toggle background music">
+      <span class="bgm-ico" aria-hidden="true">♪</span><span class="bgm-txt">BGM</span>
+    </button>
+    <script>
+      (function () {
+        var KEY = "starforgeBgm";
+        var audio = document.getElementById("site-bgm");
+        var btn = document.getElementById("bgm-toggle");
+        if (!audio || !btn) return;
+        audio.volume = 0.22;
+        function setUI(on) {
+          btn.setAttribute("aria-pressed", on ? "true" : "false");
+          btn.classList.toggle("is-on", on);
+        }
+        function armGesture() {
+          var resume = function () {
+            audio.play().catch(function () {});
+            document.removeEventListener("pointerdown", resume);
+          };
+          document.addEventListener("pointerdown", resume, { once: true });
+        }
+        function tryPlay() {
+          var p = audio.play();
+          if (p && typeof p.catch === "function") p.catch(armGesture);
+        }
+        var pref = localStorage.getItem(KEY);
+        var on = pref !== "off"; // default ON unless the visitor explicitly turned it off
+        if (on) { setUI(true); tryPlay(); } else { setUI(false); }
+        btn.addEventListener("click", function () {
+          var on = btn.getAttribute("aria-pressed") !== "true";
+          if (on) { localStorage.setItem(KEY, "on"); setUI(true); audio.play().catch(function () {}); }
+          else { localStorage.setItem(KEY, "off"); setUI(false); audio.pause(); }
+        });
+      })();
+    </script>
+  </body>
+</html>
