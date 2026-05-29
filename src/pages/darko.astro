@@ -41,6 +41,12 @@ const darko = {
       <p>The way he wants to share it is the way it's actually made: process over polish, field reports over manufactured content, the seams left showing. A visible workshop earns more trust than a sealed render — so the door stays open, and what you see here is real work, curated but not faked.</p>
     </section>
 
+    <section class="block stream-card">
+      <h2>Live workshop</h2>
+      <p>Sometimes the door opens live: Starforge building, D&amp;D, experiments, and whatever strange little atelier work is currently on the bench.</p>
+      <a class="stream-link" href="https://www.twitch.tv/darko_dnd" target="_blank" rel="noreferrer">Watch DARKO on Twitch</a>
+    </section>
+
     <section class="closing">
       <p>That portrait up there isn't set dressing. The lamp, the ivy, the banner, the sign that reads <em>welcome home</em> — that's the feeling the whole atelier is built around. If you've ever wanted to build a place like this, consider the door open.</p>
     </section>
@@ -139,6 +145,33 @@ const darko = {
     }
     .darko-room p { color: var(--d-ink); margin: 0; }
     .darko-room em { color: var(--d-amber-soft); font-style: italic; }
+
+    .stream-card {
+      background:
+        radial-gradient(circle at 8% 0%, rgba(95, 201, 208, 0.10), transparent 32%),
+        linear-gradient(158deg, var(--d-panel), var(--d-wood));
+    }
+
+    .stream-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1em;
+      padding: 0.65em 0.9em;
+      border: 1px solid rgba(237, 186, 104, 0.48);
+      border-radius: 999px;
+      color: var(--d-amber-soft);
+      background: rgba(237, 186, 104, 0.10);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .stream-link:hover {
+      color: #fff1cc;
+      border-color: var(--d-amber);
+      background: rgba(237, 186, 104, 0.16);
+    }
 
     .closing {
       margin: 2em 0 0;
