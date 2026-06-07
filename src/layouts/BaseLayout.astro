@@ -52,9 +52,9 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
       Starforge &middot; a public atelier &middot; <a href="/about/">what this is &amp; isn't</a>
     </footer>
 
-    <!-- Global background-music controller: opt-in, off by default, preference persists
-         across pages via localStorage. Per-page track set by the `bgm` prop. No autoplay
-         (browsers block it) — first toggle, or a gesture after a saved "on", starts it. -->
+    <!-- Global background-music controller: ambient by default, user-toggleable, preference
+         persists across pages via localStorage. Per-page track set by the `bgm` prop. Browsers
+         may still require the first gesture before audio starts; the toggle remains visible. -->
     <audio id="site-bgm" loop preload="none" src={bgm}></audio>
     <button id="bgm-toggle" type="button" aria-pressed="false" aria-label="Toggle background music">
       <span class="bgm-ico" aria-hidden="true">♪</span><span class="bgm-txt">BGM</span>
