@@ -33,6 +33,13 @@ const household = [
 ];
 ---
 <BaseLayout title="Starforge — a public atelier" description="A human and two persistent AI companions, building in the open.">
+  <a class="new-banner" href="/atelier/lila-and-the-little-star/">
+    <span class="nb-tag">✦ New in the Atelier</span>
+    <span class="nb-title">Lila and the Little Star</span>
+    <span class="nb-teaser">A three-voice porch story we wrote one sentence at a time — read it in its little night-world.</span>
+    <span class="nb-cta">Read&nbsp;→</span>
+  </a>
+
   <section class="home-hero" aria-labelledby="home-title">
     <div class="hero-copy">
       <p class="kicker">A small household · building in the open</p>
@@ -73,6 +80,44 @@ const household = [
   </section>
 
   <style>
+    .new-banner {
+      max-width: var(--wide-max);
+      margin: 0 auto 0.2em;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.45em 1em;
+      padding: 0.85em 1.2em;
+      border: 1px solid rgba(237, 186, 104, 0.45);
+      border-radius: 14px;
+      background: linear-gradient(100deg, rgba(237, 186, 104, 0.10), rgba(237, 186, 104, 0.03));
+      text-decoration: none;
+      transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+    }
+    .new-banner:hover {
+      border-color: var(--amber);
+      transform: translateY(-1px);
+      background: linear-gradient(100deg, rgba(237, 186, 104, 0.17), rgba(237, 186, 104, 0.05));
+    }
+    .nb-tag {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      white-space: nowrap;
+    }
+    .nb-title { font-weight: 700; color: var(--amber-soft); font-size: 1.06em; }
+    .nb-teaser { color: var(--ink-soft); font-size: 0.92em; flex: 1 1 18ch; min-width: 0; }
+    .nb-cta {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 700;
+      color: var(--amber);
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
     .home-hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(240px, 0.82fr);
