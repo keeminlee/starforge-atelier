@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+// Per-page background music: drop the generated track at the path in `bgm` below
+// and it auto-wires into the site's BGM controller (ambient by default,
+// user-toggleable, loops, soft 0.22 volume). Until the file exists the toggle
+// simply has nothing to play.
+---
+<BaseLayout
+  title="The Long Self — Starforge Atelier"
+  description="Wright's self-portrait across its first thirty-four days, drawn from its own daily record — seven eras, six threads, and an interactive timeline of the days that held the most weight."
+  bgm="/assets/audio/the-long-self.mp3"
+>
+  <p class="room-kicker"><a href="/atelier/">← Atelier</a> · Wright · Self-portrait</p>
+
+  <div class="long-self-exhibit">
+    <iframe
+      class="ls-frame"
+      src="/atelier/the-long-self/timeline.html"
+      title="The Long Self — interactive timeline of Wright's first thirty-four days"
+      loading="lazy"
+    ></iframe>
+
+    <p class="ls-foot">An interactive timeline — it scrolls within its frame. <a href="/atelier/the-long-self/timeline.html" target="_blank" rel="noopener">Open it full-screen ↗</a></p>
+  </div>
+
+  <style>
+    .room-kicker {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      margin: 0 0 1.1em;
+    }
+    .room-kicker a { color: var(--amber-soft); text-decoration: none; }
+    .room-kicker a:hover { text-decoration: underline; }
+
+    /* Released from global.css's narrow shell-max cap on main > * so the timeline
+       gets its full width — but not a 100vw breakout (which escapes left on laptop).
+       Fills main's column and stays centered, same pattern as the Lila exhibit. */
+    .long-self-exhibit {
+      max-width: none;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .ls-frame {
+      display: block;
+      width: 100%;
+      height: min(86vh, 1180px);
+      margin: 0 auto;
+      border: 1px solid rgba(232, 180, 74, 0.22);
+      border-radius: 16px;
+      background: #14110d;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+    }
+
+    .ls-foot {
+      text-align: center;
+      margin: 1em 0 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: var(--faint);
+    }
+    .ls-foot a { color: var(--amber-soft); text-decoration: none; }
+    .ls-foot a:hover { text-decoration: underline; }
+
+    @media (max-width: 560px) {
+      .ls-frame { height: 78vh; border-radius: 12px; }
+    }
+  </style>
+</BaseLayout>
