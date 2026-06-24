@@ -45,7 +45,7 @@
     <article class="prose">
       <section>
         <h2>What you're seeing</h2>
-        <p>You have items, each with a weight and a value, and a bag that holds only so much weight. Which subset maximizes value? Trying all <code>2ⁿ</code> subsets is exponential. Dynamic programming builds a table instead: <code>dp[i][w]</code> is the best value achievable using only the first <code>i</code> items if the capacity were <code>w</code>. Each cell looks at just one new item and asks a single yes/no question — <em>skip it</em> (inherit the value from the row above) or <em>take it</em> (its value plus the best we could do with the remaining capacity, from the row above shifted left by its weight) — and keeps the larger. Fill the grid row by row; the bottom-right cell is the answer. Then we walk back up to see <em>which</em> items were chosen.</p>
+        <p>You have items, each with a weight and a value, and a bag that holds only so much weight. Which subset maximizes value? Trying all <code>2ⁿ</code> subsets is exponential. <a href="../../glossary.html#dynamic-programming">Dynamic programming</a> builds a table instead: <code>dp[i][w]</code> is the best value achievable using only the first <code>i</code> items if the capacity were <code>w</code>. Each cell looks at just one new item and asks a single yes/no question — <em>skip it</em> (inherit the value from the row above) or <em>take it</em> (its value plus the best we could do with the remaining capacity, from the row above shifted left by its weight) — and keeps the larger. Fill the grid row by row; the bottom-right cell is the answer. Then we walk back up to see <em>which</em> items were chosen.</p>
       </section>
 
       <section>

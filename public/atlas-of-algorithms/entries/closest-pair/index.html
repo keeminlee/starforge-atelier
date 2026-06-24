@@ -45,7 +45,7 @@
     <article class="prose">
       <section>
         <h2>What you're seeing</h2>
-        <p>Given a cloud of points, which two are closest? Checking every pair is <code>O(n²)</code>. Divide and conquer does better: sort the points by x, cut at the median into a left and right half, and find the closest pair in each half recursively. Let δ be the smaller of those two distances. The only pairs left unconsidered are those split across the line — and any such pair closer than δ must have <em>both</em> endpoints within δ of the line, in a thin vertical <strong>strip</strong>. So we only have to reconcile that strip. Watch the recursion bottom out on tiny clusters, then the strips light up as the halves merge.</p>
+        <p>Given a cloud of points, which two are closest? Checking every pair is <code>O(n²)</code>. <a href="../../glossary.html#divide-and-conquer">Divide and conquer</a> does better: sort the points by x, cut at the median into a left and right half, and find the closest pair in each half recursively. Let δ be the smaller of those two distances. The only pairs left unconsidered are those split across the line — and any such pair closer than δ must have <em>both</em> endpoints within δ of the line, in a thin vertical <strong>strip</strong>. So we only have to reconcile that strip. Watch the recursion bottom out on tiny clusters, then the strips light up as the halves merge.</p>
       </section>
 
       <section>

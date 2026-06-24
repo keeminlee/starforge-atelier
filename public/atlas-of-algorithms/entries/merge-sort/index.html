@@ -81,7 +81,7 @@ merge(left, right):            # two sorted runs → one sorted run
 
       <section>
         <h2>In the wild</h2>
-        <p>Merge sort is everywhere stability and guaranteed performance matter. <strong>Timsort</strong> — Python's <code>sorted()</code>, Java's <code>Arrays.sort()</code> for objects, the Android and V8 runtimes — is an adaptive, natural merge sort: it finds existing sorted runs in the data and merges them, using insertion sort to extend short runs. Merge sort is also the backbone of <strong>external sorting</strong>: when data is too large for RAM, databases and <code>sort(1)</code> sort chunks that fit in memory and then <em>merge</em> the sorted chunks streaming from disk — the merge step needs only sequential reads, which is exactly what disks and SSDs are fast at. Its divide-and-conquer shape also parallelizes cleanly.</p>
+        <p>Merge sort is everywhere stability and guaranteed performance matter. <strong>Timsort</strong> — Python's <code>sorted()</code>, Java's <code>Arrays.sort()</code> for objects, the Android and V8 runtimes — is an adaptive, natural merge sort: it finds existing sorted runs in the data and merges them, using insertion sort to extend short runs. Merge sort is also the backbone of <strong>external sorting</strong>: when data is too large for RAM, databases and <code>sort(1)</code> sort chunks that fit in memory and then <em>merge</em> the sorted chunks streaming from disk — the merge step needs only sequential reads, which is exactly what disks and SSDs are fast at. Its <a href="../../glossary.html#divide-and-conquer">divide-and-conquer</a> shape also parallelizes cleanly.</p>
       </section>
 
       <section class="try-this">
