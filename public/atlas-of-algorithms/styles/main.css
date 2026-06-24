@@ -1,0 +1,731 @@
+/* =====================================================================
+ * main.css — The Atlas of Algorithms : the one design system
+ * ---------------------------------------------------------------------
+ * Dependency-free. A single, dark, typographic system. Color is rare and
+ * carries meaning: the invariant/guarantee region, the active comparison,
+ * the cost numbers. Monospace for code and counters; a humanist sans for
+ * prose. Entries must use only these classes and tokens — the engine
+ * (lib/algo.js) reads several of the custom properties below so draw()
+ * can paint on-canvas in the same palette.
+ *
+ * Token map (the contract algo.js.readTheme() reads):
+ *   --bg --panel --ink --muted --grid --accent --invariant --warn --cost
+ *   --font-mono
+ * ===================================================================== */
+
+/* ----------------------------- Tokens ------------------------------- */
+:root {
+  /* Palette — dark, calm. Color used sparingly, for meaning. */
+  --bg:        #0f1117;   /* page background */
+  --panel:     #161922;   /* raised surfaces: stage, rail, code blocks */
+  --panel-2:   #1c202c;   /* secondary surface: inputs, cards */
+  --line:      #262b38;   /* hairline borders */
+  --grid:      #262b38;   /* on-canvas gridlines (engine reads this) */
+  --ink:       #e7e9ee;   /* primary text */
+  --muted:     #9aa3b2;   /* secondary text, labels */
+  --faint:     #6b7382;   /* tertiary text, captions */
+
+  /* Meaningful color. Each hue means one thing across the whole atlas. */
+  --accent:    #6ea8fe;   /* MOTION: the active element / current comparison */
+  --invariant: #3ddc97;   /* GUARANTEE: the invariant region / proven envelope */
+  --cost:      #c792ea;   /* COST: operation counts, growth */
+  --warn:      #f4a259;   /* attention: degenerate input, worst case, errors */
+  --accent-dim: rgba(110, 168, 254, 0.16);
+  --invariant-dim: rgba(61, 220, 151, 0.14);
+
+  /* Type. Serif/humanist for prose; mono for code, counters, controls. */
+  --font-prose: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --font-sans:  ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:  ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --fs-xs:   0.78rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-lg:   1.2rem;
+  --fs-xl:   1.6rem;
+  --fs-2xl:  2.4rem;
+  --leading: 1.65;
+
+  /* Spacing scale */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-8: 3rem;
+  --sp-10: 4rem;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --measure: 68ch;        /* readable prose line length */
+  --maxw: 1100px;
+  --shadow: 0 1px 0 rgba(255,255,255,0.02), 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* --------------------------- Reset / base --------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--leading);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre, kbd, samp { font-family: var(--font-mono); }
+
+::selection { background: var(--accent-dim); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------- Page shell ----------------------------- */
+.page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--sp-6) var(--sp-5) var(--sp-10);
+}
+
+/* --------------------------- Breadcrumb ----------------------------- */
+.crumb {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.02em;
+  color: var(--faint);
+  margin-bottom: var(--sp-5);
+}
+.crumb a { color: var(--muted); }
+.crumb a:hover { color: var(--ink); }
+.crumb .sep { margin: 0 var(--sp-2); color: var(--line); }
+
+/* --------------------------- Entry head ----------------------------- */
+.entry-head { margin-bottom: var(--sp-6); }
+.entry-head .family {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+.entry-head h1 {
+  font-family: var(--font-prose);
+  font-weight: 600;
+  font-size: var(--fs-2xl);
+  line-height: 1.1;
+  margin: 0 0 var(--sp-2);
+  letter-spacing: -0.01em;
+}
+.entry-head .one-liner {
+  font-family: var(--font-prose);
+  font-size: var(--fs-lg);
+  color: var(--muted);
+  margin: 0;
+  max-width: var(--measure);
+}
+
+/* ============================== STAGE =============================== *
+ * The figure: canvas container (responsive) + annotation + caption.
+ * ==================================================================== */
+.stage-figure {
+  margin: 0 0 var(--sp-5);
+}
+
+#stage {
+  position: relative;
+  width: 100%;
+  /* A pleasant default canvas height; entries may override via inline
+   * style or a modifier class. The engine reads the rendered height. */
+  height: clamp(260px, 42vw, 460px);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.algo-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* The invariant/guarantee annotation, surfaced by the engine. */
+#annotation {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--invariant);
+  background: var(--invariant-dim);
+  border-left: 2px solid var(--invariant);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  margin-top: var(--sp-3);
+  min-height: 1.5em;
+}
+
+.stage-caption {
+  font-size: var(--fs-sm);
+  color: var(--faint);
+  margin-top: var(--sp-3);
+  max-width: var(--measure);
+}
+
+/* ============================ READOUT =============================== *
+ * Cost lens: live operation counters + the step position.
+ * ==================================================================== */
+#readout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-top: var(--sp-3);
+  padding: var(--sp-3) 0;
+  border-top: 1px solid var(--line);
+}
+.algo-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+.algo-count { display: inline-flex; align-items: baseline; gap: var(--sp-2); }
+.algo-count-k { color: var(--muted); }
+.algo-count-v {
+  color: var(--cost);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  min-width: 2ch;
+  text-align: right;
+}
+.algo-count-total .algo-count-k { color: var(--faint); }
+.algo-count-total .algo-count-v { color: var(--ink); }
+.algo-step {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========================= CONTROL RAIL ============================= *
+ * Declarative widgets (slider/select/toggle/button) + the transport.
+ * ==================================================================== */
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--sp-4) var(--sp-5);
+  padding: var(--sp-4);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: var(--sp-5);
+}
+
+.algo-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  min-width: 140px;
+}
+
+.algo-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.algo-value {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+}
+
+/* --- Range inputs (sliders + scrubber + speed): consistent styling --- */
+.algo-slider, .algo-scrub, .algo-speed-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.algo-slider::-webkit-slider-thumb,
+.algo-scrub::-webkit-slider-thumb,
+.algo-speed-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.algo-slider::-moz-range-thumb,
+.algo-scrub::-moz-range-thumb,
+.algo-speed-input::-moz-range-thumb {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+
+/* --- Select --- */
+.algo-select {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2) var(--sp-3);
+  cursor: pointer;
+}
+.algo-select:hover { border-color: var(--muted); }
+
+/* --- Toggle --- */
+.algo-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  cursor: pointer;
+}
+.algo-toggle input { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+
+/* --- Buttons --- */
+.algo-btn {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2) var(--sp-3);
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+.algo-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+.algo-btn:active { transform: translateY(1px); }
+.algo-btn-action { align-self: stretch; }
+
+/* --- Transport bar --- */
+.algo-transport {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 1 1 320px;
+  min-width: 280px;
+}
+.algo-btn-transport {
+  width: 38px; height: 38px;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0;
+  font-size: var(--fs-base);
+  line-height: 1;
+}
+.algo-scrub { flex: 1 1 auto; }
+.algo-speed {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  min-width: 120px;
+}
+.algo-speed-input { flex: 1 1 auto; }
+
+/* ============================== PROSE =============================== *
+ * The explainer. One ordered narrative; section headings carry a small
+ * monospace eyebrow. References numbered.
+ * ==================================================================== */
+.prose {
+  max-width: var(--measure);
+  font-family: var(--font-prose);
+  font-size: 1.08rem;
+  color: var(--ink);
+}
+.prose section { margin: var(--sp-8) 0; }
+.prose h2 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+}
+.prose h3 {
+  font-family: var(--font-prose);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin: var(--sp-5) 0 var(--sp-2);
+}
+.prose p { margin: 0 0 var(--sp-4); }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose em { color: var(--muted); }
+
+/* Inline code + the invariant phrase get a subtle highlight. */
+.prose code {
+  font-size: 0.92em;
+  background: var(--panel-2);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.prose .invariant-term {
+  color: var(--invariant);
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+/* The rule: pseudocode block — monospace, distinct surface. */
+.prose pre, .pseudocode {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-4);
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* Cost: a small definition grid for time/space best/avg/worst. */
+.cost-grid {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  gap: var(--sp-2) var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  margin: var(--sp-4) 0;
+}
+.cost-grid .cost-head { color: var(--faint); text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--fs-xs); }
+.cost-grid .cost-row-label { color: var(--muted); }
+.cost-grid .cost-cell { color: var(--cost); font-variant-numeric: tabular-nums; }
+
+/* References: numbered list. */
+.prose .references {
+  list-style: none;
+  counter-reset: ref;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.prose .references li {
+  counter-increment: ref;
+  position: relative;
+  padding-left: 2.4em;
+  margin-bottom: var(--sp-3);
+}
+.prose .references li::before {
+  content: "[" counter(ref) "]";
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  color: var(--faint);
+}
+
+/* "Try this" prompt — invites manipulation (a core principle). */
+.prose .try-this {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--sp-4) var(--sp-5);
+}
+
+/* ========================= MAP / HOME PAGE ========================== *
+ * Cards in a grid, grouped by family. (The map is generated later by
+ * tools/build.mjs; the styles exist now so it lands consistent.)
+ * ==================================================================== */
+.atlas-head { text-align: center; margin: var(--sp-8) 0 var(--sp-10); }
+.atlas-head .kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+.atlas-head h1 {
+  font-family: var(--font-prose);
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  margin: var(--sp-3) 0 var(--sp-3);
+  letter-spacing: -0.02em;
+}
+.atlas-head .lede {
+  font-family: var(--font-prose);
+  font-size: var(--fs-lg);
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 auto;
+}
+.atlas-nav {
+  margin-top: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--faint);
+  letter-spacing: 0.04em;
+}
+.prose section h3 {
+  font-family: var(--font-prose);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin: var(--sp-5) 0 var(--sp-1);
+}
+
+/* Search / filter bar for the map. */
+.atlas-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  justify-content: center;
+  margin-bottom: var(--sp-8);
+}
+.atlas-search {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3) var(--sp-4);
+  min-width: min(420px, 90vw);
+}
+.atlas-random {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3) var(--sp-4);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 140ms ease, color 140ms ease, transform 140ms ease;
+}
+.atlas-random:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.atlas-random:active { transform: translateY(0); }
+.atlas-random:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* A family group. */
+/* Wings — the two halves of the atlas (classic foundations, advanced wing). */
+.wing { margin-bottom: var(--sp-10); }
+.wing-head { margin: 0 0 var(--sp-6); }
+.wing-title {
+  font-family: var(--font-prose);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.wing-title .wing-count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--faint);
+  margin-left: var(--sp-2);
+  vertical-align: middle;
+}
+.wing-blurb {
+  font-family: var(--font-prose);
+  font-size: var(--fs-base);
+  color: var(--muted);
+  max-width: 70ch;
+  margin: var(--sp-2) 0 0;
+}
+
+.family-group { margin-bottom: var(--sp-8); }
+.family-group > h3 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--sp-2);
+  margin: 0 0 var(--sp-4);
+  font-weight: 400;
+}
+.family-group > h3 .count { color: var(--faint); margin-left: var(--sp-2); }
+
+/* The card grid. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--sp-4);
+}
+.entry-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 140ms ease, transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
+}
+.entry-card:hover {
+  border-color: var(--accent);
+  background: var(--panel-2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+}
+.entry-card .card-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.entry-card .card-thumb[src=""], .entry-card .card-thumb:not([src]) { display: none; }
+.entry-card .card-thumb { transition: filter 140ms ease; }
+.entry-card:hover .card-thumb { filter: brightness(1.07) saturate(1.04); }
+.entry-card .card-media { position: relative; display: block; }
+/* "live demo" play affordance — fades in on hover/focus */
+.entry-card .card-play {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%) scale(0.82);
+  width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 15px; padding-left: 2px;
+  color: var(--ink);
+  background: rgba(15, 17, 23, 0.72);
+  border: 1px solid var(--line);
+  opacity: 0; pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+.entry-card:hover .card-play,
+.entry-card:focus-visible .card-play { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.entry-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+.entry-card .card-body { padding: var(--sp-4); }
+.entry-card .card-family {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+}
+.entry-card h3 {
+  font-family: var(--font-prose);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin: var(--sp-2) 0 var(--sp-1);
+}
+.entry-card p {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin: 0;
+}
+.entry-card[data-status="draft"] { opacity: 0.6; }
+.entry-card .card-badge {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--warn);
+}
+
+/* Prev / next entry navigation (tour the atlas without returning home). */
+.entry-nav {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-3);
+  margin-top: var(--sp-9);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+.entry-nav a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  text-decoration: none;
+  transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+}
+.entry-nav a:hover { border-color: var(--accent); color: var(--ink); background: var(--panel-2); text-decoration: none; }
+.entry-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.entry-nav .nav-next { justify-content: flex-end; text-align: right; }
+.entry-nav .nav-home { flex: 0 0 auto; justify-content: center; color: var(--faint); }
+.entry-nav .nav-spacer { flex: 1; }
+@media (max-width: 560px) {
+  .entry-nav { flex-direction: column; }
+  .entry-nav .nav-next { justify-content: flex-start; text-align: left; }
+}
+
+/* ============================== FOOTER ============================== */
+.site-footer {
+  margin-top: var(--sp-10);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-sm);
+  color: var(--faint);
+  text-align: center;
+}
+
+/* ============================ RESPONSIVE ============================ */
+@media (max-width: 640px) {
+  .page { padding: var(--sp-4) var(--sp-4) var(--sp-8); }
+  .entry-head h1 { font-size: var(--fs-xl); }
+  #controls { gap: var(--sp-4); }
+  .algo-field { min-width: 100%; }
+  .algo-transport { flex-basis: 100%; }
+  #stage { height: clamp(220px, 60vw, 360px); }
+  .cost-grid { grid-template-columns: 1fr; }
+  .cost-grid .cost-head { display: none; }
+}
+
+/* --------------------- Reduced motion / a11y ------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .entry-card:hover { transform: none; }
+}

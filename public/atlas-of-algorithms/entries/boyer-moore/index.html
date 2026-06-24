@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boyer–Moore — The Atlas of Algorithms</title>
+  <meta name="description" content="Boyer–Moore string search through four lenses: watch the pattern scan back-to-front and skip ahead on a bad character, see why the skip is safe, count the comparisons saved, and learn where it searches in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Boyer–Moore — The Atlas of Algorithms">
+  <meta property="og:description" content="Boyer–Moore string search through four lenses: watch the pattern scan back-to-front and skip ahead on a bad character, see why the skip is safe, count the comparisons saved, and learn where it searches in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#strings">Strings &amp; Text</a>
+      <span class="sep">/</span>
+      Boyer–Moore
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Strings &amp; Text</span>
+      <h1>Boyer–Moore</h1>
+      <p class="one-liner">Search by comparing the pattern back-to-front and skipping ahead — often examining only a fraction of the text.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        The pattern (lower row) is aligned under the text. Comparisons run right-to-left:
+        <strong style="color:var(--accent)">blue</strong> is the current compare, <strong style="color:var(--invariant)">green</strong> the
+        matched suffix, <strong style="color:var(--warn)">orange</strong> a mismatch that triggers a skip. Found occurrences glow green in the text.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Most string searches scan left-to-right, one character at a time. Boyer–Moore does two counter-intuitive things that make it the fastest in practice: it compares the pattern <strong>right-to-left</strong>, and on a mismatch it can jump the pattern forward by <em>many</em> positions at once. The trick is the <em>bad-character rule</em>: when the text character lined up against the pattern doesn't match, look at where that character last appears in the pattern, and slide the pattern so the two line up. If the character appears nowhere in the pattern, slide the whole pattern past it. The longer the pattern and the larger the alphabet, the bigger the skips — the search gets <em>faster</em> as the pattern gets longer.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">last[c] = last index of char c in the pattern (or −1)
+s = 0                                   # alignment of pattern over text
+while s ≤ n − m:
+    j = m − 1
+    while j ≥ 0 and text[s+j] == pattern[j]:  j−−   # match right-to-left
+    if j < 0:  report match at s;  s += 1
+    else:      c = text[s+j];  s += max(1, j − last[c])   # bad-character skip</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The skip has to be <em>safe</em>: <span class="invariant-term">the bad-character shift never moves the pattern past a real occurrence.</span> Here's why. We mismatched at text character <code>c</code> aligned with pattern position <code>j</code>. For the pattern to match somewhere, <em>some</em> copy of <code>c</code> in the pattern must end up over this text position — and the rightmost such copy is at <code>last[c]</code>. Sliding so that <code>last[c]</code> lands here is the <em>smallest</em> move that could possibly realign; any smaller shift leaves a known-wrong character over <code>c</code>, so it can't be a match. If <code>c</code> never occurs in the pattern, <code>last[c] = −1</code> and we can skip the pattern entirely past this position. Either way no occurrence is ever stepped over — so the set of matches found is exactly the true set (this entry's test checks that against a brute-force scan).</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">best / typical</span><span class="cost-head">worst</span><span class="cost-head"></span>
+          <span class="cost-row-label">Bad-character only</span><span class="cost-cell">O(n/m) sublinear</span><span class="cost-cell">O(nm)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">+ good-suffix (full BM)</span><span class="cost-cell">O(n/m)</span><span class="cost-cell">O(n)</span><span class="cost-cell"></span>
+        </div>
+        <p>On typical text with a reasonable alphabet, the skips average close to <code>m</code>, so Boyer–Moore examines only about <code>n/m</code> characters — <strong>sublinear</strong>, the rare search that doesn't even read all of its input. The bad-character rule alone can degrade to <code>O(nm)</code> on adversarial inputs (e.g. a small alphabet with many partial matches); the full algorithm adds a second heuristic, the <strong>good-suffix rule</strong> (reuse the suffix you <em>did</em> match), which together with Galil's rule guarantees worst-case <code>O(n)</code>. The simpler <strong>Boyer–Moore–Horspool</strong> variant keeps only the bad-character rule keyed on the last position, for speed and simplicity.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Boyer–Moore (and Horspool) is the workhorse of fast text search: it's the historical core of <strong>grep</strong> and <code>memmem</code>-style routines, the default in many editors' and languages' substring search, and the intuition behind how tools scan large files quickly. Modern high-throughput searchers (ripgrep, GNU grep) layer SIMD and other tricks on top, but the right-to-left, skip-ahead idea — that you can confirm a non-match by looking at one well-chosen character — is Boyer and Moore's, from 1977.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Increase the <strong>Pattern length</strong> and watch the skips grow — longer patterns mean bigger jumps and fewer comparisons (check the readout). Step through a mismatch and read the annotation: it shows the bad character, its last position in the pattern, and exactly how far the pattern leaps. Often several alignments are skipped in a single bound.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Boyer, R. S. &amp; Moore, J S. "A Fast String Searching Algorithm." <em>Communications of the ACM</em> 20(10):762–772, 1977. The original.</li>
+          <li>Horspool, R. N. "Practical fast searching in strings." <em>Software: Practice and Experience</em> 10(6):501–506, 1980. The simplified variant.</li>
+          <li>Gusfield, D. <em>Algorithms on Strings, Trees, and Sequences</em>, §2 (Exact matching). Cambridge, 1997 — the good-suffix rule and the O(n) bound.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../quickselect/index.html">← Quickselect</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../closest-pair/index.html">Closest Pair of Points →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maximum Flow — The Atlas of Algorithms</title>
+  <meta name="description" content="Max-flow (Edmonds–Karp) through four lenses: watch augmenting paths push flow from source to sink, see the max-flow/min-cut theorem emerge, count the cost, and learn where flows run in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Maximum Flow — The Atlas of Algorithms">
+  <meta property="og:description" content="Max-flow (Edmonds–Karp) through four lenses: watch augmenting paths push flow from source to sink, see the max-flow/min-cut theorem emerge, count the cost, and learn where flows run in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#optimization">Optimization &amp; Flows</a>
+      <span class="sep">/</span>
+      Maximum Flow
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Optimization &amp; Flows</span>
+      <h1>Maximum Flow (Edmonds–Karp)</h1>
+      <p class="one-liner">Push as much as possible from source to sink — and discover the bottleneck cut that limits it.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Edges show <code>flow/capacity</code>. An augmenting path lights <strong style="color:var(--invariant)">green</strong>;
+        edges carrying flow are <strong style="color:var(--accent)">blue</strong>, saturated ones <strong style="color:var(--cost)">purple</strong>.
+        At the end, the min cut's edges turn <strong style="color:var(--warn)">orange</strong>.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Picture pipes from a source <strong>S</strong> to a sink <strong>T</strong>, each with a capacity. How much can flow at once? Ford–Fulkerson's idea: as long as there's a path from S to T with spare capacity on every edge — an <em>augmenting path</em> — push as much as its tightest edge allows, then look for another. The subtlety is the <em>residual</em> graph: pushing flow along an edge also opens a virtual reverse edge, letting later paths <em>cancel</em> earlier flow and reroute it — which is what lets the method always reach the true optimum. Edmonds–Karp simply always picks the <em>shortest</em> augmenting path (via BFS), which guarantees it finishes quickly. When no augmenting path is left, the flow is maximum.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">flow = 0 everywhere
+while BFS finds a path S → T with spare (residual) capacity:
+    b = min residual capacity along the path     # the bottleneck
+    add b to the flow on each forward edge,
+        subtract b on each reverse (residual) edge
+return total flow leaving S</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The headline result is the <strong>max-flow / min-cut theorem</strong>: <span class="invariant-term">the maximum flow value equals the capacity of the minimum cut</span> — the cheapest set of edges whose removal severs S from T. One direction is easy: <em>any</em> flow is bounded by <em>any</em> cut, since everything reaching T must cross it, so max-flow ≤ min-cut. The algorithm proves the other direction constructively. When BFS can find no more augmenting paths, let <code>A</code> be the set of nodes still reachable from S in the residual graph (S ∈ A, T ∉ A). Every edge from <code>A</code> to its complement must be <em>saturated</em> (or it would leave residual capacity and T would be reachable), and every edge coming back into <code>A</code> carries zero flow — so the flow across this cut equals its full capacity, and equals the total flow. A flow that meets a cut's capacity is maximum and that cut is minimum. That's the cut the animation paints orange at the end.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head"></span><span class="cost-head"></span>
+          <span class="cost-row-label">Edmonds–Karp</span><span class="cost-cell">O(V·E²)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+          <span class="cost-row-label">Dinic</span><span class="cost-cell">O(V²·E)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+        </div>
+        <p>Choosing the shortest augmenting path (BFS) is what tames Ford–Fulkerson: the BFS distance from S to T never decreases and each edge can become a bottleneck only O(V) times, giving O(VE²) — crucially, a bound that doesn't depend on the capacity values (naive Ford–Fulkerson with bad choices can take time proportional to the max flow, which can be huge). <strong>Dinic's algorithm</strong> (blocking flows on the BFS level graph) improves this to O(V²E), and to O(E√V) on unit-capacity graphs — the bound behind fast bipartite matching. Modern max-flow has been pushed all the way to almost-linear time (Chen et al., 2022).</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Max-flow is one of the most reductions-rich problems in computing. <strong>Bipartite matching</strong> (job assignment, scheduling, ad allocation) is a unit-capacity flow; image segmentation in vision is a min-cut; it models network/road throughput and reliability, airline crew scheduling, baseball-elimination and project-selection problems, and — via min-cut — community detection and "is this network robust?" questions. The duality with min-cut makes it a Swiss-army knife: phrase your problem as "separate these from those at least cost" and a flow solver answers it.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through the augmenting paths: each green path pushes its bottleneck, and watch edges turn purple as they saturate. When the search finally fails, the network splits — the blue reachable side and the rest — and the orange edges between them are the min cut. Add up their capacities (the readout's "min cut") and you'll find it exactly equals the flow value. Hit <strong>New capacities</strong> and the bottleneck moves, but the equality never breaks.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Ford, L. R. &amp; Fulkerson, D. R. "Maximal flow through a network." <em>Canadian Journal of Mathematics</em> 8:399–404, 1956.</li>
+          <li>Edmonds, J. &amp; Karp, R. M. "Theoretical improvements in algorithmic efficiency for network flow problems." <em>Journal of the ACM</em> 19(2):248–264, 1972.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §24 (Maximum Flow). MIT Press, 2022.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../euclid-gcd/index.html">← Euclidean Algorithm</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../lz77/index.html">LZ77 →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

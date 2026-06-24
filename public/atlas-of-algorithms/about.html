@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — The Atlas of Algorithms</title>
+  <meta name="description" content="What the Atlas of Algorithms is: an interactive encyclopedia showing each algorithm through four lenses — motion, the guarantee that makes it correct, its cost, and where it runs in the wild.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="About — The Atlas of Algorithms">
+  <meta property="og:description" content="What the Atlas of Algorithms is: an interactive encyclopedia showing each algorithm through four lenses — motion, the guarantee that makes it correct, its cost, and where it runs in the wild.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb"><a href="index.html">The Atlas of Algorithms</a><span class="sep">/</span>About</nav>
+
+    <header class="entry-head">
+      <span class="family">About</span>
+      <h1>What this is</h1>
+      <p class="one-liner">An interactive encyclopedia of the classic algorithms — and the modern ones that run at scale — where you don't just read about each, you watch it work, see why it's correct, feel what it costs, and learn where it lives.</p>
+    </header>
+
+    <article class="prose">
+      <section>
+        <h2>The four lenses</h2>
+        <p>Every entry looks at one algorithm through the same four lenses:</p>
+        <p><strong>Motion.</strong> The algorithm runs live on a canvas, manipulable — change the input, the size, the speed; play, pause, single-step, scrub. You can see it work, and break it.</p>
+        <p><strong>The guarantee.</strong> The reason the answer is trustworthy, shown and not just stated. For a classic algorithm that's an <span class="invariant-term">invariant</span> — the quiet fact that stays true through every step and, at the end, <em>is</em> the proof the answer is right (binary search: the target is always in the live window; Dijkstra: a settled distance is final). For a modern randomized or approximate algorithm it's a <span class="invariant-term">probabilistic / approximation bound</span>, shown empirically — Count–Min never undercounts; the Bloom filter never misses a member; a random projection preserves every distance to within (1±ε).</p>
+        <p><strong>The cost.</strong> Operations counted live, complexity stated with best/average/worst and <em>why</em> — no hand-waving "it's O(n log n)."</p>
+        <p><strong>In the wild.</strong> Real history (the original paper) and where the algorithm actually runs today — with honesty about the gap between the textbook version and what production really uses.</p>
+      </section>
+
+      <section>
+        <h2>Two wings: invariant and guarantee</h2>
+        <p>The atlas spans two wings. The <strong>classic foundations</strong> — sorting, searching, graphs, strings, geometry, numerical methods, data structures, dynamic programming — are exact, and their soul is the invariant. The <strong>modern wing</strong> — sketching &amp; streaming, locality-sensitive hashing and high-dimensional search, spectral graph theory, hashing, optimization — is mostly randomized or approximate, and its soul is a guarantee you can only see by measuring: run it thousands of times and watch the estimate concentrate, the error stay inside its proven envelope, the collision curve match theory. Most algorithm visualizers stop at the classics; the modern toolkit is beautiful, runs at scale today, and is almost never shown. Both wings are here, and held to the same bar.</p>
+      </section>
+
+      <section>
+        <h2>One algorithm, written once</h2>
+        <p>Each algorithm is implemented exactly once, as an instrumented <strong>generator</strong> that yields a snapshot of its state after every meaningful step. The animation you watch and the automated correctness test consume the <em>same</em> code — so a bug can't hide in the gap between "what we showed" and "what we tested," because there is no gap. The shipped site is dependency-free: vanilla HTML, CSS, and Canvas, no frameworks, no build step to view it. Open it in a browser and it will still run in twenty years.</p>
+      </section>
+
+      <section>
+        <h2>How to read an entry</h2>
+        <p>Press play and watch the motion; the colored highlights are the guarantee (often green) and the active step. Read the short explainer below the canvas — <em>What you're seeing</em>, <em>The rule</em> (clear pseudocode), <em>The invariant</em> or <em>guarantee</em>, <em>The cost</em>, <em>In the wild</em>, and a <em>Try this</em> that invites you to break it. Every factual claim has a real source in the references. When something is a teaching simplification rather than the production reality, the entry says so.</p>
+        <p>See the <a href="colophon.html">colophon</a> for how the atlas is built and verified, and the <a href="glossary.html">glossary</a> for the recurring terms.</p>
+      </section>
+    </article>
+
+    <footer class="site-footer"><a href="index.html">← Back to the Atlas</a></footer>
+  </main>
+</body>
+</html>

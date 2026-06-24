@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spectral Graph Drawing — The Atlas of Algorithms</title>
+  <meta name="description" content="Spectral graph drawing through four lenses: watch a tangled graph relax into its Laplacian-eigenvector layout, see why the Fiedler vector minimizes edge stretch, and learn how the spectrum reveals communities with no labels.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Spectral Graph Drawing — The Atlas of Algorithms">
+  <meta property="og:description" content="Spectral graph drawing through four lenses: watch a tangled graph relax into its Laplacian-eigenvector layout, see why the Fiedler vector minimizes edge stretch, and learn how the spectrum reveals communities with no labels.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#spectral">Spectral Graph Theory</a>
+      <span class="sep">/</span>
+      Spectral Graph Drawing
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Spectral Graph Theory</span>
+      <h1>Spectral Graph Drawing</h1>
+      <p class="one-liner">Draw a graph using its Laplacian's eigenvectors as coordinates — and watch hidden communities fall into place.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Nodes start on a circle, then relax to (v₂, v₃) — their Laplacian-eigenvector coordinates.
+        Colors mark the planted communities; the <em>positions</em> use no labels at all, only the spectrum.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>A graph has no inherent geometry — only nodes and edges. Spectral drawing invents coordinates for it from the <strong>Laplacian</strong> <code>L = D − A</code> (degree matrix minus adjacency). We take the eigenvectors belonging to its smallest nonzero eigenvalues — the <strong>Fiedler vector</strong> <code>v₂</code> and the next, <code>v₃</code> — and give node <code>i</code> the position <code>(v₂[i], v₃[i])</code>. Press play: the nodes leave their meaningless circle and settle into that layout, and the densely-connected communities pull apart into distinct blobs. The colors are the planted ground truth; the positions were computed without them.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">L = D − A                       # graph Laplacian (D = degrees, A = adjacency)
+solve for the eigenvectors of the smallest eigenvalues:
+   v₁ = constant   (eigenvalue 0)        ← discarded
+   v₂ = Fiedler vector
+   v₃ = next eigenvector
+position(i) = ( v₂[i], v₃[i] )</pre>
+        <p>Here the eigenvectors come from dependency-free power iteration with deflation (the atlas's <code>numlib</code>), run on <code>cI − L</code> so that "smallest of <code>L</code>" becomes "largest of <code>cI − L</code>."</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The Fiedler vector is the answer to a crisp optimization. Among all coordinate assignments <code>x</code> that are centered (<code>Σxᵢ = 0</code>) and normalized, <span class="invariant-term">v₂ minimizes the total squared edge stretch Σ_(i~j) (xᵢ − xⱼ)²</span> — which equals <code>xᵀ L x</code>, the Laplacian quadratic form. In words: place the nodes on a line so that edges are as short as possible without collapsing everything to a point. The minimizing placement is exactly the Fiedler vector, with value the second-smallest eigenvalue <code>λ₂</code> (the graph's <em>algebraic connectivity</em>). Adding <code>v₃</code> as a second axis gives the best 2-D version of the same principle. Because edges within a community vastly outnumber edges between them, "minimize edge stretch" forces each community into a tight cluster — which is why the spectrum reveals structure no one labeled. (This is also why <code>v₂</code>'s sign gives a good graph bipartition — see spectral partitioning.)</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">This demo</span><span class="cost-head">At scale</span><span class="cost-head"></span>
+          <span class="cost-row-label">Eigenvectors</span><span class="cost-cell">power iteration</span><span class="cost-cell">Lanczos / sparse</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Matrix</span><span class="cost-cell">O(n²) dense L</span><span class="cost-cell">O(edges) sparse</span><span class="cost-cell"></span>
+        </div>
+        <p>We use a small dense Laplacian and a few rounds of power iteration — fine for a few dozen nodes. Real graphs are huge and sparse, so production uses Lanczos / implicitly-restarted Arnoldi (ARPACK, SciPy's <code>eigsh</code>) that touch only the <code>O(edges)</code> nonzeros and never form a dense matrix. The algebraic connectivity <code>λ₂</code> is the headline number: larger means harder to disconnect (better connected); near zero means a near-bottleneck the layout will stretch open.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Spectral embeddings of the Laplacian are everywhere structure-from-connectivity matters. <strong>Spectral clustering</strong> (run k-means on the bottom eigenvectors) is a staple of machine learning for non-convex clusters. Graph-drawing and layout tools use it to seed force-directed layouts. <strong>Spectral partitioning</strong> bisects meshes and circuits for parallel computing and VLSI. And the same Laplacian eigenvectors are the discrete analog of vibration modes and heat diffusion on the graph — the bridge between graph theory and physics. It is the computational heart of an entire field, <em>spectral graph theory</em>, which reads a graph's structure off the numbers in its matrices.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Set <strong>Communities</strong> to 2 and the layout splits cleanly along one axis (the Fiedler vector alone). Raise it to 4 or 5 and watch the blobs arrange themselves in the plane. Each <strong>New graph</strong> is a fresh random graph with the same community structure — the layout finds it every time, because it's reading the connectivity, not a label.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Fiedler, M. "Algebraic connectivity of graphs." <em>Czechoslovak Mathematical Journal</em> 23(2):298–305, 1973. The Fiedler vector.</li>
+          <li>Spielman, D. <em>Spectral and Algebraic Graph Theory</em> (Yale) — Laplacians, the quadratic form xᵀLx, drawing graphs with eigenvectors. <a href="http://cs-www.cs.yale.edu/homes/spielman/sagt/">cs.yale.edu/homes/spielman/sagt</a>.</li>
+          <li>von Luxburg, U. "A tutorial on spectral clustering." <em>Statistics and Computing</em> 17(4):395–416, 2007.</li>
+          <li>Andoni, A. <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021), Lectures 13–16 (spectral graph theory; drawing graphs with the Laplacian). <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../lsh/index.html">← Locality-Sensitive Hashing</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../johnson-lindenstrauss/index.html">Johnson–Lindenstrauss →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="../../lib/numlib.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

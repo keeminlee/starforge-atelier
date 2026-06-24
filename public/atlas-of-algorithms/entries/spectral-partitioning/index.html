@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spectral Partitioning — The Atlas of Algorithms</title>
+  <meta name="description" content="Spectral partitioning through four lenses: sweep a cut along the Fiedler vector to split a graph into two weakly-connected halves, see Cheeger's inequality bound its quality, and learn where graph bisection runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Spectral Partitioning — The Atlas of Algorithms">
+  <meta property="og:description" content="Spectral partitioning through four lenses: sweep a cut along the Fiedler vector to split a graph into two weakly-connected halves, see Cheeger's inequality bound its quality, and learn where graph bisection runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#spectral">Spectral Graph Theory</a>
+      <span class="sep">/</span>
+      Spectral Partitioning
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Spectral Graph Theory</span>
+      <h1>Spectral Partitioning</h1>
+      <p class="one-liner">Split a graph into two balanced, weakly-connected halves by sweeping a cut along the Fiedler vector — provably near-optimal.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Nodes are laid out by their Fiedler coordinate; the <strong style="color:var(--muted)">dashed line</strong> sweeps the cut.
+        <strong style="color:var(--accent)">Blue</strong>/<strong style="color:var(--cost)">purple</strong> are the two sides;
+        <strong style="color:var(--warn)">orange edges</strong> are cut by the current split.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>We want to split the graph into two sides while cutting as few edges as possible — but trivial splits (one node vs the rest) cut few edges yet are useless, so we measure quality by <strong>conductance</strong> <code>φ(S) = (edges cut) / min(vol S, vol S̄)</code>, which punishes lopsided cuts. Brute-forcing all <code>2ⁿ</code> splits is hopeless. Instead we order the nodes by their Fiedler-vector value (the x-axis), then <em>sweep</em> a single threshold left to right — only <code>n−1</code> candidate cuts — and keep the one with the lowest conductance. Watch the dashed line sweep; the readout tracks the running best.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">compute v = 2nd eigenvector of the normalized Laplacian (the Fiedler vector)
+order nodes by v[i]
+for each prefix S of that order:        # n−1 sweep cuts
+    φ(S) = cut(S, S̄) / min(vol S, vol S̄)
+return the prefix with the smallest φ</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The guarantee is <strong>Cheeger's inequality</strong>, the cornerstone of spectral graph theory. Let <code>λ₂</code> be the second-smallest eigenvalue of the <em>normalized</em> Laplacian <code>L = I − D^{−1/2} A D^{−1/2}</code>, and <code>φ_G</code> the best conductance of any cut. Then <span class="invariant-term">λ₂/2 ≤ φ_G ≤ √(2λ₂)</span>. The lower bound says no cut can be much better than the spectrum predicts; the upper bound is <em>constructive</em> — the proof shows that <strong>some prefix of the Fiedler ordering achieves conductance ≤ √(2λ₂)</strong>, which is exactly the sweep we run. So a cheap eigenvector plus a linear scan is provably within a quadratic factor of the optimum — and on this entry the readout shows the found <code>φ*</code> sitting inside the two bounds, every time. (Using the <em>normalized</em> Laplacian matters: the combinatorial one's eigenvalue does not obey Cheeger.)</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Optimal cut</span><span class="cost-head">Spectral sweep</span><span class="cost-head"></span>
+          <span class="cost-row-label">Search</span><span class="cost-cell">NP-hard (exact)</span><span class="cost-cell">1 eigenvector + O(n) sweep</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Quality</span><span class="cost-cell">φ_G</span><span class="cost-cell">≤ √(2λ₂)</span><span class="cost-cell"></span>
+        </div>
+        <p>Finding the minimum-conductance cut exactly is NP-hard; spectral partitioning trades exactness for a provable approximation at the cost of one eigenvector (here dense power iteration; at scale, sparse Lanczos). The sweep itself is a single sorted pass with an incrementally-maintained conductance.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Spectral bisection is a classic tool for <strong>graph and mesh partitioning</strong> — dividing a finite-element mesh or sparse matrix across processors so each chunk is balanced and the boundary (communication) is small. It underlies image segmentation (Shi &amp; Malik's <em>normalized cuts</em>), community detection in networks, and circuit placement in VLSI. Recursively applying it gives a multiway partition. Modern partitioners (METIS) often use multilevel heuristics, but spectral partitioning remains the method with a clean theoretical guarantee — and the bridge to the rest of spectral graph theory.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Turn <strong>Inter-cluster edges</strong> down: the two communities separate cleanly, λ₂ drops toward 0, and the best conductance plummets (an easy cut). Turn it up and the cut gets expensive, λ₂ rises, and the Cheeger band widens — watch <code>φ*</code> stay inside <code>[λ₂/2, √(2λ₂)]</code> the whole time.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Cheeger, J. "A lower bound for the smallest eigenvalue of the Laplacian." <em>Problems in Analysis</em>, Princeton, 1970. (The continuous original; the discrete analog is standard.)</li>
+          <li>Spielman, D. <em>Spectral and Algebraic Graph Theory</em> (Yale), the Cheeger-inequality lectures. <a href="http://cs-www.cs.yale.edu/homes/spielman/sagt/">cs.yale.edu/homes/spielman/sagt</a>.</li>
+          <li>Shi, J. &amp; Malik, J. "Normalized cuts and image segmentation." <em>IEEE TPAMI</em> 22(8), 2000.</li>
+          <li>Andoni, A. <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021), Lecture 16 (Cheeger &amp; spectral partitioning). <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../johnson-lindenstrauss/index.html">← Johnson–Lindenstrauss</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../bfs/index.html">Breadth-First Search →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="../../lib/numlib.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Euclidean Algorithm — The Atlas of Algorithms</title>
+  <meta name="description" content="Euclid's GCD algorithm through four lenses: watch an a×b rectangle tile into squares down to the gcd, see why each step preserves the common divisors, count the logarithmic steps, and learn where it runs.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Euclidean Algorithm — The Atlas of Algorithms">
+  <meta property="og:description" content="Euclid's GCD algorithm through four lenses: watch an a×b rectangle tile into squares down to the gcd, see why each step preserves the common divisors, count the logarithmic steps, and learn where it runs.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#numerical">Numerical Methods</a>
+      <span class="sep">/</span>
+      Euclidean Algorithm
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Numerical Methods</span>
+      <h1>Euclidean Algorithm</h1>
+      <p class="one-liner">Find the greatest common divisor by repeatedly replacing the larger number with its remainder — the oldest algorithm.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        The a×b rectangle is tiled with the largest squares that fit; each leftover (<strong style="color:var(--warn)">dashed</strong>)
+        is a smaller rectangle tiled the same way. The final, smallest square — <strong style="color:var(--invariant)">green</strong> —
+        has side equal to the gcd.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>The greatest common divisor of two numbers is, geometrically, the side of the largest square tile that can pave an <code>a × b</code> rectangle with no gaps. Euclid's method finds it by a beautiful reduction: cover as much of the rectangle as you can with squares of side equal to the shorter edge, and whatever sliver is left over is a smaller rectangle — which you tile the same way. The leftover rectangle keeps shrinking; when a square finally tiles its rectangle exactly, that square's side is the gcd. The numeric version is the same thing without the pictures: replace <code>(a, b)</code> with <code>(b, a mod b)</code> until the remainder hits zero.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">gcd(a, b):
+    while b ≠ 0:
+        (a, b) = (b, a mod b)     # a mod b = the leftover strip
+    return a                      # last non-zero value</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>Why does throwing away the big part and keeping the remainder not change the answer? Because <span class="invariant-term">gcd(a, b) = gcd(b, a mod b)</span> — the two pairs have <em>exactly the same set of common divisors</em>. Any number <code>d</code> that divides both <code>a</code> and <code>b</code> also divides <code>a − qb = a mod b</code> (a divisor of two numbers divides any integer combination of them); and conversely, any <code>d</code> dividing <code>b</code> and <code>a mod b</code> divides <code>a = qb + (a mod b)</code>. So the common divisors — and hence the <em>greatest</em> of them — are preserved at every step. The remainder strictly shrinks each round, so the process must reach remainder 0, at which point <code>gcd(x, 0) = x</code> reads off the answer. The result therefore divides both originals and is the largest that does.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">steps</span><span class="cost-head">per step</span><span class="cost-head"></span>
+          <span class="cost-row-label">Euclid (mod)</span><span class="cost-cell">O(log min(a,b))</span><span class="cost-cell">one division</span><span class="cost-cell"></span>
+        </div>
+        <p>Each step at least halves the larger number within two iterations (a classical lemma), so the number of steps is logarithmic — Lamé's theorem (1844) pins the worst case to consecutive <strong>Fibonacci numbers</strong>, the inputs that make every quotient 1 (try <code>a, b = 55, 34</code> and watch the staircase of single squares). That makes it strikingly fast even for enormous integers. The <strong>extended</strong> Euclidean algorithm additionally returns coefficients <code>x, y</code> with <code>ax + by = gcd</code> — the workhorse behind modular inverses and therefore RSA key setup.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>The Euclidean algorithm (Euclid's <em>Elements</em>, Book VII, c. 300 BC) is the oldest nontrivial algorithm still in everyday use. Its extended form computes modular inverses for <strong>RSA</strong> and elliptic-curve cryptography, reduces fractions to lowest terms in every computer-algebra system and rational-arithmetic library, underlies the Chinese Remainder Theorem and continued-fraction expansions, and appears in clock/gear ratio and scheduling problems. Binary GCD (Stein's algorithm) replaces division with shifts and subtraction for hardware-friendly speed.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Set <code>a, b</code> to neighbouring <strong>Fibonacci numbers</strong> (try 55 and 34): the rectangle peels off one square at a time — the slowest possible case — and the gcd comes out 1. Then pick two multiples of the same number (say 48 and 36) and watch the tiling bottom out in a large green square: the gcd made visible.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Euclid. <em>Elements</em>, Book VII, Propositions 1–2 (c. 300 BC) — anthyphairesis / the subtraction method.</li>
+          <li>Knuth, D. <em>The Art of Computer Programming, Vol. 2: Seminumerical Algorithms</em>, §4.5.2–4.5.3. Addison-Wesley — analysis, Lamé's theorem, the extended and binary variants.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §31.2 (Greatest common divisor). MIT Press, 2022.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../knapsack/index.html">← 0/1 Knapsack</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../max-flow/index.html">Maximum Flow (Edmonds–Karp) →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

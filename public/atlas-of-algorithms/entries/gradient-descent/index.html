@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gradient Descent — The Atlas of Algorithms</title>
+  <meta name="description" content="Gradient descent through four lenses: watch a point slide downhill on a loss surface, see why convex + small-step guarantees convergence (and big steps diverge), and learn where it trains everything.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Gradient Descent — The Atlas of Algorithms">
+  <meta property="og:description" content="Gradient descent through four lenses: watch a point slide downhill on a loss surface, see why convex + small-step guarantees convergence (and big steps diverge), and learn where it trains everything.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#optimization">Optimization &amp; Flows</a>
+      <span class="sep">/</span>
+      Gradient Descent
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Optimization &amp; Flows</span>
+      <h1>Gradient Descent</h1>
+      <p class="one-liner">Find a minimum by repeatedly stepping downhill — the workhorse that trains almost everything.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Shading is the loss (dark = low). The <strong style="color:var(--accent)">blue</strong> path steps downhill toward the
+        <strong style="color:var(--invariant)">green</strong> minimum; the <strong style="color:var(--warn)">orange</strong>
+        dot is the current position. Too large a step and the path overshoots and flies off.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>The shaded surface is a loss function over two parameters; we want the darkest point, its minimum. The gradient <code>∇f</code> points in the direction of steepest <em>increase</em>, so to go downhill we step the opposite way: <code>x ← x − η∇f(x)</code>, where <code>η</code> (the learning rate) sets the stride. Watch the path slide into the basin. On the <em>elongated</em> valley it zig-zags — the gradient points mostly across the narrow valley rather than along it; on the <em>Rosenbrock</em> surface it crawls along a curved trough, the classic case that defeats plain gradient descent. And push the step size up and the whole thing overshoots and diverges.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">x = starting point
+repeat:
+    g = ∇f(x)            # gradient: steepest-ascent direction
+    x = x − η · g        # step downhill; η = learning rate
+until ‖g‖ ≈ 0            # a flat spot — a (local) minimum</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The guarantee needs two conditions. If <code>f</code> is <strong>convex</strong> (no false valleys — any local min is the global min) and <strong>L-smooth</strong> (its gradient changes no faster than rate <code>L</code>), then with a step size <code>η ≤ 1/L</code>, <span class="invariant-term">every iteration decreases the loss, and the iterates converge to the minimum</span> — the loss gap shrinks like <code>O(1/t)</code> after <code>t</code> steps (and exponentially fast if <code>f</code> is also strongly convex). The smoothness bound is what makes a fixed step safe: it caps how much the downhill direction can swing within one stride, so a step of <code>1/L</code> can't overshoot the valley. Cross that threshold — <code>η &gt; 2/L</code> — and each step lands further out than it started: the loss <em>grows</em>, the path oscillates outward, and it diverges. Slide the step size up on the elongated surface and watch exactly that happen. (Drop convexity, as in Rosenbrock, and you keep the per-step decrease but lose the guarantee of reaching the global minimum.)</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">per step</span><span class="cost-head">steps to ε</span><span class="cost-head"></span>
+          <span class="cost-row-label">Convex, smooth</span><span class="cost-cell">1 gradient</span><span class="cost-cell">O(1/ε)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Strongly convex</span><span class="cost-cell">1 gradient</span><span class="cost-cell">O(log 1/ε)</span><span class="cost-cell"></span>
+        </div>
+        <p>Each step costs one gradient evaluation and O(1) memory — which is why it scales to billions of parameters where second-order methods (needing the Hessian) can't. The catch is <strong>conditioning</strong>: convergence speed depends on the ratio of largest to smallest curvature (the elongated valley is slow precisely because that ratio is 12). Momentum, Nesterov acceleration, and preconditioners (Adam, etc.) exist to fight exactly that — and stochastic gradient descent replaces the full gradient with a cheap noisy estimate from a minibatch, the backbone of modern machine learning.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Gradient descent (and its stochastic, mini-batch form, SGD) trains essentially every neural network and most of modern machine learning; it fits logistic/linear regression, powers logistic and softmax classifiers, solves large-scale optimization in operations research, and underlies inverse problems in imaging and physics. The variants are a field unto themselves — momentum (Polyak), Nesterov acceleration, AdaGrad/RMSProp/Adam — but they are all refinements of the one idea on screen: estimate the downhill direction and take a step.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>On the <strong>Elongated valley</strong>, raise the <strong>Step size</strong> slowly: the path tightens, then starts zig-zagging harder, then overshoots and explodes — you're walking right up to the <code>η = 2/L</code> stability cliff. Switch to <strong>Rosenbrock</strong> and watch even a careful descent crawl along the curved floor of the valley — the textbook reason people reach for momentum and second-order methods.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Cauchy, A. "Méthode générale pour la résolution des systèmes d'équations simultanées." 1847. The original gradient method.</li>
+          <li>Boyd, S. &amp; Vandenberghe, L. <em>Convex Optimization</em>, §9 (Unconstrained minimization). Cambridge, 2004. <a href="https://web.stanford.edu/~boyd/cvxbook/">stanford.edu/~boyd/cvxbook</a>.</li>
+          <li>Nesterov, Y. <em>Lectures on Convex Optimization</em>, 2nd ed. Springer, 2018 — convergence rates, acceleration.</li>
+          <li>Vishnoi, N. <em>Algorithms for Convex Optimization</em>, Cambridge, 2021. And Andoni, <em>Advanced Algorithms</em> (Columbia, 2021), gradient-descent lectures. <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../bloom-filter/index.html">← Bloom Filter</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../huffman/index.html">Huffman Coding →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

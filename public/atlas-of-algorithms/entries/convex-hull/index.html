@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convex Hull — The Atlas of Algorithms</title>
+  <meta name="description" content="The convex hull through four lenses: watch Andrew's monotone chain wrap a point cloud, see the left-turn invariant that keeps it convex, count its n log n cost, and learn where hulls run in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Convex Hull — The Atlas of Algorithms">
+  <meta property="og:description" content="The convex hull through four lenses: watch Andrew's monotone chain wrap a point cloud, see the left-turn invariant that keeps it convex, count its n log n cost, and learn where hulls run in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#geometry">Computational Geometry</a>
+      <span class="sep">/</span>
+      Convex Hull
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Computational Geometry</span>
+      <h1>Convex Hull</h1>
+      <p class="one-liner">Snap a rubber band around a cloud of points — the smallest convex polygon that contains them all.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        <strong style="color:var(--accent)">Blue</strong> is the chain being built;
+        <strong style="color:var(--warn)">orange</strong> is the point under consideration.
+        When done, the <strong style="color:var(--invariant)">green</strong> polygon is the hull; interior points stay dim.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Imagine stretching a rubber band around a scatter of pins and letting go: it snaps to the outermost points and ignores everything inside. That taut loop is the <strong>convex hull</strong>. The algorithm here, Andrew's monotone chain, first sorts the points left to right, then sweeps across building the <em>lower</em> boundary, and sweeps back building the <em>upper</em> boundary. Each time a new point would make the boundary bend inward (a right turn), it pops the offending vertex back off — you can watch the chain retract and re-extend as it keeps itself convex.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">monotone_chain(points):
+    sort points by (x, then y)
+    build lower hull, left → right:
+        for each point p:
+            while last two hull points + p turn right (or straight):
+                pop the last hull point
+            push p
+    build upper hull, right → left:  (same rule)
+    hull = lower chain + upper chain</pre>
+        <p>The turn test is one cross product: <code>cross(O,A,B) = (A−O)×(B−O)</code>. Positive means a left turn (keep), ≤ 0 means right or straight (pop).</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The chain under construction is kept so that <span class="invariant-term">every consecutive triple of its vertices makes a left turn</span> — i.e. it is always convex. The <code>while</code> loop enforces it: before pushing a new point, any vertex that would create a non-left turn is removed, and since removing a vertex can only expose an earlier turn that might now also be wrong, the loop repeats until convexity is restored. Two consequences make the final answer correct. <strong>Convex:</strong> by the invariant, the completed loop turns the same way the whole way around. <strong>Encloses everything:</strong> the lower chain is the lower boundary of all points (nothing sorted-in-between dips below it) and the upper chain the upper boundary, so every point sits between them — inside or on the hull. Sorting plus a monotone left-turn sweep is all it takes; this entry's test checks both properties and cross-checks the vertex set against an independent gift-wrapping algorithm.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Monotone chain</span><span class="cost-head">Gift wrapping</span><span class="cost-head"></span>
+          <span class="cost-row-label">Time</span><span class="cost-cell">O(n log n)</span><span class="cost-cell">O(n·h)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Space</span><span class="cost-cell">O(n)</span><span class="cost-cell">O(h)</span><span class="cost-cell"></span>
+        </div>
+        <p>The sort dominates at <code>O(n log n)</code>; the two sweeps are linear, because each point is pushed once and popped at most once across each chain. That beats the simpler gift-wrapping (Jarvis march) at <code>O(n·h)</code> — fine when the hull has few vertices <code>h</code>, but quadratic when most points are extreme. The output-sensitive champion, Chan's algorithm, reaches <code>O(n log h)</code>, the best possible.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Convex hulls are a workhorse primitive of computational geometry: collision detection and physics engines (hulls are cheap to test for overlap), GIS and the smallest enclosing region of map features, pattern recognition and the shape of a point set, the first step of many <strong>Delaunay triangulation</strong> / Voronoi constructions, and a building block in linear programming and statistics (e.g. the convex hull of data points). The 3-D generalization (QuickHull) wraps meshes for graphics and CAD. Wherever "the outline of these points" matters, the hull is the answer.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through with <strong>▶|</strong> and watch the blue chain occasionally <em>retract</em> — that's the <code>while</code> loop popping a vertex that a new point just made non-convex. Add more points and notice the hull barely grows: most new points fall inside and never join it, which is exactly why the hull is a useful summary of a cloud.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Andrew, A. M. "Another efficient algorithm for convex hulls in two dimensions." <em>Information Processing Letters</em> 9(5):216–219, 1979. The monotone chain.</li>
+          <li>Graham, R. L. "An efficient algorithm for determining the convex hull of a finite planar set." <em>Information Processing Letters</em> 1(4):132–133, 1972 — the Graham scan.</li>
+          <li>de Berg, Cheong, van Kreveld &amp; Overmars. <em>Computational Geometry: Algorithms and Applications</em>, 3rd ed., Ch. 1. Springer, 2008.</li>
+          <li>Chan, T. "Optimal output-sensitive convex hull algorithms in two and three dimensions." <em>Discrete &amp; Computational Geometry</em> 16, 1996 — the O(n log h) result.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../a-star/index.html">← A* Search</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../sieve-of-eratosthenes/index.html">Sieve of Eratosthenes →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

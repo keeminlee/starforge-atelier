@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PageRank — The Atlas of Algorithms</title>
+  <meta name="description" content="PageRank through four lenses: watch a random surfer's importance scores converge across a web graph, see why they're the stationary distribution / dominant eigenvector, and learn how it ranked the web.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="PageRank — The Atlas of Algorithms">
+  <meta property="og:description" content="PageRank through four lenses: watch a random surfer's importance scores converge across a web graph, see why they're the stationary distribution / dominant eigenvector, and learn how it ranked the web.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#spectral">Spectral Graph Theory</a>
+      <span class="sep">/</span>
+      PageRank
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Spectral Graph Theory</span>
+      <h1>PageRank</h1>
+      <p class="one-liner">Rank pages by where a random web surfer spends its time — the dominant eigenvector of the link graph.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        A directed web graph; arrows are links. Each node's size is its current rank; they start equal and
+        converge. The highest-ranked page glows <strong style="color:var(--invariant)">green</strong>.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Imagine a surfer clicking links at random forever. From the current page it follows one of the outgoing links with probability <code>d</code> (the damping factor, ~0.85), and with probability <code>1 − d</code> it gets bored and jumps to a random page. PageRank is the fraction of time the surfer spends on each page in the long run — a page is important if important pages link to it. The nodes start equally sized (rank <code>1/n</code>); each iteration pushes rank along the links, and you watch the sizes settle: the well-linked hubs swell, the dead ends shrink.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">r = uniform (1/n each)
+repeat:
+    r'[i] = (1−d)/n                       # teleport: land anywhere
+          + d · Σ over j→i of r[j]/outdeg(j)   # inherit rank from linkers
+    (dangling pages with no links spread their rank to everyone)
+    r = r'
+until r stops changing</pre>
+        <p>Each page hands its rank to the pages it links to, split evenly; teleportation keeps the chain well-behaved (no rank vanishes into dead ends or sink cliques).</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>That update is multiplication by the <strong>Google matrix</strong> <code>P = d·M + (1−d)/n·𝟙</code> (a column-stochastic transition matrix), and PageRank is its <strong>stationary distribution</strong>: <span class="invariant-term">the rank vector r is a probability distribution (entries ≥ 0, summing to 1) that one more surfing step leaves unchanged, P·r = r</span>. Equivalently, r is the dominant eigenvector of <code>P</code> (eigenvalue 1). It exists and is unique because teleportation makes the chain irreducible and aperiodic (Perron–Frobenius), and power iteration — repeatedly applying <code>P</code> — converges to it geometrically, at rate <code>d</code> per step (which is why higher damping converges more slowly; watch the iteration count climb as you raise <code>d</code>). The teleport term is doing real work: without it, rank would leak into pages with no out-links and the limit wouldn't be a proper distribution.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">per iteration</span><span class="cost-head">iterations</span><span class="cost-head"></span>
+          <span class="cost-row-label">Power iteration</span><span class="cost-cell">O(edges)</span><span class="cost-cell">O(log(1/ε)/log(1/d))</span><span class="cost-cell"></span>
+        </div>
+        <p>Each iteration is one sparse pass over the links — <code>O(edges)</code>, not <code>O(n²)</code>, because the link matrix is sparse (most pages link to few others). Convergence to a fixed tolerance takes a number of iterations that grows with the damping factor but not with the size of the web, so the whole thing is near-linear in the graph — the property that let it scale to billions of pages. Computing it as a literal eigenvector decomposition would be hopeless at that scale; power iteration is what makes it practical.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>PageRank (Page &amp; Brin, 1998) was the link-analysis core of early Google, the idea that a page's authority comes from <em>who</em> links to it, not just how many — and it remains a textbook example of spectral methods on graphs. Its descendants are everywhere: personalized / topic-sensitive PageRank for recommendations, <strong>EigenTrust</strong> for peer-to-peer reputation, citation-impact measures (Eigenfactor), influence ranking in social networks, and even <strong>GeneRank</strong> in bioinformatics. Any time "importance flows along a graph and you want the steady state," you're looking at PageRank.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Raise the <strong>Damping</strong> toward 95% and watch convergence take more iterations — the surfer wanders longer before settling, so the power iteration mixes more slowly. Generate a few <strong>New graphs</strong> and notice the rank concentrates on the pages many others point to, even indirectly — authority flows through the whole link structure, not just direct links.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Page, L., Brin, S., Motwani, R. &amp; Winograd, T. "The PageRank Citation Ranking: Bringing Order to the Web." Stanford InfoLab Technical Report SIDL-WP-1999-0120, 1999.</li>
+          <li>Langville, A. &amp; Meyer, C. <em>Google's PageRank and Beyond: The Science of Search Engine Rankings.</em> Princeton, 2006.</li>
+          <li>Spielman, D. <em>Spectral and Algebraic Graph Theory</em> (Yale) — random walks on graphs. <a href="http://cs-www.cs.yale.edu/homes/spielman/sagt/">cs.yale.edu/homes/spielman/sagt</a>.</li>
+          <li>Andoni, A. <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021), random-walks lectures. <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../fisher-yates/index.html">← Fisher–Yates Shuffle</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../union-find/index.html">Union–Find →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

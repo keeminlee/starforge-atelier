@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Huffman Coding — The Atlas of Algorithms</title>
+  <meta name="description" content="Huffman coding through four lenses: watch a code tree grow by merging the two rarest symbols, see why the greedy choice is optimal, count the bits saved, and learn where it compresses in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Huffman Coding — The Atlas of Algorithms">
+  <meta property="og:description" content="Huffman coding through four lenses: watch a code tree grow by merging the two rarest symbols, see why the greedy choice is optimal, count the bits saved, and learn where it compresses in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#compression">Compression &amp; Coding</a>
+      <span class="sep">/</span>
+      Huffman Coding
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Compression &amp; Coding</span>
+      <h1>Huffman Coding</h1>
+      <p class="one-liner">Give frequent symbols short codes and rare ones long codes — the optimal prefix-free code, built by merging the two rarest.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        During the build, the forest of trees merges two-lightest-first (the
+        <strong style="color:var(--accent)">blue</strong> pair). When done, the tree's left/right edges (0/1) spell each
+        <strong style="color:var(--invariant)">symbol</strong>'s code — shown in the table.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>To compress text, we want short bit-codes for common symbols and longer ones for rare symbols — but the codes must be <em>prefix-free</em> (no code is the start of another) so a stream decodes unambiguously. Huffman builds them bottom-up: start with one tree per symbol, weighted by frequency, and repeatedly fuse the two lightest trees into one. The frequencies you see merging are the running tree weights; when a single tree remains, reading <code>0</code> for each left branch and <code>1</code> for each right gives every symbol its code. Rare symbols end up deep in the tree (long codes), frequent ones shallow (short codes).</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">huffman(frequencies):
+    make a leaf node for each symbol, keyed by frequency
+    while more than one tree:
+        a = extract the two
+        b = least-frequent trees
+        merge them under a new node of weight (a + b)
+    code(symbol) = path from root: 0 = left, 1 = right</pre>
+        <p>A priority queue makes "extract the two lightest" cost <code>O(log n)</code>, so the whole build is <code>O(n log n)</code> — or <code>O(n)</code> if the frequencies are already sorted.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The greedy choice is provably safe by an <strong>exchange argument</strong>: <span class="invariant-term">in some optimal prefix code, the two least-frequent symbols are siblings at the maximum depth.</span> Why — in any optimal code, the two deepest leaves are siblings (otherwise you could move a leaf up and shorten the code), and you may as well put the two rarest symbols there, since swapping a rarer symbol to a deeper spot never increases the expected length. So merging the two rarest into one super-symbol and solving the smaller problem recursively loses nothing — by induction Huffman is optimal. The resulting average code length lands between the Shannon <strong>entropy</strong> <code>H = Σ pᵢ log₂(1/pᵢ)</code> and <code>H + 1</code> bits per symbol: no prefix code can beat entropy, and Huffman comes within one bit of it. The readout shows your tree's bits-per-symbol sitting in exactly that band.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Build</span><span class="cost-head">bits/symbol</span><span class="cost-head"></span>
+          <span class="cost-row-label">Huffman</span><span class="cost-cell">O(n log n)</span><span class="cost-cell">[H, H+1)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Fixed-width</span><span class="cost-cell">—</span><span class="cost-cell">⌈log₂ n⌉</span><span class="cost-cell"></span>
+        </div>
+        <p>The savings grow with how <em>skewed</em> the frequencies are: uniform data can't be compressed (Huffman degenerates to fixed-width), while a sharply peaked distribution gets close to its entropy. Huffman's one limitation is that it spends a whole number of bits per symbol, so it can't dip below the entropy by the fractional bit that <strong>arithmetic coding</strong> recovers — but its simplicity keeps it everywhere.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Huffman coding is the entropy-coding back end of an enormous amount of everyday data: the final stage of <strong>DEFLATE</strong> (so: gzip, zlib, PNG, and ZIP), the entropy step in <strong>JPEG</strong> and MP3, and a component of many codecs. Modern formats increasingly use arithmetic or range coding (and ANS in Zstandard / LZFSE) to squeeze out that last fraction of a bit, but Huffman — invented by David Huffman in 1952 as a student term-paper alternative to an exam — remains the canonical, fast, simple optimal prefix code.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Hit <strong>New frequencies</strong> a few times and watch the tree reshape: the most frequent symbol always ends up with the shortest code (nearest the root), the rarest the longest. Add more <strong>Symbols</strong> and the tree deepens — but the bits-per-symbol stays pinned between the entropy and entropy-plus-one, exactly as the theorem promises.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Huffman, D. A. "A Method for the Construction of Minimum-Redundancy Codes." <em>Proceedings of the IRE</em> 40(9):1098–1101, 1952. The original.</li>
+          <li>Cover, T. &amp; Thomas, J. <em>Elements of Information Theory</em>, 2nd ed., §5 (Data Compression) — optimality and the entropy bounds. Wiley, 2006.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §15.3 (Huffman codes) — the greedy exchange-argument proof. MIT Press, 2022.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../gradient-descent/index.html">← Gradient Descent</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../fisher-yates/index.html">Fisher–Yates Shuffle →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

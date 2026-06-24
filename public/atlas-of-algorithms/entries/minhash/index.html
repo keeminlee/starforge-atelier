@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MinHash — The Atlas of Algorithms</title>
+  <meta name="description" content="MinHash through four lenses: watch the fraction of matching min-hashes estimate the Jaccard similarity of two sets, see why P[match]=J, count the signature cost, and learn where it powers near-duplicate detection.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="MinHash — The Atlas of Algorithms">
+  <meta property="og:description" content="MinHash through four lenses: watch the fraction of matching min-hashes estimate the Jaccard similarity of two sets, see why P[match]=J, count the signature cost, and learn where it powers near-duplicate detection.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#similarity">Similarity &amp; High-Dimensional Search</a>
+      <span class="sep">/</span>
+      MinHash
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Similarity &amp; High-Dimensional Search</span>
+      <h1>MinHash</h1>
+      <p class="one-liner">Estimate how similar two sets are from the chance their smallest hash collides — Jaccard similarity in a handful of numbers.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Top bar: the true overlap of A and B — <strong style="color:var(--invariant)">green</strong> = shared,
+        <strong style="color:var(--accent)">blue</strong> = A&nbsp;only, <strong style="color:var(--cost)">purple</strong> = B&nbsp;only
+        (so J = the green fraction). Each column below is one hash: <strong style="color:var(--invariant)">green</strong> if the two signatures match.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>The top bar is the ground truth: the union of sets A and B, split into the part they share (green) and the parts unique to each. The <strong>Jaccard similarity</strong> <code>J = |A∩B| / |A∪B|</code> is just the green fraction of that bar. Below, each column is one random hash function: it computes the smallest hash value in A and the smallest in B, and turns green when those agree. The fraction of green columns is the estimate — and as columns accumulate, that fraction homes in on the green fraction up top.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">signature(S):  for each of m random hashes h:
+                   sig[h] = min over x in S of h(x)
+estimate J(A,B) = (# hashes where sig_A[h] == sig_B[h]) / m</pre>
+        <p>Each set is reduced to a fixed-length <em>signature</em> of <code>m</code> numbers; comparing two sets is then just comparing two signatures, regardless of how big the sets were.</p>
+      </section>
+
+      <section>
+        <h2>The guarantee</h2>
+        <p>For a single random hash, <span class="invariant-term">P[ minhash(A) = minhash(B) ] = J(A,B)</span>. The argument is one sentence: consider the element of <code>A∪B</code> with the globally smallest hash value; under a random hash every element of the union is equally likely to be that minimizer, and the two signatures agree exactly when it happens to lie in <code>A∩B</code> — which has probability <code>|A∩B|/|A∪B| = J</code>. Each hash is therefore an unbiased coin-flip with bias <code>J</code>, so averaging <code>m</code> independent hashes gives an unbiased estimate of <code>J</code> with variance <code>J(1−J)/m</code>: relative error shrinks like <code>1/√m</code>. Slide <strong>Hash functions</strong> up and watch the estimate tighten onto the true value — exactly what this entry's test checks across thousands of seeded hash families.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Build signature</span><span class="cost-head">Compare two</span><span class="cost-head">Store</span>
+          <span class="cost-row-label">MinHash</span><span class="cost-cell">O(m·|S|)</span><span class="cost-cell">O(m)</span><span class="cost-cell">O(m)</span>
+          <span class="cost-row-label">Exact Jaccard</span><span class="cost-cell">—</span><span class="cost-cell">O(|A|+|B|)</span><span class="cost-cell">O(|S|)</span>
+        </div>
+        <p>The win is that the signature size <code>m</code> is fixed and tiny — independent of how large the sets are. You can store an <code>m</code>-number fingerprint per document and compare any two in <code>O(m)</code>, or bucket millions of them. More hashes buy more accuracy linearly in space; the variance, not the set size, sets the budget.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>MinHash (Andrei Broder, AltaVista, 1997) was invented to find <strong>near-duplicate web pages</strong> — represent each page as a set of shingles (overlapping word k-grams), and two pages are near-duplicates if their MinHash signatures mostly agree. It still powers duplicate detection in search indexing and crawl dedup, plagiarism and similarity tools, and clustering of documents/genomes. Crucially it composes with <strong>locality-sensitive hashing</strong>: band the signature into chunks and hash each band, so similar items collide in a bucket — turning all-pairs similarity into a near-linear scan. <em>An honest caveat:</em> the clean <code>P[match]=J</code> result needs <strong>min-wise independent</strong> (effectively fully random) hashes; the cheap linear hash <code>(a·x+b) mod p</code> is only 2-universal and visibly <em>biases</em> the estimate — production code uses better hash families (or the one-permutation / bottom-<code>k</code> variants) for exactly this reason.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Set <strong>Shared elements</strong> to its max (A = B) and every column is green — estimate 1.0, exact. Set it to 0 (disjoint) and they're never green — estimate 0. In between, raise <strong>Hash functions</strong> from a handful to a hundred and watch the estimate stop wobbling and settle on the true Jaccard.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Broder, A. "On the resemblance and containment of documents." <em>Proc. Compression and Complexity of Sequences (SEQUENCES)</em>, 1997. The original MinHash.</li>
+          <li>Broder, Charikar, Frieze &amp; Mitzenmacher. "Min-wise independent permutations." <em>STOC</em>, 1998 — why the hashes must be min-wise independent.</li>
+          <li>Leskovec, Rajaraman &amp; Ullman. <em>Mining of Massive Datasets</em>, 2nd ed., Ch. 3 (Finding Similar Items) — MinHash + LSH. <a href="http://www.mmds.org/">mmds.org</a>.</li>
+          <li>Andoni, A. <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021), Lectures 7–9 (dimension reduction &amp; LSH). <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../reservoir-sampling/index.html">← Reservoir Sampling</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../lsh/index.html">Locality-Sensitive Hashing →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

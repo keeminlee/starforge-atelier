@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consistent Hashing — The Atlas of Algorithms</title>
+  <meta name="description" content="Consistent hashing through four lenses: watch keys map to servers on a ring, see why adding a server moves only ~K/n keys, understand virtual nodes, and learn where it runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Consistent Hashing — The Atlas of Algorithms">
+  <meta property="og:description" content="Consistent hashing through four lenses: watch keys map to servers on a ring, see why adding a server moves only ~K/n keys, understand virtual nodes, and learn where it runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#hashing">Hashing Schemes</a>
+      <span class="sep">/</span>
+      Consistent Hashing
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Hashing Schemes</span>
+      <h1>Consistent Hashing</h1>
+      <p class="one-liner">Spread keys over a ring of servers so that adding or removing one moves almost nothing.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Servers (ticks) and keys (dots) sit on one hash ring; each key is owned by the next server
+        <strong>clockwise</strong> and colored to match. When a server joins, only the keys in its arc — ringed
+        in white — change hands. Each server has several <em>virtual nodes</em> to even the load.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>The naive way to shard <code>K</code> keys across <code>n</code> servers is <code>server = hash(key) mod n</code>. It balances well — until <code>n</code> changes. Add or remove one server and nearly <em>every</em> key's <code>mod n</code> result changes, so almost the whole dataset has to move: catastrophic for a cache or a distributed store. Consistent hashing fixes this by placing both servers and keys on a circular hash space, the <strong>ring</strong>. A key belongs to the first server you meet going clockwise from the key's position. Now adding a server only steals the keys in the arc just behind it; everyone else stays put. Watch each new server light up only a handful of keys (ringed white) as it joins.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">place each server at hash(server) on the ring [0, 2^m)
+lookup(key):
+    h = hash(key)
+    return the first server at position ≥ h  (wrapping around the ring)
+add/remove server:  only the keys between it and the previous server move</pre>
+        <p>Lookups use a sorted structure of server positions and a binary search, so they cost <code>O(log n)</code>.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The guarantee that makes it "consistent" is about <em>change</em>, not correctness: <span class="invariant-term">adding or removing a server reassigns only the keys in that server's arc — about K/n of them — leaving the rest untouched.</span> A key moves only if the set of servers in the clockwise arc from it changes, and inserting one server can only affect keys that now find <em>it</em> first; removing one sends only <em>its</em> keys to the next server clockwise. In expectation each server owns a <code>1/n</code> fraction of the ring, so a membership change touches an expected <code>K/n</code> keys — versus the <code>(n−1)/n</code> that <code>mod n</code> reshuffles. The trade-off is balance: with one point per server the arc lengths are uneven (some servers get far more than <code>K/n</code>), so each server is hashed to several <strong>virtual nodes</strong> scattered around the ring; the more replicas, the tighter the load concentrates around <code>K/n</code> — a direct consequence of averaging many independent arcs. Slide the virtual-node count up and watch the per-server loads converge.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">lookup</span><span class="cost-head">keys moved on resize</span><span class="cost-head"></span>
+          <span class="cost-row-label">Consistent hashing</span><span class="cost-cell">O(log n)</span><span class="cost-cell">≈ K/n</span><span class="cost-cell"></span>
+          <span class="cost-row-label">hash mod n</span><span class="cost-cell">O(1)</span><span class="cost-cell">≈ K·(n−1)/n</span><span class="cost-cell"></span>
+        </div>
+        <p>Lookup is a binary search over the (n · vnodes) ring positions; insert/delete of a server is <code>O(vnodes · log n)</code>. The headline win is the resize cost: from "move almost everything" to "move one server's share." The cost is some metadata for virtual nodes and slightly slower lookups than a plain modulo. Variants trade off further: <strong>rendezvous (HRW) hashing</strong> gets the same minimal-movement property without storing ring positions, and <strong>jump consistent hash</strong> is a tiny, fast, memory-free version when servers are numbered 0..n−1.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Consistent hashing (Karger et al., 1997, originally for web caching) is foundational distributed-systems infrastructure. It places data in <strong>Amazon Dynamo</strong> and its descendants <strong>Cassandra</strong> and <strong>Riak</strong>, distributes keys in client-side <strong>memcached</strong> sharding, routes requests in load balancers and service meshes, and underlies content-addressing in CDNs and peer-to-peer DHTs (Chord). Any system that adds and removes nodes while serving a partitioned dataset reaches for it, precisely because rebalancing is cheap.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through the servers joining: the readout's "keys moved" stays near <code>K/n</code> each time, never the whole set. Then push <strong>Virtual nodes each</strong> from 1 upward and watch the per-server loads in the legend converge toward an even split — that's the law of large numbers smoothing out the arc lengths. Drop it back to 1 and the imbalance returns.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. &amp; Lewin, D. "Consistent Hashing and Random Trees…" <em>STOC</em>, 1997.</li>
+          <li>DeCandia, G. et al. "Dynamo: Amazon's Highly Available Key-value Store." <em>SOSP</em>, 2007 — consistent hashing with virtual nodes in production.</li>
+          <li>Lamping, J. &amp; Veach, E. "A Fast, Minimal Memory, Consistent Hash Algorithm" (jump hash), 2014; Thaler &amp; Ravishankar, rendezvous (HRW) hashing, 1998.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../skip-list/index.html">← Skip List</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../fft/index.html">Fast Fourier Transform →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

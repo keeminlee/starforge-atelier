@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Distance — The Atlas of Algorithms</title>
+  <meta name="description" content="Edit distance through four lenses: watch a DP table fill from its three neighbors, see why each cell is the exact distance of two prefixes, count the m·n cost, and learn where it runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Edit Distance — The Atlas of Algorithms">
+  <meta property="og:description" content="Edit distance through four lenses: watch a DP table fill from its three neighbors, see why each cell is the exact distance of two prefixes, count the m·n cost, and learn where it runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#dp">Dynamic Programming</a>
+      <span class="sep">/</span>
+      Edit Distance
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Dynamic Programming &amp; Optimization</span>
+      <h1>Edit Distance</h1>
+      <p class="one-liner">The fewest insert/delete/substitute edits to turn one string into another — built up from a grid of subproblems.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Cell (i, j) = the edit distance of A's first i letters and B's first j. Each fills from three
+        neighbors (<strong style="color:var(--warn)">orange</strong>); the <strong style="color:var(--accent)">blue</strong>
+        box is the current cell; the <strong style="color:var(--invariant)">green</strong> trail is one optimal alignment.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>To measure how different two strings are, we count the minimum number of single-character edits — insert, delete, or substitute — to turn one into the other. The trick is to solve every <em>prefix</em> pair first. Cell <code>(i, j)</code> holds the distance between A's first <code>i</code> letters and B's first <code>j</code>, and it depends only on three already-solved neighbors: the cell diagonally up-left (substitute or, if the letters match, a free keep), directly up (delete from A), and directly left (insert into B). Fill the grid row by row and the bottom-right corner is the answer; the green trail back to the top-left reads off one optimal sequence of edits.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">dp[0][j] = j     # "" → B[0..j): j inserts
+dp[i][0] = i     # A[0..i) → "": i deletes
+dp[i][j] = (A[i-1] == B[j-1])
+           ? dp[i-1][j-1]                              # free match
+           : 1 + min( dp[i-1][j-1],   # substitute
+                      dp[i-1][j],     # delete
+                      dp[i][j-1] )    # insert</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The table is correct because each cell exactly answers its subproblem: <span class="invariant-term">dp[i][j] is the true minimum edit distance between A[0..i) and B[0..j)</span>. It holds for the base row and column (turning a string into the empty string costs one edit per character), and the recurrence preserves it: <em>any</em> way to align the two prefixes must end in one of three moves — match/substitute the last characters, delete A's last, or insert B's last — and each move's cost is a <code>±1</code> on a strictly smaller, already-correct subproblem. Taking the minimum over the three is therefore the true optimum for <code>(i, j)</code>. This is dynamic programming's signature: optimal substructure (the best solution is built from best sub-solutions) plus overlapping subproblems (each cell is reused by the three cells below-and-right of it), so a <code>Θ(m·n)</code> table replaces exponential recursion.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">DP table</span><span class="cost-head">Naive recursion</span><span class="cost-head"></span>
+          <span class="cost-row-label">Time</span><span class="cost-cell">Θ(m·n)</span><span class="cost-cell">exponential</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Space</span><span class="cost-cell">Θ(m·n)</span><span class="cost-cell">—</span><span class="cost-cell"></span>
+        </div>
+        <p>Filling each of the <code>(m+1)(n+1)</code> cells in <code>O(1)</code> gives <code>Θ(m·n)</code> — versus the exponential blow-up of recomputing the same prefix pairs over and over. If you only need the distance (not the alignment), each row depends only on the previous one, so space drops to <code>Θ(min(m, n))</code>. Recovering the actual alignment needs the full table (or Hirschberg's clever <code>Θ(m·n)</code>-time, <code>Θ(min(m,n))</code>-space divide-and-conquer).</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Edit distance is the math behind spell-checkers and "did you mean…?", fuzzy search and record deduplication, <code>diff</code> and version-control merge (the closely related longest-common-subsequence), and — most heavily — <strong>bioinformatics</strong>, where Needleman–Wunsch (global) and Smith–Waterman (local) sequence alignment are edit distance with biology-flavored scoring. It's the textbook gateway to dynamic programming, and its grid is the same shape you'll see in LCS, sequence alignment, and many other DP problems.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through a few cells and watch each one pick the cheapest of its three orange neighbors — a free diagonal when the row/column letters match, otherwise one plus the best neighbor. Then follow the green path: diagonal steps are keeps or substitutions, vertical steps delete, horizontal steps insert — that's the actual edit script.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Wagner, R. A. &amp; Fischer, M. J. "The String-to-String Correction Problem." <em>Journal of the ACM</em> 21(1):168–173, 1974. The DP algorithm.</li>
+          <li>Levenshtein, V. I. "Binary codes capable of correcting deletions, insertions, and reversals." <em>Soviet Physics Doklady</em> 10(8):707–710, 1966.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §14 (Dynamic Programming) — incl. LCS. MIT Press, 2022.</li>
+          <li>Needleman, S. &amp; Wunsch, C. (1970); Smith, T. &amp; Waterman, M. (1981) — sequence alignment.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../binary-heap/index.html">← Binary Heap</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../bloom-filter/index.html">Bloom Filter →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

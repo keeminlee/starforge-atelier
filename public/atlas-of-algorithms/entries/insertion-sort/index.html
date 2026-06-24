@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insertion Sort — The Atlas of Algorithms</title>
+  <meta name="description" content="Insertion sort, shown through four lenses: watch it build a sorted prefix one element at a time, see the invariant that proves it correct, count its cost, and learn where it runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Insertion Sort — The Atlas of Algorithms">
+  <meta property="og:description" content="Insertion sort, shown through four lenses: watch it build a sorted prefix one element at a time, see the invariant that proves it correct, count its cost, and learn where it runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#sorting">Sorting</a>
+      <span class="sep">/</span>
+      Insertion Sort
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Sorting</span>
+      <h1>Insertion Sort</h1>
+      <p class="one-liner">Build a sorted prefix one element at a time, sliding each new value back into its place — the way most people sort a hand of cards.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        <strong style="color:var(--invariant)">Green</strong> is the sorted prefix — the invariant.
+        <strong style="color:var(--accent)">Blue</strong> is the value being compared.
+        <strong style="color:var(--warn)">Orange</strong> is the element being inserted.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Each bar is a number; taller is larger. Insertion sort walks left to right, and at every moment the bars on the left form an <em>already-sorted run</em>. It picks the next bar, then slides it leftward past every larger value until it drops into the one spot where it belongs. Watch the green region grow by exactly one bar each round.</p>
+        <p>It is the algorithm your hands already know: to sort a dealt hand of cards, you keep the cards so far in order and tuck each new card into place.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">insertion_sort(a):
+    for i = 1 .. n-1:
+        key = a[i]            # the card to place
+        j = i - 1
+        while j >= 0 and a[j] > key:
+            a[j+1] = a[j]     # shift bigger values right
+            j = j - 1
+        a[j+1] = key          # drop key into the hole</pre>
+        <p>Only two operations matter, and the visualization counts both: a <strong>comparison</strong> (<code>a[j] &gt; key</code>) and a <strong>shift</strong> (<code>a[j+1] = a[j]</code>).</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The reason insertion sort is correct fits in one line: <span class="invariant-term">the prefix a[0..i) is always sorted</span> at the top of each round. It holds before the first round (a single element, <code>a[0..1)</code>, is trivially in order). Each round preserves it: we open a hole by shifting larger values right, then drop <code>key</code> into the hole, leaving <code>a[0..i+1)</code> sorted. When the loop ends, <code>i = n</code>, so <code>a[0..n)</code> — the whole array — is sorted. That is the entire proof: <em>establish the invariant, show each step maintains it, read off the result at termination.</em></p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Best</span><span class="cost-head">Average</span><span class="cost-head">Worst</span>
+          <span class="cost-row-label">Comparisons</span><span class="cost-cell">n−1</span><span class="cost-cell">Θ(n²)</span><span class="cost-cell">Θ(n²)</span>
+          <span class="cost-row-label">Time</span><span class="cost-cell">Θ(n)</span><span class="cost-cell">Θ(n²)</span><span class="cost-cell">Θ(n²)</span>
+          <span class="cost-row-label">Space</span><span class="cost-cell">O(1)</span><span class="cost-cell">O(1)</span><span class="cost-cell">O(1)</span>
+        </div>
+        <p>Set the input to <strong>Already sorted</strong> and the inner loop never shifts — one comparison per element, a clean <code>Θ(n)</code> pass. Set it to <strong>Reversed</strong> and every new element must travel all the way to the front: <code>1 + 2 + … + (n−1) = n(n−1)/2</code> shifts, the worst case. The counters under the canvas make the gap concrete. Insertion sort is also <strong>stable</strong> (equal values keep their order) and <strong>in-place</strong> (O(1) extra space).</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Insertion sort looks slow, and asymptotically it is — yet it is quietly everywhere, because for <em>small</em> or <em>nearly-sorted</em> inputs its low overhead and cache-friendliness beat the fancy algorithms. Production sorts are hybrids that fall back to it: <strong>Timsort</strong> (Python's <code>sorted</code>, Java's <code>Arrays.sort</code> for objects) builds its initial runs with insertion sort, and <strong>introsort</strong> (many C++ <code>std::sort</code> implementations) switches to insertion sort once a partition drops below ~16 elements. So the textbook "toy" sort runs billions of times a day — as the inner gear of the sorts you actually call.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Switch <strong>Initial order</strong> to <em>Reversed</em> and watch the comparison counter explode — then to <em>Nearly sorted</em> and see it collapse back toward linear. That spread between best and worst case is the whole personality of insertion sort.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §2.1 — insertion sort and the loop-invariant proof method. MIT Press, 2022.</li>
+          <li>Knuth. <em>The Art of Computer Programming, Vol. 3: Sorting and Searching</em>, §5.2.1 (Sorting by Insertion). Addison-Wesley.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §2.1. Booksite: <a href="https://algs4.cs.princeton.edu/21elementary/">algs4.cs.princeton.edu/21elementary</a>.</li>
+          <li>Peters, T. Timsort description, CPython <code>listsort.txt</code>: <a href="https://github.com/python/cpython/blob/main/Objects/listsort.txt">github.com/python/cpython · Objects/listsort.txt</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <span class="nav-spacer"></span>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../selection-sort/index.html">Selection Sort →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

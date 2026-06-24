@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A* Search — The Atlas of Algorithms</title>
+  <meta name="description" content="A* through four lenses: watch a heuristic steer the search toward the goal so it settles a fraction of Dijkstra's cells, see why an admissible heuristic keeps the path optimal, and learn where A* runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="A* Search — The Atlas of Algorithms">
+  <meta property="og:description" content="A* through four lenses: watch a heuristic steer the search toward the goal so it settles a fraction of Dijkstra's cells, see why an admissible heuristic keeps the path optimal, and learn where A* runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#graphs">Graphs</a>
+      <span class="sep">/</span>
+      A* Search
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Graphs</span>
+      <h1>A* Search</h1>
+      <p class="one-liner">Dijkstra with a sense of direction: a heuristic pulls the search toward the goal, so it settles a fraction of the cells.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Same weighted terrain as <a href="../dijkstra/index.html">Dijkstra</a>. The
+        <strong style="color:var(--accent)">blue</strong> settled region now stretches toward the
+        <strong style="color:var(--warn)">target</strong> instead of spreading evenly; the
+        <strong style="color:var(--invariant)">green</strong> path is still optimal.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>This is Dijkstra's algorithm with one addition: a <em>heuristic</em> that estimates how far each cell still is from the target. The frontier is ordered not by cost-so-far alone, but by <code>f = g + h</code> — known cost plus estimated remaining cost. The effect is dramatic: instead of a roughly circular settled region, the blue blob <strong>elongates toward the target</strong>, ignoring cells that lead away from it. The readout shows the punchline — A* settles a small fraction of the cells Dijkstra needs, yet finds the very same optimal path.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">a_star(source, target):
+    g[source] = 0
+    PQ keyed by f(n) = g[n] + h(n)        # h = estimated cost to target
+    while PQ not empty:
+        u = PQ.extract_min()              # smallest f
+        if u == target: done
+        for each neighbor v of u:
+            if g[u] + weight(v) &lt; g[v]:
+                g[v] = g[u] + weight(v); parent[v] = u</pre>
+        <p>With <code>h ≡ 0</code> this is exactly Dijkstra. Here <code>h</code> is the Manhattan distance to the target times the cheapest possible terrain cost — a true lower bound on what's left to pay.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The heuristic must be <strong>admissible</strong>: <span class="invariant-term">h(n) never over-estimates the true remaining cost to the target</span>. Under that condition A* is optimal — the first time it extracts the target, <code>g[target]</code> is the true minimum cost. The reason: if the target were extracted with an inflated cost <code>g* &gt; optimal</code>, then some node <code>n</code> on a genuine optimal path is still in the queue with <code>f(n) = g(n) + h(n) ≤ g(n) + (\text{true remaining}) = \text{optimal} &lt; g*</code>, so <code>n</code> — not the target — would have been extracted first. Contradiction. The heuristic only <em>reorders</em> exploration toward the goal; because it can't overshoot, it can't make A* settle for a worse path. Push <code>h</code> beyond admissible (weighted A*) and you explore even less, but the optimality guarantee is gone.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Worst case</span><span class="cost-head">In practice</span><span class="cost-head"></span>
+          <span class="cost-row-label">Cells settled</span><span class="cost-cell">O(V) (= Dijkstra)</span><span class="cost-cell">≪ V (goal-directed)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Time</span><span class="cost-cell">O((V+E) log V)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+        </div>
+        <p>The asymptotic worst case is Dijkstra's — a useless (<code>h = 0</code>) or adversarial heuristic settles everything. The whole value is in the <em>average</em> case: a good heuristic shrinks the explored region toward a corridor between source and target, often by orders of magnitude. The better (closer to the true remaining cost) the heuristic, the fewer cells; a <em>perfect</em> heuristic would walk straight down the optimal path. The readout's "A* settled N vs Dijkstra M" is that saving, live.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>A* is the default for goal-directed pathfinding: game and robotics navigation (grid and navmesh), GPS routing (with landmark / ALT heuristics, and combined with contraction hierarchies for continental scale), puzzle solving (the 15-puzzle and Rubik's cube with pattern-database heuristics), and planning. It was born from the Shakey robot project at SRI (Hart, Nilsson &amp; Raphael, 1968). The art is the heuristic: admissible keeps it optimal; the tighter it hugs the true cost, the faster it runs — which is why so much effort goes into designing good ones.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Open <a href="../dijkstra/index.html">Dijkstra</a> in another tab on the same idea and compare the settled regions: Dijkstra fills a fat blob in every direction; A* sends a narrow tongue straight at the target. Then raise <strong>Terrain roughness</strong> — expensive terrain forces both to detour, and you can watch A* still commit toward the goal while respecting the cost.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Hart, P. E., Nilsson, N. J. &amp; Raphael, B. "A Formal Basis for the Heuristic Determination of Minimum Cost Paths." <em>IEEE Trans. Systems Science and Cybernetics</em> 4(2):100–107, 1968. The original A*.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS) — shortest paths and admissible heuristics. MIT Press, 2022.</li>
+          <li>Russell, S. &amp; Norvig, P. <em>Artificial Intelligence: A Modern Approach</em>, Ch. 3 (Informed Search) — admissibility, consistency, optimality.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../dijkstra/index.html">← Dijkstra’s Algorithm</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../convex-hull/index.html">Convex Hull →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

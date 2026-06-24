@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bubble Sort — The Atlas of Algorithms</title>
+  <meta name="description" content="Bubble sort through four lenses: watch the largest values bubble to the end, see the invariant that proves it correct, count its cost, and learn why it survives only as a teaching tool.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Bubble Sort — The Atlas of Algorithms">
+  <meta property="og:description" content="Bubble sort through four lenses: watch the largest values bubble to the end, see the invariant that proves it correct, count its cost, and learn why it survives only as a teaching tool.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#sorting">Sorting</a>
+      <span class="sep">/</span>
+      Bubble Sort
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Sorting</span>
+      <h1>Bubble Sort</h1>
+      <p class="one-liner">Sweep through the list swapping out-of-order neighbors; the largest value "bubbles" to the end each pass.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        <strong style="color:var(--invariant)">Green</strong> is the locked-in sorted tail — the invariant.
+        <strong style="color:var(--warn)">Orange</strong> is the larger of the compared pair (it bubbles right);
+        <strong style="color:var(--accent)">blue</strong> is its smaller neighbor.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Each bar is a number; taller is larger. Bubble sort sweeps left to right comparing each pair of neighbors and swapping them if they're out of order. The effect of one full sweep is that the largest value present "bubbles" all the way to the right end — so the green sorted tail grows by one each pass, from the right. Watch the orange (larger) bar repeatedly hop rightward until it settles.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">bubble_sort(a):
+    for end = n-1 down to 1:
+        swapped = false
+        for j = 0 .. end-1:
+            if a[j] &gt; a[j+1]:
+                swap(a[j], a[j+1])     # bubble the larger one right
+                swapped = true
+        if not swapped: break          # already sorted — stop early</pre>
+        <p>The <code>swapped</code> flag is what makes this version <strong>adaptive</strong>: one clean pass with no swaps proves the array is sorted, so it stops.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p><span class="invariant-term">After pass k, the k largest values occupy their final sorted positions at the end of the array</span> — the suffix <code>a[n−k..n)</code> is sorted and every value in it is ≥ everything before it. It holds trivially before pass 1 (empty suffix). Each pass maintains it: a left-to-right sweep over the still-unsorted prefix always carries that prefix's maximum to the prefix's last slot — extending the sorted suffix by one. After <code>n−1</code> passes the suffix is the whole array. The early-exit is sound too: if a pass performs no swaps, no adjacent pair is out of order, which for a total order means the entire array is sorted.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Best</span><span class="cost-head">Average</span><span class="cost-head">Worst</span>
+          <span class="cost-row-label">Comparisons</span><span class="cost-cell">n−1</span><span class="cost-cell">Θ(n²)</span><span class="cost-cell">Θ(n²)</span>
+          <span class="cost-row-label">Swaps</span><span class="cost-cell">0</span><span class="cost-cell">Θ(n²)</span><span class="cost-cell">Θ(n²)</span>
+          <span class="cost-row-label">Space</span><span class="cost-cell">O(1)</span><span class="cost-cell">O(1)</span><span class="cost-cell">O(1)</span>
+        </div>
+        <p>With the early-exit flag, an already-sorted input costs a single pass — <code>n−1</code> comparisons, zero swaps (try it). Reversed input is the worst case: every pair is out of order every pass, giving <code>n(n−1)/2</code> comparisons <em>and</em> <code>n(n−1)/2</code> swaps. That double-Θ(n²) — bubble sort moves data as often as it compares it — is exactly why it loses to insertion sort, which does the same comparisons but far fewer moves. Bubble sort is <strong>stable</strong> and <strong>in-place</strong>.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Honestly: essentially nowhere, by design choice. Bubble sort is the textbook example of an algorithm that is correct, simple to state, and a poor choice in practice — it is slower than insertion sort on the same inputs (more swaps) while offering no compensating advantage. Donald Knuth's verdict is often quoted: "the bubble sort seems to have nothing to recommend it, except a catchy name and the fact that it leads to some interesting theoretical problems." Its real value is pedagogical: it is the cleanest illustration of an adaptive early-exit and of a suffix-growing invariant — which is why it earns a place here, clearly labeled as a teaching tool rather than a tool.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Set <strong>Already sorted</strong> and watch it finish in one pass (the early-exit). Then set <strong>Reversed</strong> and watch both counters — comparisons and swaps — climb together to <code>n(n−1)/2</code>. Compare that swap count with selection sort's <code>n−1</code> on the same input: same comparisons, wildly different data movement.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Knuth. <em>The Art of Computer Programming, Vol. 3: Sorting and Searching</em>, §5.2.2 (Sorting by Exchanging) — analysis and the famous "nothing to recommend it" remark. Addison-Wesley.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), Problem 2-2 (bubble sort correctness and the loop invariant). MIT Press, 2022.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §2.1 — elementary sorts and the comparison/exchange cost model. <a href="https://algs4.cs.princeton.edu/21elementary/">algs4.cs.princeton.edu/21elementary</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../selection-sort/index.html">← Selection Sort</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../merge-sort/index.html">Merge Sort →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

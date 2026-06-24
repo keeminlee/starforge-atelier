@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0/1 Knapsack — The Atlas of Algorithms</title>
+  <meta name="description" content="The 0/1 knapsack DP through four lenses: watch the value table fill from skip-or-take choices, see why each cell is an exact optimum, understand the pseudo-polynomial cost, and learn where it runs.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="0/1 Knapsack — The Atlas of Algorithms">
+  <meta property="og:description" content="The 0/1 knapsack DP through four lenses: watch the value table fill from skip-or-take choices, see why each cell is an exact optimum, understand the pseudo-polynomial cost, and learn where it runs.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#dp">Dynamic Programming</a>
+      <span class="sep">/</span>
+      0/1 Knapsack
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Dynamic Programming</span>
+      <h1>0/1 Knapsack</h1>
+      <p class="one-liner">Pack the most valuable subset that fits — by solving every smaller capacity for every prefix of items.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Rows are items (label <code>i·weight/value</code>), columns are capacities. The
+        <strong style="color:var(--accent)">blue</strong> cell is being filled from its two sources — skip (<strong style="color:var(--accent)">above</strong>)
+        or take (<strong style="color:var(--cost)">above-left</strong>). The backtrack marks taken items <strong style="color:var(--invariant)">green</strong>.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>You have items, each with a weight and a value, and a bag that holds only so much weight. Which subset maximizes value? Trying all <code>2ⁿ</code> subsets is exponential. Dynamic programming builds a table instead: <code>dp[i][w]</code> is the best value achievable using only the first <code>i</code> items if the capacity were <code>w</code>. Each cell looks at just one new item and asks a single yes/no question — <em>skip it</em> (inherit the value from the row above) or <em>take it</em> (its value plus the best we could do with the remaining capacity, from the row above shifted left by its weight) — and keeps the larger. Fill the grid row by row; the bottom-right cell is the answer. Then we walk back up to see <em>which</em> items were chosen.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">dp[0][w] = 0                          # no items → no value
+for i in 1..n:
+    for w in 0..W:
+        skip = dp[i-1][w]
+        take = (weightᵢ ≤ w) ? valueᵢ + dp[i-1][w - weightᵢ] : −∞
+        dp[i][w] = max(skip, take)
+answer = dp[n][W]                     # backtrack to recover the items</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>Each cell is exactly what it claims: <span class="invariant-term">dp[i][w] is the optimal value over <em>all</em> subsets of the first i items whose weight is ≤ w.</span> The proof is induction with an exchange of cases. Consider the best subset for <code>(i, w)</code>. Either it doesn't use item <code>i</code> — then it's a valid subset of the first <code>i−1</code> items, so its value is <code>dp[i−1][w]</code> — or it does use item <code>i</code>, and removing that item leaves an optimal packing of the first <code>i−1</code> items into capacity <code>w − weightᵢ</code>, worth <code>dp[i−1][w − weightᵢ]</code> (if it weren't optimal, we could swap in a better one and beat the supposed best — a contradiction). Those two cases are precisely <em>skip</em> and <em>take</em>, so taking their max is correct. This <strong>optimal substructure</strong> — an optimum built from optima of strictly smaller subproblems, each solved once — is the heart of every dynamic program.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head">Space</span><span class="cost-head"></span>
+          <span class="cost-row-label">DP table</span><span class="cost-cell">O(n·W)</span><span class="cost-cell">O(n·W) → O(W)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Brute force</span><span class="cost-cell">O(2ⁿ)</span><span class="cost-cell">O(n)</span><span class="cost-cell"></span>
+        </div>
+        <p>The table has <code>n·(W+1)</code> cells and each costs O(1), so it's <code>O(nW)</code> — and since only the previous row is ever read, the space collapses to a single row, <code>O(W)</code>. But notice <code>W</code> is a <em>number</em>, not the input <em>size</em>: writing <code>W</code> takes only <code>log W</code> bits, so <code>O(nW)</code> is exponential in the input length. That makes knapsack <strong>pseudo-polynomial</strong>, and the problem NP-hard — fast when capacities are small, but not a polynomial-time algorithm in general. For huge <code>W</code> there's instead an FPTAS that scales the values to get within <code>(1−ε)</code> of optimal in polynomial time.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Knapsack is the model problem for "best subset under a budget," and the DP is a teaching cornerstone for optimal substructure. Its shape appears in cutting-stock and cargo loading, capital budgeting and portfolio selection under a spending cap, resource allocation and ad/bidding under quotas, and cryptography's history (the broken Merkle–Hellman knapsack cipher). The unbounded and bounded variants power coin-change and inventory problems, and the same row-by-row table idea generalizes to a whole family of subset-sum and partition problems.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Watch a single cell fill: it only ever reads two cells from the row above — that's the whole recurrence. Raise the <strong>Capacity</strong> and the table widens (the O(nW) cost made visible). At the end, follow the green backtrack: a cell that differs from the one directly above means "this item was taken," and we jump left by its weight — reading the chosen set straight off the table.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Bellman, R. <em>Dynamic Programming.</em> Princeton University Press, 1957. The method.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §14 (Dynamic Programming) &amp; §35.5 (FPTAS for subset-sum). MIT Press, 2022.</li>
+          <li>Kellerer, Pferschy &amp; Pisinger. <em>Knapsack Problems.</em> Springer, 2004 — the comprehensive reference.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../closest-pair/index.html">← Closest Pair of Points</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../euclid-gcd/index.html">Euclidean Algorithm →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

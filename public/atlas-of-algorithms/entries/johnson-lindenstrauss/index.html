@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Johnson–Lindenstrauss — The Atlas of Algorithms</title>
+  <meta name="description" content="The Johnson–Lindenstrauss lemma through four lenses: watch a random projection squash high-dimensional points into few dimensions while preserving every pairwise distance, see the concentration guarantee, and learn where it speeds up ML.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Johnson–Lindenstrauss — The Atlas of Algorithms">
+  <meta property="og:description" content="The Johnson–Lindenstrauss lemma through four lenses: watch a random projection squash high-dimensional points into few dimensions while preserving every pairwise distance, see the concentration guarantee, and learn where it speeds up ML.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#similarity">Similarity &amp; High-Dimensional Search</a>
+      <span class="sep">/</span>
+      Johnson–Lindenstrauss
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Similarity &amp; High-Dimensional Search</span>
+      <h1>Johnson–Lindenstrauss</h1>
+      <p class="one-liner">Squash high-dimensional points into far fewer dimensions by random projection — and keep every pairwise distance almost exactly.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Each dot is a pair of points: true distance (x) vs distance after projection (y).
+        The <strong style="color:var(--invariant)">green diagonal</strong> is perfect preservation; the
+        <strong style="color:var(--warn)">dashed lines</strong> are the ±ε band. Scrub to raise k and watch the cloud tighten.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Start with <code>n</code> points living in 80 dimensions — far too many to plot or to search quickly. Multiply each by a random <code>k×80</code> matrix (Gaussian entries, scaled by <code>1/√k</code>) to land in just <code>k</code> dimensions. The scatter compares every pair's original distance (x-axis) with its distance after that projection (y-axis). At small <code>k</code> the dots scatter loosely around the diagonal; <strong>scrub the timeline to increase k</strong> and they snap onto it — distances barely change, even though almost all the dimensions are gone.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">choose target dimension k ≈ (8 / ε²)·ln n
+R = k×D matrix of i.i.d. N(0,1) entries
+project: x ↦ (1/√k)·R·x          # D dims → k dims
+claim:   ‖proj(x) − proj(y)‖ ≈ ‖x − y‖   for every pair</pre>
+        <p>Strikingly, <code>k</code> depends on the number of points (logarithmically) but <strong>not</strong> on the original dimension <code>D</code> at all.</p>
+      </section>
+
+      <section>
+        <h2>The guarantee</h2>
+        <p>For a fixed vector <code>u</code>, the squared length of its projection, <code>‖(1/√k)Ru‖²</code>, has expectation exactly <code>‖u‖²</code> — the scaling is chosen to make the projection length-preserving <em>on average</em>. The content of the lemma is <strong>concentration</strong>: that random quantity is a scaled chi-squared with <code>k</code> degrees of freedom, so its relative spread shrinks like <code>1/√k</code>, and it lands within <code>(1±ε)</code> of the mean except with probability <code>≈ e^{−kε²/8}</code>. Apply that to the <code>u = x−y</code> of all <code>\binom{n}{2}</code> pairs and union-bound: <span class="invariant-term">choosing k ≈ (8/ε²)·ln n makes every pairwise distance preserved within (1±ε) simultaneously, with high probability</span>. On screen, "spread shrinks like <code>1/√k</code>" is the cloud collapsing onto the diagonal as you raise <code>k</code>. <em>Honest caveat:</em> that bound is worst-case and pessimistic — in practice (as here) the distances concentrate noticeably faster than the formula promises.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">In D dims</span><span class="cost-head">After JL (k dims)</span><span class="cost-head"></span>
+          <span class="cost-row-label">Store n points</span><span class="cost-cell">O(nD)</span><span class="cost-cell">O(nk)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Distance / dot product</span><span class="cost-cell">O(D)</span><span class="cost-cell">O(k)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Project (one-time)</span><span class="cost-cell">—</span><span class="cost-cell">O(n·k·D)</span><span class="cost-cell"></span>
+        </div>
+        <p>Because <code>k</code> is independent of <code>D</code>, JL collapses million-dimensional vectors to a few hundred coordinates while keeping the geometry any distance-based algorithm relies on. Every downstream operation — nearest-neighbor search, clustering, SVMs — then runs in the small dimension. Faster projections exist (sparse / Fast-JL using the Hadamard transform) that cut the <code>O(kD)</code> per-point cost.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>JL is the theoretical license behind "just use random projection": dimensionality reduction for nearest-neighbor search and LSH preprocessing, speeding up clustering and kernel methods, compressed sensing and sketching for numerical linear algebra (randomized SVD/least-squares), and privacy-preserving data release. Whenever someone reduces dimensions <em>without</em> looking at the data — no PCA, no training — and still trusts the distances, JL is why it works. It pairs naturally with the rest of this family: project with JL, then index with <a href="../lsh/index.html">LSH</a>.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Drag the timeline from k=2 up to k=64 and watch the orange (out-of-band) dots turn green and collapse onto the diagonal — concentration in action. Then loosen or tighten <strong>ε</strong>: a wider band forgives more, so fewer dimensions suffice; a tighter band demands a larger k for the same fraction preserved.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Johnson, W. B. &amp; Lindenstrauss, J. "Extensions of Lipschitz mappings into a Hilbert space." <em>Contemporary Mathematics</em> 26:189–206, 1984. The original lemma.</li>
+          <li>Dasgupta, S. &amp; Gupta, A. "An elementary proof of a theorem of Johnson and Lindenstrauss." <em>Random Structures &amp; Algorithms</em> 22(1):60–65, 2003.</li>
+          <li>Ailon, N. &amp; Chazelle, B. "The Fast Johnson–Lindenstrauss Transform." <em>STOC</em>, 2006 — faster projections.</li>
+          <li>Andoni, A. <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021), Lectures 7–8 (dimension reduction). <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../spectral-graph-drawing/index.html">← Spectral Graph Drawing</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../spectral-partitioning/index.html">Spectral Partitioning →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="../../lib/numlib.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

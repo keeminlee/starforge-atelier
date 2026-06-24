@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fast Fourier Transform — The Atlas of Algorithms</title>
+  <meta name="description" content="The FFT through four lenses: watch a signal pass through bit-reversal and butterfly stages into its spectrum, see why it's exactly the DFT in O(n log n), and learn where it runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Fast Fourier Transform — The Atlas of Algorithms">
+  <meta property="og:description" content="The FFT through four lenses: watch a signal pass through bit-reversal and butterfly stages into its spectrum, see why it's exactly the DFT in O(n log n), and learn where it runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#numerical">Numerical Methods</a>
+      <span class="sep">/</span>
+      Fast Fourier Transform
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Numerical Methods</span>
+      <h1>Fast Fourier Transform</h1>
+      <p class="one-liner">Turn a signal into its frequencies in O(n log n) — the divide-and-conquer that reshaped signal processing.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        The bars start as the <strong style="color:var(--cost)">time-domain signal</strong>, pass through bit-reversal and
+        log₂n <strong style="color:var(--accent)">butterfly stages</strong>, and end as the magnitude
+        <strong style="color:var(--invariant)">spectrum</strong> — spiking at exactly the frequencies the signal contains.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Any signal can be written as a sum of sine waves; the <strong>Discrete Fourier Transform</strong> finds how much of each frequency is present. Done directly that's <code>n</code> output bins each summing over <code>n</code> samples — <code>O(n²)</code>. The FFT gets the identical answer in <code>O(n log n)</code> by a divide-and-conquer trick: the DFT of an <code>n</code>-point signal can be assembled from the DFTs of its even-indexed and odd-indexed halves, which share almost all their work. The visualization runs the <em>iterative</em> form: first the samples are shuffled into bit-reversed order (which lines up every recursive even/odd split), then <code>log₂n</code> "butterfly" stages combine ever-larger blocks. The bars begin as your signal and end as its spectrum, peaking at the frequencies it's made of.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">FFT(x):                          # n a power of 2
+    if n == 1: return x
+    E = FFT(even-indexed x);  O = FFT(odd-indexed x)
+    for k in 0 .. n/2−1:
+        t = e^(−2πi·k/n) · O[k]          # the "twiddle" factor
+        X[k]       = E[k] + t            #  ┐ one butterfly
+        X[k + n/2] = E[k] − t            #  ┘
+    return X</pre>
+        <p>The iterative version does the same butterflies bottom-up over bit-reversed input, in place.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The FFT is not an approximation: <span class="invariant-term">it computes exactly the DFT, and inverts losslessly — ifft(fft(x)) = x</span> (up to floating-point rounding). The whole speed-up is one algebraic identity. Split the DFT sum by even and odd indices and factor out a twiddle: <code>X[k] = E[k] + W_n^k·O[k]</code> where <code>E</code>, <code>O</code> are the DFTs of the half-length even/odd subsequences and <code>W_n = e^(−2πi/n)</code>. Because <code>W_n^{k+n/2} = −W_n^k</code>, the <em>same</em> product <code>W_n^k·O[k]</code> serves two outputs — <code>X[k]</code> and <code>X[k+n/2]</code> — with a plus and a minus. That shared product is the butterfly, and reusing it is exactly what collapses the redundant work. This entry's test confirms it against a brute-force DFT and checks the round-trip and <strong>Parseval's theorem</strong> (energy is preserved: Σ|x|² = (1/n)Σ|X|²).</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head">complex mults</span><span class="cost-head"></span>
+          <span class="cost-row-label">FFT</span><span class="cost-cell">O(n log n)</span><span class="cost-cell">≈ (n/2)log₂n</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Direct DFT</span><span class="cost-cell">O(n²)</span><span class="cost-cell">n²</span><span class="cost-cell"></span>
+        </div>
+        <p>There are <code>log₂n</code> stages, each touching all <code>n</code> elements with <code>n/2</code> butterflies — hence <code>O(n log n)</code>, and the readout shows the dramatic gap in multiplication count even at these tiny sizes. For a million-point transform that's the difference between a billion operations and about twenty million: the reason real-time spectral processing is possible at all. The classic radix-2 form needs a power-of-2 length; mixed-radix and Bluestein's algorithm handle arbitrary <code>n</code>, and production libraries like <strong>FFTW</strong> auto-tune the decomposition to the hardware.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>The FFT is one of the most important algorithms ever written — IEEE put it among the top 10 of the 20th century. It is the engine of <strong>digital signal processing</strong>: audio and image compression (the DCT in JPEG/MP3 is an FFT cousin), spectrograms and noise reduction, radar and sonar, software-defined radio and the OFDM modulation in Wi-Fi, 4G/5G, and DSL. It accelerates large-integer and polynomial multiplication (Schönhage–Strassen), convolutions in signal and deep-learning pipelines, and solving PDEs in physics and seismology. Cooley and Tukey published it in 1965 — though Gauss had the idea in 1805, before Fourier's own work.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Hit <strong>New signal</strong> and watch the final spectrum: two bright green peaks (plus their mirror images in the upper half, since the input is real) sit exactly at the two frequencies in the signal — the FFT has decomposed the wiggle into its pure tones. Compare the readout's "complex mults" to <code>n²</code>: even at n=32, the FFT does a fraction of the work, and the gap explodes with size.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Cooley, J. W. &amp; Tukey, J. W. "An Algorithm for the Machine Calculation of Complex Fourier Series." <em>Mathematics of Computation</em> 19(90):297–301, 1965.</li>
+          <li>Heideman, M. T., Johnson, D. H. &amp; Burrus, C. S. "Gauss and the History of the Fast Fourier Transform." <em>IEEE ASSP Magazine</em>, 1984.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §30 (Polynomials and the FFT). MIT Press, 2022.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../consistent-hashing/index.html">← Consistent Hashing</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../kruskal/index.html">Kruskal's MST →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

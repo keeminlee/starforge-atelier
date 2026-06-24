@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colophon — The Atlas of Algorithms</title>
+  <meta name="description" content="How the Atlas of Algorithms is built and verified: a dependency-free engine, one-source-of-truth generators, headless logic tests and screenshots, and the sources it stands on.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Colophon — The Atlas of Algorithms">
+  <meta property="og:description" content="How the Atlas of Algorithms is built and verified: a dependency-free engine, one-source-of-truth generators, headless logic tests and screenshots, and the sources it stands on.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb"><a href="index.html">The Atlas of Algorithms</a><span class="sep">/</span>Colophon</nav>
+
+    <header class="entry-head">
+      <span class="family">Colophon</span>
+      <h1>How it's made</h1>
+      <p class="one-liner">A dependency-free engine, one algorithm written once, and a verify-everything discipline — every entry logic- or statistically-tested and looked at in a real browser before it ships.</p>
+    </header>
+
+    <article class="prose">
+      <section>
+        <h2>Architecture</h2>
+        <p>The shipped site is vanilla HTML/CSS/JS + Canvas — no frameworks, no runtime dependencies, no build step to view it. A single small engine (<code>lib/algo.js</code>) provides the player: it drives an entry's instrumented generator, animates the trace on a canvas (play/pause/step/scrub/speed), surfaces the operation counters (the cost lens) and the annotation (the guarantee lens), and offers shared renderers (<code>Algo.bars</code> for array charts, <code>Algo.grid</code> for cell grids). A tiny audited numerics module (<code>lib/numlib.js</code>) adds dependency-free power iteration and Gaussian projection for the spectral and dimension-reduction entries. One design system (<code>styles/main.css</code>) governs every page: dark, typographic, and sparing with color — each hue means one thing across the whole atlas.</p>
+      </section>
+
+      <section>
+        <h2>One source of truth</h2>
+        <p>Each algorithm is a generator that yields plain-data snapshots; the page animates them and the headless test runs the very same generator and checks its output. The build tools (Node only, never shipped) generate the home map from a manifest, run every entry's logic test, audit that all links resolve, and screenshot each entry in headless Chromium. Nothing is published on a self-report: a green test and a looked-at screenshot are the gate.</p>
+      </section>
+
+      <section>
+        <h2>Verification</h2>
+        <p>Correctness is the price of entry. <strong>Deterministic</strong> algorithms are checked against an independent oracle — a sort against <code>Array.sort</code>, BFS/Dijkstra against a re-derived distance, a convex hull against gift-wrapping. <strong>Randomized and approximate</strong> ones are checked <em>statistically</em>: any hard one-sided invariant must hold on every run (Count–Min never undercounts; a Bloom filter never misses), and the probabilistic bound must hold within tolerance over thousands of seeded trials, asserting the theorem's own factor — never a hand-tuned "looks close" threshold. Then every entry is rendered in a real browser and the screenshot is read by a human to judge whether it's correct, clear, and worth looking at.</p>
+        <p>That discipline earns its keep. Three times, building the modern wing, a test caught a <em>plausible but wrong</em> implementation: MinHash with a cheap linear hash (which is 2-universal but not min-wise independent, and biased the estimate); spectral partitioning using the combinatorial Laplacian instead of the normalized one Cheeger's inequality actually requires; and the Bloom-filter false-positive rate, where the textbook closed form turned out to be an approximation that the empirical rate corrected. Each is now an honesty note in its entry.</p>
+      </section>
+
+      <section>
+        <h2>Honesty</h2>
+        <p>Every historical and factual claim cites a real source, verified. Each entry separates the clean classroom algorithm from what production actually uses — that real sorts are introsort/timsort, that no library ships raw quicksort, that routing layers contraction hierarchies over Dijkstra, that the Bloom FP formula is an approximation. We flag teaching simplifications as simplifications.</p>
+      </section>
+
+      <section>
+        <h2>The shelf it stands on</h2>
+        <p>Standing references (per-entry citations prefer the original paper):</p>
+        <ul class="references">
+          <li>Cormen, Leiserson, Rivest &amp; Stein — <em>Introduction to Algorithms</em> (CLRS), 4th ed., MIT Press, 2022.</li>
+          <li>Knuth — <em>The Art of Computer Programming</em>, Vols. 1–3.</li>
+          <li>Sedgewick &amp; Wayne — <em>Algorithms</em>, 4th ed., and the Princeton algs4 booksite.</li>
+          <li>Skiena — <em>The Algorithm Design Manual</em>, 3rd ed.</li>
+          <li>NIST <em>Dictionary of Algorithms and Data Structures</em> (DADS).</li>
+          <li>Andoni — <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021) — the spine of the modern wing.</li>
+          <li>Spielman — <em>Spectral and Algebraic Graph Theory</em> (Yale); Nelson — <em>Algorithms for Big Data</em>; Vishnoi — <em>Algorithms for Convex Optimization</em>.</li>
+          <li>Original papers per entry — Hoare, Dijkstra, Huffman, Knuth–Morris–Pratt, Cooley–Tukey, Morris, Flajolet–Martin, Broder, Indyk–Motwani, Johnson–Lindenstrauss, Fiedler, Page–Brin, and more.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Method</h2>
+        <p>The atlas was built incrementally by an autonomous loop: a seed file fed to the builder every few minutes, each pass adding one verified entry and recording its work, so the whole grew across many small, checked steps. See the project's <code>CLAUDE.md</code> and <code>docs/</code> for the full pattern. Read the <a href="about.html">about page</a> for the philosophy, the <a href="glossary.html">glossary</a> for terms.</p>
+      </section>
+
+      <section>
+        <h2>License</h2>
+        <p>Released under the <strong>MIT License</strong> © 2026 Keemin Lee. The code, the visualizations, and the written entries are free to use, adapt, and share — attribution appreciated.</p>
+      </section>
+    </article>
+
+    <footer class="site-footer"><a href="index.html">← Back to the Atlas</a></footer>
+  </main>
+</body>
+</html>

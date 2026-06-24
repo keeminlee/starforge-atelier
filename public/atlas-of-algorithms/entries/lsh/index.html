@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Locality-Sensitive Hashing — The Atlas of Algorithms</title>
+  <meta name="description" content="LSH banding through four lenses: watch the empirical collision rate trace the S-curve 1−(1−sʳ)ᵇ, see how banding sharpens the similar/dissimilar threshold, and learn where approximate nearest neighbor runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Locality-Sensitive Hashing — The Atlas of Algorithms">
+  <meta property="og:description" content="LSH banding through four lenses: watch the empirical collision rate trace the S-curve 1−(1−sʳ)ᵇ, see how banding sharpens the similar/dissimilar threshold, and learn where approximate nearest neighbor runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#similarity">Similarity &amp; High-Dimensional Search</a>
+      <span class="sep">/</span>
+      Locality-Sensitive Hashing
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Similarity &amp; High-Dimensional Search</span>
+      <h1>Locality-Sensitive Hashing</h1>
+      <p class="one-liner">Bucket items so that similar ones collide and dissimilar ones don't — turning nearest-neighbor search into a near-linear scan.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        x-axis: the true similarity s of a pair. y-axis: the chance they become candidates.
+        <strong style="color:var(--invariant)">Green</strong> is the theoretical S-curve;
+        <strong style="color:var(--accent)">blue dots</strong> are the measured rate;
+        the <strong style="color:var(--warn)">dashed line</strong> is the threshold s*.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Comparing every pair in a big collection is <code>O(n²)</code> — hopeless at scale. LSH avoids it by hashing items into buckets such that <em>similar</em> items are likely to land together, so you only ever compare pairs that share a bucket. The plot shows the heart of the scheme: for a pair with true similarity <code>s</code> (x-axis), what's the chance they're flagged as candidates (y-axis)? The answer is the green S-curve, and the blue dots — measured by simulating many pairs at each similarity — fall right on it.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">signature: m MinHash rows, split into b bands of r rows (m = b·r)
+for each band:  hash its r rows → a bucket
+candidate pair = two items that share a bucket in ANY band
+then verify candidates exactly</pre>
+        <p>Two items agree on a whole band only if all <code>r</code> of its rows match; they become candidates if that happens in at least one of the <code>b</code> bands.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>Because each MinHash row matches with probability <code>s</code> (the Jaccard similarity — see <a href="../minhash/index.html">MinHash</a>), a specific band's <code>r</code> rows all match with probability <code>s^r</code>, and the pair becomes a candidate unless <em>every</em> band fails: <span class="invariant-term">P(candidate) = 1 − (1 − s^r)^b</span>. That function is an S-curve with an inflection — a soft "threshold" — near <code>s* ≈ (1/b)^(1/r)</code>. Below <code>s*</code> the probability is crushed toward 0; above it, lifted toward 1. So banding turns the gentle linear relationship "match probability = similarity" into a sharp <em>decision</em>: similar pairs almost always collide, dissimilar pairs almost never do. The blue dots tracking the green curve is that guarantee, measured — exactly what this entry's test verifies across many seeded trials.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">All-pairs</span><span class="cost-head">LSH</span><span class="cost-head"></span>
+          <span class="cost-row-label">Comparisons</span><span class="cost-cell">O(n²)</span><span class="cost-cell">≈ O(n + #candidates)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Index / item</span><span class="cost-cell">—</span><span class="cost-cell">O(b)</span><span class="cost-cell"></span>
+        </div>
+        <p>Tuning <code>b</code> and <code>r</code> slides and sharpens the threshold to match your similarity cutoff. More <strong>bands</strong> (with <code>r</code> fixed) lowers <code>s*</code> — more pairs collide, raising recall at the cost of more false candidates to verify; more <strong>rows per band</strong> raises <code>s*</code> — fewer, higher-quality candidates but more misses. It's a recall/precision dial. The win is replacing the quadratic blowup with a scan over only the pairs that share a bucket.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>LSH is the workhorse of large-scale similarity search: near-duplicate detection in web crawls and document stores (MinHash-LSH), audio fingerprinting (Shazam-style), recommendation and entity resolution, and approximate nearest neighbor over embeddings. Different distance measures get their own LSH families — <strong>MinHash</strong> for Jaccard, <strong>SimHash</strong> / random hyperplanes for cosine, <strong>p-stable</strong> projections for Euclidean (Datar–Indyk–Immorlica–Mirrokni, 2004). For dense vectors, modern graph indexes like HNSW often win in practice, but LSH remains the theoretically clean, tunable, and streaming-friendly baseline — and the one with provable guarantees.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Crank <strong>Rows per band</strong> up and watch the S-curve slam to the right and steepen — only very similar pairs survive. Then add <strong>Bands</strong> and watch the threshold slide back left as more chances to collide accumulate. You're literally tuning the precision/recall trade-off by reshaping the curve.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Indyk, P. &amp; Motwani, R. "Approximate nearest neighbors: towards removing the curse of dimensionality." <em>STOC</em>, 1998. The original LSH.</li>
+          <li>Leskovec, Rajaraman &amp; Ullman. <em>Mining of Massive Datasets</em>, 2nd ed., §3.4 (LSH, the banding technique and S-curve). <a href="http://www.mmds.org/">mmds.org</a>.</li>
+          <li>Datar, Indyk, Immorlica &amp; Mirrokni. "Locality-sensitive hashing scheme based on p-stable distributions." <em>SoCG</em>, 2004 — Euclidean LSH.</li>
+          <li>Andoni, A. <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021), Lectures 9–10 (LSH). <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../minhash/index.html">← MinHash</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../spectral-graph-drawing/index.html">Spectral Graph Drawing →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

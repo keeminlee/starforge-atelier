@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fisher–Yates Shuffle — The Atlas of Algorithms</title>
+  <meta name="description" content="The Fisher–Yates shuffle through four lenses: watch one unbiased shuffle swap card by card, see the position×value frequencies flatten to uniform, and learn why the naive shuffle is biased.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Fisher–Yates Shuffle — The Atlas of Algorithms">
+  <meta property="og:description" content="The Fisher–Yates shuffle through four lenses: watch one unbiased shuffle swap card by card, see the position×value frequencies flatten to uniform, and learn why the naive shuffle is biased.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#randomized">Randomized &amp; Probabilistic</a>
+      <span class="sep">/</span>
+      Fisher–Yates Shuffle
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Randomized &amp; Probabilistic</span>
+      <h1>Fisher–Yates Shuffle</h1>
+      <p class="one-liner">Shuffle a deck so every ordering is equally likely — one pass, one swap per card, no bias.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        First, one shuffle: <strong style="color:var(--warn)">orange</strong> is the position being fixed,
+        <strong style="color:var(--accent)">blue</strong> the random partner, <strong style="color:var(--invariant)">green</strong> the locked tail.
+        Then a grid of how often each value lands in each position — it flattens to uniform.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>First the algorithm runs once: walking from the last card down, each position is filled by swapping in a uniformly-random card chosen from itself and everything before it — once a position is set (green), it's never touched again. Then we run thousands of shuffles and tally, for every <em>position</em>, how often each <em>value</em> lands there. If the shuffle is fair, that grid should be perfectly flat — every value equally likely in every slot — and you can watch it converge to that uniform <code>1/n</code>.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">shuffle(a):
+    for i = n-1 down to 1:
+        j = uniform random integer in [0, i]   # inclusive!
+        swap(a[i], a[j])</pre>
+        <p>The detail that matters: <code>j</code> ranges over <code>[0, i]</code> — including <code>i</code> itself. Drawing <code>j</code> from <code>[0, n)</code> every time instead (the "naive" shuffle) is subtly <strong>biased</strong> and does <em>not</em> produce a uniform permutation.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The guarantee is that <span class="invariant-term">every one of the n! orderings comes out with exactly equal probability 1/n!</span>. The clean way to see it: when we fix position <code>i</code> (working downward), we choose uniformly among the <code>i+1</code> candidates still in play, so each is placed there with probability <code>1/(i+1)</code>; multiplying across all steps gives <code>1/n · 1/(n−1) · … · 1/2 · 1 = 1/n!</code> for any particular final arrangement. Because every permutation has the same probability and there are exactly <code>n!</code> of them, the distribution is uniform. The naive variant breaks this by counting <code>n^(n−1)</code> equally-likely swap-sequences, which is <em>not</em> divisible by <code>n!</code> for <code>n &gt; 2</code> — so some permutations must be over- or under-represented. This entry's test checks uniformity directly with a chi-square over all <code>n!</code> permutations.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head">Space</span><span class="cost-head">Random draws</span>
+          <span class="cost-row-label">Fisher–Yates</span><span class="cost-cell">O(n)</span><span class="cost-cell">O(1)</span><span class="cost-cell">n−1</span>
+        </div>
+        <p>One pass, one swap and one random number per element, in place — optimal. (Compare sorting by random keys, which is <code>O(n log n)</code> and needs care to break ties unbiasedly.) The only real subtlety is the random-integer generation: using <code>random() mod (i+1)</code> introduces modulo bias unless handled, and a too-small PRNG state can't even reach all <code>n!</code> permutations for large decks — the reason card-shuffling code needs a well-seeded, wide generator.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Fisher–Yates is <em>the</em> way to shuffle: it backs <code>random.shuffle</code> in Python, <code>Collections.shuffle</code> in Java, and shuffle utilities across languages; it deals cards and randomizes playlists, draws random samples and permutation test orderings in statistics, and randomizes treatment assignment in experiments. Its cautionary twin is famous — in 2008 a browser ballot was shuffled with a biased <code>sort(() =&gt; Math.random() − 0.5)</code> comparator, skewing the order — a reminder that "just randomize it" is exactly where this unbiased one-liner earns its keep.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Let the sample size climb and watch the frequency grid go from blotchy to a flat, even field — every cell converging on <code>1/n</code> (the green borders mark the converged ones). Shrink the number of cards and it flattens faster; there are simply fewer permutations to spread the probability across.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Fisher, R. A. &amp; Yates, F. <em>Statistical Tables for Biological, Agricultural and Medical Research</em>, 1938 (the original shuffle).</li>
+          <li>Durstenfeld, R. "Algorithm 235: Random permutation." <em>Communications of the ACM</em> 7(7):420, 1964 — the modern in-place O(n) form.</li>
+          <li>Knuth, D. <em>The Art of Computer Programming, Vol. 2: Seminumerical Algorithms</em>, §3.4.2 (Algorithm P). Addison-Wesley.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../huffman/index.html">← Huffman Coding</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../pagerank/index.html">PageRank →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

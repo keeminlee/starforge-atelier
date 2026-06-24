@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kruskal's MST — The Atlas of Algorithms</title>
+  <meta name="description" content="Kruskal's minimum spanning tree through four lenses: watch the cheapest cycle-free edges get added via union-find, see the cut property that makes greedy optimal, count the cost, and learn where MST runs.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Kruskal's MST — The Atlas of Algorithms">
+  <meta property="og:description" content="Kruskal's minimum spanning tree through four lenses: watch the cheapest cycle-free edges get added via union-find, see the cut property that makes greedy optimal, count the cost, and learn where MST runs.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#graphs">Graphs &amp; Networks</a>
+      <span class="sep">/</span>
+      Kruskal's MST
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Graphs &amp; Networks</span>
+      <h1>Kruskal's MST</h1>
+      <p class="one-liner">Connect everything for the least total weight — add the cheapest edge that never makes a cycle.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Edges are tried cheapest-first: the <strong style="color:var(--accent)">current</strong> one is either kept
+        (<strong style="color:var(--invariant)">green</strong>, joins two pieces) or skipped (faint, would close a cycle).
+        Node colors are union–find components — watch them merge into one tree.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>A <strong>minimum spanning tree</strong> connects every vertex of a weighted graph using a subset of edges whose total weight is as small as possible — the cheapest way to wire up a network with no redundant loops. Kruskal's method is pure greed with a safety check: sort all edges from cheapest to most expensive, then walk the list and grab each edge <em>unless</em> its two endpoints are already connected (which would create a cycle and waste weight). Telling "already connected?" fast is exactly the job of <a href="../union-find/index.html">union–find</a>: each vertex starts in its own set, and every accepted edge merges two sets. When one set remains, the tree spans the whole graph. The node colors here <em>are</em> those sets, coalescing as edges are added.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">sort edges by weight, ascending
+make each vertex its own set        # union–find
+MST = {}
+for (u, v, w) in sorted edges:
+    if find(u) ≠ find(v):           # different components → no cycle
+        add (u, v) to MST;  union(u, v)
+    # else: same component, skip (would form a cycle)
+stop once MST has V−1 edges</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>Greedy works here because of the <strong>cut property</strong>: <span class="invariant-term">for any way of splitting the vertices into two groups (a "cut"), the lightest edge crossing it belongs to some minimum spanning tree.</span> Kruskal maintains the invariant that the edges chosen so far are a subset of <em>some</em> MST. When it accepts an edge, that edge is the cheapest one joining two still-separate components — i.e. the lightest edge crossing the cut between them — so by the cut property adding it keeps the set extendable to an MST. When it rejects an edge, both endpoints are already in the same component, so the edge closes a cycle; the <strong>cycle property</strong> says the heaviest edge on any cycle is in <em>no</em> MST, and since we're going in increasing weight this edge is that heaviest one — safely discarded. Process every edge and the chosen set <em>is</em> a minimum spanning tree (this entry's test checks its weight against Prim's algorithm).</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head"></span><span class="cost-head"></span>
+          <span class="cost-row-label">Kruskal</span><span class="cost-cell">O(E log E)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+          <span class="cost-row-label">Prim (binary heap)</span><span class="cost-cell">O(E log V)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+        </div>
+        <p>The sort dominates: <code>O(E log E)</code>, which is <code>O(E log V)</code> since <code>E &lt; V²</code>. The union–find work across all operations is only <code>O(E·α(V))</code> — effectively linear — so it's free next to the sort. The alternative, <strong>Prim's algorithm</strong>, grows one tree from a seed using a priority queue and matches the bound; Kruskal tends to win on sparse graphs (and when edges are already sorted, it's essentially linear). For truly enormous graphs, Borůvka's algorithm parallelizes well, and randomized linear-time MST (Karger–Klein–Tarjan) exists.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Minimum spanning trees are everywhere you want to connect points cheaply or cluster them. They design networks — power grids, water pipes, road and telecom layouts, chip routing — at minimum cost; they underlie <strong>single-linkage clustering</strong> (cut the most expensive MST edges to split data into groups) and are a step in some approximation algorithms (e.g. the classic 2-approximation for the travelling salesman). Image segmentation, handwriting recognition, and network-reliability analysis all lean on MSTs. Kruskal's pairing with union–find is also the textbook example of why that little data structure matters.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Watch the node colors: each accepted edge fuses two colors into one, and the algorithm finishes exactly when every node shares a color — that's the forest becoming a single tree in <code>V−1</code> edges. Notice the faint skipped edges: each one was cheap enough to consider but would have closed a loop. Hit <strong>New graph</strong> and the chosen tree changes, but it's always the lightest one possible.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Kruskal, J. B. "On the Shortest Spanning Subtree of a Graph and the Traveling Salesman Problem." <em>Proceedings of the American Mathematical Society</em> 7(1):48–50, 1956.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §21 (Minimum Spanning Trees) — the cut and cycle properties. MIT Press, 2022.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §4.3 (Minimum Spanning Trees). <a href="https://algs4.cs.princeton.edu/43mst/">algs4.cs.princeton.edu/43mst</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../fft/index.html">← Fast Fourier Transform</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../hyperloglog/index.html">HyperLogLog →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

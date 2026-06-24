@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bloom Filter — The Atlas of Algorithms</title>
+  <meta name="description" content="The Bloom filter through four lenses: watch items light bits in a tiny array, see the guarantee (never a false negative, a predictable false-positive rate), count its cost, and learn where it runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Bloom Filter — The Atlas of Algorithms">
+  <meta property="og:description" content="The Bloom filter through four lenses: watch items light bits in a tiny array, see the guarantee (never a false negative, a predictable false-positive rate), count its cost, and learn where it runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#hashing">Hashing Schemes</a>
+      <span class="sep">/</span>
+      Bloom Filter
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Hashing Schemes</span>
+      <h1>Bloom Filter</h1>
+      <p class="one-liner">Test set membership in a handful of bits — it never misses a member, but occasionally cries wolf.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        The bit array. Adding an item lights <strong style="color:var(--accent)">k bits</strong>; a query lights its k probes —
+        <strong style="color:var(--invariant)">green</strong> if all are set (member / possible member),
+        <strong style="color:var(--warn)">orange</strong> when an absent item collides into a false positive.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>A Bloom filter is a set that stores no elements — only a bit array and a few hash functions. To <strong>add</strong> an item, hash it <code>k</code> ways and set those <code>k</code> bits. To <strong>test</strong> membership, hash the query the same <code>k</code> ways and check whether all those bits are set. If any is unset, the item was definitely never added. If all are set, it's <em>probably</em> a member — but it might be a coincidence, with other items' bits happening to cover all <code>k</code>. Watch absent queries occasionally light up entirely (orange): those are the false positives.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">init:    m zero bits, k hash functions
+add(x):  for r in 1..k:  bit[ hᵣ(x) ] = 1
+test(x): return  bit[h₁(x)] AND … AND bit[hₖ(x)]</pre>
+        <p>No deletions (clearing a bit could erase another item's membership), and no element is ever stored — just <code>m</code> bits, regardless of how big the items are.</p>
+      </section>
+
+      <section>
+        <h2>The guarantee</h2>
+        <p>Two halves. First a <strong>hard, one-sided guarantee</strong>: <span class="invariant-term">there are no false negatives</span>. Adding <code>x</code> sets all <code>k</code> of its bits, and bits are never cleared, so a later <code>test(x)</code> finds them all set and returns true — always. A "no" is therefore definitive. Second, a <strong>predictable false-positive rate</strong>. After adding <code>n</code> items, a fraction <code>p</code> of the bits are set; a query for an absent item passes only if all <code>k</code> of its (essentially random) bits happen to fall on set ones, with probability <span class="invariant-term">≈ p^k</span>. Estimating <code>p ≈ 1 − e^(−kn/m)</code> gives the familiar closed form <code>(1 − e^(−kn/m))^k</code>. <em>An honesty note this entry's own test taught us:</em> that closed form is a large-<code>m</code> approximation — it slightly under-counts at small sizes, where the empirical rate tracks the measured-load <code>p^k</code> more closely. Either way: tune <code>m</code> and <code>k</code> to push the false-positive rate as low as you like; the never-miss guarantee is free.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Bloom filter</span><span class="cost-head">Hash set</span><span class="cost-head"></span>
+          <span class="cost-row-label">Space</span><span class="cost-cell">m bits (≈ 10/item)</span><span class="cost-cell">O(n · item size)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">add / test</span><span class="cost-cell">O(k)</span><span class="cost-cell">O(1)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Answer</span><span class="cost-cell">no-FN, ε false-pos</span><span class="cost-cell">exact</span><span class="cost-cell"></span>
+        </div>
+        <p>The win is space: about <code>10</code> bits per item buys a ~1% false-positive rate — independent of how large the items themselves are (URLs, hashes, 100-character keys all cost the same). For a fixed <code>m</code> and <code>n</code>, the false-positive rate is minimized at <code>k = (m/n)·ln 2</code> bits per item. The trade is the small error rate and the no-deletes restriction (counting Bloom filters relax that by storing small counters instead of bits).</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Bloom filters are everywhere a cheap "definitely-not / maybe-yes" pre-check saves an expensive lookup: databases like <strong>Cassandra, HBase, and Bigtable / LevelDB / RocksDB</strong> keep one per SSTable so a read can skip disk when a key is absent; web browsers and Google's Safe Browsing screened URLs against malware lists this way; CDNs and caches avoid storing one-hit-wonders ("don't cache until seen twice"); spell-checkers and network routers use them; and cryptocurrencies (Bitcoin SPV) used them for transaction filtering. The pattern is always the same — a tiny filter in fast memory guards a big, slow, or remote source of truth.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Shrink <strong>Bits (m)</strong> or push <strong>Items added (n)</strong> up and watch the array fill and the false-positive rate climb (more orange queries). Then sweep <strong>Hashes (k)</strong>: too few and collisions are likely; too many and you fill the array too fast — there's a sweet spot, the readout's predicted rate bottoming out around <code>k ≈ (m/n)·ln 2</code>.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Bloom, B. H. "Space/time trade-offs in hash coding with allowable errors." <em>Communications of the ACM</em> 13(7):422–426, 1970. The original.</li>
+          <li>Broder, A. &amp; Mitzenmacher, M. "Network applications of Bloom filters: A survey." <em>Internet Mathematics</em> 1(4):485–509, 2004.</li>
+          <li>Bose, P. et al. "On the false-positive rate of Bloom filters." <em>Information Processing Letters</em> 108(4):210–213, 2008 — why the classic formula is an approximation.</li>
+          <li>Andoni, A. <em>Advanced Algorithms</em> (Columbia COMS 4995-8, 2021), hashing lectures. <a href="https://www.cs.columbia.edu/~andoni/advancedS21/materials.html">course materials</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../edit-distance/index.html">← Edit Distance</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../gradient-descent/index.html">Gradient Descent →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

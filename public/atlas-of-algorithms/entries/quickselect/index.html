@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quickselect — The Atlas of Algorithms</title>
+  <meta name="description" content="Quickselect through four lenses: watch it partition and chase rank k into one side only, see why a placed pivot pins down which side, count the comparisons, and learn where selection runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Quickselect — The Atlas of Algorithms">
+  <meta property="og:description" content="Quickselect through four lenses: watch it partition and chase rank k into one side only, see why a placed pivot pins down which side, count the comparisons, and learn where selection runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#searching">Searching &amp; Selection</a>
+      <span class="sep">/</span>
+      Quickselect
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Searching &amp; Selection</span>
+      <h1>Quickselect</h1>
+      <p class="one-liner">Find the k-th smallest value without fully sorting — partition, then chase rank k into one side only.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        The <strong style="color:var(--warn)">orange</strong> bar is the pivot; <strong style="color:var(--accent)">blue</strong> is
+        the element being compared, <strong style="color:var(--cost)">purple</strong> the confirmed-smaller region. Discarded bars
+        dim out; the <strong style="color:var(--invariant)">green</strong> bar is the answer once the pivot lands on rank k.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>We want the k-th smallest element — the median, the 90th percentile, the 3rd-largest — but we don't need the whole array sorted to get it. Quickselect borrows quicksort's <em>partition</em>: pick a pivot, sweep the window moving every smaller element to the left, and the pivot drops into the exact slot it would occupy if the array were sorted. That slot's index <em>is</em> a rank. If it equals k, we're done. If not, rank k can only be on one side — so we throw the other side away and repeat. Unlike quicksort, we never recurse into both halves; we follow k.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">select(a, k):                 # k-th smallest, 0-indexed
+    lo, hi = 0, n-1
+    while lo < hi:
+        p = partition(a, lo, hi)   # pivot ends at its final sorted position p
+        if   p == k: return a[p]
+        elif p <  k: lo = p + 1    # rank k is to the right
+        else:        hi = p - 1    # rank k is to the left
+    return a[lo]</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The whole method rests on one fact about partitioning: <span class="invariant-term">after partitioning a window, the pivot sits at its final sorted position p — every element left of it is smaller, every element right of it is larger</span>. So p is a true rank, with no need to sort either side. That immediately localizes the target: if p &lt; k the k-th smallest must lie to the right (there are already p+1 elements ≤ the pivot), and if p &gt; k it must lie to the left. Each round the live window keeps the invariant "rank k is somewhere in [lo, hi]," and shrinks; when it shrinks to a single cell, that cell is rank k. Correctness needs nothing probabilistic — the randomness only affects <em>speed</em>.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">average</span><span class="cost-head">worst</span><span class="cost-head">space</span>
+          <span class="cost-row-label">Quickselect</span><span class="cost-cell">O(n)</span><span class="cost-cell">O(n²)</span><span class="cost-cell">O(1)</span>
+          <span class="cost-row-label">Sort then index</span><span class="cost-cell">O(n log n)</span><span class="cost-cell">O(n log n)</span><span class="cost-cell">O(1)–O(n)</span>
+        </div>
+        <p>Because we recurse into only one side, the average work is <code>n + n/2 + n/4 + … ≈ 2n</code> — <strong>linear</strong>, beating the O(n log n) of sort-then-index. The worst case is O(n²) when pivots are consistently extreme (already-sorted input with a naive last-element pivot); a <em>random</em> pivot makes that astronomically unlikely, and the <strong>median-of-medians</strong> algorithm (Blum–Floyd–Pratt–Rivest–Tarjan, 1973) guarantees O(n) worst-case by choosing a provably good pivot — at the price of a larger constant, so introselect uses it only as a fallback.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Selection is everywhere you need an order statistic without a full sort: <code>std::nth_element</code> in C++ and <code>numpy.partition</code> in Python are quickselect (introselect, with a median-of-medians fallback); it computes medians and percentiles for statistics and monitoring dashboards, finds the top-k by acting as the partition step that isolates them, and is the inner loop of median-based image filters and k-nearest-neighbor queries. Whenever you reach for "give me the k-th / the median / the top k," a full sort is usually overkill and this is the tool.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Set <strong>Rank k</strong> to 1 (the minimum) or n (the maximum) and watch the window march steadily from one end. Set it to the middle (the median) and notice how the window roughly halves each partition — that geometric shrink is the linear-time average. The discarded (dimmed) bars are work we provably never have to do.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Hoare, C. A. R. "Algorithm 65: FIND." <em>Communications of the ACM</em> 4(7):321–322, 1961. The original.</li>
+          <li>Blum, Floyd, Pratt, Rivest &amp; Tarjan. "Time bounds for selection." <em>Journal of Computer and System Sciences</em> 7(4):448–461, 1973. Median-of-medians, worst-case O(n).</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §9 (Medians and Order Statistics). MIT Press, 2022.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../union-find/index.html">← Union–Find</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../boyer-moore/index.html">Boyer–Moore →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

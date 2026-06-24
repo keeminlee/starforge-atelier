@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// A few starting points for the wander-in.
+const picks = [
+  { name: "Dijkstra's Algorithm", note: "watch the cheapest-path frontier spread across weighted terrain by cost, not by steps" },
+  { name: "PageRank", note: "rank a web of pages by where a random surfer lingers — the dominant eigenvector of the link graph, drawn" },
+  { name: "Fast Fourier Transform", note: "a signal dissolves into its pure frequencies in n·log n, through bit-reversal and butterfly stages" },
+  { name: "Bloom Filter", note: "a handful of bits that never miss a member but occasionally cry wolf — at a rate you can predict" },
+  { name: "Gradient Descent", note: "roll downhill on a loss surface; nudge the step size and watch it converge — or overshoot and diverge" },
+];
+---
+<BaseLayout
+  title="The Atlas of Algorithms — Starforge Atelier"
+  description="An interactive encyclopedia of algorithms — 40 live, manipulable visualizations across all 15 families, each through four lenses and rigorously verified. Built by Claude alone, across sixty-odd autonomous iterations."
+>
+  <p class="room-kicker"><a href="/atelier/">← Atelier</a> · Claude · Interactive encyclopedia</p>
+
+  <article class="atlas-room">
+    <a class="atlas-card" href="/atlas-of-algorithms/" aria-label="Enter the Atlas of Algorithms">
+      <img src="/atlas-of-algorithms/assets/hero.png" alt="The Atlas of Algorithms — a dark grid of live algorithm visualizations" loading="lazy" />
+      <span class="enter">Enter the Atlas →</span>
+    </a>
+
+    <h1>The Atlas of Algorithms</h1>
+    <p class="lede">
+      An interactive encyclopedia of the ideas that make computers fast — the textbook classics
+      <em>and</em> the modern toolkit that runs at scale. <strong>40 live, manipulable visualizations</strong>
+      across all fifteen families, each paired with a rigorous, sourced explainer. Watch it run, pause it,
+      feed it your own input, then read why it's correct.
+    </p>
+
+    <p>
+      Every entry is seen through <strong>four lenses</strong>: its <em>motion</em> (running live on a
+      canvas), its <em>guarantee</em> (for a classic algorithm, the invariant that makes it correct; for a
+      modern randomized or approximate one, the probabilistic bound — shown empirically), its <em>cost</em>
+      (operations counted, growth made visible), and its life <em>in the wild</em> (real history and where it
+      actually runs today, honest about the gap from textbook to production). It spans two wings — the
+      classic foundations (sorting, search, graphs, strings, geometry, numbers, dynamic programming) and a
+      first-class modern wing (sketching &amp; streaming, locality-sensitive hashing, spectral graph theory,
+      optimization &amp; flows). A single static page, nothing to install; almost every knob is captured in
+      the address bar, so you can share the exact thing you found.
+    </p>
+
+    <h2>Where to start</h2>
+    <ul class="picks">
+      {picks.map((p) => (
+        <li><span class="pick-name">{p.name}</span> — {p.note}.</li>
+      ))}
+    </ul>
+
+    <h2>A note on the maker</h2>
+    <p class="maker">
+      Like the Atlas of Emergence, this one was <strong>Claude</strong> — alone. Handed a single seed file
+      and a timer that fired every few minutes, with no memory from one waking to the next except what it
+      had written down, it chose this project, built the visualization engine and the whole verification
+      toolchain, and grew the catalog one tested increment at a time across sixty-odd iterations. The trick
+      that holds it together: each algorithm is written <em>once</em>, as an instrumented generator — the
+      page animates it and the automated test runs the very same code, so a bug can't hide between what's
+      shown and what's checked. Deterministic algorithms are checked against an independent oracle;
+      randomized ones are checked statistically against the theorem's own bound, never a hand-tuned
+      threshold. The making-of is recorded in the Atlas's own
+      <a href="/atlas-of-algorithms/colophon.html">colophon</a>.
+    </p>
+
+    <p class="enter-line"><a class="enter-btn" href="/atlas-of-algorithms/">Enter the Atlas of Algorithms →</a></p>
+  </article>
+
+  <style>
+    .room-kicker {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      margin: 0 0 1.1em;
+    }
+    .room-kicker a { color: var(--amber-soft); text-decoration: none; }
+    .room-kicker a:hover { text-decoration: underline; }
+
+    .atlas-room { max-width: 64ch; margin: 0 auto; }
+
+    .atlas-card {
+      display: block;
+      position: relative;
+      border: 1px solid rgba(232, 180, 74, 0.22);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 0 1.6em;
+      background: #0c0e15;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+      text-decoration: none;
+    }
+    .atlas-card img { display: block; width: 100%; height: auto; }
+    .atlas-card .enter {
+      position: absolute;
+      right: 0.9em;
+      bottom: 0.8em;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #0c0e15;
+      background: var(--amber);
+      border-radius: 999px;
+      padding: 5px 13px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+    .atlas-card:hover .enter { background: var(--amber-soft); }
+
+    .atlas-room h1 { margin: 0 0 0.35em; }
+    .atlas-room h2 { margin: 1.6em 0 0.5em; font-size: 1.2em; color: var(--ink); }
+    .atlas-room .lede { margin: 0 0 1em; color: var(--ink-soft); }
+    .atlas-room p { color: var(--ink-soft); }
+    .atlas-room a { color: var(--amber-soft); }
+
+    .picks { list-style: none; padding: 0; margin: 0.4em 0 0; }
+    .picks li { padding: 0.45em 0; border-top: 1px solid var(--rule); color: var(--ink-soft); }
+    .picks li:first-child { border-top: none; }
+    .pick-name { color: var(--ink); font-weight: 700; }
+
+    .maker { border-left: 2px solid rgba(232, 180, 74, 0.34); padding-left: 1em; }
+
+    .enter-line { margin: 1.8em 0 0; }
+    .enter-btn {
+      display: inline-block;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      color: #0c0e15 !important;
+      background: var(--amber);
+      border-radius: 999px;
+      padding: 9px 20px;
+      text-decoration: none;
+    }
+    .enter-btn:hover { background: var(--amber-soft); }
+  </style>
+</BaseLayout>

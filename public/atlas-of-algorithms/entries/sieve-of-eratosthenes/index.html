@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sieve of Eratosthenes — The Atlas of Algorithms</title>
+  <meta name="description" content="The Sieve of Eratosthenes through four lenses: watch each prime cross out its multiples until only primes survive, see the invariant, count its near-linear cost, and learn where prime sieving runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Sieve of Eratosthenes — The Atlas of Algorithms">
+  <meta property="og:description" content="The Sieve of Eratosthenes through four lenses: watch each prime cross out its multiples until only primes survive, see the invariant, count its near-linear cost, and learn where prime sieving runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#numerical">Numerical &amp; Number-Theoretic</a>
+      <span class="sep">/</span>
+      Sieve of Eratosthenes
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Numerical &amp; Number-Theoretic</span>
+      <h1>Sieve of Eratosthenes</h1>
+      <p class="one-liner">Find every prime up to n by crossing out the multiples of each prime in turn — what survives is prime.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Each round, the next uncrossed number (<strong style="color:var(--invariant)">green</strong>) is prime;
+        its multiples are struck (<strong style="color:var(--warn)">orange</strong>) and join the dimmed composites.
+        When done, every <strong style="color:var(--invariant)">green</strong> cell is a prime.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Write the numbers from 1 to n in a grid. The first uncrossed number above 1 is 2 — it's prime, so we cross out every multiple of 2. The next still-uncrossed number is 3 — prime — cross out its multiples. Then 5, then 7, and so on. Any number that gets crossed had a smaller prime factor; any number that's never crossed has none, so it's prime. Watch the orange waves of multiples fall away each round until only the primes remain green.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">sieve(n):
+    mark all of 2..n as prime
+    for p = 2, 3, 4, … while p·p ≤ n:
+        if p is still marked prime:
+            for m = p², p²+p, p²+2p, … ≤ n:
+                mark m as composite
+    the still-marked numbers are the primes</pre>
+        <p>Two tricks make it fast: start crossing at <code>p²</code> (smaller multiples already fell to smaller primes), and stop sieving once <code>p² &gt; n</code> (anything composite ≤ n must have a factor ≤ √n).</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The loop maintains a clean two-part fact: <span class="invariant-term">a number is still marked prime if and only if it has no prime factor smaller than the current p</span>. So when the loop advances to a <code>p</code> that is still marked, <code>p</code> has no smaller prime factor — which is the definition of being prime. Crossing out <code>p</code>'s multiples then restores the invariant for the next step, and crucially it can <em>never</em> cross out a prime, because a prime has no factors to be a multiple of. Once <code>p² &gt; n</code> the invariant says every remaining marked number is free of <em>all</em> factors ≤ √n, hence prime — so the sweep can stop. The survivors are exactly the primes; no primality test is ever performed, only crossing-out.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head">Space</span><span class="cost-head"></span>
+          <span class="cost-row-label">Sieve</span><span class="cost-cell">O(n log log n)</span><span class="cost-cell">O(n)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Trial-divide each</span><span class="cost-cell">O(n√n)</span><span class="cost-cell">O(1)</span><span class="cost-cell"></span>
+        </div>
+        <p>The work to cross out one prime's multiples is <code>n/p</code>, and summing <code>n/p</code> over the primes <code>p ≤ n</code> gives <code>n·(sum of reciprocals of primes) ≈ n·ln ln n</code> — astonishingly close to linear. That blows away testing each number for primality separately. The cost is the <code>O(n)</code> bit array; segmented sieves break that into cache-sized chunks to push <code>n</code> into the billions.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>The sieve is the standard way to enumerate primes in bulk — precomputing prime tables for number theory and competitive programming, factoring via smallest-prime-factor tables, and as a subroutine when an algorithm needs "all primes up to N." It's over 2000 years old (Eratosthenes of Cyrene, ~200 BC) and still the method of choice; modern variants (the sieve of Atkin, wheel factorization, segmented sieves) trim constants but keep the idea. For testing a <em>single</em> large number, though, you'd reach for a probabilistic test like Miller–Rabin instead — sieving is for generating many primes, not checking one.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through the first few rounds and notice how quickly the grid empties: the 2s and 3s alone strike most composites, and later primes find fewer and fewer new multiples to cross. Notice too that sieving stops well before n — once a prime exceeds <code>√n</code>, every survivor is already guaranteed prime.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Eratosthenes of Cyrene (c. 200 BC); described by Nicomachus, <em>Introduction to Arithmetic</em>. The classical sieve.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §31 (Number-Theoretic Algorithms). MIT Press, 2022.</li>
+          <li>Crandall, R. &amp; Pomerance, C. <em>Prime Numbers: A Computational Perspective</em>, 2nd ed., §3 (sieving, segmented sieves). Springer, 2005.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../convex-hull/index.html">← Convex Hull</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../kmp/index.html">Knuth–Morris–Pratt →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

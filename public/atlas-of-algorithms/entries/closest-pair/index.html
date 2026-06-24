@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closest Pair of Points — The Atlas of Algorithms</title>
+  <meta name="description" content="The closest-pair divide-and-conquer algorithm through four lenses: watch the plane split and a thin strip get checked, see why the strip can't hide a closer pair, count the savings, and learn where it runs.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Closest Pair of Points — The Atlas of Algorithms">
+  <meta property="og:description" content="The closest-pair divide-and-conquer algorithm through four lenses: watch the plane split and a thin strip get checked, see why the strip can't hide a closer pair, count the savings, and learn where it runs.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#geometry">Computational Geometry</a>
+      <span class="sep">/</span>
+      Closest Pair of Points
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Computational Geometry</span>
+      <h1>Closest Pair of Points</h1>
+      <p class="one-liner">Find the two nearest points among many in O(n log n) — divide the plane, then mind only a thin strip.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Points split at the dashed median line; the shaded band is the δ-strip. The
+        <strong style="color:var(--invariant)">green</strong> segment is the closest pair so far,
+        <strong style="color:var(--accent)">blue</strong> points are the strip candidates being scanned.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Given a cloud of points, which two are closest? Checking every pair is <code>O(n²)</code>. Divide and conquer does better: sort the points by x, cut at the median into a left and right half, and find the closest pair in each half recursively. Let δ be the smaller of those two distances. The only pairs left unconsidered are those split across the line — and any such pair closer than δ must have <em>both</em> endpoints within δ of the line, in a thin vertical <strong>strip</strong>. So we only have to reconcile that strip. Watch the recursion bottom out on tiny clusters, then the strips light up as the halves merge.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">closest(points sorted by x):
+    if ≤ 3 points: compare all pairs directly
+    split at median x → left, right
+    δ = min(closest(left), closest(right))
+    strip = points within δ of the split line, sorted by y
+    for each p in strip:
+        compare p to the next few points in y-order   # ≤ 7 of them
+        update δ if any is closer
+    return δ</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The whole speed-up rests on a packing argument: <span class="invariant-term">no split-crossing pair can be closer than δ unless both of its points lie in the 2δ-wide strip — and within the strip, sorted by y, each point can have at most a constant number of others within δ.</span> Why constant: pack points into the strip so all are ≥ δ apart (they must be, or we'd already know a closer pair within a half); a δ × 2δ box around any point can hold only a bounded number of such points (at most 8, classically). So scanning each strip point against its next ~7 neighbors in y-order is enough — and the moment a neighbor is more than δ farther in y, we can stop, because nothing beyond it can be within δ. Because we never skip a strip pair that could be closer, the answer is exactly the true closest pair (this entry's test confirms it against brute force).</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head">Space</span><span class="cost-head"></span>
+          <span class="cost-row-label">Divide &amp; conquer</span><span class="cost-cell">O(n log n)</span><span class="cost-cell">O(n)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Brute force</span><span class="cost-cell">O(n²)</span><span class="cost-cell">O(1)</span><span class="cost-cell"></span>
+        </div>
+        <p>The recurrence is <code>T(n) = 2·T(n/2) + O(n)</code> — the same as merge sort — giving <code>O(n log n)</code>, provided the strip is processed in linear time (pre-sort by y once, or merge y-orders up the recursion, so each level is O(n)). That matches the known lower bound for the problem in the comparison model, so it's optimal. A clever <strong>randomized</strong> algorithm (Rabin; Khuller–Matias) even reaches expected <code>O(n)</code> using a grid keyed on the current δ.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Closest-pair is a foundational computational-geometry primitive and a classic teaching example of divide and conquer (Shamos &amp; Hoey, 1975; Bentley &amp; Shamos). The underlying question — nearest neighbors among many points — drives collision detection in games and simulation, clustering and anomaly detection, map and GIS queries ("nearest station"), and de-duplication of near-identical records. At higher dimensions the exact strip trick fades and the torch passes to spatial indexes (k-d trees, ball trees) and, when dimensions get large, to approximate methods like <a href="../lsh/index.html">LSH</a>.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through the start: small clusters get solved by brute force first, then each merge draws its split line and shaded strip. Watch how few points ever fall inside the strip — that thinness is the whole algorithm. Add more <strong>Points</strong> and compare the comparison count in the readout to <code>n(n−1)/2</code>; the gap widens fast.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Shamos, M. I. &amp; Hoey, D. "Closest-point problems." <em>16th IEEE Symposium on Foundations of Computer Science (FOCS)</em>, 1975.</li>
+          <li>Bentley, J. L. &amp; Shamos, M. I. "Divide-and-conquer in multidimensional space." <em>STOC</em>, 1976.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §33.4 (Finding the closest pair of points). MIT Press, 2022.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../boyer-moore/index.html">← Boyer–Moore</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../knapsack/index.html">0/1 Knapsack →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

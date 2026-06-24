@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binary Heap — The Atlas of Algorithms</title>
+  <meta name="description" content="The binary heap through four lenses: watch values sift up and down a tree packed into an array, see the heap-property invariant that keeps the minimum at the root, count its log-n cost, and learn where priority queues run in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Binary Heap — The Atlas of Algorithms">
+  <meta property="og:description" content="The binary heap through four lenses: watch values sift up and down a tree packed into an array, see the heap-property invariant that keeps the minimum at the root, count its log-n cost, and learn where priority queues run in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#structures">Trees &amp; Structures</a>
+      <span class="sep">/</span>
+      Binary Heap
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Trees &amp; Structures</span>
+      <h1>Binary Heap</h1>
+      <p class="one-liner">A tree packed into an array that always serves the smallest item next — the engine inside a priority queue.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        The heap as a tree (and its backing array below). The <strong style="color:var(--invariant)">green</strong> root is the
+        current minimum; <strong style="color:var(--accent)">blue</strong> is the element sifting; <strong style="color:var(--warn)">orange</strong>
+        is the one it's compared/swapped against. The green row is the sorted output.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>A binary heap is a tree with a strict rule — every parent is no larger than its children — but it's stored as a plain <em>array</em>, with node <code>i</code>'s children at <code>2i+1</code> and <code>2i+2</code>. To <strong>insert</strong>, drop the value in as a new leaf and let it "sift up," swapping with its parent until it's no longer smaller. To <strong>extract the minimum</strong>, take the root, move the last leaf up to fill the hole, and let it "sift down," swapping with its smaller child until order is restored. Here we insert a batch of values, then extract-min repeatedly — and the values come out in sorted order.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">insert(x):     append x as a leaf
+               while x &lt; parent(x): swap up        # sift up
+
+extract_min(): m = root
+               move last leaf to the root
+               while root &gt; smaller child: swap down # sift down
+               return m
+
+children of i: 2i+1, 2i+2     parent of i: (i-1)/2</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The one rule, maintained at all times, is the <strong>heap property</strong>: <span class="invariant-term">every node is ≤ both of its children</span>. From it, the minimum of the whole heap must sit at the root (anything smaller would violate the property somewhere on the path up). Each operation breaks the property in exactly one place and walks it back: sift-up fixes a child that's smaller than its parent by trading them, moving the violation one level up until it's gone; sift-down does the mirror, pushing a too-large parent down past its smaller child. Because the tree is kept <em>complete</em> (filled level by level — which is what lets it live in a gap-free array), its height is <code>⌊log₂ n⌋</code>, so each sift touches at most that many levels. The "always-min-at-root" guarantee is what makes the heap a priority queue.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">insert</span><span class="cost-head">extract-min</span><span class="cost-head">peek-min</span>
+          <span class="cost-row-label">Time</span><span class="cost-cell">O(log n)</span><span class="cost-cell">O(log n)</span><span class="cost-cell">O(1)</span>
+        </div>
+        <p>A sift walks one root-to-leaf path, so it's <code>O(log n)</code>; reading the minimum is free. The array layout means no pointers and excellent cache behavior. Building a heap from <code>n</code> items by repeated insertion is <code>O(n log n)</code>, but a bottom-up "heapify" does it in <code>O(n)</code>. Draining the heap with <code>n</code> extract-mins yields the values in sorted order in <code>O(n log n)</code> — which is exactly <strong>heapsort</strong>, an in-place, worst-case-guaranteed sort.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>The binary heap is the default <strong>priority queue</strong>, and priority queues are everywhere: <a href="../dijkstra/index.html">Dijkstra</a>'s and A*'s frontier, event-driven simulation, OS process scheduling, Huffman-code construction, k-way merging and external sorting, and "top-k" / streaming-median problems. It backs <code>heapq</code> in Python, <code>std::priority_queue</code> in C++, and <code>PriorityQueue</code> in Java. Variants trade the constant factors — d-ary heaps (more children, shallower), pairing and Fibonacci heaps (faster decrease-key for graph algorithms) — but the binary heap's simplicity and cache-friendliness make it the everyday choice.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Watch the extract phase: each time the root (green) leaves, the last leaf jumps to the top and tumbles back down to its level. Notice the output row is always sorted — the heap is sorting for you, one cheap <code>O(log n)</code> extraction at a time.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Williams, J. W. J. "Algorithm 232: Heapsort." <em>Communications of the ACM</em> 7(6):347–348, 1964. The binary heap + heapsort.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §6 (Heapsort) and §6.5 (Priority queues). MIT Press, 2022.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §2.4 (Priority Queues). <a href="https://algs4.cs.princeton.edu/24pq/">algs4.cs.princeton.edu/24pq</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../kmp/index.html">← Knuth–Morris–Pratt</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../edit-distance/index.html">Edit Distance →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

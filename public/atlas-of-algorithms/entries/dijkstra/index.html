@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dijkstra's Algorithm — The Atlas of Algorithms</title>
+  <meta name="description" content="Dijkstra's algorithm through four lenses: watch the cheapest-first frontier flow through weighted terrain, see why a settled node's distance is final, count its cost, and learn where shortest paths run in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Dijkstra's Algorithm — The Atlas of Algorithms">
+  <meta property="og:description" content="Dijkstra's algorithm through four lenses: watch the cheapest-first frontier flow through weighted terrain, see why a settled node's distance is final, count its cost, and learn where shortest paths run in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#graphs">Graphs</a>
+      <span class="sep">/</span>
+      Dijkstra's Algorithm
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Graphs</span>
+      <h1>Dijkstra's Algorithm</h1>
+      <p class="one-liner">Find the cheapest route through weighted terrain by always settling the nearest unfinished node next.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Cell shade = terrain cost (lighter = pricier). <strong style="color:var(--cost)">Purple</strong> = source,
+        <strong style="color:var(--warn)">orange</strong> = target. The <strong style="color:var(--accent)">blue</strong>
+        region is settled (distance final); the <strong style="color:var(--invariant)">green</strong> trail is the cheapest path.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Same grid as breadth-first search, but now every cell costs something to enter — think hills and mud, lighter cells being more expensive. Dijkstra repeatedly settles the unfinished cell with the smallest distance-so-far, then relaxes its neighbors. Because it always grows the cheapest frontier, the blue settled region doesn't spread in even rings like BFS — it <em>bulges through cheap valleys and stalls against expensive ridges</em>. When the target is settled, its distance is the minimum possible total cost, and the green trail is the route that achieves it — which may be longer in cells than a straight shot, but cheaper in total.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">dijkstra(source):
+    dist[source] = 0;  everything else = ∞
+    PQ = all nodes, keyed by dist
+    while PQ not empty:
+        u = PQ.extract_min()          # closest unfinished node
+        for each neighbor v of u:
+            if dist[u] + weight(v) &lt; dist[v]:
+                dist[v] = dist[u] + weight(v)   # relax
+                parent[v] = u</pre>
+        <p>A <strong>priority queue</strong> (a binary heap) replaces BFS's plain FIFO queue — that's the one change that turns "fewest hops" into "cheapest cost."</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p><span class="invariant-term">When a node is settled (extracted from the priority queue as the current minimum), its recorded distance is its true shortest-path cost — final, never to improve.</span> Why: suppose <code>u</code> is being extracted with distance <code>d</code>, and imagine some shorter path to <code>u</code> existed. That path leaves the settled set somewhere, at a first unsettled node <code>x</code>; the prefix to <code>x</code> already costs at least <code>dist[x] ≥ d</code> (or <code>x</code> would have been extracted before <code>u</code>), and the rest of the path adds only <strong>non-negative</strong> weight — so it can't total less than <code>d</code>. Contradiction. The whole argument hinges on weights being <code>≥ 0</code>: with a negative edge a "finished" node could later be cheapened, and the invariant — and Dijkstra — break (that's when you need Bellman–Ford).</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Binary-heap PQ</span><span class="cost-head"></span><span class="cost-head"></span>
+          <span class="cost-row-label">Time</span><span class="cost-cell">O((V+E) log V)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+          <span class="cost-row-label">Space</span><span class="cost-cell">O(V)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+        </div>
+        <p>Each node is extracted once (<code>V</code> heap pops) and each edge can trigger a decrease-key (<code>E</code> updates); with a binary heap that's <code>O((V+E)\,\log V)</code>. A Fibonacci heap improves it to <code>O(E + V\,\log V)</code> in theory, though binary (or pairing) heaps usually win in practice. When all weights are equal, Dijkstra degenerates to exactly BFS — the priority queue just reproduces FIFO order. (This demo uses a simple O(V²) scan for clarity; the heap version is what ships.)</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Dijkstra is the canonical shortest-path algorithm: road and transit routing (as the base under A* and, at continental scale, contraction hierarchies), network routing protocols (OSPF / IS-IS compute least-cost paths with it), robot motion planning, and anywhere a graph has non-negative costs. Its descendants specialize it: <strong>A*</strong> adds a goal-directed heuristic to explore far fewer cells, and modern map services precompute shortcuts so a continental query answers in microseconds. For graphs with negative edges, <strong>Bellman–Ford</strong> takes over; for all-pairs, <strong>Floyd–Warshall</strong>.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Turn <strong>Terrain roughness</strong> up and watch the settled region stop being round — it races down cheap corridors and avoids the bright expensive cells, and the green path visibly detours around costly terrain. Compare with <a href="../bfs/index.html">BFS</a> on the same layout: BFS counts cells, Dijkstra counts cost, and the two pick different routes.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Dijkstra, E. W. "A note on two problems in connexion with graphs." <em>Numerische Mathematik</em> 1:269–271, 1959. The original.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §22.3 — Dijkstra, the priority-queue implementation, and the non-negative-weight invariant. MIT Press, 2022.</li>
+          <li>Fredman, M. &amp; Tarjan, R. "Fibonacci heaps and their uses in improved network optimization algorithms." <em>JACM</em> 34(3), 1987 — the O(E + V log V) bound.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §4.4 (Shortest Paths). <a href="https://algs4.cs.princeton.edu/44sp/">algs4.cs.princeton.edu/44sp</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../bfs/index.html">← Breadth-First Search</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../a-star/index.html">A* Search →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

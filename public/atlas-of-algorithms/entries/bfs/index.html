@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breadth-First Search — The Atlas of Algorithms</title>
+  <meta name="description" content="BFS through four lenses: watch a breadth-first wave flood a grid maze in distance layers, see why first-arrival means shortest path, count its linear cost, and learn where it runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Breadth-First Search — The Atlas of Algorithms">
+  <meta property="og:description" content="BFS through four lenses: watch a breadth-first wave flood a grid maze in distance layers, see why first-arrival means shortest path, count its linear cost, and learn where it runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#graphs">Graphs</a>
+      <span class="sep">/</span>
+      Breadth-First Search
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Graphs</span>
+      <h1>Breadth-First Search</h1>
+      <p class="one-liner">Flood a grid in expanding waves; the first time the wave touches a cell, it has arrived by a shortest path.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        <strong style="color:var(--cost)">Purple</strong> = source, <strong style="color:var(--warn)">orange</strong> = target,
+        dark cells = walls. The <strong style="color:var(--accent)">blue</strong> wave is the current frontier (older cells fade);
+        the <strong style="color:var(--invariant)">green</strong> trail is the recovered shortest path.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>The grid is a graph: each open cell is a node, joined to its four neighbors. BFS starts at the source and explores in <em>layers</em> — first all cells one step away, then all cells two steps away, and so on — so the blue frontier spreads outward like a flood (a diamond, because diagonal moves aren't allowed). The instant the wave reaches the target, we stop and walk the parent pointers backward to trace the path that got there. Because the wave reaches every cell as early as possible, that path is a shortest one.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">bfs(source):
+    queue = [source];  dist[source] = 0
+    while queue not empty:
+        u = queue.dequeue()          # FIFO ⇒ nearest-first
+        for each neighbor v of u, not yet seen:
+            dist[v] = dist[u] + 1
+            parent[v] = u
+            queue.enqueue(v)</pre>
+        <p>The <strong>FIFO queue</strong> is the whole trick: it hands back cells in nondecreasing distance order, so the search never jumps ahead to a farther cell before finishing a nearer one.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The queue always holds cells of at most two adjacent distances, in order, and: <span class="invariant-term">when a cell is first dequeued (first reached), its recorded <code>dist</code> is its true shortest-path distance from the source</span>. Induction on distance: suppose every cell at distance <code>≤ d</code> was discovered with the correct value. A cell at distance <code>d+1</code> has some neighbor at distance <code>d</code>; that neighbor is dequeued before any cell of distance <code>d+1</code> (FIFO order), and discovers it with <code>dist = d+1</code> — which is correct, since it cannot be closer. So no cell is ever assigned too large a distance, and the parent links form a shortest-path tree. This is exactly why BFS solves shortest paths on <em>unweighted</em> graphs (and why it fails once edges have weights — that's <a href="../../index.html#graphs">Dijkstra's</a> job).</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head">Space</span><span class="cost-head"></span>
+          <span class="cost-row-label">BFS</span><span class="cost-cell">O(V + E)</span><span class="cost-cell">O(V)</span><span class="cost-cell"></span>
+        </div>
+        <p>Every cell is enqueued and dequeued once, and each edge is examined once from each side — linear in the size of the graph. On a grid of <code>V</code> cells with 4-connectivity, <code>E ≈ 2V</code>, so it's <code>O(V)</code>. The space is the queue plus the distance/parent arrays. Raise the wall density and watch the wave detour around obstacles — but it still finds the genuinely shortest route through the maze, never just the first route.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>BFS is the backbone of unweighted shortest paths and reachability: grid pathfinding in games and robotics (often as the base case under A*), the "degrees of separation" / friend-suggestion queries in social graphs, web crawling level by level, finding connected components and testing bipartiteness, garbage-collection mark phases, and network-broadcast / flood-fill (the paint-bucket tool). Whenever the question is "what's reachable, and how few hops away," BFS is the answer — and its layered structure makes it the natural starting point for the weighted and heuristic search algorithms that build on it.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through with <strong>▶|</strong> and watch the distance readout tick up one per layer — each blue ring is exactly one step farther than the last. Crank <strong>Wall density</strong> up: the wave splits and curls around walls, and the green path bends with it, yet it's always a shortest path through whatever maze remains.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §20.2 (Breadth-first search) — the algorithm, the shortest-path proof, and the BFS tree. MIT Press, 2022.</li>
+          <li>Moore, E. F. "The shortest path through a maze." <em>Proc. Int. Symp. on the Theory of Switching</em>, 1959 — an origin of BFS.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §4.1 (Undirected Graphs). <a href="https://algs4.cs.princeton.edu/41graph/">algs4.cs.princeton.edu/41graph</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../spectral-partitioning/index.html">← Spectral Partitioning</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../dijkstra/index.html">Dijkstra’s Algorithm →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

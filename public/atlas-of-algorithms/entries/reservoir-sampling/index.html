@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservoir Sampling — The Atlas of Algorithms</title>
+  <meta name="description" content="Reservoir sampling through four lenses: watch each item's chance of being sampled converge to a uniform k/n, see the invariant that keeps it fair at every prefix, count its O(k) cost, and learn where one-pass sampling runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Reservoir Sampling — The Atlas of Algorithms">
+  <meta property="og:description" content="Reservoir sampling through four lenses: watch each item's chance of being sampled converge to a uniform k/n, see the invariant that keeps it fair at every prefix, count its O(k) cost, and learn where one-pass sampling runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#streaming">Sketching &amp; Streaming</a>
+      <span class="sep">/</span>
+      Reservoir Sampling
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Sketching &amp; Streaming</span>
+      <h1>Reservoir Sampling</h1>
+      <p class="one-liner">Pick k items uniformly at random from a stream of unknown length, in one pass and O(k) memory.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Each bar is one item's frequency of ending up in the sample, accumulated over many runs.
+        The <strong style="color:var(--warn)">dashed line</strong> is the uniform target k/n.
+        Bars turn <strong style="color:var(--invariant)">green</strong> as they converge onto it.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>We run the sampler over and over on the same <code>n</code>-item stream and tally how often each item survives into the final sample of size <code>k</code>. Each bar is one item's empirical probability of being chosen. The claim is that <em>every</em> item — first or last, it doesn't matter — ends up with the same chance, <code>k/n</code>. Watch the bars, jittery at first, settle onto the dashed line and turn green: that flatness <em>is</em> the uniformity guarantee, measured.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">reservoir(stream, k):
+    res = first k items
+    for i = k, k+1, …:            # i is 0-based index of the next item
+        j = random integer in [0, i]
+        if j &lt; k:
+            res[j] = stream[i]     # evict slot j, keep the new item
+    return res</pre>
+        <p>The magic number is <code>k/(i+1)</code> — the probability the <code>i</code>-th item is kept. It needs no knowledge of the stream's length and never looks back.</p>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The guarantee holds at <em>every</em> prefix, not just the end: <span class="invariant-term">after processing i items, each of them is in the reservoir with probability exactly k/i</span>. Induction makes it precise. It is clearly true after the first <code>k</code> items (all are in, probability <code>k/k = 1</code>). Assume it holds after <code>i</code> items; the <code>(i+1)</code>-th item is kept with probability <code>k/(i+1)</code> ✓. An <em>old</em> item, previously in with probability <code>k/i</code>, stays unless it is the evicted slot: it survives with probability <code>k/i · (1 − (k/(i+1))·(1/k)) = k/i · (i/(i+1)) = k/(i+1)</code> ✓. So after all <code>n</code> items, every item's probability is <code>k/n</code> — uniform, and the early items are not favored despite having been in the reservoir longer. That cancellation is the whole trick.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Time</span><span class="cost-head">Space</span><span class="cost-head">Passes</span>
+          <span class="cost-row-label">Reservoir (Alg. R)</span><span class="cost-cell">O(n)</span><span class="cost-cell">O(k)</span><span class="cost-cell">1</span>
+          <span class="cost-row-label">Store-all then sample</span><span class="cost-cell">O(n)</span><span class="cost-cell">O(n)</span><span class="cost-cell">1</span>
+        </div>
+        <p>The point is the <strong>O(k) space</strong> and the <strong>single pass</strong>: you can sample from a stream far larger than memory, or one whose length you never learn, holding only the <code>k</code> chosen items and a counter. (Vitter's Algorithm L improves the <em>time</em> to <code>O(k·(1+log(n/k)))</code> by skipping ahead to the next item that will be kept, but Algorithm R, shown here, is the clearest statement of the idea.)</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Reservoir sampling is the standard way to take a fair sample from a firehose: <code>k</code> random rows from a huge log or database scan, a uniform sample of tweets or click events for analytics, random minibatches from a dataset streamed once, and "sample N lines" tools. It shines exactly when you <em>can't</em> store everything or don't know <code>n</code> in advance — a single pass, constant memory, provably unbiased. Weighted variants (the A-Res / exponential-jump algorithms of Efraimidis–Spirakis) extend it to non-uniform sampling for things like importance-weighted streams.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Set <strong>Simulated runs</strong> low and watch the bars jump around — a few hundred runs isn't enough to see uniformity. Crank it up and they flatten onto the k/n line. Then change <strong>k</strong>: the whole line jumps to the new k/n, and every item still lands on it. The first item is no more likely than the last — that's the fairness the invariant guarantees.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Vitter, J. S. "Random sampling with a reservoir." <em>ACM Transactions on Mathematical Software</em> 11(1):37–57, 1985. Algorithms R and L.</li>
+          <li>Knuth. <em>The Art of Computer Programming, Vol. 2: Seminumerical Algorithms</em>, §3.4.2 (Algorithm R). Addison-Wesley.</li>
+          <li>Efraimidis, P. &amp; Spirakis, P. "Weighted random sampling with a reservoir." <em>Information Processing Letters</em> 97(5):181–185, 2006 — the weighted variant.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../count-min-sketch/index.html">← Count–Min Sketch</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../minhash/index.html">MinHash →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

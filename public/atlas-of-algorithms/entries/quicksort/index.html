@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quicksort — The Atlas of Algorithms</title>
+  <meta name="description" content="Quicksort through four lenses: watch each pivot partition the array and drop into its final place, see the partition invariant, count its average vs worst-case cost, and learn why production sorts are really introsort.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Quicksort — The Atlas of Algorithms">
+  <meta property="og:description" content="Quicksort through four lenses: watch each pivot partition the array and drop into its final place, see the partition invariant, count its average vs worst-case cost, and learn why production sorts are really introsort.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#sorting">Sorting</a>
+      <span class="sep">/</span>
+      Quicksort
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Sorting</span>
+      <h1>Quicksort</h1>
+      <p class="one-liner">Pick a pivot, shove everything smaller to its left and larger to its right, then recurse — fast on average, in place.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        <strong style="color:var(--invariant)">Green</strong> is a pivot locked in its final position — the invariant.
+        <strong style="color:var(--warn)">Orange</strong> is the current pivot;
+        <strong style="color:var(--accent)">blue</strong> the element being compared;
+        <strong style="color:var(--cost)">purple</strong> the values already known ≤ pivot.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>Each bar is a number; taller is larger. Quicksort works on a window of the array (the bright bars; dimmed bars are dormant sub-problems waiting their turn). It takes the rightmost element as the <strong>pivot</strong> (orange), then sweeps a scanner (blue) across the window, pushing every value ≤ the pivot into a growing region on the left (purple). When the sweep ends, the pivot swaps into the boundary — and turns <strong>green</strong>, because it is now exactly where it belongs in the final order and never moves again. Then the two sides recurse.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">quicksort(a, lo, hi):
+    if lo &gt;= hi: return
+    p = partition(a, lo, hi)        # pivot lands at p, in final place
+    quicksort(a, lo, p-1)
+    quicksort(a, p+1, hi)
+
+partition(a, lo, hi):              # Lomuto, pivot = a[hi]
+    i = lo
+    for j = lo .. hi-1:
+        if a[j] &lt;= a[hi]:
+            swap(a[i], a[j]); i++   # grow the ≤-pivot region
+    swap(a[i], a[hi])              # drop pivot into the gap
+    return i</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The partition keeps a running invariant as <code>j</code> sweeps: <span class="invariant-term">everything in a[lo..i) is ≤ the pivot, and everything in a[i..j) is &gt; the pivot</span>. So when the scan finishes, swapping the pivot into index <code>i</code> places it with all smaller values to its left and all larger to its right — meaning <span class="invariant-term">the pivot is now in its final sorted position</span> (that's why it locks green). Correctness of the whole sort follows by induction: each recursive call sorts a strictly smaller sub-array, and the pivots between them are already final, so the pieces compose into a fully sorted array. Unlike merge sort, the divide step does all the work and the "combine" is free.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Best</span><span class="cost-head">Average</span><span class="cost-head">Worst</span>
+          <span class="cost-row-label">Comparisons</span><span class="cost-cell">Θ(n log n)</span><span class="cost-cell">Θ(n log n)</span><span class="cost-cell">Θ(n²)</span>
+          <span class="cost-row-label">Time</span><span class="cost-cell">Θ(n log n)</span><span class="cost-cell">Θ(n log n)</span><span class="cost-cell">Θ(n²)</span>
+          <span class="cost-row-label">Space (stack)</span><span class="cost-cell">Θ(log n)</span><span class="cost-cell">Θ(log n)</span><span class="cost-cell">Θ(n)</span>
+        </div>
+        <p>When a pivot lands near the middle, each partition roughly halves the problem → <code>Θ(n log n)</code>, with small constants and great cache behavior (it sorts in place, scanning memory linearly). But the pivot choice is everything. With the simple last-element pivot shown here, an <strong>already-sorted</strong> or <strong>reversed</strong> input is the disaster case: every partition peels off just one element, giving <code>n + (n−1) + … = Θ(n²)</code> comparisons and <code>Θ(n)</code> recursion depth. Switch <strong>Initial order</strong> to <em>Already sorted</em> and watch the comparison counter balloon — the classic quicksort trap. Quicksort is <strong>not stable</strong>.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Quicksort is the default in-memory sort almost everywhere — but never quite in the textbook form you see here. Real implementations are <strong>introsort</strong> (Musser, 1997): start with quicksort, but if the recursion depth exceeds <code>~2 log n</code> (a sign of bad pivots heading toward the O(n²) cliff), <em>switch to heapsort</em> to guarantee <code>Θ(n log n)</code>; and once a partition is small (≈16 elements) finish with insertion sort. They also pick the pivot defensively — <strong>median-of-three</strong>, or Pattern-Defeating Quicksort's adaptive scheme. C++'s <code>std::sort</code> mandates introsort-like worst-case behavior; the Rust and Go ecosystems use pdqsort variants. So the lesson here is double: quicksort's brilliance <em>and</em> its fragility, which is precisely why production wraps it in safeguards.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Compare the comparison counter on <em>Random</em> versus <em>Already sorted</em> at the same size. Random is the fast <code>n log n</code> case; sorted is the <code>n²</code> worst case — the same algorithm, an order of magnitude apart, decided entirely by pivot luck. That gap is the whole argument for introsort.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Hoare, C. A. R. "Quicksort." <em>The Computer Journal</em> 5(1):10–16, 1962. The original algorithm.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §7 — Lomuto partition, the partition loop invariant, average vs worst case. MIT Press, 2022.</li>
+          <li>Musser, D. R. "Introspective Sorting and Selection Algorithms." <em>Software: Practice and Experience</em> 27(8):983–993, 1997 — introsort.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §2.3 (Quicksort) — partitioning, pivot strategy, not stable. <a href="https://algs4.cs.princeton.edu/23quicksort/">algs4.cs.princeton.edu/23quicksort</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../merge-sort/index.html">← Merge Sort</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../binary-search/index.html">Binary Search →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

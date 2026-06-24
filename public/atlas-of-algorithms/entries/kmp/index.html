@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knuth–Morris–Pratt — The Atlas of Algorithms</title>
+  <meta name="description" content="KMP string matching through four lenses: watch the pattern slide through text without ever re-reading a character, see the failure function that makes it linear, count its cost, and learn where it runs in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Knuth–Morris–Pratt — The Atlas of Algorithms">
+  <meta property="og:description" content="KMP string matching through four lenses: watch the pattern slide through text without ever re-reading a character, see the failure function that makes it linear, count its cost, and learn where it runs in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#strings">Strings</a>
+      <span class="sep">/</span>
+      Knuth–Morris–Pratt
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Strings</span>
+      <h1>Knuth–Morris–Pratt</h1>
+      <p class="one-liner">Find a pattern in text in linear time by never re-reading a character — a precomputed failure table says how far to jump.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Top row is the text; below it the pattern, aligned at the current attempt.
+        <strong style="color:var(--invariant)">Green</strong> is the matched prefix;
+        <strong style="color:var(--accent)">blue</strong> a matching char, <strong style="color:var(--warn)">orange</strong> a mismatch;
+        green text cells mark found occurrences.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>The naive way to search for a pattern re-aligns it one step right after every mismatch and rechecks from scratch — re-reading text characters again and again. KMP refuses to. It keeps a single text pointer that only ever moves forward; when a mismatch happens after matching a few characters, it consults a precomputed <strong>failure table</strong> to slide the pattern forward by just the right amount — reusing the characters it already matched instead of re-examining them. Watch the pattern jump ahead on a mismatch while the highlighted text position never retreats.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">failure[i] = length of the longest proper prefix of pat[0..i]
+             that is also a suffix of pat[0..i]
+
+match(text, pat):
+    j = 0                              # chars of pattern matched so far
+    for i = 0 .. n-1:                  # i never decreases
+        while j &gt; 0 and text[i] ≠ pat[j]:
+            j = failure[j-1]           # slide pattern, keep text pointer
+        if text[i] == pat[j]: j += 1
+        if j == m: report match; j = failure[j-1]</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The failure table encodes a reusable fact: if the first <code>j</code> characters of the pattern matched and then character <code>j</code> failed, the next possible alignment that could match must begin where the longest prefix-which-is-also-a-suffix of <code>pat[0..j)</code> ends — so we set <code>j ← failure[j−1]</code> and try again, <em>without touching the text pointer</em>. The consequence is the headline invariant: <span class="invariant-term">the text index <code>i</code> only ever advances, never backs up</span>. Each step either advances <code>i</code> (a comparison) or decreases <code>j</code> (a failure jump); since <code>j</code> rises by at most 1 per text character, it can fall at most as many times in total — so the work is at most <code>2n</code> comparisons plus the <code>O(m)</code> to build the table. Linear, with no re-reading.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">Build table</span><span class="cost-head">Search</span><span class="cost-head"></span>
+          <span class="cost-row-label">KMP</span><span class="cost-cell">O(m)</span><span class="cost-cell">O(n)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">Naive</span><span class="cost-cell">—</span><span class="cost-cell">O(n·m) worst</span><span class="cost-cell"></span>
+        </div>
+        <p>The naive scan can be quadratic — text like <code>AAAA…AAB</code> against pattern <code>AAAB</code> rechecks a long run on every shift. KMP's <code>O(n+m)</code> is worst-case <em>guaranteed</em>, never re-reading a text character. The two-letter alphabet here makes the failure jumps frequent and visible; the readout's comparison count stays comfortably under <code>2(n+m)</code>.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>KMP is the textbook linear-time exact matcher and a foundation of the field: it appears inside text editors and <code>grep</code>-family tools (alongside Boyer–Moore, which is often faster in practice by skipping ahead), in DNA/sequence search, intrusion-detection signature scanning, and streaming search where you can't rewind the input — the never-back-up property means KMP works on a one-pass stream. Its failure function is also the key to the Z-algorithm and to computing string borders and periods. Boyer–Moore and Rabin–Karp make different trade-offs (big skips; hashing), but KMP is the clean linear-worst-case guarantee.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through and fix your eye on the highlighted text cell — it never jumps left, even when the pattern below it leaps forward several places on a mismatch. That leap is the failure table at work: everything the pattern already matched is reused, not rechecked.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Knuth, D. E., Morris, J. H. &amp; Pratt, V. R. "Fast pattern matching in strings." <em>SIAM Journal on Computing</em> 6(2):323–350, 1977. The original.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §32.4 (The Knuth–Morris–Pratt algorithm). MIT Press, 2022.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §5.3 (Substring Search). <a href="https://algs4.cs.princeton.edu/53substring/">algs4.cs.princeton.edu/53substring</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../sieve-of-eratosthenes/index.html">← Sieve of Eratosthenes</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../binary-heap/index.html">Binary Heap →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LZ77 — The Atlas of Algorithms</title>
+  <meta name="description" content="LZ77 sliding-window compression through four lenses: watch repeats collapse into back-references, see why decoding is exactly lossless, count the tokens, and learn how it powers gzip and PNG.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="LZ77 — The Atlas of Algorithms">
+  <meta property="og:description" content="LZ77 sliding-window compression through four lenses: watch repeats collapse into back-references, see why decoding is exactly lossless, count the tokens, and learn how it powers gzip and PNG.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#compression">Compression &amp; Coding</a>
+      <span class="sep">/</span>
+      LZ77
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Compression &amp; Coding</span>
+      <h1>LZ77</h1>
+      <p class="one-liner">Compress by pointing back at what you have already seen — the sliding-window idea behind gzip and PNG.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        The cursor (<strong style="color:var(--warn)">orange</strong> outline) splits the seen <em>window</em> from the lookahead.
+        A match copies from the <strong style="color:var(--accent)">blue</strong> source in the window to the
+        <strong style="color:var(--invariant)">green</strong> run ahead, then emits the next literal. Tokens collect below.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>LZ77 compresses by noticing that text repeats itself. It keeps a <em>window</em> of recently-seen characters; at each position it looks at what comes next and searches the window for the longest stretch that matches. When it finds one, instead of writing those characters again it writes a <strong>back-reference</strong>: "go back <code>offset</code> characters and copy <code>length</code> of them." Each step emits one token — <code>(offset, length, next-char)</code> — covering the matched run plus the single character that broke the match. No dictionary is stored or shipped; the window <em>is</em> the dictionary, and it's rebuilt identically while decoding. Watch repeats fold into short pointers as the window slides right.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">i = 0
+while i < n:
+    find the longest text[i..i+L) that also occurs
+        starting somewhere in the window [i−W, i)
+    emit token (offset = i − match_start, length = L, next = text[i+L])
+    i += L + 1
+# decode: for each token, copy L chars from `offset` back, then append `next`</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The guarantee is simply that it's <span class="invariant-term">lossless: decoding the token stream reproduces the input exactly, byte for byte</span>. That holds because a token only ever points <em>backward</em>, into text the decoder has already reconstructed — so when it needs to copy <code>length</code> characters from <code>offset</code> back, those characters are guaranteed to already be there. The decoder rebuilds the very same window the encoder saw, in lockstep, so a pointer means the same thing on both sides. A lovely subtlety: a match may <em>overlap</em> the cursor (offset &lt; length), e.g. copying "a" repeatedly to spell "aaaaa" — and copying one character at a time still works, because each copied character is produced just before the next one reads it. That's run-length encoding falling out of LZ77 for free.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">encode</span><span class="cost-head">decode</span><span class="cost-head"></span>
+          <span class="cost-row-label">LZ77 (naive)</span><span class="cost-cell">O(n·W)</span><span class="cost-cell">O(n)</span><span class="cost-cell"></span>
+          <span class="cost-row-label">+ hash chains</span><span class="cost-cell">≈ O(n)</span><span class="cost-cell">O(n)</span><span class="cost-cell"></span>
+        </div>
+        <p>The cost is all in <em>finding</em> the matches: scanning a window of size <code>W</code> at every position is <code>O(nW)</code> naively, but real encoders index the window with hash chains or suffix structures to find matches in near-constant time, making encoding roughly linear; decoding is always a fast linear copy. Compression improves with a larger window (more chances to find a match) at the cost of slower search and bigger offsets — the classic time/ratio knob. LZ77 alone shrinks repetition but leaves the tokens themselves uncompressed, which is why it's paired with an <a href="../huffman/index.html">entropy coder</a>.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>LZ77 is one of the most consequential algorithms in computing. With Huffman coding layered on top it <em>is</em> <strong>DEFLATE</strong> — the engine of <strong>gzip, zlib, PNG, and ZIP</strong>. Its sibling LZ78 and the LZW variant powered GIF and Unix <code>compress</code>; LZMA (7-Zip), LZ4, Snappy, and Zstandard are all descendants of the same back-reference idea, trading off speed against ratio. Essentially every general-purpose compressor you use today has an LZ77-style match-finder at its core; Lempel and Ziv's 1977–78 papers earned them the IEEE Richard W. Hamming Medal (2007), and Jacob Ziv the IEEE Medal of Honor (2021).</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Watch the token count versus the character count in the readout: on repetitive text it drops well below 1 token per character. Shrink the <strong>Window size</strong> and compression worsens — distant repeats fall out of view and become literals again; widen it and more matches reappear. Look for an overlapping match (a long run from a small offset): that's run-length encoding emerging from the same machinery.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Ziv, J. &amp; Lempel, A. "A Universal Algorithm for Sequential Data Compression." <em>IEEE Transactions on Information Theory</em> 23(3):337–343, 1977. (LZ77.)</li>
+          <li>Ziv, J. &amp; Lempel, A. "Compression of Individual Sequences via Variable-Rate Coding." <em>IEEE Transactions on Information Theory</em> 24(5):530–536, 1978. (LZ78, the dictionary sibling.)</li>
+          <li>Deutsch, P. "DEFLATE Compressed Data Format Specification version 1.3." <em>RFC 1951</em>, 1996 — LZ77 + Huffman as shipped in gzip/zlib/PNG.</li>
+          <li>Salomon, D. <em>Data Compression: The Complete Reference</em>, 4th ed. Springer, 2007.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../max-flow/index.html">← Maximum Flow (Edmonds–Karp)</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../skip-list/index.html">Skip List →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Union–Find — The Atlas of Algorithms</title>
+  <meta name="description" content="Union–Find through four lenses: watch disjoint sets merge and paths compress, see the same-root invariant, understand the near-constant amortized cost, and learn where it tracks connectivity in the wild.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f1117">
+  <meta property="og:title" content="Union–Find — The Atlas of Algorithms">
+  <meta property="og:description" content="Union–Find through four lenses: watch disjoint sets merge and paths compress, see the same-root invariant, understand the near-constant amortized cost, and learn where it tracks connectivity in the wild.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="crumb">
+      <a href="../../index.html">The Atlas of Algorithms</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#structures">Trees &amp; Structures</a>
+      <span class="sep">/</span>
+      Union–Find
+    </nav>
+
+    <header class="entry-head">
+      <span class="family">Trees &amp; Structures</span>
+      <h1>Union–Find</h1>
+      <p class="one-liner">Track a growing collection of disjoint sets and merge them in nearly constant time — the backbone of connectivity.</p>
+    </header>
+
+    <figure class="stage-figure">
+      <div id="stage"></div>
+      <div id="annotation"></div>
+      <div id="readout"></div>
+      <figcaption class="stage-caption">
+        Each element points to a parent; arcs go child → parent, and a
+        <strong style="color:var(--invariant)">green</strong> node is a set's root. A union (<strong style="color:var(--warn)">orange</strong>)
+        links two roots; a find (<strong style="color:var(--accent)">blue</strong>) walks to the root and flattens the path behind it.
+      </figcaption>
+    </figure>
+
+    <div id="controls"></div>
+
+    <article class="prose">
+      <section>
+        <h2>What you're seeing</h2>
+        <p>The disjoint-set structure answers two questions fast: "are these two things in the same group?" and "merge their groups." It keeps each element pointing at a <em>parent</em>; following parents leads to a <strong>root</strong> that names the whole set. To <strong>union</strong> two elements, find both roots and point one at the other. To check membership, <strong>find</strong> both roots and compare. Watch two tricks that keep it fast: <em>union by rank</em> always hangs the shorter tree under the taller, and <em>path compression</em> re-points every node touched on a find straight to the root — so the forest stays almost flat.</p>
+      </section>
+
+      <section>
+        <h2>The rule</h2>
+        <pre class="pseudocode">make(x):   parent[x] = x;  rank[x] = 0
+find(x):   while parent[x] ≠ x:  x = parent[x]      # walk to root
+           (then re-point everything on the path to the root)   # compression
+union(a,b):
+    ra, rb = find(a), find(b)
+    if ra == rb: return                  # already together
+    attach the lower-rank root under the higher;  tie ⇒ pick one, rank++</pre>
+      </section>
+
+      <section>
+        <h2>The invariant</h2>
+        <p>The structure maintains a partition of the elements into disjoint sets, and represents each set as a rooted tree. The defining fact: <span class="invariant-term">two elements are in the same set if and only if find returns the same root for both.</span> Every operation preserves it — union only ever links two roots (merging exactly the two sets they represent, touching no others), and find never changes which set anything belongs to, only the <em>shape</em> of the tree (path compression re-points nodes to the same root they already had). Because the answer to "same set?" reduces to "same root?", correctness is immediate; the cleverness is all in keeping the trees shallow so find is cheap.</p>
+      </section>
+
+      <section>
+        <h2>The cost</h2>
+        <div class="cost-grid">
+          <span class="cost-head"></span><span class="cost-head">union / find (amortized)</span><span class="cost-head"></span><span class="cost-head"></span>
+          <span class="cost-row-label">+ rank + compression</span><span class="cost-cell">O(α(n))</span><span class="cost-cell"></span><span class="cost-cell"></span>
+          <span class="cost-row-label">rank only</span><span class="cost-cell">O(log n)</span><span class="cost-cell"></span><span class="cost-cell"></span>
+        </div>
+        <p>Union by rank alone keeps every tree height <code>O(log n)</code>. Add path compression and a sequence of <code>m</code> operations costs <code>O(m·α(n))</code> total, where <code>α</code> is the inverse Ackermann function — at most <strong>4</strong> for any number of elements that could ever exist. So each operation is, for all practical purposes, constant time. The bound (Tarjan, 1975) is one of the most surprising in algorithm analysis, and is known to be tight.</p>
+      </section>
+
+      <section>
+        <h2>In the wild</h2>
+        <p>Union–Find is the connectivity workhorse. It drives <strong>Kruskal's minimum-spanning-tree</strong> algorithm (add an edge unless its endpoints are already connected), tracks connected components in dynamic graphs and image segmentation, detects cycles while building a graph, powers percolation and maze generation, and unifies type variables in compilers (Hindley–Milner inference) and equivalences in equality-saturation engines. Anywhere you incrementally merge groups and ask "same group?", this is the structure.</p>
+      </section>
+
+      <section class="try-this">
+        <h2>Try this</h2>
+        <p>Step through and watch a find: the blue path lights up from a node to its root, then on the next step those nodes all re-point directly to the root — the tree gets visibly shorter. Over a run, no chain ever grows long; that flattening is exactly what buys the near-constant time.</p>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <ol class="references">
+          <li>Tarjan, R. E. "Efficiency of a Good But Not Linear Set Union Algorithm." <em>Journal of the ACM</em> 22(2):215–225, 1975. The α(n) analysis.</li>
+          <li>Cormen, Leiserson, Rivest &amp; Stein. <em>Introduction to Algorithms</em>, 4th ed. (CLRS), §19 (Data Structures for Disjoint Sets). MIT Press, 2022.</li>
+          <li>Sedgewick &amp; Wayne. <em>Algorithms</em>, 4th ed., §1.5 (Case Study: Union–Find). <a href="https://algs4.cs.princeton.edu/15uf/">algs4.cs.princeton.edu/15uf</a>.</li>
+        </ol>
+      </section>
+    </article>
+
+    <nav class="entry-nav" aria-label="Adjacent algorithms">
+      <a class="nav-prev" href="../pagerank/index.html">← PageRank</a>
+      <a class="nav-home" href="../../index.html">All algorithms</a>
+      <a class="nav-next" href="../quickselect/index.html">Quickselect →</a>
+    </nav>
+    <footer class="site-footer">The Atlas of Algorithms — watch the idea work.</footer>
+  </main>
+
+  <script src="../../lib/algo.js"></script>
+  <script src="./algo.js"></script>
+  <script>window.atlasPlayer = Algo.mount(window.__ATLAS_ENTRY__);</script>
+</body>
+</html>
