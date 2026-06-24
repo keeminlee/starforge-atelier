@@ -19,8 +19,8 @@
 - Reuses the dijkstra terrain grid + the same best-first `search` helper, parameterized by a
   heuristic function hFn (hFn ≡ 0 gives Dijkstra — used to compute the contrast count). Same
   grid-maze draw (terrain + settled + path). The readout reports "A* settled N vs Dijkstra M".
-- (Note: bfs/dijkstra/a-star now share a near-identical grid draw — backlog deslop: extract a shared
-  pathfinder grid renderer, as was done for `Algo.bars`.)
+- bfs/dijkstra/a-star share their grid rendering through the engine's `Algo.grid()` helper (extracted
+  iter 0023, the same deslop pattern as `Algo.bars` — pixel-identical after the refactor).
 
 ## Verification
 
