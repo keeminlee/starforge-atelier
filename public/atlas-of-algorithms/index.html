@@ -45,6 +45,7 @@
             <span class="card-family">Sorting</span>
             <h3>Insertion Sort</h3>
             <p>Build a sorted prefix one element at a time, sliding each new value back into its place.</p>
+            <span class="card-cost" title="time complexity">O(n²)</span>
             
           </div>
         </a>
@@ -57,6 +58,7 @@
             <span class="card-family">Sorting</span>
             <h3>Selection Sort</h3>
             <p>Repeatedly find the smallest remaining value and move it to the front — the fewest swaps any sort can make.</p>
+            <span class="card-cost" title="time complexity">Θ(n²)</span>
             
           </div>
         </a>
@@ -69,6 +71,7 @@
             <span class="card-family">Sorting</span>
             <h3>Bubble Sort</h3>
             <p>Sweep through the list swapping out-of-order neighbors; the largest value bubbles to the end each pass.</p>
+            <span class="card-cost" title="time complexity">O(n²)</span>
             
           </div>
         </a>
@@ -81,6 +84,7 @@
             <span class="card-family">Sorting</span>
             <h3>Merge Sort</h3>
             <p>Split into runs, then merge sorted runs into longer sorted runs — guaranteed n log n, and stable.</p>
+            <span class="card-cost" title="time complexity">Θ(n log n)</span>
             
           </div>
         </a>
@@ -93,6 +97,7 @@
             <span class="card-family">Sorting</span>
             <h3>Quicksort</h3>
             <p>Pick a pivot, shove everything smaller to its left and larger to its right, then recurse — fast on average, in place.</p>
+            <span class="card-cost" title="time complexity">Θ(n log n) avg</span>
             
           </div>
         </a>
@@ -110,6 +115,7 @@
             <span class="card-family">Searching &amp; Selection</span>
             <h3>Binary Search</h3>
             <p>Halve a sorted array each step: compare the middle, then throw away the half that cannot contain the target.</p>
+            <span class="card-cost" title="time complexity">Θ(log n)</span>
             
           </div>
         </a>
@@ -122,6 +128,7 @@
             <span class="card-family">Searching &amp; Selection</span>
             <h3>Quickselect</h3>
             <p>Find the k-th smallest value without fully sorting — partition, then chase rank k into one side only.</p>
+            <span class="card-cost" title="time complexity">O(n) average, O(n²) worst</span>
             
           </div>
         </a>
@@ -139,6 +146,7 @@
             <span class="card-family">Graphs</span>
             <h3>Breadth-First Search</h3>
             <p>Flood a grid in expanding waves; the first time the wave touches a cell, it has arrived by a shortest path.</p>
+            <span class="card-cost" title="time complexity">O(V + E)</span>
             
           </div>
         </a>
@@ -151,6 +159,7 @@
             <span class="card-family">Graphs</span>
             <h3>Dijkstra’s Algorithm</h3>
             <p>Find the cheapest route through weighted terrain by always settling the nearest unfinished node next.</p>
+            <span class="card-cost" title="time complexity">O((V+E) log V)</span>
             
           </div>
         </a>
@@ -163,6 +172,7 @@
             <span class="card-family">Graphs</span>
             <h3>A* Search</h3>
             <p>Dijkstra with a sense of direction: a heuristic pulls the search toward the goal, so it settles a fraction of the cells.</p>
+            <span class="card-cost" title="time complexity">O((V+E) log V)</span>
             
           </div>
         </a>
@@ -175,6 +185,7 @@
             <span class="card-family">Graphs</span>
             <h3>Kruskal's MST</h3>
             <p>Connect everything for the least total weight — add the cheapest edge that never makes a cycle.</p>
+            <span class="card-cost" title="time complexity">O(E log E)</span>
             
           </div>
         </a>
@@ -192,6 +203,7 @@
             <span class="card-family">Trees &amp; Structures</span>
             <h3>Binary Heap</h3>
             <p>A tree packed into an array that always serves the smallest item next — the engine inside a priority queue.</p>
+            <span class="card-cost" title="time complexity">O(log n) per op</span>
             
           </div>
         </a>
@@ -204,6 +216,7 @@
             <span class="card-family">Trees &amp; Structures</span>
             <h3>Union–Find</h3>
             <p>Track a growing collection of disjoint sets and merge them in nearly constant time — the backbone of connectivity.</p>
+            <span class="card-cost" title="time complexity">O(α(n)) amortized</span>
             
           </div>
         </a>
@@ -221,6 +234,7 @@
             <span class="card-family">Strings</span>
             <h3>Knuth–Morris–Pratt</h3>
             <p>Find a pattern in text in linear time by never re-reading a character — a precomputed failure table says how far to jump.</p>
+            <span class="card-cost" title="time complexity">O(n + m)</span>
             
           </div>
         </a>
@@ -233,6 +247,7 @@
             <span class="card-family">Strings</span>
             <h3>Boyer–Moore</h3>
             <p>Search by comparing the pattern back-to-front and skipping ahead — often examining only a fraction of the text.</p>
+            <span class="card-cost" title="time complexity">O(n/m) best, O(nm) worst</span>
             
           </div>
         </a>
@@ -250,6 +265,7 @@
             <span class="card-family">Computational Geometry</span>
             <h3>Convex Hull</h3>
             <p>Snap a rubber band around a cloud of points — the smallest convex polygon that contains them all.</p>
+            <span class="card-cost" title="time complexity">O(n log n)</span>
             
           </div>
         </a>
@@ -262,6 +278,7 @@
             <span class="card-family">Computational Geometry</span>
             <h3>Closest Pair of Points</h3>
             <p>Find the two nearest points among many in O(n log n) — divide the plane, then mind only a thin strip.</p>
+            <span class="card-cost" title="time complexity">O(n log n)</span>
             
           </div>
         </a>
@@ -279,6 +296,7 @@
             <span class="card-family">Numerical &amp; Number-Theoretic</span>
             <h3>Sieve of Eratosthenes</h3>
             <p>Find every prime up to n by crossing out the multiples of each prime in turn — what survives is prime.</p>
+            <span class="card-cost" title="time complexity">O(n log log n)</span>
             
           </div>
         </a>
@@ -291,6 +309,7 @@
             <span class="card-family">Numerical &amp; Number-Theoretic</span>
             <h3>Euclidean Algorithm</h3>
             <p>Find the greatest common divisor by repeatedly replacing the larger number with its remainder — the oldest algorithm.</p>
+            <span class="card-cost" title="time complexity">O(log min(a,b))</span>
             
           </div>
         </a>
@@ -303,6 +322,7 @@
             <span class="card-family">Numerical &amp; Number-Theoretic</span>
             <h3>Fast Fourier Transform</h3>
             <p>Turn a signal into its frequencies in O(n log n) — the divide-and-conquer that reshaped signal processing.</p>
+            <span class="card-cost" title="time complexity">O(n log n)</span>
             
           </div>
         </a>
@@ -320,6 +340,7 @@
             <span class="card-family">Dynamic Programming &amp; Optimization</span>
             <h3>Edit Distance</h3>
             <p>The fewest insert/delete/substitute edits to turn one string into another — built up from a grid of subproblems.</p>
+            <span class="card-cost" title="time complexity">O(m·n)</span>
             
           </div>
         </a>
@@ -332,6 +353,7 @@
             <span class="card-family">Dynamic Programming &amp; Optimization</span>
             <h3>0/1 Knapsack</h3>
             <p>Pack the most valuable subset that fits — by solving every smaller capacity for every prefix of items.</p>
+            <span class="card-cost" title="time complexity">O(n·W)</span>
             
           </div>
         </a>
@@ -349,6 +371,7 @@
             <span class="card-family">Randomized &amp; Probabilistic</span>
             <h3>Fisher–Yates Shuffle</h3>
             <p>Shuffle a deck so every ordering is equally likely — one pass, one swap per card, no bias.</p>
+            <span class="card-cost" title="time complexity">O(n)</span>
             
           </div>
         </a>
@@ -361,6 +384,7 @@
             <span class="card-family">Randomized &amp; Probabilistic</span>
             <h3>Skip List</h3>
             <p>Balanced search without the balancing — random express lanes give expected O(log n) with a coin flip.</p>
+            <span class="card-cost" title="time complexity">O(log n) expected</span>
             
           </div>
         </a>
@@ -378,6 +402,7 @@
             <span class="card-family">Compression &amp; Coding</span>
             <h3>Huffman Coding</h3>
             <p>Give frequent symbols short codes and rare ones long codes — the optimal prefix-free code, built by merging the two rarest.</p>
+            <span class="card-cost" title="time complexity">O(n log n)</span>
             
           </div>
         </a>
@@ -390,6 +415,7 @@
             <span class="card-family">Compression &amp; Coding</span>
             <h3>LZ77</h3>
             <p>Compress by pointing back at what you have already seen — the sliding-window idea behind gzip and PNG.</p>
+            <span class="card-cost" title="time complexity">O(n · window)</span>
             
           </div>
         </a>
@@ -413,6 +439,7 @@
             <span class="card-family">Sketching &amp; Streaming</span>
             <h3>Morris Counter</h3>
             <p>Count to a billion in a byte — approximately. Store log log n bits and accept a random, but unbiased, estimate.</p>
+            <span class="card-cost" title="time complexity">O(1)/update</span>
             
           </div>
         </a>
@@ -425,6 +452,7 @@
             <span class="card-family">Sketching &amp; Streaming</span>
             <h3>Count–Min Sketch</h3>
             <p>Count every item in a stream using one small grid — never undercounting, and overcounting only a little.</p>
+            <span class="card-cost" title="time complexity">O(d)/update</span>
             
           </div>
         </a>
@@ -437,6 +465,7 @@
             <span class="card-family">Sketching &amp; Streaming</span>
             <h3>Reservoir Sampling</h3>
             <p>Pick k items uniformly at random from a stream of unknown length, in one pass and O(k) memory.</p>
+            <span class="card-cost" title="time complexity">O(1)/item</span>
             
           </div>
         </a>
@@ -449,6 +478,7 @@
             <span class="card-family">Sketching &amp; Streaming</span>
             <h3>HyperLogLog</h3>
             <p>Count distinct items in a massive stream using a few kilobytes — by watching the rarest hash patterns.</p>
+            <span class="card-cost" title="time complexity">O(1) per item</span>
             
           </div>
         </a>
@@ -466,6 +496,7 @@
             <span class="card-family">Hashing Schemes</span>
             <h3>Bloom Filter</h3>
             <p>Test set membership in a handful of bits — it never misses a member, but occasionally cries wolf.</p>
+            <span class="card-cost" title="time complexity">O(k) per op</span>
             
           </div>
         </a>
@@ -478,6 +509,7 @@
             <span class="card-family">Hashing Schemes</span>
             <h3>Consistent Hashing</h3>
             <p>Spread keys over a ring of servers so that adding or removing one moves almost nothing.</p>
+            <span class="card-cost" title="time complexity">O(log n) lookup</span>
             
           </div>
         </a>
@@ -495,6 +527,7 @@
             <span class="card-family">Similarity &amp; High-Dimensional Search</span>
             <h3>MinHash</h3>
             <p>Estimate how similar two sets are from the chance their smallest hash collides — Jaccard similarity in a handful of numbers.</p>
+            <span class="card-cost" title="time complexity">O(m·|S|) sign.</span>
             
           </div>
         </a>
@@ -507,6 +540,7 @@
             <span class="card-family">Similarity &amp; High-Dimensional Search</span>
             <h3>Locality-Sensitive Hashing</h3>
             <p>Bucket items so that similar ones collide and dissimilar ones don’t — turning nearest-neighbor search into a near-linear scan.</p>
+            <span class="card-cost" title="time complexity">O(b) per item</span>
             
           </div>
         </a>
@@ -519,6 +553,7 @@
             <span class="card-family">Similarity &amp; High-Dimensional Search</span>
             <h3>Johnson–Lindenstrauss</h3>
             <p>Squash high-dimensional points into far fewer dimensions by random projection — and keep every pairwise distance almost exactly.</p>
+            <span class="card-cost" title="time complexity">O(n·k·D) project</span>
             
           </div>
         </a>
@@ -536,6 +571,7 @@
             <span class="card-family">Spectral Graph Theory</span>
             <h3>Spectral Graph Drawing</h3>
             <p>Draw a graph using its Laplacian’s eigenvectors as coordinates — and watch hidden communities fall into place.</p>
+            <span class="card-cost" title="time complexity">eigenvectors of L</span>
             
           </div>
         </a>
@@ -548,6 +584,7 @@
             <span class="card-family">Spectral Graph Theory</span>
             <h3>Spectral Partitioning</h3>
             <p>Split a graph into two balanced, weakly-connected halves by sweeping a cut along the Fiedler vector — provably near-optimal.</p>
+            <span class="card-cost" title="time complexity">Fiedler vector + O(n) sweep</span>
             
           </div>
         </a>
@@ -560,6 +597,7 @@
             <span class="card-family">Spectral Graph Theory</span>
             <h3>PageRank</h3>
             <p>Rank pages by where a random web surfer spends its time — the dominant eigenvector of the link graph.</p>
+            <span class="card-cost" title="time complexity">O(edges) per iteration</span>
             
           </div>
         </a>
@@ -577,6 +615,7 @@
             <span class="card-family">Optimization &amp; Flows</span>
             <h3>Gradient Descent</h3>
             <p>Find a minimum by repeatedly stepping downhill — the workhorse that trains almost everything.</p>
+            <span class="card-cost" title="time complexity">O(1) gradient/step</span>
             
           </div>
         </a>
@@ -589,6 +628,7 @@
             <span class="card-family">Optimization &amp; Flows</span>
             <h3>Maximum Flow (Edmonds–Karp)</h3>
             <p>Push as much as possible from source to sink — and discover the bottleneck cut that limits it.</p>
+            <span class="card-cost" title="time complexity">O(V·E²)</span>
             
           </div>
         </a>

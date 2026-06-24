@@ -639,6 +639,18 @@ code, pre, kbd, samp { font-family: var(--font-mono); }
   border-color: var(--accent);
 }
 .entry-card .card-body { padding: var(--sp-4); }
+.entry-card .card-cost {
+  display: inline-block;
+  margin-top: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.02em;
+  color: var(--cost);
+  background: rgba(199, 146, 234, 0.10);
+  border: 1px solid rgba(199, 146, 234, 0.22);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
 .entry-card .card-family {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
