@@ -694,6 +694,21 @@ code, pre, kbd, samp { font-family: var(--font-mono); }
   color: var(--warn);
 }
 
+/* Graceful degradation: shown only when JavaScript is unavailable. */
+.stage-noscript {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sp-7) var(--sp-6);
+  color: var(--muted);
+  font-family: var(--font-prose);
+  font-size: var(--fs-lg);
+}
+
 /* "Related" — conceptual cross-links to neighbouring algorithms. */
 .related {
   margin-top: var(--sp-9);
