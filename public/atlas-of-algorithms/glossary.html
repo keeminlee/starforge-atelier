@@ -23,54 +23,73 @@
       <p class="one-liner">The handful of concepts that show up across many entries — the vocabulary of the atlas.</p>
     </header>
 
+    <nav class="glossary-toc" aria-label="Jump to a term">
+      <a href="#invariant">Invariant</a>
+      <a href="#guarantee">Guarantee</a>
+      <a href="#amortized-cost">Amortized cost</a>
+      <a href="#in-place-stable">In place / stable</a>
+      <a href="#divide-and-conquer">Divide and conquer</a>
+      <a href="#dynamic-programming">Dynamic programming</a>
+      <a href="#greedy-exchange-argument">Greedy + exchange argument</a>
+      <a href="#admissible-heuristic">Admissible heuristic</a>
+      <a href="#entropy">Entropy</a>
+      <a href="#unbiased-estimator-concentration">Unbiased estimator / concentration</a>
+      <a href="#prefix-free-code">Prefix-free code</a>
+      <a href="#locality-sensitive-min-wise-independent">Locality-sensitive / min-wise independent</a>
+      <a href="#laplacian-fiedler-vector-algebraic-connectivity">Laplacian / Fiedler vector / algebraic connectivity</a>
+      <a href="#conductance-cheegers-inequality">Conductance / Cheeger's inequality</a>
+      <a href="#stationary-distribution">Stationary distribution</a>
+      <a href="#power-iteration">Power iteration</a>
+    </nav>
+
     <article class="prose">
       <section>
-        <h3>Invariant</h3>
+        <h3 id="invariant">Invariant</h3>
         <p>A fact that stays true at every step of an algorithm. The right invariant <em>is</em> the proof of correctness: establish it at the start, show each step preserves it, and read the result off at termination. Most classic entries — <a href="entries/insertion-sort/index.html">insertion sort</a>, <a href="entries/binary-search/index.html">binary search</a>, <a href="entries/quicksort/index.html">quicksort</a> — are organized around theirs.</p>
 
-        <h3>Guarantee</h3>
+        <h3 id="guarantee">Guarantee</h3>
         <p>The atlas's generalization of "invariant" for randomized and approximate algorithms: instead of a fact that's always exactly true, a <em>probabilistic or approximation bound</em> — an unbiased estimate, a one-sided error, a "within (1±ε) with high probability." Shown empirically by running many trials. See the modern wing: <a href="entries/morris-counter/index.html">Morris counter</a>, <a href="entries/count-min-sketch/index.html">Count–Min</a>, <a href="entries/johnson-lindenstrauss/index.html">Johnson–Lindenstrauss</a>.</p>
 
-        <h3>Amortized cost</h3>
+        <h3 id="amortized-cost">Amortized cost</h3>
         <p>The average cost per operation over a worst-case sequence, even if individual operations occasionally cost more. KMP's text pointer never backs up, so its <em>n</em> characters cost O(n) total even though a single step may do several failure jumps.</p>
 
-        <h3>In place / stable</h3>
+        <h3 id="in-place-stable">In place / stable</h3>
         <p><strong>In place</strong> = uses only O(1) extra memory beyond the input. <strong>Stable</strong> = equal keys keep their original relative order. Merge sort is stable but not in place; quicksort is in place but not stable.</p>
 
-        <h3>Divide and conquer</h3>
+        <h3 id="divide-and-conquer">Divide and conquer</h3>
         <p>Split a problem into smaller independent subproblems, solve each, and combine. <a href="entries/merge-sort/index.html">Merge sort</a> (the combine is the merge) and <a href="entries/quicksort/index.html">quicksort</a> (the divide is the partition) are the archetypes.</p>
 
-        <h3>Dynamic programming</h3>
+        <h3 id="dynamic-programming">Dynamic programming</h3>
         <p>Solve a problem by building up answers to overlapping subproblems and reusing them — turning exponential recursion into a polynomial table. Requires <em>optimal substructure</em> (the best whole is built from best parts). See <a href="entries/edit-distance/index.html">edit distance</a>.</p>
 
-        <h3>Greedy + exchange argument</h3>
+        <h3 id="greedy-exchange-argument">Greedy + exchange argument</h3>
         <p>A greedy algorithm makes the locally-best choice at each step; an <em>exchange argument</em> proves it's globally optimal by showing any other solution can be transformed into the greedy one without getting worse. <a href="entries/huffman/index.html">Huffman coding</a> is the classic example.</p>
 
-        <h3>Admissible heuristic</h3>
+        <h3 id="admissible-heuristic">Admissible heuristic</h3>
         <p>In <a href="entries/a-star/index.html">A*</a>, an estimate of the remaining cost that never <em>over</em>-estimates. Admissibility is exactly the condition that keeps A* optimal while letting it explore far fewer states than Dijkstra.</p>
 
-        <h3>Entropy</h3>
+        <h3 id="entropy">Entropy</h3>
         <p>The information content of a distribution, <code>H = Σ pᵢ log₂(1/pᵢ)</code> bits. No prefix code can use fewer than <code>H</code> bits per symbol on average; <a href="entries/huffman/index.html">Huffman</a> comes within one bit of it.</p>
 
-        <h3>Unbiased estimator / concentration</h3>
+        <h3 id="unbiased-estimator-concentration">Unbiased estimator / concentration</h3>
         <p>An estimator is <strong>unbiased</strong> if its expected value equals the true quantity (the <a href="entries/morris-counter/index.html">Morris counter</a>'s E[2^X−1] = n). <strong>Concentration</strong> is how tightly it clusters around that mean — usually improving like 1/√(number of repetitions), which is why sketches average many independent estimates.</p>
 
-        <h3>Prefix-free code</h3>
+        <h3 id="prefix-free-code">Prefix-free code</h3>
         <p>A set of binary codewords where none is a prefix of another, so a concatenated stream decodes unambiguously without separators. The output of <a href="entries/huffman/index.html">Huffman coding</a>.</p>
 
-        <h3>Locality-sensitive / min-wise independent</h3>
+        <h3 id="locality-sensitive-min-wise-independent">Locality-sensitive / min-wise independent</h3>
         <p>A hash family is <strong>locality-sensitive</strong> if similar inputs collide more often than dissimilar ones — the basis of <a href="entries/lsh/index.html">LSH</a>. <strong>Min-wise independence</strong> is the stronger property <a href="entries/minhash/index.html">MinHash</a> needs: every element is equally likely to hash to the minimum (a cheap linear hash isn't, and biases the estimate).</p>
 
-        <h3>Laplacian / Fiedler vector / algebraic connectivity</h3>
+        <h3 id="laplacian-fiedler-vector-algebraic-connectivity">Laplacian / Fiedler vector / algebraic connectivity</h3>
         <p>The graph <strong>Laplacian</strong> is L = D − A (degrees minus adjacency). Its second-smallest eigenvalue λ₂ is the <strong>algebraic connectivity</strong> (how hard the graph is to disconnect), and the corresponding eigenvector — the <strong>Fiedler vector</strong> — gives each node a coordinate that <a href="entries/spectral-graph-drawing/index.html">draws the graph</a> and <a href="entries/spectral-partitioning/index.html">cuts it</a>.</p>
 
-        <h3>Conductance / Cheeger's inequality</h3>
+        <h3 id="conductance-cheegers-inequality">Conductance / Cheeger's inequality</h3>
         <p><strong>Conductance</strong> measures how bottlenecked a cut is — edges crossing it relative to the smaller side's volume. <strong>Cheeger's inequality</strong> bounds the best possible conductance by the spectrum: λ₂/2 ≤ φ ≤ √(2λ₂), which makes the spectral cut provably near-optimal.</p>
 
-        <h3>Stationary distribution</h3>
+        <h3 id="stationary-distribution">Stationary distribution</h3>
         <p>For a random walk on a graph, the long-run fraction of time spent at each node — a probability vector unchanged by one more step (P·r = r), i.e. the dominant eigenvector of the transition matrix. <a href="entries/pagerank/index.html">PageRank</a> is exactly this for the web's link graph.</p>
 
-        <h3>Power iteration</h3>
+        <h3 id="power-iteration">Power iteration</h3>
         <p>Find a matrix's dominant eigenvector by repeatedly multiplying a vector by the matrix and renormalizing; it converges geometrically. The engine behind <a href="entries/spectral-graph-drawing/index.html">spectral layout</a> and <a href="entries/pagerank/index.html">PageRank</a>.</p>
       </section>
     </article>
