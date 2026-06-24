@@ -45,7 +45,7 @@
     <article class="prose">
       <section>
         <h2>What you're seeing</h2>
-        <p>To compress text, we want short bit-codes for common symbols and longer ones for rare symbols — but the codes must be <em>prefix-free</em> (no code is the start of another) so a stream decodes unambiguously. Huffman builds them bottom-up: start with one tree per symbol, weighted by frequency, and repeatedly fuse the two lightest trees into one. The frequencies you see merging are the running tree weights; when a single tree remains, reading <code>0</code> for each left branch and <code>1</code> for each right gives every symbol its code. Rare symbols end up deep in the tree (long codes), frequent ones shallow (short codes).</p>
+        <p>To compress text, we want short bit-codes for common symbols and longer ones for rare symbols — but the codes must be <em><a href="../../glossary.html#prefix-free-code">prefix-free</a></em> (no code is the start of another) so a stream decodes unambiguously. Huffman builds them bottom-up: start with one tree per symbol, weighted by frequency, and repeatedly fuse the two lightest trees into one. The frequencies you see merging are the running tree weights; when a single tree remains, reading <code>0</code> for each left branch and <code>1</code> for each right gives every symbol its code. Rare symbols end up deep in the tree (long codes), frequent ones shallow (short codes).</p>
       </section>
 
       <section>
