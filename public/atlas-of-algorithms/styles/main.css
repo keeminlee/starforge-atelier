@@ -360,14 +360,36 @@ code, pre, kbd, samp { font-family: var(--font-mono); }
   min-width: 120px;
 }
 .algo-speed-input { flex: 1 1 auto; }
-.algo-keyhint {
+.algo-railfoot {
   flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3) var(--sp-4);
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--sp-1));
+}
+.algo-keyhint {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   color: var(--faint);
   letter-spacing: 0.03em;
-  margin-top: calc(-1 * var(--sp-1));
 }
+.algo-copylink {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+.algo-copylink:hover { border-color: var(--accent); color: var(--ink); }
+.algo-copylink:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.algo-copylink.copied { color: var(--invariant); border-color: var(--invariant); }
 
 /* ============================== PROSE =============================== *
  * The explainer. One ordered narrative; section headings carry a small

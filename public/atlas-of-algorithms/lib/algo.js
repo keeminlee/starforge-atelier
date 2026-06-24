@@ -381,6 +381,25 @@
     return node;
   }
 
+  /* Copy text to the clipboard. Uses the async Clipboard API where available
+   * (https/localhost), falling back to a hidden-textarea execCommand for file://. */
+  function copyToClipboard(text, done) {
+    var nav = global.navigator;
+    if (nav && nav.clipboard && nav.clipboard.writeText) {
+      nav.clipboard.writeText(text).then(done, function () { legacyCopy(text); done(); });
+    } else { legacyCopy(text); done(); }
+  }
+  function legacyCopy(text) {
+    try {
+      var ta = global.document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute'; ta.style.left = '-9999px';
+      global.document.body.appendChild(ta); ta.select();
+      global.document.execCommand('copy');
+      global.document.body.removeChild(ta);
+    } catch (e) { /* clipboard unavailable; silent */ }
+  }
+
   /* Sum up a counters object for a compact total (used in the readout). */
   function totalCounters(counters) {
     var sum = 0;
@@ -652,10 +671,24 @@
     bar.appendChild(speedWrap);
     this.railHost.appendChild(bar);
 
-    // Subtle keyboard-shortcut hint (keys bound in _installKeys).
+    // Rail footer: keyboard-shortcut hint (left) + a "copy link" button (right) that
+    // shares the exact current configuration via the URL hash.
+    var foot = el('div', 'algo-railfoot');
     var hint = el('div', 'algo-keyhint');
     hint.textContent = '⌨  space play / pause  ·  ← → step  ·  R restart';
-    this.railHost.appendChild(hint);
+    var copyBtn = el('button', 'algo-copylink', { type: 'button', title: 'Copy a link to this exact configuration' });
+    copyBtn.textContent = '🔗 Copy link';
+    copyBtn.addEventListener('click', function () {
+      try { writeHashParams(self.params, self.controls); } catch (e) {}
+      copyToClipboard(global.location.href, function () {
+        copyBtn.textContent = '✓ Copied';
+        copyBtn.classList.add('copied');
+        global.setTimeout(function () { copyBtn.textContent = '🔗 Copy link'; copyBtn.classList.remove('copied'); }, 1400);
+      });
+    });
+    foot.appendChild(hint);
+    foot.appendChild(copyBtn);
+    this.railHost.appendChild(foot);
   };
 
   /* ---- Readout (cost counters + step position) ---- */
