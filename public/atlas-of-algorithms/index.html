@@ -26,6 +26,7 @@
       <input class="atlas-search" type="search" id="search" placeholder="Search 40 algorithms…" aria-label="Search algorithms">
       <button class="atlas-random" id="random" type="button" title="Jump to a random algorithm">⚄ Surprise me</button>
     </div>
+    <p class="atlas-empty" id="empty" hidden>No algorithms match <strong id="empty-q"></strong> — try a family or technique name.</p>
 
     <div id="map">
       <section class="wing" id="wing-classic">
@@ -664,6 +665,14 @@
           var any = Array.prototype.some.call(g.querySelectorAll('.entry-card'), function (c) { return c.style.display !== 'none'; });
           g.style.display = any ? '' : 'none';
         });
+        // empty-state when nothing matches
+        var visible = cards.filter(function (c) { return c.style.display !== 'none'; }).length;
+        var empty = document.getElementById('empty');
+        if (empty) {
+          empty.hidden = visible > 0;
+          var eq = document.getElementById('empty-q');
+          if (eq) eq.textContent = q ? '“' + input.value.trim() + '”' : '';
+        }
       });
     })();
 

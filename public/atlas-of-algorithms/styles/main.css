@@ -539,6 +539,16 @@ code, pre, kbd, samp { font-family: var(--font-mono); }
 .atlas-random:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 .atlas-random:active { transform: translateY(0); }
 .atlas-random:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.atlas-empty {
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--font-prose);
+  font-size: var(--fs-lg);
+  margin: var(--sp-9) auto;
+  max-width: 50ch;
+}
+.atlas-empty[hidden] { display: none; }
+.atlas-empty strong { color: var(--ink); }
 
 /* A family group. */
 /* Wings — the two halves of the atlas (classic foundations, advanced wing). */
