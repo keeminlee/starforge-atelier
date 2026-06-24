@@ -651,6 +651,11 @@
     bar.appendChild(scrub);
     bar.appendChild(speedWrap);
     this.railHost.appendChild(bar);
+
+    // Subtle keyboard-shortcut hint (keys bound in _installKeys).
+    var hint = el('div', 'algo-keyhint');
+    hint.textContent = '⌨  space play / pause  ·  ← → step  ·  R restart';
+    this.railHost.appendChild(hint);
   };
 
   /* ---- Readout (cost counters + step position) ---- */

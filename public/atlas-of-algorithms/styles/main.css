@@ -360,6 +360,14 @@ code, pre, kbd, samp { font-family: var(--font-mono); }
   min-width: 120px;
 }
 .algo-speed-input { flex: 1 1 auto; }
+.algo-keyhint {
+  flex-basis: 100%;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--faint);
+  letter-spacing: 0.03em;
+  margin-top: calc(-1 * var(--sp-1));
+}
 
 /* ============================== PROSE =============================== *
  * The explainer. One ordered narrative; section headings carry a small
