@@ -23,7 +23,7 @@
   --grid:      #262b38;   /* on-canvas gridlines (engine reads this) */
   --ink:       #e7e9ee;   /* primary text */
   --muted:     #9aa3b2;   /* secondary text, labels */
-  --faint:     #6b7382;   /* tertiary text, captions */
+  --faint:     #828b9b;   /* tertiary text, captions — WCAG AA (≥4.5:1 on bg & panel-2) */
 
   /* Meaningful color. Each hue means one thing across the whole atlas. */
   --accent:    #6ea8fe;   /* MOTION: the active element / current comparison */
