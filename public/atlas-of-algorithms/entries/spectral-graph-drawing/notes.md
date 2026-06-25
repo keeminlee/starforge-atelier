@@ -5,7 +5,7 @@
 - **Fiedler, M. "Algebraic connectivity of graphs." Czechoslovak Math. J. 23(2):298–305, 1973.**
   The Fiedler vector (eigenvector of λ₂) and algebraic connectivity.
 - **Spielman, D. *Spectral and Algebraic Graph Theory* (Yale)** —
-  http://cs-www.cs.yale.edu/homes/spielman/sagt/ — the Laplacian quadratic form xᵀLx, drawing
+  https://www.cs.yale.edu/homes/spielman/sagt/ — the Laplacian quadratic form xᵀLx, drawing
   graphs with eigenvectors; primary source for the invariant section.
 - **von Luxburg, U. "A tutorial on spectral clustering." Stat. Comput. 17(4), 2007** — spectral
   clustering on the bottom Laplacian eigenvectors.

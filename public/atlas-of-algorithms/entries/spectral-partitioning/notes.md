@@ -5,7 +5,7 @@
 - **Cheeger's inequality** (discrete) — the cornerstone bound λ₂/2 ≤ φ_G ≤ √(2λ₂) for the
   normalized Laplacian. Standard; see Spielman's SAGT lectures.
 - **Spielman, D. *Spectral and Algebraic Graph Theory* (Yale)** —
-  http://cs-www.cs.yale.edu/homes/spielman/sagt/ — Cheeger, the sweep/rounding proof, conductance.
+  https://www.cs.yale.edu/homes/spielman/sagt/ — Cheeger, the sweep/rounding proof, conductance.
 - **Shi, J. & Malik, J. "Normalized cuts and image segmentation." IEEE TPAMI 22(8), 2000** —
   the normalized-cut application (in "in the wild").
 - **Andoni, *Advanced Algorithms* (Columbia COMS 4995-8, 2021), Lecture 16** —
