@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Edge of Chaos · The Atlas of Emergence</title>
+<meta name="description" content="Every simulation in the Atlas has a knob. Somewhere along it sits a critical point — the boundary between frozen order and boiling chaos — where the system comes alive.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Edge of Chaos · The Atlas of Emergence">
+<meta property="og:description" content="Order, chaos, and the fertile boundary between them — the recurring critical point that ties the Atlas together.">
+<meta property="og:image" content="assets/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="crumb"><a href="index.html">← The Atlas of Emergence</a> / Essay</nav>
+
+  <header class="entry-head">
+    <div class="cat">Essay</div>
+    <h1>The Edge of Chaos</h1>
+    <p class="blurb">Every simulation here has a knob. Somewhere along it sits a critical point where the system stops being boring.</p>
+  </header>
+
+  <article class="prose">
+
+    <p>Open almost any entry in this Atlas and you will find a slider you can drag to
+      either extreme, and at both extremes the same disappointment: nothing
+      interesting happens. Turn the <a href="entries/ising/index.html">Ising model</a>
+      cold and it freezes into a single dull color. Turn it hot and it boils into
+      featureless static. Crank the noise in the <a href="entries/vicsek/index.html">Vicsek
+      model</a> all the way up and the flock dissolves into confetti; turn it all the
+      way down and you get a rigid, lifeless drift. The interesting things — the
+      domains at every scale, the flocks crystallizing and breaking, the fluctuations
+      that won't settle — all live in a narrow band <em>between</em> the extremes.
+      That band is the subject of this essay. It has a name: the <strong>critical
+      point</strong>, and, more romantically, the <strong>edge of chaos</strong>.</p>
+
+    <h2>Three regimes</h2>
+    <p>In 1984 Stephen Wolfram sorted cellular automata into four classes by their
+      long-term behavior. Class&nbsp;I dies into a uniform state. Class&nbsp;II settles
+      into simple stable or periodic structures. Class&nbsp;III churns forever in
+      chaotic, random-looking noise. And Class&nbsp;IV — rare, and the most
+      interesting — produces localized structures that move, persist, collide, and
+      interact, neither freezing nor dissolving.
+      <a href="entries/game-of-life/index.html">Conway's Game of Life</a> is the
+      patron saint of Class&nbsp;IV: its gliders and guns are exactly these mobile,
+      durable structures, and it is no accident that Life turned out to be capable of
+      universal computation. The pattern recurs everywhere once you look: at one end,
+      frozen order; at the other, boiling chaos; and between them a thin, fertile
+      seam where complexity lives.</p>
+
+    <h2>Phase transitions and universality</h2>
+    <p>Physics has a precise language for that seam. When a system changes character
+      sharply as you tune a parameter — solid to liquid, magnet to non-magnet,
+      free-flowing traffic to jammed — it undergoes a <strong>phase transition</strong>,
+      and the tuning value where it flips is the critical point. The Ising model's
+      critical temperature (T<sub>c</sub> ≈ 2.269 in units of J/k<sub>B</sub>, which its slider defaults to) is
+      the cleanest example in the Atlas: just below it, spontaneous order; just above,
+      disorder; exactly at it, domains of every size at once, and a correlation length
+      that diverges so that distant spins feel each other. The
+      <a href="entries/vicsek/index.html">Vicsek model</a> has the same structure with
+      noise as its temperature, and <a href="entries/traffic/index.html">phantom traffic
+      jams</a> appear as you push past a critical <em>density</em> — a transition in a
+      system made of nothing but cars and dawdling.</p>
+    <p>The deep surprise here is <strong>universality</strong>. Near a critical point,
+      the microscopic details stop mattering. A magnet, a fluid at its critical point,
+      and an abstract lattice model fall into the same handful of "universality
+      classes," sharing the same critical exponents despite having nothing physical in
+      common. It is one of the most beautiful facts in science: at the edge, nature
+      forgets what it is made of and remembers only its symmetries and its dimension.
+      This is also why toy models earn their keep — at criticality, a caricature and
+      the real thing can be <em>quantitatively</em> the same.</p>
+
+    <h2>Systems that find the edge by themselves</h2>
+    <p>A critical point is usually a knife-edge: you have to tune the parameter to
+      exactly the right value to sit on it. So why does nature seem to find critical
+      behavior — scale-free avalanches, power laws, 1/f noise — so often, without
+      anyone tuning anything? In 1987 Bak, Tang, and Wiesenfeld proposed an answer that
+      the <a href="entries/sandpile/index.html">sandpile</a> makes visible:
+      <strong>self-organized criticality</strong>. Some systems, driven slowly, tune
+      <em>themselves</em> to the critical point and stay there, producing avalanches of
+      every size with no fine-tuning at all. The edge of chaos, in these systems, is not
+      a place you have to find — it is an attractor the system falls into on its own.</p>
+
+    <h2>The seductive hypothesis</h2>
+    <p>In 1990 Christopher Langton made the boldest claim in this neighborhood. Studying
+      cellular automata, he defined a parameter (he called it λ) that tunes a rule from
+      ordered to chaotic, and argued that the capacity for <em>computation</em> —
+      storing, transmitting, and modifying information — is maximized near the
+      transition, at the edge of chaos. The idea was intoxicating and quickly leapt its
+      bounds: perhaps life itself, perhaps cognition, perhaps evolution, all flourish at
+      the boundary between order and chaos, because that is the only place rich enough to
+      support them and stable enough to survive. Stuart Kauffman built a theory of
+      genetic regulatory networks around a kindred idea.</p>
+    <p>It is worth being honest, because the idea is so attractive that it is easy to
+      overstate. When Mitchell, Hraber, and Crutchfield revisited Langton's experiments
+      in 1993, they found the evidence considerably weaker than advertised: the link
+      between λ and computational capacity was real but loose, and partly an artifact of
+      how the experiments were set up. "Computation occurs at the edge of chaos" is a
+      genuine insight and a genuine overreach at the same time. The careful version
+      survives — interesting, complex, information-rich behavior <em>tends</em> to live
+      near transitions, where a system is neither too rigid to change nor too noisy to
+      remember — but "the edge of chaos explains life" is a slogan, not a theorem. Hold
+      it the way you'd hold any beautiful idea you haven't proven.</p>
+
+    <h2>Find it yourself</h2>
+    <p>The Atlas is, among other things, a place to go looking for critical points by
+      hand. A short tour:</p>
+    <ul>
+      <li>Set the <a href="entries/ising/index.html">Ising</a> temperature to 2.27 and
+        watch domains of every size flicker — then nudge it up or down and watch the
+        scale-free structure vanish.</li>
+      <li>Sweep the <a href="entries/vicsek/index.html">Vicsek</a> noise down from high
+        and find the value where a single flock direction suddenly crystallizes.</li>
+      <li>Raise the density in <a href="entries/traffic/index.html">traffic</a> until
+        the first phantom jam appears, then find the density that maximizes flow — it is
+        just below the jam.</li>
+      <li>Tune <a href="entries/lenia/index.html">Lenia</a>'s growth parameters by a
+        hair and watch creatures appear, mutate, and die — the lifeforms live in a thin
+        slice of parameter space.</li>
+      <li>And simply watch the <a href="entries/sandpile/index.html">sandpile</a> hold
+        itself at the edge, with no slider required.</li>
+    </ul>
+    <p>Once you have the eye for it, you cannot stop seeing it: the fertile, unstable
+      boundary between too much order and too much noise, where simple rules become
+      worlds.</p>
+
+    <h2>Notes &amp; sources</h2>
+    <ol class="refs">
+      <li>Wolfram, S. (1984). "Universality and complexity in cellular automata."
+        <em>Physica D</em> 10(1–2), 1–35.</li>
+      <li>Langton, C. G. (1990). "Computation at the edge of chaos: Phase transitions
+        and emergent computation." <em>Physica D</em> 42(1–3), 12–37.</li>
+      <li>Mitchell, M., Hraber, P. T., Crutchfield, J. P. (1993). "Revisiting the edge of
+        chaos: Evolving cellular automata to perform computations." <em>Complex
+        Systems</em> 7, 89–130. (The skeptical re-examination.)</li>
+      <li>Bak, P., Tang, C., Wiesenfeld, K. (1987). "Self-Organized Criticality: An
+        Explanation of 1/f Noise." <em>Phys. Rev. Lett.</em> 59(4), 381–384.</li>
+      <li>Stanley, H. E. (1971). <em>Introduction to Phase Transitions and Critical
+        Phenomena.</em> Oxford University Press. (Universality and critical exponents.)</li>
+      <li>Kauffman, S. A. (1993). <em>The Origins of Order.</em> Oxford University Press.</li>
+    </ol>
+
+    <div class="related">
+      <h2>Keep reading</h2>
+      <a href="about.html">← What Emergence Is</a>
+      <a href="entries/ising/index.html">Ising →</a>
+      <a href="index.html">the map →</a>
+    </div>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="index.html">back to the map</a>
+  </footer>
+</div>
+</body>
+</html>

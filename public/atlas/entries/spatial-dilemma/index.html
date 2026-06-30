@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Spatial Dilemma · The Atlas of Emergence</title>
+<meta name="description" content="Nowak & May's spatial Prisoner's Dilemma: selfish agents play a game with their neighbors and copy whoever scored best — and cooperation survives by huddling into clusters, in evolving kaleidoscopic patterns.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="spatial-dilemma">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Social Dynamics</nav>
+
+  <header class="entry-head">
+    <div class="cat">Social Dynamics</div>
+    <h1>The Spatial Dilemma</h1>
+    <p class="blurb">Selfish agents play a game with their neighbors and copy whoever scored best.
+      Defection always pays better in the moment — yet cooperation refuses to die. It huddles into
+      clusters, and the borders churn in evolving, kaleidoscopic patterns.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Each cell is a <strong>cooperator</strong> (blue) or a <strong>defector</strong> (red).
+    The boundaries flash as cells switch: <span style="color:#ebcd3c">yellow</span> cells just turned defector,
+    <span style="color:#46c86e">green</span> cells just turned cooperator. Start from the lone defector and watch the
+    symmetric kaleidoscope grow; drag the <em>b</em> slider to find the edge of chaos around b ≈ 1.85.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A grid of agents, each playing a simple game — the <strong>Prisoner's Dilemma</strong> — with
+      its eight immediate neighbors, then copying whichever nearby agent scored highest. Two strategies
+      compete: <em>cooperate</em> and <em>defect</em>. Defecting always earns more against any given
+      partner, so a rational, selfish agent should defect — and if that were the whole story, cooperation
+      would vanish in a generation. Yet it doesn't. Cooperators that find themselves next to other
+      cooperators do well <em>together</em>, and they band into solid clusters whose interiors are safe.
+      Defectors prey on the edges but can't penetrate the core. The result is a living standoff:
+      cooperation neither dies out nor takes over, and the boundaries between the two strategies
+      churn forever in intricate, often fractal, patterns.</p>
+
+    <h2>The rule</h2>
+    <p>Every generation has two steps, applied to all cells at once.</p>
+    <ul>
+      <li><strong>Play.</strong> Each cell plays the one-shot Prisoner's Dilemma against each of its 8
+        Moore neighbors <em>and</em> against itself (self-interaction, as in the original model),
+        adding up a total payoff over those 9 games. The payoffs follow Nowak &amp; May's convention
+        (reward <code>R = 1</code>, temptation <code>T = b</code>, sucker <code>S = 0</code>,
+        punishment <code>P = 0</code>): a <strong>cooperator</strong> earns <code>1</code> for each
+        partner who cooperates and <code>0</code> for each who defects; a <strong>defector</strong>
+        earns <code>b</code> for each partner who cooperates and <code>0</code> for each who defects,
+        where <code>1 &lt; b &lt; 2</code> is the <em>temptation</em> to defect.</li>
+      <li><strong>Update.</strong> Each cell then adopts the strategy of the <strong>highest-scoring
+        cell in its Moore neighborhood, including itself</strong> — "imitate the most successful
+        neighbor." The only thing that ever changes a cell's mind is local success. (On a tie the cell
+        keeps its current strategy.)</li>
+    </ul>
+    <p>That's the entire specification. The grid wraps around at the edges (a torus). There is no
+      memory of past rounds, no reputation, no notion of fairness — just a payoff and a copy rule.
+      The one control knob is the temptation <code>b</code>: nudge it and the whole character of the
+      world changes.</p>
+
+    <h2>Why it matters</h2>
+    <p>The <strong>evolution of cooperation</strong> is one of the deepest puzzles in biology and social
+      science. Natural selection rewards whatever out-reproduces its rivals, and in a one-shot Prisoner's
+      Dilemma that is always defection — so the living world ought to be a war of all against all. Yet
+      cooperation is everywhere, from genes to cells to societies. <strong>Nowak &amp; May (1992)</strong>
+      showed that <em>spatial structure alone</em> is enough to rescue it: when agents play only with
+      their neighbors and imitate local winners, cooperators survive — and even thrive — with no kinship,
+      no memory, and no reputation required. Clusters of cooperators protect their own interiors from
+      invading defectors; the geometry does the work that morality is usually credited with. The paper is
+      a landmark of evolutionary game theory and made the abstract idea of cooperation viscerally visual.</p>
+    <p>It also rhymes with another entry in this Atlas. In
+      <a href="../rps-spatial/index.html">spatial rock-paper-scissors</a>, no single species can win
+      because each is eaten by another in a cycle, and space lets all three coexist as rotating spirals.
+      Here, no single strategy wins either — but for a different reason: cooperators win <em>locally</em>
+      by clumping, defectors win <em>locally</em> at the borders, and the lattice holds them in permanent
+      tension. Both are cases of the same lesson: putting a game on a grid can change its outcome entirely.
+      Compare it too with the <a href="../voter-model/index.html">voter model</a>, where neighbors imitate
+      each other with no payoff at all and the grid eventually fixates on one opinion; add a game to the
+      imitation and fixation gives way to endless coexistence.</p>
+
+    <h2>In the wild</h2>
+    <p>This is the mechanism evolutionary biologists call <strong>network (or spatial) reciprocity</strong> —
+      one of several routes by which cooperation can evolve, alongside kin selection, direct and indirect
+      reciprocity, and group selection (Nowak 2006). The spatial idea shows up wherever cooperators and
+      cheaters are physically clustered rather than well-mixed:</p>
+    <ul>
+      <li><strong>Microbial mats and biofilms.</strong> Bacteria that secrete shared "public goods"
+        (enzymes, iron-scavenging molecules) can be exploited by non-producing cheaters; spatial
+        structure lets producer clusters keep the benefits local and persist.</li>
+      <li><strong>Tumors.</strong> Cancer cells can be modeled as players in spatial games, with
+        cooperating and "free-riding" cell types whose mix depends on the tissue geometry.</li>
+      <li><strong>Ecosystems and societies.</strong> The broader study of how cooperation evolves —
+        from cleaner fish to human institutions — repeatedly finds that limited, local interaction
+        favors cooperators over a global free-for-all.</li>
+    </ul>
+    <p>Be honest about the limits: this is a <em>minimal</em> model, not a complete theory of altruism.
+      It uses a specific deterministic "imitate-the-best" update with self-interaction on a Moore
+      neighborhood, and the exact behavior depends on those choices. Network reciprocity is one
+      mechanism among several, and real cooperation usually involves memory, reputation, and reward —
+      none of which this grid has. What the model proves is narrow but striking: space <em>by itself</em>
+      can be enough.</p>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>Start from the <em>Single defector</em> seed (the default) and watch a single cheater in a sea
+        of cooperators erupt into a <strong>symmetric, growing kaleidoscope</strong> as defection invades
+        and cooperation fights back — the iconic Nowak–May image.</li>
+      <li>Sweep the temptation <code>b</code>. At <a href="#b=1.10&amp;speed=2">low b</a> cooperators
+        easily dominate; push it to <a href="#b=1.85&amp;speed=2">b ≈ 1.85</a> and the world drops into
+        chaotic churn that never settles; raise it
+        <a href="#b=1.95&amp;speed=2">higher still</a> and defectors take more and more ground.</li>
+      <li>Switch to the <em>Random mix</em> seed and lower the cooperator fraction. Watch the readout:
+        whatever you start with, the cooperator fraction tends to settle into a <strong>coexistence</strong>
+        value strictly between 0% and 100% — neither extinction nor takeover.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Nowak, M. A. &amp; May, R. M. (1992). "Evolutionary games and spatial chaos."
+        <em>Nature</em> 359, 826–829.</li>
+      <li>Nowak, M. A. &amp; May, R. M. (1993). "The spatial dilemmas of evolution."
+        <em>International Journal of Bifurcation and Chaos</em> 3(1), 35–78.</li>
+      <li>Axelrod, R. (1984). <em>The Evolution of Cooperation</em>. Basic Books.</li>
+      <li>Nowak, M. A. (2006). "Five rules for the evolution of cooperation."
+        <em>Science</em> 314, 1560–1563.</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

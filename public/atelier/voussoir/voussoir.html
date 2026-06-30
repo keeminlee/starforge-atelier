@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Voussoir</title>
+<style>
+  :root{
+    --charcoal:#23242a; --charcoal2:#2c2e36; --ink:#191a1f;
+    --parchment:#e9e1cc; --cream:#f4efe2; --navy:#2f3b4c; --navy2:#3a4759;
+    --brass:#b08d57; --gold:#d9b65a; --rust:#b04a36;
+    --stone-lo:#cbbf9f; --stone-hi:#e3d8bd;
+    --line:#5a5446;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    background:radial-gradient(circle at 50% 18%, #34353d 0%, #23242a 60%, #191a1f 100%);
+    color:var(--parchment);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    -webkit-font-smoothing:antialiased; min-height:100%;
+  }
+  .wrap{max-width:1240px;margin:0 auto;padding:22px 22px 40px;}
+  header{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #3c3d44;padding-bottom:12px;margin-bottom:14px;}
+  h1{font-size:30px;letter-spacing:5px;margin:0;font-weight:600;color:var(--cream);}
+  .sub{color:#9c937e;font-size:13px;letter-spacing:1.5px;font-style:italic;}
+  .layout{display:grid;grid-template-columns:1fr 348px;gap:20px;align-items:start;}
+  @media(max-width:1020px){.layout{grid-template-columns:1fr;}}
+  .stage{position:relative;background:linear-gradient(180deg,#26272e,#1d1e23);
+    border:1px solid #3c3d44;border-radius:7px;overflow:hidden;box-shadow:inset 0 0 60px rgba(0,0,0,.45);}
+  canvas{display:block;width:100%;height:auto;}
+  .panel{background:linear-gradient(180deg,#2a2b32,#232429);border:1px solid #3c3d44;border-radius:7px;padding:18px 18px 20px;}
+  .chapter{color:var(--gold);letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:4px;}
+  .cname{font-size:21px;color:var(--cream);margin:0 0 10px;}
+  .instr{font-size:14.5px;line-height:1.5;color:#d2c9b3;margin-bottom:16px;}
+  .ctrl{margin:14px 0;}
+  .ctrl label{display:flex;justify-content:space-between;font-size:13px;color:#bcb19a;letter-spacing:.5px;margin-bottom:6px;}
+  .ctrl .val{color:var(--gold);font-variant-numeric:tabular-nums;}
+  input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:3px;
+    background:linear-gradient(90deg,var(--brass),#5d5238);outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#f0d488,var(--brass));border:1px solid #6b5328;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.5);}
+  input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--brass);border:1px solid #6b5328;cursor:pointer;}
+  .drag-note{font-size:13px;color:#9c937e;font-style:italic;margin:10px 0;}
+  .buttons{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap;}
+  button{font-family:inherit;font-size:14px;letter-spacing:1px;color:var(--cream);
+    background:linear-gradient(180deg,#3a4759,#2f3b4c);border:1px solid #50607a;border-radius:5px;
+    padding:9px 15px;cursor:pointer;transition:.15s;}
+  button:hover{background:linear-gradient(180deg,#465570,#37475c);}
+  button.primary{background:linear-gradient(180deg,#caa24f,#9c7a36);border-color:#7c5f28;color:#211b0c;font-weight:600;}
+  button.primary:hover{background:linear-gradient(180deg,#dcb45f,#a9863c);}
+  button:disabled{opacity:.4;cursor:default;}
+  .nav{display:flex;justify-content:space-between;margin-top:16px;border-top:1px solid #3a3b42;padding-top:12px;font-size:13px;}
+  .nav button{padding:6px 11px;font-size:13px;}
+  .verdict{margin-top:16px;min-height:54px;border-radius:6px;padding:11px 13px;font-size:14.5px;line-height:1.45;
+    border:1px solid transparent;transition:.3s;}
+  .verdict.stand{background:rgba(120,150,90,.13);border-color:#6f8a4d;color:#cfe0b0;}
+  .verdict.fall{background:rgba(176,74,54,.13);border-color:#9c4434;color:#e6b3a6;}
+  .verdict .big{display:block;font-size:16px;letter-spacing:1px;color:var(--cream);margin-bottom:4px;}
+  .verdict.fall .big{color:#e8a594;}
+  .ethic{font-style:italic;}
+  .legend{margin-top:14px;font-size:12px;color:#9c937e;line-height:1.7;}
+  .legend .sw{display:inline-block;width:22px;height:3px;vertical-align:middle;margin-right:6px;border-radius:2px;}
+  .meter{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:#9c937e;}
+  .meterbar{flex:1;height:7px;border-radius:4px;background:#1d1e23;border:1px solid #3a3b42;position:relative;overflow:hidden;}
+  .meterfill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:4px;}
+  .ticks{position:absolute;top:0;bottom:0;width:1px;background:#6b6450;}
+  footer{margin-top:18px;color:#6f6a5b;font-size:11.5px;letter-spacing:.4px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>VOUSSOIR</h1>
+    <span class="sub">the dignity-doctrine made into losable statics &mdash; a thing holds only when the thrust comes home to ground</span>
+  </header>
+  <div class="layout">
+    <div class="stage"><canvas id="cv" width="960" height="640"></canvas></div>
+    <div class="panel">
+      <div class="chapter" id="chapter"></div>
+      <h2 class="cname" id="cname"></h2>
+      <div class="instr" id="instr"></div>
+      <div id="controls"></div>
+      <div class="meter">
+        <span>thrust&nbsp;eccentricity</span>
+        <div class="meterbar" id="meterbar"><div class="meterfill" id="meterfill"></div>
+          <div class="ticks" style="left:33.3%"></div><div class="ticks" style="left:66.6%"></div></div>
+      </div>
+      <div class="buttons">
+        <button class="primary" id="release">Release the load</button>
+        <button id="reset">Reset</button>
+      </div>
+      <div class="verdict" id="verdict"></div>
+      <div class="legend">
+        <span class="sw" style="background:var(--gold)"></span>thrust within the middle third &mdash; no tension, the stone is at ease<br>
+        <span class="sw" style="background:var(--brass)"></span>within the section &mdash; it stands, but the stone cracks<br>
+        <span class="sw" style="background:var(--rust)"></span>thrust has left the stone &mdash; this joint hinges
+      </div>
+      <div class="nav">
+        <button id="prev">&larr; Previous</button>
+        <span id="cnum"></span>
+        <button id="next">Next &rarr;</button>
+      </div>
+    </div>
+  </div>
+  <footer>Real (simplified) limit analysis: rigid voussoirs, a single line of thrust searched over the funicular family, standing iff the line lies within every joint. See voussoir.NOTES.md for the model and its honest limits.</footer>
+</div>
+<script>
+"use strict";
+// ===================== STATICS CORE (mirrors validated Python/Node tests) =====================
+function fitCircle(p1,p2,p3){
+  const [ax,ay]=p1,[bx,by]=p2,[cx,cy]=p3;
+  const d=2*(ax*(by-cy)+bx*(cy-ay)+cx*(ay-by));
+  const ux=((ax*ax+ay*ay)*(by-cy)+(bx*bx+by*by)*(cy-ay)+(cx*cx+cy*cy)*(ay-by))/d;
+  const uy=((ax*ax+ay*ay)*(cx-bx)+(bx*bx+by*by)*(ax-cx)+(cx*cx+cy*cy)*(bx-ax))/d;
+  return {ox:ux,oy:uy,R:Math.hypot(ax-ux,ay-uy)};
+}
+function unwrap(a,r){ while(a-r>Math.PI)a-=2*Math.PI; while(a-r<-Math.PI)a+=2*Math.PI; return a; }
+// Build the voussoir ring from left spring PL, right spring PR, crown PC, ring thickness t, N stones.
+function buildArch(PL,PR,PC,t,N){
+  const {ox,oy,R}=fitCircle(PL,PR,PC);
+  let aL=Math.atan2(PL[1]-oy,PL[0]-ox), aR=Math.atan2(PR[1]-oy,PR[0]-ox), aC=Math.atan2(PC[1]-oy,PC[0]-ox);
+  aC=unwrap(aC,aL); aR=unwrap(aR,aC);
+  const intra=[],extra=[];
+  for(let k=0;k<=N;k++){
+    const ang=aL+(aR-aL)*k/N, dx=Math.cos(ang), dy=Math.sin(ang);
+    intra.push([ox+R*dx,oy+R*dy]); extra.push([ox+(R+t)*dx,oy+(R+t)*dy]);
+  }
+  const vouss=[];
+  for(let k=0;k<N;k++){
+    const p=[intra[k],intra[k+1],extra[k+1],extra[k]];
+    let A=0,cx=0,cy=0;
+    for(let i=0;i<4;i++){const[x0,y0]=p[i],[x1,y1]=p[(i+1)%4];const cr=x0*y1-x1*y0;A+=cr;cx+=(x0+x1)*cr;cy+=(y0+y1)*cr;}
+    A*=0.5; cx/=6*A; cy/=6*A;
+    vouss.push({poly:p,cx:cx,cy:cy,w:Math.abs(A)});   // weight proportional to cross-sectional area
+  }
+  const joints=[];
+  for(let k=0;k<=N;k++) joints.push({a:intra[k],b:extra[k]});
+  return {vouss,joints,R,t,ox,oy};
+}
+// Pre-compute per-joint constants and the sorted load list (stone weights + optional extra point loads).
+function prep(arch,extras){
+  let loads=arch.vouss.map(v=>[v.cx,v.cy,v.w]);
+  if(extras) for(const e of extras) loads.push([e.x,e.y,e.w]);
+  loads.sort((p,q)=>p[0]-q[0]);
+  const J=[];
+  for(const j of arch.joints){
+    const a=j.a,b=j.b, cx=(a[0]+b[0])/2, cy=(a[1]+b[1])/2;
+    const dx=b[0]-a[0], dy=b[1]-a[1], Ln=Math.hypot(dx,dy);
+    let Wl=0,Sxc=0;
+    for(const L of loads){ if(L[0]<cx){ Wl+=L[2]; Sxc+=L[2]*(cx-L[0]); } }
+    J.push({cx,cy,ux:dx/Ln,uy:dy/Ln,Ln,Wl,Sxc});
+  }
+  let Sx0=0,W=0;
+  for(const L of loads){ if(L[0]<0) Sx0+=L[2]*(-L[0]); W+=L[2]; }
+  const ys=[]; for(const j of arch.joints){ys.push(j.a[1],j.b[1]);}
+  return {J,Sx0,W,ys};
+}
+// A trial thrust line is y(x)=b0+sig*x - Sx(x)/H, with b0=yc+Sx0/H (yc=crown height, H=horizontal thrust,
+// sig=overall slope/asymmetry). Returns each joint's normalized position t (0=intrados,1=extrados) and the
+// worst eccentricity |t-0.5| (0.5 = a face; 1/6 = edge of the middle third).
+function eccOf(P,H,yc,sig){
+  const invH=1/H, b0=yc+P.Sx0*invH; let me=0; const ts=[];
+  for(const j of P.J){
+    const tyc=b0+sig*j.cx-j.Sxc*invH;       // thrust height at the joint's centroid x
+    const m=sig-j.Wl*invH;                  // local slope of the thrust line there
+    let den=j.uy-m*j.ux; if(Math.abs(den)<1e-9) den=(den<0?-1e-9:1e-9);
+    const s=(tyc-j.cy)/den;                 // signed distance centroid->thrust, measured along the joint
+    const t=0.5+s/j.Ln;
+    ts.push(t); const e=Math.abs(t-0.5); if(e>me) me=e;
+  }
+  return {maxe:me,ts};
+}
+// Heyman's safe theorem: the arch stands iff SOME thrust line fits inside the masonry. Search the funicular
+// family (H,yc,sig) coarse-to-fine for the line of least maximum eccentricity.
+function solve(arch,extras,passes){
+  const P=prep(arch,extras); passes=passes||6;
+  let Hlo=0.02*P.W, Hhi=60*P.W;
+  let ylo=Math.min.apply(null,P.ys)-1.5, yhi=Math.max.apply(null,P.ys)+1.5;
+  let slo=-3, shi=3, best=null;
+  const nH=26,nY=26,nS=15;
+  for(let it=0;it<passes;it++){
+    let cand=null;
+    for(let ih=0;ih<nH;ih++){
+      const H=Hlo*Math.pow(Hhi/Hlo,ih/(nH-1));
+      for(let iy=0;iy<nY;iy++){
+        const yc=ylo+(yhi-ylo)*iy/(nY-1);
+        for(let is=0;is<nS;is++){
+          const sig=slo+(shi-slo)*is/(nS-1);
+          const r=eccOf(P,H,yc,sig);
+          if(!cand||r.maxe<cand.maxe) cand={maxe:r.maxe,H,yc,sig,ts:r.ts};
+        }
+      }
+    }
+    best=cand;
+    Hlo=best.H*0.6; Hhi=best.H*1.6; ylo=best.yc-0.5; yhi=best.yc+0.5; slo=best.sig-0.4; shi=best.sig+0.4;
+  }
+  // thrust-line points (one per joint), for drawing
+  const pts=[]; const invH=1/best.H, b0=best.yc+P.Sx0*invH;
+  for(const j of P.J){
+    const tyc=b0+best.sig*j.cx-j.Sxc*invH; const m=best.sig-j.Wl*invH;
+    let den=j.uy-m*j.ux; if(Math.abs(den)<1e-9) den=(den<0?-1e-9:1e-9);
+    const s=(tyc-j.cy)/den; pts.push([j.cx+s*j.ux, j.cy+s*j.uy]);
+  }
+  best.points=pts; best.stands=best.maxe<=0.5+1e-9; best.comfy=best.maxe<=1/6+1e-9;
+  return best;
+}
+
+// ===================== CHALLENGES =====================
+function extradosY(arch,x){ // top surface height of the ring at horizontal position x
+  const r=arch.R+arch.t, dx=x-arch.ox, v=r*r-dx*dx;
+  return v>0 ? arch.oy+Math.sqrt(v) : arch.oy;
+}
+const CHALLENGES=[
+  {
+    chapter:"I", cname:"The Half-Round",
+    instr:"A true semicircle over a three-metre gap. Drawn thin, its haunches betray it — the line of thrust escapes the stone about a third of the way down. Give the ring enough <em>depth</em> that the thrust can lie within it everywhere, then release the load to test it.",
+    ethic:"It holds because nothing was asked to carry more than it could, and the thrust came home to the ground.",
+    fall:"The ring was too shallow. The thrust crossed out through the haunches and the arch became a mechanism.",
+    span:[-3,0,3,0], crown:3, N:15,
+    controls:[{key:"t",label:"ring depth",min:0.22,max:0.95,step:0.01,init:0.30,fmt:v=>v.toFixed(2)+" m"}],
+    geom:s=>buildArch([-3,0],[3,0],[0,3],s.t,15),
+    extras:()=>null
+  },
+  {
+    chapter:"II", cname:"The Gentler Arc",
+    instr:"The same gap, but the ring is thin and cannot be made thicker. A full half-circle asks more of so slender a stone than it can give. <em>Lower the crown</em> — let the arc be gentler — until the thrust line finds room to lie down inside the masonry.",
+    ethic:"Ambition flattened into something the stone could keep. The line needed not strength but room.",
+    fall:"Reaching the full half-circle, the thin ring could not contain the thrust. It hinged at the haunches.",
+    N:15,
+    controls:[{key:"rise",label:"crown rise",min:1.1,max:3.2,step:0.02,init:3.2,fmt:v=>v.toFixed(2)+" m"}],
+    geom:s=>buildArch([-3.2,0],[3.2,0],[0,s.rise],0.34,15),
+    extras:()=>null
+  },
+  {
+    chapter:"III", cname:"The Burden",
+    instr:"A heavy block must cross on the arch's back. Set over the crown or a haunch it levers the ring apart; only above a <em>pier</em> can the stone pass its weight straight to the ground. <em>Drag the burden</em> along the arch until the ring can carry it, then release.",
+    ethic:"Weight was never the enemy — weight with nowhere to go was. Carried over the pier, it became patience.",
+    fall:"On the crown of the arch the burden had no honest path to ground. It drove the thrust out and the arch hinged beneath it.",
+    N:14, t:0.72, dragKey:"lx",
+    controls:[{key:"lx",label:"burden position",min:-2.6,max:2.6,step:0.02,init:0.0,fmt:v=>(Math.abs(v)<0.05?"crown":(v>0?"+":"−")+Math.abs(v).toFixed(2)+" m")}],
+    geom:s=>buildArch([-3,0],[3,0],[0,3],0.72,14),
+    extras:(s,arch)=>{const W=arch.vouss.reduce((a,v)=>a+v.w,0);return [{x:s.lx,y:extradosY(arch,s.lx)+0.18,w:0.46*W,block:true}];}
+  },
+  {
+    chapter:"IV", cname:"The Off-Centre Load",
+    instr:"This burden is fixed off to one side and will not be moved. The thrust leans toward the near haunch and wants out of the stone. You cannot move the load — so answer it with <em>depth</em>. Thicken the ring until the leaning thrust still lies within every joint.",
+    ethic:"What is asked to carry more must simply be more. The ring deepened, and the lean stayed home.",
+    fall:"Too slender for the off-centre weight, the thrust slid out at the loaded haunch and the ring folded.",
+    N:15, loadX:1.7,
+    controls:[{key:"t",label:"ring depth",min:0.40,max:1.30,step:0.01,init:0.58,fmt:v=>v.toFixed(2)+" m"}],
+    geom:s=>buildArch([-3,0],[3,0],[0,3],s.t,15),
+    extras:(s,arch)=>{const W=arch.vouss.reduce((a,v)=>a+v.w,0);return [{x:1.7,y:extradosY(arch,1.7)+0.18,w:0.60*W,block:true}];}
+  }
+];
+
+// ===================== VIEW / STATE =====================
+const cv=document.getElementById("cv"), ctx=cv.getContext("2d");
+const DPR=Math.min(2,window.devicePixelRatio||1);
+function fitCanvas(){
+  const cssW=cv.clientWidth||960; const cssH=cssW*640/960;
+  cv.width=Math.round(cssW*DPR); cv.height=Math.round(cssH*DPR);
+  view.scale=cv.width/(VIEW.x1-VIEW.x0);
+  view.oy=cv.height - ( -VIEW.y0 )*view.scale; // y=0 (springing) mapped
+}
+const VIEW={x0:-5.2,x1:5.2,y0:-1.55,y1:5.25};
+const view={scale:1,oy:0};
+function WX(x){ return (x-VIEW.x0)*view.scale; }
+function WY(y){ return cv.height - (y-VIEW.y0)*view.scale; }
+
+let idx=0, st={}, arch=null, sol=null, extras=null;
+let mode="edit";            // edit | revealing | stood | collapsing | collapsed
+let anim={t:0,raf:0};
+let collapse=null;
+
+function loadChallenge(i){
+  idx=(i+CHALLENGES.length)%CHALLENGES.length;
+  const C=CHALLENGES[idx];
+  st={};
+  for(const c of C.controls) st[c.key]=c.init;
+  buildControls(C);
+  document.getElementById("chapter").textContent="Chapter "+C.chapter;
+  document.getElementById("cname").textContent=C.cname;
+  document.getElementById("instr").innerHTML=C.instr;
+  document.getElementById("cnum").textContent=(idx+1)+" / "+CHALLENGES.length;
+  setVerdict("");
+  mode="edit"; recompute(); draw();
+}
+function buildControls(C){
+  const host=document.getElementById("controls"); host.innerHTML="";
+  for(const c of C.controls){
+    const wrap=document.createElement("div"); wrap.className="ctrl";
+    const lab=document.createElement("label");
+    lab.innerHTML="<span>"+c.label+"</span><span class='val' id='val_"+c.key+"'></span>";
+    const inp=document.createElement("input"); inp.type="range";
+    inp.min=c.min; inp.max=c.max; inp.step=c.step; inp.value=st[c.key]; inp.id="inp_"+c.key;
+    inp.addEventListener("input",()=>{ st[c.key]=parseFloat(inp.value); if(mode!=="edit")setVerdict(""); clearCollapse(); mode="edit"; recompute(); draw(); });
+    wrap.appendChild(lab); wrap.appendChild(inp); host.appendChild(wrap);
+  }
+  if(C.dragKey){
+    const note=document.createElement("div"); note.className="drag-note";
+    note.textContent="— or drag the dark block across the arch directly —";
+    host.appendChild(note);
+  }
+  syncControlLabels();
+}
+function syncControlLabels(){
+  const C=CHALLENGES[idx];
+  for(const c of C.controls){
+    const v=document.getElementById("val_"+c.key); if(v)v.textContent=c.fmt(st[c.key]);
+    const inp=document.getElementById("inp_"+c.key); if(inp)inp.value=st[c.key];
+  }
+}
+function recompute(){
+  const C=CHALLENGES[idx];
+  arch=C.geom(st);
+  extras=C.extras(st,arch);
+  sol=solve(arch,extras, mode==="edit"?5:7);
+  syncControlLabels();
+  updateMeter();
+}
+function updateMeter(){
+  const e=Math.min(1,sol.maxe);
+  const f=document.getElementById("meterfill");
+  f.style.width=(e/1.0*100).toFixed(1)+"%";
+  f.style.background = sol.comfy?"var(--gold)" : (sol.stands?"var(--brass)":"var(--rust)");
+}
+
+// ===================== DRAWING =====================
+function clear(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  // soft parchment glow behind the arch
+  const g=ctx.createRadialGradient(WX(0),WY(2),20,WX(0),WY(2),cv.width*0.5);
+  g.addColorStop(0,"rgba(233,225,204,.06)"); g.addColorStop(1,"rgba(0,0,0,0)");
+  ctx.fillStyle=g; ctx.fillRect(0,0,cv.width,cv.height);
+}
+function drawGround(){
+  const yb=WY(VIEW.y0+0.05);
+  // ground bed
+  ctx.fillStyle="#1b1c21";
+  ctx.fillRect(0,WY(0.02),cv.width,cv.height-WY(0.02));
+  // springing/ground line
+  ctx.strokeStyle="#473f33"; ctx.lineWidth=2*DPR;
+  ctx.beginPath(); ctx.moveTo(0,WY(0)); ctx.lineTo(cv.width,WY(0)); ctx.stroke();
+  // hatching
+  ctx.strokeStyle="rgba(90,80,60,.25)"; ctx.lineWidth=1*DPR;
+  for(let x=-6;x<6;x+=0.5){ ctx.beginPath(); ctx.moveTo(WX(x),WY(0)); ctx.lineTo(WX(x+0.3),WY(-0.4)); ctx.stroke(); }
+}
+function drawPiers(){
+  if(!arch.joints.length)return;
+  const left=arch.joints[0], right=arch.joints[arch.joints.length-1];
+  for(const j of [left,right]){
+    const inn=j.a, out=j.b, baseY=VIEW.y0+0.05;
+    ctx.beginPath();
+    ctx.moveTo(WX(inn[0]),WY(inn[1]));
+    ctx.lineTo(WX(out[0]),WY(out[1]));
+    const outx = out[0] + (out[0]>0? 0.55: -0.55);
+    const innx = inn[0] + (inn[0]>0? 0.30: -0.30);
+    ctx.lineTo(WX(outx),WY(baseY));
+    ctx.lineTo(WX(innx),WY(baseY));
+    ctx.closePath();
+    const g=ctx.createLinearGradient(0,WY(2),0,WY(baseY));
+    g.addColorStop(0,"#39383e"); g.addColorStop(1,"#26252a");
+    ctx.fillStyle=g; ctx.fill();
+    ctx.strokeStyle="#15151a"; ctx.lineWidth=1.5*DPR; ctx.stroke();
+    // a few courses
+    ctx.strokeStyle="rgba(20,20,26,.6)"; ctx.lineWidth=1*DPR;
+    for(let yy=0.6;yy<2.4;yy+=0.6){
+      const xa=inn[0]+(inn[0]>0?0.30:-0.30), xb=out[0]+(out[0]>0?0.55:-0.55);
+      if(yy>Math.min(inn[1],out[1]))continue;
+      ctx.beginPath(); ctx.moveTo(WX(Math.min(xa,xb)),WY(yy)); ctx.lineTo(WX(Math.max(xa,xb)),WY(yy)); ctx.stroke();
+    }
+  }
+}
+function stoneFill(i,n){
+  const t=i/(n-1||1);
+  const lo=[203,191,159], hi=[227,216,189];
+  const j=0.5+0.5*Math.sin(i*2.7);
+  const mix=k=>Math.round(lo[k]+(hi[k]-lo[k])*(0.45+0.5*j));
+  return "rgb("+mix(0)+","+mix(1)+","+mix(2)+")";
+}
+function transformPoly(poly,tr){
+  if(!tr)return poly;
+  return poly.map(p=>{
+    let x=p[0]-tr.px, y=p[1]-tr.py;
+    const c=Math.cos(tr.a),s=Math.sin(tr.a);
+    return [tr.px + x*c - y*s + tr.dx, tr.py + x*s + y*c + tr.dy];
+  });
+}
+function drawArch(){
+  const n=arch.vouss.length;
+  for(let i=0;i<n;i++){
+    const v=arch.vouss[i];
+    let tr=null, alpha=1;
+    if(collapse){ tr=collapse.stones[i].tr; alpha=collapse.stones[i].alpha; }
+    const poly=transformPoly(v.poly,tr);
+    ctx.globalAlpha=alpha;
+    ctx.beginPath();
+    ctx.moveTo(WX(poly[0][0]),WY(poly[0][1]));
+    for(let k=1;k<poly.length;k++) ctx.lineTo(WX(poly[k][0]),WY(poly[k][1]));
+    ctx.closePath();
+    const mid=v.poly[0], top=v.poly[3];
+    const g=ctx.createLinearGradient(0,WY(top[1]),0,WY(mid[1]));
+    g.addColorStop(0,stoneFill(i,n)); g.addColorStop(1,"#bdb094");
+    ctx.fillStyle=g; ctx.fill();
+    const isKey=(i===Math.floor(n/2)&&n%2===1);
+    ctx.strokeStyle=isKey?"#7a6a44":"#5a5446"; ctx.lineWidth=(isKey?1.8:1.2)*DPR; ctx.stroke();
+    if(isKey){ ctx.strokeStyle="rgba(217,182,90,.5)"; ctx.lineWidth=1*DPR; ctx.stroke(); }
+  }
+  ctx.globalAlpha=1;
+}
+function drawLoadBlock(){
+  if(!extras)return;
+  for(const e of extras){ if(!e.block)continue;
+    const w=0.62, h=0.5;
+    let cx=e.x, cy=e.y+h/2, ang=0, dx=0, dy=0, alpha=1;
+    if(collapse&&collapse.load){ ang=collapse.load.a; dx=collapse.load.dx; dy=collapse.load.dy; alpha=collapse.load.alpha; }
+    ctx.save(); ctx.globalAlpha=alpha;
+    ctx.translate(WX(cx)+dx*view.scale, WY(cy)-dy*view.scale); ctx.rotate(ang);
+    ctx.beginPath();
+    ctx.rect(-w/2*view.scale,-h/2*view.scale,w*view.scale,h*view.scale);
+    const g=ctx.createLinearGradient(0,-h/2*view.scale,0,h/2*view.scale);
+    g.addColorStop(0,"#42506a"); g.addColorStop(1,"#2c3647");
+    ctx.fillStyle=g; ctx.fill();
+    ctx.strokeStyle="#1b2330"; ctx.lineWidth=1.5*DPR; ctx.stroke();
+    ctx.fillStyle="rgba(217,182,90,.85)"; ctx.font=(11*DPR)+"px Georgia"; ctx.textAlign="center"; ctx.textBaseline="middle";
+    ctx.fillText("load",0,0);
+    ctx.restore();
+  }
+  ctx.textAlign="start"; ctx.textBaseline="alphabetic";
+}
+function statusColor(e){ return e<=1/6?"#d9b65a" : (e<=0.5?"#b08d57":"#b04a36"); }
+function drawThrust(reveal){
+  if(!sol||collapse)return;
+  const pts=sol.points, ts=sol.ts;
+  const upto = reveal===undefined? pts.length : Math.max(2,Math.floor(reveal*pts.length));
+  // glow
+  ctx.lineCap="round"; ctx.lineJoin="round";
+  for(let pass=0;pass<2;pass++){
+    for(let i=0;i<Math.min(upto,pts.length)-1;i++){
+      const e=Math.max(Math.abs(ts[i]-0.5),Math.abs(ts[i+1]-0.5));
+      ctx.beginPath();
+      ctx.moveTo(WX(pts[i][0]),WY(pts[i][1]));
+      ctx.lineTo(WX(pts[i+1][0]),WY(pts[i+1][1]));
+      if(pass===0){ ctx.strokeStyle="rgba(217,182,90,.18)"; ctx.lineWidth=9*DPR; }
+      else{ ctx.strokeStyle=statusColor(e); ctx.lineWidth=2.6*DPR; }
+      ctx.stroke();
+    }
+  }
+  // joint thrust dots + hinge markers
+  for(let i=0;i<Math.min(upto,pts.length);i++){
+    const e=Math.abs(ts[i]-0.5);
+    ctx.beginPath(); ctx.arc(WX(pts[i][0]),WY(pts[i][1]),2.4*DPR,0,7); ctx.fillStyle=statusColor(e); ctx.fill();
+    if(e>0.5){ // thrust left the stone here: mark the hinge at the face it exited
+      const j=arch.joints[i]; const face = ts[i]<0? j.a : j.b;
+      ctx.beginPath(); ctx.arc(WX(face[0]),WY(face[1]),5.5*DPR,0,7);
+      ctx.strokeStyle="#e06a52"; ctx.lineWidth=2*DPR; ctx.stroke();
+      ctx.beginPath(); ctx.arc(WX(face[0]),WY(face[1]),2*DPR,0,7); ctx.fillStyle="#e06a52"; ctx.fill();
+    }
+  }
+  ctx.lineCap="butt";
+}
+function draw(reveal){
+  fitCanvas();
+  clear(); drawGround(); drawPiers(); drawArch(); drawLoadBlock();
+  if(mode==="edit"){ // faint live preview
+    ctx.globalAlpha=0.55; drawThrust(); ctx.globalAlpha=1;
+  } else if(mode==="revealing"||mode==="stood"){
+    drawThrust(reveal);
+  }
+}
+
+// ===================== RELEASE / ANIMATION =====================
+function setVerdict(html,cls){
+  const v=document.getElementById("verdict");
+  v.className="verdict"+(cls?(" "+cls):""); v.innerHTML=html;
+}
+function release(){
+  if(mode==="revealing"||mode==="collapsing")return;
+  mode="compute"; recompute(); // full-resolution solve
+  const C=CHALLENGES[idx];
+  if(sol.stands){
+    mode="revealing"; anim.t=0;
+    cancelAnimationFrame(anim.raf);
+    const step=()=>{
+      anim.t+=0.045; const r=Math.min(1,anim.t);
+      draw(r);
+      if(r<1){ anim.raf=requestAnimationFrame(step); }
+      else{ mode="stood"; draw(1);
+        const head = sol.comfy? "It stands &mdash; and rests in the middle third."
+                              : "It stands.";
+        setVerdict("<span class='big'>"+head+"</span><span class='ethic'>"+C.ethic+"</span>","stand");
+      }
+    };
+    step();
+  } else {
+    startCollapse(C);
+  }
+}
+function startCollapse(C){
+  // first show the failing thrust line (red, with hinge rings) for a beat...
+  mode="revealing"; collapse=null; draw(1);
+  setVerdict("<span class='big'>The thrust has left the stone&hellip;</span>"+
+    "No thrust line fits inside the stones: it crosses out at the marked joints. With no path for the load, the ring hinges into a mechanism.","fall");
+  setTimeout(()=>foldCollapse(C), 720);
+}
+function foldCollapse(C){
+  mode="collapsing";
+  // hinge joints = where the best line still exits the stone
+  const hinge=[]; for(let i=0;i<sol.ts.length;i++) if(Math.abs(sol.ts[i]-0.5)>0.5) hinge.push(i);
+  if(hinge.length===0){ // safety: take the single worst joint
+    let wi=0; for(let i=1;i<sol.ts.length;i++) if(Math.abs(sol.ts[i]-0.5)>Math.abs(sol.ts[wi]-0.5))wi=i; hinge.push(wi);
+  }
+  // assign each stone a fold direction by which hinge interval it lies in
+  const n=arch.vouss.length;
+  const bounds=[0,...hinge,n]; // joint indices bounding rigid links
+  const stones=[];
+  for(let i=0;i<n;i++){
+    // find link index (between joints) containing stone i (stone i spans joint i..i+1)
+    let link=0; for(let b=0;b<bounds.length-1;b++){ if(i>=bounds[b]&&i<bounds[b+1]){link=b;break;} }
+    const dir=(link%2===0)?1:-1;
+    // pivot = the bounding hinge nearer to the abutment side of this link
+    const hj = (link%2===0)? bounds[link] : bounds[link+1];
+    const jp=arch.joints[Math.max(0,Math.min(arch.joints.length-1,hj))];
+    const pivot=[(jp.a[0]+jp.b[0])/2,(jp.a[1]+jp.b[1])/2];
+    stones.push({dir,pivot,link,alpha:1,tr:{px:pivot[0],py:pivot[1],a:0,dx:0,dy:0}});
+  }
+  collapse={stones,load:{a:0,dx:0,dy:0,alpha:1},startTs:sol.ts.slice()};
+  anim.t=0; cancelAnimationFrame(anim.raf);
+  const dur=1700, t0=performance.now();
+  const step=(now)=>{
+    const u=Math.min(1,(now-t0)/dur);
+    const fold=Math.min(1,u/0.55);                 // first: the mechanism rotates
+    const fall=Math.max(0,(u-0.45)/0.55);          // then: everything drops
+    for(const s2 of collapse.stones){
+      s2.tr.a = s2.dir*0.42*easeIn(fold) + s2.dir*0.5*fall*fall;
+      s2.tr.dx = 0;
+      s2.tr.dy = -3.6*fall*fall;
+      s2.alpha = 1-0.85*Math.max(0,(u-0.6)/0.4);
+    }
+    if(collapse.load){
+      collapse.load.a = 0.5*fall*fall;
+      collapse.load.dy = -3.6*fall*fall;
+      collapse.load.alpha = 1-0.85*Math.max(0,(u-0.6)/0.4);
+    }
+    fitCanvas(); clear(); drawGround(); drawPiers(); drawArch(); drawLoadBlock(); drawHinges();
+    if(u<1){ anim.raf=requestAnimationFrame(step); }
+    else{ mode="collapsed";
+      setVerdict("<span class='big'>It hinged, then fell.</span>"+CHALLENGES[idx].fall+
+        " <span style='color:#9c937e'>Adjust, and release again.</span>","fall");
+    }
+  };
+  anim.raf=requestAnimationFrame(step);
+}
+function drawHinges(){
+  if(!collapse)return;
+  for(let i=0;i<collapse.startTs.length;i++){
+    if(Math.abs(collapse.startTs[i]-0.5)>0.5){
+      const j=arch.joints[i]; const face=collapse.startTs[i]<0? j.a : j.b;
+      ctx.beginPath(); ctx.arc(WX(face[0]),WY(face[1]),5*DPR,0,7);
+      ctx.strokeStyle="#e06a52"; ctx.lineWidth=2*DPR; ctx.stroke();
+    }
+  }
+}
+function easeIn(t){return t*t;}
+
+function fullReset(){ collapse=null; mode="edit"; loadChallenge(idx); }
+function clearCollapse(){ collapse=null; }
+
+// ===================== INPUT =====================
+document.getElementById("release").addEventListener("click",()=>{ clearCollapse(); release(); });
+document.getElementById("reset").addEventListener("click",()=>{ fullReset(); });
+document.getElementById("prev").addEventListener("click",()=>{ clearCollapse(); loadChallenge(idx-1); });
+document.getElementById("next").addEventListener("click",()=>{ clearCollapse(); loadChallenge(idx+1); });
+
+// drag the burden (challenge III)
+let dragging=false;
+function screenToWorldX(clientX){
+  const rect=cv.getBoundingClientRect();
+  const px=(clientX-rect.left)*(cv.width/rect.width);
+  return VIEW.x0 + px/view.scale;
+}
+cv.addEventListener("pointerdown",ev=>{
+  const C=CHALLENGES[idx]; if(!C.dragKey||mode==="collapsing")return;
+  const wx=screenToWorldX(ev.clientX);
+  if(extras&&extras[0]&&Math.abs(wx-extras[0].x)<0.9){ dragging=true; cv.setPointerCapture(ev.pointerId);
+    if(mode!=="edit"){clearCollapse(); setVerdict(""); mode="edit";} }
+});
+cv.addEventListener("pointermove",ev=>{
+  if(!dragging)return; const C=CHALLENGES[idx]; const ctrl=C.controls[0];
+  let wx=screenToWorldX(ev.clientX); wx=Math.max(ctrl.min,Math.min(ctrl.max,wx));
+  st[C.dragKey]=wx; recompute(); draw();
+});
+cv.addEventListener("pointerup",ev=>{ dragging=false; });
+cv.addEventListener("pointercancel",ev=>{ dragging=false; });
+
+window.addEventListener("resize",()=>{ if(mode==="edit") draw(); else if(mode==="stood") draw(1); });
+
+// ===================== GO =====================
+loadChallenge(0);
+</script>
+</body>
+</html>

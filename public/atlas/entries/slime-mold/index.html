@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slime Mould Networks · The Atlas of Emergence</title>
+<meta name="description" content="Thousands of trail-following agents — Jones' Physarum model — sense, turn, move, and deposit, spontaneously weaving vein-like transport networks. A live, manipulable simulation with a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="slime-mold">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Networks</nav>
+
+  <header class="entry-head">
+    <div class="cat">Networks</div>
+    <h1>Slime Mould Networks</h1>
+    <p class="blurb">Thousands of mindless agents that only sense the trail ahead and turn toward it — and a living, branching transport network condenses out of the noise.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Each agent follows three simple rules: sense the chemical trail at three points ahead, steer
+    toward the strongest, move, and leave a little trail of its own. The field you see is the trail, not the
+    agents — bright amber veins are heavily reinforced paths, teal is faint. Drag on the canvas to lay down a
+    blob of trail and watch the network reach toward it. Raise <em>decay</em> to starve the mesh; widen the
+    <em>sensor angle</em> to coarsen it.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A few thousand identical particles wander a torus-shaped arena. None of them has a map, a goal, or any
+      knowledge of the others. Each one does only this, over and over: it looks a short distance ahead — slightly
+      to the left, straight on, and slightly to the right — at a chemical <em>trail</em> field, turns toward
+      whichever sample is strongest, takes a step, and deposits a dab of its own trail where it lands. The trail
+      field, meanwhile, blurs slightly and fades a little every tick. That is the entire system. Yet within
+      seconds the dabs organize: faint wandering smears thicken into filaments, filaments fuse into channels,
+      channels braid into a continuously rearranging <strong>vein-like network</strong> that pulses, prunes dead
+      ends, and reroutes — the unmistakable look of a foraging slime mould, with no mould and no biology anywhere
+      in the code.</p>
+
+    <h2>The rule</h2>
+    <p>This is Jeff Jones' agent model of <em>Physarum polycephalum</em> (2010). Two coupled layers update each
+      step:</p>
+    <ul>
+      <li><strong>Agents.</strong> Each agent has a position and a heading. It <em>senses</em> the trail at three
+        points a fixed <em>sensor distance</em> ahead, offset left and right by the <em>sensor angle</em>. It
+        <em>rotates</em>: if the front sample is strongest it goes straight; if a side is strongest it turns that
+        way by the <em>rotation angle</em>; if neither side wins cleanly it makes a small random turn. Then it
+        <em>moves</em> forward one step and <em>deposits</em> a fixed amount of trail at its new cell. Edges
+        wrap, so the world is a seamless torus.</li>
+      <li><strong>Trail field.</strong> After every agent has deposited, the whole field <em>diffuses</em> (a
+        3×3 box blur that spreads each cell into its neighbors) and <em>decays</em> (multiplied by a factor just
+        under one, so trail evaporates).</li>
+    </ul>
+    <p>The feedback is the whole story. Deposit reinforces a path; diffusion lets nearby agents smell it; decay
+      erases paths nobody is reinforcing. A track that happens to get a little traffic becomes easier to sense,
+      which draws more traffic, which deposits more trail — while unused excursions quietly evaporate. This is
+      pure <strong>stigmergy</strong>: coordination through marks left in a shared medium, never through direct
+      communication. No agent has a map; the network <em>is</em> the shared memory.</p>
+
+    <h2>Why it matters</h2>
+    <p>The model is a vivid case of <strong>decentralized computation</strong> — a population with no brain and
+      no central controller settling into structures that look engineered. The networks it grows are not
+      arbitrary tangles: they trade off total length against connectivity and resilience, the same competing
+      pressures that govern designed transport networks, and they do so with nothing but local sense-and-deposit
+      arithmetic. Jones showed that by tuning a handful of parameters the same rule sweeps through a zoo of
+      patterns — meshes, fine reticular networks, traveling lacework — and that the structures spontaneously
+      reorganize toward more efficient layouts over time. It is a working illustration of a deep idea: that
+      "computation" need not require a processor, and that a diffusing chemical plus a crowd of trail-followers
+      can approximate the kind of optimization we normally hand to algorithms. The same agent-and-pheromone logic
+      underlies ant-colony optimization and other nature-inspired methods for shortest-path and network-design
+      problems.</p>
+
+    <h2>In the wild</h2>
+    <p>The simulation above is an <strong>agent caricature</strong> — Jones' algorithm — and it is honest to keep
+      it separate from what the real organism does. <em>Physarum polycephalum</em> is a single giant amoeboid
+      cell, a plasmodium that explores its surroundings with a pulsating tube network and retracts the tubes it
+      isn't using. Real laboratory experiments — not this sim — established its surprising competence:</p>
+    <ul>
+      <li><strong>Maze-solving.</strong> Nakagaki, Yamada and Tóth (2000) placed a plasmodium across a maze with
+        food at two exits; the organism withdrew from dead ends and left a single connecting tube along the
+        shortest path between the food sources.</li>
+      <li><strong>The Tokyo rail experiment.</strong> Tero, Takagi and colleagues (2010) laid oat-flake food
+        sources in the geographic pattern of the cities around Tokyo. The mould grew a network connecting them
+        whose efficiency, fault-tolerance, and total cost were comparable to the actual Tokyo rail network — and
+        they distilled the behavior into a mathematical model of adaptive, biologically inspired network
+        design.</li>
+    </ul>
+    <p>So the lineage runs the other way from how it might appear: the living organism's documented feats came
+      first, and Jones' agent model is a later abstraction that reproduces the <em>style</em> of network
+      formation — the branching, fusing, and pruning — without simulating the cell's actual mechanics. Watching
+      the sim approximate a transport network is suggestive, not a proof that the toy solves the same problems
+      the organism does.</p>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>Raise <strong>decay</strong> toward the top of its range: trail evaporates faster than agents can
+        reinforce it, and the network thins to a few starved threads — or collapses entirely.</li>
+      <li>Widen the <strong>sensor angle</strong>: agents survey a broader cone ahead, the veins coarsen, and the
+        mesh opens into larger cells. Narrow it for fine, hairline reticulation.</li>
+      <li>Shorten the <strong>sensor distance</strong> for tight, local braiding; lengthen it and the agents
+        commit to long, sweeping channels.</li>
+      <li>Drag across the canvas to deposit a blob of trail and watch nearby filaments bend toward it, then
+        release — the temporary attractor heals away as decay erases it.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Jones, J. (2010). "Characteristics of Pattern Formation and Evolution in Approximations of Physarum
+        Transport Networks." <em>Artificial Life</em> 16(2), 127–153.</li>
+      <li>Tero, A., Takagi, S., Saigusa, T., Ito, K., Bebber, D. P., Fricker, M. D., Yumiki, K., Kobayashi, R.,
+        Nakagaki, T. (2010). "Rules for Biologically Inspired Adaptive Network Design." <em>Science</em>
+        327(5964), 439–442.</li>
+      <li>Nakagaki, T., Yamada, H., Tóth, Á. (2000). "Maze-solving by an amoeboid organism." <em>Nature</em>
+        407, 470.</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

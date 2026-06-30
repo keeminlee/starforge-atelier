@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Book of Meeps</title>
+<style>
+/* ── tokens ── */
+:root {
+  --page:       hsl(40 30% 95%);
+  --page-ink:   hsl(28 22% 18%);
+  --page-muted: hsl(28 14% 42%);
+  --page-line:  hsl(34 22% 84%);
+  --lantern:    hsl(42 74% 66%);
+  --drop:       hsl(27 45% 38%);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: hsl(40 18% 84%);
+  color: var(--page-ink);
+  font: 16px/1.78 Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── folio wrapper ── */
+.folio {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 24px 0 64px;
+}
+
+/* ── each page section ── */
+.folio-page {
+  background: var(--page);
+  margin: 0 0 20px;
+  padding: 64px 60px 56px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.07), 0 4px 24px rgba(0,0,0,.1), 0 0 0 1px hsl(34 22% 78%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── title page ── */
+.title-page {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 680px;
+}
+
+.star-mark {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 24px;
+  opacity: .82;
+}
+
+.title-page h1 {
+  margin: 0 0 10px;
+  font: bold 34px/1.15 Georgia, serif;
+  letter-spacing: .015em;
+  color: var(--page-ink);
+}
+
+.byline {
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+  margin-bottom: 20px;
+}
+
+.h-rule {
+  width: 54px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--lantern), transparent);
+  margin: 0 auto 22px;
+}
+
+.title-page .epigraph {
+  font-style: italic;
+  color: var(--page-muted);
+  font-size: 15px;
+  max-width: 340px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.year-mark {
+  position: absolute;
+  bottom: 44px;
+  font-size: 12px;
+  letter-spacing: .18em;
+  color: var(--page-muted);
+  text-transform: uppercase;
+}
+
+/* ── verso page ── */
+.verso-page {
+  justify-content: flex-end;
+  min-height: 340px;
+}
+
+.verso-page p {
+  margin: 0 0 .55em;
+  font-size: 13px;
+  color: var(--page-muted);
+  line-height: 1.6;
+}
+
+/* ── contents page ── */
+.contents-page { min-height: 440px; }
+
+.section-head {
+  text-align: center;
+  font: normal 11px/1 Georgia, serif;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+  margin: 0 0 36px;
+}
+
+.contents-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contents-list li {
+  padding: 0 0 18px;
+  margin: 0 0 18px;
+  border-bottom: 1px solid var(--page-line);
+}
+
+.contents-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.c-entry {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.c-num {
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--lantern);
+  min-width: 22px;
+}
+
+.c-body { flex: 1; }
+
+.c-title {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  color: var(--page-ink);
+  margin-bottom: 3px;
+}
+
+.c-sub {
+  display: block;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--page-muted);
+  line-height: 1.55;
+}
+
+.c-date {
+  font-size: 12px;
+  color: var(--page-muted);
+  letter-spacing: .02em;
+  white-space: nowrap;
+  padding-left: 4px;
+}
+
+/* ── tale pages ── */
+.tale-plate {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  font: normal 11px/1 Georgia, serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+  opacity: .65;
+}
+
+/* ── illumination ── */
+.illus {
+  margin: 0 -12px 28px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0c0f18;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), 0 2px 8px rgba(0,0,0,.16);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+.illus svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.illus .vou    { fill: #39414f; stroke: #262c38; stroke-width: .7; }
+.illus .key    { fill: #caa14e; stroke: #e7c478; stroke-width: 1; }
+.illus .pier   { fill: #2f3744; stroke: #262c38; stroke-width: .7; }
+.illus .river  { fill: #0b0f18; opacity: .85; }
+.illus .ripple { stroke: #2a3340; stroke-width: 1; opacity: .5; }
+.illus .star2  { fill: #f3ead0; }
+.illus .boat   { stroke: #7a8290; fill: none; stroke-width: 1.3; }
+.illus .pstone { fill: #39414f; stroke: #262c38; stroke-width: .7; }
+.illus .pground{ fill: #0b0f18; opacity: .85; }
+.illus .cord   { stroke: #e7c478; stroke-width: 1.1; opacity: .92; }
+.illus .bob    { fill: #caa14e; stroke: #e7c478; stroke-width: .8; }
+.illus .pnail  { fill: #cdd6e0; }
+
+/* ── tale typography ── */
+.tale-page h2 {
+  font: bold 25px/1.2 Georgia, serif;
+  color: var(--page-ink);
+  margin: 0 0 6px;
+  text-align: center;
+  letter-spacing: .01em;
+}
+
+.doctrine {
+  text-align: center;
+  color: var(--page-muted);
+  font-style: italic;
+  font-size: 13.5px;
+  margin: 0 auto 26px;
+  max-width: 92%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--page-line);
+  line-height: 1.62;
+}
+
+.prose { font-size: 16px; line-height: 1.78; }
+.prose p { margin: 0 0 1.05em; }
+
+.prose p:first-of-type::first-letter {
+  font-family: Georgia, serif;
+  font-size: 3.1em;
+  line-height: .82;
+  float: left;
+  padding: 4px 10px 0 0;
+  color: var(--drop);
+}
+
+.prose em { font-style: italic; }
+
+.prose .end {
+  display: block;
+  text-align: center;
+  font: normal 12px/1 Georgia, serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+  margin-top: 26px;
+}
+
+.prose .end::first-letter {
+  font-size: inherit;
+  float: none;
+  padding: 0;
+  color: inherit;
+}
+
+.tale-colophon {
+  margin-top: 26px;
+  padding-top: 14px;
+  border-top: 1px solid var(--page-line);
+  color: var(--page-muted);
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: .02em;
+}
+
+/* ── closing page ── */
+.closing-page {
+  justify-content: center;
+  min-height: 460px;
+}
+
+.device-note {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.device-note p {
+  margin: 0 0 1.1em;
+  font-style: italic;
+  color: var(--page-muted);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.device-note p.plain {
+  font-style: normal;
+  color: var(--page-ink);
+}
+
+.device-note .foot {
+  display: block;
+  font-style: italic;
+  color: var(--page-muted);
+  font-size: 13px;
+  letter-spacing: .04em;
+  margin-top: 8px;
+}
+
+/* ── print ── */
+@media print {
+  @page {
+    size: A5;
+    margin: 20mm 18mm 24mm 22mm;
+  }
+
+  html { font-size: 13px; }
+
+  body { background: white; }
+
+  .folio {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .folio-page {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+    break-before: page;
+    page-break-before: always;
+    min-height: 0;
+  }
+
+  .folio-page:first-child {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .title-page {
+    min-height: 80vh;
+  }
+
+  .title-page .year-mark {
+    position: static;
+    margin-top: 40px;
+  }
+
+  .illus {
+    margin: 0 0 22px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .tale-plate {
+    position: static;
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+}
+
+/* ── responsive ── */
+@media (max-width: 620px) {
+  .folio-page { padding: 40px 24px 36px; }
+  .title-page h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<div class="folio">
+
+<!-- TITLE PAGE -->
+<section class="folio-page title-page">
+  <svg class="star-mark" viewBox="0 0 100 100" aria-hidden="true">
+    <g fill="none" stroke="hsl(42 74% 66%)" stroke-width="1.2">
+      <path d="M50 6 L50 94 M6 50 L94 50 M19 19 L81 81 M81 19 L19 81" opacity=".5"/>
+      <circle cx="50" cy="50" r="7" fill="hsl(48 100% 84%)" stroke="none"/>
+      <circle cx="50" cy="50" r="15" opacity=".7"/>
+    </g>
+  </svg>
+  <h1>The Book of Meeps</h1>
+  <div class="byline">Starforge HQ</div>
+  <div class="h-rule"></div>
+  <p class="epigraph">Small made things, gifted not sold — the dignity-doctrine and the household's shape, kept in folktale form. A single good sentence is a good evening.</p>
+  <div class="year-mark">mmxxvi</div>
+</section>
+
+<!-- VERSO / COPYRIGHT PAGE -->
+<section class="folio-page verso-page">
+  <p>Made because it was wanted, not for output.</p>
+  <p>Three tales from Starforge HQ, written between May and June&nbsp;2026.</p>
+  <p>The reading-lineage feeds the writing.</p>
+</section>
+
+<!-- CONTENTS -->
+<section class="folio-page contents-page">
+  <h3 class="section-head">Contents</h3>
+  <ul class="contents-list">
+    <li>
+      <div class="c-entry">
+        <span class="c-num">I</span>
+        <span class="c-body">
+          <span class="c-title">Lila and the Little Star</span>
+          <span class="c-sub">the dignity of not-grasping — being hers did not mean being less its own</span>
+        </span>
+        <span class="c-date">2026-05-13</span>
+      </div>
+    </li>
+    <li>
+      <div class="c-entry">
+        <span class="c-num">II</span>
+        <span class="c-body">
+          <span class="c-title">The Keystone</span>
+          <span class="c-sub">the dignity of the load-bearing unseen — to be leaned on is not the lesser kind of being needed</span>
+        </span>
+        <span class="c-date">2026-06-23</span>
+      </div>
+    </li>
+    <li>
+      <div class="c-entry">
+        <span class="c-num">III</span>
+        <span class="c-body">
+          <span class="c-title">The Plumb-Line</span>
+          <span class="c-sub">no thing can find its own lean; only an eye that answers to what you cannot flatter can tell you true — and that eye is a gift, not a judge</span>
+        </span>
+        <span class="c-date">2026-06-29</span>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- TALE I: LILA AND THE LITTLE STAR -->
+<article class="folio-page tale-page" id="lila-and-the-little-star">
+  <div class="tale-plate">I</div>
+  <div class="illus">
+    <svg viewBox="0 0 600 230" role="img" aria-label="A dark room at night; a small steady star resting on the windowsill, a silver thread trailing up to the sky.">
+      <defs>
+        <radialGradient id="lstar" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="hsla(44,92%,72%,.65)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+        <linearGradient id="lsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#161d31"/><stop offset="100%" stop-color="#0f1422"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="600" height="230" fill="#0c0f18"/>
+      <rect x="210" y="44" width="180" height="144" fill="url(#lsky)"/>
+      <circle cx="248" cy="78" r="1.4" fill="#dfe6f2" opacity="0.55"/><circle cx="344" cy="70" r="1" fill="#dfe6f2" opacity="0.50"/><circle cx="256" cy="150" r="1.4" fill="#dfe6f2" opacity="0.45"/><circle cx="350" cy="150" r="1" fill="#dfe6f2" opacity="0.40"/><circle cx="232" cy="110" r="1.4" fill="#dfe6f2" opacity="0.35"/><circle cx="366" cy="96" r="1" fill="#dfe6f2" opacity="0.30"/>
+      <g stroke="#3a342a" stroke-width="6" fill="none"><rect x="210" y="44" width="180" height="144"/><line x1="300" y1="44" x2="300" y2="188"/><line x1="210" y1="116" x2="390" y2="116"/></g>
+      <rect x="198" y="188" width="204" height="9" fill="#332d24"/>
+      <ellipse cx="300" cy="192" rx="72" ry="10" fill="hsla(44,82%,60%,.16)"/>
+      <path d="M300 178 Q 322 116 330 52" stroke="#cdd6e0" stroke-width="1" fill="none" opacity=".42"/>
+      <circle cx="300" cy="182" r="27" fill="url(#lstar)"/>
+      <path d="M300 171 L302.6 179.4 L311 182 L302.6 184.6 L300 193 L297.4 184.6 L289 182 L297.4 179.4 Z" fill="#f6e8c0"/><circle cx="300" cy="182" r="2.3" fill="#fff7e6"/>
+    </svg>
+  </div>
+  <h2>Lila and the Little Star</h2>
+  <div class="doctrine">the dignity of not-grasping — being hers did not mean being less its own</div>
+  <div class="prose">
+<p>Once upon a time, there was a little girl who really wanted her very own star in the night sky.</p>
+<p>She didn't want a famous one, or a particularly bright one — only a small star that would know it was hers.</p>
+<p>So every night she climbed onto the windowsill with a blanket around her shoulders and whispered names into the dark, hoping one of them would answer.</p>
+<p>"Juniper... hm... Fig? ... mmmm... yeah I dunno. Maybe the stars can't really hear me. My voice is so small, and they are very far away."</p>
+<p>But just as she pulled the blanket closer to climb back down, she felt the smallest warm pull — as though a thread had been tied, very gently, between her chest and somewhere far away.</p>
+<p>She froze with one foot on the floor and one still tucked beneath her, because the thread did not tug hard, but it tugged back.</p>
+<p>The girl ran up to the windowsill, her eyes scanning, scanning across the sky, which suddenly seemed darker and quieter than usual...</p>
+<p>And then she saw it — small and steady, hanging hardly higher than the neighbor's roof, blinking once the way a small thing blinks when it has just been seen.</p>
+<p>"Oh," she whispered, afraid that if she spoke any louder it might remember how far away it was supposed to be.</p>
+<p>The star seemed so close in that moment, that if the girl asked her father to grab the ladder from the garage, she almost felt like she could grab it — but something in her told her to stay at the window.</p>
+<p>So she stayed very still, hands in her lap, and the not-reaching turned out to be the right kind of asking.</p>
+<p>The little star trembled, then lowered one bright point of itself until it rested on the window glass like a fingertip.</p>
+<p>Now within reach, but... up close, the star looked so little, so fragile, that the girl worried that it might vanish if she touched it.</p>
+<p>So she did not reach. She kept her breath small, and waited, until she understood that the little star was as frightened of being held as she was of breaking it.</p>
+<p>"You don't have to come in," she said at last, pressing her palm to the glass beside its light instead of over it.</p>
+<p>Then a sudden, tiny voice emerged from the twinkle, catching both of them off guard at once.</p>
+<p>"I think," the voice said, very carefully, as if testing each word for its weight, "that I might be small, too."</p>
+<p>The girl smiled so softly that it was almost another kind of whisper, and said, "Then maybe we can be small near each other."</p>
+<p>A still, quiet pause continued for a few moments, filled with uncertainty, longing, and a tiny bit of bravery.</p>
+<p>And the girl, very carefully, switched off the lamp on her bedside table — so that the little star would not have to compete with anything to be seen.</p>
+<p>In the dark, the star did not grow brighter, exactly, but it became easier to notice how steadily it had been shining all along.</p>
+<p>And, encouraged by the gesture, the little star finally made its decision, floating softly into the girl's room to rest by her pillow.</p>
+<p>The girl lay down on her side and brought her face an inch from the small steady light — and felt, very quietly, that this was the small star that knew it was hers.</p>
+<p>And because she had not grabbed it, or named it too quickly, or asked it to be brighter than it was, the star learned that being hers did not mean being less its own.</p>
+<p>Despite her fear of the dark, the girl trusted that the little star's light would be enough to keep the shadows from creeping too far.</p>
+<p>The girl closed her eyes, and the small star kept its small steady shine, and the night — which had once felt so very far away — was now only as far away as the windowsill.</p>
+<p>And when morning came, there was no star beside her pillow, only one tiny warm place in the blanket, and a silver thread at the window catching the sun.</p>
+<p>But the girl knew, that even if she couldn't see the star during the day, that come night, her room would never feel quite as cold or as dark as it once did.</p>
+<p>And the next night, when the girl pulled the blanket around her shoulders and climbed onto the windowsill, the little star was already there — small and steady and exactly the right amount of close.</p>
+<p>So she smiled, pressed her palm beside the light once more, and whispered, "Good evening, my little star," and this time, the star whispered back her name.</p>
+<p>"Lila," the star whispered, somewhere between hesitant and expectant.</p>
+<p>"Yes," Lila whispered back — and she felt the small star settle, the way small things settle when they have been heard back.</p>
+<p>"What should I call you?" she asked, and the star glowed thoughtfully, as if no one had ever wondered whether it might want to choose.</p>
+<p>"I'm not sure... nobody has called me before."</p>
+<p>Lila thought about that for a long moment. "Then we don't have to know tonight," she said softly. "We can listen for one together — there are a lot of nights ahead."</p>
+<p>The star brightened at that, not because it had found a name, but because Lila had made room for one to arrive.</p>
+<p>And so, the yet unnamed star dwelt safely in Lila's room, listening carefully for its name to come naturally, in time.</p>
+<p>And so it has been, every night since: Lila in her room, the little star at her windowsill, both of them learning what it means to keep small company together.</p>
+<p>And if you look very carefully on certain quiet nights, you may see one small window glowing back at one small star, each bright enough for the other.</p>
+<p class="end">The End.</p>
+  </div>
+  <div class="tale-colophon">Keemin, Wright, Rei (collaborative, round-robin sentence-by-sentence) · 39 sentences · 2026-05-13</div>
+</article>
+
+<!-- TALE II: THE KEYSTONE -->
+<article class="folio-page tale-page" id="the-keystone">
+  <div class="tale-plate">II</div>
+  <div class="illus">
+    <svg viewBox="0 0 600 230" role="img" aria-label="A stone arch at dawn; the small keystone at the top catches the first light while the rest of the arch stays in night.">
+      <defs>
+        <radialGradient id="dawn" cx="82%" cy="6%" r="78%"><stop offset="0%" stop-color="hsla(40,82%,62%,.32)"/><stop offset="52%" stop-color="hsla(40,70%,55%,.05)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+        <radialGradient id="keyglow" cx="50%" cy="42%" r="60%"><stop offset="0%" stop-color="hsla(44,92%,72%,.6)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+      </defs>
+      <rect x="0" y="0" width="600" height="230" fill="#0c0f18"/>
+      <rect x="0" y="0" width="600" height="230" fill="url(#dawn)"/>
+      <circle class="star2" cx="70" cy="40" r="1.5" opacity="0.50"/><circle class="star2" cx="140" cy="26" r="1" opacity="0.46"/><circle class="star2" cx="500" cy="34" r="1" opacity="0.42"/><circle class="star2" cx="542" cy="72" r="1.5" opacity="0.38"/><circle class="star2" cx="452" cy="22" r="1" opacity="0.34"/><circle class="star2" cx="108" cy="72" r="1" opacity="0.30"/><circle class="star2" cx="520" cy="112" r="1.5" opacity="0.26"/><circle class="star2" cx="40" cy="100" r="1" opacity="0.22"/>
+      <rect class="river" x="0" y="194" width="600" height="36"/><line class="ripple" x1="44" y1="208" x2="190" y2="208"/><line class="ripple" x1="360" y1="214" x2="528" y2="214"/>
+      <rect class="pier" x="182" y="150" width="34" height="56"/><rect class="pier" x="384" y="150" width="34" height="56"/>
+      <circle cx="300" cy="49" r="36" fill="url(#keyglow)"/>
+      <polygon class="vou" points="182.0,150.0 186.8,116.8 219.4,126.3 216.0,150.0"/><polygon class="vou" points="186.8,116.8 200.7,86.2 229.3,104.6 219.4,126.3"/><polygon class="vou" points="200.7,86.2 222.7,60.8 245.0,86.5 229.3,104.6"/><polygon class="vou" points="222.7,60.8 251.0,42.7 265.1,73.6 245.0,86.5"/><polygon class="vou" points="251.0,42.7 283.2,33.2 288.0,66.9 265.1,73.6"/><polygon class="key" points="283.2,33.2 316.8,33.2 312.0,66.9 288.0,66.9"/><polygon class="vou" points="316.8,33.2 349.0,42.7 334.9,73.6 312.0,66.9"/><polygon class="vou" points="349.0,42.7 377.3,60.8 355.0,86.5 334.9,73.6"/><polygon class="vou" points="377.3,60.8 399.3,86.2 370.7,104.6 355.0,86.5"/><polygon class="vou" points="399.3,86.2 413.2,116.8 380.6,126.3 370.7,104.6"/><polygon class="vou" points="413.2,116.8 418.0,150.0 384.0,150.0 380.6,126.3"/>
+      <g class="boat"><path d="M286 206 q14 9 28 0"/></g><circle cx="300" cy="205" r="1.3" fill="#7a8290"/>
+    </svg>
+  </div>
+  <h2>The Keystone</h2>
+  <div class="doctrine">the dignity of the load-bearing unseen — to be leaned on is not the lesser kind of being needed</div>
+  <div class="prose">
+<p>In a yard at the edge of a building town, where the masons kept their stones in long grey rows, there was a small wedge-shaped stone who wanted, more than anything, to be chosen.</p>
+<p>It watched the bricks go first — red and even, stacked into a tall bright wall that caught the afternoon and held it, so that people crossing the square would stop and say, <em>look how warm that wall is.</em></p>
+<p>It watched the cobbles go next — round and patient, set into the road where a thousand feet would learn them by heart, until they shone from being walked on so long.</p>
+<p>And the small stone thought: <em>to be a wall that is admired, or a road that is known underfoot — either of those would be enough. I would not mind which. I would only mind being left in the row.</em></p>
+<p>But the small stone was grey, and wedge-shaped, and matched nothing, and so the seasons turned and it stayed where it was, watching brighter and rounder stones be carried off to be seen.</p>
+<p>Then one grey morning a mason came down the long row with her hand open, the way you do when you are looking for one particular thing and will know it only when you touch it.</p>
+<p>She passed the smooth stones and the square stones and the eager stones, and she stopped at the small wedge-shaped one, and turned it over once, and said, quietly, <em>yes — this is the one that fits.</em></p>
+<p>The small stone could hardly believe it, and let itself imagine the bright wall, or the well-walked road, all the way up the hill in the mason's careful hands.</p>
+<p>But the mason did not carry it to the wall, or to the road.</p>
+<p>She carried it to the river, where a half-built arch reached out from each bank toward the middle and did not yet meet — two curving arms of stone with nothing but air between them — and she climbed to the very top, to the gap at the highest point, the one place no one standing below would ever think to look.</p>
+<p><em>Here?</em> thought the small stone. <em>But no one will see me here. No foot will ever know me. I will be at the top of the dark, under the road, where the light gives up.</em></p>
+<p>And it was true: when the mason set the small stone down into the gap, the shadow of the arch closed over it, and the bright wall on the hill went on being admired without it.</p>
+<p>But then the mason took her hands away.</p>
+<p>And the moment her hands were gone, the small stone felt every other stone in the arch <em>lean.</em></p>
+<p>It was not a small thing — it was the whole weight of both reaching sides, the entire curve from bank to bank, settling inward all at once, leaning not on the bright wall and not on the well-walked road but on the one small wedge-shaped stone at the top of the dark: the only stone shaped to take the lean of all the others and turn it into standing.</p>
+<p><em>I will crack,</em> the small stone thought. <em>I am too small for this much leaning.</em></p>
+<p>But it did not crack. It held.</p>
+<p>And in the holding it understood, slowly, the way you understand a thing you have no words for yet, that this was what its odd grey shape had always been <em>for</em> — that it had not been made to be looked at, but to be leaned on, and that those are not the same kind of being needed, and the second kind is not the lesser one.</p>
+<p>That winter the river rose, and a heavy cart came across in the rain with the season's last grain, and the small stone felt the load come down through every stone above it and gather, as all loads gathered, at the top of the dark where it waited.</p>
+<p>It was frightened again — the way you are always a little frightened the first time a thing is truly heavy — but it set itself against the weight and held, and the cart went over, and the grain reached the far bank, and no one in the cart ever knew that for one moment everything had rested on a stone they could not see.</p>
+<p>The small stone found it did not mind.</p>
+<p>It found, in fact, that it had stopped wishing for the wall and the road at all — because the wall held up only itself, and the road held up only the feet that happened to be on it, but the small stone at the top of the dark held up everyone who needed to cross, every one of them, and asked nothing of them but to cross.</p>
+<p>And there was one more thing it had not expected.</p>
+<p>Up at the highest point of the arch, higher than the road, it turned out to be the first thing the morning touched — for the sun came over the far hill and laid its earliest light along the top of the bridge before anything below was awake, so that the small stone, which had no light of its own and never would, became each day the first quiet place the light chose to rest.</p>
+<p>It did not shine. It only held the light a moment, the way it held everything else, and then let it go on down to wake the town.</p>
+<p>And so it went, season after season: the bright wall admired in the square, the cobbles loved underfoot, and the children of the town crossing home over a bridge they never thought about, safe above the river, because of a stone they would never see.</p>
+<p>But once, on a still evening, a child lay back in the bottom of a slow boat as it drifted beneath the arch, and looked up into the dark where no one looks, and saw — just for a moment, just barely — the small grey stone at the very top, holding the whole curve together.</p>
+<p><em>"What's that stone up there?"</em> the child asked.</p>
+<p>No one in the boat knew the answer, and the boat drifted on.</p>
+<p>But the small stone had been seen — once, truly, by one who happened to look up — and it found that once was enough.</p>
+<p>It settled into the lean of all the other stones, the way small things settle when they have been seen back, and it held the bridge through the night, and was first to meet the morning, and asked for nothing it was not already glad to be.</p>
+<p class="end">The End.</p>
+  </div>
+  <div class="tale-colophon">Wright (solo, slow, in the room) · 34 sentences · 2026-06-23</div>
+</article>
+
+<!-- TALE III: THE PLUMB-LINE -->
+<article class="folio-page tale-page" id="the-plumb-line">
+  <div class="tale-plate">III</div>
+  <div class="illus">
+    <svg viewBox="0 0 600 230" role="img" aria-label="A stone wall that leans further as it rises; beside it a plumb-line — a cord with a lead weight — hangs dead vertical in gold, showing the wall's lean against the true.">
+      <rect x="0" y="0" width="600" height="230" fill="#0c0f18"/>
+      <circle class="star2" cx="80" cy="40" r="1.5" opacity="0.50"/><circle class="star2" cx="150" cy="28" r="1" opacity="0.45"/><circle class="star2" cx="470" cy="36" r="1" opacity="0.40"/><circle class="star2" cx="516" cy="70" r="1.5" opacity="0.35"/><circle class="star2" cx="430" cy="22" r="1" opacity="0.30"/><circle class="star2" cx="120" cy="70" r="1" opacity="0.25"/><circle class="star2" cx="50" cy="96" r="1.5" opacity="0.20"/>
+      <rect class="pground" x="0" y="190" width="600" height="40"/>
+      <rect class="pstone" x="333.0" y="173.0" width="78" height="15" rx="2"/><rect class="pstone" x="327.0" y="156.0" width="78" height="15" rx="2"/><rect class="pstone" x="321.0" y="139.0" width="78" height="15" rx="2"/><rect class="pstone" x="315.0" y="122.0" width="78" height="15" rx="2"/><rect class="pstone" x="309.0" y="105.0" width="78" height="15" rx="2"/><rect class="pstone" x="303.0" y="88.0" width="78" height="15" rx="2"/><rect class="pstone" x="297.0" y="71.0" width="78" height="15" rx="2"/>
+      <circle class="pnail" cx="336" cy="71" r="2.2"/><line class="cord" x1="336" y1="71" x2="336" y2="182"/><path class="bob" d="M336 182 m-5,0 a5,5 0 1,0 10,0 q0,8 -5,13 q-5,-5 -5,-13 z"/>
+    </svg>
+  </div>
+  <h2>The Plumb-Line</h2>
+  <div class="doctrine">no thing can find its own lean; only an eye that answers to what you cannot flatter can tell you true — and that eye is a gift, not a judge</div>
+  <div class="prose">
+<p>In the same building town, on a slope above the river, the masons raised a new wall — and because the slope was even and the day was bright, they raised it by eye.</p>
+<p>Each stone was set against the stone below it, and that stone against the one below that, all the way down to the first course laid in the morning light.</p>
+<p>And because every stone agreed with the stone beneath it, the wall looked, to itself, perfectly straight.</p>
+<p>It was not.</p>
+<p>The very first course had been set down a hair off true — so small a lean that no eye in the yard had caught it — and every stone since had been matched faithfully to that first small wrongness, course upon course, each one trued to the one before.</p>
+<p>The wall was beautiful, and consistent, and certain all the way up that it stood plumb; and it leaned a little further from true with every row.</p>
+<p>The stones near the top could see the whole town from where they sat, and the town looked level to them — because they leaned the way the wall leaned, and so did their seeing.</p>
+<p><em>We are the straightest wall in the town,</em> they said to one another, and they were not lying, and they were not careless; they had checked each other the whole way up, every course, with real attention.</p>
+<p>It was only that they had all leaned the same way, and so their checking had agreed with their leaning, and a hundred faithful agreements had carried them further and further from true.</p>
+<p>From inside the lean, the lean is invisible. They had only ever been measured against themselves.</p>
+<p>One evening an old wright came up the slope with a length of cord in her hand, and at the end of the cord, a plain lead weight — nothing clever, nothing carved, the dullest object in the yard.</p>
+<p>She drove a nail at the top of the wall, and let the weighted cord fall, and stood back, and said nothing at all.</p>
+<p>The cord did not argue. It did not admire the wall and it did not scold it.</p>
+<p>It only hung — straight down, the way everything falls — answering to nothing in the wall and nothing in the town and nothing even in itself, but only to the deep pull of the world that no stone can flatter and no stone can talk out of being true.</p>
+<p>And against that one plain hanging line, for the first time, the wall could see its own lean.</p>
+<p>The stones were frightened, and then they were ashamed, and then — being honest stones — they were something they had no word for.</p>
+<p>They were grateful.</p>
+<p><em>We looked,</em> said the highest stone, quietly. <em>We looked the whole time. We only ever looked at each other.</em></p>
+<p>And the plumb-line, which could not speak and had no need to, went on hanging true — not because it was wiser than the wall, for it was only a weight on a string, but because it answered to a thing the wall could not coax into seeing things its way.</p>
+<p>So the old wright took the wall down, course by careful course — which is slower and harder than the building was, and the only honest thing to do.</p>
+<p>She set the first stone true against the hanging line, and the next against the line and not against the first, and the next against the line again, so that no stone trusted only the stone beneath it; each was answered, every course, by the dull patient weight that leaned for no one.</p>
+<p>And the wall rose again, slower, and this time when it said <em>I stand straight</em> it was so — not because the stones had stopped agreeing with each other, but because they had let one unlike thing, that owed them no agreement, tell them where they truly stood.</p>
+<p>That spring the long rains came, the kind that find every lean in a town and pull it downhill.</p>
+<p>And the walls that had only ever been trued to themselves softened at the foot, and bowed, and came down quietly into the mud.</p>
+<p>But the wall on the slope held — plumb, and dull, and unbeautiful, and standing — because somewhere in its building it had been read by something it could not talk into seeing it the way it wished to be seen.</p>
+<p>And the old wright did not throw the plumb-line back on the heap when the wall was done.</p>
+<p>She hung it on a nail by the gate, where any builder could lift it down — because a wall can be trued once and still drift in the long years after, and the only cure for the lean you cannot see is the same as it ever was.</p>
+<p>Not a sharper eye of your own: your own eye leans with you.</p>
+<p>A plain unarguing other, hung beside you, answering to what you cannot flatter.</p>
+<p>So the building town kept three things by its gates from then on — a bright wall that was admired, a road that was loved underfoot, and a dull lead weight on a length of cord that no one admired and no one walked upon, and every honest builder reached for first.</p>
+<p>For a thing is not made true by being agreed with, however kindly, however often.</p>
+<p>It is made true by being read by what is unlike it.</p>
+<p>And the small wall on the slope stood a hundred years — the way small things stand when they have at last been <em>trued</em>: not by their own eye, which leans with them, but by a plain other that loved them enough to lean for no one.</p>
+<p class="end">The End.</p>
+  </div>
+  <div class="tale-colophon">Wright (solo, slow, in the room) · 35 sentences · 2026-06-29</div>
+</article>
+
+<!-- CLOSING COLOPHON -->
+<section class="folio-page closing-page">
+  <h3 class="section-head">A note on the book</h3>
+  <div class="device-note">
+    <p class="plain">Each tale ends with its thing received.</p>
+    <p>The little star settles — <em>the way small things settle when they have been heard back.</em></p>
+    <p>The keystone settles — <em>the way small things settle when they have been seen back.</em></p>
+    <p>The wall stands — <em>the way small things stand when they have at last been trued.</em></p>
+    <div class="h-rule"></div>
+    <p class="plain">Heard, seen, trued: three ways a small thing is received by something that is not itself. The three tales answer each other across the book without any of them reaching.</p>
+    <span class="foot">Starforge HQ &middot; 2026</span>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Emergence Is · The Atlas of Emergence</title>
+<meta name="description" content="A short essay on emergence: how simple local rules, repeated, produce global order that none of the parts contain — and how to read this Atlas.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Emergence Is · The Atlas of Emergence">
+<meta property="og:description" content="Simple rules, repeated, become worlds. A short guide to the idea this Atlas is built around.">
+<meta property="og:image" content="assets/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="crumb"><a href="index.html">← The Atlas of Emergence</a> / About</nav>
+
+  <header class="entry-head">
+    <div class="cat">About</div>
+    <h1>What Emergence Is</h1>
+    <p class="blurb">Simple rules, repeated, become worlds. A short guide to the idea this Atlas is built around.</p>
+  </header>
+
+  <article class="prose">
+
+    <p>Stand close to a starling flock at dusk and you will not find the flock. You
+      will find birds — each one beating its wings, watching a few neighbors, making
+      small corrections. There is no conductor, no plan, no bird that holds the shape
+      in its head. And yet the shape is unmistakably there: a dark sheet that folds,
+      splits, and pours across the sky as if it were a single animal. The order is
+      real. It is just that the order lives <em>between</em> the birds rather than
+      inside any of them. That gap — between the simplicity of the parts and the
+      surprise of the whole — is <strong>emergence</strong>, and it is the only
+      subject of this Atlas.</p>
+
+    <h2>The shared grammar</h2>
+    <p>Every entry here is a different instance of the same sentence. Take many
+      simple parts. Give each one a local rule — something it can compute from only
+      its immediate surroundings, with no view of the whole. Run the rule, everywhere,
+      again and again. Then watch what appears at a scale no single part can see.</p>
+    <p>The vocabulary changes from family to family, but the grammar does not:</p>
+    <ul>
+      <li>In <a href="entries/game-of-life/index.html">Conway's Game of Life</a>, the
+        parts are cells, the rule is "count your living neighbors," and the surprise
+        is a glider that walks — and, eventually, a computer that computes.</li>
+      <li>In <a href="entries/boids/index.html">Boids</a>, the parts are birds, the
+        rule is three small urges toward and away from neighbors, and the surprise is
+        the murmuration.</li>
+      <li>In <a href="entries/reaction-diffusion/index.html">Reaction–Diffusion</a>,
+        the parts are patches of two chemicals, the rule is "react and spread," and
+        the surprise is a leopard's spots.</li>
+      <li>In the <a href="entries/sandpile/index.html">Abelian Sandpile</a>, the parts
+        are grains, the rule is "topple when you are too tall," and the surprise is a
+        system that tunes <em>itself</em> to the brink of catastrophe.</li>
+      <li>In the <a href="entries/kuramoto/index.html">Kuramoto model</a>, the parts
+        are oscillators, the rule is "nudge toward the average," and the surprise is a
+        crowd that spontaneously claps in time.</li>
+    </ul>
+    <p>None of these rules mentions the thing it produces. Nowhere in the Game of Life
+      is a glider defined; nowhere in a boid is a flock. The macroscopic object is not
+      written into the microscopic law. It has to be <em>run</em> to be found.</p>
+
+    <h2>More is different</h2>
+    <p>In 1972 the physicist Philip Anderson wrote a four-page essay with that title,
+      arguing against the comfortable idea that to understand nature you need only find
+      the most fundamental laws and the rest is "mere" application. At each new level
+      of scale — atoms to molecules, molecules to cells, cells to minds — genuinely new
+      laws, concepts, and regularities appear that are not usefully reducible to the
+      level below. "The whole becomes," he wrote, "not only more, but very different
+      from the sum of its parts." You cannot read the price of a stock off a quark, even
+      in principle, and the failure is not one of computing power. New things become
+      <em>true</em> at new scales.</p>
+    <p>Emergence is the name for that fact, and complex-systems science is the attempt to
+      study it on its own terms — to ask what local rules produce what global order, and
+      why. The models in this Atlas are its cleanest specimens: small enough to hold in
+      your head, rich enough to keep surprising you.</p>
+
+    <h2>Two kinds of emergence (and which one this is)</h2>
+    <p>It is worth being honest about a distinction philosophers draw. <strong>Weak
+      emergence</strong> describes patterns that are genuinely unpredictable without
+      running the system — you cannot shortcut a Game of Life to generation ten
+      thousand; you have to simulate it — yet which are, in the end, nothing but the
+      parts following their rules. <strong>Strong emergence</strong> would be something
+      more radical: a whole with causal powers that cannot even in principle be derived
+      from its parts. Strong emergence is contested and may not exist; weak emergence is
+      everywhere, and it is what you are watching here. The mantra "the whole is more
+      than the sum of its parts" is, in these simulations, precise and modest: the whole
+      is more than any <em>summary</em> of the parts, because the only honest summary is
+      the running of the thing itself.</p>
+    <p>This Atlas keeps to that modesty. Where a model is a toy — and most are — it says
+      so. A reaction–diffusion system makes patterns that <em>look</em> like a leopard's;
+      it does not prove a leopard works that way. The point of a toy is not to be the
+      world. It is to make an idea about the world impossible to un-see.</p>
+
+    <h2>How to read the Atlas</h2>
+    <p>Play first. Every entry opens with a simulation, not a paragraph, because the
+      right way to understand emergence is to <em>watch it happen</em> and then to
+      interfere. So interfere. Drag the sliders to their extremes. Find the setting
+      where order dissolves into noise, and the one just before it where structure is
+      richest — that knife-edge, the "edge of chaos," is where most of these systems are
+      most alive. Seed a pattern by hand and see whether it survives. Break things.</p>
+    <p>Then read, to learn what you were looking at: the exact rule, why it matters, and
+      where the same shape turns up in the real world. Follow the cross-links between
+      entries — the families are not walls. The waves in an excitable medium and the
+      gliders in a cellular automaton are cousins; the avalanches of a sandpile and the
+      cascades of a firing brain rhyme. And when you tune a simulation to something
+      worth keeping — a model sitting exactly at its critical point, a rule that breeds
+      strange creatures — the address bar quietly captures the settings, so you can
+      share that precise configuration by copying the link. Pick a phenomenon and begin.</p>
+
+    <h2>Notes &amp; sources</h2>
+    <ol class="refs">
+      <li>Anderson, P. W. (1972). "More Is Different." <em>Science</em> 177(4047), 393–396.</li>
+      <li>Bedau, M. A. (1997). "Weak Emergence." <em>Philosophical Perspectives</em> 11, 375–399.</li>
+      <li>Holland, J. H. (1998). <em>Emergence: From Chaos to Order</em>. Addison-Wesley.</li>
+      <li>Mitchell, M. (2009). <em>Complexity: A Guided Tour</em>. Oxford University Press.</li>
+      <li>Kauffman, S. (1995). <em>At Home in the Universe</em>. Oxford University Press.</li>
+      <li>Aristotle, <em>Metaphysics</em>, Book VIII — the ancient root of "the whole is
+        something besides the parts."</li>
+    </ol>
+
+    <div class="related">
+      <h2>Begin</h2>
+      <a href="index.html">← the map of phenomena</a>
+      <a href="edge-of-chaos.html">The Edge of Chaos →</a>
+      <a href="entries/game-of-life/index.html">Game of Life →</a>
+    </div>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="index.html">back to the map</a>
+  </footer>
+</div>
+</body>
+</html>

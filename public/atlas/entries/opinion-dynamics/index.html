@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opinion Dynamics · The Atlas of Emergence</title>
+<meta name="description" content="Agents nudge toward others only when they already roughly agree, and a population settles into consensus, two camps, or many isolated islands — set by one threshold. A live, manipulable simulation with a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="opinion-dynamics">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Social Dynamics</nav>
+
+  <header class="entry-head">
+    <div class="cat">Social Dynamics</div>
+    <h1>Opinion Dynamics</h1>
+    <p class="blurb">People only nudge toward those they already roughly agree with — and out of that single rule a
+      crowd of scattered views collapses into one shared opinion, or two locked camps, or many islands that can
+      never talk. One threshold decides which.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Each agent holds a continuous opinion between 0 and 1. The plot is a space–time trace: opinion
+    runs bottom (0) to top (1), time scrolls left → right, and each agent leaves a coloured trail. Watch the trails
+    <em>merge</em> into horizontal bands — one band is consensus, two is polarization, many is fragmentation. The
+    histogram on the right shows the live distribution. Drag the <em>confidence</em> ε slider — the star knob — and
+    watch the number of bands change. Turn on <em>extremists</em> to pin a few stubborn voices at the poles.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A crowd of opinions, spread evenly from one extreme to the other. Each person sits somewhere on a single
+      dial between 0 and 1. Again and again, two people meet at random — but they only influence each other if they
+      are <strong>already close enough</strong> on the dial. When they are, each shifts a little toward the other;
+      when they are too far apart, they simply ignore one another and walk away unchanged. Nobody is in charge,
+      nobody broadcasts, nobody is persuaded by an argument. Yet out of this the even spread does not stay even: it
+      <strong>collapses</strong>. Sometimes into one shared view; sometimes into two opposed camps; sometimes into a
+      handful of isolated islands that, once far enough apart, can never reach each other again. Which of these you
+      get is set almost entirely by how willing people are to listen.</p>
+
+    <h2>The rule</h2>
+    <p>This is the <strong>Deffuant bounded-confidence model</strong>. Each agent <em>i</em> holds an opinion
+      <em>x<sub>i</sub></em> in [0, 1]. One interaction is:</p>
+    <ul>
+      <li>Pick a random pair of agents <em>i</em> and <em>j</em>.</li>
+      <li>If <code>|x<sub>i</sub> − x<sub>j</sub>| &lt; ε</code> — they are within the <strong>confidence
+        threshold</strong> ε — they move toward each other:
+        <code>x<sub>i</sub> += μ·(x<sub>j</sub> − x<sub>i</sub>)</code> and
+        <code>x<sub>j</sub> += μ·(x<sub>i</sub> − x<sub>j</sub>)</code>.</li>
+      <li>If <code>|x<sub>i</sub> − x<sub>j</sub>| ≥ ε</code> — they disagree by more than ε — <strong>nothing
+        happens</strong>. They ignore each other.</li>
+    </ul>
+    <p>The convergence rate μ (here ≈ 0.5) only sets how <em>fast</em> two agreeing people meet in the middle; it
+      does not change the final outcome. The one parameter that does is the confidence threshold <strong>ε</strong>:
+      how different two views can be and still pull on each other. Everything below follows from ε alone.</p>
+
+    <h2>Why it matters</h2>
+    <p>This is a sharp, stylised lesson about <strong>echo chambers and polarization as emergent outcomes</strong>.
+      Clusters of agreement form with no leader, no coordination, and no central message — purely from who is willing
+      to listen to whom. And the way ε controls the result is genuinely counter-intuitive:</p>
+    <ul>
+      <li><strong>Wide confidence (large ε): consensus.</strong> When people will listen to almost anyone, every
+        view stays connected to every other through chains of barely-overlapping conversations, and the whole
+        population is dragged together into a single shared opinion.</li>
+      <li><strong>Moderate confidence (medium ε): polarization.</strong> Around ε ≈ 0.2 the crowd locks into
+        <em>two</em> stable camps near the extremes, with the middle hollowed out — durable two-pole polarization
+        that no one designed.</li>
+      <li><strong>Narrow confidence (small ε): fragmentation.</strong> When people only listen to those who already
+        nearly agree, the population shatters into <em>many</em> small clusters, each frozen in place because the
+        gaps between them exceed ε and can never be crossed.</li>
+    </ul>
+    <p>The punchline is that <strong>more closure produces more fragments</strong>. The number of surviving camps
+      grows as the threshold shrinks — for this model on [0, 1] it is roughly <code>1/(2ε)</code>. A
+      <em>wider</em> willingness to listen yields consensus; a <em>narrower</em> one yields a splintered public of
+      non-communicating islands. It is worth contrasting this with the Atlas's
+      <a href="../voter-model/index.html">voter model</a>, whose agents copy a neighbour's <em>discrete</em> opinion
+      wholesale: on a finite world that rule always grinds down to a single consensus. Here, with
+      <em>continuous</em> opinions and a confidence threshold, the population can get <strong>permanently stuck
+      apart</strong> — disagreement can be a stable resting state, not just a transient.</p>
+
+    <h2>In the wild</h2>
+    <p>The pull of this model is obvious: it looks like political and cultural polarization, like the way
+      recommendation and feed algorithms quietly narrow who you hear, like the study of consensus and fragmentation
+      on social networks. And it does carry a real insight — bounded confidence is <strong>sufficient</strong> to
+      generate both polarization and fragmentation from nothing but a threshold on who listens to whom. No malice,
+      no leaders, no propaganda required.</p>
+    <p>But it is essential to be honest about what this does <em>not</em> show. It demonstrates that this one
+      mechanism <strong>can</strong> produce polarization — not that real-world polarization is <strong>only</strong>,
+      or even mainly, this. Real opinions are not a single number on one dial; they are tangled, multi-dimensional,
+      and bound up with identity. People do not literally average their views with whoever they meet. And the forces
+      that actually drive real polarization — group identity, mass and social media, institutions, the structure of
+      who is even connected to whom, and motivated reasoning that makes contrary evidence <em>push people further
+      apart</em> rather than closer — are all absent here. This is a clean thought-experiment that isolates one
+      force and shows it is powerful. Read as a lens onto a single mechanism it is illuminating; read as a complete
+      account of how societies polarize it would be a serious misuse.</p>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>Start near <a href="#confidence=0.2">ε ≈ 0.2</a> and watch two camps lock in near the poles while the
+        middle empties out — emergent polarization.</li>
+      <li>Raise ε toward <a href="#confidence=0.45">0.45</a> and reset: the camps merge and the whole population
+        slides into a single consensus band.</li>
+      <li>Lower ε to <a href="#confidence=0.08">0.08</a> and watch the crowd shatter into many narrow islands — more
+        of them as ε shrinks, roughly 1/(2ε) of them, each one frozen because the gaps are too wide to cross.</li>
+      <li>Turn on <em>extremists</em> and watch a couple of stubborn voices pinned at 0 and 1 drag a whole moderate
+        population outward toward the poles — a small committed minority reshaping the centre.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Deffuant, G., Neau, D., Amblard, F. &amp; Weisbuch, G. (2000). "Mixing beliefs among interacting agents."
+        <em>Advances in Complex Systems</em> 3(01n04), 87–98. (The pairwise bounded-confidence model used here.)</li>
+      <li>Hegselmann, R. &amp; Krause, U. (2002). "Opinion dynamics and bounded confidence models, analysis, and
+        simulation." <em>Journal of Artificial Societies and Social Simulation</em> 5(3), 2. (The synchronous
+        averaging variant.)</li>
+      <li>Weisbuch, G., Deffuant, G., Amblard, F. &amp; Nadal, J.-P. (2002). "Meet, discuss, and segregate!"
+        <em>Complexity</em> 7(3), 55–63. (The number of clusters as a function of the confidence threshold.)</li>
+      <li>Castellano, C., Fortunato, S. &amp; Loreto, V. (2009). "Statistical physics of social dynamics."
+        <em>Reviews of Modern Physics</em> 81(2), 591–646. (Survey placing bounded-confidence models among
+        opinion-dynamics models.)</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

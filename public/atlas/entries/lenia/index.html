@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lenia · The Atlas of Emergence</title>
+<meta name="description" content="A continuous generalization of the Game of Life whose self-organizing patterns glide, turn, and self-repair like living creatures. A live, manipulable simulation with a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="lenia">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Cellular Automata</nav>
+
+  <header class="entry-head">
+    <div class="cat">Cellular Automata</div>
+    <h1>Lenia</h1>
+    <p class="blurb">Take the Game of Life and turn every integer into a smooth curve. Out of the continuous limit glide soft, living-looking creatures.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">The default seed is <em>Orbium</em> — a canonical Lenia glider — drifting across the field.
+    Nudge <em>μ</em> and <em>σ</em> to mutate or kill it, drag on the field to paint a smooth blob,
+    or switch to <em>Random soup</em> and watch short-lived lifeforms flicker in and out. The
+    <em>mass</em> readout is the creature's pulse: roughly constant means alive, →0 or runaway means dead.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A single field of "stuff" spread over a grid — but instead of each cell being simply
+      <em>alive</em> or <em>dead</em>, every cell holds a continuous value between 0 (empty) and 1 (full),
+      shown here as a glow from dark through teal and amber to white. Time advances in small steps,
+      and at every step all cells update at once by the same rule, looking at a smooth, blurry
+      neighborhood around themselves. From this, coherent blobs assemble themselves: the default
+      <strong>Orbium</strong> is a smooth glider that holds its shape and drifts steadily across the
+      world, gently turning and repairing itself if you disturb it. Nothing in the rule mentions
+      "creature" or "glider" — the structure is entirely emergent.</p>
+
+    <h2>The rule</h2>
+    <p>Lenia is Conway's Life with the integers turned into smooth curves. Where Life is
+      <strong>discrete in state</strong> (0 or 1), <strong>discrete in space</strong> (8 neighbors),
+      and <strong>discrete in time</strong> (one full generation per tick), Lenia makes all three
+      <em>continuous</em>: states are real numbers in [0,1], the neighborhood is a wide smooth ring,
+      and each tick advances time by a small step <em>dt</em>. The update has three parts:</p>
+    <ul>
+      <li><strong>Convolution → potential.</strong> Each cell measures a weighted average of its
+        neighbors, <code>U = K ∗ A</code>, using a smooth radial <em>kernel</em> <code>K</code> of
+        radius <em>R</em> — a soft ring that is zero at the center and edge and peaks in between.
+        This is the continuous cousin of Life "counting its eight neighbors."</li>
+      <li><strong>Growth mapping.</strong> The potential is run through a growth function
+        <code>G(u) = 2·exp(−(u−μ)² / (2σ²)) − 1</code>, a bump that returns <code>+1</code> (grow) when
+        the neighborhood density is near a target <em>μ</em>, and <code>−1</code> (shrink) when it is
+        too sparse or too crowded. Width <em>σ</em> sets how forgiving that target is. This is Life's
+        "born on 3, survives on 2–3" rewritten as a single smooth curve over neighbor-density.</li>
+      <li><strong>Clipped update.</strong> Every cell changes by a small amount,
+        <code>A ← clip(A + dt·G(U), 0, 1)</code>, all cells synchronously via a double buffer.</li>
+    </ul>
+    <p>Set <em>dt</em> = 1, make the kernel a 3×3 box, and replace the smooth bump with a hard step that
+      only allows the values {2, 3} — and you recover Conway's Life exactly. Lenia is what Life becomes
+      when you take that knife-edge rule and round off all its corners. The canonical Orbium parameters
+      shown here are <em>μ</em> = 0.15, <em>σ</em> = 0.015, <em>dt</em> = 0.1, kernel radius <em>R</em> = 13.
+      The grid wraps at the edges (a torus), so a creature gliding off one side reappears on the other.</p>
+
+    <h2>Why it matters</h2>
+    <p>Smoothing Life's rule opens a <strong>vast continuous universe of self-organizing "creatures."</strong>
+      Lenia is populated by gliders, rotators, and wobbling rings that move, turn, and — strikingly —
+      <em>self-repair</em> after a perturbation, behaviors that the brittle discrete patterns of Life rarely
+      manage. Like Life's menagerie of spaceships and guns, these were found by <strong>exploration</strong>:
+      Bert Chan and others swept the parameter space by hand and by search, cataloguing hundreds of distinct
+      lifeforms and grouping them into "species" by their kernels and dynamics. Because its world is continuous
+      and differentiable, Lenia sits at the boundary between cellular automata and <strong>artificial life</strong>:
+      a tractable mathematical system in which lifelike persistence, locomotion, and even rudimentary
+      interaction arise from nothing but a local update rule.</p>
+
+    <h2>In the wild</h2>
+    <p>Be clear about what Lenia is and is not. Its creatures are <strong>mathematical artificial life</strong>,
+      not models of any specific organism — Orbium is not a microbe and does not correspond to a real cell.
+      Its significance is as a <strong>discovery medium and an ALife system</strong>: a place to study how
+      self-maintaining, moving structures can emerge, persist, and adapt under a simple continuous rule,
+      and a benchmark for open-ended evolution and self-organization research. Because the whole system is
+      smooth and differentiable, later work has used <strong>gradient-based and learning methods</strong> to
+      <em>search</em> Lenia automatically for creatures with target behaviors — turning the manual hunt that
+      built Life's catalogue into an optimization problem. The honest claim is not "this is how biology works"
+      but "this is a strikingly life-like phenomenon emerging from arithmetic, and a fertile sandbox for asking
+      what life-like even means."</p>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>With Orbium gliding, nudge <em>μ</em> or <em>σ</em> by a single notch and watch the creature
+        <strong>mutate</strong> — it may wobble, split, bloat, or die. The mass readout tells you which:
+        steady mass = a new stable form, mass →0 = starvation, runaway mass = the field saturating to white.</li>
+      <li>Drag on the field to <strong>paint a smooth blob</strong> and watch it either organize into a
+        traveling structure or dissolve back into nothing — most random shapes are not viable.</li>
+      <li>Switch to <em>Random soup</em>. Random initial conditions in Lenia usually spawn evolving but
+        <strong>short-lived</strong> lifeforms that flare and fade; finding a stable creature this way is rare,
+        which is exactly why the catalogued animals were worth cataloguing.</li>
+      <li>Lower <em>dt</em> for slower, finer time (smoother but slower motion); raise it and the integration
+        gets coarse and the creature can shatter.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Chan, B. W.-C. (2019). "Lenia: Biology of Artificial Life." <em>Complex Systems</em> 28(3), 251–286.
+        (Defines the model and the Orbium creature; exact pages per the journal listing.)</li>
+      <li>Chan, B. W.-C. (2020). "Lenia and Expanded Universe." <em>Artificial Life Conference Proceedings
+        (ALIFE 2020)</em>, 221–229. MIT Press. (Generalized multi-kernel / multi-channel Lenia.)</li>
+      <li>Plantec, E., Hamon, G., Etcheverry, M., Oudeyer, P.-Y., Moulin-Frier, C., Chan, B. W.-C. (2023).
+        "Flow-Lenia: Mass conservation for the study of virtual creatures in continuous cellular automata."
+        <em>ALIFE 2023</em>. (Mass-conserving variant; example of search/learning applied to Lenia.)</li>
+      <li>Gardner, M. (1970). "Mathematical Games: The fantastic combinations of John Conway's new solitaire
+        game 'life'." <em>Scientific American</em> 223(4), 120–123. (The discrete ancestor, <code>B3/S23</code>.)</li>
+      <li>Chan, B. W.-C. "Lenia" — reference implementation and creature library, github.com/Chakazul/Lenia.</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

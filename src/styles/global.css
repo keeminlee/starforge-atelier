@@ -17,8 +17,8 @@
   --amber-soft: #f4d6a0;  /* lit amber */
   --teal: #5fc9d0;        /* eye-glow — sparing highlight */
   --moss: #97a266;        /* banner green — secondary accent */
-  --shell-max: 768px;
-  --wide-max: 1180px;
+  --shell-max: 860px;
+  --wide-max: 1340px;
   color-scheme: dark;
 }
 
@@ -93,7 +93,11 @@ main > * {
 
 main > .home-hero,
 main > .household,
-main > .wander {
+main > .wander,
+main > .projects-grid,
+main > .wip-section,
+main > .wright-piece,
+main > .long-self-exhibit {
   max-width: var(--wide-max);
 }
 

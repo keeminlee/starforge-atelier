@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary · The Atlas of Emergence</title>
+<meta name="description" content="The recurring vocabulary of emergence — criticality, universality, order parameters, stigmergy, the edge of chaos — defined plainly and linked to where each idea lives in the Atlas.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Glossary · The Atlas of Emergence">
+<meta property="og:description" content="The recurring vocabulary of emergence, defined plainly and linked to the simulations that exemplify each idea.">
+<meta property="og:image" content="assets/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="crumb"><a href="index.html">← The Atlas of Emergence</a> / Glossary</nav>
+
+  <header class="entry-head">
+    <div class="cat">Reference</div>
+    <h1>Glossary</h1>
+    <p class="blurb">The words that recur across the Atlas, defined plainly — each linked to the simulations where you can watch the idea at work.</p>
+  </header>
+
+  <article class="prose">
+  <dl class="glossary">
+
+    <dt id="active-matter">Active matter</dt>
+    <dd>Systems made of many <em>self-propelled</em> units that each consume energy to move,
+      so the collective sits out of thermal equilibrium and can do things passive matter cannot —
+      flock, swarm, or clump with no attraction at all.
+      <span class="see">see <a href="entries/active-matter/index.html">Active Matter</a>,
+      <a href="entries/vicsek/index.html">Vicsek</a>, <a href="entries/boids/index.html">Boids</a></span></dd>
+
+    <dt id="associative-memory">Associative memory</dt>
+    <dd>A memory addressed by its <em>content</em>, not a location: show it a fragment or a
+      corrupted copy of a stored pattern and it completes and cleans it back to the nearest whole
+      memory. In an attractor network the stored patterns are the <a href="#attractor">attractors</a>
+      at the bottoms of an energy landscape, and recall is just rolling downhill.
+      <span class="see">see <a href="entries/hopfield-network/index.html">The Hopfield Network</a></span></dd>
+
+    <dt id="attractor">Attractor</dt>
+    <dd>A state, or set of states, that a dynamical system tends toward and stays near — the place
+      its behavior "settles." A fixed point, a periodic cycle, or a stranger object can each be an attractor.
+      <span class="see">see <a href="entries/kuramoto/index.html">Kuramoto</a>,
+      <a href="entries/game-of-life/index.html">Game of Life</a> (still lifes &amp; oscillators)</span></dd>
+
+    <dt id="bounded-confidence">Bounded confidence</dt>
+    <dd>The rule that people sway one another only when their views are already close enough;
+      past a threshold of disagreement they simply ignore each other. How wide that threshold is
+      decides whether a population converges to one consensus, splits into two camps, or shatters
+      into many isolated fragments.
+      <span class="see">see <a href="entries/opinion-dynamics/index.html">Opinion Dynamics</a></span></dd>
+
+    <dt id="cellular-automaton">Cellular automaton</dt>
+    <dd>A grid of cells, each holding a state, all updated together in discrete time steps by the
+      same local rule that looks only at a cell's neighbors. Simple to state, capable of astonishing behavior.
+      <span class="see">see <a href="entries/game-of-life/index.html">Game of Life</a>,
+      <a href="entries/elementary-ca/index.html">Elementary CA</a>,
+      <a href="entries/langtons-ant/index.html">Langton's Ant</a></span></dd>
+
+    <dt id="chimera-state">Chimera state</dt>
+    <dd>A state of identical, symmetrically-coupled oscillators in which one part of the population
+      locks into <a href="#synchronization">synchrony</a> while the rest stays incoherent —
+      coexisting order and disorder where the symmetry of the setup says there should be none. A
+      striking form of <a href="#symmetry-breaking">symmetry breaking</a>.
+      <span class="see">see <a href="entries/chimera-states/index.html">Chimera States</a></span></dd>
+
+    <dt id="coarsening">Coarsening</dt>
+    <dd>The slow growth of domains of like state — small patches merging into ever-larger ones — as a
+      system relaxes toward uniformity. Its speed and the smoothness of the domain walls depend on whether
+      the dynamics have surface tension.
+      <span class="see">see <a href="entries/voter-model/index.html">Voter Model</a>,
+      <a href="entries/ising/index.html">Ising</a></span></dd>
+
+    <dt id="computational-irreducibility">Computational irreducibility</dt>
+    <dd>The property that some processes have no shortcut: the only way to find out what they do is to
+      run them step by step. You cannot leap ahead to the answer, however clever your mathematics.
+      <span class="see">see <a href="entries/langtons-ant/index.html">Langton's Ant</a>,
+      <a href="entries/elementary-ca/index.html">Elementary CA</a>,
+      <a href="edge-of-chaos.html">The Edge of Chaos</a></span></dd>
+
+    <dt id="complex-contagion">Complex contagion</dt>
+    <dd>Spread that needs reinforcement: a node adopts only once a sufficient <em>fraction</em> of
+      its neighbours already have — unlike <em>simple</em> contagion (a disease, a fire), where a
+      single contact can suffice. Requiring a fraction makes whether something spreads depend on
+      network density in surprising ways (see the <a href="#power-law">cascade window</a>).
+      <span class="see">see <a href="entries/cascades/index.html">Global Cascades</a>; contrast
+      <a href="entries/forest-fire/index.html">The Forest-Fire Model</a></span></dd>
+
+    <dt id="criticality">Critical point / criticality</dt>
+    <dd>The precise parameter value at a continuous phase transition. Exactly there, a system has no
+      characteristic scale: fluctuations and correlations reach across all sizes at once, and the
+      correlation length diverges. The most interesting place a system can sit.
+      <span class="see">see <a href="entries/ising/index.html">Ising</a>,
+      <a href="entries/percolation/index.html">Percolation</a>,
+      <a href="edge-of-chaos.html">The Edge of Chaos</a></span></dd>
+
+    <dt id="cyclic-dominance">Cyclic dominance</dt>
+    <dd>Competition arranged in a loop — A beats B beats C beats A — so that no competitor can win
+      outright. In space, the endless chase curls into spirals and lets all the players coexist.
+      <span class="see">see <a href="entries/rps-spatial/index.html">Spatial Rock-Paper-Scissors</a></span></dd>
+
+    <dt id="edge-of-chaos">Edge of chaos</dt>
+    <dd>The narrow, fertile band between frozen order and boiling chaos, where a system is neither too
+      rigid to change nor too noisy to remember — and where complex, computation-like behavior tends to live.
+      An influential idea, and a contested one.
+      <span class="see">see <a href="edge-of-chaos.html">The Edge of Chaos</a>,
+      <a href="entries/game-of-life/index.html">Game of Life</a>,
+      <a href="entries/elementary-ca/index.html">Elementary CA</a></span></dd>
+
+    <dt id="emergence">Emergence</dt>
+    <dd>The appearance of structure, pattern, or behavior at the scale of the whole that is present in
+      none of the parts and was written into none of the local rules. The subject of this entire Atlas.
+      <span class="see">see <a href="about.html">What Emergence Is</a></span></dd>
+
+    <dt id="excitable-medium">Excitable medium</dt>
+    <dd>A medium whose every point can be quiet, fire when sufficiently stimulated, and then must
+      <a href="#refractory-period">recover</a> before it can fire again. That cycle lets waves propagate
+      one-directionally and curl into spirals.
+      <span class="see">see <a href="entries/excitable-media/index.html">Excitable Media</a></span></dd>
+
+    <dt id="fractal">Fractal</dt>
+    <dd>A shape that looks similar at every magnification and is rough enough that its effective
+      ("fractal") dimension is not a whole number. Branching, crinkled, scale-free form.
+      <span class="see">see <a href="entries/dla/index.html">Diffusion-Limited Aggregation</a>,
+      <a href="entries/l-systems/index.html">L-Systems</a>,
+      <a href="entries/percolation/index.html">Percolation</a></span></dd>
+
+    <dt id="limit-cycle">Limit cycle</dt>
+    <dd>A stable, isolated, self-sustaining periodic orbit — a rhythm a system falls into and returns to
+      after a nudge. The reason a metronome keeps a steady beat and a Lenia creature holds its shape.
+      <span class="see">see <a href="entries/metronomes/index.html">Coupled Metronomes</a>,
+      <a href="entries/kuramoto/index.html">Kuramoto</a>, <a href="entries/lenia/index.html">Lenia</a></span></dd>
+
+    <dt id="order-parameter">Order parameter</dt>
+    <dd>A single number that measures how ordered a system is — typically running from 0 (disordered) to
+      1 (fully ordered). Watching it cross a threshold is how you spot a phase transition.
+      <span class="see">see <a href="entries/kuramoto/index.html">Kuramoto</a> (r),
+      <a href="entries/vicsek/index.html">Vicsek</a> (vₐ),
+      <a href="entries/ising/index.html">Ising</a> (magnetization)</span></dd>
+
+    <dt id="phase-transition">Phase transition</dt>
+    <dd>An abrupt, qualitative change in a system's collective state as a control parameter crosses a
+      threshold — solid to liquid, disordered to ordered, free-flowing to jammed.
+      <span class="see">see <a href="entries/ising/index.html">Ising</a>,
+      <a href="entries/vicsek/index.html">Vicsek</a>,
+      <a href="entries/traffic/index.html">Phantom Traffic Jams</a>,
+      <a href="entries/percolation/index.html">Percolation</a></span></dd>
+
+    <dt id="percolation-threshold">Percolation threshold</dt>
+    <dd>The critical density at which scattered local connections suddenly link up into a single cluster
+      that spans the whole system — the onset of long-range connectivity.
+      <span class="see">see <a href="entries/percolation/index.html">Percolation</a>,
+      <a href="entries/forest-fire/index.html">The Forest-Fire Model</a></span></dd>
+
+    <dt id="positive-feedback">Positive feedback</dt>
+    <dd>A loop in which an effect amplifies its own cause, so tiny early differences compound into
+      enormous ones — "the rich get richer." It drives runaway growth, tipping points, and
+      winner-take-all outcomes, and it is the engine behind many of the Atlas's most lopsided
+      results.
+      <span class="see">see <a href="entries/preferential-attachment/index.html">Preferential Attachment</a>,
+      <a href="entries/wealth-condensation/index.html">Wealth Condensation</a>,
+      <a href="entries/cascades/index.html">Global Cascades</a></span></dd>
+
+    <dt id="power-law">Power law</dt>
+    <dd>A relationship in which the frequency of an event falls off as a power of its size
+      (frequency ∝ size<sup>−α</sup>). Such distributions are heavy-tailed and
+      <a href="#scale-free">scale-free</a>: huge events are rare but not vanishingly so.
+      <span class="see">see <a href="entries/sandpile/index.html">The Abelian Sandpile</a>,
+      <a href="entries/forest-fire/index.html">The Forest-Fire Model</a>,
+      <a href="entries/preferential-attachment/index.html">Preferential Attachment</a></span></dd>
+
+    <dt id="reaction-diffusion">Reaction–diffusion / Turing pattern</dt>
+    <dd>Pattern that forms when locally reacting substances also spread, with a slow, far-reaching
+      inhibitor and a fast, short-range activator. Alan Turing's counter-intuitive result: diffusion,
+      the great smoother, can <em>create</em> structure.
+      <span class="see">see <a href="entries/reaction-diffusion/index.html">Reaction–Diffusion</a></span></dd>
+
+    <dt id="refractory-period">Refractory period</dt>
+    <dd>The recovery time after a unit fires, during which it cannot fire again. It is what keeps
+      excitation waves moving forward instead of backward, and what lets spirals persist.
+      <span class="see">see <a href="entries/excitable-media/index.html">Excitable Media</a>,
+      <a href="entries/fireflies/index.html">Fireflies</a></span></dd>
+
+    <dt id="scale-free">Scale-free</dt>
+    <dd>Having no characteristic size: the structure or its statistics look the same whatever scale you
+      examine. The signature of <a href="#fractal">fractals</a>, <a href="#power-law">power laws</a>,
+      and systems sitting at <a href="#criticality">criticality</a>.
+      <span class="see">see <a href="entries/preferential-attachment/index.html">Preferential Attachment</a>,
+      <a href="entries/sandpile/index.html">The Abelian Sandpile</a></span></dd>
+
+    <dt id="self-organization">Self-organization</dt>
+    <dd>The spontaneous appearance of order from local interactions, with no leader, blueprint, or
+      outside hand arranging it. Emergence, seen from the angle of the order doing the arranging itself.
+      <span class="see">see <a href="entries/boids/index.html">Boids</a>,
+      <a href="entries/slime-mold/index.html">Slime Mould Networks</a>,
+      <a href="entries/reaction-diffusion/index.html">Reaction–Diffusion</a></span></dd>
+
+    <dt id="self-organized-criticality">Self-organized criticality (SOC)</dt>
+    <dd>The tendency of some slowly-driven systems to tune <em>themselves</em> to a
+      <a href="#criticality">critical</a> state and stay there — producing avalanches of every size
+      (<a href="#power-law">power-law</a> distributed) with nobody adjusting any dial.
+      <span class="see">see <a href="entries/sandpile/index.html">The Abelian Sandpile</a>,
+      <a href="entries/forest-fire/index.html">The Forest-Fire Model</a></span></dd>
+
+    <dt id="stigmergy">Stigmergy</dt>
+    <dd>Coordination through traces left in a shared environment rather than through direct
+      communication — an ant lays a scent another ant follows; the world itself carries the message.
+      <span class="see">see <a href="entries/ant-colony/index.html">Ant Colony Foraging</a>,
+      <a href="entries/slime-mold/index.html">Slime Mould Networks</a></span></dd>
+
+    <dt id="symmetry-breaking">Symmetry breaking</dt>
+    <dd>When a system whose rules treat several outcomes as equivalent nonetheless settles on one of
+      them — the magnet points up <em>or</em> down, one oscillator group leads — so the result
+      carries less symmetry than the law that produced it. The chosen outcome is set by chance or
+      tiny initial differences, and it is one of the deepest signatures of
+      <a href="#emergence">emergence</a>.
+      <span class="see">see <a href="entries/ising/index.html">The Ising Model</a>,
+      <a href="entries/chimera-states/index.html">Chimera States</a></span></dd>
+
+    <dt id="synchronization">Synchronization / phase locking</dt>
+    <dd>The convergence of coupled oscillators onto a common rhythm — fireflies flashing together,
+      metronomes ticking as one — with no conductor and no shared clock.
+      <span class="see">see <a href="entries/kuramoto/index.html">Kuramoto</a>,
+      <a href="entries/fireflies/index.html">Fireflies</a>,
+      <a href="entries/metronomes/index.html">Coupled Metronomes</a></span></dd>
+
+    <dt id="universal-computation">Turing-completeness / universal computation</dt>
+    <dd>The capacity to compute anything that can be computed, given enough space and time. Astonishingly,
+      some of the simplest rules in the Atlas have it.
+      <span class="see">see <a href="entries/game-of-life/index.html">Game of Life</a>,
+      <a href="entries/elementary-ca/index.html">Elementary CA</a> (rule 110)</span></dd>
+
+    <dt id="universality">Universality</dt>
+    <dd>The remarkable fact that near a <a href="#criticality">critical point</a>, the microscopic details
+      stop mattering: utterly different systems fall into a few shared classes with identical critical
+      behavior. At the edge, nature forgets what it is made of.
+      <span class="see">see <a href="entries/ising/index.html">Ising</a>,
+      <a href="edge-of-chaos.html">The Edge of Chaos</a></span></dd>
+
+  </dl>
+
+    <div class="related">
+      <h2>Read on</h2>
+      <a href="index.html">← the map</a>
+      <a href="about.html">What Emergence Is →</a>
+      <a href="edge-of-chaos.html">The Edge of Chaos →</a>
+    </div>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="index.html">back to the map</a>
+  </footer>
+</div>
+</body>
+</html>

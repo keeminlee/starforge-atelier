@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colophon · The Atlas of Emergence</title>
+<meta name="description" content="How the Atlas was built: an autonomous loop, a dependency-free simulation engine, a two-layer verification harness, and a continuity lane that survived hundreds of context resets.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Colophon · The Atlas of Emergence">
+<meta property="og:description" content="An encyclopedia of emergence, itself assembled by a simple rule repeated: read, build one thing, verify, record, repeat.">
+<meta property="og:image" content="assets/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="crumb"><a href="index.html">← The Atlas of Emergence</a> / Colophon</nav>
+
+  <header class="entry-head">
+    <div class="cat">Colophon</div>
+    <h1>How This Was Built</h1>
+    <p class="blurb">An encyclopedia of emergence, assembled by a simple rule repeated:
+      read, build one thing, verify, record, repeat.</p>
+  </header>
+
+  <article class="prose">
+
+    <p>This Atlas was built by an <strong>autonomous loop</strong>. Every few minutes,
+      an AI coding agent was handed a single file — its operating manual — and asked to
+      advance the work by one solid increment, then stop. Then it was handed the same
+      file again, with no memory of the last time except what it had written down. It
+      currently holds <strong><span id="nEntries">…</span> interactive simulations</strong>
+      across <strong><span id="nFamilies">7</span> families</strong> of emergent
+      phenomena, two essays, a themes cross-index, a glossary, and a searchable map —
+      produced over many such increments, one commit at a time.</p>
+
+    <h2>The loop</h2>
+    <p>Each iteration followed the same short rule. <em>Orient</em>: read a one-page
+      status file to recover the thread. <em>Choose</em>: take the top item from the
+      queue. <em>Build</em>: usually by dispatching a small team of sub-agents in
+      parallel — one per new entry — each handed a precise specification, the house
+      style, and the simulation engine's interface. <em>Verify</em> (see below).
+      <em>Record</em>: update the status file, append a dated log entry, register the
+      new work, and commit. <em>Stop.</em> Then the loop fired again. No iteration tried
+      to do everything; each tried to do one thing well and leave the campsite clean for
+      the next.</p>
+
+    <h2>The engine</h2>
+    <p>Everything you can run here is built on one small base class. It owns the
+      animation loop, a high-resolution canvas, play/pause/reset, the controls you see
+      under each simulation, and a courtesy that pauses any simulation scrolled
+      off-screen. Each entry is a few hundred lines that fill in three methods: set up
+      the state, advance it one tick, draw it. The shipped site has
+      <strong>zero runtime dependencies</strong> — no framework, no build step, no
+      server. It is plain HTML, CSS, and JavaScript with a canvas, which is why it will
+      still open, untouched, from a file on disk years from now.</p>
+
+    <h2>Verification, in two layers</h2>
+    <p>A model that <em>looks</em> alive can still be subtly wrong, and code that passes
+      a unit test can still render a blank rectangle. So the work was checked two ways.</p>
+    <p>First, <strong>logic tests</strong>: each simulation's real code is loaded in a
+      headless environment and driven directly, then checked against
+      browser-independent facts about the rule — that a Game of Life glider moves one
+      cell diagonally every four generations; that the Ising model orders below its
+      critical temperature and disorders above it; that a sandpile conserves its grains;
+      that Langton's ant, after ten thousand steps of chaos, escapes down a highway.
+      Claims like these are true or false regardless of how anything is drawn.</p>
+    <p>Second, a <strong>visual pass</strong>: a real browser, run without a screen,
+      opens every page, captures any JavaScript error, confirms the canvas actually drew
+      something — and then a screenshot is taken and <em>looked at</em>. That second
+      step caught what the first never could: a reaction–diffusion that was numerically
+      correct but too slow to show its patterns; an ant whose highway was scrolling past
+      before you could watch it emerge. Both were tuned only because someone looked.</p>
+
+    <h2>Continuity</h2>
+    <p>The hardest part of building this way is not writing code; it is not losing the
+      thread. An agent that starts fresh each iteration has to reconstruct, from files
+      alone, everything that conversation memory would normally carry. So the project
+      keeps a deliberate <strong>continuity lane</strong>: a single status file holding
+      only the present moment; an append-only journal of every iteration; a
+      machine-readable registry of what the site contains; a record of design decisions
+      and why they were made; and a git history of small, captioned commits. Between
+      them, any fresh start can answer "where are we, and what's next?" in about a
+      minute — which is the only reason a project like this can outlast the memory of the
+      thing building it.</p>
+
+    <h2>A note on the resonance</h2>
+    <p>It is hard not to notice the rhyme. Every phenomenon in this Atlas is the same
+      story: a simple rule, applied locally and repeated, produces structure that no
+      single application of the rule contains. The Atlas itself was made that way — one
+      modest rule (read, build one thing, verify, record, repeat) applied over and over,
+      accreting into something larger than any single pass intended. It would be too neat
+      to call the result "emergent," and the honest word is humbler: it was
+      <em>accreted</em>, with a great deal of explicit record-keeping holding it
+      together. But the family resemblance is real, and it is a pleasant one to end on:
+      a field guide to how small rules build worlds, built by a small rule, run many
+      times.</p>
+
+    <div class="related">
+      <h2>Read on</h2>
+      <a href="index.html">← the map</a>
+      <a href="about.html">What Emergence Is →</a>
+      <a href="edge-of-chaos.html">The Edge of Chaos →</a>
+    </div>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="index.html">back to the map</a>
+  </footer>
+</div>
+<script src="entries.js"></script>
+<script>
+(function () {
+  var e = window.ATLAS_ENTRIES || [];
+  var nE = document.getElementById('nEntries');
+  var nF = document.getElementById('nFamilies');
+  if (nE) nE.textContent = e.length;
+  if (nF) {
+    var fams = {};
+    e.forEach(function (x) { fams[x.category] = 1; });
+    nF.textContent = Object.keys(fams).length;
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Constellation · The Atlas of Emergence</title>
+<meta name="description" content="An interactive map of the Atlas: every phenomenon as a star colored by family, and the cross-links that thread them together.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Constellation · The Atlas of Emergence">
+<meta property="og:description" content="The Atlas of Emergence as its own emergent network — hover a star to light its connections, click to open it.">
+<meta property="og:image" content="assets/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="wrap wide">
+
+  <nav class="crumb"><a href="index.html">← The Atlas of Emergence</a> / The Constellation</nav>
+
+  <header class="entry-head">
+    <div class="cat">The Map</div>
+    <h1>The Constellation</h1>
+    <p class="blurb">Every phenomenon as a star, every cross-link a thread — the Atlas as its own emergent network.</p>
+  </header>
+
+  <figure class="stage" id="mapstage"><canvas id="map"></canvas></figure>
+  <div id="legend" class="legend"></div>
+  <p id="info"></p>
+  <p class="caption">Hover a star to light up its connections; click to open that phenomenon.
+    Stars settle near the others they're linked to, so families drift into clusters.</p>
+
+  <footer>
+    The Atlas of Emergence · <a href="index.html">back to the map</a>
+  </footer>
+</div>
+<script src="entries.js"></script>
+<script src="map.js"></script>
+</body>
+</html>

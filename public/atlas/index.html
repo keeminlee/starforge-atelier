@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Atlas of Emergence</title>
+<meta name="description" content="Simple rules, repeated, become worlds. An interactive encyclopedia of emergent phenomena: live simulations paired with sourced explainers.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Atlas of Emergence">
+<meta property="og:description" content="Simple rules, repeated, become worlds. Live, manipulable simulations paired with sourced explainers.">
+<meta property="og:image" content="assets/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="kicker">An Interactive Encyclopedia</div>
+    <h1>The Atlas of Emergence</h1>
+    <p class="tagline">Simple rules, repeated, become worlds.</p>
+  </header>
+
+  <p class="intro">Complex order arising from simple local rules — watched, paused,
+    and perturbed. 37 phenomena are live
+    so far; the map grows with every visit. New here?
+    <a href="about.html">Start with what emergence is&nbsp;→</a></p>
+
+  <div class="search">
+    <input id="filter" type="search" placeholder="Filter phenomena — try “fractal”, “phase”, “agent”…"
+      aria-label="Filter phenomena" autocomplete="off">
+  </div>
+  <p class="maplink"><a href="map.html">or wander the constellation&nbsp;→</a></p>
+
+      <section class="family">
+        <h2>Cellular Automata</h2>
+        <div class="cards">
+          <a class="card" data-search="conway's game of life four rules on a grid of cells give rise to gliders, guns, and turing-complete computation. cellular automata cellular-automata discrete turing-complete" href="entries/game-of-life/index.html">
+            <h3>Conway's Game of Life</h3>
+            <p>Four rules on a grid of cells give rise to gliders, guns, and Turing-complete computation.</p>
+            <div class="tags"><span class="tag">cellular-automata</span><span class="tag">discrete</span><span class="tag">turing-complete</span></div>
+          </a>
+          <a class="card" data-search="lenia turn the game of life's integers into smooth curves and a whole zoo of gliding, turning, self-healing creatures appears. cellular automata continuous-ca artificial-life orbium" href="entries/lenia/index.html">
+            <h3>Lenia</h3>
+            <p>Turn the Game of Life's integers into smooth curves and a whole zoo of gliding, turning, self-healing creatures appears.</p>
+            <div class="tags"><span class="tag">continuous-ca</span><span class="tag">artificial-life</span><span class="tag">orbium</span></div>
+          </a>
+          <a class="card" data-search="langton's ant one ant, two rules, ten thousand steps of chaos — and then, from nowhere, it builds an endless ordered highway. cellular automata emergent-order deterministic irreducible" href="entries/langtons-ant/index.html">
+            <h3>Langton's Ant</h3>
+            <p>One ant, two rules, ten thousand steps of chaos — and then, from nowhere, it builds an endless ordered highway.</p>
+            <div class="tags"><span class="tag">emergent-order</span><span class="tag">deterministic</span><span class="tag">irreducible</span></div>
+          </a>
+          <a class="card" data-search="elementary cellular automata three cells in, one cell out — 256 one-line rules, and inside them sit order, fractals, chaos, and a universal computer. cellular automata wolfram-rules rule-110 1d" href="entries/elementary-ca/index.html">
+            <h3>Elementary Cellular Automata</h3>
+            <p>Three cells in, one cell out — 256 one-line rules, and inside them sit order, fractals, chaos, and a universal computer.</p>
+            <div class="tags"><span class="tag">wolfram-rules</span><span class="tag">rule-110</span><span class="tag">1d</span></div>
+          </a>
+          <a class="card" data-search="self-replication one rule — be the parity of your neighbors — and any shape you draw copies itself, again and again, in an expanding family of clones. cellular automata von-neumann parity-rule artificial-life" href="entries/self-replication/index.html">
+            <h3>Self-Replication</h3>
+            <p>One rule — be the parity of your neighbors — and any shape you draw copies itself, again and again, in an expanding family of clones.</p>
+            <div class="tags"><span class="tag">von-neumann</span><span class="tag">parity-rule</span><span class="tag">artificial-life</span></div>
+          </a>
+        </div>
+      </section>
+      <section class="family">
+        <h2>Collective Motion</h2>
+        <div class="cards">
+          <a class="card" data-search="boids three local urges — separation, alignment, cohesion — and a few hundred agents become a flock. collective motion agent-based flocking self-organization" href="entries/boids/index.html">
+            <h3>Boids</h3>
+            <p>Three local urges — separation, alignment, cohesion — and a few hundred agents become a flock.</p>
+            <div class="tags"><span class="tag">agent-based</span><span class="tag">flocking</span><span class="tag">self-organization</span></div>
+          </a>
+          <a class="card" data-search="the vicsek model particles that only copy their neighbors' heading, plus noise — and a flock crystallizes out of confetti at a critical noise. collective motion active-matter phase-transition flocking" href="entries/vicsek/index.html">
+            <h3>The Vicsek Model</h3>
+            <p>Particles that only copy their neighbors' heading, plus noise — and a flock crystallizes out of confetti at a critical noise.</p>
+            <div class="tags"><span class="tag">active-matter</span><span class="tag">phase-transition</span><span class="tag">flocking</span></div>
+          </a>
+          <a class="card" data-search="active matter self-driven particles with no attraction at all still clump into dense clusters — just because they slow down where it's crowded. collective motion mips self-propelled phase-separation" href="entries/active-matter/index.html">
+            <h3>Active Matter</h3>
+            <p>Self-driven particles with no attraction at all still clump into dense clusters — just because they slow down where it's crowded.</p>
+            <div class="tags"><span class="tag">mips</span><span class="tag">self-propelled</span><span class="tag">phase-separation</span></div>
+          </a>
+          <a class="card" data-search="pedestrian lanes two crowds walk straight through each other — and with no rule but &quot;head to your goal, avoid bumping,&quot; they sort themselves into smooth one-way lanes. collective motion social-force self-organization crowd-dynamics" href="entries/pedestrian-lanes/index.html">
+            <h3>Pedestrian Lanes</h3>
+            <p>Two crowds walk straight through each other — and with no rule but &quot;head to your goal, avoid bumping,&quot; they sort themselves into smooth one-way lanes.</p>
+            <div class="tags"><span class="tag">social-force</span><span class="tag">self-organization</span><span class="tag">crowd-dynamics</span></div>
+          </a>
+        </div>
+      </section>
+      <section class="family">
+        <h2>Pattern Formation</h2>
+        <div class="cards">
+          <a class="card" data-search="reaction–diffusion two chemicals, one diffusing faster than the other, paint spots, stripes, and mazes — turing's idea made visible. pattern formation turing-pattern morphogenesis gray-scott" href="entries/reaction-diffusion/index.html">
+            <h3>Reaction–Diffusion</h3>
+            <p>Two chemicals, one diffusing faster than the other, paint spots, stripes, and mazes — Turing's idea made visible.</p>
+            <div class="tags"><span class="tag">turing-pattern</span><span class="tag">morphogenesis</span><span class="tag">gray-scott</span></div>
+          </a>
+          <a class="card" data-search="diffusion-limited aggregation random walkers that stick on contact grow branching fractal dendrites — the form of frost, coral, and lightning. pattern formation fractal dendrite far-from-equilibrium" href="entries/dla/index.html">
+            <h3>Diffusion-Limited Aggregation</h3>
+            <p>Random walkers that stick on contact grow branching fractal dendrites — the form of frost, coral, and lightning.</p>
+            <div class="tags"><span class="tag">fractal</span><span class="tag">dendrite</span><span class="tag">far-from-equilibrium</span></div>
+          </a>
+          <a class="card" data-search="spatial rock-paper-scissors three species, each eating the next in a cycle, chase each other into rotating spirals — and all three survive. pattern formation cyclic-dominance biodiversity spiral-waves" href="entries/rps-spatial/index.html">
+            <h3>Spatial Rock-Paper-Scissors</h3>
+            <p>Three species, each eating the next in a cycle, chase each other into rotating spirals — and all three survive.</p>
+            <div class="tags"><span class="tag">cyclic-dominance</span><span class="tag">biodiversity</span><span class="tag">spiral-waves</span></div>
+          </a>
+          <a class="card" data-search="l-systems a handful of rewriting rules, applied over and over and read as drawing commands, unfolds into a fern or a snowflake. pattern formation fractal generative plant-growth" href="entries/l-systems/index.html">
+            <h3>L-Systems</h3>
+            <p>A handful of rewriting rules, applied over and over and read as drawing commands, unfolds into a fern or a snowflake.</p>
+            <div class="tags"><span class="tag">fractal</span><span class="tag">generative</span><span class="tag">plant-growth</span></div>
+          </a>
+          <a class="card" data-search="excitable media waves that sweep, collide, and curl into spirals that pump forever — the pattern of the bz reaction and a fibrillating heart. pattern formation spiral-waves refractory cardiac" href="entries/excitable-media/index.html">
+            <h3>Excitable Media</h3>
+            <p>Waves that sweep, collide, and curl into spirals that pump forever — the pattern of the BZ reaction and a fibrillating heart.</p>
+            <div class="tags"><span class="tag">spiral-waves</span><span class="tag">refractory</span><span class="tag">cardiac</span></div>
+          </a>
+          <a class="card" data-search="wave function collapse each cell picks a tile, the choice forbids its neighbors' incompatible options, and a globally coherent pattern crystallizes from local rules alone. pattern formation constraint-propagation generative procedural" href="entries/wfc/index.html">
+            <h3>Wave Function Collapse</h3>
+            <p>Each cell picks a tile, the choice forbids its neighbors' incompatible options, and a globally coherent pattern crystallizes from local rules alone.</p>
+            <div class="tags"><span class="tag">constraint-propagation</span><span class="tag">generative</span><span class="tag">procedural</span></div>
+          </a>
+          <a class="card" data-search="phyllotaxis each bud grows in the biggest gap left by the others — and the angle between them drifts, all on its own, to the golden 137.5° of a sunflower. pattern formation golden-angle fibonacci self-organized" href="entries/phyllotaxis/index.html">
+            <h3>Phyllotaxis</h3>
+            <p>Each bud grows in the biggest gap left by the others — and the angle between them drifts, all on its own, to the golden 137.5° of a sunflower.</p>
+            <div class="tags"><span class="tag">golden-angle</span><span class="tag">fibonacci</span><span class="tag">self-organized</span></div>
+          </a>
+          <a class="card" data-search="the snowflake one frozen seed pulls vapour from the air and branches as it grows — and because ice is hexagonal, all six arms grow alike into a crystal no other will ever match. pattern formation dendrite crystal-growth six-fold-symmetry" href="entries/snowflake/index.html">
+            <h3>The Snowflake</h3>
+            <p>One frozen seed pulls vapour from the air and branches as it grows — and because ice is hexagonal, all six arms grow alike into a crystal no other will ever match.</p>
+            <div class="tags"><span class="tag">dendrite</span><span class="tag">crystal-growth</span><span class="tag">six-fold-symmetry</span></div>
+          </a>
+        </div>
+      </section>
+      <section class="family">
+        <h2>Criticality</h2>
+        <div class="cards">
+          <a class="card" data-search="the abelian sandpile drop grains one at a time and the pile tunes itself to the edge of collapse, with avalanches of every size. criticality self-organized-criticality power-law avalanches" href="entries/sandpile/index.html">
+            <h3>The Abelian Sandpile</h3>
+            <p>Drop grains one at a time and the pile tunes itself to the edge of collapse, with avalanches of every size.</p>
+            <div class="tags"><span class="tag">self-organized-criticality</span><span class="tag">power-law</span><span class="tag">avalanches</span></div>
+          </a>
+          <a class="card" data-search="the ising model spins that merely want to match their neighbors undergo a sharp phase transition at a critical temperature. criticality phase-transition ferromagnetism universality" href="entries/ising/index.html">
+            <h3>The Ising Model</h3>
+            <p>Spins that merely want to match their neighbors undergo a sharp phase transition at a critical temperature.</p>
+            <div class="tags"><span class="tag">phase-transition</span><span class="tag">ferromagnetism</span><span class="tag">universality</span></div>
+          </a>
+          <a class="card" data-search="percolation fill a grid at random and, at one critical density, scattered clusters suddenly merge into a path across the whole world. criticality connectivity phase-transition fractal-cluster" href="entries/percolation/index.html">
+            <h3>Percolation</h3>
+            <p>Fill a grid at random and, at one critical density, scattered clusters suddenly merge into a path across the whole world.</p>
+            <div class="tags"><span class="tag">connectivity</span><span class="tag">phase-transition</span><span class="tag">fractal-cluster</span></div>
+          </a>
+          <a class="card" data-search="the forest-fire model trees grow, lightning sparks, fire sweeps connected stands — and the forest tunes itself to the edge of burning. criticality self-organized-criticality power-law cascades" href="entries/forest-fire/index.html">
+            <h3>The Forest-Fire Model</h3>
+            <p>Trees grow, lightning sparks, fire sweeps connected stands — and the forest tunes itself to the edge of burning.</p>
+            <div class="tags"><span class="tag">self-organized-criticality</span><span class="tag">power-law</span><span class="tag">cascades</span></div>
+          </a>
+        </div>
+      </section>
+      <section class="family">
+        <h2>Synchronization</h2>
+        <div class="cards">
+          <a class="card" data-search="the kuramoto model a crowd of oscillators, each minding only the average, spontaneously locks into step past a critical coupling. synchronization synchronization phase-transition oscillators" href="entries/kuramoto/index.html">
+            <h3>The Kuramoto Model</h3>
+            <p>A crowd of oscillators, each minding only the average, spontaneously locks into step past a critical coupling.</p>
+            <div class="tags"><span class="tag">synchronization</span><span class="tag">phase-transition</span><span class="tag">oscillators</span></div>
+          </a>
+          <a class="card" data-search="fireflies a field of flashers, each nudging its neighbors a little when it fires, slides from chaos into unison. synchronization pulse-coupled spontaneous-sync no-conductor" href="entries/fireflies/index.html">
+            <h3>Fireflies</h3>
+            <p>A field of flashers, each nudging its neighbors a little when it fires, slides from chaos into unison.</p>
+            <div class="tags"><span class="tag">pulse-coupled</span><span class="tag">spontaneous-sync</span><span class="tag">no-conductor</span></div>
+          </a>
+          <a class="card" data-search="coupled metronomes metronomes started every-which-way fall into perfect step — coupled by nothing but the board they share, as huygens saw in 1665. synchronization huygens mechanical-coupling phase-locking" href="entries/metronomes/index.html">
+            <h3>Coupled Metronomes</h3>
+            <p>Metronomes started every-which-way fall into perfect step — coupled by nothing but the board they share, as Huygens saw in 1665.</p>
+            <div class="tags"><span class="tag">huygens</span><span class="tag">mechanical-coupling</span><span class="tag">phase-locking</span></div>
+          </a>
+          <a class="card" data-search="chimera states two identical crowds of identical oscillators, wired up identically — yet one locks into perfect step while the other mills in permanent disorder. synchronization symmetry-breaking partial-synchrony oscillators" href="entries/chimera-states/index.html">
+            <h3>Chimera States</h3>
+            <p>Two identical crowds of identical oscillators, wired up identically — yet one locks into perfect step while the other mills in permanent disorder.</p>
+            <div class="tags"><span class="tag">symmetry-breaking</span><span class="tag">partial-synchrony</span><span class="tag">oscillators</span></div>
+          </a>
+        </div>
+      </section>
+      <section class="family">
+        <h2>Networks</h2>
+        <div class="cards">
+          <a class="card" data-search="slime mould networks brainless agents laying and following trails weave themselves into efficient transport networks. networks stigmergy physarum transport-networks" href="entries/slime-mold/index.html">
+            <h3>Slime Mould Networks</h3>
+            <p>Brainless agents laying and following trails weave themselves into efficient transport networks.</p>
+            <div class="tags"><span class="tag">stigmergy</span><span class="tag">physarum</span><span class="tag">transport-networks</span></div>
+          </a>
+          <a class="card" data-search="ant colony foraging ants that only lay and follow scent, and let it evaporate, collectively wire the nest to food along efficient trails. networks stigmergy pheromone shortest-path" href="entries/ant-colony/index.html">
+            <h3>Ant Colony Foraging</h3>
+            <p>Ants that only lay and follow scent, and let it evaporate, collectively wire the nest to food along efficient trails.</p>
+            <div class="tags"><span class="tag">stigmergy</span><span class="tag">pheromone</span><span class="tag">shortest-path</span></div>
+          </a>
+          <a class="card" data-search="preferential attachment new nodes prefer to link to already-popular ones — and a few runaway hubs grow a scale-free network from a single bias. networks scale-free hubs cumulative-advantage" href="entries/preferential-attachment/index.html">
+            <h3>Preferential Attachment</h3>
+            <p>New nodes prefer to link to already-popular ones — and a few runaway hubs grow a scale-free network from a single bias.</p>
+            <div class="tags"><span class="tag">scale-free</span><span class="tag">hubs</span><span class="tag">cumulative-advantage</span></div>
+          </a>
+          <a class="card" data-search="the hopfield network show a web of simple on/off units a corrupted memory and it cleans itself up — flowing downhill to the stored pattern it most resembles. networks associative-memory attractor neural-network" href="entries/hopfield-network/index.html">
+            <h3>The Hopfield Network</h3>
+            <p>Show a web of simple on/off units a corrupted memory and it cleans itself up — flowing downhill to the stored pattern it most resembles.</p>
+            <div class="tags"><span class="tag">associative-memory</span><span class="tag">attractor</span><span class="tag">neural-network</span></div>
+          </a>
+          <a class="card" data-search="random boolean networks wire thousands of on/off genes at random — and whether the tangle freezes into order or boils into chaos turns on a single number: how many inputs each one listens to. networks edge-of-chaos order-for-free kauffman" href="entries/boolean-network/index.html">
+            <h3>Random Boolean Networks</h3>
+            <p>Wire thousands of on/off genes at random — and whether the tangle freezes into order or boils into chaos turns on a single number: how many inputs each one listens to.</p>
+            <div class="tags"><span class="tag">edge-of-chaos</span><span class="tag">order-for-free</span><span class="tag">kauffman</span></div>
+          </a>
+          <a class="card" data-search="global cascades one nudge to one node either dies unnoticed or sweeps the whole network — and, strangely, a more connected network can be the harder one to topple. networks complex-contagion cascade-window watts" href="entries/cascades/index.html">
+            <h3>Global Cascades</h3>
+            <p>One nudge to one node either dies unnoticed or sweeps the whole network — and, strangely, a more connected network can be the harder one to topple.</p>
+            <div class="tags"><span class="tag">complex-contagion</span><span class="tag">cascade-window</span><span class="tag">watts</span></div>
+          </a>
+        </div>
+      </section>
+      <section class="family">
+        <h2>Social Dynamics</h2>
+        <div class="cards">
+          <a class="card" data-search="schelling's segregation model no one wants a segregated city, yet a mild preference to not be a small minority is enough to produce one. social dynamics segregation micromotives agent-based" href="entries/schelling/index.html">
+            <h3>Schelling's Segregation Model</h3>
+            <p>No one wants a segregated city, yet a mild preference to not be a small minority is enough to produce one.</p>
+            <div class="tags"><span class="tag">segregation</span><span class="tag">micromotives</span><span class="tag">agent-based</span></div>
+          </a>
+          <a class="card" data-search="phantom traffic jams on a road with no accident and no bottleneck, dense traffic spontaneously congeals into backward-traveling jams. social dynamics phase-transition stop-and-go cellular-automaton" href="entries/traffic/index.html">
+            <h3>Phantom Traffic Jams</h3>
+            <p>On a road with no accident and no bottleneck, dense traffic spontaneously congeals into backward-traveling jams.</p>
+            <div class="tags"><span class="tag">phase-transition</span><span class="tag">stop-and-go</span><span class="tag">cellular-automaton</span></div>
+          </a>
+          <a class="card" data-search="the voter model everyone just copies a random neighbor — and from pure noise, blocks of agreement grow until one opinion wins. social dynamics consensus coarsening neutral-model" href="entries/voter-model/index.html">
+            <h3>The Voter Model</h3>
+            <p>Everyone just copies a random neighbor — and from pure noise, blocks of agreement grow until one opinion wins.</p>
+            <div class="tags"><span class="tag">consensus</span><span class="tag">coarsening</span><span class="tag">neutral-model</span></div>
+          </a>
+          <a class="card" data-search="the spatial dilemma defection always pays better — yet on a grid where agents copy their most successful neighbor, cooperation huddles into clusters and refuses to die. social dynamics evolution-of-cooperation game-theory nowak-may" href="entries/spatial-dilemma/index.html">
+            <h3>The Spatial Dilemma</h3>
+            <p>Defection always pays better — yet on a grid where agents copy their most successful neighbor, cooperation huddles into clusters and refuses to die.</p>
+            <div class="tags"><span class="tag">evolution-of-cooperation</span><span class="tag">game-theory</span><span class="tag">nowak-may</span></div>
+          </a>
+          <a class="card" data-search="wealth condensation everyone starts equal and every trade is a fair coin flip — yet the money drains, almost surely, into the hands of a single agent. social dynamics econophysics inequality yard-sale" href="entries/wealth-condensation/index.html">
+            <h3>Wealth Condensation</h3>
+            <p>Everyone starts equal and every trade is a fair coin flip — yet the money drains, almost surely, into the hands of a single agent.</p>
+            <div class="tags"><span class="tag">econophysics</span><span class="tag">inequality</span><span class="tag">yard-sale</span></div>
+          </a>
+          <a class="card" data-search="opinion dynamics people only nudge toward those they already roughly agree with — and that one threshold decides whether a crowd reaches consensus, splits in two, or shatters into islands. social dynamics bounded-confidence polarization echo-chambers" href="entries/opinion-dynamics/index.html">
+            <h3>Opinion Dynamics</h3>
+            <p>People only nudge toward those they already roughly agree with — and that one threshold decides whether a crowd reaches consensus, splits in two, or shatters into islands.</p>
+            <div class="tags"><span class="tag">bounded-confidence</span><span class="tag">polarization</span><span class="tag">echo-chambers</span></div>
+          </a>
+        </div>
+      </section>
+
+  <p class="no-results" id="noResults" hidden>No phenomena match that. <a href="#" id="clearFilter">Clear filter</a></p>
+
+  <section class="essays">
+    <h2>Essays</h2>
+    <div class="cards">
+      <a class="card" href="about.html">
+        <h3>What Emergence Is</h3>
+        <p>The idea this Atlas is built around — local rules, global order, and how to read the map.</p>
+      </a>
+      <a class="card" href="edge-of-chaos.html">
+        <h3>The Edge of Chaos</h3>
+        <p>Every simulation here has a knob. Somewhere along it sits a critical point where the system comes alive.</p>
+      </a>
+      <a class="card" href="themes.html">
+        <h3>Themes — The Ideas That Recur</h3>
+        <p>A second axis through the Atlas: pick a deep idea — phase transitions, power laws, the edge of chaos — and see everywhere it surfaces.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Built rule by rule. Open any entry and break it. ·
+    <a href="about.html">what is emergence?</a> ·
+    <a href="themes.html">themes</a> ·
+    <a href="colophon.html">how this was built</a> ·
+    <a href="map.html">the constellation</a> ·
+    <a href="glossary.html">glossary</a>
+  </footer>
+</div>
+<script>
+(function () {
+  var q = document.getElementById('filter');
+  var none = document.getElementById('noResults');
+  if (!q) return;
+  var cards = [].slice.call(document.querySelectorAll('.family .card'));
+  var fams = [].slice.call(document.querySelectorAll('.family'));
+  function apply() {
+    var t = q.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (c) {
+      var hay = (c.getAttribute('data-search') || '');
+      var ok = !t || hay.indexOf(t) !== -1;
+      c.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    fams.forEach(function (f) {
+      var any = [].some.call(f.querySelectorAll('.card'), function (c) { return c.style.display !== 'none'; });
+      f.style.display = any ? '' : 'none';
+    });
+    if (none) none.hidden = shown !== 0;
+  }
+  q.addEventListener('input', apply);
+  var clr = document.getElementById('clearFilter');
+  if (clr) clr.addEventListener('click', function (e) { e.preventDefault(); q.value = ''; apply(); q.focus(); });
+})();
+</script>
+</body>
+</html>

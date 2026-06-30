@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snow-Crystal Growth · The Atlas of Emergence</title>
+<meta name="description" content="A single frozen seed pulls water vapour from the air and grows a six-fold dendritic snowflake. Reiter's hexagonal cellular automaton — a live, manipulable simulation with a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="snowflake">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Pattern Formation</nav>
+
+  <header class="entry-head">
+    <div class="cat">Pattern Formation</div>
+    <h1>The Snowflake</h1>
+    <p class="blurb">A single frozen seed pulls water vapour out of the air and branches into a
+      six-fold crystal — same local rule every time, yet never the same flake twice.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Sweep <em>β (humidity)</em> to morph the crystal from a broad plate to a fern-like
+    dendrite, switch <em>presets</em> for different crystal types, and hit <em>randomize</em> for a fresh,
+    slightly different flake each time. Frozen ice glows pale blue; the faint halo is the vapour field
+    being drawn into the growing arms.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A single frozen cell sits at the centre of a hexagonal grid of moist air. It is colder than its
+      surroundings, so water vapour condenses onto it and freezes — and the cell grows. But it does not
+      grow into a smooth ball. Wherever the ice pokes out even slightly, that tip reaches into air that
+      hasn't yet been depleted of vapour, so <strong>more water arrives at the tips than in the
+      valleys</strong>. Tips therefore grow faster, poke out further, and gather still more vapour: a
+      runaway feedback that splits the growing front into branches. Because the underlying lattice is
+      hexagonal, the six directions are equivalent, so all six arms grow alike — and you get a
+      six-pointed dendrite. No part of the crystal is following a blueprint; the snowflake's shape is an
+      <strong>emergent</strong> consequence of one local freezing rule plus the diffusion of vapour.</p>
+
+    <h2>The rule</h2>
+    <p>Every cell holds a real number <code>s</code> — the amount of water there. A cell is
+      <strong>frozen</strong> (part of the crystal) once <code>s&nbsp;≥&nbsp;1</code>. The grid starts at a
+      uniform background vapour level <code>β</code> everywhere, except the single centre seed set to
+      <code>1</code>. Each tick repeats four steps (this is Clifford Reiter's 2005 model):</p>
+    <ul>
+      <li><strong>Receptive set.</strong> A cell is <em>receptive</em> if it is frozen <em>or</em> touches a
+        frozen neighbour. These are the sites where ice is actively capturing vapour.</li>
+      <li><strong>Split.</strong> The water in receptive cells is <em>held</em> (it will not diffuse away);
+        the water everywhere else is the freely <em>diffusing</em> field.</li>
+      <li><strong>Feed.</strong> Add a tiny constant <code>γ</code> of fresh vapour to every receptive cell —
+        the trickle the crystal pulls in from outside.</li>
+      <li><strong>Diffuse.</strong> Average the free field with its six neighbours at rate <code>α</code>, so
+        vapour flows from rich regions toward the depleted boundary; receptive cells also soak up whatever
+        diffuses into them. Any cell whose total reaches <code>1</code> freezes.</li>
+    </ul>
+    <p>That is the entire specification — a purely local rule, no global symmetry enforced by hand. The
+      branching is a <strong>diffusion-limited instability</strong>: exactly the same mechanism that makes
+      <a href="../dla/index.html">diffusion-limited aggregation</a> and frost ferns branch. Tune
+      <code>β</code> (humidity) and you slide between compact plates and feathery dendrites.</p>
+
+    <h2>Why it matters</h2>
+    <p>The snowflake is the textbook case of <strong>emergent natural form</strong> — and of the slogan
+      "same rules, endless variety." Every snow crystal obeys identical physics, yet
+      <strong>no two are alike</strong>, because each one rides its own meandering path through the cloud,
+      meeting a different sequence of temperatures and humidities on the way down. The shape is a record of
+      that journey. Here, nudging <code>β</code> mid-growth (or hitting randomize) stands in for the crystal
+      drifting into wetter or drier air.</p>
+    <p>The famous <strong>six-fold symmetry</strong> is real, and it comes from the hexagonal arrangement of
+      water molecules in ice — the lattice in this simulation is a stand-in for that molecular hexagon. The
+      dependence of shape on temperature and humidity is captured by the <strong>Nakaya diagram</strong>
+      (Ukichiro Nakaya, who grew the first artificial snow crystals in the 1930s): plates near −2&nbsp;°C,
+      needles near −5&nbsp;°C, broad dendritic stars near −15&nbsp;°C, and so on. The branching itself is a
+      <strong>diffusion-limited instability</strong>, which is why the Atlas pairs this entry with its
+      stochastic cousin, <a href="../dla/index.html">DLA</a>: DLA grows a branched fractal from
+      <em>random walkers</em> with <em>no</em> symmetry, while the snowflake grows a branched crystal from a
+      <em>deterministic</em> rule on a hexagonal lattice <em>with</em> six-fold symmetry. Same instability,
+      opposite ends of the order/randomness axis.</p>
+
+    <h2>In the wild</h2>
+    <p>Real snow crystals show all of these forms — plates, sectored plates, stellar dendrites, fern stars —
+      and which one you get is set by the temperature and supersaturation as mapped by Nakaya's morphology
+      diagram. The same diffusion-limited branching drives <strong>frost</strong> on a cold window,
+      <strong>dendritic mineral growth</strong> (manganese-oxide "moss agate"), and the dendrites in
+      <strong>solidifying metals</strong>.</p>
+    <p>Honesty matters here. Reiter's model is a <strong>qualitative caricature</strong>, not a physics
+      engine. It genuinely captures the emergence — local rule&nbsp;→&nbsp;branched, six-fold crystal — and
+      it reproduces the plate-vs-dendrite trend with humidity. But:</p>
+    <ul>
+      <li>The six-fold symmetry here is <strong>partly imposed by the chosen lattice</strong>. In a real
+        snowflake the six-fold-ness is earned — it comes from ice's molecular structure — but on a perfect
+        hexagonal grid with a single seed, the symmetry is also baked in by construction.</li>
+      <li>The arms stay <em>identical</em> only because the environment is perfectly uniform. Real arms match
+        because they share one history, not because anything forces them to agree; a stray fluctuation would
+        break the match.</li>
+      <li>The real physics — anisotropic <strong>attachment kinetics</strong> at the ice surface (Libbrecht)
+        and faithful mesoscopic models (Gravner&nbsp;&amp;&nbsp;Griffeath) — is considerably richer than this
+        single-field rule. Treat the simulation as an intuition pump, not a measurement.</li>
+    </ul>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>Sweep the <strong>β (humidity)</strong> slider and watch the crystal morph from a compact plate at
+        high humidity toward a fern-like dendrite as you lower it — the model's version of the Nakaya
+        diagram's humidity axis.</li>
+      <li>Switch <strong>presets</strong>: <em>Stellar dendrite</em> for the classic six-armed star,
+        <em>Fern</em> for a fine feathery crystal, <em>Sectored plate</em> for a broad hexagonal plate.</li>
+      <li>Hit <strong>randomize</strong> a few times. Each press re-seeds and jitters the humidity slightly,
+        so you get a fresh, slightly different flake every time — same rules, never the same snowflake.</li>
+      <li>Open <a href="../dla/index.html">DLA</a> side by side and compare: both branch by a diffusion-limited
+        instability, but one is a random-walk fractal and the other a symmetric crystal.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Reiter, C. A. (2005). "A local cellular model for snow crystal growth."
+        <em>Chaos, Solitons &amp; Fractals</em> 23(4), 1111–1119.</li>
+      <li>Gravner, J. &amp; Griffeath, D. (2009). "Modeling snow-crystal growth: A three-dimensional
+        mesoscopic approach." <em>Physical Review E</em> 79, 011601.</li>
+      <li>Libbrecht, K. G. (2005). "The physics of snow crystals." <em>Reports on Progress in Physics</em>
+        68(4), 855–895.</li>
+      <li>Nakaya, U. (1954). <em>Snow Crystals: Natural and Artificial</em>. Harvard University Press.</li>
+      <li>Witten, T. A. &amp; Sander, L. M. (1981). "Diffusion-Limited Aggregation, a Kinetic Critical
+        Phenomenon." <em>Physical Review Letters</em> 47(19), 1400–1403. (The branching instability's
+        stochastic cousin.)</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

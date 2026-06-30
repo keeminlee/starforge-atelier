@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Matter · The Atlas of Emergence</title>
+<meta name="description" content="Self-propelled particles with no attraction at all clump into dense clusters — purely because they slow down where it is crowded. Motility-Induced Phase Separation, with a live, tunable simulation and a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="active-matter">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Collective Motion</nav>
+
+  <header class="entry-head">
+    <div class="cat">Collective Motion</div>
+    <h1>Active Matter</h1>
+    <p class="blurb">Self-driven particles that attract nothing and align with no one — yet gather into dense
+      clusters, purely because they crawl where it is crowded. This is <em>Motility-Induced Phase Separation</em>.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Particles are colored by speed: teal where they swim fast through open space, warming to
+    amber and red where they jam together and crawl. Raise <em>ρ_sat</em> to make clusters dissolve into a
+    uniform gas; lower it to make them condense. From a uniform random start, dense clumps nucleate and grow —
+    with nothing pulling the particles together.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A few hundred self-propelled particles wander a square world that wraps at its edges. Each one simply
+      moves forward and slowly, randomly changes which way it points. There is <strong>no attraction between
+      them</strong> — no force pulling neighbors together, no rule telling them to line up. And yet, watch:
+      they do not stay spread out. Patches thicken, a dense blob nucleates, and soon the world splits into a
+      slow, crowded <em>cluster</em> coexisting with a thin, fast <em>gas</em> drifting around it. Order — a
+      phase boundary between dense and dilute — appears out of pure motion.</p>
+
+    <h2>The rule</h2>
+    <p>Each particle obeys three local instructions, and only the third matters for the magic:</p>
+    <ul>
+      <li><strong>Move forward</strong> along your heading at a self-propulsion speed.</li>
+      <li><strong>Turn randomly</strong> — your heading does a slow random walk (rotational diffusion). You do
+        <em>not</em> copy your neighbors' direction.</li>
+      <li><strong>Go slower where it's crowded.</strong> Count how many neighbors are within a short radius;
+        the more there are, the slower you move:
+        <code>v = v₀ · clamp(1 − ρ/ρ_sat)</code>. In open space you zip; in a jam you crawl.</li>
+    </ul>
+    <p>That single ingredient — speed falling with local density — is enough to drive the whole phenomenon. The
+      logic is a positive feedback: particles pile up where they happen to be slow, and being piled up makes
+      them slower still, which makes them pile up more. A small dense fluctuation becomes a seed; the seed
+      grows into a cluster. (A short-range soft repulsion is added only so particles can't sit on top of each
+      other — it keeps clusters as dense <em>packings</em> rather than collapsing to a point.)</p>
+    <p>Contrast this with the other Collective Motion entries. The <a href="../vicsek/index.html">Vicsek model</a>
+      and <a href="../boids/index.html">boids</a> produce order by <em>alignment</em> — particles steer toward
+      their neighbors' average heading — and boids add explicit cohesion pulling the flock together. Active
+      matter here has <strong>neither</strong>. No alignment, no cohesion, no attraction. Strip all of that
+      away, keep only "slow down when crowded," and clustering still emerges. That is the surprise.</p>
+
+    <h2>Why it matters</h2>
+    <p>This is a hallmark of <strong>active matter</strong>: systems of self-propelled units that continuously
+      burn energy and so violate the intuitions of equilibrium physics. For ordinary passive particles, you
+      cannot get phase separation — droplets condensing out of a gas — without some attractive interaction
+      pulling molecules together. That is a theorem of equilibrium thermodynamics. Here there is
+      <strong>no attraction whatsoever</strong>, and the system phase-separates anyway. The driving is not a
+      force but a behavior: motility coupled to density.</p>
+    <p>Michael Cates and Julien Tailleur named and explained the mechanism — <strong>Motility-Induced Phase
+      Separation (MIPS)</strong>. Their key insight is that "particles accumulate where they move slowly" and
+      "particles move slowly where they accumulate" close into a feedback loop, which they showed maps onto an
+      effective phase-separation instability. It is a clean demonstration that being driven out of equilibrium
+      doesn't just add noise — it opens qualitatively new collective behavior unavailable to passive matter.</p>
+
+    <h2>In the wild</h2>
+    <p>These particles are a deliberate caricature — the model captures the MIPS <em>mechanism</em>, not the
+      full physics of any real system. But the mechanism is real and shows up in several places:</p>
+    <ul>
+      <li><strong>Run-and-tumble bacteria.</strong> Swimmers like <em>E. coli</em> that move slower in some
+        regions tend to accumulate there. Engineered strains whose swim speed drops with local cell density
+        have been predicted and observed to clump — the original biological motivation for the theory
+        (Tailleur &amp; Cates, 2008).</li>
+      <li><strong>Synthetic active colloids.</strong> Janus particles — micro-spheres with two different faces
+        — self-propel when powered by light or chemical fuel, and have been seen to form living, dynamic
+        clusters that grow and shrink, a direct experimental signature of MIPS (Buttinoni et al., 2013).</li>
+      <li><strong>Cell tissues and dense cell collectives</strong> show motility-dependent jamming and
+        un-jamming that is related in spirit, though real tissue adds adhesion, shape and signaling this
+        model omits. Treat the connection as suggestive, not literal.</li>
+    </ul>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>Raise the <strong>crowding sensitivity</strong> (<a href="#rhoSat=4">lower <em>ρ_sat</em></a>) and watch dense
+        clusters condense out of the gas. Push it <a href="#rhoSat=22">the other way</a> (high <em>ρ_sat</em>) and the
+        clusters dissolve back into a uniform, evenly spread swarm — you are crossing the phase-separation boundary by hand.</li>
+      <li>Turn up <strong>particles</strong> (density). MIPS has an onset: below some density nothing
+        separates, above it the cluster appears. Higher density pushes you firmly past that threshold.</li>
+      <li>Watch the <strong>condensed fraction</strong> in the readout climb as clusters form — that's the
+        same clustering metric the automated test uses to confirm MIPS really happened.</li>
+      <li>Crank up the <strong>rotational noise</strong>: headings scramble faster, particles escape jams more
+        easily, and dense clusters become harder to sustain.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Cates, M. E. &amp; Tailleur, J. (2015). "Motility-Induced Phase Separation."
+        <em>Annual Review of Condensed Matter Physics</em> 6, 219–244.
+        DOI: 10.1146/annurev-conmatphys-031214-014710. (The defining review.)</li>
+      <li>Tailleur, J. &amp; Cates, M. E. (2008). "Statistical Mechanics of Interacting Run-and-Tumble
+        Bacteria." <em>Physical Review Letters</em> 100, 218103. DOI: 10.1103/PhysRevLett.100.218103.</li>
+      <li>Fily, Y. &amp; Marchetti, M. C. (2012). "Athermal Phase Separation of Self-Propelled Particles with
+        No Alignment." <em>Physical Review Letters</em> 108, 235702. DOI: 10.1103/PhysRevLett.108.235702.</li>
+      <li>Buttinoni, I., Bialké, J., Kümmel, F., Löwen, H., Bechinger, C. &amp; Speck, T. (2013). "Dynamical
+        Clustering and Phase Separation in Suspensions of Self-Propelled Colloidal Particles."
+        <em>Physical Review Letters</em> 110, 238301. DOI: 10.1103/PhysRevLett.110.238301.</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

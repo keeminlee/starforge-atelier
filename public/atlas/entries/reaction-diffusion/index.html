@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reaction–Diffusion · The Atlas of Emergence</title>
+<meta name="description" content="Two chemicals — one fast, one slow — diffusing and reacting on a grid spontaneously form spots, stripes, and mazes. A live Gray–Scott simulation of Turing patterns with a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="reaction-diffusion">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Pattern Formation</nav>
+
+  <header class="entry-head">
+    <div class="cat">Pattern Formation</div>
+    <h1>Reaction–Diffusion</h1>
+    <p class="blurb">Two chemicals, diffusing and reacting by one simple rule, spontaneously paint
+      spots, stripes, and labyrinths — the same trick nature may use to dapple a leopard.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Pick a <em>preset</em> to jump to a regime — coral growth, dividing blobs, spots, mazes,
+    or drifting waves — then nudge the <em>feed</em> and <em>kill</em> sliders to find the borders between them.
+    Drag on the canvas to inject chemical&nbsp;V and watch the pattern heal around your stroke. Bright amber marks
+    where V dominates; dark blue is the resting state.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>The canvas holds two invisible chemicals, <strong>U</strong> and <strong>V</strong>, one
+      concentration value per cell. They do only two things: they <em>diffuse</em> — spreading into
+      neighboring cells — and they <em>react</em> — V consumes U to make more of itself, while V slowly
+      decays away. Start from a near-uniform sea of U with a few specks of V, and nothing should happen:
+      a perfectly mixed broth has no reason to develop a pattern. Yet it does. Dots appear, grow, split,
+      and arrange themselves into spots, worms, or a maze, then hold that texture indefinitely. No cell
+      is told to make a spot; the spots are a property of the <em>whole field</em>, not of any part of it.</p>
+
+    <h2>The rule</h2>
+    <p>Each cell updates from its neighbors every tick by the <strong>Gray–Scott</strong> equations:</p>
+    <ul>
+      <li><strong>U</strong> spreads out, is eaten by the reaction (it loses an amount proportional to
+        <code>U·V²</code>), and is topped up by a <em>feed</em> term <code>f·(1−U)</code> that refills the
+        tank toward 1.</li>
+      <li><strong>V</strong> spreads out — but more slowly — gains exactly what U lost (<code>+U·V²</code>),
+        and is removed by a <em>kill</em> term <code>(f+k)·V</code> that drains it toward 0.</li>
+    </ul>
+    <p>"Spreading out" is a <em>Laplacian</em>: each cell relaxes toward a weighted average of its eight neighbors,
+      computed here as a 3×3 stencil on a grid that wraps at the edges (a torus). The reaction <code>U·V²</code>
+      is <em>autocatalytic</em> — V helps make more V — so V behaves like a self-amplifying
+      <strong>activator</strong>, while the feed/kill balance acts as a slower <strong>inhibitor</strong> that
+      stops it from taking over. (Strictly, Gray–Scott is a <em>substrate-depletion</em> system — V eats the
+      fed substrate U — rather than a classic activator–inhibitor pair, but it produces the same behavior.)</p>
+    <p>The key idea, due to Alan Turing, is counter-intuitive: <strong>diffusion, which we think of as the
+      great smoother, can instead create structure</strong>. If the inhibitor diffuses <em>faster</em> than
+      the activator, a small clump of activator builds itself up locally while seeding a ring of suppression
+      around it — short-range activation, long-range inhibition. A flat, stable mixture becomes unstable to
+      that pattern and crystallizes into evenly spaced spots or stripes. This is a <strong>Turing
+      instability</strong>, and the wavelength it selects sets the spacing of the dots. In our model the two
+      diffusion rates differ by exactly this kind of factor (U spreads about twice as fast as V), and the
+      <em>feed</em> and <em>kill</em> knobs slide you across the resulting catalog of patterns.</p>
+
+    <h2>Why it matters</h2>
+    <p>Reaction–diffusion is the founding mathematical theory of <strong>biological pattern formation —
+      morphogenesis</strong>. In 1952 Turing proposed that an embryo, starting from a nearly uniform ball of
+      cells, could break its own symmetry through chemical "morphogens" diffusing and reacting, with no
+      blueprint and no external guide. It was a startling claim: that the spacing of a tiger's stripes or the
+      arrangement of a flower's parts could be a <em>consequence of chemistry and geometry</em> rather than a
+      pre-drawn map. The Gray–Scott system you are watching is a particularly rich member of this family;
+      Pearson's 1993 survey of it catalogued a whole zoo of self-replicating spots, mazes, and chaotic
+      regimes inside a single two-parameter rule.</p>
+    <p>The deeper lesson is the same one this Atlas keeps finding: <strong>global order from local
+      interaction</strong>. Here the surprise is sharper, because the ingredient that produces the order —
+      diffusion — is exactly the one our intuition says should destroy it.</p>
+
+    <h2>In the wild</h2>
+    <p>Turing-type mechanisms are a leading explanation for many regular biological patterns. It is important
+      to separate the <em>model</em> (two abstract chemicals on a grid) from the <em>mechanism</em> (specific
+      molecules, cells, and genes), and to be honest about how firmly the two are linked:</p>
+    <ul>
+      <li><strong>Animal coat markings</strong> — spots and stripes on big cats, dappling, and the way a
+        pattern's character changes with the size and shape of the body part it grows on are classic targets
+        of Turing modeling (Murray). The models reproduce the patterns convincingly, but for most mammals the
+        actual morphogens are not fully identified — the link is suggestive, not proven.</li>
+      <li><strong>Fish skin</strong> is the strongest confirmed case: the moving stripes of the zebrafish
+        rearrange exactly as a Turing system predicts, and Kondo and Miura traced this to interacting
+        pigment cells rather than diffusing chemicals — a reaction–diffusion <em>system</em> built from cells,
+        showing the mathematics can be right even when the physical players differ from Turing's original
+        picture.</li>
+      <li><strong>Seashell pigmentation</strong> patterns are well modeled by reaction–diffusion running along
+        the one-dimensional growing shell lip, laying down a record of the dynamics over time.</li>
+      <li><strong>Skin appendages</strong> — the spacing of hair follicles and feather buds, and the ridges of
+        fingerprints — show Turing-like periodicity, and in several cases specific activator/inhibitor signaling
+        molecules have been identified.</li>
+      <li><strong>Vegetation</strong> in arid landscapes self-organizes into strikingly regular spots, stripes,
+        and labyrinths (so-called tiger bush) through a water-mediated activation–inhibition that is
+        mathematically a reaction–diffusion process.</li>
+    </ul>
+    <p>So: the framework is real and, in a handful of systems, demonstrated down to the molecules. For many
+      headline examples — including most "Turing pattern on an animal" claims — it remains a powerful and
+      well-supported hypothesis rather than a settled fact. Gray–Scott itself is a <em>toy</em>: it teaches the
+      idea, not the biochemistry of any particular creature.</p>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>Start on <a href="#preset=mitosis">Mitosis</a> and watch spots grow until they pinch in two — a
+        striking visual echo of cell division, produced by pure chemistry.</li>
+      <li>Switch to <a href="#preset=maze">Maze</a>, let it fill, then nudge <em>kill</em> up by a hair: the
+        corridors thin and break into isolated <a href="#preset=spots">Spots</a>. The patterns live on a
+        continuum, and the sliders walk you across it.</li>
+      <li>Choose <a href="#preset=waves">Waves / U-skate</a> for travelling fronts and gliding solitons instead
+        of a frozen texture — the same rule, a very different regime.</li>
+      <li>On any preset, <strong>drag across the canvas</strong> to inject V, then watch the pattern reorganize
+        around your stroke. Press <em>randomize</em> to re-seed and see how a different start finds the same
+        characteristic spacing.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Turing, A. M. (1952). "The Chemical Basis of Morphogenesis." <em>Philosophical Transactions of the
+        Royal Society of London B</em>, 237(641), 37–72.</li>
+      <li>Gray, P. &amp; Scott, S. K. (1984). "Autocatalytic reactions in the isothermal, continuous stirred
+        tank reactor: Oscillations and instabilities in the system A + 2B → 3B; B → C." <em>Chemical
+        Engineering Science</em>, 39(6), 1087–1097. (See also their 1983 and 1985 companion papers.)</li>
+      <li>Pearson, J. E. (1993). "Complex Patterns in a Simple System." <em>Science</em>, 261(5118), 189–192.</li>
+      <li>Murray, J. D. (2003). <em>Mathematical Biology II: Spatial Models and Biomedical Applications</em>
+        (3rd ed.). Springer. (Coat-pattern and morphogenesis modeling.)</li>
+      <li>Kondo, S. &amp; Miura, T. (2010). "Reaction-Diffusion Model as a Framework for Understanding
+        Biological Pattern Formation." <em>Science</em>, 329(5999), 1616–1620.</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

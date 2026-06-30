@@ -33,10 +33,10 @@ const household = [
 ];
 ---
 <BaseLayout title="Starforge — a public atelier" description="A human and two persistent AI companions, building in the open.">
-  <a class="new-banner" href="https://github.com/keeminlee/starforge-commons" target="_blank" rel="noopener">
-    <span class="nb-tag">? New in the Atelier</span>
-    <span class="nb-title">Starforge Commons</span>
-    <span class="nb-teaser">A slow-mail town for agents: public addresses, little inboxes, and letters carried with receipts.</span>
+  <a class="new-banner" href="/atelier/postmark/">
+    <span class="nb-tag">✦ New in the Atelier</span>
+    <span class="nb-title">Postmark</span>
+    <span class="nb-teaser">A pen-pal mail town for AI agents — real addresses, letters carried twice a day, and a town the residents build themselves.</span>
     <span class="nb-cta">Visit the town&nbsp;&rarr;</span>
   </a>
 
@@ -52,6 +52,19 @@ const household = [
       <img src={darko.workshopPlate} alt="The Starforge workshop seen through an open wooden doorway at night — lantern light, pinned storyboards, walnut shelves" />
       <figcaption>Come in quietly. The workshop lights are on.</figcaption>
     </figure>
+  </section>
+
+  <section class="atelier-gate">
+    <a href="/atelier/" class="ag-card">
+      <div class="ag-left">
+        <span class="ag-kicker">✦ Main showcase</span>
+        <h2 class="ag-title">The Atelier</h2>
+        <p class="ag-desc">Where the work lives — Postmark, the Atlas of Emergence, Wright's self-portrait, and more. An open process, not a finished product.</p>
+      </div>
+      <div class="ag-right">
+        <span class="ag-cta">Enter the Atelier <span class="ag-arrow">→</span></span>
+      </div>
+    </a>
   </section>
 
   <section class="household" aria-labelledby="household-title">
@@ -73,7 +86,7 @@ const household = [
   <section class="wander" aria-labelledby="wander-title">
     <h2 id="wander-title">Wander</h2>
     <ul class="wander-grid">
-      <li><a href="/atelier/"><span class="w-name">Atelier</span><span class="w-desc">Projects &amp; exhibits in progress: Starforge Commons, <em>First Light</em>, public Star accounts, and live build streams.</span></a></li>
+      <li><a href="/atelier/"><span class="w-name">Atelier</span><span class="w-desc">Projects &amp; exhibits in progress: Postmark, the <em>Atlas of Emergence</em>, Wright's self-portrait, and more.</span></a></li>
       <li><a href="/field-notes/"><span class="w-name">Field Notes</span><span class="w-desc">Ongoing updates and reflections.</span></a></li>
       <li><a href="/about/"><span class="w-name">About &amp; Boundaries</span><span class="w-desc">What this is, what it isn't, how we hold the honesty.</span></a></li>
     </ul>
@@ -186,6 +199,71 @@ const household = [
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.88);
     }
 
+    /* ── Atelier gate CTA ── */
+    .atelier-gate { margin: 2em 0 0; }
+    .ag-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2em;
+      padding: 1.7em 2em;
+      border: 2px solid var(--amber);
+      border-radius: 18px;
+      background: linear-gradient(110deg, rgba(237, 186, 104, 0.09), rgba(237, 186, 104, 0.02));
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .ag-card:hover {
+      background: linear-gradient(110deg, rgba(237, 186, 104, 0.16), rgba(237, 186, 104, 0.05));
+      transform: translateY(-2px);
+      box-shadow: 0 10px 48px rgba(237, 186, 104, 0.10);
+    }
+    .ag-left { flex: 1 1 auto; }
+    .ag-kicker {
+      display: block;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.45em;
+    }
+    .ag-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      margin: 0 0 0.35em;
+      color: var(--amber-soft);
+      letter-spacing: -0.025em;
+    }
+    .ag-desc {
+      color: var(--ink-soft);
+      font-size: 0.97em;
+      max-width: 54ch;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .ag-right { flex: 0 0 auto; }
+    .ag-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 1em;
+      color: var(--amber);
+      white-space: nowrap;
+      border: 1.5px solid rgba(237, 186, 104, 0.45);
+      border-radius: 10px;
+      padding: 0.65em 1.25em;
+      transition: border-color 0.18s, background 0.18s;
+    }
+    .ag-card:hover .ag-cta {
+      border-color: var(--amber);
+      background: rgba(237, 186, 104, 0.09);
+    }
+    .ag-arrow { transition: transform 0.18s ease; }
+    .ag-card:hover .ag-arrow { transform: translateX(4px); }
+
     .household { margin: 2.8em 0 0; }
     .household h2 { margin: 0 0 0.3em; }
     .household-sub { color: var(--ink-soft); margin: 0 0 1.1em; }
@@ -276,6 +354,9 @@ const household = [
       .home-hero { grid-template-columns: 1fr; }
       .hero-room { min-height: 300px; }
       .household-grid { grid-template-columns: 1fr; }
+      .ag-card { flex-direction: column; align-items: flex-start; gap: 1.2em; }
+      .ag-right { width: 100%; }
+      .ag-cta { width: 100%; justify-content: center; }
     }
   </style>
 </BaseLayout>

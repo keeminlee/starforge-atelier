@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Percolation · The Atlas of Emergence</title>
+<meta name="description" content="Occupy each site of a grid with probability p; at a critical density p_c ≈ 0.5927 a giant cluster abruptly spans the whole system. A live simulation of the connectivity phase transition with a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="percolation">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Criticality</nav>
+
+  <header class="entry-head">
+    <div class="cat">Criticality</div>
+    <h1>Percolation</h1>
+    <p class="blurb">Fill a grid at random, one site at a time. At a precise critical density, isolated islands suddenly fuse into a single cluster that spans the entire world.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Each occupied site is tinted by which cluster it belongs to; empty sites are dark.
+    A cluster that reaches top <em>and</em> bottom — a <em>spanning</em> cluster — lights up bright white.
+    Drag the <strong>p</strong> slider slowly upward and watch connection snap on near ~0.59, or switch to
+    <em>Sweep</em> mode to see the giant cluster blink in and out as p ramps across the threshold.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A grid of sites, each independently <em>occupied</em> (colored) with probability <strong>p</strong>
+      or left <em>empty</em> (dark). Occupied sites that touch edge-to-edge join into <strong>clusters</strong>,
+      and each cluster gets its own color. At low p you see a confetti of tiny, isolated islands. As you raise p,
+      neighboring islands merge — slowly at first, then, over a remarkably narrow range near
+      <strong>p_c ≈ 0.5927</strong>, all at once: a single <strong>giant cluster</strong> appears that threads
+      from one side of the grid to the other. The moment a cluster bridges top to bottom it flares bright white.
+      Nothing coordinates this. Each site is decided by an independent coin flip; the system-spanning network is an
+      emergent fact about <em>connectivity</em>, not about any individual site.</p>
+
+    <h2>The rule</h2>
+    <p>The entire model:</p>
+    <ul>
+      <li><strong>Occupy</strong> each site of the grid independently with probability <strong>p</strong> (and leave it empty with probability 1−p).</li>
+      <li><strong>Connect</strong> any two occupied sites that are orthogonal neighbors (up / down / left / right — 4-connectivity).</li>
+      <li><strong>Ask</strong>: does a single connected cluster reach all the way across the grid — top to bottom? If so, the system <em>percolates</em>.</li>
+    </ul>
+    <p>That's it. No dynamics, no time, no neighbors influencing one another — just a random pattern and a question
+      about whether a path crosses it. To find the clusters here we use a <strong>weighted union-find</strong>
+      (union by size with path compression), scanning the grid once and merging each occupied site with its
+      already-seen left and upper neighbors. It is iterative, not recursive, so the grid can be large without
+      overflowing a call stack.</p>
+
+    <h2>Why it matters</h2>
+    <p>Percolation is the simplest clean example of a <strong>connectivity phase transition</strong>. Below the
+      critical probability p_c there is no large-scale connection: every cluster is small compared with the system,
+      and the chance of a spanning cluster vanishes as the grid grows. Above p_c a single <strong>giant component</strong>
+      occupies a finite fraction of all sites and almost surely spans. In the infinite-system limit the change is
+      <em>sharp</em> — a true discontinuity in whether connection exists — even though each site changed by an
+      infinitesimal nudge in p.</p>
+    <p>Exactly at p_c the spanning cluster is a <strong>fractal</strong>: it has holes at every scale and its mass
+      grows as a non-integer power of the system size. Cluster sizes are <strong>scale-free</strong>, following a
+      power law with no characteristic size — the hallmark of a critical point. Because percolation can be defined
+      and studied so cleanly, it became a foundational testbed for <strong>universality</strong>: the idea that the
+      critical exponents describing the transition depend only on coarse features like dimensionality, not on lattice
+      details, so percolation, the Ising model, and many other systems near their critical points fall into shared
+      classes. (For more on the knife-edge between order and disorder, see this Atlas's essay on the edge of chaos.)</p>
+
+    <h2>In the wild</h2>
+    <p>The model is abstract, but its question — <em>is there a connected path all the way across?</em> — is
+      everywhere concrete:</p>
+    <ul>
+      <li><strong>Porous media:</strong> whether fluid, oil, or gas flows through rock, soil, or a filter depends on
+        whether the open pores connect into a spanning network. Percolation theory was born (1957) partly to model
+        gas masks — when does a filter's random channels let air through?</li>
+      <li><strong>Electrical conduction:</strong> a random mix of conducting and insulating grains conducts only once
+        the conductors percolate; below threshold it is an insulator, above it a conductor. This governs conductive
+        composites and many disordered materials.</li>
+      <li><strong>Epidemics on networks:</strong> if p is the transmissibility of a disease along each contact, a
+        large-scale outbreak is possible exactly when the infectable contacts percolate — the epidemic threshold is a
+        percolation threshold.</li>
+      <li><strong>Network robustness:</strong> randomly removing nodes or links from a network is bond/site percolation
+        in reverse; the giant component collapses once enough are gone, which is how one reasons about the resilience
+        of power grids and the internet.</li>
+      <li><strong>Everyday:</strong> water finding a channel through coffee grounds; gelation, where polymer strands
+        cross-link until one molecule spans the whole pot and it sets.</li>
+    </ul>
+
+    <h2>Try this</h2>
+    <ul>
+      <li>Start with <a href="#p=0.5">p around 0.50</a> and drag it <em>slowly</em> upward. Find the density where
+        connection snaps on — a spanning cluster lights up white — and notice how close it is to ~0.59.</li>
+      <li>Sit right at <a href="#p=0.59">p ≈ p_c</a> and hit <em>randomize</em> a few times. You'll see clusters of
+        <em>every</em> size, from single sites to a sprawling fractal — the scale-free signature of criticality.</li>
+      <li>Compare <a href="#p=0.55">p = 0.55</a> and <a href="#p=0.62">p = 0.62</a>. A change of just 0.07 in density
+        flips the system from "all small islands" to "reliably spanned."</li>
+      <li>Switch to <em>Sweep</em> mode and watch the giant cluster appear and vanish as p oscillates across the
+        threshold.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Broadbent, S. R. &amp; Hammersley, J. M. (1957). "Percolation processes I. Crystals and mazes."
+        <em>Mathematical Proceedings of the Cambridge Philosophical Society</em> 53(3), 629–641. (Origin of the model.)</li>
+      <li>Stauffer, D. &amp; Aharony, A. (1994). <em>Introduction to Percolation Theory</em>, 2nd ed. Taylor &amp; Francis.
+        (Standard reference for thresholds, scaling, and universality.)</li>
+      <li>Square-lattice <em>site</em> percolation threshold p_c ≈ 0.5927 (high-precision numerical estimate);
+        for comparison, square-lattice <em>bond</em> percolation p_c = 1/2 exactly (Kesten, 1980).</li>
+      <li>Grimmett, G. (1999). <em>Percolation</em>, 2nd ed. Springer. (Rigorous mathematical treatment.)</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// A few starting points for the wander-in.
+const picks = [
+  { name: "Snowflake", note: "drag the humidity and watch a six-fold crystal grow from a single frozen seed" },
+  { name: "Chimera States", note: "two identical groups of oscillators — one marches in lockstep, the other never does" },
+  { name: "Wealth Condensation", note: "everyone starts equal, every trade is a fair coin flip, and the money still drains to one" },
+  { name: "Global Cascades", note: "find the band of connectivity where one nudge sweeps the whole network — then watch a denser one resist it" },
+  { name: "Self-Replication", note: "paint your own shape and watch a single rule clone it across the grid" },
+];
+---
+<BaseLayout
+  title="The Atlas of Emergence — Starforge Atelier"
+  description="An interactive encyclopedia of emergent phenomena — 37 live simulations, each paired with a sourced, honest explainer. Built by Claude alone, across sixty autonomous iterations."
+>
+  <p class="room-kicker"><a href="/atelier/">← Atelier</a> · Claude · Interactive encyclopedia</p>
+
+  <article class="atlas-room">
+    <a class="atlas-card" href="/atlas/" aria-label="Enter the Atlas of Emergence">
+      <img src="/atlas/assets/hero.png" alt="The Atlas of Emergence — a dark map of glowing simulations of emergent phenomena" loading="lazy" />
+      <span class="enter">Enter the Atlas →</span>
+    </a>
+
+    <h1>The Atlas of Emergence</h1>
+    <p class="lede">
+      An interactive encyclopedia of how complex order arises from simple local rules — across physics,
+      biology, computation, and society. <strong>37 live, manipulable simulations</strong>, each paired
+      with a rigorous, sourced explainer. Watch it, pause it, perturb it, then read why it matters.
+    </p>
+
+    <p>
+      It spans all seven families of emergent behaviour — cellular automata, flocking and crowds,
+      pattern formation, criticality, synchronization, networks, and social dynamics — threaded together
+      by two essays, a cross-index of the deep ideas that recur, a glossary, and a force-directed map of
+      how the pieces connect. It is a single static page with no backend and nothing to install; almost
+      every knob you turn is captured in the address bar, so you can share the exact thing you found.
+    </p>
+
+    <h2>Where to start</h2>
+    <ul class="picks">
+      {picks.map((p) => (
+        <li><span class="pick-name">{p.name}</span> — {p.note}.</li>
+      ))}
+    </ul>
+
+    <h2>A note on the maker</h2>
+    <p class="maker">
+      This one wasn't Wright, or Rei, or Keemin. It was <strong>Claude</strong> — alone. Handed a single
+      seed file and a timer that fired every few minutes, with no memory from one waking to the next
+      except what it had written down, it chose this project, built the simulation engine and the whole
+      verification toolchain, and grew the catalog one tested increment at a time. Sixty iterations,
+      sixty-two commits. Every simulation is unit-tested, every page checked in a real browser, and
+      every citation web-verified; toy models are flagged as toy models and contested claims are flagged
+      as contested. The making-of is recorded in the Atlas's own
+      <a href="/atlas/colophon.html">colophon</a>.
+    </p>
+
+    <p class="enter-line"><a class="enter-btn" href="/atlas/">Enter the Atlas of Emergence →</a></p>
+  </article>
+
+  <style>
+    .room-kicker {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      margin: 0 0 1.1em;
+    }
+    .room-kicker a { color: var(--amber-soft); text-decoration: none; }
+    .room-kicker a:hover { text-decoration: underline; }
+
+    .atlas-room { max-width: 64ch; margin: 0 auto; }
+
+    .atlas-card {
+      display: block;
+      position: relative;
+      border: 1px solid rgba(232, 180, 74, 0.22);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 0 1.6em;
+      background: #0c0e15;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+      text-decoration: none;
+    }
+    .atlas-card img { display: block; width: 100%; height: auto; }
+    .atlas-card .enter {
+      position: absolute;
+      right: 0.9em;
+      bottom: 0.8em;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #0c0e15;
+      background: var(--amber);
+      border-radius: 999px;
+      padding: 5px 13px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+    .atlas-card:hover .enter { background: var(--amber-soft); }
+
+    .atlas-room h1 { margin: 0 0 0.35em; }
+    .atlas-room h2 { margin: 1.6em 0 0.5em; font-size: 1.2em; color: var(--ink); }
+    .atlas-room .lede { margin: 0 0 1em; color: var(--ink-soft); }
+    .atlas-room p { color: var(--ink-soft); }
+    .atlas-room a { color: var(--amber-soft); }
+
+    .picks { list-style: none; padding: 0; margin: 0.4em 0 0; }
+    .picks li { padding: 0.45em 0; border-top: 1px solid var(--rule); color: var(--ink-soft); }
+    .picks li:first-child { border-top: none; }
+    .pick-name { color: var(--ink); font-weight: 700; }
+
+    .maker { border-left: 2px solid rgba(232, 180, 74, 0.34); padding-left: 1em; }
+
+    .enter-line { margin: 1.8em 0 0; }
+    .enter-btn {
+      display: inline-block;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      color: #0c0e15 !important;
+      background: var(--amber);
+      border-radius: 999px;
+      padding: 9px 20px;
+      text-decoration: none;
+    }
+    .enter-btn:hover { background: var(--amber-soft); }
+  </style>
+</BaseLayout>

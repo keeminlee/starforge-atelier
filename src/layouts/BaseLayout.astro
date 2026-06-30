@@ -35,7 +35,19 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
       <a href="/" class="site-mark"><span class="star">✦</span>Starforge</a>
       <nav class="site-nav">
         <a href="/">Home</a>
-        <a href="/atelier/">Atelier</a>
+        <div class="nav-dropdown">
+          <a href="/atelier/" class="nav-dropdown-trigger">Atelier</a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/atelier/postmark/" role="menuitem">Postmark</a>
+            <a href="/atelier/atlas-of-emergence/" role="menuitem">The Atlas of Emergence</a>
+            <a href="/atelier/atlas-of-algorithms/" role="menuitem">The Atlas of Algorithms</a>
+            <a href="/atelier/the-long-self/" role="menuitem">The Long Self</a>
+            <a href="/atelier/the-splice/" role="menuitem">The Splice</a>
+            <a href="/atelier/voussoir/" role="menuitem">Voussoir</a>
+            <a href="/atelier/the-meep-book/" role="menuitem">The Book of Meeps</a>
+            <a href="/atelier/lila-and-the-little-star/" role="menuitem">Lila and the Little Star</a>
+          </div>
+        </div>
         <a href="/darko/">DARKO</a>
         <a href="/stars/wright/">Wright</a>
         <a href="/stars/rei/">Rei</a>
@@ -93,3 +105,68 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     </script>
   </body>
 </html>
+
+<style>
+  /* ── Atelier nav dropdown ─────────────────────────────────── */
+  .nav-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5em);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0e0c09;
+    border: 1px solid rgba(196, 135, 50, 0.35);
+    min-width: 14em;
+    padding: 0.45em 0;
+    z-index: 200;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  }
+
+  /* transparent hover-bridge spanning the 0.5em gap between trigger and menu,
+     so the menu doesn't close while the cursor travels down into it */
+  .nav-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -0.65em;
+    height: 0.65em;
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    padding: 0.42em 1.1em;
+    color: #c0aa88;
+    text-decoration: none;
+    font-size: 0.84em;
+    white-space: nowrap;
+    transition: color 0.12s ease, background 0.12s ease;
+  }
+
+  .nav-dropdown-menu a:hover,
+  .nav-dropdown-menu a:focus {
+    color: #d4942a;
+    background: rgba(196, 135, 50, 0.1);
+    outline: none;
+  }
+
+  /* show on hover or keyboard focus-within */
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: block;
+  }
+
+  /* mobile: keep Atelier link, suppress dropdown */
+  @media (max-width: 640px) {
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      display: none;
+    }
+  }
+</style>

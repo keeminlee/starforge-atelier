@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Vicsek Model · The Atlas of Emergence</title>
+<meta name="description" content="The minimal model of flocking: point particles that only align with their neighbors, plus noise. Lower the noise and a single flock crystallizes — a genuine order–disorder phase transition. A live, manipulable simulation with a sourced explainer.">
+<link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body data-slug="vicsek">
+<div class="wrap">
+
+  <nav class="crumb"><a href="../../index.html">← The Atlas of Emergence</a> / Collective Motion</nav>
+
+  <header class="entry-head">
+    <div class="cat">Collective Motion</div>
+    <h1>The Vicsek Model</h1>
+    <p class="blurb">Strip flocking to one rule — head the same way as your neighbors, plus a little noise — and watch order condense out of confetti at a sharp threshold.</p>
+  </header>
+
+  <figure class="stage" id="stage"></figure>
+  <p class="caption">Drag the <strong>noise</strong> slider down from high and watch the order parameter
+    <em>v</em><sub>a</sub> jump as the rainbow swarm collapses into a single drifting flock. Each particle is a
+    tiny arrow colored by its heading, so an aligned flock becomes one color while a disordered swarm is rainbow
+    confetti. Raise the particle count at fixed noise to make order appear from density alone.</p>
+
+  <article class="prose">
+
+    <h2>What you're seeing</h2>
+    <p>A few hundred identical point particles drift across a wrap-around box, all moving at exactly the same
+      speed. They carry no shape, no separation instinct, no goal — each one does only one thing: it looks at
+      every neighbor within a small radius and tries to <em>head the same way they do</em>, while a gust of
+      random noise nudges its direction off course each step. When the noise is loud, every particle is buffeted
+      into its own direction and the screen is rainbow confetti: motion with no agreement. Lower the noise and,
+      past a threshold, a single shared heading suddenly <em>crystallizes</em> — the confetti snaps to one color
+      and the whole population streams off together as one flock. Nothing chose that direction; it emerged from
+      neighbors copying neighbors.</p>
+
+    <h2>The rule</h2>
+    <p>Every particle moves at one fixed speed <em>v</em>; only its <em>heading</em> changes. Each step, in
+      lockstep:</p>
+    <ul>
+      <li><strong>Align.</strong> A particle's new heading is the <em>average</em> heading of all particles
+        inside its radius <em>r</em> (itself included). Headings are angles, so they are averaged as vectors:
+        new θ = atan2( Σ sin θ<sub>j</sub>, Σ cos θ<sub>j</sub> ) over neighbors <em>j</em>.</li>
+      <li><strong>Add noise.</strong> Then add a random kick drawn uniformly from [−η/2, +η/2], where the noise
+        strength η is the control parameter.</li>
+      <li><strong>Move.</strong> Step forward: <em>x</em> += <em>v</em> cos θ, <em>y</em> += <em>v</em> sin θ,
+        wrapping across the edges of the toroidal box.</li>
+    </ul>
+    <p>That is the entire model — strictly simpler than <a href="../boids/index.html">Boids</a>, which adds
+      <em>separation</em> and <em>cohesion</em> on top of alignment. Vicsek keeps only alignment and noise, which
+      is exactly what makes its single phase transition so clean to study. To read the state of the flock at a
+      glance, watch the <strong>order parameter</strong> <em>v</em><sub>a</sub> = | (1/<em>N</em>) Σ (cos θ,
+      sin θ) |, the length of the average unit-velocity vector. It runs from 0 (headings cancel out — disordered)
+      to 1 (all headings identical — perfectly aligned).</p>
+
+    <h2>Why it matters</h2>
+    <p>Tamás Vicsek and colleagues introduced this model in 1995 to ask the most basic question about flocking:
+      what is the <em>least</em> a system needs in order to spontaneously move together? Their answer — alignment
+      and noise, nothing else — turned out to exhibit a genuine nonequilibrium <strong>phase transition</strong>.
+      As the noise drops below a critical value (or the density rises above one), the order parameter
+      <em>v</em><sub>a</sub> climbs from near zero to near one: disorder gives way to collective motion. The
+      order parameter is the flocking analog of <strong>magnetization</strong> in a magnet, and the transition
+      is the flocking analog of a ferromagnet aligning its spins as it cools. What made the result striking is
+      that it produces genuine long-range order in two dimensions — something equilibrium statistical physics (the
+      Mermin–Wagner theorem) forbids for systems with continuous symmetry. The difference is that these particles
+      are <em>self-propelled</em>: they carry their order around with them. The Vicsek model is therefore counted
+      as a founding model of <strong>active matter</strong> — the physics of systems built from self-driven units
+      that constantly burn energy — a field that now spans from cell biology to robotics.</p>
+
+    <h2>In the wild</h2>
+    <p>The Vicsek model is a deliberate <em>caricature</em>: it captures the order–disorder transition that
+      self-propelled aligners undergo, not the detailed biology or mechanics of any one system. With that
+      honest caveat, the same transition shows up across very different real systems:</p>
+    <ul>
+      <li><strong>Bird flocks and fish schools</strong>, viewed at the coarsest level, switch between
+        disordered milling and coherent directed motion much as the order parameter describes — though real
+        animals also separate, attract, and (per field studies) track a fixed <em>number</em> of neighbors
+        rather than a fixed distance.</li>
+      <li><strong>Bacterial suspensions.</strong> Dense swarms of swimming bacteria spontaneously organize into
+        coherent flowing patches and jets, a lab-accessible active fluid.</li>
+      <li><strong>Vibrated granular rods.</strong> Shake a tray of elongated grains and they develop collective
+        drift and large density fluctuations with no biology at all — pure self-propulsion plus alignment.</li>
+      <li><strong>Motility assays.</strong> Gliding actin filaments or microtubules driven by molecular motors
+        form moving bands and swirls above a density threshold, a clean experimental realization of the
+        transition.</li>
+    </ul>
+
+    <h2>Try this</h2>
+    <ul>
+      <li><strong>Sweep the noise down</strong> from <a href="#noise=6">its maximum</a> and watch
+        <em>v</em><sub>a</sub> jump from near 0 toward 1 as the confetti collapses into
+        <a href="#noise=0.3">one flock</a> — the transition made visible.</li>
+      <li>Or sit <a href="#noise=2.2">near the transition</a> and watch large, fluctuating bands of alignment
+        form, drift, and dissolve — the system can't quite decide whether to flock.</li>
+      <li><strong>Raise the density</strong> by increasing the particle count at fixed noise: order can appear
+        from crowding alone, even without quieting the noise.</li>
+      <li><strong>Sit near the transition</strong> (a middling noise) and watch large, fluctuating bands of
+        alignment form, drift, and dissolve — the system can't quite decide whether to flock.</li>
+      <li><strong>Shrink the radius</strong> to isolate particles into local cliques; widen it to couple the
+        whole box into a single decision.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="refs">
+      <li>Vicsek, T., Czirók, A., Ben-Jacob, E., Cohen, I., Shochet, O. (1995). "Novel type of phase transition
+        in a system of self-driven particles." <em>Physical Review Letters</em> 75(6), 1226–1229.</li>
+      <li>Czirók, A. &amp; Vicsek, T. (2000). "Collective behavior of interacting self-propelled particles."
+        <em>Physica A</em> 281(1–4), 17–29.</li>
+      <li>Marchetti, M. C., Joanny, J. F., Ramaswamy, S., Liverpool, T. B., Prost, J., Rao, M., Simha, R. A.
+        (2013). "Hydrodynamics of soft active matter." <em>Reviews of Modern Physics</em> 85(3), 1143–1189.</li>
+      <li>Chaté, H., Ginelli, F., Grégoire, G., Raynaud, F. (2008). "Collective motion of self-propelled
+        particles interacting without cohesion." <em>Physical Review E</em> 77(4), 046113. (Refines the order of
+        the transition.)</li>
+    </ol>
+
+    <nav class="related" data-atlas-nav></nav>
+  </article>
+
+  <footer>
+    The Atlas of Emergence · <a href="../../index.html">back to the map</a>
+  </footer>
+</div>
+
+<script src="../../lib/atlas.js"></script>
+<script src="./sim.js"></script>
+<script src="../../entries.js"></script>
+<script src="../../lib/nav.js"></script>
+</body>
+</html>
