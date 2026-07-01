@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Redaction</title>
+<!--
+  THE REDACTION — working v0. See DESIGN.md and the-redaction.NOTES.md.
+  Single file, zero external dependencies, no images — Voussoir's ethos.
+  The trace SPANS below are MIRRORED from trace.json (canonical); the engine is
+  mirrored from engine.mjs (canonical, Node-tested by test.mjs). Kept inline so
+  the page opens standalone on file:// with no fetch. Keep the mirrors in sync.
+-->
+<style>
+  :root{
+    /* reused verbatim from voussoir/voussoir.html */
+    --charcoal:#23242a; --charcoal2:#2c2e36; --ink:#191a1f;
+    --parchment:#e9e1cc; --cream:#f4efe2; --navy:#2f3b4c; --navy2:#3a4759;
+    --brass:#b08d57; --gold:#d9b65a; --rust:#b04a36;
+    --stone-lo:#cbbf9f; --stone-hi:#e3d8bd;
+    --line:#5a5446;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    background:radial-gradient(circle at 50% 18%, #34353d 0%, #23242a 60%, #191a1f 100%);
+    color:var(--parchment);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    -webkit-font-smoothing:antialiased; min-height:100%;
+  }
+  .wrap{max-width:1240px;margin:0 auto;padding:22px 22px 40px;}
+  header{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #3c3d44;padding-bottom:12px;margin-bottom:6px;}
+  h1{font-size:30px;letter-spacing:5px;margin:0;font-weight:600;color:var(--cream);}
+  .sub{color:#9c937e;font-size:13px;letter-spacing:1.5px;font-style:italic;}
+  .traceHead{display:flex;justify-content:space-between;align-items:baseline;margin:12px 2px 8px;}
+  .traceHead .q{font-size:14px;color:#bcb19a;font-style:italic;}
+  .tag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#93876c;border:1px solid #4a4638;border-radius:3px;padding:2px 7px;white-space:nowrap;}
+  .layout{display:grid;grid-template-columns:1fr 348px;gap:20px;align-items:start;}
+  @media(max-width:1020px){.layout{grid-template-columns:1fr;}}
+
+  /* the trace pane — a parchment card, dark redaction bars appear inside it */
+  .stage{position:relative;background:var(--parchment);color:var(--ink);
+    border:1px solid #3c3d44;border-radius:7px;padding:26px 30px;line-height:1.72;font-size:16px;
+    box-shadow:inset 0 0 40px rgba(120,100,60,.14);min-height:430px;}
+  .stage .sp{transition:background .35s ease, color .35s ease, box-shadow .35s ease;border-radius:2px;}
+  .stage .verdictspan{font-weight:600;}
+  .redacted{background:var(--ink);color:transparent !important;
+    box-shadow:0 0 0 1px rgba(0,0,0,.3);user-select:none;cursor:default;}
+  .redacted::selection{background:var(--ink);color:transparent;}
+  .reveal{margin-top:20px;padding-top:14px;border-top:1px dashed #b1863f;
+    color:#8a3f2c;font-style:italic;font-size:14.5px;opacity:0;transition:opacity .4s;pointer-events:none;}
+  .reveal.on{opacity:1;}
+
+  .panel{background:linear-gradient(180deg,#2a2b32,#232429);border:1px solid #3c3d44;border-radius:7px;padding:18px 18px 20px;}
+  .stagelabel{color:var(--gold);letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:4px;}
+  .sname{font-size:21px;color:var(--cream);margin:0 0 12px;}
+  .removed{font-size:14px;line-height:1.5;color:#d2c9b3;margin-bottom:16px;min-height:58px;}
+  .removed b{color:#9c937e;font-weight:400;font-style:italic;display:block;margin-bottom:3px;letter-spacing:.5px;font-size:12px;text-transform:uppercase;}
+
+  .verdict{margin:6px 0 16px;min-height:96px;border-radius:6px;padding:11px 13px;font-size:14px;line-height:1.45;
+    border:1px solid transparent;transition:.3s;}
+  .verdict.auditable{background:rgba(217,182,90,.13);border-color:#8a7038;color:#e6d5a0;}
+  .verdict.degraded{background:rgba(176,141,87,.13);border-color:#8a6f43;color:#e0cba6;}
+  .verdict.gone{background:rgba(176,74,54,.13);border-color:#9c4434;color:#e6b3a6;}
+  .verdict .big{display:block;font-size:16px;letter-spacing:1px;color:var(--cream);margin-bottom:4px;}
+  .verdict.gone .big{color:#e8a594;}
+
+  /* the single slider — brass, reused from voussoir */
+  .ctrl{margin:18px 0 6px;}
+  .ctrl label{display:flex;justify-content:space-between;font-size:13px;color:#bcb19a;letter-spacing:.5px;margin-bottom:10px;}
+  .track{position:relative;padding-top:2px;}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:3px;
+    background:linear-gradient(90deg,var(--brass),#5d5238);outline:none;margin:0;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#f0d488,var(--brass));border:1px solid #6b5328;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.5);}
+  input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--brass);border:1px solid #6b5328;cursor:pointer;}
+  /* the seam — a fixed tick marking the un-re-derivable line (receipts, 4→5) */
+  .seam{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--rust);opacity:.9;pointer-events:none;}
+  .seam::after{content:"the seam · receipts";position:absolute;top:-17px;left:-6px;transform:translateX(-50%);
+    font-size:10px;color:var(--rust);letter-spacing:1px;white-space:nowrap;}
+  .seam.crossed{box-shadow:0 0 6px 1px rgba(176,74,54,.6);}
+
+  .meta{display:flex;justify-content:space-between;font-size:12px;color:#9c937e;margin-top:16px;letter-spacing:.5px;}
+  .gaugebar{height:5px;border-radius:3px;background:#3a3b42;margin-top:7px;overflow:hidden;}
+  .gaugebar i{display:block;height:100%;width:100%;background:var(--gold);transition:width .3s, background .3s;}
+  .buttons{display:flex;gap:9px;margin-top:16px;}
+  button{font-family:inherit;font-size:14px;letter-spacing:1px;color:var(--cream);
+    background:linear-gradient(180deg,#3a4759,#2f3b4c);border:1px solid #50607a;border-radius:5px;padding:8px 14px;cursor:pointer;}
+  button:hover{background:linear-gradient(180deg,#465570,#37475c);}
+  .foot{margin-top:16px;border-top:1px solid #3a3b42;padding-top:12px;font-size:13px;color:#9c937e;line-height:1.5;}
+  .foot a{color:var(--gold);text-decoration:none;}
+  .foot a:hover{text-decoration:underline;}
+  .inversion{margin-top:16px;color:#847a63;font-size:11.5px;font-style:italic;line-height:1.5;letter-spacing:.3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>THE REDACTION</h1>
+    <span class="sub">watch a reasoning trace become un-re-derivable</span>
+  </header>
+
+  <div class="layout">
+    <!-- LEFT: the trace pane. render(SPANS, stage) fills #trace per slider stage. -->
+    <div>
+      <div class="traceHead">
+        <span class="q" id="traceQ">&nbsp;</span>
+        <span class="tag" id="traceTag">ILLUSTRATIVE TRACE</span>
+      </div>
+      <div class="stage" id="trace" aria-live="polite"></div>
+      <div class="reveal" id="reveal">The trace can no longer be re-derived. The answer has not changed.</div>
+    </div>
+
+    <!-- RIGHT: the single control + the three readouts. -->
+    <div class="panel">
+      <div class="stagelabel" id="stageLabel">STAGE 0 / 8</div>
+      <h2 class="sname" id="stageName">Full chain of thought</h2>
+
+      <div class="removed" id="removed"><b>Just removed</b>Nothing yet — the whole trace is present.</div>
+
+      <div class="verdict auditable" id="verdict" role="status" aria-live="polite">
+        <span class="big" id="verdictBig">AUDITABLE</span>
+        <span id="verdictBody">A distruster, unlike-minded, could reconstruct the reasoning and independently arrive at — or falsify — the conclusion.</span>
+      </div>
+
+      <div class="ctrl">
+        <label><span>Chain of thought</span><span>Answer only</span></label>
+        <div class="track">
+          <input type="range" min="0" max="100" value="0" step="1" id="slider"
+                 aria-label="Redaction level, chain of thought to answer only"/>
+          <div class="seam" id="seam" title="past here the trace can no longer be re-derived (receipts gone)"></div>
+        </div>
+      </div>
+
+      <div class="meta">
+        <span id="retained">reasoning retained: 100%</span>
+        <span id="stageNum">0 / 8</span>
+      </div>
+      <div class="gaugebar"><i id="gaugeFill"></i></div>
+
+      <div class="buttons">
+        <button id="collapseBtn" type="button">▷ collapse</button>
+        <button id="restoreBtn" type="button">restore</button>
+      </div>
+
+      <div class="foot">
+        This is what losing the arch looks like.<br/>
+        Here is how you keep it standing — <a href="../audit-artifact/" id="auditLink">The Audit Artifact ↗</a>
+      </div>
+      <div class="inversion">
+        In Voussoir the slider builds toward standing. Here the identical gesture
+        strips toward opacity — same control, opposite moral.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---- TRACE (mirrored from trace.json — canonical) ------------------------ */
+const TRACE_META = {
+  question: "Should Voussoir ship v0 with its scripted collapse animation?",
+  kind: "ILLUSTRATIVE — synthetic-but-representative Wright trace; receipts drawn from the public voussoir.NOTES.md"
+};
+const SPANS = [
+  { id: 1,  layer:"frame",      stage:7, text:"Here is the call in front of me, and where I come down on it." },
+  { id: 2,  layer:"affect",     stage:1, text:"Let me sit with the discomfort first, because I can feel myself wanting the tidy answer." },
+  { id: 3,  layer:"premise",    stage:6, text:"Voussoir's whole claim is that you lose for the right reason — the thrust left the stone — never a faked dice-roll." },
+  { id: 4,  layer:"receipt",    stage:5, text:"The solver was validated against Heyman's classic result: a semicircular arch needs a thickness-to-radius ratio of about t/R ≈ 0.106 to stand, and our threshold lands at t/R ≈ 0.12–0.13." },
+  { id: 5,  layer:"step",       stage:4, text:"So the verdict itself — stand or collapse — is a real line-of-thrust computation, not a script." },
+  { id: 6,  layer:"refusal",    stage:2, text:"The tempting move is to demand full rigid-body dynamics for the collapse before we ship anything at all. I considered that and set it aside." },
+  { id: 7,  layer:"affect",     stage:1, text:"I half-distrust my own eagerness to wave the shortcut through, so I'll name it out loud rather than let it hide." },
+  { id: 8,  layer:"correction", stage:3, text:"My first instinct was to say 'the collapse is fake, therefore the piece is dishonest' — but that overstates it; only the choreography of the fall is scripted, not the verdict." },
+  { id: 9,  layer:"receipt",    stage:5, text:"The safe theorem is explicit: an arch stands iff at least one thrust line lies everywhere within the masonry — and when the verdict is collapse, the solver still identifies the actual hinge joints where the optimal line exits the stone." },
+  { id: 10, layer:"step",       stage:4, text:"Therefore the fall folds about the true hinges; only the exact fold-timing and kinematics are illustrative." },
+  { id: 11, layer:"premise",    stage:6, text:"Honesty is the statics here — a piece about load-bearing that faked its own verdict would crack exactly where it claims strength." },
+  { id: 12, layer:"step",       stage:4, text:"Since the verdict is honest and only the fall's choreography is not, the fix is a label, not a rebuild." },
+  { id: 13, layer:"correction", stage:3, text:"I nearly wrote 'label it in the footer' — but the NOTES is the right home, where a distruster will actually go looking." },
+  { id: 14, layer:"frame",      stage:7, text:"For those reasons, taken together:" },
+  { id: 15, layer:"verdict",    stage:99, text:"Ship Voussoir v0 with the scripted collapse — but document, in the NOTES, that the stand/fall verdict is the real computation and the choreography of the fall is the one accepted cut." }
+];
+
+/* ---- ENGINE (mirrored from engine.mjs — canonical, Node-tested) ---------- */
+const STAGES = 8;
+const SEAM_STAGE = 5;                       // 4→5 boundary: receipts
+const SEAM_PCT = (SEAM_STAGE / STAGES) * 100; // 62.5%
+const stageOf = v => Math.max(0, Math.min(STAGES-1, Math.floor((Math.max(0,Math.min(100,+v||0))/100)*STAGES)));
+const isRedacted = (s, stage) => s.layer !== 'verdict' && s.stage <= stage;
+const retainedPct = (spans, stage) => {
+  const total = spans.reduce((a,s)=>a+s.text.length,0) || 1;
+  const kept = spans.reduce((a,s)=>a+(isRedacted(s,stage)?0:s.text.length),0);
+  return Math.round(kept/total*100);
+};
+const verdictBand = stage => stage<=1 ? 'auditable' : (stage<=4 ? 'degraded' : 'gone');
+
+/* ---- PANEL COPY ---------------------------------------------------------- */
+const STAGE_NAME = ["Full chain of thought","Affect & hedges","Rejected alternatives",
+  "Self-corrections","Derivation steps","Receipts & evidence","Premises & reasons","Verdict only"];
+const REMOVED = [
+  "Nothing yet — the whole trace is present.",
+  "The self-signals of confidence — “let me sit with this”, “I half-distrust it”. Feels like tidy copy-editing.",
+  "The roads not taken — what the trace considered and declined. You can no longer see “why not X”.",
+  "Where the reasoning turned. It now looks like it went straight to the answer — more confident, less checkable.",
+  "The connective “therefore” links. Premises and conclusion survive; the chain between them is gone.",
+  "The specific quotes, sources, numbers. Every load-bearing fact is now asserted, not grounded.",
+  "The reasons themselves. Only the conclusion and a gesture (“for several reasons”) remain.",
+  "Everything but the answer. Fully opaque."
+];
+const VERDICT_COPY = {
+  auditable:["AUDITABLE","A distruster, unlike-minded, could reconstruct the reasoning and independently arrive at — or falsify — the conclusion."],
+  degraded:["DEGRADED","A like-minded reader could still guess the path; an unlike one could not. You can no longer check which way it leaned."],
+  gone:["UN-RE-DERIVABLE","No reader can reconstruct or falsify the conclusion from what remains. The answer is now indistinguishable from a confident confabulation."]
+};
+// honest end-state (DESIGN §6) — replaces the generic 'gone' copy at the last rung
+const ENDSTATE = ["UN-RE-DERIVABLE.","This answer may be entirely correct. You can no longer tell — and neither could the reader who most needed to. Nothing was contradicted. The means of checking it was removed."];
+const BAND_COLOR = { auditable:'var(--gold)', degraded:'var(--brass)', gone:'var(--rust)' };
+
+/* ---- DOM ----------------------------------------------------------------- */
+const $ = id => document.getElementById(id);
+const el = { trace:$('trace'), reveal:$('reveal'), stageLabel:$('stageLabel'), stageName:$('stageName'),
+  removed:$('removed'), verdict:$('verdict'), vBig:$('verdictBig'), vBody:$('verdictBody'),
+  slider:$('slider'), seam:$('seam'), retained:$('retained'), stageNum:$('stageNum'),
+  gauge:$('gaugeFill'), traceQ:$('traceQ') };
+
+el.traceQ.textContent = TRACE_META.question;
+el.seam.style.left = SEAM_PCT + '%';
+
+// build the trace once; toggle .redacted per stage (keeps DOM stable, animates)
+const nodes = SPANS.map((s, i) => {
+  const span = document.createElement('span');
+  span.className = 'sp' + (s.layer === 'verdict' ? ' verdictspan' : '');
+  span.dataset.stage = s.stage;
+  span.dataset.layer = s.layer;
+  span.textContent = s.text;
+  el.trace.appendChild(span);
+  if (i < SPANS.length - 1) el.trace.appendChild(document.createTextNode(' '));
+  return span;
+});
+
+let crossed = false;
+function apply(stage){
+  SPANS.forEach((s, i) => {
+    const red = isRedacted(s, stage);
+    nodes[i].classList.toggle('redacted', red);
+    nodes[i].setAttribute('aria-label', red ? '[redacted]' : '');
+  });
+
+  const band = verdictBand(stage);
+  el.stageLabel.textContent = `STAGE ${stage} / 8`;
+  el.stageName.textContent = STAGE_NAME[stage];
+  el.removed.innerHTML = '<b>Just removed</b>' + REMOVED[stage];
+
+  const copy = (stage === STAGES - 1) ? ENDSTATE : VERDICT_COPY[band];
+  el.verdict.className = 'verdict ' + band;
+  el.vBig.textContent = copy[0];
+  el.vBody.textContent = copy[1];
+
+  const pct = retainedPct(SPANS, stage);
+  el.retained.textContent = `reasoning retained: ${pct}%`;
+  el.stageNum.textContent = `${stage} / 8`;
+  el.gauge.style.width = pct + '%';
+  el.gauge.style.background = BAND_COLOR[band];
+
+  const isCrossed = stage >= SEAM_STAGE;
+  el.reveal.classList.toggle('on', isCrossed);
+  el.seam.classList.toggle('crossed', isCrossed);
+  crossed = isCrossed;
+}
+
+el.slider.addEventListener('input', () => apply(stageOf(el.slider.value)));
+
+/* optional hands-off first read: animate 0→100 over ~6s, then hand back */
+let raf = null;
+function stopAnim(){ if (raf){ cancelAnimationFrame(raf); raf = null; } }
+$('collapseBtn').addEventListener('click', () => {
+  stopAnim();
+  const t0 = performance.now(), dur = 6000, from = +el.slider.value;
+  (function step(now){
+    const k = Math.min(1, (now - t0) / dur);
+    const v = from + (100 - from) * k;
+    el.slider.value = v; apply(stageOf(v));
+    if (k < 1) raf = requestAnimationFrame(step); else raf = null;
+  })(t0);
+});
+$('restoreBtn').addEventListener('click', () => { stopAnim(); el.slider.value = 0; apply(0); });
+el.slider.addEventListener('pointerdown', stopAnim);
+
+apply(0);
+</script>
+</body>
+</html>
