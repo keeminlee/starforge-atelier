@@ -180,8 +180,15 @@ a:hover { border-bottom-color: var(--accent); }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 14px; }
 .card { display: block; background: var(--panel); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 16px 16px 18px; transition: border-color .15s, transform .15s; }
+  border-radius: var(--radius); padding: 16px 16px 18px; overflow: hidden;
+  transition: border-color .15s, transform .15s; }
 .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-thumb { display: block; width: calc(100% + 32px); margin: -16px -16px 14px;
+  aspect-ratio: 16 / 9; object-fit: cover; object-position: center;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  border-radius: var(--radius) var(--radius) 0 0; transition: filter .15s; }
+.card-thumb[src=""], .card-thumb:not([src]) { display: none; }
+.card:hover .card-thumb { filter: brightness(1.07) saturate(1.04); }
 .card h3 { font-size: 19px; margin: 0 0 6px; font-weight: 600; color: var(--ink); }
 .card p { font-family: var(--sans); font-size: 13.5px; color: var(--ink-soft);
   margin: 0; line-height: 1.5; }
