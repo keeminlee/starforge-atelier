@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Voussoir — Free Build</title>
+<style>
+  :root{
+    --charcoal:#23242a; --charcoal2:#2c2e36; --ink:#191a1f;
+    --parchment:#e9e1cc; --cream:#f4efe2; --navy:#2f3b4c; --navy2:#3a4759;
+    --brass:#b08d57; --gold:#d9b65a; --rust:#b04a36;
+    --stone-lo:#cbbf9f; --stone-hi:#e3d8bd;
+    --line:#5a5446;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    background:radial-gradient(circle at 50% 18%, #34353d 0%, #23242a 60%, #191a1f 100%);
+    color:var(--parchment);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    -webkit-font-smoothing:antialiased; min-height:100%;
+  }
+  .wrap{max-width:1240px;margin:0 auto;padding:22px 22px 40px;}
+  header{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #3c3d44;padding-bottom:12px;margin-bottom:14px;flex-wrap:wrap;}
+  h1{font-size:30px;letter-spacing:5px;margin:0;font-weight:600;color:var(--cream);}
+  .sub{color:#9c937e;font-size:13px;letter-spacing:1.5px;font-style:italic;}
+  .layout{display:grid;grid-template-columns:1fr 348px;gap:20px;align-items:start;}
+  @media(max-width:1020px){.layout{grid-template-columns:1fr;}}
+  .stage{position:relative;background:linear-gradient(180deg,#26272e,#1d1e23);
+    border:1px solid #3c3d44;border-radius:7px;overflow:hidden;box-shadow:inset 0 0 60px rgba(0,0,0,.45);}
+  canvas{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair;}
+  .panel{background:linear-gradient(180deg,#2a2b32,#232429);border:1px solid #3c3d44;border-radius:7px;padding:18px 18px 20px;}
+  .chapter{color:var(--gold);letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:4px;}
+  .cname{font-size:21px;color:var(--cream);margin:0 0 10px;}
+  .instr{font-size:14px;line-height:1.5;color:#d2c9b3;margin-bottom:14px;}
+  .ctrl{margin:12px 0;}
+  .ctrl label{display:flex;justify-content:space-between;font-size:13px;color:#bcb19a;letter-spacing:.5px;margin-bottom:6px;}
+  .ctrl .val{color:var(--gold);font-variant-numeric:tabular-nums;}
+  input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:3px;
+    background:linear-gradient(90deg,var(--brass),#5d5238);outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#f0d488,var(--brass));border:1px solid #6b5328;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.5);}
+  input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--brass);border:1px solid #6b5328;cursor:pointer;}
+  .drag-note{font-size:12.5px;color:#9c937e;font-style:italic;margin:10px 0 4px;}
+  .loadbox{margin-top:12px;padding-top:12px;border-top:1px solid #3a3b42;}
+  .loadhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .loadhead .lt{font-size:13px;color:#bcb19a;letter-spacing:.5px;}
+  .loadhead .cnt{font-size:12px;color:#9c937e;font-variant-numeric:tabular-nums;}
+  .minibtn{font-family:inherit;font-size:12.5px;letter-spacing:.5px;padding:5px 10px;}
+  .buttons{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap;}
+  button{font-family:inherit;font-size:14px;letter-spacing:1px;color:var(--cream);
+    background:linear-gradient(180deg,#3a4759,#2f3b4c);border:1px solid #50607a;border-radius:5px;
+    padding:9px 15px;cursor:pointer;transition:.15s;}
+  button:hover{background:linear-gradient(180deg,#465570,#37475c);}
+  button.primary{background:linear-gradient(180deg,#caa24f,#9c7a36);border-color:#7c5f28;color:#211b0c;font-weight:600;}
+  button.primary:hover{background:linear-gradient(180deg,#dcb45f,#a9863c);}
+  button:disabled{opacity:.4;cursor:default;}
+  .verdict{margin-top:16px;min-height:54px;border-radius:6px;padding:11px 13px;font-size:14.5px;line-height:1.45;
+    border:1px solid transparent;transition:.3s;}
+  .verdict.stand{background:rgba(120,150,90,.13);border-color:#6f8a4d;color:#cfe0b0;}
+  .verdict.fall{background:rgba(176,74,54,.13);border-color:#9c4434;color:#e6b3a6;}
+  .verdict .big{display:block;font-size:16px;letter-spacing:1px;color:var(--cream);margin-bottom:4px;}
+  .verdict.fall .big{color:#e8a594;}
+  .ethic{font-style:italic;}
+  .legend{margin-top:14px;font-size:12px;color:#9c937e;line-height:1.7;}
+  .legend .sw{display:inline-block;width:22px;height:3px;vertical-align:middle;margin-right:6px;border-radius:2px;}
+  .meter{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:12px;color:#9c937e;}
+  .meterbar{flex:1;height:7px;border-radius:4px;background:#1d1e23;border:1px solid #3a3b42;position:relative;overflow:hidden;}
+  .meterfill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:4px;}
+  .ticks{position:absolute;top:0;bottom:0;width:1px;background:#6b6450;}
+  footer{margin-top:18px;color:#6f6a5b;font-size:11.5px;letter-spacing:.4px;}
+  footer a{color:#8a7f66;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>VOUSSOIR</h1>
+    <span class="sub">free build &mdash; shape the arch by hand; it stands or falls by the same line of thrust</span>
+  </header>
+  <div class="layout">
+    <div class="stage"><canvas id="cv" width="960" height="640"></canvas></div>
+    <div class="panel">
+      <div class="chapter">The Drawing Board</div>
+      <h2 class="cname">Build it, then release the load</h2>
+      <div class="instr">Set the span, the crown&rsquo;s rise, the ring&rsquo;s depth and the number of stones &mdash; or grab the <span style="color:var(--gold)">brass handles</span> on the springings and crown directly. Drop weights on its back and drag them where you like. The faint gold line is the live thrust; keep it inside the stones. Then <em>release the load</em>.</div>
+
+      <div class="ctrl">
+        <label><span>span (gap width)</span><span class="val" id="val_span"></span></label>
+        <input type="range" id="inp_span" min="2.5" max="8" step="0.1"/>
+      </div>
+      <div class="ctrl">
+        <label><span>crown rise</span><span class="val" id="val_rise"></span></label>
+        <input type="range" id="inp_rise" min="0.8" max="4.5" step="0.05"/>
+      </div>
+      <div class="ctrl">
+        <label><span>ring depth</span><span class="val" id="val_t"></span></label>
+        <input type="range" id="inp_t" min="0.15" max="1.4" step="0.01"/>
+      </div>
+      <div class="ctrl">
+        <label><span>stones</span><span class="val" id="val_N"></span></label>
+        <input type="range" id="inp_N" min="6" max="24" step="1"/>
+      </div>
+
+      <div class="loadbox">
+        <div class="loadhead">
+          <span class="lt">weights on the back</span>
+          <span class="cnt" id="loadcnt">none</span>
+        </div>
+        <div class="buttons" style="margin-top:0">
+          <button class="minibtn" id="addload">Add weight</button>
+          <button class="minibtn" id="rmload">Remove selected</button>
+        </div>
+        <div class="ctrl" id="wctrl" style="display:none;margin-top:12px">
+          <label><span>selected weight</span><span class="val" id="val_w"></span></label>
+          <input type="range" id="inp_w" min="0.1" max="1.4" step="0.02"/>
+        </div>
+        <div class="drag-note" id="dragnote" style="display:none">&mdash; drag the dark block across the arch to move it &mdash;</div>
+      </div>
+
+      <div class="meter">
+        <span>thrust&nbsp;eccentricity</span>
+        <div class="meterbar" id="meterbar"><div class="meterfill" id="meterfill"></div>
+          <div class="ticks" style="left:33.3%"></div><div class="ticks" style="left:66.6%"></div></div>
+      </div>
+      <div class="buttons">
+        <button class="primary" id="release">Release the load</button>
+        <button id="reset">Reset</button>
+      </div>
+      <div class="verdict" id="verdict"></div>
+      <div class="legend">
+        <span class="sw" style="background:var(--gold)"></span>thrust within the middle third &mdash; no tension, the stone is at ease<br>
+        <span class="sw" style="background:var(--brass)"></span>within the section &mdash; it stands, but the stone cracks<br>
+        <span class="sw" style="background:var(--rust)"></span>thrust has left the stone &mdash; this joint hinges
+      </div>
+    </div>
+  </div>
+  <footer>Real (simplified) limit analysis: rigid voussoirs, a single line of thrust searched over the funicular family, standing iff the line lies within every joint. Circular arcs only in this build (pointed arches are later work). See <a href="../voussoir.NOTES.md">voussoir.NOTES.md</a> for the model and its honest limits.</footer>
+</div>
+
+<script type="module">
+"use strict";
+import { buildArch, solve, extradosY } from "../engine/statics.mjs";
+import { makeView, WX, WY, eventToWorld } from "./view.mjs";
+import { drawScene, computeCollapse, stepCollapse } from "./render.mjs";
+
+// ===================== VIEW / STATE =====================
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+const view = makeView({ x0: -5.2, x1: 5.2, y0: -1.55, y1: 5.25 });
+
+const DEFAULT = { PL: [-3, 0], PR: [3, 0], rise: 3, t: 0.4, N: 15 };
+let PL, PR, rise, t, N;
+let loads = [];            // [{x, wFrac}]
+let selLoad = -1;
+let arch = null, sol = null, extras = null, collapse = null;
+let mode = "edit";         // edit | revealing | stood | collapsing | collapsed
+let anim = { raf: 0, t: 0 };
+
+function crown() { return [(PL[0] + PR[0]) / 2, rise]; }
+
+function resetState() {
+  PL = DEFAULT.PL.slice(); PR = DEFAULT.PR.slice();
+  rise = DEFAULT.rise; t = DEFAULT.t; N = DEFAULT.N;
+  loads = []; selLoad = -1; collapse = null; mode = "edit";
+  document.getElementById("inp_span").value = (PR[0] - PL[0]).toFixed(1);
+  document.getElementById("inp_rise").value = rise;
+  document.getElementById("inp_t").value = t;
+  document.getElementById("inp_N").value = N;
+  setVerdict("");
+  recompute(); draw();
+}
+
+function buildExtras(a) {
+  if (!loads.length) return null;
+  const W = a.vouss.reduce((acc, v) => acc + v.w, 0);
+  return loads.map(L => ({ x: L.x, y: extradosY(a, L.x) + 0.18, w: L.wFrac * W, block: true }));
+}
+
+function recompute() {
+  arch = buildArch(PL, PR, crown(), t, N);
+  extras = buildExtras(arch);
+  sol = solve(arch, extras, mode === "edit" ? 5 : 7);
+  syncLabels();
+  updateMeter();
+}
+
+function syncLabels() {
+  const semi = Math.abs(rise - (PR[0] - PL[0]) / 2) < 0.06;
+  document.getElementById("val_span").textContent = (PR[0] - PL[0]).toFixed(2) + " m";
+  document.getElementById("val_rise").textContent = rise.toFixed(2) + " m" + (semi ? "  (semicircle)" : "");
+  document.getElementById("val_t").textContent = t.toFixed(2) + " m";
+  document.getElementById("val_N").textContent = N;
+  document.getElementById("inp_span").value = (PR[0] - PL[0]).toFixed(2);
+  document.getElementById("inp_rise").value = rise;
+  document.getElementById("inp_t").value = t;
+  document.getElementById("inp_N").value = N;
+  // load UI
+  const cnt = document.getElementById("loadcnt");
+  cnt.textContent = loads.length ? (loads.length + (loads.length === 1 ? " weight" : " weights")) : "none";
+  const wctrl = document.getElementById("wctrl"), dn = document.getElementById("dragnote");
+  if (loads.length && selLoad >= 0) {
+    wctrl.style.display = ""; dn.style.display = "";
+    document.getElementById("inp_w").value = loads[selLoad].wFrac;
+    document.getElementById("val_w").textContent = "×" + loads[selLoad].wFrac.toFixed(2) + " ring";
+  } else { wctrl.style.display = "none"; dn.style.display = loads.length ? "" : "none"; }
+}
+
+function updateMeter() {
+  const e = Math.min(1, sol.maxe);
+  const f = document.getElementById("meterfill");
+  f.style.width = (e * 100).toFixed(1) + "%";
+  f.style.background = sol.comfy ? "var(--gold)" : (sol.stands ? "var(--brass)" : "var(--rust)");
+}
+
+// ===================== DRAW =====================
+function drawHandles() {
+  if (mode !== "edit") return;
+  const DPR = view.DPR;
+  const handles = [PL, PR, crown()];
+  for (const p of handles) {
+    ctx.beginPath(); ctx.arc(WX(view, p[0]), WY(view, p[1]), 6 * DPR, 0, 7);
+    ctx.fillStyle = "rgba(217,182,90,.85)"; ctx.fill();
+    ctx.strokeStyle = "#6b5328"; ctx.lineWidth = 1.5 * DPR; ctx.stroke();
+    ctx.beginPath(); ctx.arc(WX(view, p[0]), WY(view, p[1]), 10 * DPR, 0, 7);
+    ctx.strokeStyle = "rgba(217,182,90,.35)"; ctx.lineWidth = 1 * DPR; ctx.stroke();
+  }
+}
+function draw(reveal) {
+  drawScene(ctx, view, cv, { arch, sol, extras, collapse, mode, reveal });
+  drawHandles();
+}
+
+// ===================== RELEASE / ANIMATION =====================
+function setVerdict(html, cls) {
+  const v = document.getElementById("verdict");
+  v.className = "verdict" + (cls ? (" " + cls) : ""); v.innerHTML = html;
+}
+function clearCollapse() { collapse = null; }
+
+function release() {
+  if (mode === "revealing" || mode === "collapsing") return;
+  clearCollapse();
+  mode = "compute"; recompute();          // full-resolution solve
+  if (sol.stands) {
+    mode = "revealing"; anim.t = 0;
+    cancelAnimationFrame(anim.raf);
+    const step = () => {
+      anim.t += 0.045; const r = Math.min(1, anim.t);
+      draw(r);
+      if (r < 1) { anim.raf = requestAnimationFrame(step); }
+      else {
+        mode = "stood"; draw(1);
+        const head = sol.comfy ? "It stands &mdash; and rests in the middle third." : "It stands.";
+        const ethic = sol.comfy
+          ? "Nothing was asked to carry more than it could, and the thrust came home to the ground."
+          : "A line of thrust lies within every joint &mdash; the arch holds, though some joints crack on the tension side.";
+        setVerdict("<span class='big'>" + head + "</span><span class='ethic'>" + ethic + "</span>", "stand");
+      }
+    };
+    step();
+  } else {
+    startCollapse();
+  }
+}
+function startCollapse() {
+  // show the failing thrust line (red, hinge rings) for a beat...
+  mode = "revealing"; collapse = null; draw(1);
+  setVerdict("<span class='big'>The thrust has left the stone&hellip;</span>" +
+    "No thrust line fits inside the stones: it crosses out at the marked joints. With no path for the load, the ring hinges into a mechanism.", "fall");
+  setTimeout(foldCollapse, 720);
+}
+function foldCollapse() {
+  mode = "collapsing";
+  collapse = computeCollapse(arch, sol);
+  cancelAnimationFrame(anim.raf);
+  const dur = 1700, t0 = performance.now();
+  const step = (now) => {
+    const u = Math.min(1, (now - t0) / dur);
+    stepCollapse(collapse, u);
+    draw();
+    if (u < 1) { anim.raf = requestAnimationFrame(step); }
+    else {
+      mode = "collapsed";
+      setVerdict("<span class='big'>It hinged, then fell.</span>" +
+        "No thrust line fit inside these stones &mdash; at the marked joints the load had no honest path to ground, so the ring became a mechanism. " +
+        "<span style='color:#9c937e'>Adjust, and release again.</span>", "fall");
+    }
+  };
+  anim.raf = requestAnimationFrame(step);
+}
+
+// leaving edit-mode edits should drop any collapse/verdict and re-enter edit
+function toEdit() {
+  if (mode !== "edit") { clearCollapse(); setVerdict(""); mode = "edit"; }
+}
+
+// ===================== SLIDER INPUT =====================
+function onSlider(id, fn) {
+  document.getElementById(id).addEventListener("input", e => {
+    toEdit(); fn(parseFloat(e.target.value)); recompute(); draw();
+  });
+}
+onSlider("inp_span", g => { const c = (PL[0] + PR[0]) / 2; PL = [c - g / 2, 0]; PR = [c + g / 2, 0]; });
+onSlider("inp_rise", v => { rise = v; });
+onSlider("inp_t", v => { t = v; });
+onSlider("inp_N", v => { N = Math.round(v); });
+onSlider("inp_w", v => { if (selLoad >= 0) loads[selLoad].wFrac = v; });
+
+document.getElementById("addload").addEventListener("click", () => {
+  toEdit();
+  const x = (PL[0] + PR[0]) / 2;                 // drop at the crown
+  loads.push({ x, wFrac: 0.45 }); selLoad = loads.length - 1;
+  recompute(); draw();
+});
+document.getElementById("rmload").addEventListener("click", () => {
+  toEdit();
+  if (selLoad >= 0) { loads.splice(selLoad, 1); selLoad = loads.length ? Math.min(selLoad, loads.length - 1) : -1; }
+  recompute(); draw();
+});
+document.getElementById("release").addEventListener("click", release);
+document.getElementById("reset").addEventListener("click", resetState);
+
+// ===================== CANVAS DRAG =====================
+let drag = null;   // {kind:'load'|'L'|'R'|'C', idx}
+cv.addEventListener("pointerdown", ev => {
+  if (mode === "collapsing" || mode === "revealing") return;
+  const [wx, wy] = eventToWorld(cv, view, ev.clientX, ev.clientY);
+  // nearest load (by x, near the back)
+  let li = -1, ld = 0.75;
+  for (let i = 0; i < loads.length; i++) { const d = Math.abs(wx - loads[i].x); if (d < ld) { ld = d; li = i; } }
+  if (li >= 0) { drag = { kind: "load", idx: li }; selLoad = li; }
+  else if (Math.hypot(wx - PL[0], wy - PL[1]) < 0.55) drag = { kind: "L" };
+  else if (Math.hypot(wx - PR[0], wy - PR[1]) < 0.55) drag = { kind: "R" };
+  else if (Math.hypot(wx - crown()[0], wy - crown()[1]) < 0.6) drag = { kind: "C" };
+  if (drag) { cv.setPointerCapture(ev.pointerId); toEdit(); recompute(); draw(); }
+});
+cv.addEventListener("pointermove", ev => {
+  if (!drag) return;
+  let [wx, wy] = eventToWorld(cv, view, ev.clientX, ev.clientY);
+  if (drag.kind === "load") { loads[drag.idx].x = Math.max(PL[0] + 0.25, Math.min(PR[0] - 0.25, wx)); }
+  else if (drag.kind === "L") { PL[0] = Math.max(-4.9, Math.min(PR[0] - 1.0, wx)); }
+  else if (drag.kind === "R") { PR[0] = Math.min(4.9, Math.max(PL[0] + 1.0, wx)); }
+  else if (drag.kind === "C") { rise = Math.max(0.8, Math.min(4.5, wy)); }
+  recompute(); draw();
+});
+function endDrag() { drag = null; }
+cv.addEventListener("pointerup", endDrag);
+cv.addEventListener("pointercancel", endDrag);
+
+window.addEventListener("resize", () => {
+  if (mode === "edit") draw();
+  else if (mode === "stood") draw(1);
+  else if (mode === "collapsed") draw();
+});
+
+// ===================== GO =====================
+resetState();
+</script>
+</body>
+</html>

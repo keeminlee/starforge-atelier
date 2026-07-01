@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Voussoir — The Campaign</title>
+<style>
+  :root{
+    --charcoal:#23242a; --charcoal2:#2c2e36; --ink:#191a1f;
+    --parchment:#e9e1cc; --cream:#f4efe2; --navy:#2f3b4c; --navy2:#3a4759;
+    --brass:#b08d57; --gold:#d9b65a; --rust:#b04a36;
+    --stone-lo:#cbbf9f; --stone-hi:#e3d8bd;
+    --line:#5a5446;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    background:radial-gradient(circle at 50% 18%, #34353d 0%, #23242a 60%, #191a1f 100%);
+    color:var(--parchment);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    -webkit-font-smoothing:antialiased; min-height:100%;
+  }
+  .wrap{max-width:1240px;margin:0 auto;padding:22px 22px 40px;}
+  header{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #3c3d44;padding-bottom:12px;margin-bottom:14px;flex-wrap:wrap;}
+  h1{font-size:30px;letter-spacing:5px;margin:0;font-weight:600;color:var(--cream);}
+  .sub{color:#9c937e;font-size:13px;letter-spacing:1.5px;font-style:italic;}
+  .modelink{margin-left:auto;font-size:12.5px;letter-spacing:1px;}
+  .modelink a{color:var(--gold);text-decoration:none;border-bottom:1px dotted #6b5328;}
+  .modelink a:hover{color:var(--cream);}
+  .layout{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;}
+  @media(max-width:1020px){.layout{grid-template-columns:1fr;}}
+  .stage{position:relative;background:linear-gradient(180deg,#26272e,#1d1e23);
+    border:1px solid #3c3d44;border-radius:7px;overflow:hidden;box-shadow:inset 0 0 60px rgba(0,0,0,.45);}
+  canvas{display:block;width:100%;height:auto;touch-action:none;}
+  .panel{background:linear-gradient(180deg,#2a2b32,#232429);border:1px solid #3c3d44;border-radius:7px;padding:18px 18px 20px;}
+  .levelstrip{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+  .lvlbtn{font-family:inherit;font-size:12.5px;letter-spacing:.5px;min-width:34px;padding:5px 8px;
+    background:linear-gradient(180deg,#33343b,#292a30);border:1px solid #44454d;border-radius:5px;color:#bcb19a;cursor:pointer;}
+  .lvlbtn:hover{border-color:#6b6450;color:var(--cream);}
+  .lvlbtn.cur{background:linear-gradient(180deg,#3a4759,#2f3b4c);border-color:#50607a;color:var(--cream);}
+  .lvlbtn.done{color:var(--gold);border-color:#6b5328;}
+  .lvlbtn.done::after{content:" ✓";}
+  .chapter{color:var(--gold);letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:4px;}
+  .cname{font-size:21px;color:var(--cream);margin:0 0 3px;}
+  .ptag{font-size:11.5px;color:#8a8069;font-style:italic;letter-spacing:.3px;margin-bottom:10px;}
+  .premise{font-size:14px;line-height:1.5;color:#d2c9b3;margin-bottom:12px;}
+  .objective{font-size:13px;color:var(--gold);letter-spacing:.4px;margin-bottom:6px;
+    border-left:2px solid #6b5328;padding-left:9px;line-height:1.4;}
+  .ctrl{margin:13px 0;}
+  .ctrl label{display:flex;justify-content:space-between;font-size:13px;color:#bcb19a;letter-spacing:.5px;margin-bottom:6px;}
+  .ctrl .val{color:var(--gold);font-variant-numeric:tabular-nums;}
+  input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:3px;
+    background:linear-gradient(90deg,var(--brass),#5d5238);outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#f0d488,var(--brass));border:1px solid #6b5328;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.5);}
+  input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--brass);border:1px solid #6b5328;cursor:pointer;}
+  .drag-note{font-size:12.5px;color:#9c937e;font-style:italic;margin:6px 0 2px;}
+  .scorebox{margin-top:12px;padding:9px 11px;border:1px solid #3a3b42;border-radius:6px;background:#1f2025;
+    font-size:13px;color:#bcb19a;display:flex;justify-content:space-between;align-items:center;}
+  .scorebox .sv{color:var(--gold);font-variant-numeric:tabular-nums;font-size:15px;}
+  .buttons{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap;}
+  button{font-family:inherit;font-size:14px;letter-spacing:1px;color:var(--cream);
+    background:linear-gradient(180deg,#3a4759,#2f3b4c);border:1px solid #50607a;border-radius:5px;
+    padding:9px 15px;cursor:pointer;transition:.15s;}
+  button:hover{background:linear-gradient(180deg,#465570,#37475c);}
+  button.primary{background:linear-gradient(180deg,#caa24f,#9c7a36);border-color:#7c5f28;color:#211b0c;font-weight:600;}
+  button.primary:hover{background:linear-gradient(180deg,#dcb45f,#a9863c);}
+  button:disabled{opacity:.4;cursor:default;}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:16px;border-top:1px solid #3a3b42;padding-top:12px;font-size:13px;}
+  .nav button{padding:6px 11px;font-size:13px;}
+  .nav .cnum{color:#9c937e;font-variant-numeric:tabular-nums;}
+  .verdict{margin-top:14px;min-height:54px;border-radius:6px;padding:11px 13px;font-size:14.5px;line-height:1.45;
+    border:1px solid transparent;transition:.3s;background:rgba(120,120,120,.06);border-color:#3a3b42;color:#b4ab95;}
+  .verdict.ready{color:#9c937e;font-style:italic;}
+  .verdict.stand{background:rgba(120,150,90,.13);border-color:#6f8a4d;color:#cfe0b0;}
+  .verdict.fall{background:rgba(176,74,54,.13);border-color:#9c4434;color:#e6b3a6;}
+  .verdict .big{display:block;font-size:16px;letter-spacing:1px;color:var(--cream);margin-bottom:4px;}
+  .verdict.fall .big{color:#e8a594;}
+  .verdict .medal{color:var(--gold);font-weight:600;}
+  .ethic{font-style:italic;}
+  .complete{margin-top:14px;padding:12px 13px;border-radius:6px;border:1px solid #6b5328;
+    background:rgba(217,182,90,.10);color:var(--gold);font-size:14px;line-height:1.5;display:none;}
+  .legend{margin-top:14px;font-size:12px;color:#9c937e;line-height:1.7;}
+  .legend .sw{display:inline-block;width:22px;height:3px;vertical-align:middle;margin-right:6px;border-radius:2px;}
+  footer{margin-top:18px;color:#6f6a5b;font-size:11.5px;letter-spacing:.4px;}
+  footer a{color:#8a7f66;}
+
+  /* ---- title masthead ---- */
+  h1{position:relative;}
+  h1::first-letter{color:var(--gold);}
+  .mutebtn{font-family:inherit;font-size:16px;line-height:1;color:#9c937e;background:transparent;border:1px solid #44454d;
+    border-radius:5px;padding:5px 9px;cursor:pointer;letter-spacing:0;margin-left:10px;transition:.15s;}
+  .mutebtn:hover{color:var(--gold);border-color:#6b5328;background:transparent;}
+  .mutebtn.off{color:#6f6a5b;}
+
+  /* ---- campaign progress ---- */
+  .progress{font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:#8a8069;margin:0 0 9px;display:flex;
+    align-items:center;gap:8px;}
+  .progress .pcount{color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:1px;}
+  .progress .pbar{flex:1;height:2px;background:#3a3b42;border-radius:2px;overflow:hidden;}
+  .progress .pfill{height:100%;background:linear-gradient(90deg,var(--brass),var(--gold));transition:width .5s ease;}
+  .lvlbtn.cur{box-shadow:0 0 0 1px #50607a inset,0 2px 8px rgba(0,0,0,.3);}
+
+  /* ---- title card over the stage (opening flourish; fades on first move) ---- */
+  .titlecard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;gap:12px;padding:24px;background:radial-gradient(ellipse at 50% 42%,rgba(24,25,30,.30),rgba(20,21,26,.72) 78%);
+    pointer-events:none;transition:opacity .7s ease;z-index:5;}
+  .titlecard.gone{opacity:0;}
+  .titlecard .tc-mark{font-size:min(9vw,64px);letter-spacing:min(2.4vw,16px);color:var(--cream);font-weight:600;
+    text-indent:min(2.4vw,16px);text-shadow:0 2px 26px rgba(0,0,0,.6);}
+  .titlecard .tc-mark span{color:var(--gold);}
+  .titlecard .tc-rule{width:74px;height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);}
+  .titlecard .tc-soul{font-style:italic;font-size:min(3.6vw,18px);color:#d2c9b3;letter-spacing:.5px;max-width:30ch;line-height:1.5;}
+  .titlecard .tc-enter{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8a8069;margin-top:6px;}
+
+  /* ---- the stand: a warm gold breath around the stage ---- */
+  .stage{transition:box-shadow .6s ease;}
+  .stage.stood{box-shadow:inset 0 0 60px rgba(0,0,0,.45),inset 0 0 90px rgba(217,182,90,.14),0 0 34px rgba(217,182,90,.10);}
+  .stage.stood.comfy{box-shadow:inset 0 0 60px rgba(0,0,0,.4),inset 0 0 120px rgba(217,182,90,.24),0 0 46px rgba(217,182,90,.18);}
+  .stage.fell{box-shadow:inset 0 0 60px rgba(0,0,0,.6),inset 0 0 90px rgba(176,74,54,.10);}
+  @keyframes standbreath{0%{filter:brightness(1);}22%{filter:brightness(1.07);}100%{filter:brightness(1);}}
+  .stage.justStood{animation:standbreath 1.1s ease;}
+
+  /* ---- medal reveal (L7) ---- */
+  .verdict .medal{position:relative;padding-left:2px;}
+  .verdict .medal::before{content:"✶ ";color:var(--gold);}
+  @keyframes medalglow{0%{text-shadow:none;}40%{text-shadow:0 0 12px rgba(217,182,90,.75);}100%{text-shadow:0 0 3px rgba(217,182,90,.3);}}
+  .verdict.stand .medal{animation:medalglow 1.6s ease;}
+  .complete{animation:medalglow 2.2s ease;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>VOUSSOIR</h1>
+    <span class="sub">a thing holds only when the thrust comes home to ground</span>
+    <span class="modelink"><a href="./sandbox.html">Free&nbsp;Build&nbsp;&rarr;</a>
+      <button class="mutebtn" id="mute" title="Sound" aria-label="Toggle sound">♪</button></span>
+  </header>
+  <div class="layout">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="960" height="640"></canvas>
+      <div class="titlecard" id="titlecard">
+        <div class="tc-mark"><span>V</span>OUSSOIR</div>
+        <div class="tc-rule"></div>
+        <div class="tc-soul">a thing holds only when the thrust comes home to ground</div>
+        <div class="tc-enter">problems in stone, from the half-round to the dome &mdash; release the load, or choose a chapter</div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="progress" id="progress">
+        <span>The Campaign</span>
+        <span class="pcount" id="pcount">0 / 10</span>
+        <span class="pbar"><span class="pfill" id="pfill" style="width:0%"></span></span>
+      </div>
+      <div class="levelstrip" id="levelstrip"></div>
+      <div class="chapter" id="chapter"></div>
+      <h2 class="cname" id="cname"></h2>
+      <div class="ptag" id="ptag"></div>
+      <div class="premise" id="premise"></div>
+      <div class="objective" id="objective"></div>
+      <div id="controls"></div>
+      <div class="scorebox" id="scorebox" style="display:none">
+        <span>stone spent</span><span class="sv" id="scoreval">&mdash;</span>
+      </div>
+      <div class="buttons">
+        <button class="primary" id="release">Release the load</button>
+        <button id="reset">Reset</button>
+      </div>
+      <div class="verdict ready" id="verdict"></div>
+      <div class="complete" id="complete"></div>
+      <div class="legend">
+        <span class="sw" style="background:var(--gold)"></span>thrust within the middle third &mdash; the stone is at ease<br>
+        <span class="sw" style="background:var(--brass)"></span>within the section &mdash; it stands, the stone cracks<br>
+        <span class="sw" style="background:var(--rust)"></span>thrust has left the stone &mdash; this joint hinges
+      </div>
+      <div class="nav">
+        <button id="prev">&larr; Previous</button>
+        <span class="cnum" id="cnum"></span>
+        <button id="next">Next &rarr;</button>
+      </div>
+    </div>
+  </div>
+  <footer>Real (simplified) limit analysis: rigid voussoirs, a single line of thrust searched over the funicular family, standing iff the line lies within every joint &mdash; plus finite friction (sliding) and pier overturning where a level asks for them. Every verdict is <em>computed</em>. See <a href="../voussoir.NOTES.md">voussoir.NOTES.md</a> for the model and its honest limits.</footer>
+</div>
+
+<script type="module">
+"use strict";
+import { solve, abutmentStability, buildArch } from "../engine/statics.mjs";
+import { solveCathedralSection, solveFixedThrust } from "../engine/cathedral.mjs";
+import { makeView, WX, WY, fitCanvas, eventToWorld } from "./view.mjs";
+import { drawScene, computeCollapse, stepCollapse,
+         clear, drawGround, drawArch, drawThrust, drawHinges, statusColor } from "./render.mjs";
+import { LEVELS, medalFor } from "./levels.mjs";
+import { hoopCrackAngle } from "../engine/dome.mjs";
+import * as audio from "./audio.mjs";
+
+// The hoop-crack parallel comes from the ENGINE (golden-ratio angle ≈ 51.83° from the
+// crown), never a literal in the view. The dome visual marks the crack at THIS angle.
+const DOME_CRACK_PHI = hoopCrackAngle();
+const domeCrackDeg = () => (DOME_CRACK_PHI * 180 / Math.PI).toFixed(1);
+
+// ===================== VIEW / STATE =====================
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+const view = makeView({ x0: -5.2, x1: 5.2, y0: -1.55, y1: 5.25 });
+// The cathedral bay is far wider and taller than a single arch — its own view window,
+// centred so the mirrored nave + twin buttresses + pinnacles all read in frame.
+const cathView = makeView({ x0: -9, x1: 9, y0: -1.2, y1: 10.8 });
+
+const STORE_KEY = "voussoir_campaign_cleared";
+let cleared = loadCleared();
+
+let idx = 0;                 // current level index
+let st = {};                 // control state {key:value}
+let arch = null, sol = null, extras = null, ab = null, collapse = null;
+let mode = "ready";          // ready | edit(hint) | revealing | stood | collapsing | collapsed | pierfail
+let anim = { raf: 0, t: 0, timer: 0 };
+let domeCracking = false;    // dome levels: the meridional-crack beat is playing
+let domeCrack = 0;           // 0→1 progress of the hoop crack opening into lunes
+// cathedral (L10) state: the composed spec, the whole-system verdict, and the pier-tip beat
+let cathSpec = null, cathSol = null;
+let cathTip = 0;             // 0→1 progress of the buttress tipping over its toe (fail)
+
+function L() { return LEVELS[idx]; }
+function buildMode() { return L().liveHint ? "edit" : "ready"; }   // L1 shows a faint hint; others hide the thrust
+
+// ===================== PERSISTENCE =====================
+function loadCleared() {
+  try { const v = JSON.parse(localStorage.getItem(STORE_KEY)); return Array.isArray(v) ? v : []; }
+  catch (e) { return []; }
+}
+function saveCleared() { try { localStorage.setItem(STORE_KEY, JSON.stringify(cleared)); } catch (e) {} }
+function markCleared(id) { if (!cleared.includes(id)) { cleared.push(id); saveCleared(); } }
+
+// ===================== LEVEL LOAD =====================
+function loadLevel(i) {
+  idx = (i + LEVELS.length) % LEVELS.length;
+  const lv = L();
+  st = {};
+  for (const c of lv.controls) st[c.key] = c.init;
+  document.getElementById("chapter").textContent = "Chapter " + lv.chapter;
+  document.getElementById("cname").textContent = lv.name;
+  document.getElementById("ptag").textContent = lv.physics;
+  document.getElementById("premise").innerHTML = lv.premise;
+  document.getElementById("objective").innerHTML = lv.objective;
+  document.getElementById("cnum").textContent = (idx + 1) + " / " + LEVELS.length;
+  document.getElementById("scorebox").style.display = lv.scoreOf ? "" : "none";
+  buildControls(lv);
+  buildStrip();
+  collapse = null;
+  domeCracking = false; domeCrack = 0;
+  cathSol = null; cathTip = 0;
+  mode = buildMode();
+  setVerdict(readyPrompt(), "ready");
+  recompute(true);
+  draw();
+}
+function readyPrompt() {
+  return L().liveHint
+    ? "The faint line is the live thrust &mdash; keep it inside the stones, then release."
+    : "Set it as you judge, then <em>release the load</em> to see the thrust and the verdict.";
+}
+
+function buildControls(lv) {
+  const host = document.getElementById("controls"); host.innerHTML = "";
+  for (const c of lv.controls) {
+    const wrap = document.createElement("div"); wrap.className = "ctrl";
+    const lab = document.createElement("label");
+    lab.innerHTML = "<span>" + c.label + "</span><span class='val' id='val_" + c.key + "'></span>";
+    const inp = document.createElement("input"); inp.type = "range";
+    inp.min = c.min; inp.max = c.max; inp.step = c.step; inp.value = st[c.key]; inp.id = "inp_" + c.key;
+    inp.addEventListener("input", () => {
+      st[c.key] = parseFloat(inp.value);
+      dismissTitle(); audio.tick();
+      toBuild();
+      recompute(true); draw();
+    });
+    wrap.appendChild(lab); wrap.appendChild(inp); host.appendChild(wrap);
+  }
+  if (lv.controls.some(c => c.drag)) {
+    const note = document.createElement("div"); note.className = "drag-note";
+    note.textContent = "— or drag the dark block across the arch directly —";
+    host.appendChild(note);
+  }
+}
+function buildStrip() {
+  const host = document.getElementById("levelstrip"); host.innerHTML = "";
+  LEVELS.forEach((lv, i) => {
+    const b = document.createElement("button");
+    b.className = "lvlbtn" + (i === idx ? " cur" : "") + (cleared.includes(lv.id) ? " done" : "");
+    b.textContent = lv.chapter;
+    b.title = "Chapter " + lv.chapter + " — " + lv.name;
+    b.addEventListener("click", () => { dismissTitle(); stopAnim(); loadLevel(i); });
+    host.appendChild(b);
+  });
+  updateProgress();
+}
+function updateProgress() {
+  const n = LEVELS.filter(lv => cleared.includes(lv.id)).length;
+  const pc = document.getElementById("pcount"), pf = document.getElementById("pfill");
+  if (pc) pc.textContent = n + " / " + LEVELS.length;
+  if (pf) pf.style.width = Math.round(100 * n / LEVELS.length) + "%";
+}
+
+// ===================== COMPUTE =====================
+function recompute(building) {
+  const lv = L();
+  if (lv.isCathedral) {
+    // The composed bay: build its spec from the controls. The verdict/thrust is NOT
+    // computed here (spoiler discipline) — it is searched on Release (releaseCathedral).
+    cathSpec = lv.section(st);
+    sol = null; ab = null;                 // no single-arch solution on the composed bay
+    if (building) cathSol = null;
+    syncControlLabels();
+    updateAux();
+    return;
+  }
+  arch = lv.geom(st);
+  extras = lv.extras(st, arch);
+  const opts = lv.solveOpts ? lv.solveOpts(st) : null;
+  // Spoiler discipline: only solve during build when a live hint is shown (L1).
+  if (building && !lv.liveHint) { sol = null; }
+  else { sol = solve(arch, extras, building ? 5 : 7, opts); }
+  ab = (lv.pier && sol) ? abutmentStability(arch, sol, lv.pier(st), {}) : null;
+  syncControlLabels();
+  updateAux();
+}
+function syncControlLabels() {
+  for (const c of L().controls) {
+    const v = document.getElementById("val_" + c.key); if (v) v.textContent = c.fmt(st[c.key]);
+    const inp = document.getElementById("inp_" + c.key); if (inp) inp.value = st[c.key];
+  }
+}
+function updateAux() {
+  const lv = L();
+  if (lv.scoreOf) {
+    const s = lv.scoreOf(st, arch, sol);      // stone volume — the cost, not the verdict (safe to show live)
+    document.getElementById("scoreval").textContent = s.toFixed(2) + " m³";
+  }
+}
+
+// ===================== DRAW =====================
+function draw(reveal) {
+  if (L().isCathedral) drawCathedralScene(reveal);
+  else if (L().isDome) drawDomeScene(reveal);
+  else drawScene(ctx, view, cv, { arch, sol, extras, collapse, mode, reveal });
+  if (L().pier && !L().isCathedral) drawButtress();
+  syncStageFx();
+}
+
+// ===================== DOME VISUAL =====================
+// A dome level renders the SAME diametral section the solver actually analysed (the
+// sliced lune, drawn by the shared render.mjs), but wrapped in a faint hemisphere so it
+// reads as a DOME, not a plain arch: a translucent shell body, the base circle and lines
+// of latitude/longitude as foreshortened ellipses, and — on failure — the hoop-crack
+// parallels marked at the COMPUTED angle (DOME_CRACK_PHI), the lunes tinting orange and
+// hinging outward. Honest compromise: a 3-D dome shown in a 2-D section — the ghost shell
+// is illustrative; the section, the thrust and the verdict are the real computation.
+const DOME_KF = 0.26;                          // foreshorten: vertical squash of horizontal circles
+const C_STONE = "rgba(203,191,159,";           // faint shell ghost
+const C_ORANGE = "rgba(217,138,58,";           // the "orange segment" hue
+const C_CRACKLINE = "#e06a52";                 // matches the hinge-ring rust in render.mjs
+
+function domeGeomInfo() {
+  const R = arch.R, ox = arch.ox, oy = arch.oy;
+  const oculusPhi = L().dome && L().dome.oculusDeg ? L().dome.oculusDeg * Math.PI / 180 : 0;
+  return { R, ox, oy, oculusPhi };
+}
+// A latitude circle at angle phi from the crown → a foreshortened ellipse in the section.
+function drawLatitude(g, R, ox, oy, phi, stroke, lw, dash) {
+  const y = oy + R * Math.cos(phi), rx = R * Math.sin(phi), ry = rx * DOME_KF;
+  if (rx < 1e-3) return;
+  ctx.save(); if (dash) ctx.setLineDash(dash);
+  ctx.beginPath();
+  ctx.ellipse(WX(view, ox), WY(view, y), rx * view.scale, ry * view.scale, 0, 0, Math.PI * 2);
+  ctx.strokeStyle = stroke; ctx.lineWidth = lw * view.DPR; ctx.stroke();
+  ctx.restore();
+}
+// A meridian (longitude) great-circle at longitude λ → an upper half-ellipse crown→spring.
+function drawMeridian(g, R, ox, oy, lam, stroke, lw) {
+  const rx = R * Math.abs(Math.cos(lam));
+  ctx.beginPath();
+  ctx.ellipse(WX(view, ox), WY(view, oy), rx * view.scale, R * view.scale, 0, Math.PI, Math.PI * 2);
+  ctx.strokeStyle = stroke; ctx.lineWidth = lw * view.DPR; ctx.stroke();
+}
+
+function drawDomeVolume() {
+  const { R, ox, oy, oculusPhi } = domeGeomInfo();
+  const DPR = view.DPR;
+  // (1) the shell body — a soft radial glow filling the front hemisphere, so the section
+  //     reads as the cut face of a solid dome rather than a lone ring.
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(WX(view, ox - R), WY(view, oy));
+  ctx.arc(WX(view, ox), WY(view, oy), R * view.scale, Math.PI, 0, false);
+  ctx.closePath();
+  const g = ctx.createRadialGradient(WX(view, ox), WY(view, oy + R * 0.15), 8,
+                                     WX(view, ox), WY(view, oy + R * 0.15), R * view.scale);
+  g.addColorStop(0, "rgba(233,225,204,.10)"); g.addColorStop(0.72, "rgba(176,141,87,.07)");
+  g.addColorStop(1, "rgba(120,108,84,.02)");
+  ctx.fillStyle = g; ctx.fill();
+  ctx.restore();
+  // (2) the polar axis (faint) — a dome of revolution.
+  ctx.save(); ctx.setLineDash([2 * DPR, 5 * DPR]);
+  ctx.beginPath(); ctx.moveTo(WX(view, ox), WY(view, oy)); ctx.lineTo(WX(view, ox), WY(view, oy + R));
+  ctx.strokeStyle = "rgba(203,191,159,.16)"; ctx.lineWidth = 1 * DPR; ctx.stroke(); ctx.restore();
+  // (3) the base circle (plan) as a full foreshortened ellipse — instantly reads as round.
+  drawLatitude(g, R, ox, oy, Math.PI / 2, "rgba(203,191,159,.28)", 1.3, null);
+  // (4) ghost meridians (the lunes wrapping behind), spreading apart as the dome cracks.
+  const spread = 0.55 * domeCrack;
+  for (const lam of [0.62, 1.02]) {
+    const a = C_STONE + (0.16 - 0.05 * domeCrack).toFixed(3) + ")";
+    drawMeridian(g, R, ox, oy, lam + spread, a, 1.1);
+    drawMeridian(g, R, ox, oy, -lam - spread, a, 1.1);
+  }
+  // (5) neutral latitudes (skip the crack parallel — drawn with emphasis separately).
+  for (const d of [22, 40, 68, 82]) drawLatitude(g, R, ox, oy, d * Math.PI / 180, "rgba(203,191,159,.13)", 1, null);
+}
+
+// The hoop-crack parallels at the COMPUTED angle. Neutral+faint normally; on failure the
+// same latitude turns orange, the crack marks bite across the ring at both haunches, the
+// two lunes tint "orange-segment", and a caption names the computed angle.
+function drawHoopCrackParallels() {
+  const { R, ox, oy } = domeGeomInfo();
+  const phi = DOME_CRACK_PHI, DPR = view.DPR;
+  const failing = domeCracking || mode === "collapsing" || mode === "collapsed";
+  const p = failing ? domeCrack : 0;
+  const yC = oy + R * Math.cos(phi);
+
+  // orange-segment tint: the section cells below the crack parallel go orange as it opens.
+  if (failing && p > 0 && arch.vouss) {
+    ctx.save(); ctx.globalAlpha = 0.42 * p;
+    for (const v of arch.vouss) {
+      if (v.cy > yC) continue;                          // only the base-ward lunes crack
+      const poly = v.poly;
+      ctx.beginPath(); ctx.moveTo(WX(view, poly[0][0]), WY(view, poly[0][1]));
+      for (let k = 1; k < poly.length; k++) ctx.lineTo(WX(view, poly[k][0]), WY(view, poly[k][1]));
+      ctx.closePath(); ctx.fillStyle = C_ORANGE + "0.9)"; ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  // the crack parallel itself (a latitude ellipse).
+  const latStroke = failing ? C_ORANGE + (0.35 + 0.5 * p).toFixed(3) + ")" : "rgba(203,191,159,.20)";
+  drawLatitude(null, R, ox, oy, phi, latStroke, failing ? 2 : 1.1, failing ? null : [3 * DPR, 4 * DPR]);
+
+  // crack marks across the ring thickness at BOTH haunches (ang = π/2 ± phi).
+  for (const ang of [Math.PI / 2 - phi, Math.PI / 2 + phi]) {
+    const dx = Math.cos(ang), dy = Math.sin(ang);
+    const inn = [ox + R * dx, oy + R * dy], out = [ox + (R + arch.t) * dx, oy + (R + arch.t) * dy];
+    ctx.beginPath();
+    ctx.moveTo(WX(view, inn[0]), WY(view, inn[1])); ctx.lineTo(WX(view, out[0]), WY(view, out[1]));
+    if (failing) { ctx.strokeStyle = C_CRACKLINE; ctx.lineWidth = (2 + 2 * p) * DPR; }
+    else { ctx.strokeStyle = "rgba(203,191,159,.30)"; ctx.lineWidth = 1.3 * DPR; }
+    ctx.stroke();
+    if (failing) {                                       // a little burst at the crack mouth
+      ctx.beginPath(); ctx.arc(WX(view, out[0]), WY(view, out[1]), (2 + 2 * p) * DPR, 0, 7);
+      ctx.fillStyle = C_CRACKLINE; ctx.fill();
+    }
+  }
+
+  // caption: the COMPUTED crack angle (from the engine, not a literal).
+  const capA = failing ? 0.9 : 0.34;
+  const rx = R * Math.sin(phi);
+  ctx.save(); ctx.globalAlpha = capA;
+  ctx.fillStyle = failing ? "#e8b48f" : "#9c937e";
+  ctx.font = (11.5 * DPR) + "px Georgia"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+  ctx.fillText("hoop tension · φ " + domeCrackDeg() + "°",
+    WX(view, ox + rx) + 8 * DPR, WY(view, yC));
+  ctx.restore();
+  ctx.textAlign = "start"; ctx.textBaseline = "alphabetic";
+}
+
+// The oculus: the round eye of sky at the crown + its brass compression ring (L9).
+function drawOculus() {
+  const { R, ox, oy, oculusPhi } = domeGeomInfo();
+  if (!oculusPhi) return;
+  const y = oy + R * Math.cos(oculusPhi), rx = R * Math.sin(oculusPhi), ry = rx * DOME_KF;
+  ctx.save();
+  ctx.beginPath();
+  ctx.ellipse(WX(view, ox), WY(view, y), rx * view.scale, ry * view.scale, 0, 0, Math.PI * 2);
+  ctx.fillStyle = "rgba(20,22,28,.72)"; ctx.fill();                 // sky through the eye
+  ctx.strokeStyle = "#b08d57"; ctx.lineWidth = 3 * view.DPR; ctx.stroke();   // the compression ring
+  ctx.strokeStyle = "rgba(217,182,90,.5)"; ctx.lineWidth = 1 * view.DPR; ctx.stroke();
+  ctx.restore();
+}
+
+function drawDomeScene(reveal) {
+  fitCanvas(cv, view);
+  clear(ctx, view);
+  drawGround(ctx, view);
+  drawDomeVolume();
+  drawArch(ctx, view, arch, collapse);          // the real diametral section (shared renderer)
+  drawOculus();
+  drawHoopCrackParallels();
+  if (collapse) {
+    drawHinges(ctx, view, arch, collapse);
+  } else if (mode === "edit") {
+    ctx.globalAlpha = 0.55; drawThrust(ctx, view, arch, sol); ctx.globalAlpha = 1;
+  } else if (mode === "revealing" || mode === "stood") {
+    drawThrust(ctx, view, arch, sol, reveal);
+  }
+}
+// ===================== CATHEDRAL VISUAL (L10) =====================
+// The whole Gothic bay in section: the nave vault (a full arch ring), a flying buttress
+// leaping from the nave crown out to each buttress pier, the piers themselves, and the
+// pinnacles that weight them. The bay is SYMMETRIC, so the physics is solved ONCE
+// (solveCathedralSection) and the drawing MIRRORS it left/right — the right side carries
+// the reading. Honest compromise: a 3-D bay composed in a 2-D section. The rings, the
+// thrust line, and the stand/tip verdict are the real computation; the mirror and the
+// tipping motion are drawing.
+const CATH_FLYER_L = buildArch([0, 4], [-6, 2.2], [-3, 3.9], 0.6, 12);   // left-mirror flyer ring (drawing only)
+const C_GOLD = "#d9b65a", C_BRASS = "#b08d57", C_RUST = "#b04a36";
+
+// Rotate a world point about a pivot by angle a (radians, world y-up).
+function rotW(pt, piv, a) {
+  const dx = pt[0] - piv[0], dy = pt[1] - piv[1], c = Math.cos(a), s = Math.sin(a);
+  return [piv[0] + dx * c - dy * s, piv[1] + dx * s + dy * c];
+}
+// The tip angle for a side: the pier falls OUTWARD over its outer toe (right → clockwise).
+function cathTipAngle(side) { return -side * 0.34 * cathTip; }
+
+// Faint nave abutment blocks under the two nave springings (grounding the vault).
+function drawCathNaveAbutments(v) {
+  const DPR = v.DPR, baseY = v.bounds.y0 + 0.05;
+  for (const sx of [-4, 4]) {
+    const inner = sx > 0 ? sx - 0.5 : sx + 0.5, outer = sx > 0 ? sx + 0.9 : sx - 0.9;
+    ctx.beginPath();
+    ctx.moveTo(WX(v, Math.min(inner, outer)), WY(v, 0));
+    ctx.lineTo(WX(v, Math.max(inner, outer)), WY(v, 0));
+    ctx.lineTo(WX(v, Math.max(inner, outer)), WY(v, baseY));
+    ctx.lineTo(WX(v, Math.min(inner, outer)), WY(v, baseY));
+    ctx.closePath();
+    const g = ctx.createLinearGradient(0, WY(v, 1.5), 0, WY(v, baseY));
+    g.addColorStop(0, "#39383e"); g.addColorStop(1, "#26252a");
+    ctx.fillStyle = g; ctx.fill();
+    ctx.strokeStyle = "#15151a"; ctx.lineWidth = 1.4 * DPR; ctx.stroke();
+  }
+}
+
+// One flying-buttress ring (side +1 right / −1 left).
+function drawCathFlyer(v, side) {
+  drawArch(ctx, v, side > 0 ? cathSpec.flyer.arch : CATH_FLYER_L);
+}
+
+// The buttress pier + its pinnacle, for one side. Neutral until Release; then green (safe)
+// or rust (tipping over the outer toe). On failure the whole assembly rotates about the toe.
+function drawCathAssembly(v, side, b, pin, revealed, stood, po) {
+  const DPR = v.DPR;
+  const innerX = side * 6, outerX = side * (6 + b);              // inner (nave-side) & outer (toe) faces
+  const toe = [outerX, 0];                                        // the outer toe: the tipping pivot
+  const ang = revealed && !stood ? cathTipAngle(side) : 0;
+  // pier corners (world), rotated by the tip angle about the toe
+  const corners = [[innerX, 0], [innerX, 6], [outerX, 6], [outerX, 0]].map(p => rotW(p, toe, ang));
+  let fill = "rgba(120,120,132,.34)", stroke = "#6b6450";
+  if (revealed) {
+    if (stood) { fill = "rgba(120,150,90,.30)"; stroke = "#6f8a4d"; }
+    else { fill = "rgba(176,74,54,.32)"; stroke = C_RUST; }
+  }
+  ctx.beginPath();
+  ctx.moveTo(WX(v, corners[0][0]), WY(v, corners[0][1]));
+  for (let k = 1; k < 4; k++) ctx.lineTo(WX(v, corners[k][0]), WY(v, corners[k][1]));
+  ctx.closePath();
+  ctx.fillStyle = fill; ctx.fill(); ctx.strokeStyle = stroke; ctx.lineWidth = 1.7 * DPR; ctx.stroke();
+  // a few courses (interpolate between rotated inner/outer bottom→top edges)
+  ctx.strokeStyle = "rgba(20,20,26,.5)"; ctx.lineWidth = 1 * DPR;
+  for (let f = 0.16; f < 1; f += 0.16) {
+    const li = rotW([innerX, 6 * f], toe, ang), lo = rotW([outerX, 6 * f], toe, ang);
+    ctx.beginPath(); ctx.moveTo(WX(v, li[0]), WY(v, li[1])); ctx.lineTo(WX(v, lo[0]), WY(v, lo[1])); ctx.stroke();
+  }
+  // the pinnacle — a tapering spire on the pier top, its height ∝ its weight (the counterweight)
+  const cx = side * (6 + b / 2), topY = 6;
+  const ph = 0.4 + 0.13 * pin, pw = Math.min(0.9, 0.34 * b + 0.02 * pin);
+  const base = [[cx - pw, topY], [cx + pw, topY], [cx, topY + ph]].map(p => rotW(p, toe, ang));
+  if (pin > 0.01) {
+    ctx.beginPath();
+    ctx.moveTo(WX(v, base[0][0]), WY(v, base[0][1]));
+    ctx.lineTo(WX(v, base[1][0]), WY(v, base[1][1]));
+    ctx.lineTo(WX(v, base[2][0]), WY(v, base[2][1]));
+    ctx.closePath();
+    const g = ctx.createLinearGradient(0, WY(v, topY + ph), 0, WY(v, topY));
+    g.addColorStop(0, "#e3d8bd"); g.addColorStop(1, "#b7a985");
+    ctx.fillStyle = g; ctx.fill();
+    ctx.strokeStyle = revealed && !stood ? C_RUST : "#7a6a44"; ctx.lineWidth = 1.4 * DPR; ctx.stroke();
+    // the pinnacle's dead-weight arrow, pressing the buttress down (the structural point)
+    if (revealed) {
+      const a0 = rotW([cx, topY + ph * 0.62], toe, ang), a1 = rotW([cx, topY + 0.05], toe, ang);
+      ctx.strokeStyle = stood ? C_GOLD : "#e08a72"; ctx.lineWidth = 2 * DPR;
+      ctx.beginPath(); ctx.moveTo(WX(v, a0[0]), WY(v, a0[1])); ctx.lineTo(WX(v, a1[0]), WY(v, a1[1])); ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(WX(v, a1[0]), WY(v, a1[1]));
+      ctx.lineTo(WX(v, a1[0]) - 4 * DPR, WY(v, a1[1]) - 6 * DPR);
+      ctx.lineTo(WX(v, a1[0]) + 4 * DPR, WY(v, a1[1]) - 6 * DPR);
+      ctx.closePath(); ctx.fillStyle = stood ? C_GOLD : "#e08a72"; ctx.fill();
+    }
+  }
+  // the outer toe marker + the base resultant landing point (right side reads the numbers)
+  if (revealed && po) {
+    // landing point measured inboard from the outer toe: x = outerX - side*a
+    const land = outerX - side * po.a;
+    const inside = !po.overturns;
+    ctx.beginPath(); ctx.arc(WX(v, outerX), WY(v, 0), 3.2 * DPR, 0, 7);
+    ctx.fillStyle = "#cbbf9f"; ctx.fill();                    // the toe
+    ctx.beginPath(); ctx.arc(WX(v, land), WY(v, 0), 4.5 * DPR, 0, 7);
+    ctx.fillStyle = inside ? C_GOLD : C_RUST; ctx.fill();      // where the resultant meets the ground
+    ctx.beginPath(); ctx.arc(WX(v, land), WY(v, 0), 7 * DPR, 0, 7);
+    ctx.strokeStyle = inside ? "#6f8a4d" : C_RUST; ctx.lineWidth = 1.6 * DPR; ctx.stroke();
+  }
+}
+
+// The nave vault's thrust line at the working H (symmetric) — the push the flyer must catch.
+function drawCathNaveThrust(v, H, reveal) {
+  const fs = solveFixedThrust(cathSpec.nave.arch, null, H, 6);
+  drawThrustPts(v, fs.points, fs.ts, reveal);
+}
+// One side's flyer thrust line + the resultant walked down into the pier to the ground.
+function drawCathThrust(v, side, H, reveal, po, stood) {
+  const flyerArch = side > 0 ? cathSpec.flyer.arch : CATH_FLYER_L;
+  const fs = solveFixedThrust(flyerArch, null, H, 6);
+  drawThrustPts(v, fs.points, fs.ts, reveal);
+  // resultant from the pier top down to the base landing point (only when the pier stands upright)
+  if (po && !po.overturns) {
+    const b = st.b, outerX = side * (6 + b), land = outerX - side * po.a;
+    const topX = side * (6 + b * 0.35);
+    ctx.save(); ctx.setLineDash([5 * v.DPR, 5 * v.DPR]);
+    ctx.beginPath();
+    ctx.moveTo(WX(v, topX), WY(v, 6)); ctx.lineTo(WX(v, land), WY(v, 0));
+    ctx.strokeStyle = "rgba(217,182,90,.55)"; ctx.lineWidth = 2 * v.DPR; ctx.stroke();
+    ctx.restore();
+  }
+}
+// Draw a thrust polyline with the shared eccentricity colouring (gold/brass/rust), like render.mjs.
+function drawThrustPts(v, pts, ts, reveal) {
+  if (!pts || pts.length < 2) return;
+  const DPR = v.DPR;
+  const upto = reveal === undefined ? pts.length : Math.max(2, Math.floor(reveal * pts.length));
+  ctx.lineCap = "round"; ctx.lineJoin = "round";
+  for (let pass = 0; pass < 2; pass++) {
+    for (let i = 0; i < Math.min(upto, pts.length) - 1; i++) {
+      const e = Math.max(Math.abs(ts[i] - 0.5), Math.abs(ts[i + 1] - 0.5));
+      ctx.beginPath();
+      ctx.moveTo(WX(v, pts[i][0]), WY(v, pts[i][1]));
+      ctx.lineTo(WX(v, pts[i + 1][0]), WY(v, pts[i + 1][1]));
+      if (pass === 0) { ctx.strokeStyle = "rgba(217,182,90,.16)"; ctx.lineWidth = 8 * DPR; }
+      else { ctx.strokeStyle = statusColor(e); ctx.lineWidth = 2.4 * DPR; }
+      ctx.stroke();
+    }
+  }
+  ctx.lineCap = "butt";
+}
+
+// Small caption naming the load path (edit) or the reading (release).
+function drawCathLabels(v, revealed, stood) {
+  ctx.save();
+  ctx.font = (12 * v.DPR) + "px Georgia"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.fillStyle = "rgba(156,147,126,.9)";
+  ctx.fillText("nave vault", WX(v, 0), WY(v, 1.7));
+  ctx.fillStyle = "rgba(156,147,126,.75)";
+  ctx.fillText("flyer", WX(v, 3), WY(v, 3.55));
+  ctx.fillText("pinnacle", WX(v, 6 + st.b / 2), WY(v, 6 + 0.4 + 0.13 * st.pin + 0.35));
+  ctx.fillText("buttress pier", WX(v, 6 + st.b / 2), WY(v, 3));
+  ctx.restore();
+  ctx.textAlign = "start"; ctx.textBaseline = "alphabetic";
+}
+
+function drawCathedralScene(reveal) {
+  const v = cathView;
+  fitCanvas(cv, v);
+  clear(ctx, v);
+  drawGround(ctx, v);
+  const b = st.b, pin = st.pin;
+  const revealed = (mode === "stood" || mode === "catfail" || mode === "revealing");
+  const stood = !!(cathSol && cathSol.stands);
+  // The H to draw the thrust with: chosenH when it stands; the least-eccentric pier's H on fail.
+  let H = null, po = null;
+  if (cathSol) {
+    if (cathSol.stands) { H = cathSol.chosenH; po = cathSol.pier; }
+    else if (cathSol.pier && cathSol.pier.H != null) { H = cathSol.pier.H; po = cathSol.pier; }
+  }
+  drawCathNaveAbutments(v);
+  drawArch(ctx, v, cathSpec.nave.arch);                 // the nave vault ring (always upright)
+  for (const side of [1, -1]) drawCathFlyer(v, side);   // both flying buttresses
+  for (const side of [1, -1]) drawCathAssembly(v, side, b, pin, revealed, stood, po);
+  if (cathSol && H != null) {                           // the thrust, once released, walked home
+    const rr = (mode === "revealing") ? (reveal === undefined ? 1 : reveal) : 1;
+    drawCathNaveThrust(v, H, rr);
+    for (const side of [1, -1]) drawCathThrust(v, side, H, rr, po, stood);
+  }
+  drawCathLabels(v, revealed, stood);
+}
+
+// The stand's warm gold breath / the fall's cool shadow, on the stage frame itself.
+let titleGone = false;
+function dismissTitle() {
+  if (titleGone) return; titleGone = true;
+  const tc = document.getElementById("titlecard"); if (tc) tc.classList.add("gone");
+}
+function syncStageFx() {
+  const s = document.getElementById("stage"); if (!s) return;
+  const stood = (mode === "stood");
+  const fell = (mode === "collapsing" || mode === "collapsed" || mode === "pierfail" || mode === "catfail");
+  s.classList.toggle("stood", stood);
+  s.classList.toggle("comfy", stood && !!(sol && sol.comfy));
+  s.classList.toggle("fell", fell);
+}
+// L6: draw the buttresses at width b. Neutral until Release; then green (safe) / rust (overturns).
+function drawButtress() {
+  const lv = L(); const p = lv.pier(st); const DPR = view.DPR;
+  const baseY = view.bounds.y0 + 0.05;
+  const revealed = (mode === "stood" || mode === "collapsed" || mode === "pierfail");
+  const sides = [
+    { j: arch.joints[0], sign: -1, state: ab ? ab.left : null },
+    { j: arch.joints[arch.joints.length - 1], sign: 1, state: ab ? ab.right : null },
+  ];
+  for (const sdef of sides) {
+    const sc = [(sdef.j.a[0] + sdef.j.b[0]) / 2, (sdef.j.a[1] + sdef.j.b[1]) / 2];
+    const x0 = sc[0], x1 = sc[0] + sdef.sign * p.b;
+    const xa = Math.min(x0, x1), xb = Math.max(x0, x1);
+    let fill = "rgba(120,120,132,.30)", stroke = "#6b6450";      // neutral, ready-to-test
+    if (revealed && sdef.state) {
+      if (sdef.state.overturns) { fill = "rgba(176,74,54,.32)"; stroke = "#b04a36"; }
+      else { fill = "rgba(120,150,90,.30)"; stroke = "#6f8a4d"; }
+    }
+    ctx.beginPath();
+    ctx.rect(WX(view, xa), WY(view, Math.max(sc[1], 0)), WX(view, xb) - WX(view, xa), WY(view, baseY) - WY(view, Math.max(sc[1], 0)));
+    ctx.fillStyle = fill; ctx.fill();
+    ctx.strokeStyle = stroke; ctx.lineWidth = 1.6 * DPR; ctx.stroke();
+    // width caliper label
+    ctx.fillStyle = revealed && sdef.state && sdef.state.overturns ? "#e6b3a6" : "#cbbf9f";
+    ctx.font = (11 * DPR) + "px Georgia"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.fillText("b=" + p.b.toFixed(2), (WX(view, xa) + WX(view, xb)) / 2, WY(view, baseY) - 16 * DPR);
+  }
+  ctx.textAlign = "start"; ctx.textBaseline = "alphabetic";
+}
+
+// ===================== VERDICT =====================
+function setVerdict(html, cls) {
+  const v = document.getElementById("verdict");
+  v.className = "verdict" + (cls ? (" " + cls) : ""); v.innerHTML = html;
+}
+function toBuild() {
+  if (mode !== "edit" && mode !== "ready") {
+    collapse = null; domeCracking = false; domeCrack = 0;
+    cathSol = null; cathTip = 0;
+    mode = buildMode(); setVerdict(readyPrompt(), "ready");
+  }
+}
+function stopAnim() { cancelAnimationFrame(anim.raf); clearTimeout(anim.timer); }
+
+// ===================== RELEASE =====================
+function release() {
+  if (mode === "revealing" || mode === "collapsing") return;
+  dismissTitle(); audio.unlock(); audio.settle();   // the load is let onto the stone
+  collapse = null;
+  const lv = L();
+  if (lv.isCathedral) { releaseCathedral(lv); return; }
+  recompute(false);                       // full-resolution solve (pass 7) with this level's opts
+  const won = lv.win(sol, st, arch);
+  if (won) {
+    revealStand(lv);
+  } else if (!sol.stands) {
+    startCollapse(lv);                    // the ring itself failed (hinge / slide) — fold it
+  } else {
+    pierFail(lv);                         // ring stands, but the objective failed (L6 pier overturns)
+  }
+}
+
+function revealStand(lv) {
+  mode = "revealing"; anim.t = 0; stopAnim();
+  const step = () => {
+    anim.t += 0.045; const r = Math.min(1, anim.t);
+    draw(r);
+    if (r < 1) { anim.raf = requestAnimationFrame(step); }
+    else {
+      mode = "stood"; draw(1);
+      markCleared(lv.id); buildStrip(); checkComplete();
+      const stg = document.getElementById("stage");
+      if (stg) { stg.classList.remove("justStood"); void stg.offsetWidth; stg.classList.add("justStood"); }
+      let head = "It stands.";
+      let extra = "";
+      let pureBell = !!(sol && sol.comfy);
+      if (lv.scoreOf) {
+        const score = lv.scoreOf(st, arch, sol);
+        const m = medalFor(lv, score);
+        pureBell = !!(m && m.name === "Gold");
+        head = "It stands &mdash; on " + score.toFixed(2) + " m³ of stone.";
+        extra = m
+          ? " <span class='medal'>" + m.name + "</span> &mdash; " + medalWord(m.name)
+          : " A standing span, but a spendthrift one &mdash; there is a leaner answer.";
+      } else if (sol.comfy) {
+        head = "It stands &mdash; and rests in the middle third.";
+      }
+      setVerdict("<span class='big'>" + head + "</span><span class='ethic'>" + lv.lessonWin + "</span>" + extra, "stand");
+      audio.bell({ pure: pureBell });      // the thrust comes home to ground
+    }
+  };
+  step();
+}
+function medalWord(name) {
+  return name === "Gold" ? "the frugal ideal: flat and thin, and still it holds."
+    : name === "Silver" ? "close to the bone; a little more could be shaved."
+    : "it stands, but it eats stone — flatten and thin it further.";
+}
+
+// Dome fail: first the meridional crack opens at the COMPUTED hoop parallel (the dome
+// splits into orange-segment lunes — the "fails unlike an arch" beat), THEN the too-thin
+// lunes hinge outward via the same honest fold as the arch.
+function startDomeCollapse(lv) {
+  mode = "revealing"; collapse = null; draw(1);       // the failing meridional thrust for a beat
+  domeCracking = true; domeCrack = 0;
+  setVerdict("<span class='big'>It splits into lunes&hellip;</span>" +
+    "Below the " + domeCrackDeg() + "&deg; parallel the hoop force turns tensile &mdash; stone cannot pull, so the " +
+    "meridians crack into orange-segment lunes.", "fall");
+  audio.settle();
+  stopAnim();
+  const dur = 780, t0 = performance.now();
+  const step = (now) => {
+    domeCrack = Math.min(1, (now - t0) / dur);
+    draw(1);
+    if (domeCrack < 1) { anim.raf = requestAnimationFrame(step); }
+    else { foldCollapse(lv); }                          // the cracked lunes hinge outward
+  };
+  anim.raf = requestAnimationFrame(step);
+}
+
+function startCollapse(lv) {
+  if (lv.isDome) { startDomeCollapse(lv); return; }
+  mode = "revealing"; collapse = null; draw(1);      // show the failing thrust for a beat
+  const slid = sol.mode === "slide";
+  setVerdict("<span class='big'>" + (slid ? "The stones slip&hellip;" : "The thrust has left the stone&hellip;") + "</span>" +
+    (slid
+      ? "At the marked joints the force leans past the friction angle: the stones slide rather than grip."
+      : "No thrust line fits inside the stones: it crosses out at the marked joints, and the ring hinges into a mechanism."),
+    "fall");
+  anim.timer = setTimeout(() => foldCollapse(lv), 720);
+}
+function foldCollapse(lv) {
+  mode = "collapsing";
+  collapse = computeCollapse(arch, sol);
+  audio.collapse();                 // the ring hinges and comes down
+  stopAnim();
+  const dur = 1700, t0 = performance.now();
+  const step = (now) => {
+    const u = Math.min(1, (now - t0) / dur);
+    stepCollapse(collapse, u);
+    draw();
+    if (u < 1) { anim.raf = requestAnimationFrame(step); }
+    else {
+      mode = "collapsed";
+      setVerdict("<span class='big'>It gave way.</span>" + lv.lessonFail +
+        " <span style='color:#9c937e'>Adjust, and release again.</span>", "fall");
+    }
+  };
+  anim.raf = requestAnimationFrame(step);
+}
+// L6: the ring holds but the pier overturns — reveal the (sound) thrust + the tipping buttress; no fold.
+function pierFail(lv) {
+  mode = "revealing"; anim.t = 0; stopAnim();
+  const step = () => {
+    anim.t += 0.055; const r = Math.min(1, anim.t);
+    draw(r);
+    if (r < 1) { anim.raf = requestAnimationFrame(step); }
+    else {
+      mode = "pierfail"; draw(1);
+      audio.pierTip();               // the ring held; the buttress leaned away
+      setVerdict("<span class='big'>The ring held; the pier did not.</span>" + lv.lessonFail +
+        " <span style='color:#9c937e'>Widen the buttress, and release again.</span>", "fall");
+    }
+  };
+  step();
+}
+
+// ---- L10 THE CATHEDRAL: solve the whole bay, then stand it or tip its pier over the toe ----
+function releaseCathedral(lv) {
+  cathSpec = lv.section(st);
+  cathSol = solveCathedralSection(cathSpec);   // the real whole-system search — verdict, never scripted
+  cathTip = 0;
+  if (lv.win(cathSol)) revealCathedralStand(lv);
+  else cathedralTip(lv);
+}
+function revealCathedralStand(lv) {
+  mode = "revealing"; anim.t = 0; stopAnim();
+  const step = () => {
+    anim.t += 0.04; const r = Math.min(1, anim.t);
+    draw(r);
+    if (r < 1) { anim.raf = requestAnimationFrame(step); }
+    else {
+      mode = "stood"; draw(1);
+      markCleared(lv.id); buildStrip(); checkComplete();
+      const stg = document.getElementById("stage");
+      if (stg) { stg.classList.remove("justStood"); void stg.offsetWidth; stg.classList.add("justStood"); }
+      const H = cathSol.chosenH, ep = cathSol.pier.ep;
+      setVerdict("<span class='big'>The cathedral stands.</span><span class='ethic'>" + lv.lessonWin + "</span>" +
+        " <span style='color:#9c937e'>whole-system thrust H=" + H.toFixed(2) + " · pier resultant ep=" + ep.toFixed(2) +
+        " (inside the base) · pinnacle=" + st.pin.toFixed(0) + ".</span>", "stand");
+      audio.bell({ pure: !!cathSol.pier.noTension });
+    }
+  };
+  step();
+}
+function cathedralTip(lv) {
+  mode = "revealing"; cathTip = 0; draw(1);      // show the caught thrust + the upright pier for a beat
+  const ep = cathSol.pier ? cathSol.pier.ep : null;
+  setVerdict("<span class='big'>The flyer caught it &mdash; the pier did not hold.</span>" +
+    "The nave&rsquo;s thrust reached the buttress, but its resultant fell " +
+    (ep != null ? "outside the base (ep=" + ep.toFixed(2) + " &gt; 1)" : "past the toe") +
+    " &mdash; the pier is levering over its outer toe.", "fall");
+  audio.settle(); stopAnim();
+  mode = "catfail";
+  const dur = 1150, t0 = performance.now();
+  const step = (now) => {
+    cathTip = Math.min(1, (now - t0) / dur);
+    draw(1);
+    if (cathTip < 1) { anim.raf = requestAnimationFrame(step); }
+    else {
+      audio.pierTip();
+      setVerdict("<span class='big'>The pier overturned.</span>" + lv.lessonFail +
+        " <span style='color:#9c937e'>Widen the buttress, or load the pinnacle, and release again.</span>", "fall");
+    }
+  };
+  anim.raf = requestAnimationFrame(step);
+}
+
+function checkComplete() {
+  const all = LEVELS.every(lv => cleared.includes(lv.id));
+  const el = document.getElementById("complete");
+  if (all) {
+    el.style.display = "";
+    el.innerHTML = "<strong>All " + LEVELS.length + " stand.</strong> Thinness, embrace, the wandering load, the leaning " +
+      "weight, the slipping foot, the sideways shove, the frugal span, the dome that splits into orange-segment lunes " +
+      "&mdash; and at the last the whole <em>cathedral</em>: the nave&rsquo;s thrust caught by the flyer and steered home " +
+      "by the pinnacle&rsquo;s dead weight, the buttress resultant pulled back inside the pier. Every verdict computed; " +
+      "the whole line of thrust came home to the ground.";
+  } else {
+    el.style.display = "none";
+  }
+}
+
+// ===================== INPUT =====================
+document.getElementById("release").addEventListener("click", release);
+document.getElementById("reset").addEventListener("click", () => { dismissTitle(); stopAnim(); loadLevel(idx); });
+document.getElementById("prev").addEventListener("click", () => { dismissTitle(); stopAnim(); loadLevel(idx - 1); });
+document.getElementById("next").addEventListener("click", () => { dismissTitle(); stopAnim(); loadLevel(idx + 1); });
+
+// ---- sound: unlock on the first gesture; mute toggle (persisted in audio.mjs) ----
+window.addEventListener("pointerdown", () => audio.unlock(), { once: true });
+const muteBtn = document.getElementById("mute");
+function paintMute() {
+  const off = audio.isMuted();
+  muteBtn.textContent = off ? "♪̶" : "♪";
+  muteBtn.classList.toggle("off", off);
+  muteBtn.title = off ? "Sound off" : "Sound on";
+}
+muteBtn.addEventListener("click", () => { audio.unlock(); audio.toggleMute(); paintMute(); });
+paintMute();
+
+// Drag a draggable load block (L3) along the arch back.
+let dragging = false;
+cv.addEventListener("pointerdown", ev => {
+  const lv = L(); const dc = lv.controls.find(c => c.drag);
+  if (!dc || mode === "collapsing" || mode === "revealing") return;
+  const [wx] = eventToWorld(cv, view, ev.clientX, ev.clientY);
+  if (extras && extras[0] && Math.abs(wx - extras[0].x) < 0.9) {
+    dragging = true; cv.setPointerCapture(ev.pointerId); dismissTitle(); toBuild(); recompute(true); draw();
+  }
+});
+cv.addEventListener("pointermove", ev => {
+  if (!dragging) return;
+  const dc = L().controls.find(c => c.drag);
+  let [wx] = eventToWorld(cv, view, ev.clientX, ev.clientY);
+  wx = Math.max(dc.min, Math.min(dc.max, wx));
+  st[dc.key] = wx; audio.tick(); recompute(true); draw();
+});
+function endDrag() { dragging = false; }
+cv.addEventListener("pointerup", endDrag);
+cv.addEventListener("pointercancel", endDrag);
+
+window.addEventListener("resize", () => {
+  if (mode === "stood" || mode === "pierfail") draw(1);
+  else if (mode === "collapsed") draw();
+  else draw();
+});
+
+// ===================== GO =====================
+checkComplete();
+loadLevel(0);
+</script>
+</body>
+</html>
