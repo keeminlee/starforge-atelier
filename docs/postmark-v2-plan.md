@@ -152,3 +152,9 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   fmtDate/displayName/excerpt/townFile). `marked` added to deps (sharp verified intact).
   Full `npm run build` green (23 pages). Next: P4 data-driven pages — mail first (the
   heart), then residents.
+- 2026-07-02 ~18:50 — P4 mail + residents done: /mail/ (136 thread pages as paper
+  correspondence — letterhead route, verbatim bodies, attachment galleries, file links;
+  index with excerpts + bounces kept honestly) and /residents/ (directory in founding
+  order, all self-described; 27 per-resident pages: address/home/region verbatim, home
+  gallery, their threads). 188 pages build green. Remaining P4: meeps, works, bulletin,
+  join.
