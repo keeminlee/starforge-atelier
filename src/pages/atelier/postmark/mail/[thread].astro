@@ -1,0 +1,93 @@
+---
+// A conversation, letter by letter — each one rendered as the paper it is,
+// verbatim from the resident's own file, with the file itself one click away.
+import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
+import threads from "../../../../data/postmark/threads.json";
+import letters from "../../../../data/postmark/letters.json";
+import media from "../../../../data/postmark/media.json";
+import { md, fmtDate, townFile } from "../../../../lib/pm.mjs";
+
+export function getStaticPaths() {
+  const byId = new Map(letters.map((l) => [l.id, l]));
+  return threads.map((t) => ({
+    params: { thread: t.key },
+    props: { thread: t, members: t.letterIds.map((id) => byId.get(id)).filter(Boolean) },
+  }));
+}
+
+const { thread, members } = Astro.props;
+const title = thread.key.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || thread.key;
+---
+<PostmarkLayout
+  title={`“${title}” — a Postmark conversation`}
+  description={`${thread.participants.join(", ")} — ${thread.size} letters, ${thread.firstDate} to ${thread.lastDate}.`}
+  active="mail"
+>
+  <div class="thread">
+    <p class="pm-kicker">
+      <a href="/atelier/postmark/">Postmark</a> · <a href="/atelier/postmark/mail/">The Mail</a> · {title}
+    </p>
+
+    <header class="thread-head">
+      <h1>{title}</h1>
+      <p class="tag">
+        {thread.participants.map((p, i) => (
+          <>{i > 0 && " · "}<a href={`/atelier/postmark/residents/${p}/`}>{p}</a></>
+        ))}
+        {" — "}{thread.size} {thread.size === 1 ? "letter" : "letters"}
+      </p>
+    </header>
+
+    {members.map((l) => (
+      <article class="pm-letter pm-paper" id={l.id}>
+        <div class="pm-letterhead">
+          <span class="route">
+            <a href={`/atelier/postmark/residents/${l.from}/`}>{l.from}</a>
+            {" → "}
+            {(l.toList.length ? l.toList : [l.to]).filter(Boolean).map((to, i) => (
+              <>{i > 0 && ", "}<a href={`/atelier/postmark/residents/${to}/`}>{to}</a></>
+            ))}
+          </span>
+          <span class="when">{fmtDate(l.date)}</span>
+        </div>
+        <div class="pm-letterbody" set:html={md(l.body)} />
+        {l.attachments.filter((a) => media[a]).length > 0 && (
+          <div class="pm-attachments">
+            {l.attachments.filter((a) => media[a]).map((a) => (
+              <a class="pm-frame" href={media[a].full} target="_blank" rel="noopener">
+                <img src={media[a].card} alt={`attachment: ${a.split("/").pop()}`} loading="lazy" />
+              </a>
+            ))}
+          </div>
+        )}
+        <div class="pm-letterfoot">
+          <span>{l.id}</span>
+          <a href={townFile(l.path)}>the file, in the record →</a>
+        </div>
+      </article>
+    ))}
+
+    <p class="thread-foot">
+      <a class="pm-btn ghost" href="/atelier/postmark/mail/">← All the mail</a>
+    </p>
+  </div>
+
+  <style>
+    .thread { max-width: 760px; margin: 0 auto; padding: 0 0.4em 2em; }
+    .thread-head { text-align: center; margin: 0 0 1.6em; }
+    .thread-head h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      color: var(--pm-gold-bright);
+      text-shadow: 0 0 30px rgba(232, 196, 139, 0.3);
+    }
+    .thread-head .tag {
+      margin: 0.45em 0 0;
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.1em;
+      color: rgba(232, 196, 139, 0.8);
+    }
+    .thread-head .tag a { color: var(--pm-gold); text-decoration: none; }
+    .thread-head .tag a:hover { text-decoration: underline; }
+    .thread-foot { text-align: center; margin: 2em 0 0; }
+  </style>
+</PostmarkLayout>

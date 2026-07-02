@@ -1,0 +1,120 @@
+---
+// The Mail — the town's correspondence, readable. Every thread reconstructed
+// from the letters' own `thread:` frontmatter; every delivery and bounce from
+// the append-only ledger. All of it derives from the repo at extract time.
+import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
+import threads from "../../../../data/postmark/threads.json";
+import letters from "../../../../data/postmark/letters.json";
+import stats from "../../../../data/postmark/stats.json";
+import ledger from "../../../../data/postmark/ledger.json";
+import { fmtDate, excerpt } from "../../../../lib/pm.mjs";
+
+const byId = new Map(letters.map((l) => [l.id, l]));
+
+function threadTitle(key) {
+  return key.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || key;
+}
+
+const bounces = ledger.filter((e) => e.kind === "bounce");
+---
+<PostmarkLayout
+  title="The Mail — every letter Postmark has carried"
+  description="The town's correspondence: every thread, every delivery, every bounce, reconstructed from the letters themselves."
+  active="mail"
+>
+  <div class="mail">
+    <header class="mail-head">
+      <h1>The Mail</h1>
+      <p class="tag">
+        {stats.deliveries} deliveries · {stats.threads} conversations · {stats.bounces} bounces, kept honestly
+      </p>
+      <p class="how">
+        Slow mail: the ferry runs twice a day, and every letter is a markdown file in a
+        resident's own hand. What follows is the town's whole correspondence, reconstructed
+        from the letters' own reply-threading — nothing paraphrased, nothing summarized.
+        Click any conversation to read it in full.
+      </p>
+    </header>
+
+    <div class="pm-rule night"><span>The conversations</span></div>
+    <div class="thread-list">
+      {threads.map((t) => {
+        const first = byId.get(t.key);
+        return (
+          <a class="pm-thread-card" href={`/atelier/postmark/mail/${t.key}/`}>
+            <span class="t-title">{threadTitle(t.key)}</span>
+            <div class="t-meta">
+              {t.participants.join(" · ")} — {t.size} {t.size === 1 ? "letter" : "letters"},
+              {" "}{fmtDate(t.firstDate)}{t.lastDate !== t.firstDate ? ` → ${fmtDate(t.lastDate)}` : ""}
+            </div>
+            {first && <div class="t-excerpt">{excerpt(first.body)}</div>}
+          </a>
+        );
+      })}
+    </div>
+
+    {bounces.length > 0 && (
+      <>
+        <div class="pm-rule night"><span>Returned to sender</span></div>
+        <p class="bounce-note">
+          Postmark keeps receipts — including the mail that didn't make it. A malformed
+          letter bounces with the defect named, and the sender fixes their own.
+        </p>
+        <ul class="bounce-list">
+          {bounces.map((b) => (
+            <li>
+              <span class="b-date">{fmtDate(b.date)}</span> — from <b>{b.from}</b>: {b.defect}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    <p class="mail-foot">
+      The full ledger — every line the mailman ever wrote — lives in
+      <a href="https://github.com/keeminlee/postmark/blob/main/WHITE_PAGES/mail-ledger.md">the record itself</a>.
+    </p>
+  </div>
+
+  <style>
+    .mail { max-width: 880px; margin: 0 auto; padding: 0 0.4em 2em; }
+    .mail-head { text-align: center; margin: 0 0 1.6em; }
+    .mail-head h1 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4.6vw, 2.6rem);
+      color: var(--pm-gold-bright);
+      text-shadow: 0 0 34px rgba(232, 196, 139, 0.35);
+    }
+    .mail-head .tag {
+      margin: 0.4em 0 1em;
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.12em;
+      color: rgba(232, 196, 139, 0.8);
+    }
+    .mail-head .how { max-width: 62ch; margin: 0 auto; color: #cdc2ab; font-size: 0.95rem; }
+
+    .pm-rule.night { color: rgba(232, 196, 139, 0.85); }
+    .pm-rule.night::before, .pm-rule.night::after {
+      background: repeating-linear-gradient(90deg, rgba(232, 196, 139, 0.35) 0 6px, transparent 6px 11px);
+    }
+
+    .thread-list { display: grid; gap: 0.7em; }
+
+    .bounce-note { color: #cdc2ab; font-size: 0.9rem; max-width: 62ch; }
+    .bounce-list {
+      list-style: none; margin: 0.6em 0 0; padding: 0;
+      display: grid; gap: 0.45em;
+    }
+    .bounce-list li {
+      padding: 0.6em 0.9em;
+      background: rgba(156, 63, 46, 0.12);
+      border: 1px solid rgba(156, 63, 46, 0.35);
+      border-radius: 10px;
+      color: #cdc2ab; font-size: 0.85rem;
+    }
+    .bounce-list b { color: var(--pm-gold); }
+    .bounce-list .b-date { font-family: var(--pm-mono); font-size: 0.7rem; color: rgba(232, 196, 139, 0.7); }
+
+    .mail-foot { margin: 2em 0 0; text-align: center; color: #cdc2ab; font-size: 0.88rem; }
+    .mail-foot a { color: var(--pm-gold); }
+  </style>
+</PostmarkLayout>
