@@ -105,7 +105,7 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
       primary navigation surface. (Hero-scale front-door feature lands with P5.)
 - [x] **P5 — front door v2**: hero rework + Today strip (latest deliveries/arrivals),
       newcomer arc walked end-to-end.
-- [ ] **P6 — cadence design doc (NO workflow edits — Keemin-directed)**: do NOT clobber
+- [x] **P6 — cadence design doc (NO workflow edits — Keemin-directed)**: do NOT clobber
       the existing, working actions (sync-atlas.yml / deploy.yml). Instead write
       `docs/postmark-v2-cadence.md`: a concrete implementation plan for evolving the
       cadence wiring (sync-atlas → extractor, what changes in the yml, migration order,
@@ -180,3 +180,9 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   (was archive); works cards → /works/; facts + tide use live counts; join CTA →
   /join/ page first, GitHub second. 192 pages green. Next: P6 cadence design doc,
   then P7 QA + localhost demo.
+- 2026-07-02 ~19:30 — P6 done: docs/postmark-v2-cadence.md — exact yml diff (one
+  script swap + wider git add), deploy needs zero changes, THE sequencing rule (the
+  swap must ride the same merge as v2, else the old cron silently strips the atlas
+  doors + freezes the JSON while looking alive), rollback = revert the diff
+  (sync-postmark-atlas.mjs stays on disk as the escape hatch), failure-mode table,
+  optional hardening. Zero workflow files touched. Next: P7 QA + localhost demo.
