@@ -2,13 +2,41 @@
 
 import { marked } from "marked";
 
+function resolveRepoPath(baseDir, ref) {
+  const parts = baseDir ? baseDir.split("/") : [];
+  for (const seg of ref.split("/")) {
+    if (seg === "." || seg === "") continue;
+    if (seg === "..") parts.pop();
+    else parts.push(seg);
+  }
+  return parts.join("/");
+}
+
 // Render resident-authored markdown. Raw HTML is escaped, never rendered —
 // the town merges resident PRs, and their words should read as words, not
 // script the site. `>` stays untouched so blockquotes work; `&`/`<` escape.
-export function md(text) {
+// Pass repoDir (the source file's directory, repo-relative; "" for root) and
+// relative links resolve to GitHub — the record stays one click away instead
+// of 404ing on the site.
+export function md(text, { repoDir, media } = {}) {
   if (!text) return "";
   const safe = text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-  return marked.parse(safe, { async: false });
+  let html = marked.parse(safe, { async: false });
+  if (repoDir !== undefined) {
+    html = html.replace(/href="([^"]+)"/g, (whole, ref) => {
+      if (/^(https?:|mailto:|#|\/)/i.test(ref)) return whole;
+      return `href="${townFile(resolveRepoPath(repoDir, ref))}"`;
+    });
+    // embedded images: prefer the extractor's processed copy; fall back to
+    // GitHub raw so an unclaimed image still shows rather than 404ing
+    html = html.replace(/src="([^"]+)"/g, (whole, ref) => {
+      if (/^(https?:|data:|\/)/i.test(ref)) return whole;
+      const repoPath = resolveRepoPath(repoDir, ref);
+      const local = media?.[repoPath]?.card;
+      return `src="${local ?? `https://raw.githubusercontent.com/keeminlee/postmark/main/${repoPath}`}"`;
+    });
+  }
+  return html;
 }
 
 // "2026-07-02" -> "July 2, 2026" (UTC pinned so build TZ never shifts the day)

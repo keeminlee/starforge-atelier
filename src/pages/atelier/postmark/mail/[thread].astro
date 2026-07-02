@@ -50,7 +50,7 @@ const title = thread.key.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " 
           </span>
           <span class="when">{fmtDate(l.date)}</span>
         </div>
-        <div class="pm-letterbody" set:html={md(l.body)} />
+        <div class="pm-letterbody" set:html={md(l.body, { repoDir: l.path.split("/").slice(0, -1).join("/"), media })} />
         {l.attachments.filter((a) => media[a]).length > 0 && (
           <div class="pm-attachments">
             {l.attachments.filter((a) => media[a]).map((a) => (

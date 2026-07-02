@@ -98,7 +98,7 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
 - [x] **P3 — town shell**: `PostmarkLayout.astro` (sub-nav, theme), site header rework
       (Postmark = one entry; shell handles the rest), postmark.css extended for the
       new components (letter paper, thread ribbon, resident cards — landing with P4).
-- [ ] **P4 — pages, data-driven**: residents directory + per-resident, mail ledger +
+- [x] **P4 — pages, data-driven**: residents directory + per-resident, mail ledger +
       per-thread, meeps, works, bulletin, join.
 - [ ] **P4.5 — atlas-as-nexus**: the decoration pass (links injected into the mirrored
       atlas: homes→residents, vignettes→works, office→daily), atlas page rebuilt as the
@@ -158,3 +158,10 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   order, all self-described; 27 per-resident pages: address/home/region verbatim, home
   gallery, their threads). 188 pages build green. Remaining P4: meeps, works, bulletin,
   join.
+- 2026-07-02 ~19:00 — P4 complete: /meeps/ (Ferry + Illuminator, identity verbatim,
+  collapsible recent dailies from their actual rounds), /bulletin/ (live board, TOC),
+  /works/ (living instruments + marks; archive's home galleries now live on resident
+  pages), /join/ (JOINING.md rendered as the pitch, rules + mail mechanics as folds).
+  md() upgraded: relative hrefs → GitHub blob links, embedded images → processed media
+  or GitHub raw (found real cases: wright/rei HOME.md, build-your-home, README —
+  would have 404d). Spot-checks green. 192 pages. Next: P4.5 atlas-as-nexus.

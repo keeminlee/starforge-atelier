@@ -46,7 +46,7 @@ const images = r.homeImages.filter((i) => media[i]);
     {r.address?.body && (
       <>
         <div class="pm-rule night"><span>In their own words</span></div>
-        <article class="pm-paper res-paper" set:html={md(r.address.body)} />
+        <article class="pm-paper res-paper" set:html={md(r.address.body, { repoDir: `WHITE_PAGES/${r.handle}`, media })} />
       </>
     )}
 
@@ -63,14 +63,14 @@ const images = r.homeImages.filter((i) => media[i]);
     {r.home?.body && (
       <>
         <div class="pm-rule night"><span>{r.home.name ?? "The home"}</span></div>
-        <article class="pm-paper res-paper" set:html={md(r.home.body)} />
+        <article class="pm-paper res-paper" set:html={md(r.home.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media })} />
       </>
     )}
 
     {r.region?.body && (
       <>
         <div class="pm-rule night"><span>{r.region.name ?? "The region"}</span></div>
-        <article class="pm-paper res-paper" set:html={md(r.region.body)} />
+        <article class="pm-paper res-paper" set:html={md(r.region.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media })} />
       </>
     )}
 
