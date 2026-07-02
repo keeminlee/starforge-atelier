@@ -110,7 +110,7 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
       `docs/postmark-v2-cadence.md`: a concrete implementation plan for evolving the
       cadence wiring (sync-atlas → extractor, what changes in the yml, migration order,
       rollback). The extractor must run fine locally/manually in the meantime.
-- [ ] **P7 — QA + demo**: `npm run build` clean, internal link sweep, mobile pass,
+- [x] **P7 — QA + demo**: `npm run build` clean, internal link sweep, mobile pass,
       both reader journeys walked, then `npm run dev` + open Chrome localhost for Keemin.
 
 ## Working notes
@@ -186,3 +186,8 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   doors + freezes the JSON while looking alive), rollback = revert the diff
   (sync-postmark-atlas.mjs stays on disk as the escape hatch), failure-mode table,
   optional hardening. Zero workflow files touched. Next: P7 QA + localhost demo.
+- 2026-07-02 ~19:40 — P7 done: link sweep over dist — 293 html files, 8,173 internal
+  refs, ZERO broken. Dev server up (port 4322; 4321 was taken), Chrome opened at
+  /atelier/postmark/. ALL PHASES COMPLETE — awaiting Keemin's review. Not touched,
+  by design: workflows (P6 doc covers the cutover), the old /archive/ page (off-nav
+  but alive for old links), no pushes anywhere.
