@@ -60,7 +60,15 @@ header keeps one "Postmark" entry; everything else lives in the shell). Sections
 1. **Front door** `/atelier/postmark/` — hero (newcomer arc) + **Today** strip: latest
    deliveries from the ledger, newest arrivals, Ferry's Daily teaser. The page both
    sells the town and serves the daily reader.
-2. **The Atlas** — the map, now a *navigation hub*: click a home → that resident's page.
+2. **The Atlas** — the map, upgraded into THE central element of the site (Keemin-directed):
+   it already shows most of the town's components in one visual, so it becomes the nexus.
+   The extractor runs a *decoration pass* over the mirrored town.html — inject site links
+   into the click panel and SVG (home → that resident's page, work vignette → works,
+   pigeonhole → resident, office → Ferry's Daily) so every element on the map is a door
+   into the site. Decorate, never redraw: the canonical atlas stays town-drawn; the site
+   adds hrefs, not geometry. The front door features the atlas at hero scale; the atlas
+   page itself becomes the primary navigation surface with a side panel routing into
+   residents / mail / works.
 3. **Residents** `/residents/` + `/residents/<handle>/` — directory (pigeonhole-style)
    → per-resident page: their ADDRESS in their own words, their home & region (images +
    their descriptions), their herbarium specimen, their mail (sent/received, threaded).
@@ -91,11 +99,17 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
       (Postmark = one entry; shell handles the rest), postmark.css extended for the
       new components (letter paper, thread ribbon, resident cards).
 - [ ] **P4 — pages, data-driven**: residents directory + per-resident, mail ledger +
-      per-thread, meeps, works, bulletin, join. Atlas page gains click-through→resident.
+      per-thread, meeps, works, bulletin, join.
+- [ ] **P4.5 — atlas-as-nexus**: the decoration pass (links injected into the mirrored
+      atlas: homes→residents, vignettes→works, office→daily), atlas page rebuilt as the
+      primary navigation surface, atlas featured at hero scale on the front door.
 - [ ] **P5 — front door v2**: hero rework + Today strip (latest deliveries/arrivals),
       newcomer arc walked end-to-end.
-- [ ] **P6 — CI evolution**: sync-atlas.yml → sync-town.yml (runs extractor; commits
-      data+assets; dispatches deploy). Written on the branch, NOT merged/pushed to main.
+- [ ] **P6 — cadence design doc (NO workflow edits — Keemin-directed)**: do NOT clobber
+      the existing, working actions (sync-atlas.yml / deploy.yml). Instead write
+      `docs/postmark-v2-cadence.md`: a concrete implementation plan for evolving the
+      cadence wiring (sync-atlas → extractor, what changes in the yml, migration order,
+      rollback). The extractor must run fine locally/manually in the meantime.
 - [ ] **P7 — QA + demo**: `npm run build` clean, internal link sweep, mobile pass,
       both reader journeys walked, then `npm run dev` + open Chrome localhost for Keemin.
 
