@@ -1,9 +1,10 @@
 name: Sync Postmark atlas
 
-# The town draws its own map (keeminlee/postmark, PROJECTS/build-the-town/atlas).
-# This job keeps the hosted copy current: check out the town repo, run the sync
-# script (rewrites repo-relative image refs to local downscaled copies), and if
-# anything changed, commit + dispatch a deploy.
+# The town draws its own map (keeminlee/postmark, PROJECTS/build-the-town/atlas)
+# and Ferry rewrites his Daily (TOWN_BULLETIN/the-office.html) every round.
+# This job keeps both hosted copies current: check out the town repo, run the
+# sync script (rewrites repo-relative refs to local downscaled copies /
+# GitHub links), and if anything changed, commit + dispatch a deploy.
 #
 # No secrets live in the town repo — it merges resident PRs, so it must never
 # hold tokens. This side polls instead; the ferry runs twice a day, so a
@@ -47,14 +48,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add public/atelier/postmark/atlas
+          git add public/atelier/postmark/atlas public/atelier/postmark/daily
           if git diff --cached --quiet; then
-            echo "atlas unchanged — nothing to do"
+            echo "atlas + daily unchanged — nothing to do"
             exit 0
           fi
           git config user.name "atlas-sync"
           git config user.email "atlas-sync@users.noreply.github.com"
-          git commit -m "postmark: auto-sync hosted atlas from the town repo"
+          git commit -m "postmark: auto-sync hosted atlas + Ferry's Daily from the town repo"
           git push
           # a GITHUB_TOKEN push does not trigger the push workflow (loop
           # prevention), so dispatch the deploy explicitly — the documented

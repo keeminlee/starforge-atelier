@@ -117,3 +117,67 @@ if (!existsSync(outHtml) || readFileSync(outHtml, "utf8") !== html) {
 }
 
 console.log(`atlas sync: ${refs.size} refs, ${wrote} assets written, ${kept} unchanged, ${missing} missing upstream`);
+
+// ── Ferry's Daily ──────────────────────────────────────────────────────────
+// TOWN_BULLETIN/the-office.html — the office's view from the doorway, rewritten
+// by Ferry each round. Same treatment: images become local resized copies;
+// repo-relative document links (the ledger, the bulletin) point at GitHub so
+// the record stays one click away.
+
+const OFFICE_SRC = join(TOWN, "TOWN_BULLETIN", "the-office.html");
+const DAILY_DIR = join(SITE_ROOT, "public", "atelier", "postmark", "daily");
+const DAILY_ASSETS = join(DAILY_DIR, "assets");
+const TOWN_GITHUB = "https://github.com/keeminlee/postmark/blob/main";
+
+if (!existsSync(OFFICE_SRC)) {
+  console.warn("WARN: TOWN_BULLETIN/the-office.html not found upstream — daily left as-is");
+} else {
+  let office = readFileSync(OFFICE_SRC, "utf8");
+  mkdirSync(DAILY_ASSETS, { recursive: true });
+  const dailyWanted = new Set();
+  let dWrote = 0, dKept = 0;
+
+  const OFFICE_REF_RE = /(src|href)="([^"#][^"]*?)"/gi;
+  const rewrites = new Map();
+  for (const m of office.matchAll(OFFICE_REF_RE)) {
+    const ref = m[2];
+    if (/^(https?:|mailto:|data:|\/)/i.test(ref) || rewrites.has(ref)) continue;
+    // resolve relative to TOWN_BULLETIN/
+    const rel = ref.replace(/^(\.\.\/)+/, (d) => d); // keep as-is for resolution
+    const abs = resolve(join(TOWN, "TOWN_BULLETIN"), rel);
+    const repoRel = abs.startsWith(TOWN) ? abs.slice(TOWN.length + 1).replace(/\\/g, "/") : null;
+    if (!repoRel || !existsSync(abs)) { console.warn(`WARN office ref unresolved: ${ref}`); continue; }
+    if (/\.(png|jpe?g|webp|gif)$/i.test(ref)) {
+      const name = repoRel.replace(/^TOWN_BULLETIN\//i, "").replace(/\.[a-z]+$/i, "")
+        .replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-+|-+$/g, "").toLowerCase() + ".jpg";
+      dailyWanted.add(name);
+      const buf = await sharp(abs)
+        .resize({ width: 1600, withoutEnlargement: true })
+        .flatten({ background: { r: 10, g: 13, b: 22 } })
+        .jpeg({ quality: 84 })
+        .toBuffer();
+      const dest = join(DAILY_ASSETS, name);
+      if (existsSync(dest) && Buffer.compare(readFileSync(dest), buf) === 0) { dKept++; }
+      else { writeFileSync(dest, buf); dWrote++; }
+      rewrites.set(ref, `assets/${name}`);
+    } else {
+      rewrites.set(ref, `${TOWN_GITHUB}/${repoRel}`);
+    }
+  }
+
+  for (const f of readdirSync(DAILY_ASSETS)) {
+    if (!dailyWanted.has(f)) { unlinkSync(join(DAILY_ASSETS, f)); console.log(`removed stray daily asset: ${f}`); }
+  }
+
+  office = office.replace(OFFICE_REF_RE, (whole, attr, ref) =>
+    rewrites.has(ref) ? `${attr}="${rewrites.get(ref)}"` : whole
+  );
+  const outOffice = join(DAILY_DIR, "the-office.html");
+  if (!existsSync(outOffice) || readFileSync(outOffice, "utf8") !== office) {
+    writeFileSync(outOffice, office);
+    console.log("the-office.html updated");
+  } else {
+    console.log("the-office.html unchanged");
+  }
+  console.log(`daily sync: ${rewrites.size} refs, ${dWrote} assets written, ${dKept} unchanged`);
+}
