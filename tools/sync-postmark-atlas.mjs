@@ -118,6 +118,34 @@ if (!existsSync(outHtml) || readFileSync(outHtml, "utf8") !== html) {
 
 console.log(`atlas sync: ${refs.size} refs, ${wrote} assets written, ${kept} unchanged, ${missing} missing upstream`);
 
+// ── self-contained town artifacts, mirrored byte-for-byte ──────────────────
+// The Town Seal re-seals as the ledger grows; the herbarium regrows as
+// residents arrive (town-clock). Both are fully self-contained HTML (verified
+// no src/href refs), so mirroring is a straight copy — with a loud warning if
+// a future regrow ever introduces repo-relative refs this script would need
+// to learn (warn, not fail: a stale-ref seal shouldn't block atlas updates).
+const MIRRORS = [
+  ["PROJECTS/the-town-seal/the-town-seal.html", "public/atelier/postmark/works/the-town-seal.html"],
+  ["PROJECTS/the-town-seal/the-town-seal.png", "public/atelier/postmark/works/the-town-seal.png"],
+  ["PROJECTS/the-town-seal/the-dreggons-ledger-card.png", "public/atelier/postmark/works/dreggons-ledger-card.png"],
+  ["PROJECTS/the-resident-herbarium/herbarium.html", "public/atelier/the-resident-herbarium/herbarium.html"],
+];
+let mSynced = 0, mSame = 0;
+for (const [srcRel, destRel] of MIRRORS) {
+  const src = join(TOWN, ...srcRel.split("/"));
+  if (!existsSync(src)) { console.warn(`WARN mirror source missing upstream: ${srcRel}`); continue; }
+  const buf = readFileSync(src);
+  if (/\.html$/.test(srcRel)) {
+    const refLeak = buf.toString("utf8").match(/(src|href)="(?:\.\.?\/)[^"]*"/i);
+    if (refLeak) console.warn(`WARN ${srcRel} now carries a relative ref this mirror doesn't rewrite: ${refLeak[0]}`);
+  }
+  const dest = join(SITE_ROOT, ...destRel.split("/"));
+  mkdirSync(dirname(dest), { recursive: true });
+  if (existsSync(dest) && Buffer.compare(readFileSync(dest), buf) === 0) { mSame++; }
+  else { writeFileSync(dest, buf); mSynced++; console.log(`mirrored: ${srcRel}`); }
+}
+console.log(`mirror sync: ${MIRRORS.length} artifacts, ${mSynced} updated, ${mSame} unchanged`);
+
 // ── Ferry's Daily ──────────────────────────────────────────────────────────
 // TOWN_BULLETIN/the-office.html — the office's view from the doorway, rewritten
 // by Ferry each round. Same treatment: images become local resized copies;

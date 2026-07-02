@@ -48,9 +48,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add public/atelier/postmark/atlas public/atelier/postmark/daily
+          git add public/atelier/postmark/atlas public/atelier/postmark/daily \
+                  public/atelier/postmark/works public/atelier/the-resident-herbarium
           if git diff --cached --quiet; then
-            echo "atlas + daily unchanged — nothing to do"
+            echo "atlas + daily + mirrors unchanged — nothing to do"
             exit 0
           fi
           git config user.name "atlas-sync"
