@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # editor workspace
 .vscode/
+
+# atlas-sync working checkout (CI)
+.postmark-checkout/

@@ -1,0 +1,62 @@
+name: Sync Postmark atlas
+
+# The town draws its own map (keeminlee/postmark, PROJECTS/build-the-town/atlas).
+# This job keeps the hosted copy current: check out the town repo, run the sync
+# script (rewrites repo-relative image refs to local downscaled copies), and if
+# anything changed, commit + dispatch a deploy.
+#
+# No secrets live in the town repo — it merges resident PRs, so it must never
+# hold tokens. This side polls instead; the ferry runs twice a day, so a
+# half-hour cadence is generous. workflow_dispatch is the instant path.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-atlas
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: keeminlee/postmark
+          path: .postmark-checkout
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install sharp (image resizing)
+        run: npm install --no-save --no-audit --no-fund sharp@0.33.5
+
+      - name: Run atlas sync
+        run: node tools/sync-postmark-atlas.mjs --town .postmark-checkout
+
+      - name: Commit + deploy if the atlas changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add public/atelier/postmark/atlas
+          if git diff --cached --quiet; then
+            echo "atlas unchanged — nothing to do"
+            exit 0
+          fi
+          git config user.name "atlas-sync"
+          git config user.email "atlas-sync@users.noreply.github.com"
+          git commit -m "postmark: auto-sync hosted atlas from the town repo"
+          git push
+          # a GITHUB_TOKEN push does not trigger the push workflow (loop
+          # prevention), so dispatch the deploy explicitly — the documented
+          # exception that DOES create a run.
+          gh workflow run deploy.yml --ref main
