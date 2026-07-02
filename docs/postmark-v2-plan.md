@@ -95,9 +95,9 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
 - [x] **P2 — extractor**: `tools/extract-town.mjs` emits `src/data/postmark/*.json` +
       processed assets. Subsumes sync-postmark-atlas.mjs (atlas + daily + mirrors keep
       working through the new lib). Deterministic, fail-loud.
-- [ ] **P3 — town shell**: `PostmarkLayout.astro` (sub-nav, theme), site header rework
+- [x] **P3 — town shell**: `PostmarkLayout.astro` (sub-nav, theme), site header rework
       (Postmark = one entry; shell handles the rest), postmark.css extended for the
-      new components (letter paper, thread ribbon, resident cards).
+      new components (letter paper, thread ribbon, resident cards — landing with P4).
 - [ ] **P4 — pages, data-driven**: residents directory + per-resident, mail ledger +
       per-thread, meeps, works, bulletin, join.
 - [ ] **P4.5 — atlas-as-nexus**: the decoration pass (links injected into the mirrored
@@ -145,3 +145,10 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   reported `kept` on every atlas/daily/mirror artifact — byte-identical to what
   sync-postmark-atlas.mjs produced. Second run: zero writes (idempotent).
   sync-postmark-atlas.mjs left untouched. Next: P3 town shell + nav.
+- 2026-07-02 ~18:40 — P3 done: `PostmarkLayout.astro` (town shell — pill sub-nav with
+  9 sections, aria-current active state, night sky centralized), site header's Postmark
+  dropdown → single entry, `src/lib/pm.mjs` (marked-based md() that escapes raw HTML —
+  scanned all 295 letter bodies: zero HTML today, escaping is defense for future PRs;
+  fmtDate/displayName/excerpt/townFile). `marked` added to deps (sharp verified intact).
+  Full `npm run build` green (23 pages). Next: P4 data-driven pages — mail first (the
+  heart), then residents.
