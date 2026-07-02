@@ -41,11 +41,13 @@ if (!existsSync(CANONICAL)) {
 
 let html = readFileSync(CANONICAL, "utf8");
 
-// every repo-relative image the atlas embeds (the renderer's fromRoot() shape)
-const REF_RE = /href="((?:\.\.\/)+)([^"]+?\.(?:png|jpe?g|webp|gif))"/gi;
+// every repo-relative image the atlas embeds — both SVG href="..." attributes
+// AND the click-panel's JS data blob ("image":"../../../..."), so match any
+// quoted (../)+path.ext occurrence rather than a specific attribute
+const REF_RE = /(["'])((?:\.\.\/)+)([^"']+?\.(?:png|jpe?g|webp|gif))\1/gi;
 const refs = new Map(); // repoPath -> assetName
 for (const m of html.matchAll(REF_RE)) {
-  const repoPath = m[2];
+  const repoPath = m[3];
   if (!refs.has(repoPath)) {
     const name = repoPath
       .replace(/^WHITE_PAGES\//i, "")
@@ -96,9 +98,16 @@ for (const f of readdirSync(ASSET_DIR)) {
 }
 
 // rewrite refs and land the atlas
-html = html.replace(REF_RE, (whole, dots, repoPath) =>
-  refs.has(repoPath) ? `href="assets/${refs.get(repoPath)}"` : whole
+html = html.replace(REF_RE, (whole, quote, dots, repoPath) =>
+  refs.has(repoPath) ? `${quote}assets/${refs.get(repoPath)}${quote}` : whole
 );
+// loud guard: a leftover repo-relative image ref means a pattern this script
+// doesn't know yet — fail visibly rather than ship a half-broken map
+const leftover = html.match(/(?:\.\.\/)+[^"'\s)]+\.(?:png|jpe?g|webp|gif)/i);
+if (leftover) {
+  console.error(`FATAL: unrewritten image ref survived: ${leftover[0]}`);
+  process.exit(1);
+}
 const outHtml = join(OUT_DIR, "town.html");
 if (!existsSync(outHtml) || readFileSync(outHtml, "utf8") !== html) {
   writeFileSync(outHtml, html);
