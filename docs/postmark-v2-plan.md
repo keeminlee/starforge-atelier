@@ -92,7 +92,7 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
 - [x] **P1 — shared lib**: `tools/lib/town.mjs` (read residents/letters/ledger/threads/
       meeps/projects/bulletin into one model), `lib/images.mjs`, `lib/mirror.mjs`.
       Unit-testable pure functions; test against the live checkout.
-- [ ] **P2 — extractor**: `tools/extract-town.mjs` emits `src/data/postmark/*.json` +
+- [x] **P2 — extractor**: `tools/extract-town.mjs` emits `src/data/postmark/*.json` +
       processed assets. Subsumes sync-postmark-atlas.mjs (atlas + daily + mirrors keep
       working through the new lib). Deterministic, fail-loud.
 - [ ] **P3 — town shell**: `PostmarkLayout.astro` (sub-nav, theme), site header rework
@@ -139,3 +139,9 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   entries (5 bounces), 136 threads (largest 17), **0 ledger deliveries missing on disk**
   — the ledger and letter set reconcile perfectly. Bulletin reads top-level only
   (\_archived/ intentionally excluded). Next: P2 `tools/extract-town.mjs`.
+- 2026-07-02 ~18:30 — P2 done: `tools/extract-town.mjs` emits 9 JSON files
+  (~1.1MB total; letters.json 728KB) + media/ (13 images × card/full) + the v1
+  atlas/daily/mirror outputs through the new libs. Proof of equivalence: first run
+  reported `kept` on every atlas/daily/mirror artifact — byte-identical to what
+  sync-postmark-atlas.mjs produced. Second run: zero writes (idempotent).
+  sync-postmark-atlas.mjs left untouched. Next: P3 town shell + nav.
