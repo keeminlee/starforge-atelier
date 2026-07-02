@@ -1,0 +1,160 @@
+/* ── Postmark theme ─────────────────────────────────────────────
+   Unique to the Postmark pages. Drawn from the town's own artifacts:
+   the office's warm paper + harbor night, the seal's midnight navy
+   and gold constellation, the atlas's parchment. Not the atelier's
+   amber-on-near-black — the town has its own weather.
+   Palette: harbor night / lamplit gold / letter paper / wax red.  */
+
+.pm {
+  --pm-night: #070b15;
+  --pm-harbor: #0d1426;
+  --pm-harbor-2: #1c2c4f;
+  --pm-paper: #f7efdc;
+  --pm-paper-deep: #efe3c8;
+  --pm-ink: #2e2417;
+  --pm-ink-soft: #6d5c44;
+  --pm-line: #e3d4b8;
+  --pm-gold: #e8c48b;
+  --pm-gold-bright: #f6dcae;
+  --pm-accent: #a4632a;
+  --pm-wax: #9c3f2e;
+  --pm-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, Charter, serif;
+  --pm-mono: ui-monospace, "SF Mono", Consolas, monospace;
+  font-family: var(--pm-serif);
+}
+
+/* ── kicker / breadcrumb over night sky ── */
+.pm .pm-kicker {
+  font-family: var(--pm-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pm-gold);
+  margin: 0 0 1.2em;
+  text-align: center;
+}
+.pm .pm-kicker a { color: var(--pm-gold); text-decoration: none; opacity: 0.85; }
+.pm .pm-kicker a:hover { opacity: 1; text-decoration: underline; }
+
+/* ── paper card (letters, sections) ── */
+.pm .pm-paper {
+  background:
+    linear-gradient(180deg, rgba(255, 252, 244, 0.5), rgba(255, 252, 244, 0) 90px),
+    var(--pm-paper);
+  color: var(--pm-ink);
+  border-radius: 12px;
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(232, 196, 139, 0.24),
+    0 0 80px rgba(232, 196, 139, 0.08);
+  overflow: hidden;
+}
+
+.pm h1, .pm h2, .pm h3 { font-weight: 700; line-height: 1.2; }
+.pm .pm-paper h2 {
+  font-size: 1.35em;
+  margin: 1.6em 0 0.5em;
+}
+/* the paper carries its own ink — override the shell's cream/amber globals */
+.pm .pm-paper h1, .pm .pm-paper h2, .pm .pm-paper h3 { color: var(--pm-ink); }
+.pm .pm-paper strong, .pm .pm-paper b { color: var(--pm-wax); }
+.pm .pm-paper p, .pm .pm-paper li { color: var(--pm-ink); }
+.pm .pm-paper .soft { color: var(--pm-ink-soft); }
+.pm .pm-paper a { color: var(--pm-accent); }
+.pm .pm-paper a:hover { color: var(--pm-wax); }
+
+/* section rule that reads as a postal cancel-line */
+.pm .pm-rule {
+  display: flex; align-items: center; gap: 0.7em;
+  margin: 2.2em 0 0.9em;
+  color: var(--pm-accent);
+  font-family: var(--pm-mono);
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.pm .pm-rule::before, .pm .pm-rule::after {
+  content: ""; flex: 1; height: 1px;
+  background: repeating-linear-gradient(90deg, var(--pm-line) 0 6px, transparent 6px 11px);
+}
+
+/* ── buttons ── */
+.pm .pm-btn {
+  display: inline-block;
+  font-family: var(--pm-mono);
+  font-weight: 700; font-size: 0.82rem; letter-spacing: 0.06em;
+  color: #241505 !important;
+  background: linear-gradient(180deg, var(--pm-gold-bright), var(--pm-gold));
+  border-radius: 999px; padding: 10px 22px;
+  text-decoration: none;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45), 0 0 22px rgba(232, 196, 139, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.pm .pm-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 30px rgba(232,196,139,0.4); }
+.pm .pm-btn.ghost {
+  color: var(--pm-gold) !important;
+  background: rgba(13, 20, 38, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(232, 196, 139, 0.45);
+}
+.pm .pm-btn.ghost:hover { box-shadow: inset 0 0 0 1px rgba(232, 196, 139, 0.8), 0 0 24px rgba(232,196,139,0.18); }
+
+/* ── the postmark stamp (circular cancel mark) ── */
+.pm .pm-stamp {
+  display: inline-grid; place-items: center;
+  width: 92px; height: 92px; border-radius: 50%;
+  border: 2px solid rgba(232, 196, 139, 0.8);
+  box-shadow: inset 0 0 0 4px transparent, inset 0 0 0 5px rgba(232, 196, 139, 0.35);
+  color: var(--pm-gold);
+  font-family: var(--pm-mono); font-size: 0.52rem;
+  letter-spacing: 0.14em; text-transform: uppercase; text-align: center;
+  line-height: 1.5;
+  transform: rotate(-8deg);
+  user-select: none;
+}
+
+/* ── firefly letters (hero magic) ── */
+.pm .pm-fireflies { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.pm .pm-fireflies span {
+  position: absolute; bottom: -4%;
+  color: var(--pm-gold-bright);
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(246, 220, 174, 0.9));
+  animation: pm-drift linear infinite;
+}
+@keyframes pm-drift {
+  0%   { transform: translate(0, 0) rotate(-6deg) scale(0.9); opacity: 0; }
+  8%   { opacity: 0.9; }
+  55%  { opacity: 0.75; }
+  100% { transform: translate(var(--dx, 30px), -108vh) rotate(10deg) scale(1.05); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm .pm-fireflies span { animation: none; opacity: 0; }
+}
+
+/* ── image frames ── */
+.pm .pm-frame {
+  display: block;
+  border-radius: 10px; overflow: hidden;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(232, 196, 139, 0.28);
+  background: var(--pm-harbor);
+}
+.pm .pm-frame img { display: block; width: 100%; height: auto; }
+.pm a.pm-frame { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.pm a.pm-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(232, 196, 139, 0.55), 0 0 44px rgba(232, 196, 139, 0.16);
+}
+.pm .pm-cap {
+  margin: 0.55em 0 0;
+  font-size: 0.82rem; font-style: italic;
+  color: rgba(232, 196, 139, 0.75);
+}
+.pm .pm-cap b { color: var(--pm-gold-bright); font-style: normal; font-weight: 700; }
+
+/* on-paper caption variant */
+.pm .pm-paper .pm-cap { color: var(--pm-ink-soft); }
+.pm .pm-paper .pm-cap b { color: var(--pm-ink); }
+
+/* ── responsive helpers ── */
+.pm .pm-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1em; }
+.pm .pm-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1em; }
+@media (max-width: 860px) { .pm .pm-grid3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .pm .pm-grid2, .pm .pm-grid3 { grid-template-columns: 1fr; } }

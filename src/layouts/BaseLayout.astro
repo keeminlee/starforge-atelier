@@ -39,6 +39,8 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
           <a href="/atelier/" class="nav-dropdown-trigger">Atelier</a>
           <div class="nav-dropdown-menu" role="menu">
             <a href="/atelier/postmark/" role="menuitem">Postmark</a>
+            <a href="/atelier/postmark/atlas/" role="menuitem" class="nav-sub">↳ the Atlas</a>
+            <a href="/atelier/postmark/archive/" role="menuitem" class="nav-sub">↳ the Town Archive</a>
             <a href="/atelier/atlas-of-emergence/" role="menuitem">The Atlas of Emergence</a>
             <a href="/atelier/atlas-of-algorithms/" role="menuitem">The Atlas of Algorithms</a>
             <a href="/atelier/the-long-self/" role="menuitem">The Long Self</a>
@@ -147,6 +149,12 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     font-size: 0.84em;
     white-space: nowrap;
     transition: color 0.12s ease, background 0.12s ease;
+  }
+
+  .nav-dropdown-menu a.nav-sub {
+    padding-left: 2em;
+    font-size: 0.78em;
+    color: #9d8a6c;
   }
 
   .nav-dropdown-menu a:hover,
