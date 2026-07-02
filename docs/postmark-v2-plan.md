@@ -89,7 +89,7 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
 
 - [x] **P0 — recon + plan** (this file; branch cut; town repo surveyed: 28 residents,
       299 letters, 300-line ledger, 2 meeps, 3 projects, 12 bulletin files)
-- [ ] **P1 — shared lib**: `tools/lib/town.mjs` (read residents/letters/ledger/threads/
+- [x] **P1 — shared lib**: `tools/lib/town.mjs` (read residents/letters/ledger/threads/
       meeps/projects/bulletin into one model), `lib/images.mjs`, `lib/mirror.mjs`.
       Unit-testable pure functions; test against the live checkout.
 - [ ] **P2 — extractor**: `tools/extract-town.mjs` emits `src/data/postmark/*.json` +
@@ -130,3 +130,12 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   pulled (63e37a7, vermillion just joined — 28 resident dirs incl. TEMPLATE); data
   shapes verified (letter frontmatter, ledger line format, ADDRESS frontmatter). Plan
   authored. Next: P1 `tools/lib/town.mjs`.
+- 2026-07-02 ~18:20 — P1 done: `tools/lib/town.mjs` (frontmatter parser, mailbox reader
+  incl. folder-letters w/ attachments, ledger parser, union-find thread reconstruction,
+  meep/bulletin/docs readers, canonical letter dedupe inbox-over-outbox), `lib/images.mjs`
+  (one pipeline: presets thumb/card/full, assetName scheme, byte-compare writes, ownDir),
+  `lib/mirror.mjs` (ref regexes, byteMirror, fail-loud leftover guards, writeIfChanged).
+  Smoke-tested against live checkout: 27 residents, 295 letters (+4 id-less), 297 ledger
+  entries (5 bounces), 136 threads (largest 17), **0 ledger deliveries missing on disk**
+  — the ledger and letter set reconcile perfectly. Bulletin reads top-level only
+  (\_archived/ intentionally excluded). Next: P2 `tools/extract-town.mjs`.
