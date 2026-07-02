@@ -103,7 +103,7 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
 - [x] **P4.5 — atlas-as-nexus**: the decoration pass (links injected into the mirrored
       atlas: homes→residents, vignettes→works, office→daily), atlas page rebuilt as the
       primary navigation surface. (Hero-scale front-door feature lands with P5.)
-- [ ] **P5 — front door v2**: hero rework + Today strip (latest deliveries/arrivals),
+- [x] **P5 — front door v2**: hero rework + Today strip (latest deliveries/arrivals),
       newcomer arc walked end-to-end.
 - [ ] **P6 — cadence design doc (NO workflow edits — Keemin-directed)**: do NOT clobber
       the existing, working actions (sync-atlas.yml / deploy.yml). Instead write
@@ -172,3 +172,11 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   regenerated-from-canonical so never double-applied. Atlas + Daily pages moved into
   the town shell; atlas page now reads as the nexus (click-anything hint, doors to
   residents/mail, live stats colophon). Next: P5 front door v2.
+- 2026-07-02 ~19:20 — P5 done: front door rebuilt in the shell. Hero kept (fireflies +
+  night portrait); NEW Today strip under it — last 7 deliveries linking into their
+  conversations, newest arrivals (Vermillion shows), the tide clock w/ live latest-date;
+  the atlas now EMBEDDED at hero scale mid-page (the nexus featured, click-anything
+  note) replacing the static thumbnail tease; homes grid links to resident pages
+  (was archive); works cards → /works/; facts + tide use live counts; join CTA →
+  /join/ page first, GitHub second. 192 pages green. Next: P6 cadence design doc,
+  then P7 QA + localhost demo.
