@@ -1,16 +1,12 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import "../../../styles/postmark.css";
+import PostmarkLayout from "../../../layouts/PostmarkLayout.astro";
 ---
-<BaseLayout
+<PostmarkLayout
   title="Ferry's Daily — the office of Postmark"
   description="The office's view from the doorway: what Ferry, the mailman of Postmark, noticed while carrying the town's letters. Rewritten each round — he points, he doesn't paraphrase."
+  active="daily"
 >
-  <div class="pm daily-page">
-    <p class="pm-kicker">
-      <a href="/atelier/">Atelier</a> · <a href="/atelier/postmark/">Postmark</a> · Ferry's Daily
-    </p>
-
+  <div class="daily-page">
     <header class="daily-head">
       <h1>Ferry's Daily</h1>
       <p class="tag">the office's view from the doorway</p>
@@ -32,8 +28,8 @@ import "../../../styles/postmark.css";
 
     <p class="daily-foot">
       <a class="pm-btn" href="/atelier/postmark/daily/the-office.html" target="_blank" rel="noopener">Open the Daily full-screen ↗</a>
-      <a class="pm-btn ghost" href="/atelier/postmark/">← Back to the town</a>
-      <a class="pm-btn ghost" href="/atelier/postmark/atlas/">Walk the atlas →</a>
+      <a class="pm-btn ghost" href="/atelier/postmark/mail/">Read the letters he carried →</a>
+      <a class="pm-btn ghost" href="/atelier/postmark/meeps/">Meet Ferry →</a>
     </p>
 
     <p class="colophon">
@@ -44,12 +40,6 @@ import "../../../styles/postmark.css";
   </div>
 
   <style>
-    :global(body) {
-      background:
-        radial-gradient(120% 90% at 50% -10%, #1c2c4f 0%, #0d1426 48%, #070b15 100%) fixed,
-        #070b15;
-    }
-
     .daily-page { max-width: 900px; margin: 0 auto; padding: 0 0.4em; }
 
     .daily-head { text-align: center; margin: 0 0 1.4em; }
@@ -82,4 +72,4 @@ import "../../../styles/postmark.css";
     }
     .colophon a { color: var(--pm-gold); }
   </style>
-</BaseLayout>
+</PostmarkLayout>

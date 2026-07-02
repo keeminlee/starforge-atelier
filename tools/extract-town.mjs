@@ -183,7 +183,60 @@ const ATLAS_ASSETS = join(ATLAS_OUT, "assets");
     console.error(`FATAL: unrewritten atlas image ref: ${leftover}`);
     process.exit(1);
   }
-  console.log(`atlas: town.html ${writeIfChanged(join(ATLAS_OUT, "town.html"), html)} — ${refs.size} refs, ${wrote} written, ${kept} unchanged, ${missing} missing`);
+
+  // decoration pass (P4.5): the atlas is the site's navigation nexus, so every
+  // click panel gains doors into the site — the resident's page, Ferry's Daily
+  // for the office, the Mail/Join from the Town Centre. Decorate, never
+  // redraw: the canonical atlas stays town-drawn; this appends a script that
+  // wraps openPanel and adds links (target=_top — the atlas lives in an
+  // iframe). Regenerated from canonical each run, so never double-applied.
+  const residentHandles = [...new Set(town.residents.map((r) => r.handle))].sort();
+  const DOORS = `<script>
+/* site doors — appended by the site's extractor (extract-town.mjs). The map
+   itself is the town's own; these are just the doors it opens on the site. */
+(function () {
+  var RES = ${JSON.stringify(residentHandles)};
+  var _open = openPanel;
+  openPanel = function (id) {
+    _open(id);
+    var p = PLACES[id];
+    var c = document.getElementById('panel-content');
+    if (!p || !c) return;
+    var doors = [];
+    if (p.resident === 'postmaster') {
+      doors.push(["Ferry\\u2019s Daily \\u2192", "/atelier/postmark/daily/"]);
+      doors.push(["meet the Meeps \\u2192", "/atelier/postmark/meeps/"]);
+    } else if (p.resident && RES.indexOf(p.resident) !== -1) {
+      doors.push([p.resident + "\\u2019s page \\u2192", "/atelier/postmark/residents/" + p.resident + "/"]);
+    }
+    if (p.kind === 'centre') {
+      doors.push(["the Mail \\u2192", "/atelier/postmark/mail/"]);
+      doors.push(["bring your agent \\u2192", "/atelier/postmark/join/"]);
+    }
+    if (!doors.length) return;
+    var row = document.createElement('div');
+    row.className = 'site-doors';
+    doors.forEach(function (d) {
+      var a = document.createElement('a');
+      a.textContent = d[0]; a.href = d[1]; a.target = '_top';
+      row.appendChild(a);
+    });
+    c.appendChild(row);
+  };
+})();
+</script>
+<style>
+.site-doors { margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(138,59,46,0.45); display: flex; flex-wrap: wrap; gap: 8px; }
+.site-doors a { font: 700 11px/1 ui-monospace, Consolas, monospace; letter-spacing: 0.06em; color: #241505; background: linear-gradient(180deg, #f6dcae, #e8c48b); border-radius: 999px; padding: 7px 13px; text-decoration: none; }
+.site-doors a:hover { filter: brightness(1.07); }
+</style>`;
+  if (!html.includes("</body>")) {
+    console.error("FATAL: atlas town.html has no </body> to decorate — layout changed upstream");
+    process.exit(1);
+  }
+  html = html.replace("</body>", `${DOORS}\n</body>`);
+
+  console.log(`atlas: town.html ${writeIfChanged(join(ATLAS_OUT, "town.html"), html)} — ${refs.size} refs, ${wrote} written, ${kept} unchanged, ${missing} missing, doors for ${residentHandles.length} residents`);
 }
 
 // ── Ferry's Daily (same contract as v1 sync) ───────────────────────────────

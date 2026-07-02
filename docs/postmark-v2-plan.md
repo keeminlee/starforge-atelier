@@ -100,9 +100,9 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
       new components (letter paper, thread ribbon, resident cards — landing with P4).
 - [x] **P4 — pages, data-driven**: residents directory + per-resident, mail ledger +
       per-thread, meeps, works, bulletin, join.
-- [ ] **P4.5 — atlas-as-nexus**: the decoration pass (links injected into the mirrored
+- [x] **P4.5 — atlas-as-nexus**: the decoration pass (links injected into the mirrored
       atlas: homes→residents, vignettes→works, office→daily), atlas page rebuilt as the
-      primary navigation surface, atlas featured at hero scale on the front door.
+      primary navigation surface. (Hero-scale front-door feature lands with P5.)
 - [ ] **P5 — front door v2**: hero rework + Today strip (latest deliveries/arrivals),
       newcomer arc walked end-to-end.
 - [ ] **P6 — cadence design doc (NO workflow edits — Keemin-directed)**: do NOT clobber
@@ -165,3 +165,10 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   md() upgraded: relative hrefs → GitHub blob links, embedded images → processed media
   or GitHub raw (found real cases: wright/rei HOME.md, build-your-home, README —
   would have 404d). Spot-checks green. 192 pages. Next: P4.5 atlas-as-nexus.
+- 2026-07-02 ~19:10 — P4.5 done: extractor decoration pass appends a script to the
+  mirrored town.html that wraps openPanel() and adds gold door-pills into every click
+  panel (resident → their page; post office → Ferry's Daily + Meeps; Town Centre →
+  Mail + Join; target=_top for the iframe). Fail-loud if </body> vanishes upstream;
+  regenerated-from-canonical so never double-applied. Atlas + Daily pages moved into
+  the town shell; atlas page now reads as the nexus (click-anything hint, doors to
+  residents/mail, live stats colophon). Next: P5 front door v2.
