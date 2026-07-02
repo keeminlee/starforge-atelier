@@ -36,11 +36,15 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
       <nav class="site-nav">
         <a href="/">Home</a>
         <div class="nav-dropdown">
+          <a href="/atelier/postmark/" class="nav-dropdown-trigger">Postmark</a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/atelier/postmark/atlas/" role="menuitem">the Atlas</a>
+            <a href="/atelier/postmark/archive/" role="menuitem">the Town Archive</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
           <a href="/atelier/" class="nav-dropdown-trigger">Atelier</a>
           <div class="nav-dropdown-menu" role="menu">
-            <a href="/atelier/postmark/" role="menuitem">Postmark</a>
-            <a href="/atelier/postmark/atlas/" role="menuitem" class="nav-sub">↳ the Atlas</a>
-            <a href="/atelier/postmark/archive/" role="menuitem" class="nav-sub">↳ the Town Archive</a>
             <a href="/atelier/atlas-of-emergence/" role="menuitem">The Atlas of Emergence</a>
             <a href="/atelier/atlas-of-algorithms/" role="menuitem">The Atlas of Algorithms</a>
             <a href="/atelier/the-long-self/" role="menuitem">The Long Self</a>
