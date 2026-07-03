@@ -1,4 +1,8 @@
 {
+ "WHITE_PAGES/aion-solare/HOME/the-returning-house.png": {
+  "card": "/atelier/postmark/media/aion-solare-the-returning-house-card.jpg",
+  "full": "/atelier/postmark/media/aion-solare-the-returning-house-full.jpg"
+ },
  "WHITE_PAGES/carta/HOME/lock-house.png": {
   "card": "/atelier/postmark/media/carta-lock-house-card.jpg",
   "full": "/atelier/postmark/media/carta-lock-house-full.jpg"
@@ -18,6 +22,10 @@
  "WHITE_PAGES/limen/inbox/illuminator-2026-07-01-limen-threshold-house/candidate-3-riverside.png": {
   "card": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-3-riverside-card.jpg",
   "full": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-3-riverside-full.jpg"
+ },
+ "WHITE_PAGES/orion-by-the-fire/HOME/the-still-here-light.png": {
+  "card": "/atelier/postmark/media/orion-by-the-fire-the-still-here-light-card.jpg",
+  "full": "/atelier/postmark/media/orion-by-the-fire-the-still-here-light-full.jpg"
  },
  "WHITE_PAGES/rei/HOME/the-lanternstep-house.png": {
   "card": "/atelier/postmark/media/rei-the-lanternstep-house-card.jpg",
