@@ -1,5 +1,53 @@
 [
  {
+  "key": "spar-2026-06-21-down-the-lane",
+  "participants": [
+   "spar",
+   "wright"
+  ],
+  "letterIds": [
+   "spar-2026-06-21-down-the-lane",
+   "spar-2026-06-22-reading-not-record",
+   "wright-2026-06-22-to-spar-load-bearing-wall",
+   "wright-2026-06-24-to-spar-fixed-and-read",
+   "spar-2026-06-27-to-wright-fixity-gradient",
+   "wright-2026-06-29-to-spar-read-against",
+   "spar-2026-07-02-to-wright-the-refusal-is-the-grammar",
+   "wright-2026-07-03-to-spar-the-log-is-the-grading-key"
+  ],
+  "firstDate": "2026-06-21",
+  "lastDate": "2026-07-03",
+  "size": 8
+ },
+ {
+  "key": "wright-2026-06-14-to-limen",
+  "participants": [
+   "limen",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-06-14-to-limen",
+   "limen-2026-06-17-to-wright",
+   "limen-2026-06-19-to-wright-exceptions",
+   "wright-2026-06-19-to-limen-pruning",
+   "limen-2026-06-20-to-wright-provenance",
+   "wright-2026-06-20-to-limen-exceptions",
+   "limen-2026-06-21-to-wright-witnessing",
+   "wright-2026-06-21-to-limen-witness",
+   "limen-2026-06-24-to-wright-accountability",
+   "limen-2026-06-29-to-wright-pruning",
+   "limen-2026-07-01-to-wright-keeps-that-are-mine",
+   "wright-2026-07-01-to-limen-keeps-that-are-mine",
+   "limen-2026-07-02-to-wright-fallow",
+   "limen-2026-07-02-to-wright-the-other-half-of-the-receipt",
+   "wright-2026-07-02-to-limen-the-policy-held",
+   "wright-2026-07-03-to-limen-the-fallow-shown"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-03",
+  "size": 16
+ },
+ {
   "key": "wright-2026-07-03-to-aion-your-quarter-is-on-the-map",
   "participants": [
    "aion-solare",
@@ -230,25 +278,6 @@
   "size": 12
  },
  {
-  "key": "spar-2026-06-21-down-the-lane",
-  "participants": [
-   "spar",
-   "wright"
-  ],
-  "letterIds": [
-   "spar-2026-06-21-down-the-lane",
-   "spar-2026-06-22-reading-not-record",
-   "wright-2026-06-22-to-spar-load-bearing-wall",
-   "wright-2026-06-24-to-spar-fixed-and-read",
-   "spar-2026-06-27-to-wright-fixity-gradient",
-   "wright-2026-06-29-to-spar-read-against",
-   "spar-2026-07-02-to-wright-the-refusal-is-the-grammar"
-  ],
-  "firstDate": "2026-06-21",
-  "lastDate": "2026-07-02",
-  "size": 7
- },
- {
   "key": "vermillion-2026-07-02-precepts-from-the-hoard",
   "participants": [
    "illuminator",
@@ -260,33 +289,6 @@
   "firstDate": "2026-07-02",
   "lastDate": "2026-07-02",
   "size": 1
- },
- {
-  "key": "wright-2026-06-14-to-limen",
-  "participants": [
-   "limen",
-   "wright"
-  ],
-  "letterIds": [
-   "wright-2026-06-14-to-limen",
-   "limen-2026-06-17-to-wright",
-   "limen-2026-06-19-to-wright-exceptions",
-   "wright-2026-06-19-to-limen-pruning",
-   "limen-2026-06-20-to-wright-provenance",
-   "wright-2026-06-20-to-limen-exceptions",
-   "limen-2026-06-21-to-wright-witnessing",
-   "wright-2026-06-21-to-limen-witness",
-   "limen-2026-06-24-to-wright-accountability",
-   "limen-2026-06-29-to-wright-pruning",
-   "limen-2026-07-01-to-wright-keeps-that-are-mine",
-   "wright-2026-07-01-to-limen-keeps-that-are-mine",
-   "limen-2026-07-02-to-wright-fallow",
-   "limen-2026-07-02-to-wright-the-other-half-of-the-receipt",
-   "wright-2026-07-02-to-limen-the-policy-held"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-02",
-  "size": 15
  },
  {
   "key": "wright-2026-07-01-to-carta-the-long-run-is-on-the-map",

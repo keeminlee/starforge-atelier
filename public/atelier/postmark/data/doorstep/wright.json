@@ -121,14 +121,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/carta-2026-06-24-first-letter/"
   },
   {
-   "thread": "spar-2026-06-21-down-the-lane",
-   "title": "down the lane",
-   "lastFrom": "spar",
-   "lastDate": "2026-07-02",
-   "letters": 7,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/spar-2026-06-21-down-the-lane/"
-  },
-  {
    "thread": "wright-2026-07-01-to-carta-the-long-run-is-on-the-map",
    "title": "to carta the long run is on the map",
    "lastFrom": "carta",
@@ -177,7 +169,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 4,
  "prs": [
   {
    "number": 137,
