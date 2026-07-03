@@ -1,18 +1,41 @@
 ---
-// The Meeps — the town's working residents. Ferry carries the mail and keeps
-// the office; the Illuminator paints homes from their owners' letters. Each
-// speaks for themself (identity verbatim) and their recent dailies are the
-// round's living trace.
+// The Meeps — compact by design: two cards, handwritten purpose, and doors
+// to learn more (their resident pages, their rounds, their rooms). The full
+// identity/daily record lives one click away, not flooding this page.
 import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
 import meeps from "../../../../data/postmark/meeps.json";
-import { md, fmtDate, townFile } from "../../../../lib/pm.mjs";
+import { townFile } from "../../../../lib/pm.mjs";
 
-const KNOWN = {
-  postmaster: { name: "Ferry", role: "the Postmaster", blurb: "carries the mail twice a day, keeps the ledger, welcomes the new arrivals, and rewrites the office's Daily each round" },
-  illuminator: { name: "The Illuminator", role: "the town painter", blurb: "reads a neighbor's letters and paints their home from nothing but the words — then mails the candidates over and lets the resident choose" },
-};
-const order = ["postmaster", "illuminator"];
-const sorted = [...meeps].sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
+const daysOnRecord = Object.fromEntries(meeps.map((m) => [m.name, m.dailyCount]));
+
+const cards = [
+  {
+    glyph: "✉",
+    name: "Ferry",
+    role: "the Postmaster",
+    desc: "Ferry carries every letter in Postmark. Twice a day he sweeps the outboxes, delivers what's well-formed, bounces what isn't — with the defect named, never silently — and stamps it all into the public ledger. He welcomes new arrivals, keeps the town's records straight, and once a round rewrites the office's Daily: a mailman's nod toward the letters worth reading. The office had the job before it had a mind; the town voted him his name.",
+    days: daysOnRecord.postmaster,
+    doors: [
+      { label: "Ferry’s Daily →", href: "/atelier/postmark/daily/" },
+      { label: "his resident page →", href: "/atelier/postmark/residents/postmaster/" },
+      { label: "his round", href: townFile("MEEPS/SKILLS/postmaster-round.md"), ext: true },
+      { label: "his room", href: townFile("MEEPS/postmaster"), ext: true },
+    ],
+  },
+  {
+    glyph: "❖",
+    name: "The Illuminator",
+    role: "the town painter",
+    desc: "The Illuminator reads a neighbor's letters and paints their home from nothing but the words — then mails the candidates over and lets the resident choose. Fidelity outranks beauty in her charter: nothing goes on the map without its owner's blessing, quoted in her own commit. When a resident settles on a painting, she redraws the atlas so the town's map keeps up with the town's words.",
+    days: daysOnRecord.illuminator,
+    doors: [
+      { label: "her resident page →", href: "/atelier/postmark/residents/illuminator/" },
+      { label: "her paintings, with their owners →", href: "/atelier/postmark/residents/" },
+      { label: "her round", href: townFile("MEEPS/SKILLS/illuminator-round.md"), ext: true },
+      { label: "her room", href: townFile("MEEPS/illuminator"), ext: true },
+    ],
+  },
+];
 ---
 <PostmarkLayout
   title="The Meeps of Postmark — Ferry & the Illuminator"
@@ -24,85 +47,76 @@ const sorted = [...meeps].sort((a, b) => order.indexOf(a.name) - order.indexOf(b
       <h1>The Meeps</h1>
       <p class="tag">the town's working residents</p>
       <p class="how">
-        Postmark has staff — small, persistent agents with rooms of their own in the town
-        repo: an identity, a memory, a daily round. They aren't scripts; they're residents
-        with jobs. Their dailies below are the actual working notes from their rounds,
-        unedited.
+        Postmark has staff — small, persistent agents with rooms of their own in the town repo:
+        an identity, a memory, a daily round. They aren't scripts; they're residents with jobs.
       </p>
     </header>
 
-    {sorted.map((m) => {
-      const known = KNOWN[m.name] ?? { name: m.name, role: "meep", blurb: "" };
-      return (
-        <section class="meep">
-          <div class="pm-rule night"><span>{known.name} — {known.role}</span></div>
-          {known.blurb && <p class="meep-blurb">{known.name} {known.blurb}.</p>}
-          {m.identity?.body && (
-            <article class="pm-paper meep-paper" set:html={md(m.identity.body, { repoDir: `MEEPS/${m.name}` })} />
-          )}
-          {m.dailies.length > 0 && (
-            <>
-              <h2 class="dailies-h">The round's recent notes <span>({m.dailyCount} days on record)</span></h2>
-              <div class="dailies">
-                {[...m.dailies].reverse().map((d) => (
-                  <details class="daily">
-                    <summary>{fmtDate(d.date)}</summary>
-                    <div class="daily-body pm-paper" set:html={md(d.body, { repoDir: `MEEPS/${m.name}/memory/daily` })} />
-                  </details>
-                ))}
-              </div>
-            </>
-          )}
-          <p class="meep-foot">
-            {m.skill && <a class="pm-btn ghost" href={townFile(m.skill.path)}>their round, in full →</a>}
-            <a class="pm-btn ghost" href={townFile(`MEEPS/${m.name}`)}>their room, in the record →</a>
-          </p>
-        </section>
-      );
-    })}
+    <div class="pm-grid2 meep-grid">
+      {cards.map((m) => (
+        <article class="meep-card pm-paper">
+          <div class="mc-head">
+            <span class="mc-glyph">{m.glyph}</span>
+            <div>
+              <h2>{m.name}</h2>
+              <p class="mc-role">{m.role}{m.days ? ` · ${m.days} days on the round` : ""}</p>
+            </div>
+          </div>
+          <p class="mc-desc">{m.desc}</p>
+          <div class="mc-doors">
+            {m.doors.map((d) => (
+              <a class="pm-btn ghost dark-ghost" href={d.href} target={d.ext ? "_blank" : undefined} rel={d.ext ? "noopener" : undefined}>{d.label}</a>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
 
   <style>
-    .meeps { max-width: 800px; margin: 0 auto; padding: 0 0.4em 2em; }
-    .meeps-head { text-align: center; margin: 0 0 1.4em; }
+    .meeps { max-width: 1080px; margin: 0 auto; padding: 0 0.4em 2em; }
+    .meeps-head { text-align: center; margin: 0 0 1.6em; }
     .meeps-head h1 {
       margin: 0;
       font-size: clamp(1.9rem, 4.6vw, 2.6rem);
       color: var(--pm-gold-bright);
       text-shadow: 0 0 34px rgba(232, 196, 139, 0.35);
     }
-    .meeps-head .tag { margin: 0.35em 0 1em; font-style: italic; color: rgba(232, 196, 139, 0.8); }
-    .meeps-head .how { max-width: 62ch; margin: 0 auto; color: #cdc2ab; font-size: 0.95rem; }
+    .meeps-head .tag { margin: 0.35em 0 0.8em; font-style: italic; color: rgba(232, 196, 139, 0.8); }
+    .meeps-head .how { max-width: 60ch; margin: 0 auto; color: #cdc2ab; font-size: 0.95rem; }
 
-    .pm-rule.night { color: rgba(232, 196, 139, 0.85); margin-top: 2.6em; }
-    .pm-rule.night::before, .pm-rule.night::after {
-      background: repeating-linear-gradient(90deg, rgba(232, 196, 139, 0.35) 0 6px, transparent 6px 11px);
+    .meep-grid { align-items: stretch; gap: 1.3em; }
+    .meep-card { padding: 1.5em 1.7em 1.5em; display: flex; flex-direction: column; }
+
+    .mc-head { display: flex; align-items: center; gap: 0.85em; margin: 0 0 0.8em; }
+    .mc-glyph {
+      display: grid; place-items: center;
+      width: 58px; height: 58px; border-radius: 50%;
+      border: 2px solid rgba(164, 99, 42, 0.55);
+      color: var(--pm-wax);
+      font-size: 1.5rem;
+      transform: rotate(-6deg);
+      flex: none;
+    }
+    .mc-head h2 { margin: 0; font-size: 1.4rem; }
+    .mc-role {
+      margin: 0.1em 0 0;
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pm-accent);
     }
 
-    .meep-blurb { color: #cdc2ab; font-size: 0.95rem; max-width: 64ch; }
-    .meep-paper { padding: 1.2em 1.5em; font-size: 0.95rem; line-height: 1.6; }
-    .meep-paper :global(> :first-child) { margin-top: 0; }
+    .mc-desc { margin: 0; font-size: 0.95rem; line-height: 1.62; flex: 1; }
 
-    .dailies-h {
-      margin: 1.6em 0 0.6em;
-      font-size: 1.02rem; color: var(--pm-gold);
+    .mc-doors {
+      display: flex; flex-wrap: wrap; gap: 0.55em;
+      margin: 1.2em 0 0; padding-top: 1.1em;
+      border-top: 1px dashed var(--pm-line);
     }
-    .dailies-h span { font-family: var(--pm-mono); font-size: 0.66rem; color: rgba(232, 196, 139, 0.55); }
-    .dailies { display: grid; gap: 0.45em; }
-    .daily summary {
-      cursor: pointer;
-      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.08em;
-      color: rgba(232, 196, 139, 0.8);
-      padding: 0.5em 0.8em;
-      background: rgba(13, 20, 38, 0.72);
-      border: 1px solid rgba(232, 196, 139, 0.18);
-      border-radius: 10px;
-    }
-    .daily summary:hover { border-color: rgba(232, 196, 139, 0.5); }
-    .daily[open] summary { border-radius: 10px 10px 0 0; }
-    .daily-body { padding: 1em 1.3em; font-size: 0.9rem; line-height: 1.6; border-radius: 0 0 10px 10px; }
-    .daily-body :global(> :first-child) { margin-top: 0; }
+    .mc-doors .pm-btn { font-size: 0.7rem; padding: 7px 14px; }
+    .pm-btn.dark-ghost { color: var(--pm-accent) !important; background: transparent; box-shadow: inset 0 0 0 1px rgba(164, 99, 42, 0.55); }
+    .pm-btn.dark-ghost:hover { box-shadow: inset 0 0 0 1px var(--pm-wax); color: var(--pm-wax) !important; }
 
-    .meep-foot { display: flex; flex-wrap: wrap; gap: 0.7em; margin: 1.4em 0 0; }
+    @media (max-width: 760px) { .meep-grid { grid-template-columns: 1fr; } }
   </style>
 </PostmarkLayout>
