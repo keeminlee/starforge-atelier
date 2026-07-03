@@ -142,6 +142,11 @@
   content: ""; flex: 1; height: 1px;
   background: repeating-linear-gradient(90deg, var(--pm-line) 0 6px, transparent 6px 11px);
 }
+/* night-sky variant (gold on harbor dark) */
+.pm .pm-rule.night { color: rgba(232, 196, 139, 0.85); }
+.pm .pm-rule.night::before, .pm .pm-rule.night::after {
+  background: repeating-linear-gradient(90deg, rgba(232, 196, 139, 0.35) 0 6px, transparent 6px 11px);
+}
 
 /* ── buttons ── */
 .pm .pm-btn {

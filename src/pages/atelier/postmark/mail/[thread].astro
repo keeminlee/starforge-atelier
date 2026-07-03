@@ -5,7 +5,7 @@ import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
 import threads from "../../../../data/postmark/threads.json";
 import letters from "../../../../data/postmark/letters.json";
 import media from "../../../../data/postmark/media.json";
-import { md, fmtDate, townFile } from "../../../../lib/pm.mjs";
+import { md, fmtDate, townFile, threadTitle } from "../../../../lib/pm.mjs";
 
 export function getStaticPaths() {
   const byId = new Map(letters.map((l) => [l.id, l]));
@@ -16,7 +16,7 @@ export function getStaticPaths() {
 }
 
 const { thread, members } = Astro.props;
-const title = thread.key.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || thread.key;
+const title = threadTitle(thread.key);
 ---
 <PostmarkLayout
   title={`“${title}” — a Postmark conversation`}

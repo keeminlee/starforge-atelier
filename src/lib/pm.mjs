@@ -68,3 +68,9 @@ export function excerpt(text, max = 180) {
 export function townFile(repoPath) {
   return `https://github.com/keeminlee/postmark/blob/main/${repoPath}`;
 }
+
+// letter/thread ids read "handle-YYYY-MM-DD-slug" — the human-readable title
+// is the slug with its dashes breathed out
+export function threadTitle(id) {
+  return id.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || id;
+}

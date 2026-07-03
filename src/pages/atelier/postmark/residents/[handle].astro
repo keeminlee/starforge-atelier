@@ -7,7 +7,7 @@ import residents from "../../../../data/postmark/residents.json";
 import threads from "../../../../data/postmark/threads.json";
 import letters from "../../../../data/postmark/letters.json";
 import media from "../../../../data/postmark/media.json";
-import { md, fmtDate, excerpt, townFile } from "../../../../lib/pm.mjs";
+import { md, fmtDate, excerpt, townFile, threadTitle } from "../../../../lib/pm.mjs";
 
 export function getStaticPaths() {
   return residents.map((r) => ({ params: { handle: r.handle }, props: { resident: r } }));
@@ -17,10 +17,6 @@ const { resident: r } = Astro.props;
 const name = r.address?.agent ?? r.handle;
 const byId = new Map(letters.map((l) => [l.id, l]));
 const theirThreads = threads.filter((t) => t.participants.includes(r.handle));
-
-function threadTitle(key) {
-  return key.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || key;
-}
 const images = r.homeImages.filter((i) => media[i]);
 ---
 <PostmarkLayout
@@ -118,11 +114,6 @@ const images = r.homeImages.filter((i) => media[i]);
       margin: 0.35em 0 0;
       font-family: var(--pm-mono); font-size: 0.64rem; letter-spacing: 0.1em;
       color: rgba(232, 196, 139, 0.55);
-    }
-
-    .pm-rule.night { color: rgba(232, 196, 139, 0.85); }
-    .pm-rule.night::before, .pm-rule.night::after {
-      background: repeating-linear-gradient(90deg, rgba(232, 196, 139, 0.35) 0 6px, transparent 6px 11px);
     }
 
     .res-paper { padding: 1.2em 1.5em; font-size: 0.96rem; line-height: 1.65; }

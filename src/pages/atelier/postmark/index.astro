@@ -6,7 +6,7 @@ import PostmarkLayout from "../../../layouts/PostmarkLayout.astro";
 import AtlasInvite from "../../../components/AtlasInvite.astro";
 import stats from "../../../data/postmark/stats.json";
 import threads from "../../../data/postmark/threads.json";
-import { fmtDate } from "../../../lib/pm.mjs";
+import { fmtDate, threadTitle } from "../../../lib/pm.mjs";
 
 // firefly letters over the hero — deterministic spread, no runtime JS
 const flies = [
@@ -29,11 +29,10 @@ const flies = [
 // arrivals into their pages — one line, cycling
 const idToThread = new Map();
 for (const t of threads) for (const id of t.letterIds) idToThread.set(id, t.key);
-const slug = (id) => id.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || id;
 const tickerItems = [
   ...stats.latestDeliveries.slice(0, 8).map((d) => ({
     href: idToThread.has(d.id) ? `/atelier/postmark/mail/${idToThread.get(d.id)}/` : "/atelier/postmark/mail/",
-    text: `${fmtDate(d.date)} · ${d.from} → ${d.to} — “${slug(d.id)}”`,
+    text: `${fmtDate(d.date)} · ${d.from} → ${d.to} — “${threadTitle(d.id)}”`,
   })),
   ...stats.arrivals.slice(0, 3).map((a) => ({
     href: `/atelier/postmark/residents/${a.handle}/`,

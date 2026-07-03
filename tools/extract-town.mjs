@@ -121,11 +121,11 @@ emit("letters.json", town.letters.map((l) => ({
 emit("threads.json", town.threads);
 emit("ledger.json", town.ledger);
 
+// the meeps page is a compact card view — days-on-the-round + pointers; the
+// full identity/daily record stays in the town repo, one click away
 emit("meeps.json", town.meeps.map((m) => ({
   name: m.name,
-  identity: m.identity ? { ...m.identity.data, body: m.identity.body } : null,
-  skill: m.skill ? { path: m.skill.path, body: m.skill.body } : null,
-  dailies: m.dailies.slice(-14), // recent fortnight — the round's living trace
+  skill: m.skill ? { path: m.skill.path } : null,
   dailyCount: m.dailies.length,
 })));
 
@@ -190,6 +190,10 @@ const ATLAS_ASSETS = join(ATLAS_OUT, "assets");
   // redraw: the canonical atlas stays town-drawn; this appends a script that
   // wraps openPanel and adds links (target=_top — the atlas lives in an
   // iframe). Regenerated from canonical each run, so never double-applied.
+  if (!/function openPanel\s*\(/.test(html)) {
+    console.error("FATAL: atlas town.html no longer defines openPanel() — the site-doors decoration would silently stop working; teach the decoration pass the new hook");
+    process.exit(1);
+  }
   const residentHandles = [...new Set(town.residents.map((r) => r.handle))].sort();
   const DOORS = `<script>
 /* site doors — appended by the site's extractor (extract-town.mjs). The map
