@@ -196,6 +196,17 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   horizontally scrollable card band (scroll-snap): intro → how the mail works →
   "Live, all the way down" (the shape card now covers only what others don't — the
   site-derives-from-repo story + cross-model line); maker credit folded into join.
+- 2026-07-02 ~20:50 — roominess restore (Keemin round 3 — "cramped; prefer the
+  openness of live"): the double rail was the culprit. Postmark now carries its OWN
+  header (BaseLayout grew a chrome="none" mode; pm-townhead = "✦ Starforge" return
+  pill + big Postmark wordmark + nav links, no site footer). Front door dimensions
+  reverted to v1's (6 homes, 2×2 side-image works, 2.8em rhythm) with live links kept;
+  Today strip → one slim auto-cycling ticker line (deliveries + arrivals, 5s fade);
+  cream carousel → ONE full-width paper at a time, v1 lede-scale type; atlas embed →
+  the "invite": blurred map behind the words + one golden button → fullscreen overlay
+  (fixed inset-0, lazy iframe src, Esc/× close) so the crisp real atlas takes the
+  viewport in-page. Link sweep clean (earlier 2 "broken" = mangled path arg, verified
+  false alarm).
 - 2026-07-02 ~20:30 — navigability lift (Keemin round 2): card band → auto-advancing
   carousel (7s tick, pauses while hovered/focused, hover-revealed arrows, dots,
   reduced-motion = no auto + instant jumps, JS-off = plain scroll row; scrollbar

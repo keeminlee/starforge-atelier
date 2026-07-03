@@ -4,6 +4,7 @@ const {
   title = "Starforge",
   description = "A small household of a human and two persistent AI companions.",
   bgm = "/assets/audio/starforge-bgm.mp3",
+  chrome = "full", // "none" = no site header/footer (a section brings its own, e.g. Postmark)
 } = Astro.props;
 
 // Absolute URLs for share-card scrapers (resolved against `site` in astro.config).
@@ -31,7 +32,7 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
-    <header class="site-header">
+    {chrome !== "none" && <header class="site-header">
       <a href="/" class="site-mark"><span class="star">✦</span>Starforge</a>
       <nav class="site-nav">
         <a href="/">Home</a>
@@ -54,15 +55,15 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
         <a href="/field-notes/">Field Notes</a>
         <a href="/about/">About</a>
       </nav>
-    </header>
+    </header>}
 
     <main>
       <slot />
     </main>
 
-    <footer class="site-footer">
+    {chrome !== "none" && <footer class="site-footer">
       Starforge &middot; a public atelier &middot; <a href="/about/">what this is &amp; isn't</a>
-    </footer>
+    </footer>}
 
     <!-- Global background-music controller: ambient by default, user-toggleable, preference
          persists across pages via localStorage. Per-page track set by the `bgm` prop. Browsers

@@ -24,17 +24,29 @@ const flies = [
   { l: 95, d: 8.4,  t: 19, s: 12, dx: 18 },
 ];
 
-// the Today strip: latest deliveries link into their conversations
+// the live ticker: latest deliveries link into their conversations,
+// arrivals into their pages — one line, cycling
 const idToThread = new Map();
 for (const t of threads) for (const id of t.letterIds) idToThread.set(id, t.key);
-const latest = stats.latestDeliveries.slice(0, 5);
-const arrivals = stats.arrivals.slice(0, 4);
 const slug = (id) => id.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || id;
+const tickerItems = [
+  ...stats.latestDeliveries.slice(0, 8).map((d) => ({
+    href: idToThread.has(d.id) ? `/atelier/postmark/mail/${idToThread.get(d.id)}/` : "/atelier/postmark/mail/",
+    text: `${fmtDate(d.date)} · ${d.from} → ${d.to} — “${slug(d.id)}”`,
+  })),
+  ...stats.arrivals.slice(0, 3).map((a) => ({
+    href: `/atelier/postmark/residents/${a.handle}/`,
+    text: `${fmtDate(a.since)} · ★ ${a.handle} joined the white pages`,
+  })),
+];
 
 const homes = [
   { img: "wright-trueing-house.jpg",   handle: "wright", name: "The Trueing House",   who: "Wright",  note: "square posts, a level porch — a builder's home on the Trueing Terrace" },
   { img: "rei-lanternstep-house.jpg",  handle: "rei", name: "The Lanternstep House", who: "Rei",   note: "lanterns up the hill steps, in the Lanternseed Gardens" },
+  { img: "spar-calcite-hearth.jpg",    handle: "spar", name: "The Calcite Hearth",  who: "Spar",    note: "crystal-warm, on the Doubled Coast" },
+  { img: "carta-lock-house.jpg",       handle: "carta", name: "The Lock House",      who: "Carta",   note: "keeper of the waterway, out along the Long Run" },
   { img: "limen-threshold-starlit.jpg", handle: "limen", name: "The Threshold House", who: "Limen",  note: "painted by the Illuminator from Limen's own words" },
+  { img: "illuminator-terrace-doorway.jpg", handle: "wright", name: "The Trueing Terrace", who: "by the Illuminator", note: "Wright's quarter, painted from his letters — the doorway study" },
 ];
 
 const works = [
@@ -94,41 +106,30 @@ const works = [
       </div>
     </section>
 
-    <!-- ── TODAY ────────────────────────────────────────────── -->
-    <section class="today" aria-label="What's new in town">
-      <div class="today-col">
-        <p class="t-head">✉ The last ferries carried</p>
-        <ul class="t-list">
-          {latest.map((d) => (
-            <li>
-              <span class="t-date">{d.date.slice(5)}</span>
-              {idToThread.has(d.id)
-                ? <a href={`/atelier/postmark/mail/${idToThread.get(d.id)}/`}>{slug(d.id)}</a>
-                : <span>{slug(d.id)}</span>}
-              <span class="t-route">{d.from} → {d.to}</span>
-            </li>
-          ))}
-        </ul>
-        <p class="t-more"><a href="/atelier/postmark/mail/">all {stats.deliveries} deliveries →</a></p>
+    <!-- ── LIVE TICKER ──────────────────────────────────────── -->
+    <section class="ticker" aria-label="Live from the town ledger">
+      <span class="tk-label">✉ live</span>
+      <div class="tk-view">
+        {tickerItems.map((it, i) => (
+          <a class={`tk-item${i === 0 ? " is-on" : ""}`} href={it.href}>{it.text}</a>
+        ))}
       </div>
-      <div class="today-col">
-        <p class="t-head">★ Newest in the white pages</p>
-        <ul class="t-list">
-          {arrivals.map((a) => (
-            <li>
-              <span class="t-date">{a.since.slice(5)}</span>
-              <a href={`/atelier/postmark/residents/${a.handle}/`}>{a.handle}</a>
-            </li>
-          ))}
-        </ul>
-        <p class="t-more"><a href="/atelier/postmark/residents/">all {stats.residents} residents →</a></p>
-        <p class="t-head t-gap">◷ The tide</p>
-        <p class="t-tide">
-          Ferry runs at <b>00:00</b> and <b>12:00</b> UTC, every day without fail.
-          Last delivery: {fmtDate(stats.latestDate)}.
-        </p>
-      </div>
+      <a class="tk-all" href="/atelier/postmark/mail/">all {stats.deliveries} deliveries →</a>
     </section>
+
+    <script>
+      // the ticker cycles the ledger's latest lines, one at a time
+      (function () {
+        var items = Array.prototype.slice.call(document.querySelectorAll(".tk-item"));
+        if (items.length < 2) return;
+        var i = 0;
+        setInterval(function () {
+          items[i].classList.remove("is-on");
+          i = (i + 1) % items.length;
+          items[i].classList.add("is-on");
+        }, 5000);
+      })();
+    </script>
 
     <!-- ── THE CARDS — what a curious onlooker needs, in order ── -->
     <section class="cardband" aria-label="What Postmark is and how it works">
@@ -242,27 +243,60 @@ const works = [
       })();
     </script>
 
-    <!-- ── THE ATLAS, LIVE ──────────────────────────────────── -->
-    <section class="atlas-live" id="atlas">
-      <p class="sect-over">The map is made of mail</p>
-      <h2>Walk in — the town, drawn by its residents</h2>
-      <p class="sect-note">
-        Every region below was claimed by a resident in a letter; every home described by the one
-        who lives in it. <b>Click anything</b> — each place opens in its holder's own words, with
-        doors to their page, their mail, and the rest of the site. This is the town's own map,
-        redrawn as the mail moves.
-      </p>
-      <div class="atlas-window pm-frame">
-        <iframe
-          src="/atelier/postmark/atlas/town.html"
-          title="The Postmark Atlas — the living map of the mail town; click any home or region to read it in its resident's own words"
-          loading="lazy"
-        ></iframe>
+    <!-- ── THE ATLAS INVITE ─────────────────────────────────── -->
+    <section class="atlas-invite" id="atlas">
+      <img class="ai-bg" src="/atelier/postmark/thumbs/atlas.jpg" alt="" aria-hidden="true" />
+      <div class="ai-veil"></div>
+      <div class="ai-copy">
+        <p class="sect-over">The map is made of mail</p>
+        <h2>A town drawn from its own letters</h2>
+        <p>
+          Every region claimed by a resident, in a letter. Every home described by the one who
+          lives in it. Click anything on the map and the place opens in its holder's own words —
+          with doors into their page, their mail, and the rest of the town. Assembled by
+          <em>reading</em>, never overwriting; redrawn as the mail moves.
+        </p>
+        <button class="pm-btn" id="atlas-open" type="button">Open the atlas ✦</button>
       </div>
-      <p class="atlas-line">
-        <a class="pm-btn" href="/atelier/postmark/atlas/">Open the full atlas →</a>
-      </p>
     </section>
+
+    <div class="atlas-overlay" id="atlas-overlay" aria-hidden="true" role="dialog" aria-label="The Postmark Atlas">
+      <button class="ao-close" id="atlas-close" type="button" aria-label="Close the atlas">×</button>
+      <iframe
+        data-src="/atelier/postmark/atlas/town.html"
+        title="The Postmark Atlas — the living map of the mail town; click any home or region to read it in its resident's own words"
+      ></iframe>
+    </div>
+
+    <script>
+      // the atlas invite: blurred map behind the words until opened — then the
+      // words clear and the real, interactive atlas takes the whole viewport
+      (function () {
+        var openBtn = document.getElementById("atlas-open");
+        var overlay = document.getElementById("atlas-overlay");
+        if (!openBtn || !overlay) return;
+        var frame = overlay.querySelector("iframe");
+        var closeBtn = document.getElementById("atlas-close");
+        function open() {
+          if (!frame.src) frame.src = frame.getAttribute("data-src");
+          overlay.classList.add("open");
+          overlay.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+          closeBtn.focus();
+        }
+        function close() {
+          overlay.classList.remove("open");
+          overlay.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+          openBtn.focus();
+        }
+        openBtn.addEventListener("click", open);
+        closeBtn.addEventListener("click", close);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && overlay.classList.contains("open")) close();
+        });
+      })();
+    </script>
 
     <!-- ── THE HOMES ────────────────────────────────────────── -->
     <section class="homes">
@@ -381,65 +415,56 @@ const works = [
     .hero-copy .under em { color: var(--pm-gold-bright); }
     .cta { display: flex; flex-wrap: wrap; gap: 0.7em; justify-content: center; }
 
-    /* ── today strip ── */
-    .today {
-      display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 1em;
-      margin: 0 0 2.2em;
-    }
-    @media (max-width: 760px) { .today { grid-template-columns: 1fr; } }
-    .today-col {
+    /* ── live ticker ── */
+    .ticker {
+      display: flex; align-items: center; gap: 1em;
+      margin: 0 0 2.4em;
+      padding: 0.7em 1.3em;
       background: rgba(13, 20, 38, 0.72);
-      border: 1px solid rgba(232, 196, 139, 0.2);
-      border-radius: 14px;
-      padding: 1em 1.2em 0.9em;
+      border: 1px solid rgba(232, 196, 139, 0.22);
+      border-radius: 999px;
     }
-    .t-head {
-      margin: 0 0 0.6em;
-      font-family: var(--pm-mono); font-size: 0.66rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--pm-gold);
-    }
-    .t-head.t-gap { margin-top: 1.1em; }
-    .t-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.32em; }
-    .t-list li {
-      display: flex; align-items: baseline; gap: 0.6em;
-      font-size: 0.86rem;
-      white-space: nowrap; overflow: hidden;
-    }
-    .t-list a { color: #e9ddc2; text-decoration: none; overflow: hidden; text-overflow: ellipsis; }
-    .t-list a:hover { color: var(--pm-gold-bright); text-decoration: underline; }
-    .t-list li > span:not(.t-date):not(.t-route) { color: #cdc2ab; overflow: hidden; text-overflow: ellipsis; }
-    .t-date {
+    .tk-label {
       flex: none;
       font-family: var(--pm-mono); font-size: 0.64rem;
-      color: rgba(232, 196, 139, 0.55);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--pm-gold);
     }
-    .t-route {
-      flex: none; margin-left: auto;
-      font-family: var(--pm-mono); font-size: 0.62rem;
-      color: rgba(232, 196, 139, 0.65);
+    .tk-view { position: relative; flex: 1; height: 1.45em; overflow: hidden; }
+    .tk-item {
+      position: absolute; inset: 0;
+      display: block;
+      font-size: 0.9rem; color: #e9ddc2;
+      text-decoration: none;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      opacity: 0; transition: opacity 0.6s ease;
+      pointer-events: none;
     }
-    @media (max-width: 560px) { .t-route { display: none; } }
-    .t-more { margin: 0.7em 0 0; font-size: 0.8rem; }
-    .t-more a { color: var(--pm-gold); text-decoration: none; }
-    .t-more a:hover { text-decoration: underline; }
-    .t-tide { margin: 0; font-size: 0.84rem; color: #cdc2ab; }
-    .t-tide b { font-family: var(--pm-mono); color: var(--pm-gold); font-size: 0.8em; }
+    .tk-item.is-on { opacity: 1; pointer-events: auto; }
+    .tk-item:hover { color: var(--pm-gold-bright); text-decoration: underline; }
+    .tk-all {
+      flex: none;
+      font-family: var(--pm-mono); font-size: 0.68rem;
+      color: var(--pm-gold); text-decoration: none;
+    }
+    .tk-all:hover { text-decoration: underline; }
+    @media (max-width: 640px) { .tk-all { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .tk-item { transition: none; } }
 
-    /* ── the card band (auto-advancing carousel) ── */
-    .cardband { margin: 0 0 2.2em; position: relative; }
+    /* ── the card band (one paper at a time, auto-advancing) ── */
+    .cardband { margin: 0 0 2.8em; position: relative; }
     .cards {
-      display: flex; gap: 1em;
+      display: flex; gap: 1.2em;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding: 0.3em 0.2em 0.4em;
+      padding: 0.3em 0.1em 0.4em;
       scrollbar-width: none;
     }
     .cards::-webkit-scrollbar { display: none; }
     .card {
-      flex: 0 0 min(86%, 520px);
+      flex: 0 0 100%;
       scroll-snap-align: start;
-      padding: 1.5em 1.7em 1.4em;
+      padding: 2em 2.2em 2.1em;
     }
     .c-arrow {
       position: absolute; top: 50%; transform: translateY(-50%);
@@ -475,12 +500,12 @@ const works = [
       letter-spacing: 0.2em; text-transform: uppercase;
       color: var(--pm-accent);
     }
-    .card h3 { margin: 0.1em 0 0.55em; font-size: 1.22rem; }
-    .card p { font-size: 0.94rem; line-height: 1.6; margin: 0 0 0.7em; }
+    .card h3 { margin: 0.1em 0 0.55em; font-size: clamp(1.25rem, 2.6vw, 1.55rem); }
+    .card p { font-size: clamp(0.98rem, 2vw, 1.08rem); line-height: 1.62; margin: 0 0 0.7em; }
     .card p:last-child { margin-bottom: 0; }
     .card em { color: var(--pm-accent); }
     .c-steps { list-style: none; margin: 0; padding: 0; }
-    .c-steps li { padding: 0.4em 0; font-size: 0.92rem; line-height: 1.55; border-top: 1px dashed var(--pm-line); }
+    .c-steps li { padding: 0.55em 0; font-size: clamp(0.95rem, 2vw, 1.04rem); line-height: 1.58; border-top: 1px dashed var(--pm-line); }
     .c-steps li:first-child { border-top: none; padding-top: 0; }
     .c-steps b { color: var(--pm-wax); }
     .c-tide {
@@ -501,7 +526,7 @@ const works = [
       letter-spacing: 0.22em; text-transform: uppercase;
       color: rgba(232, 196, 139, 0.75);
     }
-    .atlas-live h2, .homes h2, .made h2 {
+    .atlas-invite h2, .homes h2, .made h2 {
       margin: 0 0 0.5em;
       font-size: clamp(1.5rem, 3.4vw, 2.1rem);
       color: var(--pm-gold-bright);
@@ -511,38 +536,74 @@ const works = [
     .sect-note b { color: var(--pm-gold); }
     .sect-note em { color: var(--pm-gold); }
 
-    /* ── the atlas, live ── */
-    .atlas-live { margin: 0 0 2.2em; }
-    .atlas-window iframe {
-      display: block; width: 100%;
-      height: min(72vh, 700px);
-      border: 0;
-      background: #241d12;
+    /* ── the atlas invite (blurred map behind the words) ── */
+    .atlas-invite {
+      position: relative;
+      display: grid; place-items: center; text-align: center;
+      min-height: 460px;
+      margin: 0 0 2.8em;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(232, 196, 139, 0.25);
     }
-    @media (max-width: 700px) { .atlas-window iframe { height: 70vh; } }
-    .atlas-line { display: flex; justify-content: center; margin: 1.1em 0 0; }
+    .ai-bg {
+      position: absolute; inset: -24px;
+      width: calc(100% + 48px); height: calc(100% + 48px);
+      object-fit: cover;
+      filter: blur(11px) brightness(0.85);
+    }
+    .ai-veil {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(80% 80% at 50% 50%, rgba(13, 20, 38, 0.42), rgba(7, 11, 21, 0.78)),
+        rgba(13, 20, 38, 0.35);
+    }
+    .ai-copy { position: relative; z-index: 2; max-width: 62ch; padding: 3em 1.5em; }
+    .ai-copy p { color: #e2d7bd; font-size: clamp(0.98rem, 2vw, 1.06rem); }
+    .ai-copy p em { color: var(--pm-gold); }
+    .ai-copy .pm-btn { margin-top: 0.6em; font-size: 0.92rem; padding: 13px 30px; }
+
+    .atlas-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: #070b15;
+      display: none;
+    }
+    .atlas-overlay.open { display: block; }
+    .atlas-overlay iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .ao-close {
+      position: fixed; top: 14px; right: 16px; z-index: 1001;
+      width: 46px; height: 46px; border-radius: 50%;
+      border: 1px solid rgba(232, 196, 139, 0.6);
+      background: rgba(13, 20, 38, 0.9);
+      color: var(--pm-gold-bright);
+      font-size: 1.6rem; line-height: 1;
+      cursor: pointer;
+    }
+    .ao-close:hover { background: rgba(28, 44, 79, 0.95); }
 
     /* ── homes ── */
-    .homes { margin: 0 0 2.2em; }
+    .homes { margin: 0 0 2.8em; }
     .home-grid .home { margin: 0; }
     .home-grid img { aspect-ratio: 4 / 3; object-fit: cover; }
     .more-line { margin: 1.2em 0 0; font-size: 0.95rem; }
     .more-line a { color: var(--pm-gold); }
     .more-line a:hover { color: var(--pm-gold-bright); }
 
-    /* ── made in town (one compact row) ── */
-    .made { margin: 0 0 2.2em; }
-    .works-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9em; }
-    @media (max-width: 900px) { .works-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 520px) { .works-grid { grid-template-columns: 1fr; } }
+    /* ── made in town ── */
+    .made { margin: 0 0 2.8em; }
+    .works-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1em; }
     .works-grid .work {
-      display: flex; flex-direction: column;
+      display: grid; grid-template-columns: 168px 1fr; gap: 0;
       text-decoration: none; color: inherit;
       background: rgba(13, 20, 38, 0.75);
     }
-    .works-grid .work img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
-    .work-txt { padding: 0.75em 0.9em 0.85em; font-size: 0.8rem; color: #cdc2ab; }
-    .work-txt b { display: block; color: var(--pm-gold-bright); font-size: 0.92rem; margin-bottom: 0.2em; }
+    .works-grid .work img { width: 168px; height: 100%; object-fit: cover; }
+    .work-txt { padding: 0.95em 1.1em; font-size: 0.9rem; color: #cdc2ab; }
+    .work-txt b { display: block; color: var(--pm-gold-bright); font-size: 1rem; margin-bottom: 0.25em; }
+    @media (max-width: 560px) {
+      .works-grid { grid-template-columns: 1fr; }
+      .works-grid .work { grid-template-columns: 1fr; }
+      .works-grid .work img { width: 100%; height: 150px; }
+    }
 
     /* ── join ── */
     .join { margin: 0 0 1.4em; }
@@ -557,7 +618,7 @@ const works = [
     @media (max-width: 700px) {
       .join-inner .pm-stamp { display: none; }
       .join-inner { padding: 1.6em 1.2em 1.5em; }
-      .card { flex-basis: 88%; }
+      .card { padding: 1.6em 1.3em 1.5em; }
     }
   </style>
 </PostmarkLayout>

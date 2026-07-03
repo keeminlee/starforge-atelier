@@ -23,24 +23,32 @@
   font-family: var(--pm-serif);
 }
 
-/* ── the town nav (the shell's persistent wayfinding bar) ── */
-.pm .pm-townnav {
-  display: flex; align-items: center; gap: 1.2em;
-  max-width: 1080px; margin: 0 auto 1.9em;
-  padding: 0.55em 0.9em;
-  background: rgba(13, 20, 38, 0.72);
-  border: 1px solid rgba(232, 196, 139, 0.22);
-  border-radius: 999px;
-  backdrop-filter: blur(6px);
+/* ── the town header (Postmark's OWN chrome — one rail, not two) ── */
+.pm .pm-townhead {
+  display: flex; align-items: center; gap: 1.4em;
+  max-width: 1160px; margin: 0 auto;
+  padding: 1.1em 1.2em 1.5em;
 }
+.pm .pm-back {
+  font-family: var(--pm-mono);
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(232, 196, 139, 0.6);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.5em 0.9em;
+  border: 1px solid rgba(232, 196, 139, 0.28);
+  border-radius: 999px;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+.pm .pm-back:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.6); }
 .pm .pm-townmark {
   font-family: var(--pm-mono);
-  font-size: 0.78rem; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 0.95rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--pm-gold-bright);
   text-decoration: none;
   white-space: nowrap;
-  padding-left: 0.35em;
+  text-shadow: 0 0 22px rgba(232, 196, 139, 0.35);
 }
 .pm .pm-townmark .seal {
   display: inline-block;
@@ -49,6 +57,7 @@
 }
 .pm .pm-townnav-links {
   display: flex; align-items: center; gap: 0.15em;
+  margin-left: auto;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -56,11 +65,11 @@
 .pm .pm-townnav-links::-webkit-scrollbar { display: none; }
 .pm .pm-townnav-links a {
   font-family: var(--pm-mono);
-  font-size: 0.72rem; letter-spacing: 0.08em;
+  font-size: 0.74rem; letter-spacing: 0.08em;
   color: rgba(232, 196, 139, 0.75);
   text-decoration: none;
   white-space: nowrap;
-  padding: 0.45em 0.7em;
+  padding: 0.5em 0.75em;
   border-radius: 999px;
   transition: color 0.12s ease, background 0.12s ease;
 }
@@ -70,8 +79,9 @@
   background: linear-gradient(180deg, var(--pm-gold-bright), var(--pm-gold));
   font-weight: 700;
 }
-@media (max-width: 720px) {
-  .pm .pm-townnav { border-radius: 14px; flex-wrap: wrap; gap: 0.4em; }
+@media (max-width: 860px) {
+  .pm .pm-townhead { flex-wrap: wrap; gap: 0.7em; padding-bottom: 1.1em; }
+  .pm .pm-townnav-links { margin-left: 0; flex-basis: 100%; }
 }
 
 /* ── kicker / breadcrumb over night sky ── */

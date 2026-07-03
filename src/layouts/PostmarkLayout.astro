@@ -1,8 +1,7 @@
 ---
-// PostmarkLayout — the town shell. Every Postmark page lives inside it:
-// the harbor-night sky, the .pm theme scope, and the persistent town nav
-// (the site header carries one "Postmark" entry; wayfinding inside the
-// town happens here). `active` marks the current section.
+// PostmarkLayout — the town shell. Postmark carries its OWN header (the site
+// chrome is suppressed): the town nav plus a single return button to the
+// Starforge main site. One rail, not two — the town keeps its room.
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/postmark.css";
 
@@ -21,18 +20,19 @@ const nav = [
   { key: "join", href: `${P}/join/`, label: "Join" },
 ];
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} chrome="none">
   <div class="pm pm-shell">
-    <nav class="pm-townnav" aria-label="Postmark town navigation">
+    <header class="pm-townhead">
+      <a class="pm-back" href="/" title="Back to the Starforge atelier">✦ Starforge</a>
       <a class="pm-townmark" href={`${P}/`} aria-label="Postmark — the town">
         <span class="seal">✉</span> Postmark
       </a>
-      <div class="pm-townnav-links">
+      <nav class="pm-townnav-links" aria-label="Postmark town navigation">
         {nav.map((n) => (
           <a href={n.href} aria-current={active === n.key ? "page" : undefined}>{n.label}</a>
         ))}
-      </div>
-    </nav>
+      </nav>
+    </header>
     <slot />
   </div>
 </BaseLayout>
