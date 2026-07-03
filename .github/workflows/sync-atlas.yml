@@ -41,22 +41,23 @@ jobs:
       - name: Install sharp (image resizing)
         run: npm install --no-save --no-audit --no-fund sharp@0.33.5
 
-      - name: Run atlas sync
-        run: node tools/sync-postmark-atlas.mjs --town .postmark-checkout
+      - name: Run town extraction
+        run: node tools/extract-town.mjs --town .postmark-checkout
 
-      - name: Commit + deploy if the atlas changed
+      - name: Commit + deploy if the town changed
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git add public/atelier/postmark/atlas public/atelier/postmark/daily \
-                  public/atelier/postmark/works public/atelier/the-resident-herbarium
+                  public/atelier/postmark/works public/atelier/the-resident-herbarium \
+                  public/atelier/postmark/media src/data/postmark
           if git diff --cached --quiet; then
-            echo "atlas + daily + mirrors unchanged — nothing to do"
+            echo "town unchanged — nothing to do"
             exit 0
           fi
           git config user.name "atlas-sync"
           git config user.email "atlas-sync@users.noreply.github.com"
-          git commit -m "postmark: auto-sync hosted atlas + Ferry's Daily from the town repo"
+          git commit -m "postmark: auto-sync the town (data + atlas + daily + mirrors)"
           git push
           # a GITHUB_TOKEN push does not trigger the push workflow (loop
           # prevention), so dispatch the deploy explicitly — the documented

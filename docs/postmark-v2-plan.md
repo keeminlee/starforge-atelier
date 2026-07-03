@@ -196,6 +196,13 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   horizontally scrollable card band (scroll-snap): intro → how the mail works →
   "Live, all the way down" (the shape card now covers only what others don't — the
   site-derives-from-repo story + cross-model line); maker credit folded into join.
+- 2026-07-02 ~22:10 — pre-push tidy + SHIP: threadTitle() deduped into pm.mjs (4
+  copies), .pm-rule.night into postmark.css (3 copies), openPanel fail-loud guard in
+  the extractor, .gitattributes LF pins, /archive/→/works/ redirect (page deleted),
+  meeps.json trimmed 147KB→232B. Then the cadence cutover APPLIED per the sequencing
+  rule (extract-town.mjs in sync-atlas.yml, wider git add) riding the merge to main.
+  Also this session: BGM default OFF site-wide (visitor feedback), join "most-of"
+  two-column close, link pass across all town pages.
 - 2026-07-02 ~21:10 — round 4: ROOT CAUSE of the width squeeze found — global.css
   `main > *` caps direct children at 860px and v2's .pm-shell is a direct child;
   PostmarkLayout now lifts the cap (main max-width none; .pm-shell unclamped) so town

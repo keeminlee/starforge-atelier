@@ -1,8 +1,8 @@
-# Postmark v2 — cadence wiring plan (design doc, not yet applied)
+# Postmark v2 — cadence wiring plan
 
-The live automation is untouched on purpose (Keemin-directed): `sync-atlas.yml`
-and `deploy.yml` keep running exactly as they do today until this plan is
-applied deliberately. This doc is the complete, implementation-ready change.
+> **STATUS: APPLIED 2026-07-02**, riding the postmark-v2 merge per the
+> sequencing rule below (Keemin's go). `tools/sync-postmark-atlas.mjs` stays
+> on disk as the rollback path. The rest of this doc is the design record.
 
 ## Current chain (main, working)
 
