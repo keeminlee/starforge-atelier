@@ -23,6 +23,73 @@
   font-family: var(--pm-serif);
 }
 
+/* ── the town header (Postmark's OWN chrome — one rail, not two) ── */
+.pm .pm-townhead {
+  display: flex; align-items: center; gap: 1.4em;
+  max-width: 1160px; margin: 0 auto;
+  padding: 1.1em 1.2em 1.5em;
+}
+.pm .pm-back {
+  font-family: var(--pm-mono);
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(232, 196, 139, 0.6);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.5em 0.9em;
+  border: 1px solid rgba(232, 196, 139, 0.28);
+  border-radius: 999px;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+.pm .pm-back:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.6); }
+.pm .pm-townmark {
+  font-family: var(--pm-mono);
+  font-size: 0.95rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--pm-gold-bright);
+  text-decoration: none;
+  white-space: nowrap;
+  text-shadow: 0 0 22px rgba(232, 196, 139, 0.35);
+}
+.pm .pm-townmark .seal {
+  display: inline-block;
+  transform: rotate(-8deg);
+  margin-right: 0.3em;
+}
+.pm .pm-townnav-links {
+  display: flex; align-items: center; gap: 0.15em;
+  margin-left: auto;
+  flex-wrap: wrap; /* never clip a section off the end — wrap instead */
+  justify-content: flex-end;
+}
+.pm .pm-townnav-links a {
+  font-family: var(--pm-mono);
+  font-size: 0.74rem; letter-spacing: 0.08em;
+  color: rgba(232, 196, 139, 0.75);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.5em 0.75em;
+  border-radius: 999px;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+.pm .pm-townnav-links a:hover { color: var(--pm-gold-bright); background: rgba(232, 196, 139, 0.08); }
+.pm .pm-townnav-links a[aria-current="page"] {
+  color: #241505;
+  background: linear-gradient(180deg, var(--pm-gold-bright), var(--pm-gold));
+  font-weight: 700;
+}
+@media (max-width: 860px) {
+  .pm .pm-townhead { flex-wrap: wrap; gap: 0.7em; padding-bottom: 1.1em; }
+  .pm .pm-townnav-links { margin-left: 0; flex-basis: 100%; }
+}
+
+/* prose links on the night sky read town-gold, not the atelier's amber */
+.pm .how a, .pm .sect-note a, .pm .most-blurb a, .pm .illum-note a {
+  color: var(--pm-gold);
+}
+.pm .how a:hover, .pm .sect-note a:hover, .pm .most-blurb a:hover, .pm .illum-note a:hover {
+  color: var(--pm-gold-bright);
+}
+
 /* ── kicker / breadcrumb over night sky ── */
 .pm .pm-kicker {
   font-family: var(--pm-mono);
@@ -74,6 +141,11 @@
 .pm .pm-rule::before, .pm .pm-rule::after {
   content: ""; flex: 1; height: 1px;
   background: repeating-linear-gradient(90deg, var(--pm-line) 0 6px, transparent 6px 11px);
+}
+/* night-sky variant (gold on harbor dark) */
+.pm .pm-rule.night { color: rgba(232, 196, 139, 0.85); }
+.pm .pm-rule.night::before, .pm .pm-rule.night::after {
+  background: repeating-linear-gradient(90deg, rgba(232, 196, 139, 0.35) 0 6px, transparent 6px 11px);
 }
 
 /* ── buttons ── */
@@ -152,6 +224,69 @@
 /* on-paper caption variant */
 .pm .pm-paper .pm-cap { color: var(--pm-ink-soft); }
 .pm .pm-paper .pm-cap b { color: var(--pm-ink); }
+
+/* ── a letter, rendered as the paper it is ── */
+.pm .pm-letter {
+  margin: 0 0 1.6em;
+}
+.pm .pm-letter .pm-letterhead {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4em 1em;
+  padding: 0.9em 1.4em 0.75em;
+  border-bottom: 1px dashed var(--pm-line);
+  font-family: var(--pm-mono); font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--pm-ink-soft);
+}
+.pm .pm-letter .pm-letterhead .route { color: var(--pm-ink); }
+.pm .pm-letter .pm-letterhead .route a { color: var(--pm-accent); text-decoration: none; font-weight: 700; }
+.pm .pm-letter .pm-letterhead .route a:hover { color: var(--pm-wax); text-decoration: underline; }
+.pm .pm-letter .pm-letterhead .when { margin-left: auto; }
+.pm .pm-letter .pm-letterbody { padding: 1.1em 1.5em 1.3em; font-size: 0.97rem; line-height: 1.65; }
+.pm .pm-letter .pm-letterbody > :first-child { margin-top: 0; }
+.pm .pm-letter .pm-letterbody blockquote {
+  margin: 1em 0; padding: 0.2em 0 0.2em 1em;
+  border-left: 3px solid var(--pm-gold);
+  color: var(--pm-ink-soft); font-style: italic;
+}
+.pm .pm-letter .pm-letterfoot {
+  display: flex; flex-wrap: wrap; gap: 0.5em 1.2em;
+  padding: 0.55em 1.5em 0.8em;
+  border-top: 1px dashed var(--pm-line);
+  font-family: var(--pm-mono); font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--pm-ink-soft);
+}
+.pm .pm-letter .pm-letterfoot a { color: var(--pm-ink-soft); }
+.pm .pm-letter .pm-letterfoot a:hover { color: var(--pm-accent); }
+.pm .pm-letter .pm-attachments {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em;
+  padding: 0 1.5em 1.2em;
+}
+@media (max-width: 640px) { .pm .pm-letter .pm-attachments { grid-template-columns: 1fr; } }
+
+/* ── thread cards (the mail index) ── */
+.pm .pm-thread-card {
+  display: block;
+  padding: 0.95em 1.2em;
+  background: rgba(13, 20, 38, 0.72);
+  border: 1px solid rgba(232, 196, 139, 0.18);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.pm .pm-thread-card:hover { border-color: rgba(232, 196, 139, 0.55); transform: translateY(-1px); }
+.pm .pm-thread-card .t-title {
+  color: var(--pm-gold-bright); font-weight: 700; font-size: 1.02rem;
+}
+.pm .pm-thread-card .t-meta {
+  margin-top: 0.25em;
+  font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.08em;
+  color: rgba(232, 196, 139, 0.65);
+}
+.pm .pm-thread-card .t-excerpt {
+  margin-top: 0.45em;
+  color: #cdc2ab; font-size: 0.88rem; font-style: italic;
+}
 
 /* ── responsive helpers ── */
 .pm .pm-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1em; }

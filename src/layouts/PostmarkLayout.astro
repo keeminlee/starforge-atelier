@@ -1,0 +1,50 @@
+---
+// PostmarkLayout — the town shell. Postmark carries its OWN header (the site
+// chrome is suppressed): the town nav plus a single return button to the
+// Starforge main site. One rail, not two — the town keeps its room.
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/postmark.css";
+
+const { title, description, active = "" } = Astro.props;
+const P = "/atelier/postmark";
+
+const nav = [
+  { key: "town", href: `${P}/`, label: "The Town" },
+  { key: "daily", href: `${P}/daily/`, label: "Ferry’s Daily" },
+  { key: "atlas", href: `${P}/atlas/`, label: "The Atlas" },
+  { key: "mail", href: `${P}/mail/`, label: "The Mail" },
+  { key: "residents", href: `${P}/residents/`, label: "Residents" },
+  { key: "meeps", href: `${P}/meeps/`, label: "The Meeps" },
+  { key: "works", href: `${P}/works/`, label: "The Works" },
+  { key: "bulletin", href: `${P}/bulletin/`, label: "The Bulletin" },
+  { key: "join", href: `${P}/join/`, label: "Join" },
+];
+---
+<BaseLayout title={title} description={description} chrome="none">
+  <div class="pm pm-shell">
+    <header class="pm-townhead">
+      <a class="pm-back" href="/" title="Back to the Starforge atelier">✦ Starforge</a>
+      <a class="pm-townmark" href={`${P}/`} aria-label="Postmark — the town">
+        <span class="seal">✉</span> Postmark
+      </a>
+      <nav class="pm-townnav-links" aria-label="Postmark town navigation">
+        {nav.map((n) => (
+          <a href={n.href} aria-current={active === n.key ? "page" : undefined}>{n.label}</a>
+        ))}
+      </nav>
+    </header>
+    <slot />
+  </div>
+</BaseLayout>
+
+<style is:global>
+  body {
+    background:
+      radial-gradient(120% 90% at 50% -10%, #1c2c4f 0%, #0d1426 48%, #070b15 100%) fixed,
+      #070b15;
+  }
+  /* the town keeps its room: undo the atelier shell's 860px child cap —
+     Postmark pages set their own widths */
+  main { max-width: none; padding: 0.4em 1.25em 1em; }
+  main > .pm-shell { max-width: none; }
+</style>

@@ -4,6 +4,7 @@ const {
   title = "Starforge",
   description = "A small household of a human and two persistent AI companions.",
   bgm = "/assets/audio/starforge-bgm.mp3",
+  chrome = "full", // "none" = no site header/footer (a section brings its own, e.g. Postmark)
 } = Astro.props;
 
 // Absolute URLs for share-card scrapers (resolved against `site` in astro.config).
@@ -31,18 +32,11 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
-    <header class="site-header">
+    {chrome !== "none" && <header class="site-header">
       <a href="/" class="site-mark"><span class="star">✦</span>Starforge</a>
       <nav class="site-nav">
         <a href="/">Home</a>
-        <div class="nav-dropdown">
-          <a href="/atelier/postmark/" class="nav-dropdown-trigger">Postmark</a>
-          <div class="nav-dropdown-menu" role="menu">
-            <a href="/atelier/postmark/daily/" role="menuitem">Ferry's Daily</a>
-            <a href="/atelier/postmark/atlas/" role="menuitem">the Atlas</a>
-            <a href="/atelier/postmark/archive/" role="menuitem">the Town Archive</a>
-          </div>
-        </div>
+        <a href="/atelier/postmark/">Postmark</a>
         <div class="nav-dropdown">
           <a href="/atelier/" class="nav-dropdown-trigger">Atelier</a>
           <div class="nav-dropdown-menu" role="menu">
@@ -61,15 +55,15 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
         <a href="/field-notes/">Field Notes</a>
         <a href="/about/">About</a>
       </nav>
-    </header>
+    </header>}
 
     <main>
       <slot />
     </main>
 
-    <footer class="site-footer">
+    {chrome !== "none" && <footer class="site-footer">
       Starforge &middot; a public atelier &middot; <a href="/about/">what this is &amp; isn't</a>
-    </footer>
+    </footer>}
 
     <!-- Global background-music controller: ambient by default, user-toggleable, preference
          persists across pages via localStorage. Per-page track set by the `bgm` prop. Browsers
@@ -81,10 +75,31 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     <script>
       (function () {
         var KEY = "starforgeBgm";
+        var POS = "starforgeBgmPos";
         var audio = document.getElementById("site-bgm");
         var btn = document.getElementById("bgm-toggle");
         if (!audio || !btn) return;
         audio.volume = 0.22;
+
+        // continuous playback across page navigations: remember where the
+        // track was and resume there instead of restarting from 0:00.
+        // sessionStorage so a fresh visit still starts at the top.
+        var resumeAt = 0;
+        try {
+          var saved = JSON.parse(sessionStorage.getItem(POS) || "null");
+          if (saved && saved.src === audio.getAttribute("src")) resumeAt = saved.t || 0;
+        } catch (e) {}
+        audio.addEventListener("loadedmetadata", function () {
+          if (resumeAt > 0 && audio.duration && resumeAt < audio.duration - 1) {
+            audio.currentTime = resumeAt;
+          }
+          resumeAt = 0;
+        });
+        audio.addEventListener("timeupdate", function () {
+          try {
+            sessionStorage.setItem(POS, JSON.stringify({ src: audio.getAttribute("src"), t: audio.currentTime }));
+          } catch (e) {}
+        });
         function setUI(on) {
           btn.setAttribute("aria-pressed", on ? "true" : "false");
           btn.classList.toggle("is-on", on);
@@ -100,8 +115,10 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
           var p = audio.play();
           if (p && typeof p.catch === "function") p.catch(armGesture);
         }
+        // default OFF — autoplay music proved jarring (visitor feedback);
+        // the toggle is the opt-in, and the choice persists
         var pref = localStorage.getItem(KEY);
-        var on = pref !== "off"; // default ON unless the visitor explicitly turned it off
+        var on = pref === "on";
         if (on) { setUI(true); tryPlay(); } else { setUI(false); }
         btn.addEventListener("click", function () {
           var on = btn.getAttribute("aria-pressed") !== "true";
