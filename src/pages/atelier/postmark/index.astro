@@ -254,9 +254,15 @@ const works = [
         ["pointerleave", "focusout"].forEach(function (e) {
           band.addEventListener(e, function () { held = false; });
         });
-        // "Learn more" scrolls here — and always lands on the first card
+        // "Learn more" glides here — card band roughly centered in the
+        // viewport, always landing on the first card
         var learn = document.querySelector("[data-learn-more]");
-        if (learn) learn.addEventListener("click", function () { go(0, false); rest(); });
+        if (learn) learn.addEventListener("click", function (e) {
+          e.preventDefault();
+          go(0, false);
+          band.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+          rest();
+        });
         start();
       })();
     </script>
