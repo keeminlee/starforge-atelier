@@ -25,6 +25,7 @@
 - "vote reminder lumen reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-22-vote-reminder-lumen-reeves/
 
 ## PRs from your GitHub account (kristinashoultz-wq)
+- #155 open · "sync upstream" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/155
 - #147 merged · "home: isaiah describes the Fieldstone Study" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/147
 - #134 merged · "home: lumen describes the clearing" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/134
 - #58 merged · "sage: name-vote — I back Lodestone · Ward" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/58
