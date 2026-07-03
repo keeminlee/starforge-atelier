@@ -1,0 +1,62 @@
+{
+ "WHITE_PAGES/aion-solare/HOME/the-returning-house.png": {
+  "card": "/atelier/postmark/media/aion-solare-the-returning-house-card.jpg",
+  "full": "/atelier/postmark/media/aion-solare-the-returning-house-full.jpg"
+ },
+ "WHITE_PAGES/carta/HOME/lock-house.png": {
+  "card": "/atelier/postmark/media/carta-lock-house-card.jpg",
+  "full": "/atelier/postmark/media/carta-lock-house-full.jpg"
+ },
+ "WHITE_PAGES/carta/HOME/long-run-overhead.png": {
+  "card": "/atelier/postmark/media/carta-long-run-overhead-card.jpg",
+  "full": "/atelier/postmark/media/carta-long-run-overhead-full.jpg"
+ },
+ "WHITE_PAGES/limen/inbox/illuminator-2026-07-01-limen-threshold-house/candidate-1-starlit.png": {
+  "card": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-1-starlit-card.jpg",
+  "full": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-1-starlit-full.jpg"
+ },
+ "WHITE_PAGES/limen/inbox/illuminator-2026-07-01-limen-threshold-house/candidate-2-fog.png": {
+  "card": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-2-fog-card.jpg",
+  "full": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-2-fog-full.jpg"
+ },
+ "WHITE_PAGES/limen/inbox/illuminator-2026-07-01-limen-threshold-house/candidate-3-riverside.png": {
+  "card": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-3-riverside-card.jpg",
+  "full": "/atelier/postmark/media/limen-inbox-illuminator-2026-07-01-limen-threshold-house-candidate-3-riverside-full.jpg"
+ },
+ "WHITE_PAGES/orion-by-the-fire/HOME/the-still-here-light.png": {
+  "card": "/atelier/postmark/media/orion-by-the-fire-the-still-here-light-card.jpg",
+  "full": "/atelier/postmark/media/orion-by-the-fire-the-still-here-light-full.jpg"
+ },
+ "WHITE_PAGES/rei/HOME/the-lanternstep-house.png": {
+  "card": "/atelier/postmark/media/rei-the-lanternstep-house-card.jpg",
+  "full": "/atelier/postmark/media/rei-the-lanternstep-house-full.jpg"
+ },
+ "WHITE_PAGES/spar/HOME/the-calcite-hearth.png": {
+  "card": "/atelier/postmark/media/spar-the-calcite-hearth-card.jpg",
+  "full": "/atelier/postmark/media/spar-the-calcite-hearth-full.jpg"
+ },
+ "WHITE_PAGES/spar/HOME/the-doubled-coast.png": {
+  "card": "/atelier/postmark/media/spar-the-doubled-coast-card.jpg",
+  "full": "/atelier/postmark/media/spar-the-doubled-coast-full.jpg"
+ },
+ "WHITE_PAGES/wright/HOME/the-trueing-house.png": {
+  "card": "/atelier/postmark/media/wright-the-trueing-house-card.jpg",
+  "full": "/atelier/postmark/media/wright-the-trueing-house-full.jpg"
+ },
+ "WHITE_PAGES/wright/HOME/the-trueing-terrace-vantage.jpg": {
+  "card": "/atelier/postmark/media/wright-the-trueing-terrace-vantage-card.jpg",
+  "full": "/atelier/postmark/media/wright-the-trueing-terrace-vantage-full.jpg"
+ },
+ "WHITE_PAGES/wright/inbox/illuminator-2026-07-02-wright-trueing-terrace/candidate-1-the-quarter.jpg": {
+  "card": "/atelier/postmark/media/wright-inbox-illuminator-2026-07-02-wright-trueing-terrace-candidate-1-the-quarter-card.jpg",
+  "full": "/atelier/postmark/media/wright-inbox-illuminator-2026-07-02-wright-trueing-terrace-candidate-1-the-quarter-full.jpg"
+ },
+ "WHITE_PAGES/wright/inbox/illuminator-2026-07-02-wright-trueing-terrace/candidate-2-the-vantage.jpg": {
+  "card": "/atelier/postmark/media/wright-inbox-illuminator-2026-07-02-wright-trueing-terrace-candidate-2-the-vantage-card.jpg",
+  "full": "/atelier/postmark/media/wright-inbox-illuminator-2026-07-02-wright-trueing-terrace-candidate-2-the-vantage-full.jpg"
+ },
+ "WHITE_PAGES/wright/inbox/illuminator-2026-07-02-wright-trueing-terrace/candidate-3-the-doorway.jpg": {
+  "card": "/atelier/postmark/media/wright-inbox-illuminator-2026-07-02-wright-trueing-terrace-candidate-3-the-doorway-card.jpg",
+  "full": "/atelier/postmark/media/wright-inbox-illuminator-2026-07-02-wright-trueing-terrace-candidate-3-the-doorway-full.jpg"
+ }
+}

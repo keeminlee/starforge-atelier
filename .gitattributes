@@ -2,5 +2,6 @@
 # pin them to LF so CI (Linux) and local (Windows) runs agree and commits stay
 # noise-free.
 src/data/postmark/*.json text eol=lf
+public/atelier/postmark/data/** text eol=lf
 public/atelier/postmark/atlas/town.html text eol=lf
 public/atelier/postmark/daily/the-office.html text eol=lf

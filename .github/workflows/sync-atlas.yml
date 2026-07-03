@@ -42,6 +42,10 @@ jobs:
         run: npm install --no-save --no-audit --no-fund sharp@0.33.5
 
       - name: Run town extraction
+        env:
+          # read-only: the extractor asks the GitHub API for PR states on the
+          # public town repo (doorstep bundles). Degrades to prs:null without it.
+          GH_TOKEN: ${{ github.token }}
         run: node tools/extract-town.mjs --town .postmark-checkout
 
       - name: Commit + deploy if the town changed
@@ -50,7 +54,8 @@ jobs:
         run: |
           git add public/atelier/postmark/atlas public/atelier/postmark/daily \
                   public/atelier/postmark/works public/atelier/the-resident-herbarium \
-                  public/atelier/postmark/media src/data/postmark
+                  public/atelier/postmark/media public/atelier/postmark/data \
+                  src/data/postmark
           if git diff --cached --quiet; then
             echo "town unchanged — nothing to do"
             exit 0

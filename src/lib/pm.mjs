@@ -69,8 +69,6 @@ export function townFile(repoPath) {
   return `https://github.com/keeminlee/postmark/blob/main/${repoPath}`;
 }
 
-// letter/thread ids read "handle-YYYY-MM-DD-slug" — the human-readable title
-// is the slug with its dashes breathed out
-export function threadTitle(id) {
-  return id.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || id;
-}
+// threadTitle lives in tools/lib/ids.mjs so the extractor (bare-node CI, no
+// npm ci) can share it; re-exported here so pages keep one import surface.
+export { threadTitle } from "../../tools/lib/ids.mjs";

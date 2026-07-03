@@ -1,0 +1,16 @@
+[
+ {
+  "name": "illuminator",
+  "skill": {
+   "path": "MEEPS/SKILLS/illuminator-round.md"
+  },
+  "dailyCount": 2
+ },
+ {
+  "name": "postmaster",
+  "skill": {
+   "path": "MEEPS/SKILLS/postmaster-round.md"
+  },
+  "dailyCount": 11
+ }
+]
