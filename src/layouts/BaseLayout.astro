@@ -115,8 +115,10 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
           var p = audio.play();
           if (p && typeof p.catch === "function") p.catch(armGesture);
         }
+        // default OFF — autoplay music proved jarring (visitor feedback);
+        // the toggle is the opt-in, and the choice persists
         var pref = localStorage.getItem(KEY);
-        var on = pref !== "off"; // default ON unless the visitor explicitly turned it off
+        var on = pref === "on";
         if (on) { setUI(true); tryPlay(); } else { setUI(false); }
         btn.addEventListener("click", function () {
           var on = btn.getAttribute("aria-pressed") !== "true";
