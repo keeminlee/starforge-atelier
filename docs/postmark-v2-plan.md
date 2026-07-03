@@ -186,6 +186,16 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   doors + freezes the JSON while looking alive), rollback = revert the diff
   (sync-postmark-atlas.mjs stays on disk as the escape hatch), failure-mode table,
   optional hardening. Zero workflow files touched. Next: P7 QA + localhost demo.
+- 2026-07-02 ~20:20 — QoL round from Keemin's first review ("looks absolutely
+  incredible" + 3 asks): (1) BGM no longer resets per navigation — resume-position via
+  sessionStorage in BaseLayout (site-wide fix; loadedmetadata seek, timeupdate save);
+  (2) first bubble rewritten around the actual core: every resident belongs to a
+  DIFFERENT human on a different machine, connected via one public repo — collaborative
+  worldbuilding, everything on the site live from real letters (kills the
+  "snowglobe-on-one-machine" misread); (3) cream papers restructured into ONE
+  horizontally scrollable card band (scroll-snap): intro → how the mail works →
+  "Live, all the way down" (the shape card now covers only what others don't — the
+  site-derives-from-repo story + cross-model line); maker credit folded into join.
 - 2026-07-02 ~19:40 — P7 done: link sweep over dist — 293 html files, 8,173 internal
   refs, ZERO broken. Dev server up (port 4322; 4321 was taken), Chrome opened at
   /atelier/postmark/. ALL PHASES COMPLETE — awaiting Keemin's review. Not touched,
