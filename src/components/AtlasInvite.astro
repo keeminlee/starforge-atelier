@@ -1,0 +1,118 @@
+---
+// AtlasInvite — the atlas behind a veil: blurred map under the section's
+// words, one golden button; opening it clears the words and the real,
+// interactive atlas takes the viewport. The overlay has its own top bar so
+// its close button never collides with the map's click-panel ×.
+// Used by the front door and the atlas page — one implementation, no drift.
+const { id = "atlas" } = Astro.props;
+---
+<section class="atlas-invite" id={id}>
+  <img class="ai-bg" src="/atelier/postmark/thumbs/atlas.jpg" alt="" aria-hidden="true" />
+  <div class="ai-veil"></div>
+  <div class="ai-copy">
+    <slot />
+    <button class="pm-btn ai-open" type="button" data-atlas-open>Open the atlas ✦</button>
+  </div>
+</section>
+
+<div class="atlas-overlay" data-atlas-overlay aria-hidden="true" role="dialog" aria-label="The Postmark Atlas">
+  <div class="ao-bar">
+    <span class="ao-title">✉ The Postmark Atlas</span>
+    <button class="ao-close" type="button" data-atlas-close>× close</button>
+  </div>
+  <iframe
+    data-src="/atelier/postmark/atlas/town.html"
+    title="The Postmark Atlas — the living map of the mail town; click any home or region to read it in its resident's own words"
+  ></iframe>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.querySelector("[data-atlas-overlay]");
+    var openBtn = document.querySelector("[data-atlas-open]");
+    if (!overlay || !openBtn) return;
+    var frame = overlay.querySelector("iframe");
+    var closeBtn = overlay.querySelector("[data-atlas-close]");
+    function open() {
+      if (!frame.src) frame.src = frame.getAttribute("data-src");
+      overlay.classList.add("open");
+      overlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+    function close() {
+      overlay.classList.remove("open");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      openBtn.focus();
+    }
+    openBtn.addEventListener("click", open);
+    closeBtn.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("open")) close();
+    });
+  })();
+</script>
+
+<style>
+  .atlas-invite {
+    position: relative;
+    display: grid; place-items: center; text-align: center;
+    min-height: 460px;
+    margin: 0 0 2.8em;
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(232, 196, 139, 0.25);
+  }
+  .ai-bg {
+    position: absolute; inset: -24px;
+    width: calc(100% + 48px); height: calc(100% + 48px);
+    object-fit: cover;
+    filter: blur(11px) brightness(0.85);
+  }
+  .ai-veil {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(80% 80% at 50% 50%, rgba(13, 20, 38, 0.42), rgba(7, 11, 21, 0.78)),
+      rgba(13, 20, 38, 0.35);
+  }
+  .ai-copy { position: relative; z-index: 2; max-width: 66ch; padding: 3em 1.5em; }
+  .ai-copy :global(p) { color: #e2d7bd; font-size: clamp(0.98rem, 2vw, 1.06rem); }
+  .ai-copy :global(p em) { color: var(--pm-gold); }
+  .ai-copy :global(h1), .ai-copy :global(h2) {
+    margin: 0 0 0.5em;
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    color: var(--pm-gold-bright);
+    text-shadow: 0 0 30px rgba(232, 196, 139, 0.25);
+  }
+  .ai-open { margin-top: 0.6em; font-size: 0.92rem; padding: 13px 30px; }
+
+  .atlas-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: #070b15;
+    display: none;
+  }
+  .atlas-overlay.open { display: flex; flex-direction: column; }
+  .ao-bar {
+    flex: none;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 52px; padding: 0 1.1em;
+    background: rgba(13, 20, 38, 0.97);
+    border-bottom: 1px solid rgba(232, 196, 139, 0.3);
+  }
+  .ao-title {
+    font-family: var(--pm-mono, ui-monospace, monospace);
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--pm-gold-bright, #f6dcae);
+  }
+  .ao-close {
+    border: 1px solid rgba(232, 196, 139, 0.55);
+    background: transparent;
+    color: var(--pm-gold-bright, #f6dcae);
+    font-family: var(--pm-mono, ui-monospace, monospace);
+    font-size: 0.74rem; letter-spacing: 0.1em;
+    border-radius: 999px; padding: 7px 16px;
+    cursor: pointer;
+  }
+  .ao-close:hover { background: rgba(232, 196, 139, 0.12); }
+  .atlas-overlay iframe { flex: 1; width: 100%; border: 0; display: block; }
+</style>

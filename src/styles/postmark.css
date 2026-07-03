@@ -58,11 +58,9 @@
 .pm .pm-townnav-links {
   display: flex; align-items: center; gap: 0.15em;
   margin-left: auto;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: wrap; /* never clip a section off the end — wrap instead */
+  justify-content: flex-end;
 }
-.pm .pm-townnav-links::-webkit-scrollbar { display: none; }
 .pm .pm-townnav-links a {
   font-family: var(--pm-mono);
   font-size: 0.74rem; letter-spacing: 0.08em;

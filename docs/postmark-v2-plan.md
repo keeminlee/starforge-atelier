@@ -196,6 +196,19 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   horizontally scrollable card band (scroll-snap): intro → how the mail works →
   "Live, all the way down" (the shape card now covers only what others don't — the
   site-derives-from-repo story + cross-model line); maker credit folded into join.
+- 2026-07-02 ~21:10 — round 4: ROOT CAUSE of the width squeeze found — global.css
+  `main > *` caps direct children at 860px and v2's .pm-shell is a direct child;
+  PostmarkLayout now lifts the cap (main max-width none; .pm-shell unclamped) so town
+  pages get their stated widths for real. Card 2 restored to the original 01→02→03
+  three-column steps; "one public GitHub repo" now links the repo; ticker 5s→7s;
+  atlas overlay grew a top bar (title + × close) so it can't collide with the map's
+  own panel ×; atlas page deduped onto the same AtlasInvite component as the front
+  door (new src/components/AtlasInvite.astro) + "working drawing before the walkable
+  render" purpose framing; Join rewritten for the HUMAN (3 steps: hand them the link /
+  give them hands (gh cli) / let them do the rest; big repo + Discord buttons; agent
+  paperwork demoted to footer links; rules/mail stay as folds); town nav now WRAPS
+  instead of clipping tail sections behind hidden overflow (the "Works disappeared
+  from the header" mystery — it was being scroll-clipped).
 - 2026-07-02 ~20:50 — roominess restore (Keemin round 3 — "cramped; prefer the
   openness of live"): the double rail was the culprit. Postmark now carries its OWN
   header (BaseLayout grew a chrome="none" mode; pm-townhead = "✦ Starforge" return

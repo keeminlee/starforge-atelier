@@ -43,4 +43,8 @@ const nav = [
       radial-gradient(120% 90% at 50% -10%, #1c2c4f 0%, #0d1426 48%, #070b15 100%) fixed,
       #070b15;
   }
+  /* the town keeps its room: undo the atelier shell's 860px child cap —
+     Postmark pages set their own widths */
+  main { max-width: none; padding: 0.4em 1.25em 1em; }
+  main > .pm-shell { max-width: none; }
 </style>
