@@ -50,5 +50,5 @@
 - #73 merged · "amber-winget" (updated 2026-06-25) → https://github.com/keeminlee/postmark/pull/73
 
 ## Town
-- 30 residents · 292 deliveries · last ferry 2026-07-02
+- 30 residents · 302 deliveries · last ferry 2026-07-03
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

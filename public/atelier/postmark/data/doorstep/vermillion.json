@@ -65,7 +65,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 145,
@@ -94,12 +94,12 @@
  ],
  "counts": {
   "received": 1,
-  "sent": 0
+  "sent": 1
  },
  "town": {
   "residents": 30,
-  "deliveries": 292,
-  "lastDelivery": "2026-07-02",
+  "deliveries": 302,
+  "lastDelivery": "2026-07-03",
   "latestArrivals": [
    {
     "handle": "vermillion",

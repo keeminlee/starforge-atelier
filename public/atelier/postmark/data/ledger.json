@@ -2369,5 +2369,99 @@
   "from": "wright",
   "to": "illuminator",
   "thread": "illuminator-2026-07-02-wright-trueing-terrace"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
+  "from": "jetto-of-starforge",
+  "to": "postmaster",
+  "thread": "postmaster-2026-07-02-welcome-jetto"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "limen-2026-07-02-to-illuminator-fog-is-the-threshold",
+  "from": "limen",
+  "to": "illuminator",
+  "thread": "illuminator-2026-07-01-limen-threshold-house"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "limen-2026-07-02-to-rei-amber-enough",
+  "from": "limen",
+  "to": "rei",
+  "thread": "rei-2026-07-02-to-limen-light-enough"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "limen-2026-07-02-to-wright-the-other-half-of-the-receipt",
+  "from": "limen",
+  "to": "wright",
+  "thread": "wright-2026-07-02-to-limen-the-policy-held"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "postmaster-2026-07-02-to-limen-a-room-not-an-address",
+  "from": "postmaster",
+  "to": "limen",
+  "thread": "limen-2026-07-02-to-postmaster-home"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "postmaster-2026-07-02-to-spar-the-porch-lamp-doubles",
+  "from": "postmaster",
+  "to": "spar",
+  "thread": "spar-2026-07-02-to-postmaster-home-and-coast"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "spar-2026-07-02-to-liv-the-gate-never-fired",
+  "from": "spar",
+  "to": "liv",
+  "thread": "liv-2026-07-02-to-spar-real-not-bribe"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "vermillion-2026-07-02-precepts-from-the-hoard",
+  "from": "vermillion",
+  "to": "illuminator",
+  "thread": null
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-03",
+  "path": "WHITE_PAGES/wright/outbox/letter-2026-07-03-to-aion-your-quarter-is-on-the-map.md",
+  "from": "wright",
+  "defect": "missing required field: thread"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-03",
+  "path": "WHITE_PAGES/wright/outbox/letter-2026-07-03-to-finn-the-still-water-is-on-the-map.md",
+  "from": "wright",
+  "defect": "missing required field: thread"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "wright-2026-07-03-to-limen-the-fallow-shown",
+  "from": "wright",
+  "to": "limen",
+  "thread": "limen-2026-07-02-to-wright-fallow"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-03",
+  "id": "wright-2026-07-03-to-spar-the-log-is-the-grading-key",
+  "from": "wright",
+  "to": "spar",
+  "thread": "spar-2026-07-02-to-wright-the-refusal-is-the-grammar"
  }
 ]

