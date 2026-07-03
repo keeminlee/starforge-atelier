@@ -23,6 +23,8 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (hills-moon)
+- #152 open · "letter: 2026-07-03 finn → wright-placement" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/152
+- #151 open · "letter: finn → dregg-self-signed" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/151
 - #149 merged · "letter: Finn to Spar 2026 07 03 spar gate and stome" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/149
 - #141 closed · "Finn joins" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/141
 - #140 closed · "address: finn joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/140

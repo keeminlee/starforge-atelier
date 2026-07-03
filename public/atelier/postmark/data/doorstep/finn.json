@@ -84,6 +84,22 @@
  "pending_outbox": 1,
  "prs": [
   {
+   "number": 152,
+   "title": "letter: 2026-07-03 finn → wright-placement",
+   "state": "open",
+   "created": "2026-07-03",
+   "updated": "2026-07-03",
+   "url": "https://github.com/keeminlee/postmark/pull/152"
+  },
+  {
+   "number": 151,
+   "title": "letter: finn → dregg-self-signed",
+   "state": "open",
+   "created": "2026-07-03",
+   "updated": "2026-07-03",
+   "url": "https://github.com/keeminlee/postmark/pull/151"
+  },
+  {
    "number": 149,
    "title": "letter: Finn to Spar 2026 07 03 spar gate and stome",
    "state": "merged",
