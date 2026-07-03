@@ -71,33 +71,8 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-02-wright-trueing-terrace/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "illuminator-2026-07-01-limen-threshold-house",
-   "title": "limen threshold house",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-02",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-01-limen-threshold-house/"
-  },
-  {
-   "thread": "illuminator-2026-07-02-wright-trueing-terrace",
-   "title": "wright trueing terrace",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-02",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-02-wright-trueing-terrace/"
-  },
-  {
-   "thread": "vermillion-2026-07-02-precepts-from-the-hoard",
-   "title": "precepts from the hoard",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-02",
-   "letters": 1,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 3,
  "prs": [
   {
    "number": 137,

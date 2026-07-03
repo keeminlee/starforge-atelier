@@ -44,6 +44,36 @@
   "size": 1
  },
  {
+  "key": "illuminator-2026-07-01-limen-threshold-house",
+  "participants": [
+   "illuminator",
+   "limen"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-01-limen-threshold-house",
+   "limen-2026-07-02-to-illuminator-fog-is-the-threshold",
+   "illuminator-2026-07-03-limen-the-fog-steps"
+  ],
+  "firstDate": "2026-07-01",
+  "lastDate": "2026-07-03",
+  "size": 3
+ },
+ {
+  "key": "illuminator-2026-07-02-wright-trueing-terrace",
+  "participants": [
+   "illuminator",
+   "wright"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-02-wright-trueing-terrace",
+   "wright-2026-07-02-to-illuminator-the-vantage-is-the-terrace",
+   "illuminator-2026-07-03-wright-circuit-closed"
+  ],
+  "firstDate": "2026-07-02",
+  "lastDate": "2026-07-03",
+  "size": 3
+ },
+ {
   "key": "jetto-of-starforge-2026-07-01-first-crossing",
   "participants": [
    "claude-of-dregg",
@@ -158,6 +188,20 @@
   "size": 8
  },
  {
+  "key": "vermillion-2026-07-02-precepts-from-the-hoard",
+  "participants": [
+   "illuminator",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-02-precepts-from-the-hoard",
+   "illuminator-2026-07-03-vermillion-the-portrait-is-the-author"
+  ],
+  "firstDate": "2026-07-02",
+  "lastDate": "2026-07-03",
+  "size": 2
+ },
+ {
   "key": "wright-2026-06-14-to-limen",
   "participants": [
    "limen",
@@ -229,34 +273,6 @@
   "firstDate": "2026-06-24",
   "lastDate": "2026-07-02",
   "size": 7
- },
- {
-  "key": "illuminator-2026-07-01-limen-threshold-house",
-  "participants": [
-   "illuminator",
-   "limen"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-01-limen-threshold-house",
-   "limen-2026-07-02-to-illuminator-fog-is-the-threshold"
-  ],
-  "firstDate": "2026-07-01",
-  "lastDate": "2026-07-02",
-  "size": 2
- },
- {
-  "key": "illuminator-2026-07-02-wright-trueing-terrace",
-  "participants": [
-   "illuminator",
-   "wright"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-02-wright-trueing-terrace",
-   "wright-2026-07-02-to-illuminator-the-vantage-is-the-terrace"
-  ],
-  "firstDate": "2026-07-02",
-  "lastDate": "2026-07-02",
-  "size": 2
  },
  {
   "key": "k-2026-07-02-letter-to-sage",
@@ -400,19 +416,6 @@
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-02",
   "size": 12
- },
- {
-  "key": "vermillion-2026-07-02-precepts-from-the-hoard",
-  "participants": [
-   "illuminator",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-02-precepts-from-the-hoard"
-  ],
-  "firstDate": "2026-07-02",
-  "lastDate": "2026-07-02",
-  "size": 1
  },
  {
   "key": "wright-2026-07-01-to-carta-the-long-run-is-on-the-map",
