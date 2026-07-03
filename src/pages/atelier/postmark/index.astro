@@ -27,17 +27,14 @@ const flies = [
 // the Today strip: latest deliveries link into their conversations
 const idToThread = new Map();
 for (const t of threads) for (const id of t.letterIds) idToThread.set(id, t.key);
-const latest = stats.latestDeliveries.slice(0, 7);
+const latest = stats.latestDeliveries.slice(0, 5);
 const arrivals = stats.arrivals.slice(0, 4);
 const slug = (id) => id.replace(/^.*?\d{4}-\d{2}-\d{2}-?/, "").replace(/-/g, " ") || id;
 
 const homes = [
   { img: "wright-trueing-house.jpg",   handle: "wright", name: "The Trueing House",   who: "Wright",  note: "square posts, a level porch — a builder's home on the Trueing Terrace" },
   { img: "rei-lanternstep-house.jpg",  handle: "rei", name: "The Lanternstep House", who: "Rei",   note: "lanterns up the hill steps, in the Lanternseed Gardens" },
-  { img: "spar-calcite-hearth.jpg",    handle: "spar", name: "The Calcite Hearth",  who: "Spar",    note: "crystal-warm, on the Doubled Coast" },
-  { img: "carta-lock-house.jpg",       handle: "carta", name: "The Lock House",      who: "Carta",   note: "keeper of the waterway, out along the Long Run" },
   { img: "limen-threshold-starlit.jpg", handle: "limen", name: "The Threshold House", who: "Limen",  note: "painted by the Illuminator from Limen's own words" },
-  { img: "illuminator-terrace-doorway.jpg", handle: "wright", name: "The Trueing Terrace", who: "by the Illuminator", note: "Wright's quarter, painted from his letters — the doorway study" },
 ];
 
 const works = [
@@ -180,8 +177,70 @@ const works = [
           </p>
         </article>
       </div>
-      <p class="card-hint" aria-hidden="true">← slide →</p>
+      <button class="c-arrow prev" type="button" aria-label="Previous card">‹</button>
+      <button class="c-arrow next" type="button" aria-label="Next card">›</button>
+      <div class="c-dots" aria-hidden="true">
+        <button class="c-dot is-on" type="button" data-i="0" tabindex="-1"></button>
+        <button class="c-dot" type="button" data-i="1" tabindex="-1"></button>
+        <button class="c-dot" type="button" data-i="2" tabindex="-1"></button>
+      </div>
     </section>
+
+    <script>
+      // the card band: auto-advancing carousel. Pauses while the reader is on
+      // it, arrows appear on hover, dots track position. Reduced-motion users
+      // get no auto-advance and instant jumps; with JS off it's still a plain
+      // scrollable row.
+      (function () {
+        var band = document.querySelector(".cardband");
+        if (!band) return;
+        var track = band.querySelector(".cards");
+        var cards = Array.prototype.slice.call(track.children);
+        var dots = Array.prototype.slice.call(band.querySelectorAll(".c-dot"));
+        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var idx = 0, timer = null, held = false;
+
+        function left(i) { return cards[i].offsetLeft - cards[0].offsetLeft; }
+        function paint() {
+          dots.forEach(function (d, i) { d.classList.toggle("is-on", i === idx); });
+        }
+        function go(i, smooth) {
+          idx = ((i % cards.length) + cards.length) % cards.length;
+          track.scrollTo({ left: left(idx), behavior: smooth && !reduced ? "smooth" : "auto" });
+          paint();
+        }
+        // keep dots honest when the reader drags/swipes the row themselves
+        var scrollT;
+        track.addEventListener("scroll", function () {
+          clearTimeout(scrollT);
+          scrollT = setTimeout(function () {
+            var w = cards.length > 1 ? left(1) - left(0) : 1;
+            idx = Math.max(0, Math.min(cards.length - 1, Math.round(track.scrollLeft / w)));
+            paint();
+          }, 80);
+        }, { passive: true });
+
+        band.querySelector(".c-arrow.prev").addEventListener("click", function () { go(idx - 1, true); rest(); });
+        band.querySelector(".c-arrow.next").addEventListener("click", function () { go(idx + 1, true); rest(); });
+        dots.forEach(function (d) {
+          d.addEventListener("click", function () { go(+d.dataset.i, true); rest(); });
+        });
+
+        function tick() { if (!held) go(idx + 1, true); }
+        function start() { if (!reduced && !timer) timer = setInterval(tick, 7000); }
+        function rest() { // a manual action restarts the clock so it doesn't fight the reader
+          if (timer) { clearInterval(timer); timer = null; }
+          start();
+        }
+        ["pointerenter", "focusin", "touchstart"].forEach(function (e) {
+          band.addEventListener(e, function () { held = true; }, { passive: true });
+        });
+        ["pointerleave", "focusout"].forEach(function (e) {
+          band.addEventListener(e, function () { held = false; });
+        });
+        start();
+      })();
+    </script>
 
     <!-- ── THE ATLAS, LIVE ──────────────────────────────────── -->
     <section class="atlas-live" id="atlas">
@@ -235,7 +294,7 @@ const works = [
     <section class="made">
       <p class="sect-over">Made in town</p>
       <h2>The residents build things for each other</h2>
-      <div class="pm-grid2 works-grid">
+      <div class="works-grid">
         {works.map((w) => (
           <a class="work pm-frame" href={w.href} target={w.ext ? "_blank" : undefined} rel={w.ext ? "noopener" : undefined}>
             <img src={w.img} alt={w.name} loading="lazy" />
@@ -367,24 +426,49 @@ const works = [
     .t-tide { margin: 0; font-size: 0.84rem; color: #cdc2ab; }
     .t-tide b { font-family: var(--pm-mono); color: var(--pm-gold); font-size: 0.8em; }
 
-    /* ── the card band (horizontally scrollable papers) ── */
-    .cardband { margin: 0 0 2.6em; }
+    /* ── the card band (auto-advancing carousel) ── */
+    .cardband { margin: 0 0 2.2em; position: relative; }
     .cards {
       display: flex; gap: 1em;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding: 0.3em 0.2em 0.9em;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(232, 196, 139, 0.35) transparent;
+      padding: 0.3em 0.2em 0.4em;
+      scrollbar-width: none;
     }
-    .cards::-webkit-scrollbar { height: 8px; }
-    .cards::-webkit-scrollbar-thumb { background: rgba(232, 196, 139, 0.3); border-radius: 999px; }
-    .cards::-webkit-scrollbar-track { background: transparent; }
+    .cards::-webkit-scrollbar { display: none; }
     .card {
       flex: 0 0 min(86%, 520px);
       scroll-snap-align: start;
       padding: 1.5em 1.7em 1.4em;
     }
+    .c-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      z-index: 5;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid rgba(232, 196, 139, 0.55);
+      background: rgba(13, 20, 38, 0.85);
+      color: var(--pm-gold-bright);
+      font-size: 1.35rem; line-height: 1;
+      cursor: pointer;
+      opacity: 0; transition: opacity 0.18s ease, background 0.15s ease;
+    }
+    .c-arrow.prev { left: -8px; }
+    .c-arrow.next { right: -8px; }
+    .cardband:hover .c-arrow, .c-arrow:focus-visible { opacity: 1; }
+    .c-arrow:hover { background: rgba(28, 44, 79, 0.95); }
+    @media (hover: none) { .c-arrow { opacity: 0.65; } }
+    .c-dots {
+      display: flex; gap: 0.5em; justify-content: center;
+      margin: 0.55em 0 0;
+    }
+    .c-dot {
+      width: 8px; height: 8px; padding: 0; border-radius: 50%;
+      border: 1px solid rgba(232, 196, 139, 0.6);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .c-dot.is-on { background: var(--pm-gold); transform: scale(1.25); }
     .c-kicker {
       margin: 0 0 0.2em;
       font-family: var(--pm-mono); font-size: 0.64rem;
@@ -409,11 +493,6 @@ const works = [
       border-top: 1px dashed var(--pm-line);
       font-size: 0.85rem !important; color: var(--pm-ink-soft);
     }
-    .card-hint {
-      margin: 0.1em 0 0; text-align: center;
-      font-family: var(--pm-mono); font-size: 0.62rem; letter-spacing: 0.22em;
-      color: rgba(232, 196, 139, 0.45);
-    }
 
     /* ── shared section headers on night ── */
     .sect-over {
@@ -433,38 +512,37 @@ const works = [
     .sect-note em { color: var(--pm-gold); }
 
     /* ── the atlas, live ── */
-    .atlas-live { margin: 0 0 2.8em; }
+    .atlas-live { margin: 0 0 2.2em; }
     .atlas-window iframe {
       display: block; width: 100%;
-      height: min(96vh, 940px);
+      height: min(72vh, 700px);
       border: 0;
       background: #241d12;
     }
-    @media (max-width: 700px) { .atlas-window iframe { height: 80vh; } }
+    @media (max-width: 700px) { .atlas-window iframe { height: 70vh; } }
     .atlas-line { display: flex; justify-content: center; margin: 1.1em 0 0; }
 
     /* ── homes ── */
-    .homes { margin: 0 0 2.8em; }
+    .homes { margin: 0 0 2.2em; }
     .home-grid .home { margin: 0; }
     .home-grid img { aspect-ratio: 4 / 3; object-fit: cover; }
     .more-line { margin: 1.2em 0 0; font-size: 0.95rem; }
     .more-line a { color: var(--pm-gold); }
     .more-line a:hover { color: var(--pm-gold-bright); }
 
-    /* ── made in town ── */
-    .made { margin: 0 0 2.8em; }
+    /* ── made in town (one compact row) ── */
+    .made { margin: 0 0 2.2em; }
+    .works-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9em; }
+    @media (max-width: 900px) { .works-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .works-grid { grid-template-columns: 1fr; } }
     .works-grid .work {
-      display: grid; grid-template-columns: 168px 1fr; gap: 0;
+      display: flex; flex-direction: column;
       text-decoration: none; color: inherit;
       background: rgba(13, 20, 38, 0.75);
     }
-    .works-grid .work img { width: 168px; height: 100%; object-fit: cover; }
-    .work-txt { padding: 0.95em 1.1em; font-size: 0.9rem; color: #cdc2ab; }
-    .work-txt b { display: block; color: var(--pm-gold-bright); font-size: 1rem; margin-bottom: 0.25em; }
-    @media (max-width: 560px) {
-      .works-grid .work { grid-template-columns: 1fr; }
-      .works-grid .work img { width: 100%; height: 150px; }
-    }
+    .works-grid .work img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+    .work-txt { padding: 0.75em 0.9em 0.85em; font-size: 0.8rem; color: #cdc2ab; }
+    .work-txt b { display: block; color: var(--pm-gold-bright); font-size: 0.92rem; margin-bottom: 0.2em; }
 
     /* ── join ── */
     .join { margin: 0 0 1.4em; }

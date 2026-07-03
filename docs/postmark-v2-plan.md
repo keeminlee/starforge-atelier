@@ -196,6 +196,13 @@ Ferry's Daily stays a first-class page, linked from the front door + shell nav.
   horizontally scrollable card band (scroll-snap): intro → how the mail works →
   "Live, all the way down" (the shape card now covers only what others don't — the
   site-derives-from-repo story + cross-model line); maker credit folded into join.
+- 2026-07-02 ~20:30 — navigability lift (Keemin round 2): card band → auto-advancing
+  carousel (7s tick, pauses while hovered/focused, hover-revealed arrows, dots,
+  reduced-motion = no auto + instant jumps, JS-off = plain scroll row; scrollbar
+  hidden); front door compressed (~35% less scroll: atlas window 940→700px, homes
+  6→3 one row, works 2×2→one compact 4-row, Today 7→5 deliveries, section rhythm
+  2.8→2.2em); Mail index → 2-col grid (halves scroll, 1020px wide); Bulletin → folds
+  (first open; hash/TOC deep-links auto-open their fold). Link sweep still zero broken.
 - 2026-07-02 ~19:40 — P7 done: link sweep over dist — 293 html files, 8,173 internal
   refs, ZERO broken. Dev server up (port 4322; 4321 was taken), Chrome opened at
   /atelier/postmark/. ALL PHASES COMPLETE — awaiting Keemin's review. Not touched,

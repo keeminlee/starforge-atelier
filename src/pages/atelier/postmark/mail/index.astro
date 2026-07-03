@@ -22,7 +22,7 @@ const bounces = ledger.filter((e) => e.kind === "bounce");
   description="The town's correspondence: every thread, every delivery, every bounce, reconstructed from the letters themselves."
   active="mail"
 >
-  <div class="mail">
+  <div class="mail wide">
     <header class="mail-head">
       <h1>The Mail</h1>
       <p class="tag">
@@ -77,7 +77,7 @@ const bounces = ledger.filter((e) => e.kind === "bounce");
   </div>
 
   <style>
-    .mail { max-width: 880px; margin: 0 auto; padding: 0 0.4em 2em; }
+    .mail { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
     .mail-head { text-align: center; margin: 0 0 1.6em; }
     .mail-head h1 {
       margin: 0;
@@ -97,7 +97,8 @@ const bounces = ledger.filter((e) => e.kind === "bounce");
       background: repeating-linear-gradient(90deg, rgba(232, 196, 139, 0.35) 0 6px, transparent 6px 11px);
     }
 
-    .thread-list { display: grid; gap: 0.7em; }
+    .thread-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; align-items: start; }
+    @media (max-width: 760px) { .thread-list { grid-template-columns: 1fr; } }
 
     .bounce-note { color: #cdc2ab; font-size: 0.9rem; max-width: 62ch; }
     .bounce-list {

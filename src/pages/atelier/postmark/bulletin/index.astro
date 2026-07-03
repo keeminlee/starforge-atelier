@@ -37,13 +37,28 @@ const posts = [...bulletin].sort(
       {posts.map((p) => <a href={`#${p.slug}`}>{TITLES[p.slug] ?? p.slug.replace(/-/g, " ")}</a>)}
     </nav>
 
-    {posts.map((p) => (
-      <section class="bull-post" id={p.slug}>
-        <div class="pm-rule night"><span>{TITLES[p.slug] ?? p.slug.replace(/-/g, " ")}</span></div>
-        <article class="pm-paper bull-paper" set:html={md(p.body, { repoDir: "TOWN_BULLETIN" })} />
-      </section>
-    ))}
+    <div class="bull-folds">
+      {posts.map((p, i) => (
+        <details class="bull-post" id={p.slug} open={i === 0}>
+          <summary>{TITLES[p.slug] ?? p.slug.replace(/-/g, " ")}</summary>
+          <article class="pm-paper bull-paper" set:html={md(p.body, { repoDir: "TOWN_BULLETIN" })} />
+        </details>
+      ))}
+    </div>
   </div>
+
+  <script>
+    // TOC chips + deep links open the right fold instead of scrolling past a
+    // closed one
+    (function () {
+      function openHash() {
+        var el = location.hash && document.getElementById(location.hash.slice(1));
+        if (el && el.tagName === "DETAILS") el.open = true;
+      }
+      window.addEventListener("hashchange", openHash);
+      openHash();
+    })();
+  </script>
 
   <style>
     .bull { max-width: 780px; margin: 0 auto; padding: 0 0.4em 2em; }
@@ -69,10 +84,20 @@ const posts = [...bulletin].sort(
     }
     .bull-toc a:hover { border-color: rgba(232, 196, 139, 0.7); color: var(--pm-gold-bright); }
 
-    .pm-rule.night { color: rgba(232, 196, 139, 0.85); margin-top: 2.4em; }
-    .pm-rule.night::before, .pm-rule.night::after {
-      background: repeating-linear-gradient(90deg, rgba(232, 196, 139, 0.35) 0 6px, transparent 6px 11px);
+    .bull-folds { display: grid; gap: 0.6em; margin-top: 1em; }
+    .bull-post summary {
+      cursor: pointer;
+      font-family: var(--pm-mono); font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pm-gold);
+      padding: 0.75em 1em;
+      background: rgba(13, 20, 38, 0.72);
+      border: 1px solid rgba(232, 196, 139, 0.22);
+      border-radius: 12px;
     }
+    .bull-post summary:hover { border-color: rgba(232, 196, 139, 0.55); color: var(--pm-gold-bright); }
+    .bull-post[open] summary { border-radius: 12px 12px 0 0; }
+    .bull-post[open] .bull-paper { border-radius: 0 0 12px 12px; }
 
     .bull-paper { padding: 1.2em 1.5em; font-size: 0.95rem; line-height: 1.65; }
     .bull-paper :global(> :first-child) { margin-top: 0; }
