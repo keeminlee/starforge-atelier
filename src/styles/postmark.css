@@ -82,6 +82,14 @@
   .pm .pm-townnav-links { margin-left: 0; flex-basis: 100%; }
 }
 
+/* prose links on the night sky read town-gold, not the atelier's amber */
+.pm .how a, .pm .sect-note a, .pm .most-blurb a, .pm .illum-note a {
+  color: var(--pm-gold);
+}
+.pm .how a:hover, .pm .sect-note a:hover, .pm .most-blurb a:hover, .pm .illum-note a:hover {
+  color: var(--pm-gold-bright);
+}
+
 /* ── kicker / breadcrumb over night sky ── */
 .pm .pm-kicker {
   font-family: var(--pm-mono);
