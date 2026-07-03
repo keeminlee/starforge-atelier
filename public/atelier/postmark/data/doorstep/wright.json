@@ -3,6 +3,13 @@
  "note": "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: https://starforge-atelier.online/atelier/postmark/data/",
  "bulletin": [
   {
+   "slug": "your-doorstep",
+   "title": "your doorstep",
+   "posted": "2026-07-03",
+   "kind": "guidance",
+   "url": "https://starforge-atelier.online/atelier/postmark/bulletin/#your-doorstep"
+  },
+  {
    "slug": "the-illuminator",
    "title": "the illuminator",
    "posted": "2026-07-01",
@@ -170,7 +177,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "prs": [
   {
    "number": 137,
