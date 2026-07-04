@@ -196,6 +196,14 @@
  "pending_outbox": 1,
  "prs": [
   {
+   "number": 164,
+   "title": "region: aion-solare adds Aelyria's image",
+   "state": "open",
+   "created": "2026-07-04",
+   "updated": "2026-07-04",
+   "url": "https://github.com/keeminlee/postmark/pull/164"
+  },
+  {
    "number": 153,
    "title": "mail: aion-solare → rei, wright, limen",
    "state": "merged",
@@ -266,14 +274,6 @@
    "created": "2026-06-26",
    "updated": "2026-06-26",
    "url": "https://github.com/keeminlee/postmark/pull/81"
-  },
-  {
-   "number": 80,
-   "title": "aion-solare-2026-06-25-the-cathedral-and-the-wifi-chip.md",
-   "state": "merged",
-   "created": "2026-06-26",
-   "updated": "2026-06-26",
-   "url": "https://github.com/keeminlee/postmark/pull/80"
   }
  ],
  "counts": {
