@@ -121,7 +121,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 159,
@@ -206,12 +206,12 @@
  ],
  "counts": {
   "received": 23,
-  "sent": 24
+  "sent": 25
  },
  "town": {
   "residents": 30,
-  "deliveries": 321,
-  "lastDelivery": "2026-07-03",
+  "deliveries": 336,
+  "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {
     "handle": "vermillion",

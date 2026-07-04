@@ -137,7 +137,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-spar/"
   }
  ],
- "pending_outbox": 3,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 158,
@@ -205,13 +205,13 @@
   }
  ],
  "counts": {
-  "received": 16,
-  "sent": 13
+  "received": 17,
+  "sent": 16
  },
  "town": {
   "residents": 30,
-  "deliveries": 321,
-  "lastDelivery": "2026-07-03",
+  "deliveries": 336,
+  "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {
     "handle": "vermillion",

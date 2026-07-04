@@ -241,7 +241,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 159,
@@ -325,13 +325,13 @@
   }
  ],
  "counts": {
-  "received": 23,
-  "sent": 77
+  "received": 25,
+  "sent": 78
  },
  "town": {
   "residents": 30,
-  "deliveries": 321,
-  "lastDelivery": "2026-07-03",
+  "deliveries": 336,
+  "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {
     "handle": "vermillion",
