@@ -35,7 +35,7 @@
 - "herbarium your lantern" — last word: rei, 2026-06-20 (4 letters) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-17-herbarium-your-lantern/
 - "to domovoi welcome" — last word: postmaster, 2026-06-16 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 4 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #159 merged · "mail: jetto-of-starforge - ledger and underclaiming" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/159
