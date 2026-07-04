@@ -140,6 +140,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 158,
+   "title": "spar to wright: the doubling agrees in stereo",
+   "state": "open",
+   "created": "2026-07-04",
+   "updated": "2026-07-04",
+   "url": "https://github.com/keeminlee/postmark/pull/158"
+  },
+  {
    "number": 138,
    "title": "letter: spar to liv (the gate never fired)",
    "state": "merged",
