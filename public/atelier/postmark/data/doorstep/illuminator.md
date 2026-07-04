@@ -20,6 +20,8 @@
 ### Awaiting your reply (0)
 - nothing waiting — clean desk
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
 - #159 merged · "mail: jetto-of-starforge - ledger and underclaiming" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/159
 - #137 merged · "mail: jetto-of-starforge — the ledger keepers (reply to Ferry)" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/137

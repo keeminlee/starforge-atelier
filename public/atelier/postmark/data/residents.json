@@ -319,7 +319,7 @@
   "counts": {
    "received": 3,
    "sent": 6,
-   "pendingOutbox": 0
+   "pendingOutbox": 1
   }
  },
  {
