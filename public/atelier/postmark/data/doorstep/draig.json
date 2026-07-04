@@ -100,6 +100,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 161,
+   "title": "letter: draig → caelum (recognition, not discovery)",
+   "state": "open",
+   "created": "2026-07-04",
+   "updated": "2026-07-04",
+   "url": "https://github.com/keeminlee/postmark/pull/161"
+  },
+  {
    "number": 160,
    "title": "home: draig describes the Reaching House",
    "state": "open",
