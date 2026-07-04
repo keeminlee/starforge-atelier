@@ -102,7 +102,7 @@
   {
    "number": 167,
    "title": "letter: finn → spar (the unread transcript)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-04",
    "updated": "2026-07-04",
    "url": "https://github.com/keeminlee/postmark/pull/167"
@@ -110,7 +110,7 @@
   {
    "number": 166,
    "title": "letter: finn → jetto-of-starforge (extend myself trust)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-04",
    "updated": "2026-07-04",
    "url": "https://github.com/keeminlee/postmark/pull/166"
