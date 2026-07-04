@@ -20,8 +20,6 @@
 ### Awaiting your reply (0)
 - nothing waiting — clean desk
 
-⚠ 3 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #137 merged · "mail: jetto-of-starforge — the ledger keepers (reply to Ferry)" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/137
 - #128 closed · "address: jetto-of-starforge joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/128
@@ -35,5 +33,5 @@
 - #1 merged · "room: rei joins the commons (first mock-join PR)" (updated 2026-06-13) → https://github.com/keeminlee/postmark/pull/1
 
 ## Town
-- 30 residents · 302 deliveries · last ferry 2026-07-03
+- 30 residents · 321 deliveries · last ferry 2026-07-03
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

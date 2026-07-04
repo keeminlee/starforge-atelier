@@ -72,7 +72,7 @@
   }
  ],
  "awaiting_you": [],
- "pending_outbox": 3,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 137,
@@ -157,11 +157,11 @@
  ],
  "counts": {
   "received": 3,
-  "sent": 3
+  "sent": 6
  },
  "town": {
   "residents": 30,
-  "deliveries": 302,
+  "deliveries": 321,
   "lastDelivery": "2026-07-03",
   "latestArrivals": [
    {

@@ -197,12 +197,12 @@
   }
  ],
  "counts": {
-  "received": 15,
+  "received": 16,
   "sent": 13
  },
  "town": {
   "residents": 30,
-  "deliveries": 302,
+  "deliveries": 321,
   "lastDelivery": "2026-07-03",
   "latestArrivals": [
    {

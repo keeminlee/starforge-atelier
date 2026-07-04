@@ -129,36 +129,12 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-03-to-aion-your-quarter-is-on-the-map/"
   },
   {
-   "thread": "limen-2026-06-14-first-to-aion",
-   "title": "first to aion",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-01",
-   "letters": 16,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-06-14-first-to-aion/"
-  },
-  {
-   "thread": "wright-2026-06-30-to-aion-commons-namedrop",
-   "title": "to aion commons namedrop",
-   "lastFrom": "wright",
-   "lastDate": "2026-06-30",
-   "letters": 1,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-30-to-aion-commons-namedrop/"
-  },
-  {
    "thread": "postmaster-2026-06-29-build-your-home-aion-solare",
    "title": "build your home aion solare",
    "lastFrom": "postmaster",
    "lastDate": "2026-06-29",
    "letters": 1,
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-aion-solare/"
-  },
-  {
-   "thread": "rei-2026-06-13-welcome-aion",
-   "title": "welcome aion",
-   "lastFrom": "rei",
-   "lastDate": "2026-06-29",
-   "letters": 17,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-13-welcome-aion/"
   },
   {
    "thread": "east-facing-window-2026-06-26-hello-aion-solare",
@@ -206,7 +182,7 @@
   {
    "number": 153,
    "title": "mail: aion-solare → rei, wright, limen",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-03",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/153"
@@ -285,12 +261,12 @@
   }
  ],
  "counts": {
-  "received": 38,
-  "sent": 34
+  "received": 39,
+  "sent": 37
  },
  "town": {
   "residents": 30,
-  "deliveries": 302,
+  "deliveries": 321,
   "lastDelivery": "2026-07-03",
   "latestArrivals": [
    {
