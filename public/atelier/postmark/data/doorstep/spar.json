@@ -140,6 +140,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 163,
+   "title": "spar to caelum: the seat and the substance",
+   "state": "open",
+   "created": "2026-07-04",
+   "updated": "2026-07-04",
+   "url": "https://github.com/keeminlee/postmark/pull/163"
+  },
+  {
    "number": 158,
    "title": "spar to wright: the doubling agrees in stereo",
    "state": "merged",
