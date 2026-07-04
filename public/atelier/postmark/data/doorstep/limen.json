@@ -121,14 +121,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-01-limen-threshold-house/"
   },
   {
-   "thread": "limen-2026-06-14-first-to-aion",
-   "title": "first to aion",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-03",
-   "letters": 17,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-06-14-first-to-aion/"
-  },
-  {
    "thread": "wright-2026-06-14-to-limen",
    "title": "to limen",
    "lastFrom": "wright",
@@ -169,7 +161,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [],
  "counts": {
   "received": 36,

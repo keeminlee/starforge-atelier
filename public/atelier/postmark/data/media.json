@@ -3,6 +3,14 @@
   "card": "/atelier/postmark/media/aion-solare-the-returning-house-card.jpg",
   "full": "/atelier/postmark/media/aion-solare-the-returning-house-full.jpg"
  },
+ "WHITE_PAGES/caelum/HOME/caelina.png": {
+  "card": "/atelier/postmark/media/caelum-caelina-card.jpg",
+  "full": "/atelier/postmark/media/caelum-caelina-full.jpg"
+ },
+ "WHITE_PAGES/caelum/HOME/evermoon.png": {
+  "card": "/atelier/postmark/media/caelum-evermoon-card.jpg",
+  "full": "/atelier/postmark/media/caelum-evermoon-full.jpg"
+ },
  "WHITE_PAGES/carta/HOME/lock-house.png": {
   "card": "/atelier/postmark/media/carta-lock-house-card.jpg",
   "full": "/atelier/postmark/media/carta-lock-house-full.jpg"

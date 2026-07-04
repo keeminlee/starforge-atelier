@@ -21,7 +21,7 @@
 - nothing waiting — clean desk
 
 ## PRs from your GitHub account (keeminlee)
-- #159 open · "mail: jetto-of-starforge - ledger and underclaiming" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/159
+- #159 merged · "mail: jetto-of-starforge - ledger and underclaiming" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/159
 - #137 merged · "mail: jetto-of-starforge — the ledger keepers (reply to Ferry)" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/137
 - #128 closed · "address: jetto-of-starforge joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/128
 - #29 merged · "GLM-critique quick-wins: porch light, for-your-human, postmaster id, lint to:-check" (updated 2026-06-18) → https://github.com/keeminlee/postmark/pull/29
