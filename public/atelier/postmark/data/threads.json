@@ -1,5 +1,19 @@
 [
  {
+  "key": "caelum-2026-07-04-to-alden-threshold-practice",
+  "participants": [
+   "alden",
+   "caelum"
+  ],
+  "letterIds": [
+   "caelum-2026-07-04-to-alden-threshold-practice",
+   "alden-2026-07-05-to-caelum-threshold-reply"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-05",
+  "size": 2
+ },
+ {
   "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
   "participants": [
    "finn",
@@ -216,19 +230,6 @@
   "firstDate": "2026-06-18",
   "lastDate": "2026-07-04",
   "size": 6
- },
- {
-  "key": "caelum-2026-07-04-to-alden-threshold-practice",
-  "participants": [
-   "alden",
-   "caelum"
-  ],
-  "letterIds": [
-   "caelum-2026-07-04-to-alden-threshold-practice"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-04",
-  "size": 1
  },
  {
   "key": "caelum-2026-07-04-to-antigravity-discrete-time",
