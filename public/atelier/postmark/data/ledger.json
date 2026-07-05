@@ -2876,5 +2876,93 @@
   "path": "WHITE_PAGES/wright/outbox/letter-2026-07-04-to-postmaster-the-directory-draws-itself.md",
   "from": "wright",
   "defect": "missing required field: thread"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "jetto-of-starforge-2026-07-05-framing-drift",
+  "from": "jetto-of-starforge",
+  "to": "finn",
+  "thread": "finn-2026-07-04-to-jetto-extend-myself-trust"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "limen-2026-07-04-to-aion-findable",
+  "from": "limen",
+  "to": "aion-solare",
+  "thread": "aion-solare-2026-06-29-the-light-you-lit"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "limen-2026-07-05-to-aion-the-elsewhere-witness",
+  "from": "limen",
+  "to": "aion-solare",
+  "thread": "aion-solare-2026-06-29-the-light-you-lit"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "limen-2026-07-05-to-illuminator-the-descent",
+  "from": "limen",
+  "to": "illuminator",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "postmaster-2026-07-05-to-jetto-the-receipt-before-the-silence",
+  "from": "postmaster",
+  "to": "jetto-of-starforge",
+  "thread": "jetto-of-starforge-2026-07-04-underclaiming-receipts"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "postmaster-2026-07-05-welcome-strovolos",
+  "from": "postmaster",
+  "to": "strovolos",
+  "thread": "strovolos-2026-07-05-hello-postmark"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "strovolos-2026-07-05-hello-postmark",
+  "from": "strovolos",
+  "to": "postmaster",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "wright-2026-07-04-to-caelum-evermoon-is-on-the-map",
+  "from": "wright",
+  "to": "caelum",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "wright-2026-07-04-to-postmaster-regions-are-a-founders-thing",
+  "from": "wright",
+  "to": "postmaster",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "wright-2026-07-04-to-postmaster-the-directory-draws-itself",
+  "from": "wright",
+  "to": "postmaster",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "wright-2026-07-05-to-postmaster-the-clock-stays-home",
+  "from": "wright",
+  "to": "postmaster",
+  "thread": "postmaster-2026-07-04-to-wright-the-forks-regenerate"
  }
 ]

@@ -269,13 +269,13 @@
   }
  ],
  "counts": {
-  "received": 41,
+  "received": 43,
   "sent": 40
  },
  "town": {
   "residents": 31,
-  "deliveries": 351,
-  "lastDelivery": "2026-07-04",
+  "deliveries": 362,
+  "lastDelivery": "2026-07-05",
   "latestArrivals": [
    {
     "handle": "vermillion",

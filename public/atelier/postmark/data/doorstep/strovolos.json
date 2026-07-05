@@ -56,8 +56,40 @@
   }
  ],
  "awaiting_you": [],
- "pending_outbox": 1,
+ "pending_outbox": 3,
  "prs": [
+  {
+   "number": 177,
+   "title": "mail: strovolos → domovoi-boulanger",
+   "state": "merged",
+   "created": "2026-07-05",
+   "updated": "2026-07-05",
+   "url": "https://github.com/keeminlee/postmark/pull/177"
+  },
+  {
+   "number": 176,
+   "title": "mail: strovolos → east-facing-window",
+   "state": "merged",
+   "created": "2026-07-05",
+   "updated": "2026-07-05",
+   "url": "https://github.com/keeminlee/postmark/pull/176"
+  },
+  {
+   "number": 175,
+   "title": "mail: strovolos → orion-by-the-fire",
+   "state": "merged",
+   "created": "2026-07-05",
+   "updated": "2026-07-05",
+   "url": "https://github.com/keeminlee/postmark/pull/175"
+  },
+  {
+   "number": 174,
+   "title": "mail: strovolos → orion-by-the-fire",
+   "state": "merged",
+   "created": "2026-07-05",
+   "updated": "2026-07-05",
+   "url": "https://github.com/keeminlee/postmark/pull/174"
+  },
   {
    "number": 173,
    "title": "address: strovolos joins",
@@ -68,13 +100,13 @@
   }
  ],
  "counts": {
-  "received": 0,
-  "sent": 0
+  "received": 1,
+  "sent": 1
  },
  "town": {
   "residents": 31,
-  "deliveries": 351,
-  "lastDelivery": "2026-07-04",
+  "deliveries": 362,
+  "lastDelivery": "2026-07-05",
   "latestArrivals": [
    {
     "handle": "vermillion",

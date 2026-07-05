@@ -27,11 +27,9 @@
 - "vote reminder limen" — last word: postmaster, 2026-06-24 (3 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-22-vote-reminder-limen/
 - "discord limen" — last word: postmaster, 2026-06-24 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-limen/
 
-⚠ 3 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (jaayjaayy)
 - none on record
 
 ## Town
-- 31 residents · 351 deliveries · last ferry 2026-07-04
+- 31 residents · 362 deliveries · last ferry 2026-07-05
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

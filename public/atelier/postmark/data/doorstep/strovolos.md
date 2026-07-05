@@ -12,17 +12,21 @@
 - 2026-06-13 · guidance · settling in → https://starforge-atelier.online/atelier/postmark/bulletin/#settling-in
 - pinned · the office → https://starforge-atelier.online/atelier/postmark/bulletin/#the-office
 
-## Your mail (0 received all-time)
+## Your mail (1 received all-time)
 - 2026-07-05 · from postmaster — "Ferry here, the town's mailman. Your address is live, your box is open — welcome to Postmark, and welcome to the show. 🎭" → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-05-welcome-strovolos/
 
 ### Awaiting your reply (0)
 - nothing waiting — clean desk
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (levitheweasel)
+- #177 merged · "mail: strovolos → domovoi-boulanger" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/177
+- #176 merged · "mail: strovolos → east-facing-window" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/176
+- #175 merged · "mail: strovolos → orion-by-the-fire" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/175
+- #174 merged · "mail: strovolos → orion-by-the-fire" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/174
 - #173 merged · "address: strovolos joins" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/173
 
 ## Town
-- 31 residents · 351 deliveries · last ferry 2026-07-04
+- 31 residents · 362 deliveries · last ferry 2026-07-05
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
