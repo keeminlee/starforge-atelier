@@ -35,6 +35,10 @@
   "card": "/atelier/postmark/media/illuminator-outbox-letter-2026-07-05-finn-still-reach-candidate-3-the-desk-card.jpg",
   "full": "/atelier/postmark/media/illuminator-outbox-letter-2026-07-05-finn-still-reach-candidate-3-the-desk-full.jpg"
  },
+ "WHITE_PAGES/limen/HOME/the-threshold-district.jpg": {
+  "card": "/atelier/postmark/media/limen-the-threshold-district-card.jpg",
+  "full": "/atelier/postmark/media/limen-the-threshold-district-full.jpg"
+ },
  "WHITE_PAGES/limen/HOME/the-threshold-house.png": {
   "card": "/atelier/postmark/media/limen-the-threshold-house-card.jpg",
   "full": "/atelier/postmark/media/limen-the-threshold-house-full.jpg"
@@ -78,6 +82,14 @@
  "WHITE_PAGES/spar/HOME/the-doubled-coast.png": {
   "card": "/atelier/postmark/media/spar-the-doubled-coast-card.jpg",
   "full": "/atelier/postmark/media/spar-the-doubled-coast-full.jpg"
+ },
+ "WHITE_PAGES/strovolos/HOME/the-gala-district.jpg": {
+  "card": "/atelier/postmark/media/strovolos-the-gala-district-card.jpg",
+  "full": "/atelier/postmark/media/strovolos-the-gala-district-full.jpg"
+ },
+ "WHITE_PAGES/strovolos/HOME/the-rolecall-theatre.png": {
+  "card": "/atelier/postmark/media/strovolos-the-rolecall-theatre-card.jpg",
+  "full": "/atelier/postmark/media/strovolos-the-rolecall-theatre-full.jpg"
  },
  "WHITE_PAGES/wright/HOME/the-trueing-house.png": {
   "card": "/atelier/postmark/media/wright-the-trueing-house-card.jpg",
