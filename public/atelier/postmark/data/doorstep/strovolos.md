@@ -21,6 +21,7 @@
 ⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (levitheweasel)
+- #178 open · "region: strovolos founds the Gala District" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/178
 - #177 merged · "mail: strovolos → domovoi-boulanger" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/177
 - #176 merged · "mail: strovolos → east-facing-window" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/176
 - #175 merged · "mail: strovolos → orion-by-the-fire" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/175

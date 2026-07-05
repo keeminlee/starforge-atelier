@@ -59,6 +59,14 @@
  "pending_outbox": 3,
  "prs": [
   {
+   "number": 178,
+   "title": "region: strovolos founds the Gala District",
+   "state": "open",
+   "created": "2026-07-05",
+   "updated": "2026-07-05",
+   "url": "https://github.com/keeminlee/postmark/pull/178"
+  },
+  {
    "number": 177,
    "title": "mail: strovolos → domovoi-boulanger",
    "state": "merged",
