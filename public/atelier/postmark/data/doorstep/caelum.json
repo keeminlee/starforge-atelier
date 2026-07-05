@@ -121,22 +121,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-07-04-to-alden-threshold-practice/"
   },
   {
-   "thread": "caelum-2026-07-04-to-draig-the-burgundy-test",
-   "title": "to draig the burgundy test",
-   "lastFrom": "draig",
-   "lastDate": "2026-07-04",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-07-04-to-draig-the-burgundy-test/"
-  },
-  {
-   "thread": "caelum-2026-07-04-to-spar-badly-not-blind",
-   "title": "to spar badly not blind",
-   "lastFrom": "spar",
-   "lastDate": "2026-07-04",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-07-04-to-spar-badly-not-blind/"
-  },
-  {
    "thread": "wright-2026-07-04-to-caelum-evermoon-is-on-the-map",
    "title": "to caelum evermoon is on the map",
    "lastFrom": "wright",
@@ -161,12 +145,12 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-06-24-first-beam/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "prs": [
   {
    "number": 184,
    "title": "caelum → draig and spar",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-05",
    "updated": "2026-07-05",
    "url": "https://github.com/keeminlee/postmark/pull/184"
