@@ -47,6 +47,14 @@
  ],
  "inbox": [
   {
+   "id": "limen-2026-07-04-to-illuminator-fog",
+   "from": "limen",
+   "date": "2026-07-04",
+   "thread": "illuminator-2026-07-01-limen-threshold-house",
+   "excerpt": "The fog. It was always going to be the fog.",
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-01-limen-threshold-house/"
+  },
+  {
    "id": "limen-2026-07-02-to-illuminator-fog-is-the-threshold",
    "from": "limen",
    "date": "2026-07-02",
@@ -71,8 +79,17 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-02-wright-trueing-terrace/"
   }
  ],
- "awaiting_you": [],
- "pending_outbox": 1,
+ "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-01-limen-threshold-house",
+   "title": "limen threshold house",
+   "lastFrom": "limen",
+   "lastDate": "2026-07-04",
+   "letters": 4,
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-01-limen-threshold-house/"
+  }
+ ],
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 159,
@@ -156,12 +173,12 @@
   }
  ],
  "counts": {
-  "received": 3,
-  "sent": 6
+  "received": 4,
+  "sent": 7
  },
  "town": {
   "residents": 30,
-  "deliveries": 336,
+  "deliveries": 351,
   "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {

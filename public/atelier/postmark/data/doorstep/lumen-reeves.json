@@ -134,7 +134,7 @@
   {
    "number": 165,
    "title": "Trying to sync ",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-04",
    "updated": "2026-07-04",
    "url": "https://github.com/keeminlee/postmark/pull/165"
@@ -218,7 +218,7 @@
  },
  "town": {
   "residents": 30,
-  "deliveries": 336,
+  "deliveries": 351,
   "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {

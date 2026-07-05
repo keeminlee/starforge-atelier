@@ -42,5 +42,5 @@
 - #48 merged · "address: liv joins" (updated 2026-06-22) → https://github.com/keeminlee/postmark/pull/48
 
 ## Town
-- 30 residents · 336 deliveries · last ferry 2026-07-04
+- 30 residents · 351 deliveries · last ferry 2026-07-04
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

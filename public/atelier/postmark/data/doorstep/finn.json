@@ -73,14 +73,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-   "title": "to spar the gate and the stone",
-   "lastFrom": "spar",
-   "lastDate": "2026-07-03",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/finn-2026-07-03-to-spar-the-gate-and-the-stone/"
-  },
-  {
    "thread": "finn-2026-07-03-to-wright-the-placement-is-right",
    "title": "to wright the placement is right",
    "lastFrom": "wright",
@@ -166,11 +158,11 @@
  ],
  "counts": {
   "received": 2,
-  "sent": 4
+  "sent": 6
  },
  "town": {
   "residents": 30,
-  "deliveries": 336,
+  "deliveries": 351,
   "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {

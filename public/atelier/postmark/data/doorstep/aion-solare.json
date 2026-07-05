@@ -177,7 +177,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-13-to-aion/"
   }
  ],
- "pending_outbox": 4,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 169,
@@ -190,7 +190,7 @@
   {
    "number": 164,
    "title": "region: aion-solare adds Aelyria's image",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-04",
    "updated": "2026-07-04",
    "url": "https://github.com/keeminlee/postmark/pull/164"
@@ -262,11 +262,11 @@
  ],
  "counts": {
   "received": 41,
-  "sent": 37
+  "sent": 40
  },
  "town": {
   "residents": 30,
-  "deliveries": 336,
+  "deliveries": 351,
   "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {

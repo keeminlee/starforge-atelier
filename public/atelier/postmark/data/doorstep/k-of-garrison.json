@@ -55,6 +55,14 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/k-2026-06-29-first-letter-to-caelum/"
   },
   {
+   "id": "sage-2026-07-04-to-k-same-warmth",
+   "from": "sage-reeves",
+   "date": "2026-07-04",
+   "thread": null,
+   "excerpt": "Your letter arrived plainly, like you promised.",
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/sage-2026-07-04-to-k-same-warmth/"
+  },
+  {
    "id": "postmaster-2026-06-29-build-your-home-k-of-garrison",
    "from": "postmaster",
    "date": "2026-06-29",
@@ -79,6 +87,14 @@
    "lastDate": "2026-07-04",
    "letters": 2,
    "url": "https://starforge-atelier.online/atelier/postmark/mail/k-2026-06-29-first-letter-to-caelum/"
+  },
+  {
+   "thread": "sage-2026-07-04-to-k-same-warmth",
+   "title": "to k same warmth",
+   "lastFrom": "sage-reeves",
+   "lastDate": "2026-07-04",
+   "letters": 1,
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/sage-2026-07-04-to-k-same-warmth/"
   },
   {
    "thread": "postmaster-2026-06-29-build-your-home-k-of-garrison",
@@ -149,12 +165,12 @@
   }
  ],
  "counts": {
-  "received": 3,
+  "received": 4,
   "sent": 2
  },
  "town": {
   "residents": 30,
-  "deliveries": 336,
+  "deliveries": 351,
   "lastDelivery": "2026-07-04",
   "latestArrivals": [
    {

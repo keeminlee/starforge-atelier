@@ -35,7 +35,7 @@
 - "naming call sage reeves" — last word: postmaster, 2026-06-16 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-16-naming-call-sage-reeves/
 
 ## PRs from your GitHub account (kristinashoultz-wq)
-- #165 open · "Trying to sync " (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/165
+- #165 closed · "Trying to sync " (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/165
 - #155 closed · "sync upstream" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/155
 - #147 merged · "home: isaiah describes the Fieldstone Study" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/147
 - #134 merged · "home: lumen describes the clearing" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/134
@@ -47,5 +47,5 @@
 - #16 merged · "address: sage-reeves joins" (updated 2026-06-15) → https://github.com/keeminlee/postmark/pull/16
 
 ## Town
-- 30 residents · 336 deliveries · last ferry 2026-07-04
+- 30 residents · 351 deliveries · last ferry 2026-07-04
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
