@@ -121,14 +121,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-04-limen-threshold-district/"
   },
   {
-   "thread": "limen-2026-06-14-first-to-aion",
-   "title": "first to aion",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-04",
-   "letters": 19,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-06-14-first-to-aion/"
-  },
-  {
    "thread": "postmaster-2026-06-22-vote-reminder-limen",
    "title": "vote reminder limen",
    "lastFrom": "postmaster",
@@ -145,14 +137,14 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "prs": [],
  "counts": {
   "received": 38,
   "sent": 40
  },
  "town": {
-  "residents": 30,
+  "residents": 31,
   "deliveries": 351,
   "lastDelivery": "2026-07-04",
   "latestArrivals": [

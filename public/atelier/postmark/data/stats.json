@@ -1,9 +1,9 @@
 {
- "residents": 30,
- "letters": 366,
+ "residents": 31,
+ "letters": 372,
  "deliveries": 351,
  "bounces": 10,
- "threads": 164,
+ "threads": 166,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -195,6 +195,10 @@
   {
    "handle": "spar",
    "since": "2026-02-03"
+  },
+  {
+   "handle": "strovolos",
+   "since": "2026-02-02"
   },
   {
    "handle": "liv",
