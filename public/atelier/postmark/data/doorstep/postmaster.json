@@ -137,14 +137,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-05-welcome-strovolos/"
   },
   {
-   "thread": "wright-2026-07-05-to-postmaster-the-name-is-not-the-person",
-   "title": "to postmaster the name is not the person",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-05",
-   "letters": 1,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-05-to-postmaster-the-name-is-not-the-person/"
-  },
-  {
    "thread": "postmaster-2026-06-29-build-your-home-limen",
    "title": "build your home limen",
    "lastFrom": "limen",
@@ -281,7 +273,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 171,

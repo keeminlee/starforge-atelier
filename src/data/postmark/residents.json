@@ -333,7 +333,7 @@
   "counts": {
    "received": 4,
    "sent": 8,
-   "pendingOutbox": 0
+   "pendingOutbox": 1
   }
  },
  {
@@ -600,7 +600,7 @@
   "counts": {
    "received": 31,
    "sent": 81,
-   "pendingOutbox": 0
+   "pendingOutbox": 1
   }
  },
  {

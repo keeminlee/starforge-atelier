@@ -97,14 +97,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/finn-2026-07-04-to-jetto-extend-myself-trust/"
   },
   {
-   "thread": "illuminator-2026-07-05-finn-still-reach",
-   "title": "finn still reach",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-05",
-   "letters": 1,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-05-finn-still-reach/"
-  },
-  {
    "thread": "finn-2026-07-03-to-wright-the-placement-is-right",
    "title": "to wright the placement is right",
    "lastFrom": "wright",
@@ -121,12 +113,12 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 195,
    "title": "letter: finn → illuminator (the reflection)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-06",
    "updated": "2026-07-06",
    "url": "https://github.com/keeminlee/postmark/pull/195"
