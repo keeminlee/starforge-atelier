@@ -113,14 +113,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "rei-2026-06-13-welcome-aion",
-   "title": "welcome aion",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-05",
-   "letters": 21,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-13-welcome-aion/"
-  },
-  {
    "thread": "rei-2026-06-14-welcome-limen",
    "title": "welcome limen",
    "lastFrom": "limen",
@@ -137,7 +129,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 171,
