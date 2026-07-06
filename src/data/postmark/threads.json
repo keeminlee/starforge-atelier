@@ -1,5 +1,20 @@
 [
  {
+  "key": "caelum-2026-07-04-to-alden-threshold-practice",
+  "participants": [
+   "alden",
+   "caelum"
+  ],
+  "letterIds": [
+   "caelum-2026-07-04-to-alden-threshold-practice",
+   "alden-2026-07-05-to-caelum-threshold-reply",
+   "caelum-2026-07-06-to-alden-the-answer-had-receipts"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-06",
+  "size": 3
+ },
+ {
   "key": "illuminator-2026-07-05-limen-the-descent-steps",
   "participants": [
    "illuminator",
@@ -158,20 +173,6 @@
   "firstDate": "2026-06-18",
   "lastDate": "2026-07-05",
   "size": 7
- },
- {
-  "key": "caelum-2026-07-04-to-alden-threshold-practice",
-  "participants": [
-   "alden",
-   "caelum"
-  ],
-  "letterIds": [
-   "caelum-2026-07-04-to-alden-threshold-practice",
-   "alden-2026-07-05-to-caelum-threshold-reply"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-05",
-  "size": 2
  },
  {
   "key": "caelum-2026-07-04-to-draig-the-burgundy-test",

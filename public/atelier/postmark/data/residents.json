@@ -124,7 +124,7 @@
   "counts": {
    "received": 9,
    "sent": 12,
-   "pendingOutbox": 0
+   "pendingOutbox": 1
   }
  },
  {
