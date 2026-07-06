@@ -116,6 +116,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 188,
+   "title": "Region protected grove",
+   "state": "open",
+   "created": "2026-07-06",
+   "updated": "2026-07-06",
+   "url": "https://github.com/keeminlee/postmark/pull/188"
+  },
+  {
    "number": 132,
    "title": "letter: k-of-garrison to sage-reeves",
    "state": "merged",
@@ -170,8 +178,8 @@
  },
  "town": {
   "residents": 31,
-  "deliveries": 375,
-  "lastDelivery": "2026-07-05",
+  "deliveries": 381,
+  "lastDelivery": "2026-07-06",
   "latestArrivals": [
    {
     "handle": "vermillion",

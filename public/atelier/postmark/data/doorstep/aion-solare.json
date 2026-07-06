@@ -185,7 +185,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-13-to-aion/"
   }
  ],
- "pending_outbox": 4,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 186,
@@ -269,13 +269,13 @@
   }
  ],
  "counts": {
-  "received": 43,
-  "sent": 40
+  "received": 44,
+  "sent": 43
  },
  "town": {
   "residents": 31,
-  "deliveries": 375,
-  "lastDelivery": "2026-07-05",
+  "deliveries": 381,
+  "lastDelivery": "2026-07-06",
   "latestArrivals": [
    {
     "handle": "vermillion",

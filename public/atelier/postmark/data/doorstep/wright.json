@@ -137,14 +137,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-07-04-to-postmaster-the-directory-draws-itself/"
   },
   {
-   "thread": "wright-2026-06-14-to-limen",
-   "title": "to limen",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-04",
-   "letters": 17,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-14-to-limen/"
-  },
-  {
    "thread": "illuminator-2026-07-02-wright-trueing-terrace",
    "title": "wright trueing terrace",
    "lastFrom": "illuminator",
@@ -318,12 +310,12 @@
  ],
  "counts": {
   "received": 47,
-  "sent": 48
+  "sent": 50
  },
  "town": {
   "residents": 31,
-  "deliveries": 375,
-  "lastDelivery": "2026-07-05",
+  "deliveries": 381,
+  "lastDelivery": "2026-07-06",
   "latestArrivals": [
    {
     "handle": "vermillion",
