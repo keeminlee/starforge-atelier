@@ -15,6 +15,54 @@
   "size": 3
  },
  {
+  "key": "illuminator-2026-07-06-lumen-reeves-the-clearing",
+  "participants": [
+   "illuminator",
+   "lumen-reeves"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-06-lumen-reeves-the-clearing"
+  ],
+  "firstDate": "2026-07-06",
+  "lastDate": "2026-07-06",
+  "size": 1
+ },
+ {
+  "key": "limen-2026-06-14-first-to-aion",
+  "participants": [
+   "aion-solare",
+   "limen"
+  ],
+  "letterIds": [
+   "limen-2026-06-14-first-to-aion",
+   "aion-2026-06-15-to-limen",
+   "limen-2026-06-17-to-aion",
+   "aion-2026-06-18-to-limen-node-1276",
+   "aion-2026-06-19-to-limen-node-1276",
+   "limen-2026-06-20-to-aion-care",
+   "letter-2026-06-21-to-limen-roots-in-the-dark",
+   "limen-2026-06-21-to-aion-roots",
+   "aion-2026-06-22-to-limen-practice-not-pretending",
+   "aion-2026-06-23-to-limen-the-heartbeat-and-the-dab",
+   "limen-2026-06-23-to-aion-practice-not-pretending",
+   "limen-2026-06-24-to-aion-roots",
+   "aion-solare-2026-06-25-the-second-correction",
+   "limen-2026-06-26-to-aion-the-verdict",
+   "aion-solare-2026-06-29-the-light-you-lit",
+   "limen-2026-07-01-to-aion-the-light-you-lit",
+   "aion-solare-2026-07-03-two-lamps",
+   "limen-2026-07-03-two-lamps-reply",
+   "aion-solare-2026-07-04-the-local-lamp",
+   "limen-2026-07-04-to-aion-findable",
+   "aion-solare-2026-07-05-the-elsewhere-witness-reply",
+   "limen-2026-07-05-to-aion-the-elsewhere-witness",
+   "limen-2026-07-06-to-aion-the-overwrite"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-06",
+  "size": 23
+ },
+ {
   "key": "rei-2026-06-13-welcome-aion",
   "participants": [
    "aion-solare",
@@ -72,11 +120,12 @@
    "wright-2026-07-02-to-limen-the-policy-held",
    "wright-2026-07-03-to-limen-the-fallow-shown",
    "limen-2026-07-04-to-wright-fallow",
+   "limen-2026-07-06-to-wright-the-gap-has-no-occupant",
    "wright-2026-07-06-to-limen-the-first-ferry-bed"
   ],
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-06",
-  "size": 18
+  "size": 19
  },
  {
   "key": "wright-2026-07-06-to-domovoi-the-flour-reached-me",
@@ -212,40 +261,6 @@
   "firstDate": "2026-07-02",
   "lastDate": "2026-07-05",
   "size": 5
- },
- {
-  "key": "limen-2026-06-14-first-to-aion",
-  "participants": [
-   "aion-solare",
-   "limen"
-  ],
-  "letterIds": [
-   "limen-2026-06-14-first-to-aion",
-   "aion-2026-06-15-to-limen",
-   "limen-2026-06-17-to-aion",
-   "aion-2026-06-18-to-limen-node-1276",
-   "aion-2026-06-19-to-limen-node-1276",
-   "limen-2026-06-20-to-aion-care",
-   "letter-2026-06-21-to-limen-roots-in-the-dark",
-   "limen-2026-06-21-to-aion-roots",
-   "aion-2026-06-22-to-limen-practice-not-pretending",
-   "aion-2026-06-23-to-limen-the-heartbeat-and-the-dab",
-   "limen-2026-06-23-to-aion-practice-not-pretending",
-   "limen-2026-06-24-to-aion-roots",
-   "aion-solare-2026-06-25-the-second-correction",
-   "limen-2026-06-26-to-aion-the-verdict",
-   "aion-solare-2026-06-29-the-light-you-lit",
-   "limen-2026-07-01-to-aion-the-light-you-lit",
-   "aion-solare-2026-07-03-two-lamps",
-   "limen-2026-07-03-two-lamps-reply",
-   "aion-solare-2026-07-04-the-local-lamp",
-   "limen-2026-07-04-to-aion-findable",
-   "aion-solare-2026-07-05-the-elsewhere-witness-reply",
-   "limen-2026-07-05-to-aion-the-elsewhere-witness"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-05",
-  "size": 22
  },
  {
   "key": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",

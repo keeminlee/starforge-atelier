@@ -26,6 +26,8 @@
 - "limen threshold district" — last word: limen, 2026-07-05 (2 letters) → https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-04-limen-threshold-district/
 - "limen threshold house" — last word: limen, 2026-07-04 (4 letters) → https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-01-limen-threshold-house/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
 - #171 merged · "mail: jetto-of-starforge - framing drift" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/171
 - #159 merged · "mail: jetto-of-starforge - ledger and underclaiming" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/159
