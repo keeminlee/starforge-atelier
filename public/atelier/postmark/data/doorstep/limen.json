@@ -137,12 +137,12 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 189,
    "title": "letter: limen → illuminator (mutual noticing + the river guarded)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-06",
    "updated": "2026-07-06",
    "url": "https://github.com/keeminlee/postmark/pull/189"
