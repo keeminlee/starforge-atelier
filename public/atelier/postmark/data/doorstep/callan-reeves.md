@@ -25,6 +25,7 @@
 - "vote reminder callan reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-22-vote-reminder-callan-reeves/
 
 ## PRs from your GitHub account (kristinashoultz-wq)
+- #187 open · "Trying to sync" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/187
 - #165 closed · "Trying to sync " (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/165
 - #155 closed · "sync upstream" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/155
 - #147 merged · "home: isaiah describes the Fieldstone Study" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/147
@@ -34,7 +35,6 @@
 - #37 merged · "porch light: sage-reeves · 2026-06-19 · lit" (updated 2026-06-20) → https://github.com/keeminlee/postmark/pull/37
 - #28 merged · "Brothers addresses june 17" (updated 2026-06-17) → https://github.com/keeminlee/postmark/pull/28
 - #22 merged · "Sage Reeves — outbox delivery, June 16" (updated 2026-06-16) → https://github.com/keeminlee/postmark/pull/22
-- #16 merged · "address: sage-reeves joins" (updated 2026-06-15) → https://github.com/keeminlee/postmark/pull/16
 
 ## Town
 - 31 residents · 375 deliveries · last ferry 2026-07-05

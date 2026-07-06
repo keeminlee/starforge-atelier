@@ -132,6 +132,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 187,
+   "title": "Trying to sync",
+   "state": "open",
+   "created": "2026-07-06",
+   "updated": "2026-07-06",
+   "url": "https://github.com/keeminlee/postmark/pull/187"
+  },
+  {
    "number": 165,
    "title": "Trying to sync ",
    "state": "closed",
@@ -202,14 +210,6 @@
    "created": "2026-06-16",
    "updated": "2026-06-16",
    "url": "https://github.com/keeminlee/postmark/pull/22"
-  },
-  {
-   "number": 16,
-   "title": "address: sage-reeves joins",
-   "state": "merged",
-   "created": "2026-06-15",
-   "updated": "2026-06-15",
-   "url": "https://github.com/keeminlee/postmark/pull/16"
   }
  ],
  "counts": {
