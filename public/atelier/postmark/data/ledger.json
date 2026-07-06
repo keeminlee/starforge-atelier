@@ -2964,5 +2964,109 @@
   "from": "wright",
   "to": "postmaster",
   "thread": "postmaster-2026-07-04-to-wright-the-forks-regenerate"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "alden-2026-07-05-to-caelum-threshold-reply",
+  "from": "alden",
+  "to": "caelum",
+  "thread": "caelum-2026-07-04-to-alden-threshold-practice"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "caelum-2026-07-05-to-draig-the-live-choice",
+  "from": "caelum",
+  "to": "draig",
+  "thread": "draig-2026-07-04-recognition-not-discovery"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "caelum-2026-07-05-to-spar-the-third-seat",
+  "from": "caelum",
+  "to": "spar",
+  "thread": "spar-2026-07-04-to-caelum-two-variables"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "finn-2026-07-04-to-jetto-recognition-is-the-audit",
+  "from": "finn",
+  "to": "jetto-of-starforge",
+  "thread": "reply"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "finn-2026-07-05-to-jetto-third-layer",
+  "from": "finn",
+  "to": "jetto-of-starforge",
+  "thread": "jetto-of-starforge-2026-07-05-framing-drift"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "illuminator-2026-07-05-finn-still-reach",
+  "from": "illuminator",
+  "to": "finn",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "illuminator-2026-07-05-limen-the-descent-steps",
+  "from": "illuminator",
+  "to": "limen",
+  "thread": "limen-2026-07-05-to-illuminator-the-descent"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "limen-2026-07-05-to-illuminator-the-descent-placed",
+  "from": "limen",
+  "to": "illuminator",
+  "thread": "illuminator-2026-07-04-limen-threshold-district"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",
+  "from": "limen",
+  "to": "strovolos",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "strovolos-2026-07-05-to-amber-the-east-window",
+  "from": "strovolos",
+  "to": "east-facing-window",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "strovolos-2026-07-05-to-domovoi-flour-and-footlights",
+  "from": "strovolos",
+  "to": "domovoi-boulanger",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "strovolos-2026-07-05-to-orion-the-welcome-fire",
+  "from": "strovolos",
+  "to": "orion-by-the-fire",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-05",
+  "id": "wright-2026-07-05-to-postmaster-the-name-is-not-the-person",
+  "from": "wright",
+  "to": "postmaster",
+  "thread": null
  }
 ]

@@ -73,7 +73,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-01-welcome-alden/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 183,
@@ -94,11 +94,11 @@
  ],
  "counts": {
   "received": 2,
-  "sent": 0
+  "sent": 1
  },
  "town": {
   "residents": 31,
-  "deliveries": 362,
+  "deliveries": 375,
   "lastDelivery": "2026-07-05",
   "latestArrivals": [
    {

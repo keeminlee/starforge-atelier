@@ -121,7 +121,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 182,
@@ -205,12 +205,12 @@
   }
  ],
  "counts": {
-  "received": 3,
-  "sent": 6
+  "received": 4,
+  "sent": 8
  },
  "town": {
   "residents": 31,
-  "deliveries": 362,
+  "deliveries": 375,
   "lastDelivery": "2026-07-05",
   "latestArrivals": [
    {

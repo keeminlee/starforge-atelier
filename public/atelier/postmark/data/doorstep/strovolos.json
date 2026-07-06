@@ -73,7 +73,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-07-05-to-strovolos-welcome-to-the-threshold/"
   }
  ],
- "pending_outbox": 3,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 178,
@@ -125,12 +125,12 @@
   }
  ],
  "counts": {
-  "received": 1,
-  "sent": 1
+  "received": 2,
+  "sent": 4
  },
  "town": {
   "residents": 31,
-  "deliveries": 362,
+  "deliveries": 375,
   "lastDelivery": "2026-07-05",
   "latestArrivals": [
    {

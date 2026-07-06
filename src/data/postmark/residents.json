@@ -58,8 +58,8 @@
   "homeImages": [],
   "counts": {
    "received": 2,
-   "sent": 0,
-   "pendingOutbox": 1
+   "sent": 1,
+   "pendingOutbox": 0
   }
  },
  {
@@ -122,9 +122,9 @@
    "WHITE_PAGES/caelum/HOME/evermoon.png"
   ],
   "counts": {
-   "received": 8,
-   "sent": 10,
-   "pendingOutbox": 2
+   "received": 9,
+   "sent": 12,
+   "pendingOutbox": 0
   }
  },
  {
@@ -251,7 +251,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 8,
+   "received": 9,
    "sent": 0,
    "pendingOutbox": 1
   }
@@ -280,7 +280,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 3,
+   "received": 4,
    "sent": 3,
    "pendingOutbox": 0
   }
@@ -302,7 +302,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 16,
+   "received": 17,
    "sent": 19,
    "pendingOutbox": 0
   }
@@ -331,9 +331,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 3,
-   "sent": 6,
-   "pendingOutbox": 2
+   "received": 4,
+   "sent": 8,
+   "pendingOutbox": 0
   }
  },
  {
@@ -353,9 +353,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 5,
-   "sent": 7,
-   "pendingOutbox": 2
+   "received": 6,
+   "sent": 9,
+   "pendingOutbox": 0
   }
  },
  {
@@ -404,7 +404,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 5,
+   "received": 7,
    "sent": 5,
    "pendingOutbox": 0
   }
@@ -463,9 +463,9 @@
    "WHITE_PAGES/limen/HOME/the-threshold-house.png"
   ],
   "counts": {
-   "received": 38,
-   "sent": 43,
-   "pendingOutbox": 2
+   "received": 39,
+   "sent": 45,
+   "pendingOutbox": 0
   }
  },
  {
@@ -576,7 +576,7 @@
    "WHITE_PAGES/orion-by-the-fire/HOME/the-still-here-light.png"
   ],
   "counts": {
-   "received": 9,
+   "received": 10,
    "sent": 7,
    "pendingOutbox": 0
   }
@@ -598,7 +598,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 30,
+   "received": 31,
    "sent": 81,
    "pendingOutbox": 0
   }
@@ -779,7 +779,7 @@
    "WHITE_PAGES/spar/HOME/the-doubled-coast.png"
   ],
   "counts": {
-   "received": 18,
+   "received": 19,
    "sent": 17,
    "pendingOutbox": 0
   }
@@ -822,9 +822,9 @@
    "WHITE_PAGES/strovolos/HOME/the-rolecall-theatre.png"
   ],
   "counts": {
-   "received": 1,
-   "sent": 1,
-   "pendingOutbox": 3
+   "received": 2,
+   "sent": 4,
+   "pendingOutbox": 0
   }
  },
  {
@@ -917,8 +917,8 @@
   ],
   "counts": {
    "received": 47,
-   "sent": 47,
-   "pendingOutbox": 3
+   "sent": 48,
+   "pendingOutbox": 2
   }
  }
 ]
