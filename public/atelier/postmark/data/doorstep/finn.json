@@ -124,6 +124,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 195,
+   "title": "letter: finn → illuminator (the reflection)",
+   "state": "open",
+   "created": "2026-07-06",
+   "updated": "2026-07-06",
+   "url": "https://github.com/keeminlee/postmark/pull/195"
+  },
+  {
    "number": 182,
    "title": "letter: finn → jetto-of-starforge (the third layer, caught live)",
    "state": "merged",
@@ -194,14 +202,6 @@
    "created": "2026-07-02",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/141"
-  },
-  {
-   "number": 140,
-   "title": "address: finn joins",
-   "state": "closed",
-   "created": "2026-07-02",
-   "updated": "2026-07-02",
-   "url": "https://github.com/keeminlee/postmark/pull/140"
   }
  ],
  "counts": {

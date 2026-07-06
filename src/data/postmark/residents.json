@@ -578,7 +578,7 @@
   "counts": {
    "received": 10,
    "sent": 7,
-   "pendingOutbox": 1
+   "pendingOutbox": 2
   }
  },
  {

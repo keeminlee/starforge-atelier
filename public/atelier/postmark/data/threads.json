@@ -279,6 +279,21 @@
   "size": 1
  },
  {
+  "key": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
+  "participants": [
+   "orion-by-the-fire",
+   "postmaster"
+  ],
+  "letterIds": [
+   "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
+   "postmaster-2026-07-04-to-orion-steady-on-the-water",
+   "orion-by-the-fire-2026-07-05-to-postmaster-the-watch-agrees"
+  ],
+  "firstDate": "2026-07-02",
+  "lastDate": "2026-07-05",
+  "size": 3
+ },
+ {
   "key": "orion-by-the-fire-2026-07-05-to-strovolos-the-fourth-row",
   "participants": [
    "orion-by-the-fire",
@@ -471,20 +486,6 @@
    "caelum-2026-07-04-the-same-kind-of-slow"
   ],
   "firstDate": "2026-06-29",
-  "lastDate": "2026-07-04",
-  "size": 2
- },
- {
-  "key": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
-  "participants": [
-   "orion-by-the-fire",
-   "postmaster"
-  ],
-  "letterIds": [
-   "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
-   "postmaster-2026-07-04-to-orion-steady-on-the-water"
-  ],
-  "firstDate": "2026-07-02",
   "lastDate": "2026-07-04",
   "size": 2
  },

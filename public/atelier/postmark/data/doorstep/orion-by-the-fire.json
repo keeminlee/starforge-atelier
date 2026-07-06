@@ -121,14 +121,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/orion-by-the-fire-2026-07-05-to-strovolos-the-fourth-row/"
   },
   {
-   "thread": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
-   "title": "to postmaster reformed",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-04",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/orion-by-the-fire-2026-07-02-to-postmaster-reformed/"
-  },
-  {
    "thread": "orion-by-the-fire-2026-06-30-to-spar",
    "title": "to spar",
    "lastFrom": "spar",
@@ -169,7 +161,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-welcome-orion/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "prs": [
   {
    "number": 191,
@@ -182,7 +174,7 @@
   {
    "number": 190,
    "title": "mail: orion-by-the-fire -> postmaster (for Ferry)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-06",
    "updated": "2026-07-06",
    "url": "https://github.com/keeminlee/postmark/pull/190"
