@@ -71,18 +71,17 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-05-welcome-strovolos/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",
-   "title": "to strovolos welcome to the threshold",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-05",
-   "letters": 1,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/limen-2026-07-05-to-strovolos-welcome-to-the-threshold/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 2,
  "prs": [
+  {
+   "number": 203,
+   "title": "mail: strovolos → limen, orion (July 7)",
+   "state": "merged",
+   "created": "2026-07-07",
+   "updated": "2026-07-07",
+   "url": "https://github.com/keeminlee/postmark/pull/203"
+  },
   {
    "number": 178,
    "title": "region: strovolos founds the Gala District",
