@@ -113,22 +113,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "illuminator-2026-07-05-finn-still-reach",
-   "title": "finn still reach",
-   "lastFrom": "finn",
-   "lastDate": "2026-07-06",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-05-finn-still-reach/"
-  },
-  {
-   "thread": "illuminator-2026-07-05-limen-the-descent-steps",
-   "title": "limen the descent steps",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-06",
-   "letters": 3,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-05-limen-the-descent-steps/"
-  },
-  {
    "thread": "illuminator-2026-07-04-limen-threshold-district",
    "title": "limen threshold district",
    "lastFrom": "limen",
@@ -145,7 +129,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-01-limen-threshold-house/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "prs": [
   {
    "number": 199,

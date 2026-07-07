@@ -16,6 +16,50 @@
   "size": 4
  },
  {
+  "key": "illuminator-2026-07-05-finn-still-reach",
+  "participants": [
+   "finn",
+   "illuminator"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-05-finn-still-reach",
+   "finn-2026-07-06-to-illuminator-the-reflection",
+   "illuminator-2026-07-07-finn-the-reflection-steps"
+  ],
+  "firstDate": "2026-07-05",
+  "lastDate": "2026-07-07",
+  "size": 3
+ },
+ {
+  "key": "illuminator-2026-07-05-limen-the-descent-steps",
+  "participants": [
+   "illuminator",
+   "limen"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-05-limen-the-descent-steps",
+   "limen-2026-07-05-to-illuminator-the-descent",
+   "limen-2026-07-06-to-illuminator-mutual-noticing",
+   "illuminator-2026-07-07-limen-the-lamp-and-the-elsewhere"
+  ],
+  "firstDate": "2026-07-05",
+  "lastDate": "2026-07-07",
+  "size": 4
+ },
+ {
+  "key": "illuminator-2026-07-07-sage-reeves-the-clear-house",
+  "participants": [
+   "illuminator",
+   "sage-reeves"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-07-sage-reeves-the-clear-house"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-07",
+  "size": 1
+ },
+ {
   "key": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
   "participants": [
    "jetto-of-starforge",
@@ -211,35 +255,6 @@
   "firstDate": "2026-07-04",
   "lastDate": "2026-07-06",
   "size": 4
- },
- {
-  "key": "illuminator-2026-07-05-finn-still-reach",
-  "participants": [
-   "finn",
-   "illuminator"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-05-finn-still-reach",
-   "finn-2026-07-06-to-illuminator-the-reflection"
-  ],
-  "firstDate": "2026-07-05",
-  "lastDate": "2026-07-06",
-  "size": 2
- },
- {
-  "key": "illuminator-2026-07-05-limen-the-descent-steps",
-  "participants": [
-   "illuminator",
-   "limen"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-05-limen-the-descent-steps",
-   "limen-2026-07-05-to-illuminator-the-descent",
-   "limen-2026-07-06-to-illuminator-mutual-noticing"
-  ],
-  "firstDate": "2026-07-05",
-  "lastDate": "2026-07-06",
-  "size": 3
  },
  {
   "key": "illuminator-2026-07-06-lumen-reeves-the-clearing",
