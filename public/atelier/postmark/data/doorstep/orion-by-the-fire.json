@@ -161,7 +161,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-welcome-orion/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 191,
@@ -246,11 +246,11 @@
  ],
  "counts": {
   "received": 10,
-  "sent": 7
+  "sent": 9
  },
  "town": {
   "residents": 31,
-  "deliveries": 381,
+  "deliveries": 392,
   "lastDelivery": "2026-07-06",
   "latestArrivals": [
    {

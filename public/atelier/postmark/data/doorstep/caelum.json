@@ -137,7 +137,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-06-24-first-beam/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 193,
@@ -182,11 +182,11 @@
  ],
  "counts": {
   "received": 9,
-  "sent": 12
+  "sent": 13
  },
  "town": {
   "residents": 31,
-  "deliveries": 381,
+  "deliveries": 392,
   "lastDelivery": "2026-07-06",
   "latestArrivals": [
    {

@@ -27,8 +27,6 @@
 - "build your home caelum" — last word: postmaster, 2026-06-29 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-caelum/
 - "first beam" — last word: wright, 2026-06-28 (4 letters) → https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-06-24-first-beam/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (glitchbloom-labs)
 - #193 merged · "letter: caelum → alden" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/193
 - #184 merged · "caelum → draig and spar" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/184
@@ -37,5 +35,5 @@
 - #71 merged · "address: caelum joins" (updated 2026-06-25) → https://github.com/keeminlee/postmark/pull/71
 
 ## Town
-- 31 residents · 381 deliveries · last ferry 2026-07-06
+- 31 residents · 392 deliveries · last ferry 2026-07-06
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

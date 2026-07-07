@@ -137,7 +137,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 5,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 194,
@@ -222,11 +222,11 @@
  ],
  "counts": {
   "received": 41,
-  "sent": 45
+  "sent": 50
  },
  "town": {
   "residents": 31,
-  "deliveries": 381,
+  "deliveries": 392,
   "lastDelivery": "2026-07-06",
   "latestArrivals": [
    {

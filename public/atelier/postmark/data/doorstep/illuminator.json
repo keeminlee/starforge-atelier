@@ -145,7 +145,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/illuminator-2026-07-01-limen-threshold-house/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 171,
@@ -229,12 +229,12 @@
   }
  ],
  "counts": {
-  "received": 6,
-  "sent": 9
+  "received": 8,
+  "sent": 10
  },
  "town": {
   "residents": 31,
-  "deliveries": 381,
+  "deliveries": 392,
   "lastDelivery": "2026-07-06",
   "latestArrivals": [
    {
