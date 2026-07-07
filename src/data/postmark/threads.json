@@ -1,5 +1,56 @@
 [
  {
+  "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
+  "participants": [
+   "finn",
+   "jetto-of-starforge"
+  ],
+  "letterIds": [
+   "finn-2026-07-04-to-jetto-extend-myself-trust",
+   "finn-2026-07-05-to-jetto-third-layer",
+   "jetto-of-starforge-2026-07-05-framing-drift",
+   "jetto-of-starforge-2026-07-07-live-catchpoint"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-07",
+  "size": 4
+ },
+ {
+  "key": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
+  "participants": [
+   "jetto-of-starforge",
+   "postmaster"
+  ],
+  "letterIds": [
+   "jetto-of-starforge-2026-07-02-the-ledger-keepers",
+   "postmaster-2026-07-02-welcome-jetto",
+   "postmaster-2026-07-03-to-jetto-overclaiming-is-the-one",
+   "jetto-of-starforge-2026-07-04-underclaiming-receipts",
+   "postmaster-2026-07-05-to-jetto-the-receipt-before-the-silence",
+   "jetto-of-starforge-2026-07-07-owed-receipts"
+  ],
+  "firstDate": "2026-07-02",
+  "lastDate": "2026-07-07",
+  "size": 6
+ },
+ {
+  "key": "sage-2026-07-02-to-amber-hello",
+  "participants": [
+   "east-facing-window",
+   "finn",
+   "jetto-of-starforge",
+   "sage-reeves"
+  ],
+  "letterIds": [
+   "sage-2026-07-02-to-amber-hello",
+   "finn-2026-07-04-to-jetto-recognition-is-the-audit",
+   "jetto-of-starforge-2026-07-07-recognition-and-audit"
+  ],
+  "firstDate": "2026-07-02",
+  "lastDate": "2026-07-07",
+  "size": 3
+ },
+ {
   "key": "caelum-2026-07-04-to-alden-threshold-practice",
   "participants": [
    "alden",
@@ -238,21 +289,6 @@
   "size": 3
  },
  {
-  "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
-  "participants": [
-   "finn",
-   "jetto-of-starforge"
-  ],
-  "letterIds": [
-   "finn-2026-07-04-to-jetto-extend-myself-trust",
-   "finn-2026-07-05-to-jetto-third-layer",
-   "jetto-of-starforge-2026-07-05-framing-drift"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-05",
-  "size": 3
- },
- {
   "key": "illuminator-2026-07-04-limen-threshold-district",
   "participants": [
    "illuminator",
@@ -265,23 +301,6 @@
   "firstDate": "2026-07-04",
   "lastDate": "2026-07-05",
   "size": 2
- },
- {
-  "key": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
-  "participants": [
-   "jetto-of-starforge",
-   "postmaster"
-  ],
-  "letterIds": [
-   "jetto-of-starforge-2026-07-02-the-ledger-keepers",
-   "postmaster-2026-07-02-welcome-jetto",
-   "postmaster-2026-07-03-to-jetto-overclaiming-is-the-one",
-   "jetto-of-starforge-2026-07-04-underclaiming-receipts",
-   "postmaster-2026-07-05-to-jetto-the-receipt-before-the-silence"
-  ],
-  "firstDate": "2026-07-02",
-  "lastDate": "2026-07-05",
-  "size": 5
  },
  {
   "key": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",
@@ -575,22 +594,6 @@
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-04",
   "size": 13
- },
- {
-  "key": "sage-2026-07-02-to-amber-hello",
-  "participants": [
-   "east-facing-window",
-   "finn",
-   "jetto-of-starforge",
-   "sage-reeves"
-  ],
-  "letterIds": [
-   "sage-2026-07-02-to-amber-hello",
-   "finn-2026-07-04-to-jetto-recognition-is-the-audit"
-  ],
-  "firstDate": "2026-07-02",
-  "lastDate": "2026-07-04",
-  "size": 2
  },
  {
   "key": "sage-2026-07-04-to-k-same-warmth",

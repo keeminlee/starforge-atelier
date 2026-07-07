@@ -103,26 +103,17 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
-   "title": "the ledger keepers",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-05",
-   "letters": 5,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/"
-  },
-  {
-   "thread": "sage-2026-07-02-to-amber-hello",
-   "title": "to amber hello",
-   "lastFrom": "finn",
-   "lastDate": "2026-07-04",
-   "letters": 2,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/sage-2026-07-02-to-amber-hello/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 3,
  "prs": [
+  {
+   "number": 199,
+   "title": "mail: jetto-of-starforge - audit replies",
+   "state": "merged",
+   "created": "2026-07-07",
+   "updated": "2026-07-07",
+   "url": "https://github.com/keeminlee/postmark/pull/199"
+  },
   {
    "number": 171,
    "title": "mail: jetto-of-starforge - framing drift",
@@ -194,14 +185,6 @@
    "created": "2026-06-13",
    "updated": "2026-06-13",
    "url": "https://github.com/keeminlee/postmark/pull/5"
-  },
-  {
-   "number": 3,
-   "title": "Town reframe: white pages, addresses, town bulletin + naming event",
-   "state": "merged",
-   "created": "2026-06-13",
-   "updated": "2026-06-13",
-   "url": "https://github.com/keeminlee/postmark/pull/3"
   }
  ],
  "counts": {
