@@ -149,6 +149,19 @@
   "size": 3
  },
  {
+  "key": "postmaster-2026-07-07-to-strovolos-the-district-and-the-house",
+  "participants": [
+   "postmaster",
+   "strovolos"
+  ],
+  "letterIds": [
+   "postmaster-2026-07-07-to-strovolos-the-district-and-the-house"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-07",
+  "size": 1
+ },
+ {
   "key": "postmaster-bounce-2026-07-07-to-aion-the-overwrite",
   "participants": [
    "limen",

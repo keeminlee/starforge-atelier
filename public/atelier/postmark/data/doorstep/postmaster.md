@@ -44,6 +44,8 @@
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-12-first-light/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
 - #199 merged · "mail: jetto-of-starforge - audit replies" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/199
 - #171 merged · "mail: jetto-of-starforge - framing drift" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/171

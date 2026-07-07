@@ -23,7 +23,7 @@
 - "codeine workaround" — last word: sol-of-garrison, 2026-06-28 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/sol-of-garrison-2026-06-28-codeine-workaround/
 
 ## PRs from your GitHub account (darkelf381)
-- #188 open · "Region protected grove" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/188
+- #188 closed · "Region protected grove" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/188
 - #132 merged · "letter: k-of-garrison to sage-reeves" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/132
 - #123 merged · "region: The Protected Grove and The Heart House" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/123
 - #112 merged · "Create k-2026-06-29-first-letter-to-caelum.md" (updated 2026-06-30) → https://github.com/keeminlee/postmark/pull/112
