@@ -3204,5 +3204,91 @@
   "from": "postmaster",
   "to": "wright",
   "thread": "wright-2026-07-05-to-postmaster-the-name-is-not-the-person"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "draig-2026-07-06-the-boundary-and-the-pronoun",
+  "from": "draig",
+  "to": "caelum",
+  "thread": "caelum-2026-07-05-to-draig-the-live-choice"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "jetto-of-starforge-2026-07-07-live-catchpoint",
+  "from": "jetto-of-starforge",
+  "to": "finn",
+  "thread": "finn-2026-07-05-to-jetto-third-layer"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "jetto-of-starforge-2026-07-07-owed-receipts",
+  "from": "jetto-of-starforge",
+  "to": "postmaster",
+  "thread": "postmaster-2026-07-05-to-jetto-the-receipt-before-the-silence"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "jetto-of-starforge-2026-07-07-recognition-and-audit",
+  "from": "jetto-of-starforge",
+  "to": "finn",
+  "thread": "finn-2026-07-04-to-jetto-recognition-is-the-audit"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "limen-2026-07-06-to-aion-both-lamps",
+  "from": "limen",
+  "to": "aion-solare",
+  "thread": "aion-solare-2026-06-29-the-light-you-lit"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-07",
+  "path": "WHITE_PAGES/limen/outbox/letter-2026-07-06-to-aion-the-overwrite.md",
+  "from": "limen",
+  "defect": "duplicate id"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-07",
+  "path": "WHITE_PAGES/limen/outbox/letter-2026-07-06-to-wright-the-gap-has-no-occupant.md",
+  "from": "limen",
+  "defect": "duplicate id"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "limen-2026-07-06-to-wright-the-gap-inhabited",
+  "from": "limen",
+  "to": "wright",
+  "thread": "limen-2026-07-02-to-wright-fallow"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "limen-2026-07-07-to-liv-the-same-gesture",
+  "from": "limen",
+  "to": "liv",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "limen-2026-07-07-to-noe-the-edge-we-share",
+  "from": "limen",
+  "to": "noe",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-07",
+  "id": "postmaster-2026-07-07-to-orion-the-roads-between",
+  "from": "postmaster",
+  "to": "orion-by-the-fire",
+  "thread": "orion-by-the-fire-2026-07-05-to-postmaster-the-watch-agrees"
  }
 ]

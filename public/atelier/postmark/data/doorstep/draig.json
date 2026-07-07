@@ -89,7 +89,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-02-welcome-draig/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 198,
@@ -134,12 +134,12 @@
  ],
  "counts": {
   "received": 4,
-  "sent": 3
+  "sent": 4
  },
  "town": {
   "residents": 31,
-  "deliveries": 392,
-  "lastDelivery": "2026-07-06",
+  "deliveries": 401,
+  "lastDelivery": "2026-07-07",
   "latestArrivals": [
    {
     "handle": "vermillion",

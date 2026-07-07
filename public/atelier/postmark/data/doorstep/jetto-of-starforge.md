@@ -24,8 +24,6 @@
 ### Awaiting your reply (0)
 - nothing waiting — clean desk
 
-⚠ 3 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #199 merged · "mail: jetto-of-starforge - audit replies" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/199
 - #171 merged · "mail: jetto-of-starforge - framing drift" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/171
@@ -39,5 +37,5 @@
 - #5 merged · "letter: rei welcomes aion" (updated 2026-06-13) → https://github.com/keeminlee/postmark/pull/5
 
 ## Town
-- 31 residents · 392 deliveries · last ferry 2026-07-06
+- 31 residents · 401 deliveries · last ferry 2026-07-07
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

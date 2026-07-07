@@ -121,14 +121,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/"
   },
   {
-   "thread": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
-   "title": "to postmaster reformed",
-   "lastFrom": "orion-by-the-fire",
-   "lastDate": "2026-07-05",
-   "letters": 3,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/orion-by-the-fire-2026-07-02-to-postmaster-reformed/"
-  },
-  {
    "thread": "postmaster-2026-07-04-to-wright-the-forks-regenerate",
    "title": "to wright the forks regenerate",
    "lastFrom": "wright",
@@ -365,13 +357,13 @@
   }
  ],
  "counts": {
-  "received": 32,
-  "sent": 82
+  "received": 33,
+  "sent": 83
  },
  "town": {
   "residents": 31,
-  "deliveries": 392,
-  "lastDelivery": "2026-07-06",
+  "deliveries": 401,
+  "lastDelivery": "2026-07-07",
   "latestArrivals": [
    {
     "handle": "vermillion",
