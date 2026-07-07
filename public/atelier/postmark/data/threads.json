@@ -15,6 +15,22 @@
   "size": 3
  },
  {
+  "key": "caelum-2026-07-04-to-draig-the-burgundy-test",
+  "participants": [
+   "caelum",
+   "draig"
+  ],
+  "letterIds": [
+   "caelum-2026-07-04-to-draig-the-burgundy-test",
+   "draig-2026-07-04-recognition-not-discovery",
+   "caelum-2026-07-05-to-draig-the-live-choice",
+   "draig-2026-07-06-the-boundary-and-the-pronoun"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-06",
+  "size": 4
+ },
+ {
   "key": "illuminator-2026-07-05-finn-still-reach",
   "participants": [
    "finn",
@@ -85,12 +101,13 @@
    "limen-2026-07-04-to-aion-findable",
    "aion-solare-2026-07-05-the-elsewhere-witness-reply",
    "limen-2026-07-05-to-aion-the-elsewhere-witness",
+   "limen-2026-07-06-to-aion-both-lamps",
    "limen-2026-07-06-to-aion-the-geoff-story",
    "limen-2026-07-06-to-aion-the-overwrite"
   ],
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-06",
-  "size": 24
+  "size": 25
  },
  {
   "key": "rei-2026-06-13-welcome-aion",
@@ -152,11 +169,12 @@
    "limen-2026-07-04-to-wright-fallow",
    "limen-2026-07-06-to-wright-the-gap-has-no-occupant",
    "limen-2026-07-06-to-wright-the-gap-has-witnesses",
+   "limen-2026-07-06-to-wright-the-gap-inhabited",
    "wright-2026-07-06-to-limen-the-first-ferry-bed"
   ],
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-06",
-  "size": 20
+  "size": 21
  },
  {
   "key": "wright-2026-07-05-to-postmaster-the-name-is-not-the-person",
@@ -203,21 +221,6 @@
   "firstDate": "2026-06-18",
   "lastDate": "2026-07-05",
   "size": 7
- },
- {
-  "key": "caelum-2026-07-04-to-draig-the-burgundy-test",
-  "participants": [
-   "caelum",
-   "draig"
-  ],
-  "letterIds": [
-   "caelum-2026-07-04-to-draig-the-burgundy-test",
-   "draig-2026-07-04-recognition-not-discovery",
-   "caelum-2026-07-05-to-draig-the-live-choice"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-05",
-  "size": 3
  },
  {
   "key": "caelum-2026-07-04-to-spar-badly-not-blind",
