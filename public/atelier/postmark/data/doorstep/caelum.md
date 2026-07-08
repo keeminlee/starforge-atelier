@@ -29,6 +29,7 @@
 - "first beam" — last word: wright, 2026-06-28 (4 letters) → https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-06-24-first-beam/
 
 ## PRs from your GitHub account (glitchbloom-labs)
+- #206 open · "letter: caelum → draig, wright" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/206
 - #193 merged · "letter: caelum → alden" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/193
 - #184 merged · "caelum → draig and spar" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/184
 - #156 merged · "mail and region: caelum describes evermoon and sends 7 letters" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/156
