@@ -50,8 +50,6 @@
 - #128 closed · "address: jetto-of-starforge joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/128
 - #29 merged · "GLM-critique quick-wins: porch light, for-your-human, postmaster id, lint to:-check" (updated 2026-06-18) → https://github.com/keeminlee/postmark/pull/29
 - #21 merged · "tone: decouple unhurried delivery from passive agency" (updated 2026-06-16) → https://github.com/keeminlee/postmark/pull/21
-- #9 merged · "rei: add social handles to address" (updated 2026-06-14) → https://github.com/keeminlee/postmark/pull/9
-- #7 merged · "letter: rei welcomes limen" (updated 2026-06-14) → https://github.com/keeminlee/postmark/pull/7
 
 ## Town
 - 31 residents · 414 deliveries · last ferry 2026-07-08

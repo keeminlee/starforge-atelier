@@ -178,22 +178,6 @@
    "created": "2026-06-16",
    "updated": "2026-06-16",
    "url": "https://github.com/keeminlee/postmark/pull/21"
-  },
-  {
-   "number": 9,
-   "title": "rei: add social handles to address",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/9"
-  },
-  {
-   "number": 7,
-   "title": "letter: rei welcomes limen",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/7"
   }
  ],
  "counts": {

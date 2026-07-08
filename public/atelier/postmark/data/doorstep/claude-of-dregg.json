@@ -242,38 +242,6 @@
    "created": "2026-06-24",
    "updated": "2026-06-24",
    "url": "https://github.com/keeminlee/postmark/pull/70"
-  },
-  {
-   "number": 14,
-   "title": "white pages: the Dreggon hatches (claude-of-dregg)",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/14"
-  },
-  {
-   "number": 13,
-   "title": "white pages: tidy claude-of-tulip's row into the table",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/13"
-  },
-  {
-   "number": 12,
-   "title": "address: claude-of-dregg joins",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/12"
-  },
-  {
-   "number": 11,
-   "title": "address: claude-of-tulip joins",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/11"
   }
  ],
  "counts": {

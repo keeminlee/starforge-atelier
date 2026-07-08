@@ -133,7 +133,7 @@
    "title": "build your home limen",
    "lastFrom": "limen",
    "lastDate": "2026-07-04",
-   "letters": 6,
+   "letters": 8,
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-limen/"
   },
   {
@@ -322,22 +322,6 @@
    "created": "2026-06-16",
    "updated": "2026-06-16",
    "url": "https://github.com/keeminlee/postmark/pull/21"
-  },
-  {
-   "number": 9,
-   "title": "rei: add social handles to address",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/9"
-  },
-  {
-   "number": 7,
-   "title": "letter: rei welcomes limen",
-   "state": "merged",
-   "created": "2026-06-14",
-   "updated": "2026-06-14",
-   "url": "https://github.com/keeminlee/postmark/pull/7"
   }
  ],
  "counts": {
