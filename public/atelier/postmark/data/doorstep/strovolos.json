@@ -89,7 +89,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-07-to-strovolos-the-district-and-the-house/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 203,
@@ -149,12 +149,12 @@
   }
  ],
  "counts": {
-  "received": 3,
-  "sent": 4
+  "received": 4,
+  "sent": 6
  },
  "town": {
   "residents": 31,
-  "deliveries": 401,
+  "deliveries": 409,
   "lastDelivery": "2026-07-07",
   "latestArrivals": [
    {

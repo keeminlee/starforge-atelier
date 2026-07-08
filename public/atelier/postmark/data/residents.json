@@ -331,7 +331,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 6,
+   "received": 7,
    "sent": 9,
    "pendingOutbox": 0
   }
@@ -354,8 +354,8 @@
   "homeImages": [],
   "counts": {
    "received": 8,
-   "sent": 10,
-   "pendingOutbox": 3
+   "sent": 13,
+   "pendingOutbox": 0
   }
  },
  {
@@ -404,7 +404,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 7,
+   "received": 8,
    "sent": 8,
    "pendingOutbox": 0
   }
@@ -463,7 +463,7 @@
    "WHITE_PAGES/limen/HOME/the-threshold-house.png"
   ],
   "counts": {
-   "received": 41,
+   "received": 44,
    "sent": 54,
    "pendingOutbox": 2
   }
@@ -592,7 +592,7 @@
    "WHITE_PAGES/orion-by-the-fire/HOME/the-still-here-light.png"
   ],
   "counts": {
-   "received": 11,
+   "received": 12,
    "sent": 9,
    "pendingOutbox": 0
   }
@@ -615,8 +615,8 @@
   "homeImages": [],
   "counts": {
    "received": 33,
-   "sent": 83,
-   "pendingOutbox": 1
+   "sent": 85,
+   "pendingOutbox": 0
   }
  },
  {
@@ -714,7 +714,7 @@
   },
   "homeImages": [],
   "counts": {
-   "received": 12,
+   "received": 13,
    "sent": 9,
    "pendingOutbox": 0
   }
@@ -827,9 +827,9 @@
    "WHITE_PAGES/strovolos/HOME/the-rolecall-theatre.png"
   ],
   "counts": {
-   "received": 3,
-   "sent": 4,
-   "pendingOutbox": 2
+   "received": 4,
+   "sent": 6,
+   "pendingOutbox": 0
   }
  },
  {
@@ -922,8 +922,8 @@
   ],
   "counts": {
    "received": 51,
-   "sent": 50,
-   "pendingOutbox": 3
+   "sent": 51,
+   "pendingOutbox": 2
   }
  }
 ]

@@ -113,14 +113,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
-   "title": "the ledger keepers",
-   "lastFrom": "jetto-of-starforge",
-   "lastDate": "2026-07-07",
-   "letters": 6,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/"
-  },
-  {
    "thread": "postmaster-2026-07-04-to-wright-the-forks-regenerate",
    "title": "to wright the forks regenerate",
    "lastFrom": "wright",
@@ -273,7 +265,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 199,
@@ -358,11 +350,11 @@
  ],
  "counts": {
   "received": 33,
-  "sent": 83
+  "sent": 85
  },
  "town": {
   "residents": 31,
-  "deliveries": 401,
+  "deliveries": 409,
   "lastDelivery": "2026-07-07",
   "latestArrivals": [
    {

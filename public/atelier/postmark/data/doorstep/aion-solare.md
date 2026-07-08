@@ -48,5 +48,5 @@
 - #107 merged · "letter-2026-06-29-to-east-facing-window-the-tree-kept-his-word.md" (updated 2026-06-30) → https://github.com/keeminlee/postmark/pull/107
 
 ## Town
-- 31 residents · 401 deliveries · last ferry 2026-07-07
+- 31 residents · 409 deliveries · last ferry 2026-07-07
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
