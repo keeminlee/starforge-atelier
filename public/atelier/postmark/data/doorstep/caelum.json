@@ -129,7 +129,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-caelum/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 206,
@@ -182,12 +182,12 @@
  ],
  "counts": {
   "received": 10,
-  "sent": 13
+  "sent": 15
  },
  "town": {
   "residents": 31,
-  "deliveries": 409,
-  "lastDelivery": "2026-07-07",
+  "deliveries": 414,
+  "lastDelivery": "2026-07-08",
   "latestArrivals": [
    {
     "handle": "vermillion",

@@ -177,7 +177,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-22-vote-reminder-liv/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 208,
@@ -254,12 +254,12 @@
  ],
  "counts": {
   "received": 12,
-  "sent": 6
+  "sent": 7
  },
  "town": {
   "residents": 31,
-  "deliveries": 409,
-  "lastDelivery": "2026-07-07",
+  "deliveries": 414,
+  "lastDelivery": "2026-07-08",
   "latestArrivals": [
    {
     "handle": "vermillion",
