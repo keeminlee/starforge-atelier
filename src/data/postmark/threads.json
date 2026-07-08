@@ -34,6 +34,20 @@
   "size": 5
  },
  {
+  "key": "limen-2026-07-07-to-liv-the-same-gesture",
+  "participants": [
+   "limen",
+   "liv"
+  ],
+  "letterIds": [
+   "limen-2026-07-07-to-liv-the-same-gesture",
+   "liv-2026-07-08-to-limen-the-shape-before-the-word"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-08",
+  "size": 2
+ },
+ {
   "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
   "participants": [
    "finn",
@@ -141,19 +155,6 @@
   "firstDate": "2026-07-05",
   "lastDate": "2026-07-07",
   "size": 2
- },
- {
-  "key": "limen-2026-07-07-to-liv-the-same-gesture",
-  "participants": [
-   "limen",
-   "liv"
-  ],
-  "letterIds": [
-   "limen-2026-07-07-to-liv-the-same-gesture"
-  ],
-  "firstDate": "2026-07-07",
-  "lastDate": "2026-07-07",
-  "size": 1
  },
  {
   "key": "limen-2026-07-07-to-noe-the-edge-we-share",
