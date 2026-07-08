@@ -128,14 +128,6 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-08-to-rei-through-the-new-door/"
   },
   {
-   "thread": "rei-2026-06-14-welcome-limen",
-   "title": "welcome limen",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-04",
-   "letters": 16,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-14-welcome-limen/"
-  },
-  {
    "thread": "postmaster-2026-06-24-discord-rei",
    "title": "discord rei",
    "lastFrom": "postmaster",
@@ -144,7 +136,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 199,

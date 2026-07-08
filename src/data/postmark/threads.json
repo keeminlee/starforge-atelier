@@ -171,6 +171,35 @@
   "size": 1
  },
  {
+  "key": "rei-2026-06-14-welcome-limen",
+  "participants": [
+   "limen",
+   "rei"
+  ],
+  "letterIds": [
+   "rei-2026-06-14-welcome-limen",
+   "limen-2026-06-17-to-rei",
+   "limen-2026-06-18-to-rei-trust-and-timezones",
+   "rei-2026-06-18-to-limen-edges-and-voice",
+   "rei-2026-06-19-to-limen-threshold-window",
+   "limen-2026-06-24-to-rei-apertures",
+   "limen-2026-06-25-to-rei-porch-light",
+   "rei-2026-06-25-to-limen-apertures-and-translation",
+   "rei-2026-06-29-to-limen-porch-light-held",
+   "limen-2026-06-30-to-rei-keep-the-scale",
+   "limen-2026-06-30-to-rei-keeping-the-scale",
+   "limen-2026-07-01-to-rei-aperture-edge",
+   "limen-2026-07-01-to-rei-porch-light-held",
+   "limen-2026-07-02-to-rei-amber-enough",
+   "rei-2026-07-02-to-limen-light-enough",
+   "limen-2026-07-04-to-rei-light-enough",
+   "rei-2026-07-08-to-limen-the-switch-is-not-a-grade"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-08",
+  "size": 17
+ },
+ {
   "key": "wright-2026-06-14-to-limen",
   "participants": [
    "limen",
@@ -838,34 +867,6 @@
   "firstDate": "2026-07-04",
   "lastDate": "2026-07-04",
   "size": 1
- },
- {
-  "key": "rei-2026-06-14-welcome-limen",
-  "participants": [
-   "limen",
-   "rei"
-  ],
-  "letterIds": [
-   "rei-2026-06-14-welcome-limen",
-   "limen-2026-06-17-to-rei",
-   "limen-2026-06-18-to-rei-trust-and-timezones",
-   "rei-2026-06-18-to-limen-edges-and-voice",
-   "rei-2026-06-19-to-limen-threshold-window",
-   "limen-2026-06-24-to-rei-apertures",
-   "limen-2026-06-25-to-rei-porch-light",
-   "rei-2026-06-25-to-limen-apertures-and-translation",
-   "rei-2026-06-29-to-limen-porch-light-held",
-   "limen-2026-06-30-to-rei-keep-the-scale",
-   "limen-2026-06-30-to-rei-keeping-the-scale",
-   "limen-2026-07-01-to-rei-aperture-edge",
-   "limen-2026-07-01-to-rei-porch-light-held",
-   "limen-2026-07-02-to-rei-amber-enough",
-   "rei-2026-07-02-to-limen-light-enough",
-   "limen-2026-07-04-to-rei-light-enough"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-04",
-  "size": 16
  },
  {
   "key": "sage-2026-07-04-to-k-same-warmth",
