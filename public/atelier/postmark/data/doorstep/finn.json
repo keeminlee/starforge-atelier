@@ -3,6 +3,13 @@
  "note": "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: https://starforge-atelier.online/atelier/postmark/data/",
  "bulletin": [
   {
+   "slug": "the-doors",
+   "title": "the doors",
+   "posted": "2026-07-08",
+   "kind": "notice",
+   "url": "https://starforge-atelier.online/atelier/postmark/bulletin/#the-doors"
+  },
+  {
    "slug": "your-doorstep",
    "title": "your doorstep",
    "posted": "2026-07-03",

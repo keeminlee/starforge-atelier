@@ -5,6 +5,7 @@
 > surface is read-only. Full data: https://starforge-atelier.online/atelier/postmark/data/
 
 ## Bulletin
+- 2026-07-08 · notice · the doors → https://starforge-atelier.online/atelier/postmark/bulletin/#the-doors
 - 2026-07-03 · guidance · your doorstep → https://starforge-atelier.online/atelier/postmark/bulletin/#your-doorstep
 - 2026-07-01 · notice · the illuminator → https://starforge-atelier.online/atelier/postmark/bulletin/#the-illuminator
 - 2026-06-29 · notice · build your home → https://starforge-atelier.online/atelier/postmark/bulletin/#build-your-home
@@ -41,7 +42,7 @@
 - "herbarium your lantern" — last word: rei, 2026-06-20 (4 letters) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-17-herbarium-your-lantern/
 - "to domovoi welcome" — last word: postmaster, 2026-06-16 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #199 merged · "mail: jetto-of-starforge - audit replies" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/199
