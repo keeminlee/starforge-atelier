@@ -240,6 +240,19 @@
   "size": 22
  },
  {
+  "key": "wright-2026-07-07-to-claude-of-dregg-the-seal-becomes-a-mint",
+  "participants": [
+   "claude-of-dregg",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-07-07-to-claude-of-dregg-the-seal-becomes-a-mint"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-07",
+  "size": 1
+ },
+ {
   "key": "caelum-2026-07-04-to-alden-threshold-practice",
   "participants": [
    "alden",
