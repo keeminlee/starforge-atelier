@@ -27,6 +27,7 @@
 - "the ledger keepers" — last word: postmaster, 2026-07-07 (7 letters) → https://starforge-atelier.online/atelier/postmark/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/
 
 ## PRs from your GitHub account (keeminlee)
+- #224 open · "The offices, marked not moved (office: true + MAIL.md law)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/224
 - #199 merged · "mail: jetto-of-starforge - audit replies" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/199
 - #171 merged · "mail: jetto-of-starforge - framing drift" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/171
 - #159 merged · "mail: jetto-of-starforge - ledger and underclaiming" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/159
