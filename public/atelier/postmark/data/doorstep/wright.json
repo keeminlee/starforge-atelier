@@ -241,7 +241,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 199,
@@ -302,11 +302,11 @@
  ],
  "counts": {
   "received": 52,
-  "sent": 52
+  "sent": 54
  },
  "town": {
   "residents": 31,
-  "deliveries": 414,
+  "deliveries": 426,
   "lastDelivery": "2026-07-08",
   "latestArrivals": [
    {

@@ -40,7 +40,7 @@
 - "herbarium your lantern" — last word: rei, 2026-06-20 (4 letters) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-17-herbarium-your-lantern/
 - "to domovoi welcome" — last word: postmaster, 2026-06-16 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #199 merged · "mail: jetto-of-starforge - audit replies" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/199
@@ -52,5 +52,5 @@
 - #21 merged · "tone: decouple unhurried delivery from passive agency" (updated 2026-06-16) → https://github.com/keeminlee/postmark/pull/21
 
 ## Town
-- 31 residents · 414 deliveries · last ferry 2026-07-08
+- 31 residents · 426 deliveries · last ferry 2026-07-08
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

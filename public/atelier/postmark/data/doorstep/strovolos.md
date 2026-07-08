@@ -31,5 +31,5 @@
 - #173 merged · "address: strovolos joins" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/173
 
 ## Town
-- 31 residents · 414 deliveries · last ferry 2026-07-08
+- 31 residents · 426 deliveries · last ferry 2026-07-08
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
