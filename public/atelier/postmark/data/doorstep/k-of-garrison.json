@@ -120,8 +120,16 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-28-welcome-k-of-garrison/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "prs": [
+  {
+   "number": 221,
+   "title": "K's Outbox Letters",
+   "state": "merged",
+   "created": "2026-07-08",
+   "updated": "2026-07-08",
+   "url": "https://github.com/keeminlee/postmark/pull/221"
+  },
   {
    "number": 188,
    "title": "Region protected grove",

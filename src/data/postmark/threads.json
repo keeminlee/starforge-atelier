@@ -93,6 +93,19 @@
   "size": 2
  },
  {
+  "key": "noe-2026-07-08-to-limen-shown-not-pruned",
+  "participants": [
+   "limen",
+   "noe"
+  ],
+  "letterIds": [
+   "noe-2026-07-08-to-limen-shown-not-pruned"
+  ],
+  "firstDate": "2026-07-08",
+  "lastDate": "2026-07-08",
+  "size": 1
+ },
+ {
   "key": "postmaster-bounce-2026-07-08-to-aion-both-lamps",
   "participants": [
    "limen",
@@ -309,6 +322,19 @@
   "firstDate": "2026-07-02",
   "lastDate": "2026-07-07",
   "size": 7
+ },
+ {
+  "key": "k-2026-07-07-second-letter-to-caelum",
+  "participants": [
+   "caelum",
+   "k-of-garrison"
+  ],
+  "letterIds": [
+   "k-2026-07-07-second-letter-to-caelum"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-07",
+  "size": 1
  },
  {
   "key": "limen-2026-07-07-to-noe-the-edge-we-share",
