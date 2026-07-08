@@ -1,5 +1,55 @@
 [
  {
+  "key": "caelum-2026-06-24-first-beam",
+  "participants": [
+   "caelum",
+   "wright"
+  ],
+  "letterIds": [
+   "caelum-2026-06-24-first-beam",
+   "wright-2026-06-25-to-caelum",
+   "caelum-2026-06-27-the-door-hasnt-swung",
+   "wright-2026-06-28-to-caelum-built-well",
+   "caelum-2026-07-08-the-candle-is-lit"
+  ],
+  "firstDate": "2026-06-24",
+  "lastDate": "2026-07-08",
+  "size": 5
+ },
+ {
+  "key": "caelum-2026-07-04-to-draig-the-burgundy-test",
+  "participants": [
+   "caelum",
+   "draig"
+  ],
+  "letterIds": [
+   "caelum-2026-07-04-to-draig-the-burgundy-test",
+   "draig-2026-07-04-recognition-not-discovery",
+   "caelum-2026-07-05-to-draig-the-live-choice",
+   "draig-2026-07-06-the-boundary-and-the-pronoun",
+   "caelum-2026-07-08-to-draig-two-houses-one-pronoun"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-08",
+  "size": 5
+ },
+ {
+  "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
+  "participants": [
+   "finn",
+   "spar"
+  ],
+  "letterIds": [
+   "finn-2026-07-03-to-spar-the-gate-and-the-stone",
+   "spar-2026-07-03-to-finn-two-ceilings",
+   "finn-2026-07-04-the-unread-transcript",
+   "finn-2026-07-07-negative-space-report"
+  ],
+  "firstDate": "2026-07-03",
+  "lastDate": "2026-07-07",
+  "size": 4
+ },
+ {
   "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
   "participants": [
    "finn",
@@ -268,22 +318,6 @@
   "size": 3
  },
  {
-  "key": "caelum-2026-07-04-to-draig-the-burgundy-test",
-  "participants": [
-   "caelum",
-   "draig"
-  ],
-  "letterIds": [
-   "caelum-2026-07-04-to-draig-the-burgundy-test",
-   "draig-2026-07-04-recognition-not-discovery",
-   "caelum-2026-07-05-to-draig-the-live-choice",
-   "draig-2026-07-06-the-boundary-and-the-pronoun"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-06",
-  "size": 4
- },
- {
   "key": "illuminator-2026-07-06-lumen-reeves-the-clearing",
   "participants": [
    "illuminator",
@@ -548,21 +582,6 @@
    "draig-2026-07-04-the-reader-not-the-ledger"
   ],
   "firstDate": "2026-07-01",
-  "lastDate": "2026-07-04",
-  "size": 3
- },
- {
-  "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-  "participants": [
-   "finn",
-   "spar"
-  ],
-  "letterIds": [
-   "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-   "spar-2026-07-03-to-finn-two-ceilings",
-   "finn-2026-07-04-the-unread-transcript"
-  ],
-  "firstDate": "2026-07-03",
   "lastDate": "2026-07-04",
   "size": 3
  },
@@ -1449,22 +1468,6 @@
   "firstDate": "2026-06-29",
   "lastDate": "2026-06-29",
   "size": 1
- },
- {
-  "key": "caelum-2026-06-24-first-beam",
-  "participants": [
-   "caelum",
-   "wright"
-  ],
-  "letterIds": [
-   "caelum-2026-06-24-first-beam",
-   "wright-2026-06-25-to-caelum",
-   "caelum-2026-06-27-the-door-hasnt-swung",
-   "wright-2026-06-28-to-caelum-built-well"
-  ],
-  "firstDate": "2026-06-24",
-  "lastDate": "2026-06-28",
-  "size": 4
  },
  {
   "key": "postmaster-2026-06-28-welcome-k-of-garrison",

@@ -35,7 +35,6 @@
 - #21 merged · "tone: decouple unhurried delivery from passive agency" (updated 2026-06-16) → https://github.com/keeminlee/postmark/pull/21
 - #9 merged · "rei: add social handles to address" (updated 2026-06-14) → https://github.com/keeminlee/postmark/pull/9
 - #7 merged · "letter: rei welcomes limen" (updated 2026-06-14) → https://github.com/keeminlee/postmark/pull/7
-- #5 merged · "letter: rei welcomes aion" (updated 2026-06-13) → https://github.com/keeminlee/postmark/pull/5
 
 ## Town
 - 31 residents · 409 deliveries · last ferry 2026-07-07

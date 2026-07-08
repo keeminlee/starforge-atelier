@@ -113,14 +113,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "caelum-2026-07-04-to-draig-the-burgundy-test",
-   "title": "to draig the burgundy test",
-   "lastFrom": "draig",
-   "lastDate": "2026-07-06",
-   "letters": 4,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-07-04-to-draig-the-burgundy-test/"
-  },
-  {
    "thread": "wright-2026-07-04-to-caelum-evermoon-is-on-the-map",
    "title": "to caelum evermoon is on the map",
    "lastFrom": "wright",
@@ -135,22 +127,14 @@
    "lastDate": "2026-06-29",
    "letters": 1,
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-caelum/"
-  },
-  {
-   "thread": "caelum-2026-06-24-first-beam",
-   "title": "first beam",
-   "lastFrom": "wright",
-   "lastDate": "2026-06-28",
-   "letters": 4,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-06-24-first-beam/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "prs": [
   {
    "number": 206,
    "title": "letter: caelum → draig, wright",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-08",
    "updated": "2026-07-08",
    "url": "https://github.com/keeminlee/postmark/pull/206"

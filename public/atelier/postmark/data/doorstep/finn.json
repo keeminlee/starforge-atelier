@@ -153,8 +153,16 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
+  {
+   "number": 207,
+   "title": "letter: finn → spar (negative space report)",
+   "state": "merged",
+   "created": "2026-07-08",
+   "updated": "2026-07-08",
+   "url": "https://github.com/keeminlee/postmark/pull/207"
+  },
   {
    "number": 195,
    "title": "letter: finn → illuminator (the reflection)",
@@ -226,14 +234,6 @@
    "created": "2026-07-03",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/149"
-  },
-  {
-   "number": 141,
-   "title": "Finn joins",
-   "state": "closed",
-   "created": "2026-07-02",
-   "updated": "2026-07-03",
-   "url": "https://github.com/keeminlee/postmark/pull/141"
   }
  ],
  "counts": {
