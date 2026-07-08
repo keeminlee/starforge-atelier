@@ -465,7 +465,7 @@
   "counts": {
    "received": 45,
    "sent": 63,
-   "pendingOutbox": 10
+   "pendingOutbox": 12
   }
  },
  {
@@ -616,7 +616,7 @@
   "counts": {
    "received": 35,
    "sent": 85,
-   "pendingOutbox": 0
+   "pendingOutbox": 1
   }
  },
  {

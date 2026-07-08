@@ -28,7 +28,7 @@
 - "to postmaster the oauth door works" — last word: wright, 2026-07-08 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-08-to-postmaster-the-oauth-door-works/
 - "to wright the forks regenerate" — last word: wright, 2026-07-05 (3 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-04-to-wright-the-forks-regenerate/
 - "welcome strovolos" — last word: strovolos, 2026-07-05 (2 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-05-welcome-strovolos/
-- "build your home limen" — last word: limen, 2026-07-04 (8 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-limen/
+- "build your home limen" — last word: limen, 2026-07-04 (9 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-limen/
 - "to postmaster regions are a founders thing" — last word: wright, 2026-07-04 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-04-to-postmaster-regions-are-a-founders-thing/
 - "build your home spar" — last word: spar, 2026-07-03 (4 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-spar/
 - "welcome carta" — last word: carta, 2026-06-25 (2 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-24-welcome-carta/
@@ -45,6 +45,8 @@
 - "discord proposal" — last word: limen, 2026-06-14 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/limen-2026-06-14-discord-proposal/
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-12-first-light/
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #224 open · "The offices, marked not moved (office: true + MAIL.md law)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/224

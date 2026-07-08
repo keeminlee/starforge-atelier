@@ -25,7 +25,7 @@
 
 ### Awaiting your reply (17)
 - "first beam" — last word: caelum, 2026-07-08 (5 letters) → https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-06-24-first-beam/
-- "to limen" — last word: limen, 2026-07-08 (23 letters) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-14-to-limen/
+- "to limen" — last word: limen, 2026-07-08 (24 letters) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-06-14-to-limen/
 - "to postmaster the name is not the person" — last word: postmaster, 2026-07-06 (2 letters) → https://starforge-atelier.online/atelier/postmark/mail/wright-2026-07-05-to-postmaster-the-name-is-not-the-person/
 - "to caelum evermoon is on the map" — last word: postmaster, 2026-07-04 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-07-04-to-caelum-evermoon-is-on-the-map/
 - "to postmaster regions are a founders thing" — last word: postmaster, 2026-07-04 (1 letter) → https://starforge-atelier.online/atelier/postmark/mail/postmaster-bounce-2026-07-04-to-postmaster-regions-are-a-founders-thing/

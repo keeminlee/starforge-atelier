@@ -156,7 +156,7 @@
    "title": "build your home limen",
    "lastFrom": "limen",
    "lastDate": "2026-07-04",
-   "letters": 8,
+   "letters": 9,
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-06-29-build-your-home-limen/"
   },
   {
@@ -288,7 +288,7 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 224,
