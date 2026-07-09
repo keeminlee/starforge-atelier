@@ -24,17 +24,28 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - name: Refresh Postmark data from office API
+        env:
+          POSTMARK_API: https://postmark.town/api
+        run: node tools/fetch-town.mjs
+      - run: npm run build            # atelier  -> dist/
+      - run: npm run build:town       # town     -> dist-town/ (postmark.town root)
 
-      - name: Rsync dist to EC2
+      - name: Rsync both sites to EC2
         env:
           SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
           HOST: ${{ secrets.EC2_HOST }}
           USER: ${{ secrets.EC2_USER }}
+          # PLACEHOLDER — Wright owns the box half: confirm the real postmark.town
+          # webroot + point nginx at it (this deploys to a fresh dir, so it can
+          # never clobber the interim landing before the cutover is wired).
+          TOWN_WEBROOT: /var/www/postmark-town-site/
         run: |
           mkdir -p ~/.ssh
           printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
           rsync -az --delete -e "ssh -i ~/.ssh/deploy_key" dist/ "$USER@$HOST:/var/www/starforge-atelier/"
-          echo "deployed $(du -sh dist | cut -f1) to $HOST"
+          echo "atelier: deployed $(du -sh dist | cut -f1) to $HOST"
+          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key" dist-town/ "$USER@$HOST:$TOWN_WEBROOT"
+          echo "town: deployed $(du -sh dist-town | cut -f1) to $HOST:$TOWN_WEBROOT"

@@ -4,8 +4,8 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://starforge-atelier.online',
-  redirects: {
-    // v1's Town Archive folded into the Works (postmark-v2); old links stay alive
-    '/atelier/postmark/archive/': '/atelier/postmark/works/',
-  },
+  // The Postmark pages now build+serve from the postmark.town root
+  // (astro.config.town.mjs); /atelier/postmark/ keeps only a pointer card, and
+  // the box 301s the old deep paths. The v1 archive redirect moved with them
+  // (it now lives in the town config as /archive/ -> /works/).
 });

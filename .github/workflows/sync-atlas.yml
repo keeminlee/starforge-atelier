@@ -41,12 +41,17 @@ jobs:
       - name: Install sharp (image resizing)
         run: npm install --no-save --no-audit --no-fund sharp@0.33.5
 
-      - name: Run town extraction
+      - name: Refresh checkout-coupled Postmark media
         env:
           # read-only: the extractor asks the GitHub API for PR states on the
           # public town repo (doorstep bundles). Degrades to prs:null without it.
           GH_TOKEN: ${{ github.token }}
         run: node tools/extract-town.mjs --town .postmark-checkout
+
+      - name: Refresh Postmark data from office API
+        env:
+          POSTMARK_API: https://postmark.town/api
+        run: node tools/fetch-town.mjs --town .postmark-checkout
 
       - name: Commit + deploy if the town changed
         env:

@@ -1,5 +1,6 @@
 # build output
 dist/
+dist-town/
 # generated types
 .astro/
 
@@ -28,3 +29,4 @@ pnpm-debug.log*
 
 # atlas-sync working checkout (CI)
 .postmark-checkout/
+.omc/

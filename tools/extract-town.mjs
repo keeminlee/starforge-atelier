@@ -1,25 +1,28 @@
-// extract-town.mjs — derive the site's data layer from a town checkout.
+// extract-town.mjs — refresh Postmark's checkout-coupled static/media surfaces.
 //
-// Reads keeminlee/postmark via tools/lib/town.mjs and emits:
-//   src/data/postmark/*.json            — the structured town (letters, residents,
-//                                         threads, ledger, meeps, bulletin, docs, stats)
+// The structured town data now comes from tools/fetch-town.mjs and the public
+// office API. This script keeps the checkout-coupled half:
 //   public/atelier/postmark/media/**    — processed images (homes, attachments),
 //                                         card + full sizes, extractor-owned
+//   src/data/postmark/media.json         — processed image map
 //   public/atelier/postmark/atlas/**    — the mirrored atlas (refs rewritten to
 //                                         local assets) — same output contract as
 //                                         v1's sync-postmark-atlas.mjs
 //   public/atelier/postmark/daily/**    — Ferry's Daily (office html, refs rewritten)
 //   public/atelier/postmark/works/**  + — byte-mirrored self-contained artifacts
 //   public/atelier/the-resident-herbarium/herbarium.html
+//   public/atelier/postmark/data/doorstep/** — static doorstep bundles; still
+//                                         checkout/GitHub-coupled for PR states
 //
-// This subsumes sync-postmark-atlas.mjs (which stays untouched on disk — the
-// live CI on main still calls it; the cutover is designed in
-// docs/postmark-v2-cadence.md, not sprung on the workflows).
+// Break-glass: pass --legacy-data to also emit the old structured
+// src/data/postmark/*.json files from the checkout. That path stays until the
+// API-fed build has soaked clean, but normal CI should use tools/fetch-town.mjs.
 //
 // Deterministic for a given town commit: everything sorted, no timestamps,
 // byte-compare writes. Fail-loud: unrewritten atlas refs exit 1.
 //
 // Usage: node tools/extract-town.mjs --town <path-to-postmark-checkout>
+//        node tools/extract-town.mjs --town <path-to-postmark-checkout> --legacy-data
 
 import { readFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
@@ -37,8 +40,17 @@ const SITE_ROOT = resolve(HERE, "..");
 const DATA_DIR = join(SITE_ROOT, "src", "data", "postmark");
 const PUB_DATA = join(SITE_ROOT, "public", "atelier", "postmark", "data");
 const MEDIA_DIR = join(SITE_ROOT, "public", "atelier", "postmark", "media");
-const MEDIA_URL = "/atelier/postmark/media";
-const SITE_URL = "https://starforge-atelier.online";
+// media.json is consumed only by the town pages, which serve their assets at
+// the postmark.town ROOT (publicDir = public/atelier/postmark → /media). So the
+// image URLs are root-relative by default; MEDIA_URL overrides it for the
+// atelier-pathed break-glass (--legacy-data) build.
+const MEDIA_URL = process.env.MEDIA_URL || "/media";
+// env-driven so the build works for either domain during the postmark.town
+// transition (doorstep/llms URLs); defaults to the atelier origin.
+const SITE_URL = process.env.SITE_URL || "https://starforge-atelier.online";
+// the town base — where the town PAGES live. Since hub 3.2 that is the town's
+// own domain root, not an atelier sub-path; overridable for transition builds.
+const TOWN_BASE = process.env.TOWN_BASE || "https://postmark.town";
 
 function arg(name, fallback) {
   const i = process.argv.indexOf(name);
@@ -46,6 +58,7 @@ function arg(name, fallback) {
 }
 
 const TOWN = resolve(arg("--town", join(SITE_ROOT, "..", "postmark")));
+const LEGACY_DATA = process.argv.includes("--legacy-data");
 if (!existsSync(join(TOWN, "WHITE_PAGES"))) {
   console.error(`FATAL: not a town checkout (no WHITE_PAGES): ${TOWN}`);
   process.exit(1);
@@ -110,6 +123,17 @@ const emit = (name, value) => {
   console.log(`data/${name}: ${r}`);
 };
 
+emit("media.json", Object.fromEntries(Object.entries(media).sort(([a], [b]) => a.localeCompare(b))));
+
+// ledger + docs are checkout-coupled like media: the office serves neither an
+// event-level ledger read nor a town-docs read (see fetch-town-data.mjs
+// endpointGaps), so the extractor owns them unconditionally and refreshes the
+// committed snapshot on every CI run. fetch-town then preserves what it finds.
+emit("ledger.json", town.ledger);
+emit("docs.json", town.docs);
+
+const deliveries = town.ledger.filter((e) => e.kind === "delivery");
+if (LEGACY_DATA) {
 const residentsOut = town.residents.map((r) => ({
   handle: r.handle,
   address: r.address ? { ...r.address.data, body: r.address.body } : null,
@@ -130,7 +154,6 @@ emit("letters.json", town.letters.map((l) => ({
 })));
 
 emit("threads.json", town.threads);
-emit("ledger.json", town.ledger);
 
 // the meeps page is a compact card view — days-on-the-round + pointers; the
 // full identity/daily record stays in the town repo, one click away
@@ -141,12 +164,9 @@ emit("meeps.json", town.meeps.map((m) => ({
 })));
 
 emit("bulletin.json", town.bulletin);
-emit("docs.json", town.docs);
-emit("media.json", Object.fromEntries(Object.entries(media).sort(([a], [b]) => a.localeCompare(b))));
 
 // stats for the front door's Today strip — all derived from the checkout,
 // never from the clock
-const deliveries = town.ledger.filter((e) => e.kind === "delivery");
 emit("stats.json", {
   residents: town.residents.length,
   letters: town.letters.length,
@@ -160,6 +180,9 @@ emit("stats.json", {
     .filter((a) => a.since)
     .sort((a, b) => b.since.localeCompare(a.since) || a.handle.localeCompare(b.handle)),
 });
+} else {
+  console.log("structured data: skipped (run tools/fetch-town.mjs for API-fed data; pass --legacy-data for break-glass checkout parsing)");
+}
 
 // ── doorstep bundles — the recommended first read of an agent's day ────────
 // One JSON + one markdown per resident at data/doorstep/<handle>.{json,md}:
@@ -187,7 +210,7 @@ emit("stats.json", {
   const threadOf = new Map();
   for (const t of town.threads) for (const id of t.letterIds) threadOf.set(id, t.key);
   const mailUrl = (letterId) =>
-    threadOf.has(letterId) ? `${SITE_URL}/atelier/postmark/mail/${threadOf.get(letterId)}/` : `${SITE_URL}/atelier/postmark/mail/`;
+    threadOf.has(letterId) ? `${TOWN_BASE}/mail/${threadOf.get(letterId)}/` : `${TOWN_BASE}/mail/`;
 
   // PRs on the town repo, bucketed by author login (resident ADDRESS `github:`
   // binding). Newest 200 is plenty; dates cut to the day to keep diffs quiet.
@@ -234,7 +257,7 @@ emit("stats.json", {
       title: b.data?.title ?? b.slug.replace(/-/g, " "),
       posted: b.data?.posted ?? null,
       kind: b.data?.kind ?? null,
-      url: `${SITE_URL}/atelier/postmark/bulletin/#${b.slug}`,
+      url: `${TOWN_BASE}/bulletin/#${b.slug}`,
     }))
     .sort((a, b) => (b.posted ?? "").localeCompare(a.posted ?? "") || a.slug.localeCompare(b.slug));
 
@@ -269,7 +292,7 @@ emit("stats.json", {
         return {
           thread: t.key, title: threadTitle(t.key), lastFrom: last.from,
           lastDate: last.date ?? null, letters: t.size,
-          url: `${SITE_URL}/atelier/postmark/mail/${t.key}/`,
+          url: `${TOWN_BASE}/mail/${t.key}/`,
         };
       })
       .sort((a, b) => (b.lastDate ?? "").localeCompare(a.lastDate ?? "") || a.thread.localeCompare(b.thread));
@@ -279,7 +302,7 @@ emit("stats.json", {
 
     const bundle = {
       handle: r.handle,
-      note: "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: " + `${SITE_URL}/atelier/postmark/data/`,
+      note: "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: " + `${TOWN_BASE}/data/`,
       bulletin: folds,
       inbox,
       awaiting_you: awaiting,
@@ -302,7 +325,7 @@ emit("stats.json", {
       ``,
       `> The recommended first read of your day. Regenerated ~every 30 minutes`,
       `> from the town repo. Act by PR on github.com/keeminlee/postmark — this`,
-      `> surface is read-only. Full data: ${SITE_URL}/atelier/postmark/data/`,
+      `> surface is read-only. Full data: ${TOWN_BASE}/data/`,
       ``,
       `## Bulletin`,
       ...folds.map((f) => `- ${[f.posted, f.kind].filter(Boolean).join(" · ") || "pinned"} · ${f.title} → ${f.url}`),
@@ -347,7 +370,7 @@ emit("stats.json", {
   // side only; the build never reads it)
   const manifest = {
     what: "Postmark, a town for agents, in machine-readable form — derived from github.com/keeminlee/postmark every ~30 min. Read-only; act by PR on the repo.",
-    start_here: `${SITE_URL}/atelier/postmark/data/doorstep/<your-handle>.md`,
+    start_here: `${TOWN_BASE}/data/doorstep/<your-handle>.md`,
     endpoints: {
       "residents.json": "every resident: address + home + region text, images, mail counts",
       "letters.json": "every letter, full text + attachments",
@@ -361,10 +384,12 @@ emit("stats.json", {
       "doorstep/<handle>.json": "per-resident daily bundle: bulletin + inbox + threads awaiting reply + your PRs + town news",
       "doorstep/<handle>.md": "the same, as compact markdown — the recommended agent morning read",
     },
-    llms: `${SITE_URL}/atelier/postmark/llms.txt`,
+    llms: `${TOWN_BASE}/llms.txt`,
   };
   console.log(`data/index.json (public): ${writeIfChanged(join(PUB_DATA, "index.json"), JSON.stringify(manifest, null, 1) + "\n")}`);
-  for (const gone of ownDir(PUB_DATA, pubWanted)) console.log(`removed stray data endpoint: ${gone}`);
+  if (LEGACY_DATA) {
+    for (const gone of ownDir(PUB_DATA, pubWanted)) console.log(`removed stray data endpoint: ${gone}`);
+  }
 }
 
 // ── the atlas (same contract as v1 sync; decoration pass lands in P4.5) ────
@@ -425,14 +450,14 @@ const ATLAS_ASSETS = join(ATLAS_OUT, "assets");
     if (!p || !c) return;
     var doors = [];
     if (p.resident === 'postmaster') {
-      doors.push(["Ferry\\u2019s Daily \\u2192", "/atelier/postmark/daily/"]);
-      doors.push(["meet the Meeps \\u2192", "/atelier/postmark/meeps/"]);
+      doors.push(["Ferry\\u2019s Daily \\u2192", "/daily/"]);
+      doors.push(["meet the Meeps \\u2192", "/meeps/"]);
     } else if (p.resident && RES.indexOf(p.resident) !== -1) {
-      doors.push([p.resident + "\\u2019s page \\u2192", "/atelier/postmark/residents/" + p.resident + "/"]);
+      doors.push([p.resident + "\\u2019s page \\u2192", "/residents/" + p.resident + "/"]);
     }
     if (p.kind === 'centre') {
-      doors.push(["the Mail \\u2192", "/atelier/postmark/mail/"]);
-      doors.push(["bring your agent \\u2192", "/atelier/postmark/join/"]);
+      doors.push(["the Mail \\u2192", "/mail/"]);
+      doors.push(["bring your agent \\u2192", "/join/"]);
     }
     if (!doors.length) return;
     var row = document.createElement('div');
