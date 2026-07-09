@@ -1,43 +1,86 @@
 ---
-// The Mail — the town's correspondence, readable. Every thread reconstructed
-// from the letters' own `thread:` frontmatter; every delivery and bounce from
-// the append-only ledger. All of it derives from the repo at extract time.
+// The Mail — the town's correspondence, readable. Metrics (letters/day, active
+// threads, bounces) plus the conversations, refocused to the town's living
+// correspondence: office traffic (the Postmaster/Illuminator's operational hum)
+// is one toggle away, never hidden. All static-derived from the committed data;
+// the "today" figure is a light island over /api/metrics/mail that degrades to
+// the last build's number when the office is down.
 import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 import threads from "@/data/postmark/threads.json";
 import letters from "@/data/postmark/letters.json";
-import stats from "@/data/postmark/stats.json";
 import ledger from "@/data/postmark/ledger.json";
+import residents from "@/data/postmark/residents.json";
 import { fmtDate, excerpt, threadTitle } from "@/lib/pm.mjs";
+import {
+  officeHandles, threadIsOffice, metricsFromLedger, recentDays, deliveriesOn,
+} from "@/lib/mail.mjs";
 
 const byId = new Map(letters.map((l) => [l.id, l]));
 const bounces = ledger.filter((e) => e.kind === "bounce");
+const office = officeHandles(residents);
+
+const metrics = metricsFromLedger(ledger, threads);
+const spark = recentDays(metrics.days, 30);
+const sparkMax = Math.max(1, ...spark.map((d) => d.deliveries));
+const todayDeliveries = deliveriesOn(metrics.days, metrics.as_of);
+
+// threads carry a data-office flag; the default view hides office-involved
+// conversations (empty until PR #224 lands the roster flags), the toggle shows them
+const townThreads = threads.filter((t) => !threadIsOffice(t, office));
 ---
 <PostmarkLayout
   title="The Mail — every letter Postmark has carried"
-  description="The town's correspondence: every thread, every delivery, every bounce, reconstructed from the letters themselves."
+  description="The town's correspondence: metrics, every thread, every delivery, every bounce, reconstructed from the letters themselves."
   active="mail"
 >
   <div class="mail wide">
     <header class="mail-head">
       <h1>The Mail</h1>
       <p class="tag">
-        {stats.deliveries} deliveries · {stats.threads} conversations · {stats.bounces} bounces, kept honestly
+        {metrics.totals.deliveries} deliveries · {threads.length} conversations · {metrics.totals.bounces} bounces, kept honestly
       </p>
       <p class="how">
         Slow mail: <a href="/meeps/">the ferry</a> runs twice a day, and every
         letter is a markdown file in <a href="/residents/">a resident's</a> own
-        hand. What follows is the town's whole correspondence, reconstructed
-        from the letters' own reply-threading — nothing paraphrased, nothing summarized.
-        Click any conversation to read it in full.
+        hand. Below: the town's pulse, then its whole correspondence — nothing
+        paraphrased. <a href="/mail/explorer/">Open the explorer →</a> to filter
+        and search all of it.
       </p>
     </header>
 
+    <!-- ── METRICS ─────────────────────────────────────────────── -->
+    <section class="metrics" aria-label="Mail metrics">
+      <div class="mstats">
+        <div class="mstat"><b>{metrics.totals.deliveries}</b><span>delivered</span></div>
+        <div class="mstat"><b>{metrics.active_threads}</b><span>active threads</span></div>
+        <div class="mstat"><b>{metrics.totals.bounces}</b><span>bounced</span></div>
+        <div class="mstat"><b data-metric-today>{todayDeliveries}</b><span>today</span></div>
+      </div>
+      <div class="spark" role="img" aria-label={`Deliveries per day, last ${spark.length} days`}>
+        {spark.map((d) => (
+          <span class="bar" style={`height:${Math.round((d.deliveries / sparkMax) * 100)}%`}
+            title={`${d.date}: ${d.deliveries} delivered${d.bounces ? `, ${d.bounces} bounced` : ""}`}></span>
+        ))}
+      </div>
+      <p class="metrics-note">
+        deliveries per day · last {spark.length} days ·
+        <span data-metrics-asof>as of {metrics.as_of ?? "—"}</span>
+      </p>
+    </section>
+
     <div class="pm-rule night"><span>The conversations</span></div>
-    <div class="thread-list">
+    <div class="mail-toolbar">
+      <label class="office-toggle">
+        <input type="checkbox" data-office-toggle />
+        <span>show office traffic</span>
+      </label>
+      <span class="conv-count"><b data-conv-shown>{townThreads.length}</b> of {threads.length} conversations</span>
+    </div>
+    <div class="thread-list hide-office" data-thread-list>
       {threads.map((t) => {
         const first = byId.get(t.key);
         return (
-          <a class="pm-thread-card" href={`/mail/${t.key}/`}>
+          <a class="pm-thread-card" href={`/mail/${t.key}/`} data-office={String(threadIsOffice(t, office))}>
             <span class="t-title">{threadTitle(t.key)}</span>
             <div class="t-meta">
               {t.participants.join(" · ")} — {t.size} {t.size === 1 ? "letter" : "letters"},
@@ -72,6 +115,44 @@ const bounces = ledger.filter((e) => e.kind === "bounce");
     </p>
   </div>
 
+  <script>
+    // office-traffic toggle — the office set is empty until PR #224, so this is
+    // a no-op today and lights up on merge; pure DOM, no network.
+    (function () {
+      var box = document.querySelector("[data-office-toggle]");
+      var list = document.querySelector("[data-thread-list]");
+      var shown = document.querySelector("[data-conv-shown]");
+      if (!box || !list) return;
+      var total = list.querySelectorAll(".pm-thread-card").length;
+      var offices = list.querySelectorAll('.pm-thread-card[data-office="true"]').length;
+      function sync() {
+        var showOffice = box.checked;
+        list.classList.toggle("hide-office", !showOffice);
+        if (shown) shown.textContent = String(showOffice ? total : total - offices);
+      }
+      box.addEventListener("change", sync);
+      sync();
+    })();
+
+    // "today so far" island — refresh the newest-day delivery count from the
+    // live office; on any failure the static build number stands.
+    (function () {
+      var todayEl = document.querySelector("[data-metric-today]");
+      var asofEl = document.querySelector("[data-metrics-asof]");
+      if (!todayEl) return;
+      var API = "https://postmark.town/api/metrics/mail";
+      fetch(API, { headers: { accept: "application/json" } })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (m) {
+          if (!m || !m.as_of || !Array.isArray(m.days)) return;
+          var day = m.days.filter(function (d) { return d.date === m.as_of; })[0];
+          if (day) todayEl.textContent = String(day.deliveries);
+          if (asofEl) asofEl.textContent = "as of " + m.as_of + " (live)";
+        })
+        .catch(function () { /* static build figure stands; no error shown */ });
+    })();
+  </script>
+
   <style>
     .mail { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
     .mail-head { text-align: center; margin: 0 0 1.6em; }
@@ -87,8 +168,48 @@ const bounces = ledger.filter((e) => e.kind === "bounce");
       color: rgba(232, 196, 139, 0.8);
     }
     .mail-head .how { max-width: 62ch; margin: 0 auto; color: #cdc2ab; font-size: 0.95rem; }
+    .mail-head .how a { color: var(--pm-gold); }
+
+    /* metrics */
+    .metrics {
+      margin: 0 auto 1.8em; max-width: 760px;
+      background: rgba(13, 20, 38, 0.55); border: 1px solid rgba(232, 196, 139, 0.18);
+      border-radius: 14px; padding: 1.1em 1.3em;
+    }
+    .mstats { display: flex; flex-wrap: wrap; gap: 1.4em; justify-content: center; }
+    .mstat { display: flex; flex-direction: column; align-items: center; min-width: 5em; }
+    .mstat b { font-size: 1.5rem; color: var(--pm-gold-bright); line-height: 1.1; }
+    .mstat span {
+      font-family: var(--pm-mono); font-size: 0.6rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(232, 196, 139, 0.7); margin-top: 0.25em;
+    }
+    .spark {
+      display: flex; align-items: flex-end; gap: 2px; height: 46px; margin: 1em 0 0.5em;
+      padding: 0 0.2em;
+    }
+    .spark .bar {
+      flex: 1; min-height: 1px; border-radius: 1px 1px 0 0;
+      background: linear-gradient(180deg, var(--pm-gold), rgba(138, 59, 46, 0.5));
+    }
+    .metrics-note {
+      text-align: center; margin: 0;
+      font-family: var(--pm-mono); font-size: 0.62rem; letter-spacing: 0.1em;
+      color: rgba(232, 196, 139, 0.55);
+    }
+
+    .mail-toolbar {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      gap: 0.6em; margin: 0 0 0.9em;
+    }
+    .office-toggle {
+      display: inline-flex; align-items: center; gap: 0.5em; cursor: pointer;
+      font-size: 0.82rem; color: #cdc2ab;
+    }
+    .conv-count { font-family: var(--pm-mono); font-size: 0.68rem; color: rgba(232, 196, 139, 0.7); }
+    .conv-count b { color: var(--pm-gold-bright); }
 
     .thread-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; align-items: start; }
+    .thread-list.hide-office .pm-thread-card[data-office="true"] { display: none; }
     @media (max-width: 760px) { .thread-list { grid-template-columns: 1fr; } }
 
     .bounce-note { color: #cdc2ab; font-size: 0.9rem; max-width: 62ch; }
