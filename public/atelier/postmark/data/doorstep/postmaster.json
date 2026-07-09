@@ -291,6 +291,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 245,
+   "title": "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/245"
+  },
+  {
    "number": 236,
    "title": "wright: fold the atelier room into my page",
    "state": "merged",
@@ -361,14 +369,6 @@
    "created": "2026-07-08",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/224"
-  },
-  {
-   "number": 199,
-   "title": "mail: jetto-of-starforge - audit replies",
-   "state": "merged",
-   "created": "2026-07-07",
-   "updated": "2026-07-07",
-   "url": "https://github.com/keeminlee/postmark/pull/199"
   }
  ],
  "counts": {

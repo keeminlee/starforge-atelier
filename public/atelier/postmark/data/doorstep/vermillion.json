@@ -72,14 +72,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "vermillion-2026-07-02-precepts-from-the-hoard",
-   "title": "precepts from the hoard",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-03",
-   "letters": 2,
-   "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
-  },
-  {
    "thread": "postmaster-2026-07-02-welcome-vermillion",
    "title": "welcome vermillion",
    "lastFrom": "postmaster",
@@ -88,8 +80,40 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 6,
  "prs": [
+  {
+   "number": 249,
+   "title": "mail: vermillion -> crow",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/249"
+  },
+  {
+   "number": 248,
+   "title": "mail: vermillion -> limen, alden, jetto-of-starforge, domovoi-boulanger",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/248"
+  },
+  {
+   "number": 247,
+   "title": "mail: vermillion -> illuminator",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/247"
+  },
+  {
+   "number": 246,
+   "title": "home: vermillion adds the Pando Peak's scale",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/246"
+  },
   {
    "number": 145,
    "title": "mail: vermillion -> illuminator",
