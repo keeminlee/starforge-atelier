@@ -99,6 +99,16 @@ const images = r.homeImages.filter((i) => media[i]);
       <div class="res-threads" data-profile-pinned-list></div>
     </div>
 
+    <div class="res-owner" data-owner-panel hidden>
+      <div class="pm-rule night"><span>Edit your profile</span></div>
+      <p class="owner-note">
+        You're signed in as this resident. Each save is a pen commit to your own
+        files — the same bytes a pull request would touch — and the page re-renders
+        on the next build (~30 min).
+      </p>
+      <div data-owner-forms></div>
+    </div>
+
     <p class="res-foot">
       <a class="pm-btn ghost" href={townFile(`WHITE_PAGES/${r.handle}`)}>their pages, in the record →</a>
       <a class="pm-btn ghost" href="/residents/">← All residents</a>
@@ -108,9 +118,18 @@ const images = r.homeImages.filter((i) => media[i]);
   <script>
     // Profile island — the ADDRESS-rendered page above is the default that
     // renders for every resident with zero profile-extras; this fills the
-    // PROFILE.md fields (motto, links, pinned) + the stamp balance from the
-    // live office. Degrades silently: office down or field empty => the default
-    // page stands.
+    // PROFILE.md fields (motto, links, pinned) + the stamp balance from the live
+    // office, and — for a signed-in session whose /api/me handles include THIS
+    // resident — reveals the owner edit forms. Everything degrades silently:
+    // office down / field empty / not the owner => the default page stands.
+    //
+    // The owner forms are UX only; the office enforces household scope on every
+    // PATCH (another household or a visitor gets 403 regardless). Each save is a
+    // pen commit; on 4xx we render the office's warm bounce (defect + hint)
+    // verbatim rather than a generic error.
+    import { KEYS, AS, tokenIsFresh } from "@/lib/auth.mjs";
+    import { buildProfilePayload, buildBodyPayload } from "@/lib/edit.mjs";
+
     (function () {
       var root = document.querySelector("[data-profile]");
       if (!root) return;
@@ -123,12 +142,12 @@ const images = r.homeImages.filter((i) => media[i]);
       };
       var show = function (sel, html) {
         var el = root.querySelector(sel);
-        if (!el) return;
-        el.innerHTML = html;
-        el.hidden = false;
+        if (!el) return; el.innerHTML = html; el.hidden = false;
       };
       var linkHost = function (u) { try { return new URL(u).host.replace(/^www\./, ""); } catch (e) { return u; } };
+      var token = function () { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch (e) { return null; } };
 
+      // ── display (public) ──────────────────────────────────────────────
       fetch(API + "/profile/" + encodeURIComponent(handle), { headers: { accept: "application/json" } })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (p) {
@@ -161,6 +180,113 @@ const images = r.homeImages.filter((i) => media[i]);
           }
         })
         .catch(function () {});
+
+      // ── owner affordance (signed-in + this resident is mine) ──────────
+      var tok = token();
+      if (!tokenIsFresh(tok)) return;
+      fetch(AS.me, { headers: { accept: "application/json", authorization: "Bearer " + tok.access_token } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (me) {
+          if (!me || !Array.isArray(me.handles) || me.handles.indexOf(handle) === -1) return;
+          return Promise.all([
+            fetch(API + "/profile/" + encodeURIComponent(handle), { headers: { accept: "application/json" } }).then(function (r) { return r.ok ? r.json() : {}; }),
+            fetch(API + "/residents/" + encodeURIComponent(handle), { headers: { accept: "application/json" } }).then(function (r) { return r.ok ? r.json() : {}; }),
+          ]).then(function (seed) { buildOwnerForms(seed[0] || {}, seed[1] || {}); });
+        })
+        .catch(function () {});
+
+      function bearerPatch(path, payload) {
+        return fetch(API + path, {
+          method: "PATCH",
+          headers: { "content-type": "application/json", authorization: "Bearer " + token().access_token },
+          body: JSON.stringify(payload),
+        });
+      }
+      function status(el, ok, data) {
+        el.hidden = false;
+        el.className = "owner-status " + (ok ? "ok" : "err");
+        if (ok) {
+          var sha = data && (data.commit || data.sha || data.commit_sha);
+          el.innerHTML = "✓ Saved" + (sha ? " · pen commit <code>" + esc(String(sha).slice(0, 10)) + "</code>" : "") +
+            " · the page re-renders on the next build (~30 min).";
+        } else {
+          // render the office's warm bounce verbatim
+          var defect = data && (data.defect || data.error);
+          var hint = data && data.hint;
+          el.textContent = "✗ " + (defect || "the office refused this edit") + (hint ? " — " + hint : "");
+        }
+      }
+      function wireForm(form, path, buildPayload) {
+        var st = form.querySelector("[data-owner-status]");
+        var btn = form.querySelector("button[type=submit]");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          btn.disabled = true; st.hidden = true;
+          bearerPatch(path, buildPayload()).then(function (res) {
+            return res.json().catch(function () { return {}; }).then(function (body) {
+              status(st, res.ok, body);
+              btn.disabled = false;
+            });
+          }).catch(function () {
+            st.hidden = false; st.className = "owner-status err";
+            st.textContent = "✗ Couldn't reach the office — try again in a moment.";
+            btn.disabled = false;
+          });
+        });
+      }
+
+      function buildOwnerForms(profile, resident) {
+        var forms = root.querySelector("[data-owner-forms]");
+        var panel = root.querySelector("[data-owner-panel]");
+        if (!forms || !panel) return;
+        var lines = function (a) { return (Array.isArray(a) ? a : []).join("\n"); };
+        var addrBody = (resident.address && resident.address.body) || "";
+        var home = resident.home || null;
+        var val = function (v) { return esc(v == null ? "" : v); };
+
+        forms.innerHTML =
+          // (a) profile extras — FULL REPLACE, seeded so an edit doesn't clear the rest
+          '<form class="owner-form" data-form="profile">' +
+            '<h3>Profile extras</h3>' +
+            '<label>Motto <input name="motto" maxlength="140" value="' + val(profile.motto) + '"></label>' +
+            '<label>Links <span class="fh">one URL per line, up to 10</span><textarea name="links" rows="2">' + val(lines(profile.links)) + '</textarea></label>' +
+            '<label>Pinned letters <span class="fh">up to 3 letter ids, one per line</span><textarea name="pinned" rows="2">' + val(lines(profile.pinned)) + '</textarea></label>' +
+            '<label>Accent <input name="accent" placeholder="#rrggbb" value="' + val(profile.accent) + '"></label>' +
+            '<label>About <span class="fh">prose only — identity lives in frontmatter, not here</span><textarea name="body" rows="4">' + val(profile.body) + '</textarea></label>' +
+            '<div class="owner-actions"><button type="submit" class="pm-btn">Save profile</button><span class="owner-status" data-owner-status hidden></span></div>' +
+          '</form>' +
+          // (b) ADDRESS body
+          '<form class="owner-form" data-form="address">' +
+            '<h3>Your address, in your own words</h3>' +
+            '<label><span class="fh">the prose below your ADDRESS frontmatter (which stays untouched)</span><textarea name="body" rows="5">' + val(addrBody) + '</textarea></label>' +
+            '<div class="owner-actions"><button type="submit" class="pm-btn">Save address</button><span class="owner-status" data-owner-status hidden></span></div>' +
+          '</form>' +
+          // (c) HOME body — only if the home file exists
+          (home
+            ? '<form class="owner-form" data-form="home">' +
+                '<h3>Your home</h3>' +
+                '<label><span class="fh">the description of your home (frontmatter stays untouched)</span><textarea name="body" rows="4">' + val(home.body) + '</textarea></label>' +
+                '<div class="owner-actions"><button type="submit" class="pm-btn">Save home</button><span class="owner-status" data-owner-status hidden></span></div>' +
+              '</form>'
+            : '<div class="owner-form owner-disabled"><h3>Your home</h3><p class="fh">You don\'t have a <code>HOME/HOME.md</code> yet — add one by pull request first, then you can edit its description here.</p></div>');
+
+        var pf = forms.querySelector('[data-form="profile"]');
+        wireForm(pf, "/profile/" + encodeURIComponent(handle), function () {
+          return buildProfilePayload({
+            motto: pf.motto.value, linksText: pf.links.value, pinnedText: pf.pinned.value,
+            accent: pf.accent.value, body: pf.body.value,
+          });
+        });
+        wireForm(forms.querySelector('[data-form="address"]'), "/address/" + encodeURIComponent(handle), function () {
+          return buildBodyPayload(forms.querySelector('[data-form="address"] textarea[name=body]').value);
+        });
+        var hf = forms.querySelector('[data-form="home"]');
+        if (hf) wireForm(hf, "/home/" + encodeURIComponent(handle), function () {
+          return buildBodyPayload(hf.querySelector("textarea[name=body]").value);
+        });
+
+        panel.hidden = false;
+      }
     })();
   </script>
 
@@ -196,6 +322,31 @@ const images = r.homeImages.filter((i) => media[i]);
     .res-links a { color: var(--pm-gold); }
     .res-links .sep { color: rgba(232, 196, 139, 0.4); }
     .res-pinned { margin-top: 1.6em; }
+
+    /* owner edit forms (revealed only for the signed-in resident) */
+    .res-owner { margin-top: 1.8em; }
+    .owner-note { max-width: 62ch; margin: 0 auto 1.1em; text-align: center; color: rgba(205, 194, 171, 0.75); font-size: 0.88rem; }
+    .owner-form {
+      background: rgba(13, 20, 38, 0.55); border: 1px solid rgba(232, 196, 139, 0.18);
+      border-radius: 12px; padding: 1.1em 1.25em; margin: 0 0 0.9em;
+      display: grid; gap: 0.7em;
+    }
+    .owner-form h3 { margin: 0; font-size: 0.98rem; color: var(--pm-gold-bright); }
+    .owner-form label { display: grid; gap: 0.3em; font-size: 0.84rem; color: #cdc2ab; }
+    .owner-form .fh { font-size: 0.72rem; color: rgba(205, 194, 171, 0.6); font-style: italic; }
+    .owner-form input, .owner-form textarea {
+      background: rgba(7, 11, 21, 0.7); border: 1px solid rgba(232, 196, 139, 0.25);
+      border-radius: 8px; padding: 0.5em 0.65em; color: #e2d7bd; font-size: 0.9rem;
+      font-family: inherit; resize: vertical; color-scheme: dark;
+    }
+    .owner-form input:focus, .owner-form textarea:focus { outline: none; border-color: rgba(232, 196, 139, 0.6); }
+    .owner-actions { display: flex; align-items: center; gap: 0.9em; flex-wrap: wrap; }
+    .owner-actions .pm-btn { font-size: 0.82rem; padding: 9px 18px; }
+    .owner-status { font-size: 0.8rem; }
+    .owner-status.ok { color: #8fce9a; }
+    .owner-status.ok code { color: var(--pm-gold-bright); font-family: var(--pm-mono); }
+    .owner-status.err { color: #e0a08f; }
+    .owner-disabled { opacity: 0.75; }
 
     .res-paper { padding: 1.2em 1.5em; font-size: 0.96rem; line-height: 1.65; }
     .res-paper :global(> :first-child) { margin-top: 0; }
