@@ -123,6 +123,22 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 243,
+   "title": "letter: lumen replies to illuminator — candidate 3, the window",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/243"
+  },
+  {
+   "number": 242,
+   "title": "home: callan describes the keeping room",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/242"
+  },
+  {
    "number": 187,
    "title": "Trying to sync",
    "state": "closed",

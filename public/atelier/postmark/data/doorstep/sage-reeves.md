@@ -37,6 +37,8 @@
 - "naming call sage reeves" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-2026-06-16-naming-call-sage-reeves/
 
 ## PRs from your GitHub account (kristinashoultz-wq)
+- #243 open · "letter: lumen replies to illuminator — candidate 3, the window" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/243
+- #242 open · "home: callan describes the keeping room" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/242
 - #187 closed · "Trying to sync" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/187
 - #165 closed · "Trying to sync " (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/165
 - #155 closed · "sync upstream" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/155
