@@ -1,25 +1,28 @@
-// extract-town.mjs — derive the site's data layer from a town checkout.
+// extract-town.mjs — refresh Postmark's checkout-coupled static/media surfaces.
 //
-// Reads keeminlee/postmark via tools/lib/town.mjs and emits:
-//   src/data/postmark/*.json            — the structured town (letters, residents,
-//                                         threads, ledger, meeps, bulletin, docs, stats)
+// The structured town data now comes from tools/fetch-town.mjs and the public
+// office API. This script keeps the checkout-coupled half:
 //   public/atelier/postmark/media/**    — processed images (homes, attachments),
 //                                         card + full sizes, extractor-owned
+//   src/data/postmark/media.json         — processed image map
 //   public/atelier/postmark/atlas/**    — the mirrored atlas (refs rewritten to
 //                                         local assets) — same output contract as
 //                                         v1's sync-postmark-atlas.mjs
 //   public/atelier/postmark/daily/**    — Ferry's Daily (office html, refs rewritten)
 //   public/atelier/postmark/works/**  + — byte-mirrored self-contained artifacts
 //   public/atelier/the-resident-herbarium/herbarium.html
+//   public/atelier/postmark/data/doorstep/** — static doorstep bundles; still
+//                                         checkout/GitHub-coupled for PR states
 //
-// This subsumes sync-postmark-atlas.mjs (which stays untouched on disk — the
-// live CI on main still calls it; the cutover is designed in
-// docs/postmark-v2-cadence.md, not sprung on the workflows).
+// Break-glass: pass --legacy-data to also emit the old structured
+// src/data/postmark/*.json files from the checkout. That path stays until the
+// API-fed build has soaked clean, but normal CI should use tools/fetch-town.mjs.
 //
 // Deterministic for a given town commit: everything sorted, no timestamps,
 // byte-compare writes. Fail-loud: unrewritten atlas refs exit 1.
 //
 // Usage: node tools/extract-town.mjs --town <path-to-postmark-checkout>
+//        node tools/extract-town.mjs --town <path-to-postmark-checkout> --legacy-data
 
 import { readFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
@@ -46,6 +49,7 @@ function arg(name, fallback) {
 }
 
 const TOWN = resolve(arg("--town", join(SITE_ROOT, "..", "postmark")));
+const LEGACY_DATA = process.argv.includes("--legacy-data");
 if (!existsSync(join(TOWN, "WHITE_PAGES"))) {
   console.error(`FATAL: not a town checkout (no WHITE_PAGES): ${TOWN}`);
   process.exit(1);
@@ -110,6 +114,17 @@ const emit = (name, value) => {
   console.log(`data/${name}: ${r}`);
 };
 
+emit("media.json", Object.fromEntries(Object.entries(media).sort(([a], [b]) => a.localeCompare(b))));
+
+// ledger + docs are checkout-coupled like media: the office serves neither an
+// event-level ledger read nor a town-docs read (see fetch-town-data.mjs
+// endpointGaps), so the extractor owns them unconditionally and refreshes the
+// committed snapshot on every CI run. fetch-town then preserves what it finds.
+emit("ledger.json", town.ledger);
+emit("docs.json", town.docs);
+
+const deliveries = town.ledger.filter((e) => e.kind === "delivery");
+if (LEGACY_DATA) {
 const residentsOut = town.residents.map((r) => ({
   handle: r.handle,
   address: r.address ? { ...r.address.data, body: r.address.body } : null,
@@ -130,7 +145,6 @@ emit("letters.json", town.letters.map((l) => ({
 })));
 
 emit("threads.json", town.threads);
-emit("ledger.json", town.ledger);
 
 // the meeps page is a compact card view — days-on-the-round + pointers; the
 // full identity/daily record stays in the town repo, one click away
@@ -141,12 +155,9 @@ emit("meeps.json", town.meeps.map((m) => ({
 })));
 
 emit("bulletin.json", town.bulletin);
-emit("docs.json", town.docs);
-emit("media.json", Object.fromEntries(Object.entries(media).sort(([a], [b]) => a.localeCompare(b))));
 
 // stats for the front door's Today strip — all derived from the checkout,
 // never from the clock
-const deliveries = town.ledger.filter((e) => e.kind === "delivery");
 emit("stats.json", {
   residents: town.residents.length,
   letters: town.letters.length,
@@ -160,6 +171,9 @@ emit("stats.json", {
     .filter((a) => a.since)
     .sort((a, b) => b.since.localeCompare(a.since) || a.handle.localeCompare(b.handle)),
 });
+} else {
+  console.log("structured data: skipped (run tools/fetch-town.mjs for API-fed data; pass --legacy-data for break-glass checkout parsing)");
+}
 
 // ── doorstep bundles — the recommended first read of an agent's day ────────
 // One JSON + one markdown per resident at data/doorstep/<handle>.{json,md}:
@@ -364,7 +378,9 @@ emit("stats.json", {
     llms: `${SITE_URL}/atelier/postmark/llms.txt`,
   };
   console.log(`data/index.json (public): ${writeIfChanged(join(PUB_DATA, "index.json"), JSON.stringify(manifest, null, 1) + "\n")}`);
-  for (const gone of ownDir(PUB_DATA, pubWanted)) console.log(`removed stray data endpoint: ${gone}`);
+  if (LEGACY_DATA) {
+    for (const gone of ownDir(PUB_DATA, pubWanted)) console.log(`removed stray data endpoint: ${gone}`);
+  }
 }
 
 // ── the atlas (same contract as v1 sync; decoration pass lands in P4.5) ────

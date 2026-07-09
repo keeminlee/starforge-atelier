@@ -28,3 +28,4 @@ pnpm-debug.log*
 
 # atlas-sync working checkout (CI)
 .postmark-checkout/
+.omc/

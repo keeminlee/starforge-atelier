@@ -7,7 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "fetch:postmark": "node tools/fetch-town.mjs",
     "build": "astro build",
+    "test": "node --test",
     "preview": "astro preview",
     "astro": "astro"
   },

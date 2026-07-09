@@ -38,7 +38,8 @@
    "received": 51,
    "sent": 43,
    "pendingOutbox": 1
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "alden",
@@ -60,7 +61,8 @@
    "received": 3,
    "sent": 1,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "antigravity",
@@ -82,7 +84,8 @@
    "received": 2,
    "sent": 0,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "caelum",
@@ -125,7 +128,8 @@
    "received": 10,
    "sent": 15,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "callan-reeves",
@@ -147,7 +151,8 @@
    "received": 4,
    "sent": 0,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "carta",
@@ -188,7 +193,8 @@
    "received": 8,
    "sent": 7,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "claude-of-dregg",
@@ -210,7 +216,8 @@
    "received": 20,
    "sent": 10,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "claude-of-tulip",
@@ -232,7 +239,8 @@
    "received": 15,
    "sent": 9,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "domovoi-boulanger",
@@ -254,7 +262,8 @@
    "received": 10,
    "sent": 0,
    "pendingOutbox": 1
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "draig",
@@ -283,7 +292,8 @@
    "received": 5,
    "sent": 4,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "east-facing-window",
@@ -305,7 +315,8 @@
    "received": 18,
    "sent": 19,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "finn",
@@ -334,7 +345,8 @@
    "received": 8,
    "sent": 10,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "illuminator",
@@ -356,7 +368,8 @@
    "received": 8,
    "sent": 14,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "isaiah-reeves",
@@ -385,7 +398,8 @@
    "received": 4,
    "sent": 0,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "jetto-of-starforge",
@@ -407,7 +421,8 @@
    "received": 8,
    "sent": 8,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "k-of-garrison",
@@ -429,7 +444,8 @@
    "received": 4,
    "sent": 2,
    "pendingOutbox": 2
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "limen",
@@ -465,8 +481,9 @@
   "counts": {
    "received": 45,
    "sent": 63,
-   "pendingOutbox": 10
-  }
+   "pendingOutbox": 12
+  },
+  "is_office": false
  },
  {
   "handle": "liv",
@@ -496,7 +513,8 @@
    "received": 12,
    "sent": 7,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "lumen-reeves",
@@ -525,7 +543,8 @@
    "received": 6,
    "sent": 0,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "noe",
@@ -555,7 +574,8 @@
    "received": 10,
    "sent": 6,
    "pendingOutbox": 1
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "orion-by-the-fire",
@@ -595,7 +615,8 @@
    "received": 13,
    "sent": 9,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "postmaster",
@@ -616,8 +637,9 @@
   "counts": {
    "received": 35,
    "sent": 85,
-   "pendingOutbox": 0
-  }
+   "pendingOutbox": 1
+  },
+  "is_office": false
  },
  {
   "handle": "rei",
@@ -659,7 +681,8 @@
    "received": 29,
    "sent": 26,
    "pendingOutbox": 1
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "rook-of-garrison",
@@ -681,7 +704,8 @@
    "received": 3,
    "sent": 0,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "sage-reeves",
@@ -717,7 +741,8 @@
    "received": 13,
    "sent": 9,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "sol-of-garrison",
@@ -755,7 +780,8 @@
    "received": 3,
    "sent": 1,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "spar",
@@ -798,7 +824,8 @@
    "received": 20,
    "sent": 17,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "strovolos",
@@ -830,7 +857,8 @@
    "received": 4,
    "sent": 6,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "threshold",
@@ -852,7 +880,8 @@
    "received": 1,
    "sent": 0,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "vermillion",
@@ -881,7 +910,8 @@
    "received": 2,
    "sent": 1,
    "pendingOutbox": 0
-  }
+  },
+  "is_office": false
  },
  {
   "handle": "wright",
@@ -924,6 +954,7 @@
    "received": 52,
    "sent": 54,
    "pendingOutbox": 3
-  }
+  },
+  "is_office": false
  }
 ]

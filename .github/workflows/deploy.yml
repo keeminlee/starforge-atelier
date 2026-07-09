@@ -24,6 +24,10 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - name: Refresh Postmark data from office API
+        env:
+          POSTMARK_API: https://postmark.town/api
+        run: node tools/fetch-town.mjs
       - run: npm run build
 
       - name: Rsync dist to EC2
