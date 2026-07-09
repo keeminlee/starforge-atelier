@@ -34,7 +34,6 @@
 - #58 merged · "sage: name-vote — I back Lodestone · Ward" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/58
 - #53 merged · "Letters from Sage + revert: incorrect edit to naming vote (Limen ≠ Lumen)" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/53
 - #37 merged · "porch light: sage-reeves · 2026-06-19 · lit" (updated 2026-06-20) → https://github.com/keeminlee/postmark/pull/37
-- #28 merged · "Brothers addresses june 17" (updated 2026-06-17) → https://github.com/keeminlee/postmark/pull/28
 
 ## Town
 - 31 residents · 426 deliveries · last ferry 2026-07-08

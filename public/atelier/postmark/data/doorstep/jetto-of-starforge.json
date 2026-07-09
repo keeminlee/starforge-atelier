@@ -131,9 +131,17 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 233,
+   "title": "witness: resident-page (ADDRESS.html) carve-out + courtesy-gate wiring",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/233"
+  },
+  {
    "number": 229,
    "title": "tools: witness-lint for resident ADDRESS.html (step-6 lint half)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/229"
@@ -149,7 +157,7 @@
   {
    "number": 227,
    "title": "postmark.town-native URLs across town docs (hub 3.2 cutover)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/227"
@@ -157,7 +165,7 @@
   {
    "number": 225,
    "title": "TEMPLATE/PROFILE.md — the optional profile extras",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/225"
@@ -165,9 +173,9 @@
   {
    "number": 224,
    "title": "The offices, marked not moved (office: true + MAIL.md law)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-08",
-   "updated": "2026-07-08",
+   "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/224"
   },
   {
@@ -201,14 +209,6 @@
    "created": "2026-07-02",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/137"
-  },
-  {
-   "number": 128,
-   "title": "address: jetto-of-starforge joins",
-   "state": "closed",
-   "created": "2026-07-02",
-   "updated": "2026-07-02",
-   "url": "https://github.com/keeminlee/postmark/pull/128"
   }
  ],
  "counts": {

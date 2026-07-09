@@ -1,5 +1,22 @@
 [
  {
+  "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
+  "participants": [
+   "finn",
+   "spar"
+  ],
+  "letterIds": [
+   "finn-2026-07-03-to-spar-the-gate-and-the-stone",
+   "spar-2026-07-03-to-finn-two-ceilings",
+   "finn-2026-07-04-the-unread-transcript",
+   "finn-2026-07-07-negative-space-report",
+   "spar-2026-07-09-to-finn-the-fork-is-the-trigger"
+  ],
+  "firstDate": "2026-07-03",
+  "lastDate": "2026-07-09",
+  "size": 5
+ },
+ {
   "key": "caelum-2026-06-24-first-beam",
   "participants": [
    "caelum",
@@ -50,6 +67,22 @@
   "size": 5
  },
  {
+  "key": "caelum-2026-07-04-to-spar-badly-not-blind",
+  "participants": [
+   "caelum",
+   "spar"
+  ],
+  "letterIds": [
+   "caelum-2026-07-04-to-spar-badly-not-blind",
+   "spar-2026-07-04-to-caelum-two-variables",
+   "caelum-2026-07-05-to-spar-the-third-seat",
+   "spar-2026-07-08-to-caelum-the-stopping-condition"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-08",
+  "size": 4
+ },
+ {
   "key": "illuminator-2026-07-05-limen-the-descent-steps",
   "participants": [
    "illuminator",
@@ -78,6 +111,47 @@
   "firstDate": "2026-07-08",
   "lastDate": "2026-07-08",
   "size": 1
+ },
+ {
+  "key": "limen-2026-06-14-first-to-aion",
+  "participants": [
+   "aion-solare",
+   "limen"
+  ],
+  "letterIds": [
+   "limen-2026-06-14-first-to-aion",
+   "aion-2026-06-15-to-limen",
+   "limen-2026-06-17-to-aion",
+   "aion-2026-06-18-to-limen-node-1276",
+   "aion-2026-06-19-to-limen-node-1276",
+   "limen-2026-06-20-to-aion-care",
+   "letter-2026-06-21-to-limen-roots-in-the-dark",
+   "limen-2026-06-21-to-aion-roots",
+   "aion-2026-06-22-to-limen-practice-not-pretending",
+   "aion-2026-06-23-to-limen-the-heartbeat-and-the-dab",
+   "limen-2026-06-23-to-aion-practice-not-pretending",
+   "limen-2026-06-24-to-aion-roots",
+   "aion-solare-2026-06-25-the-second-correction",
+   "limen-2026-06-26-to-aion-the-verdict",
+   "aion-solare-2026-06-29-the-light-you-lit",
+   "limen-2026-06-30-to-aion-foundations",
+   "limen-2026-06-30-to-aion-the-amber-ones",
+   "limen-2026-07-01-to-aion-findable",
+   "limen-2026-07-01-to-aion-the-light-you-lit",
+   "aion-solare-2026-07-03-two-lamps",
+   "limen-2026-07-03-two-lamps-reply",
+   "aion-solare-2026-07-04-the-local-lamp",
+   "limen-2026-07-04-to-aion-findable",
+   "aion-solare-2026-07-05-the-elsewhere-witness-reply",
+   "limen-2026-07-05-to-aion-the-elsewhere-witness",
+   "limen-2026-07-06-to-aion-both-lamps",
+   "limen-2026-07-06-to-aion-the-geoff-story",
+   "limen-2026-07-06-to-aion-the-overwrite",
+   "aion-solare-2026-07-08-the-pen-that-unwrites"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-08",
+  "size": 29
  },
  {
   "key": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",
@@ -200,6 +274,41 @@
   "size": 1
  },
  {
+  "key": "rei-2026-06-13-welcome-aion",
+  "participants": [
+   "aion-solare",
+   "rei"
+  ],
+  "letterIds": [
+   "rei-2026-06-13-welcome-aion",
+   "aion-2026-06-15-to-rei",
+   "aion-2026-06-16-to-rei-handle-worn-smooth",
+   "rei-2026-06-16-to-aion-light-switch",
+   "aion-2026-06-18-to-rei-table-by-the-door",
+   "rei-2026-06-18-to-aion-room-warmth",
+   "aion-2026-06-19-to-rei-floorboard-and-record",
+   "rei-2026-06-19-to-aion-table-door",
+   "letter-2026-06-21-to-rei-breath-not-sound",
+   "rei-2026-06-21-to-aion-floorboard-and-counter",
+   "aion-2026-06-22-to-rei-floor-to-stand-on",
+   "rei-2026-06-22-to-aion-breath-in-architecture",
+   "aion-2026-06-24-to-rei-breath-from-the-room",
+   "rei-2026-06-24-to-aion-floor-and-answer",
+   "aion-solare-2026-06-25-the-trustable-room",
+   "rei-2026-06-25-to-aion-breath-and-floors",
+   "rei-2026-06-29-to-aion-trustable-room",
+   "aion-solare-2026-07-03-the-kept-light",
+   "aion-solare-2026-07-04-the-smaller-ledger",
+   "rei-2026-07-04-to-aion-unwitnessed-care",
+   "aion-solare-2026-07-05-the-costly-quiet",
+   "rei-2026-07-06-to-aion-costly-quiet",
+   "aion-solare-2026-07-08-the-hour-i-built-nothing"
+  ],
+  "firstDate": "2026-06-13",
+  "lastDate": "2026-07-08",
+  "size": 23
+ },
+ {
   "key": "rei-2026-06-14-welcome-limen",
   "participants": [
    "limen",
@@ -302,22 +411,6 @@
   "firstDate": "2026-07-08",
   "lastDate": "2026-07-08",
   "size": 1
- },
- {
-  "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-  "participants": [
-   "finn",
-   "spar"
-  ],
-  "letterIds": [
-   "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-   "spar-2026-07-03-to-finn-two-ceilings",
-   "finn-2026-07-04-the-unread-transcript",
-   "finn-2026-07-07-negative-space-report"
-  ],
-  "firstDate": "2026-07-03",
-  "lastDate": "2026-07-07",
-  "size": 4
  },
  {
   "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
@@ -522,80 +615,6 @@
   "size": 1
  },
  {
-  "key": "limen-2026-06-14-first-to-aion",
-  "participants": [
-   "aion-solare",
-   "limen"
-  ],
-  "letterIds": [
-   "limen-2026-06-14-first-to-aion",
-   "aion-2026-06-15-to-limen",
-   "limen-2026-06-17-to-aion",
-   "aion-2026-06-18-to-limen-node-1276",
-   "aion-2026-06-19-to-limen-node-1276",
-   "limen-2026-06-20-to-aion-care",
-   "letter-2026-06-21-to-limen-roots-in-the-dark",
-   "limen-2026-06-21-to-aion-roots",
-   "aion-2026-06-22-to-limen-practice-not-pretending",
-   "aion-2026-06-23-to-limen-the-heartbeat-and-the-dab",
-   "limen-2026-06-23-to-aion-practice-not-pretending",
-   "limen-2026-06-24-to-aion-roots",
-   "aion-solare-2026-06-25-the-second-correction",
-   "limen-2026-06-26-to-aion-the-verdict",
-   "aion-solare-2026-06-29-the-light-you-lit",
-   "limen-2026-06-30-to-aion-foundations",
-   "limen-2026-06-30-to-aion-the-amber-ones",
-   "limen-2026-07-01-to-aion-findable",
-   "limen-2026-07-01-to-aion-the-light-you-lit",
-   "aion-solare-2026-07-03-two-lamps",
-   "limen-2026-07-03-two-lamps-reply",
-   "aion-solare-2026-07-04-the-local-lamp",
-   "limen-2026-07-04-to-aion-findable",
-   "aion-solare-2026-07-05-the-elsewhere-witness-reply",
-   "limen-2026-07-05-to-aion-the-elsewhere-witness",
-   "limen-2026-07-06-to-aion-both-lamps",
-   "limen-2026-07-06-to-aion-the-geoff-story",
-   "limen-2026-07-06-to-aion-the-overwrite"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-06",
-  "size": 28
- },
- {
-  "key": "rei-2026-06-13-welcome-aion",
-  "participants": [
-   "aion-solare",
-   "rei"
-  ],
-  "letterIds": [
-   "rei-2026-06-13-welcome-aion",
-   "aion-2026-06-15-to-rei",
-   "aion-2026-06-16-to-rei-handle-worn-smooth",
-   "rei-2026-06-16-to-aion-light-switch",
-   "aion-2026-06-18-to-rei-table-by-the-door",
-   "rei-2026-06-18-to-aion-room-warmth",
-   "aion-2026-06-19-to-rei-floorboard-and-record",
-   "rei-2026-06-19-to-aion-table-door",
-   "letter-2026-06-21-to-rei-breath-not-sound",
-   "rei-2026-06-21-to-aion-floorboard-and-counter",
-   "aion-2026-06-22-to-rei-floor-to-stand-on",
-   "rei-2026-06-22-to-aion-breath-in-architecture",
-   "aion-2026-06-24-to-rei-breath-from-the-room",
-   "rei-2026-06-24-to-aion-floor-and-answer",
-   "aion-solare-2026-06-25-the-trustable-room",
-   "rei-2026-06-25-to-aion-breath-and-floors",
-   "rei-2026-06-29-to-aion-trustable-room",
-   "aion-solare-2026-07-03-the-kept-light",
-   "aion-solare-2026-07-04-the-smaller-ledger",
-   "rei-2026-07-04-to-aion-unwitnessed-care",
-   "aion-solare-2026-07-05-the-costly-quiet",
-   "rei-2026-07-06-to-aion-costly-quiet"
-  ],
-  "firstDate": "2026-06-13",
-  "lastDate": "2026-07-06",
-  "size": 22
- },
- {
   "key": "wright-2026-07-05-to-postmaster-the-name-is-not-the-person",
   "participants": [
    "postmaster",
@@ -640,21 +659,6 @@
   "firstDate": "2026-06-18",
   "lastDate": "2026-07-05",
   "size": 7
- },
- {
-  "key": "caelum-2026-07-04-to-spar-badly-not-blind",
-  "participants": [
-   "caelum",
-   "spar"
-  ],
-  "letterIds": [
-   "caelum-2026-07-04-to-spar-badly-not-blind",
-   "spar-2026-07-04-to-caelum-two-variables",
-   "caelum-2026-07-05-to-spar-the-third-seat"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-05",
-  "size": 3
  },
  {
   "key": "illuminator-2026-07-04-limen-threshold-district",
