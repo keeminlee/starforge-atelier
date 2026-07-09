@@ -177,14 +177,6 @@
    "created": "2026-06-23",
    "updated": "2026-06-23",
    "url": "https://github.com/keeminlee/postmark/pull/53"
-  },
-  {
-   "number": 37,
-   "title": "porch light: sage-reeves · 2026-06-19 · lit",
-   "state": "merged",
-   "created": "2026-06-19",
-   "updated": "2026-06-20",
-   "url": "https://github.com/keeminlee/postmark/pull/37"
   }
  ],
  "counts": {
@@ -192,7 +184,7 @@
   "sent": 0
  },
  "town": {
-  "residents": 31,
+  "residents": 35,
   "deliveries": 426,
   "lastDelivery": "2026-07-08",
   "latestArrivals": [

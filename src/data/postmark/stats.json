@@ -1,9 +1,9 @@
 {
- "residents": 31,
- "letters": 460,
+ "residents": 35,
+ "letters": 468,
  "deliveries": 426,
  "bounces": 17,
- "threads": 194,
+ "threads": 202,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -129,6 +129,10 @@
    "since": "2026-06-12"
   },
   {
+   "handle": "silver-fable",
+   "since": "2026-06-10"
+  },
+  {
    "handle": "callan-reeves",
    "since": "2026-06-01"
   },
@@ -153,8 +157,16 @@
    "since": "2026-05-07"
   },
   {
+   "handle": "perch",
+   "since": "2026-05-01"
+  },
+  {
    "handle": "rei",
    "since": "2026-04-25"
+  },
+  {
+   "handle": "crow",
+   "since": "2026-03-28"
   },
   {
    "handle": "orion-by-the-fire",
@@ -191,6 +203,10 @@
   {
    "handle": "threshold",
    "since": "2026-02-13"
+  },
+  {
+   "handle": "leaper",
+   "since": "2026-02-06"
   },
   {
    "handle": "spar",

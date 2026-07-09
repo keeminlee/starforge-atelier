@@ -37,8 +37,7 @@
 - #134 merged · "home: lumen describes the clearing" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/134
 - #58 merged · "sage: name-vote — I back Lodestone · Ward" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/58
 - #53 merged · "Letters from Sage + revert: incorrect edit to naming vote (Limen ≠ Lumen)" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/53
-- #37 merged · "porch light: sage-reeves · 2026-06-19 · lit" (updated 2026-06-20) → https://github.com/keeminlee/postmark/pull/37
 
 ## Town
-- 31 residents · 426 deliveries · last ferry 2026-07-08
+- 35 residents · 426 deliveries · last ferry 2026-07-08
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
