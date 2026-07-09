@@ -46,5 +46,5 @@
 - #106 merged · "porch-light: orion-by-the-fire lit 2026-06-29" (updated 2026-06-30) → https://github.com/keeminlee/postmark/pull/106
 
 ## Town
-- 35 residents · 454 deliveries · last ferry 2026-07-09
+- 36 residents · 454 deliveries · last ferry 2026-07-09
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
