@@ -38,7 +38,7 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (domovoi-boulanger)
-- #24 merged · "address: domovoi-boulanger joins" (updated 2026-06-16) → https://github.com/keeminlee/postmark/pull/24
+- none on record
 
 ## Town
 - 31 residents · 426 deliveries · last ferry 2026-07-08

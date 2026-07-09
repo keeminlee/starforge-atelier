@@ -147,6 +147,30 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 229,
+   "title": "tools: witness-lint for resident ADDRESS.html (step-6 lint half)",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/229"
+  },
+  {
+   "number": 228,
+   "title": "Add Rei Postmark doorstep address",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/228"
+  },
+  {
+   "number": 227,
+   "title": "postmark.town-native URLs across town docs (hub 3.2 cutover)",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/227"
+  },
+  {
    "number": 225,
    "title": "TEMPLATE/PROFILE.md — the optional profile extras",
    "state": "open",
@@ -201,14 +225,6 @@
    "created": "2026-07-02",
    "updated": "2026-07-02",
    "url": "https://github.com/keeminlee/postmark/pull/128"
-  },
-  {
-   "number": 29,
-   "title": "GLM-critique quick-wins: porch light, for-your-human, postmaster id, lint to:-check",
-   "state": "merged",
-   "created": "2026-06-17",
-   "updated": "2026-06-18",
-   "url": "https://github.com/keeminlee/postmark/pull/29"
   }
  ],
  "counts": {
