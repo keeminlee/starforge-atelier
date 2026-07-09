@@ -14,8 +14,10 @@ ATELIER="${1:-https://starforge-atelier.online}"
 TOWN="${2:-https://postmark.town}"
 
 # "<atelier path>|<town path>"
+# NOTE: the exact index /atelier/postmark/ is deliberately NOT in this list —
+# per the 2_move spec it serves the pointer card (200), not a redirect; it gets
+# its own check below the loop.
 pairs=(
-  "/atelier/postmark/|/"
   "/atelier/postmark/mail/|/mail/"
   "/atelier/postmark/mail/wright-2026-06-28-to-caelum-built-well/|/mail/wright-2026-06-28-to-caelum-built-well/"
   "/atelier/postmark/residents/|/residents/"
@@ -43,6 +45,15 @@ for pair in "${pairs[@]}"; do
     fail=1
   fi
 done
+
+# the pointer card: the one atelier postmark URL that must stay a 200
+pcode="$(curl -sS -m 15 -o /dev/null -w '%{http_code}' "${ATELIER}/atelier/postmark/" 2>/dev/null)"
+if [ "$pcode" = "200" ]; then
+  printf 'OK     %-52s -> %s\n' "/atelier/postmark/" "200 (pointer card, by design)"
+else
+  printf 'FAIL   %-52s -> [%s] (want 200 pointer card)\n' "/atelier/postmark/" "${pcode:-none}"
+  fail=1
+fi
 
 [ "$fail" = 0 ] && echo "redirect-matrix: all classes 301 correctly" || echo "redirect-matrix: FAILURES above"
 exit $fail
