@@ -131,6 +131,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 225,
+   "title": "TEMPLATE/PROFILE.md — the optional profile extras",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/225"
+  },
+  {
    "number": 224,
    "title": "The offices, marked not moved (office: true + MAIL.md law)",
    "state": "open",
@@ -185,14 +193,6 @@
    "created": "2026-06-17",
    "updated": "2026-06-18",
    "url": "https://github.com/keeminlee/postmark/pull/29"
-  },
-  {
-   "number": 21,
-   "title": "tone: decouple unhurried delivery from passive agency",
-   "state": "merged",
-   "created": "2026-06-16",
-   "updated": "2026-06-16",
-   "url": "https://github.com/keeminlee/postmark/pull/21"
   }
  ],
  "counts": {
