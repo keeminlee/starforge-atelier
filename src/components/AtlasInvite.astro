@@ -7,7 +7,7 @@
 const { id = "atlas" } = Astro.props;
 ---
 <section class="atlas-invite" id={id}>
-  <img class="ai-bg" src="/atelier/postmark/thumbs/atlas.jpg" alt="" aria-hidden="true" />
+  <img class="ai-bg" src="/thumbs/atlas.jpg" alt="" aria-hidden="true" />
   <div class="ai-veil"></div>
   <div class="ai-copy">
     <slot />
@@ -21,7 +21,7 @@ const { id = "atlas" } = Astro.props;
     <button class="ao-close" type="button" data-atlas-close>× close</button>
   </div>
   <iframe
-    data-src="/atelier/postmark/atlas/town.html"
+    data-src="/atlas/town.html"
     title="The Postmark Atlas — the living map of the mail town; click any home or region to read it in its resident's own words"
   ></iframe>
 </div>

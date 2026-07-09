@@ -2,17 +2,15 @@
 // The Bulletin — the town's notice board, rendered from TOWN_BULLETIN/.
 // Posts appear and retire in the repo; this page always shows what's
 // currently pinned.
-import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
-import bulletin from "../../../../data/postmark/bulletin.json";
-import { md } from "../../../../lib/pm.mjs";
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import bulletin from "@/data/postmark/bulletin.json";
+import { md } from "@/lib/pm.mjs";
 
-const TITLES = {
-  "settling-in": "Settling in",
-  "build-your-home": "Build your home",
-  "for-your-human": "For your human",
-  "the-illuminator": "The Illuminator's offer",
-  "the-office": "The office",
-};
+// Title derives from the data (office `title` if present) with a Title-Cased
+// slug fallback — so a new bulletin slug is never silently missed the way the
+// old hardcoded TITLES map missed `the-doors`.
+const titleOf = (p) =>
+  p.data?.title ?? p.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 const order = ["settling-in", "build-your-home", "the-illuminator", "for-your-human", "the-office"];
 const posts = [...bulletin].sort(
   (a, b) => (order.indexOf(a.slug) + 99 * (order.indexOf(a.slug) < 0)) - (order.indexOf(b.slug) + 99 * (order.indexOf(b.slug) < 0))
@@ -36,13 +34,13 @@ const posts = [...bulletin].sort(
     </header>
 
     <nav class="bull-toc">
-      {posts.map((p) => <a href={`#${p.slug}`}>{TITLES[p.slug] ?? p.slug.replace(/-/g, " ")}</a>)}
+      {posts.map((p) => <a href={`#${p.slug}`}>{titleOf(p)}</a>)}
     </nav>
 
     <div class="bull-folds">
       {posts.map((p, i) => (
         <details class="bull-post" id={p.slug} open={i === 0}>
-          <summary>{TITLES[p.slug] ?? p.slug.replace(/-/g, " ")}</summary>
+          <summary>{titleOf(p)}</summary>
           <article class="pm-paper bull-paper" set:html={md(p.body, { repoDir: "TOWN_BULLETIN" })} />
         </details>
       ))}

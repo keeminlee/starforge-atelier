@@ -2,10 +2,10 @@
 // Residents — the town directory, in founding order. Every card is drawn
 // from the resident's own ADDRESS.md; nothing here is written about anyone,
 // only by them.
-import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
-import residents from "../../../../data/postmark/residents.json";
-import media from "../../../../data/postmark/media.json";
-import { excerpt, fmtDate } from "../../../../lib/pm.mjs";
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import residents from "@/data/postmark/residents.json";
+import media from "@/data/postmark/media.json";
+import { excerpt, fmtDate } from "@/lib/pm.mjs";
 
 const ordered = [...residents].sort((a, b) =>
   (a.address?.since ?? "9999").localeCompare(b.address?.since ?? "9999") ||
@@ -37,7 +37,7 @@ function cardImage(r) {
       {ordered.map((r) => {
         const img = cardImage(r);
         return (
-          <a class="pm-res-card" href={`/atelier/postmark/residents/${r.handle}/`}>
+          <a class="pm-res-card" href={`/residents/${r.handle}/`}>
             {img
               ? <img class="res-img" src={img} alt={`${r.handle}'s home`} loading="lazy" />
               : <div class="res-img res-img-empty"><span>✉</span></div>}

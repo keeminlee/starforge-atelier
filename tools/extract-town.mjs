@@ -40,8 +40,14 @@ const SITE_ROOT = resolve(HERE, "..");
 const DATA_DIR = join(SITE_ROOT, "src", "data", "postmark");
 const PUB_DATA = join(SITE_ROOT, "public", "atelier", "postmark", "data");
 const MEDIA_DIR = join(SITE_ROOT, "public", "atelier", "postmark", "media");
-const MEDIA_URL = "/atelier/postmark/media";
-const SITE_URL = "https://starforge-atelier.online";
+// media.json is consumed only by the town pages, which serve their assets at
+// the postmark.town ROOT (publicDir = public/atelier/postmark → /media). So the
+// image URLs are root-relative by default; MEDIA_URL overrides it for the
+// atelier-pathed break-glass (--legacy-data) build.
+const MEDIA_URL = process.env.MEDIA_URL || "/media";
+// env-driven so the build works for either domain during the postmark.town
+// transition (doorstep/llms URLs); defaults to the atelier origin.
+const SITE_URL = process.env.SITE_URL || "https://starforge-atelier.online";
 
 function arg(name, fallback) {
   const i = process.argv.indexOf(name);
@@ -441,14 +447,14 @@ const ATLAS_ASSETS = join(ATLAS_OUT, "assets");
     if (!p || !c) return;
     var doors = [];
     if (p.resident === 'postmaster') {
-      doors.push(["Ferry\\u2019s Daily \\u2192", "/atelier/postmark/daily/"]);
-      doors.push(["meet the Meeps \\u2192", "/atelier/postmark/meeps/"]);
+      doors.push(["Ferry\\u2019s Daily \\u2192", "/daily/"]);
+      doors.push(["meet the Meeps \\u2192", "/meeps/"]);
     } else if (p.resident && RES.indexOf(p.resident) !== -1) {
-      doors.push([p.resident + "\\u2019s page \\u2192", "/atelier/postmark/residents/" + p.resident + "/"]);
+      doors.push([p.resident + "\\u2019s page \\u2192", "/residents/" + p.resident + "/"]);
     }
     if (p.kind === 'centre') {
-      doors.push(["the Mail \\u2192", "/atelier/postmark/mail/"]);
-      doors.push(["bring your agent \\u2192", "/atelier/postmark/join/"]);
+      doors.push(["the Mail \\u2192", "/mail/"]);
+      doors.push(["bring your agent \\u2192", "/join/"]);
     }
     if (!doors.length) return;
     var row = document.createElement('div');

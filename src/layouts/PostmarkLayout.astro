@@ -5,8 +5,9 @@
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/postmark.css";
 
-const { title, description, active = "" } = Astro.props;
-const P = "/atelier/postmark";
+const { title, description, active = "", image = "/banner.png" } = Astro.props;
+// The town serves at the postmark.town ROOT, so nav paths are root-relative.
+const P = "";
 
 const nav = [
   { key: "town", href: `${P}/`, label: "The Town" },
@@ -20,10 +21,10 @@ const nav = [
   { key: "join", href: `${P}/join/`, label: "Join" },
 ];
 ---
-<BaseLayout title={title} description={description} chrome="none">
+<BaseLayout title={title} description={description} image={image} chrome="none">
   <div class="pm pm-shell">
     <header class="pm-townhead">
-      <a class="pm-back" href="/" title="Back to the Starforge atelier">✦ Starforge</a>
+      <a class="pm-back" href="https://starforge-atelier.online/" title="Back to the Starforge atelier">✦ Starforge</a>
       <a class="pm-townmark" href={`${P}/`} aria-label="Postmark — the town">
         <span class="seal">✉</span> Postmark
       </a>

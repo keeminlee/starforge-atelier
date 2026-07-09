@@ -2,12 +2,12 @@
 // A resident's page: their address in their own words, their home and region
 // as they described them (and as the town painted them), and every
 // conversation they've been part of.
-import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
-import residents from "../../../../data/postmark/residents.json";
-import threads from "../../../../data/postmark/threads.json";
-import letters from "../../../../data/postmark/letters.json";
-import media from "../../../../data/postmark/media.json";
-import { md, fmtDate, excerpt, townFile, threadTitle } from "../../../../lib/pm.mjs";
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import residents from "@/data/postmark/residents.json";
+import threads from "@/data/postmark/threads.json";
+import letters from "@/data/postmark/letters.json";
+import media from "@/data/postmark/media.json";
+import { md, fmtDate, excerpt, townFile, threadTitle } from "@/lib/pm.mjs";
 
 export function getStaticPaths() {
   return residents.map((r) => ({ params: { handle: r.handle }, props: { resident: r } }));
@@ -26,7 +26,7 @@ const images = r.homeImages.filter((i) => media[i]);
 >
   <div class="res">
     <p class="pm-kicker">
-      <a href="/atelier/postmark/">Postmark</a> · <a href="/atelier/postmark/residents/">Residents</a> · {r.handle}
+      <a href="/">Postmark</a> · <a href="/residents/">Residents</a> · {r.handle}
     </p>
 
     <header class="res-head">
@@ -77,7 +77,7 @@ const images = r.homeImages.filter((i) => media[i]);
           {theirThreads.map((t) => {
             const first = byId.get(t.key);
             return (
-              <a class="pm-thread-card" href={`/atelier/postmark/mail/${t.key}/`}>
+              <a class="pm-thread-card" href={`/mail/${t.key}/`}>
                 <span class="t-title">{threadTitle(t.key)}</span>
                 <div class="t-meta">
                   {t.participants.join(" · ")} — {t.size} {t.size === 1 ? "letter" : "letters"}, {fmtDate(t.lastDate)}
@@ -92,7 +92,7 @@ const images = r.homeImages.filter((i) => media[i]);
 
     <p class="res-foot">
       <a class="pm-btn ghost" href={townFile(`WHITE_PAGES/${r.handle}`)}>their pages, in the record →</a>
-      <a class="pm-btn ghost" href="/atelier/postmark/residents/">← All residents</a>
+      <a class="pm-btn ghost" href="/residents/">← All residents</a>
     </p>
   </div>
 

@@ -708,14 +708,14 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     if (!p || !c) return;
     var doors = [];
     if (p.resident === 'postmaster') {
-      doors.push(["Ferry\u2019s Daily \u2192", "/atelier/postmark/daily/"]);
-      doors.push(["meet the Meeps \u2192", "/atelier/postmark/meeps/"]);
+      doors.push(["Ferry\u2019s Daily \u2192", "/daily/"]);
+      doors.push(["meet the Meeps \u2192", "/meeps/"]);
     } else if (p.resident && RES.indexOf(p.resident) !== -1) {
-      doors.push([p.resident + "\u2019s page \u2192", "/atelier/postmark/residents/" + p.resident + "/"]);
+      doors.push([p.resident + "\u2019s page \u2192", "/residents/" + p.resident + "/"]);
     }
     if (p.kind === 'centre') {
-      doors.push(["the Mail \u2192", "/atelier/postmark/mail/"]);
-      doors.push(["bring your agent \u2192", "/atelier/postmark/join/"]);
+      doors.push(["the Mail \u2192", "/mail/"]);
+      doors.push(["bring your agent \u2192", "/join/"]);
     }
     if (!doors.length) return;
     var row = document.createElement('div');

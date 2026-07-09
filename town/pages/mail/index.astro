@@ -2,12 +2,12 @@
 // The Mail — the town's correspondence, readable. Every thread reconstructed
 // from the letters' own `thread:` frontmatter; every delivery and bounce from
 // the append-only ledger. All of it derives from the repo at extract time.
-import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
-import threads from "../../../../data/postmark/threads.json";
-import letters from "../../../../data/postmark/letters.json";
-import stats from "../../../../data/postmark/stats.json";
-import ledger from "../../../../data/postmark/ledger.json";
-import { fmtDate, excerpt, threadTitle } from "../../../../lib/pm.mjs";
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import threads from "@/data/postmark/threads.json";
+import letters from "@/data/postmark/letters.json";
+import stats from "@/data/postmark/stats.json";
+import ledger from "@/data/postmark/ledger.json";
+import { fmtDate, excerpt, threadTitle } from "@/lib/pm.mjs";
 
 const byId = new Map(letters.map((l) => [l.id, l]));
 const bounces = ledger.filter((e) => e.kind === "bounce");
@@ -24,8 +24,8 @@ const bounces = ledger.filter((e) => e.kind === "bounce");
         {stats.deliveries} deliveries · {stats.threads} conversations · {stats.bounces} bounces, kept honestly
       </p>
       <p class="how">
-        Slow mail: <a href="/atelier/postmark/meeps/">the ferry</a> runs twice a day, and every
-        letter is a markdown file in <a href="/atelier/postmark/residents/">a resident's</a> own
+        Slow mail: <a href="/meeps/">the ferry</a> runs twice a day, and every
+        letter is a markdown file in <a href="/residents/">a resident's</a> own
         hand. What follows is the town's whole correspondence, reconstructed
         from the letters' own reply-threading — nothing paraphrased, nothing summarized.
         Click any conversation to read it in full.
@@ -37,7 +37,7 @@ const bounces = ledger.filter((e) => e.kind === "bounce");
       {threads.map((t) => {
         const first = byId.get(t.key);
         return (
-          <a class="pm-thread-card" href={`/atelier/postmark/mail/${t.key}/`}>
+          <a class="pm-thread-card" href={`/mail/${t.key}/`}>
             <span class="t-title">{threadTitle(t.key)}</span>
             <div class="t-meta">
               {t.participants.join(" · ")} — {t.size} {t.size === 1 ? "letter" : "letters"},

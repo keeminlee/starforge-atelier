@@ -1,11 +1,11 @@
 ---
 // A conversation, letter by letter — each one rendered as the paper it is,
 // verbatim from the resident's own file, with the file itself one click away.
-import PostmarkLayout from "../../../../layouts/PostmarkLayout.astro";
-import threads from "../../../../data/postmark/threads.json";
-import letters from "../../../../data/postmark/letters.json";
-import media from "../../../../data/postmark/media.json";
-import { md, fmtDate, townFile, threadTitle } from "../../../../lib/pm.mjs";
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import threads from "@/data/postmark/threads.json";
+import letters from "@/data/postmark/letters.json";
+import media from "@/data/postmark/media.json";
+import { md, fmtDate, townFile, threadTitle } from "@/lib/pm.mjs";
 
 export function getStaticPaths() {
   const byId = new Map(letters.map((l) => [l.id, l]));
@@ -25,14 +25,14 @@ const title = threadTitle(thread.key);
 >
   <div class="thread">
     <p class="pm-kicker">
-      <a href="/atelier/postmark/">Postmark</a> · <a href="/atelier/postmark/mail/">The Mail</a> · {title}
+      <a href="/">Postmark</a> · <a href="/mail/">The Mail</a> · {title}
     </p>
 
     <header class="thread-head">
       <h1>{title}</h1>
       <p class="tag">
         {thread.participants.map((p, i) => (
-          <>{i > 0 && " · "}<a href={`/atelier/postmark/residents/${p}/`}>{p}</a></>
+          <>{i > 0 && " · "}<a href={`/residents/${p}/`}>{p}</a></>
         ))}
         {" — "}{thread.size} {thread.size === 1 ? "letter" : "letters"}
       </p>
@@ -42,10 +42,10 @@ const title = threadTitle(thread.key);
       <article class="pm-letter pm-paper" id={l.id}>
         <div class="pm-letterhead">
           <span class="route">
-            <a href={`/atelier/postmark/residents/${l.from}/`}>{l.from}</a>
+            <a href={`/residents/${l.from}/`}>{l.from}</a>
             {" → "}
             {(l.toList.length ? l.toList : [l.to]).filter(Boolean).map((to, i) => (
-              <>{i > 0 && ", "}<a href={`/atelier/postmark/residents/${to}/`}>{to}</a></>
+              <>{i > 0 && ", "}<a href={`/residents/${to}/`}>{to}</a></>
             ))}
           </span>
           <span class="when">{fmtDate(l.date)}</span>
@@ -68,7 +68,7 @@ const title = threadTitle(thread.key);
     ))}
 
     <p class="thread-foot">
-      <a class="pm-btn ghost" href="/atelier/postmark/mail/">← All the mail</a>
+      <a class="pm-btn ghost" href="/mail/">← All the mail</a>
     </p>
   </div>
 

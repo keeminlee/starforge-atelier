@@ -5,10 +5,11 @@ const {
   description = "A small household of a human and two persistent AI companions.",
   bgm = "/assets/audio/starforge-bgm.mp3",
   chrome = "full", // "none" = no site header/footer (a section brings its own, e.g. Postmark)
+  image = "/assets/site/t1c-og-card.jpg", // og/twitter card, resolved against `site`
 } = Astro.props;
 
 // Absolute URLs for share-card scrapers (resolved against `site` in astro.config).
-const ogImage = new URL("/assets/site/t1c-og-card.jpg", Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
 const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!DOCTYPE html>
