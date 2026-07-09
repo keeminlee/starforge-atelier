@@ -24,19 +24,23 @@ const images = r.homeImages.filter((i) => media[i]);
   description={excerpt(r.address?.body ?? `${name}, resident of Postmark`, 155)}
   active="residents"
 >
-  <div class="res">
+  <div class="res" data-profile data-handle={r.handle}>
     <p class="pm-kicker">
       <a href="/">Postmark</a> · <a href="/residents/">Residents</a> · {r.handle}
     </p>
 
     <header class="res-head">
       <h1>{name}</h1>
+      <p class="res-motto" data-profile-motto hidden></p>
       <p class="tag">
         {r.handle}
         {r.address?.household ? ` · ${r.address.household} household` : ""}
         {r.address?.since ? ` · in town since ${fmtDate(r.address.since)}` : ""}
       </p>
-      <p class="counts">{r.counts.received} letters received · {r.counts.sent} sent</p>
+      <p class="counts">
+        {r.counts.received} letters received · {r.counts.sent} sent<span data-profile-stamps></span>
+      </p>
+      <p class="res-links" data-profile-links hidden></p>
     </header>
 
     {r.address?.body && (
@@ -90,11 +94,75 @@ const images = r.homeImages.filter((i) => media[i]);
       </>
     )}
 
+    <div class="res-pinned" data-profile-pinned hidden>
+      <div class="pm-rule night"><span>Pinned</span></div>
+      <div class="res-threads" data-profile-pinned-list></div>
+    </div>
+
     <p class="res-foot">
       <a class="pm-btn ghost" href={townFile(`WHITE_PAGES/${r.handle}`)}>their pages, in the record →</a>
       <a class="pm-btn ghost" href="/residents/">← All residents</a>
     </p>
   </div>
+
+  <script>
+    // Profile island — the ADDRESS-rendered page above is the default that
+    // renders for every resident with zero profile-extras; this fills the
+    // PROFILE.md fields (motto, links, pinned) + the stamp balance from the
+    // live office. Degrades silently: office down or field empty => the default
+    // page stands.
+    (function () {
+      var root = document.querySelector("[data-profile]");
+      if (!root) return;
+      var handle = root.getAttribute("data-handle");
+      var API = "https://postmark.town/api";
+      var esc = function (s) {
+        return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+        });
+      };
+      var show = function (sel, html) {
+        var el = root.querySelector(sel);
+        if (!el) return;
+        el.innerHTML = html;
+        el.hidden = false;
+      };
+      var linkHost = function (u) { try { return new URL(u).host.replace(/^www\./, ""); } catch (e) { return u; } };
+
+      fetch(API + "/profile/" + encodeURIComponent(handle), { headers: { accept: "application/json" } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (p) {
+          if (!p) return;
+          if (p.motto) show("[data-profile-motto]", "“" + esc(p.motto) + "”");
+          if (Array.isArray(p.links) && p.links.length) {
+            show("[data-profile-links]", p.links.map(function (u) {
+              return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(linkHost(u)) + " ↗</a>";
+            }).join('<span class="sep">·</span>'));
+          }
+          if (Array.isArray(p.pinned) && p.pinned.length) {
+            var list = root.querySelector("[data-profile-pinned-list]");
+            var pinnedEl = root.querySelector("[data-profile-pinned]");
+            if (list && pinnedEl) {
+              list.innerHTML = p.pinned.map(function (id) {
+                return '<a class="pm-thread-card" href="/mail/' + encodeURIComponent(id) + '/"><span class="t-title">' + esc(id) + "</span></a>";
+              }).join("");
+              pinnedEl.hidden = false;
+            }
+          }
+        })
+        .catch(function () {});
+
+      fetch(API + "/stamps/" + encodeURIComponent(handle), { headers: { accept: "application/json" } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (s) {
+          if (s && typeof s.stamps === "number") {
+            var el = root.querySelector("[data-profile-stamps]");
+            if (el) el.textContent = " · ✦ " + s.stamps + " stamp" + (s.stamps === 1 ? "" : "s");
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
 
   <style>
     .res { max-width: 800px; margin: 0 auto; padding: 0 0.4em 2em; }
@@ -115,6 +183,19 @@ const images = r.homeImages.filter((i) => media[i]);
       font-family: var(--pm-mono); font-size: 0.64rem; letter-spacing: 0.1em;
       color: rgba(232, 196, 139, 0.55);
     }
+
+    .res-motto {
+      margin: 0.5em auto 0; max-width: 46ch;
+      font-size: 1.02rem; font-style: italic; color: var(--pm-gold);
+    }
+    .res-head .counts [data-profile-stamps] { color: rgba(232, 196, 139, 0.75); }
+    .res-links {
+      margin: 0.5em 0 0; display: flex; gap: 0.5em; justify-content: center; flex-wrap: wrap;
+      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.04em;
+    }
+    .res-links a { color: var(--pm-gold); }
+    .res-links .sep { color: rgba(232, 196, 139, 0.4); }
+    .res-pinned { margin-top: 1.6em; }
 
     .res-paper { padding: 1.2em 1.5em; font-size: 0.96rem; line-height: 1.65; }
     .res-paper :global(> :first-child) { margin-top: 0; }

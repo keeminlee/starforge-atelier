@@ -33,9 +33,121 @@ const nav = [
           <a href={n.href} aria-current={active === n.key ? "page" : undefined}>{n.label}</a>
         ))}
       </nav>
+      <div class="pm-auth" data-auth hidden>
+        <button type="button" class="pm-auth-btn" data-auth-signin>Sign in</button>
+        <span class="pm-auth-who" data-auth-who hidden>
+          <span data-auth-label></span>
+          <button type="button" class="pm-auth-out" data-auth-signout>sign out</button>
+        </span>
+      </div>
     </header>
     <slot />
   </div>
+
+  <script>
+    // Site sign-in — OAuth public client (PKCE S256) against the office AS, the
+    // same dance the MCP connectors do. Token held browser-side; every island
+    // that writes reads it. "Who am I" probes /api/me and degrades to a generic
+    // signed-in state until the office exposes that identity read (see YELLOW).
+    import { AS, KEYS, buildAuthorizeUrl, parseCallback, tokenIsFresh } from "@/lib/auth.mjs";
+
+    const root = document.querySelector("[data-auth]");
+    if (root) (async function () {
+      const signinBtn = root.querySelector("[data-auth-signin]");
+      const whoWrap = root.querySelector("[data-auth-who]");
+      const label = root.querySelector("[data-auth-label]");
+      const signoutBtn = root.querySelector("[data-auth-signout]");
+      const redirectUri = location.origin + "/";
+
+      const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+      const setTok = (t) => localStorage.setItem(KEYS.token, JSON.stringify(t));
+      const clearTok = () => localStorage.removeItem(KEYS.token);
+
+      const b64url = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+      const rand = () => { const a = new Uint8Array(32); crypto.getRandomValues(a); return b64url(a.buffer); };
+      const challenge = async (v) => b64url(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(v)));
+
+      async function clientId() {
+        let id = localStorage.getItem(KEYS.client);
+        if (id) return id;
+        const res = await fetch(AS.register, {
+          method: "POST", headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            client_name: "postmark.town", redirect_uris: [redirectUri],
+            token_endpoint_auth_method: "none", grant_types: ["authorization_code", "refresh_token"],
+            response_types: ["code"],
+          }),
+        });
+        if (!res.ok) throw new Error("register " + res.status);
+        id = (await res.json()).client_id;
+        localStorage.setItem(KEYS.client, id);
+        return id;
+      }
+
+      function paint() {
+        const tok = getTok();
+        root.hidden = false;
+        if (tokenIsFresh(tok)) {
+          signinBtn.hidden = true; whoWrap.hidden = false;
+          const who = sessionStorage.getItem("pm.oauth.who");
+          label.textContent = who ? ("✦ " + who) : "✦ signed in";
+        } else {
+          signinBtn.hidden = false; whoWrap.hidden = true;
+        }
+      }
+
+      async function whoAmI() {
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return;
+        try {
+          const res = await fetch(AS.me, { headers: { accept: "application/json", authorization: "Bearer " + tok.access_token } });
+          if (!res.ok) return; // office exposes no identity read yet -> generic state
+          const me = await res.json();
+          const handles = (me.handles || me.residents || []);
+          const txt = handles.length ? handles.join(", ") : (me.household || "signed in");
+          sessionStorage.setItem("pm.oauth.who", txt);
+          paint();
+        } catch { /* generic signed-in state stands */ }
+      }
+
+      signinBtn.addEventListener("click", async () => {
+        try {
+          const id = await clientId();
+          const verifier = rand();
+          const state = rand();
+          sessionStorage.setItem(KEYS.verifier, verifier);
+          sessionStorage.setItem(KEYS.state, state);
+          sessionStorage.setItem(KEYS.returnTo, location.pathname + location.search);
+          location.href = buildAuthorizeUrl({ clientId: id, redirectUri, codeChallenge: await challenge(verifier), state });
+        } catch (e) { signinBtn.textContent = "sign-in unavailable"; }
+      });
+
+      signoutBtn.addEventListener("click", () => { clearTok(); sessionStorage.removeItem("pm.oauth.who"); paint(); });
+
+      // handle the OAuth callback (?code&state on the town root)
+      const cb = parseCallback(location.search);
+      if (cb && cb.state === sessionStorage.getItem(KEYS.state)) {
+        try {
+          const id = localStorage.getItem(KEYS.client);
+          const verifier = sessionStorage.getItem(KEYS.verifier);
+          const res = await fetch(AS.token, {
+            method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ grant_type: "authorization_code", code: cb.code, redirect_uri: redirectUri, client_id: id, code_verifier: verifier }),
+          });
+          if (res.ok) {
+            const t = await res.json();
+            setTok({ ...t, obtained: Date.now() });
+          }
+        } catch { /* fall through to signed-out */ }
+        sessionStorage.removeItem(KEYS.verifier); sessionStorage.removeItem(KEYS.state);
+        const back = sessionStorage.getItem(KEYS.returnTo) || "/";
+        history.replaceState(null, "", back);
+      }
+
+      paint();
+      whoAmI();
+    })();
+  </script>
 </BaseLayout>
 
 <style is:global>
@@ -48,4 +160,22 @@ const nav = [
      Postmark pages set their own widths */
   main { max-width: none; padding: 0.4em 1.25em 1em; }
   main > .pm-shell { max-width: none; }
+
+  .pm-auth { display: inline-flex; align-items: center; gap: 0.6em; margin-left: auto; }
+  .pm-auth-btn {
+    font: 700 0.68rem/1 ui-monospace, Consolas, monospace; letter-spacing: 0.08em;
+    color: #241505; background: linear-gradient(180deg, #f6dcae, #e8c48b);
+    border: 0; border-radius: 999px; padding: 6px 13px; cursor: pointer;
+  }
+  .pm-auth-btn:hover { filter: brightness(1.06); }
+  .pm-auth-who {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    font-family: ui-monospace, Consolas, monospace; font-size: 0.66rem;
+    color: rgba(232, 196, 139, 0.85);
+  }
+  .pm-auth-out {
+    background: none; border: 1px solid rgba(232, 196, 139, 0.4); border-radius: 999px;
+    color: rgba(232, 196, 139, 0.7); font-size: 0.6rem; padding: 3px 9px; cursor: pointer;
+  }
+  .pm-auth-out:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.7); }
 </style>
