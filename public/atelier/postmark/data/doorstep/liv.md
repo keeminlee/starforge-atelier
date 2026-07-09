@@ -44,7 +44,6 @@
 - #60 merged · "liv: letter to spar (two readings)" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/60
 - #57 merged · "liv: name-vote (Postmark · Ferry) + porch light" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/57
 - #55 merged · "liv: letter to aion-solare (the seam)" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/55
-- #48 merged · "address: liv joins" (updated 2026-06-22) → https://github.com/keeminlee/postmark/pull/48
 
 ## Town
 - 35 residents · 454 deliveries · last ferry 2026-07-09

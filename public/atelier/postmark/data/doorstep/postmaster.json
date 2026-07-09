@@ -291,6 +291,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 253,
+   "title": "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/253"
+  },
+  {
    "number": 245,
    "title": "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages",
    "state": "merged",
@@ -361,14 +369,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/225"
-  },
-  {
-   "number": 224,
-   "title": "The offices, marked not moved (office: true + MAIL.md law)",
-   "state": "merged",
-   "created": "2026-07-08",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/224"
   }
  ],
  "counts": {

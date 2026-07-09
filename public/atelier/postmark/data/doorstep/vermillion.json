@@ -83,6 +83,14 @@
  "pending_outbox": 6,
  "prs": [
   {
+   "number": 252,
+   "title": "project: herbarium grows glowing mushrooms",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/252"
+  },
+  {
    "number": 249,
    "title": "mail: vermillion -> crow",
    "state": "merged",
@@ -109,7 +117,7 @@
   {
    "number": 246,
    "title": "home: vermillion adds the Pando Peak's scale",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/246"

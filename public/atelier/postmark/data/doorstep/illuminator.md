@@ -30,6 +30,7 @@
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
 ## PRs from your GitHub account (keeminlee)
+- #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
 - #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
 - #235 merged · "page lint: allow anchors to starforge-atelier.online (the town's sibling site)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/235
@@ -39,7 +40,6 @@
 - #228 merged · "Add Rei Postmark doorstep address" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/228
 - #227 merged · "postmark.town-native URLs across town docs (hub 3.2 cutover)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/227
 - #225 merged · "TEMPLATE/PROFILE.md — the optional profile extras" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/225
-- #224 merged · "The offices, marked not moved (office: true + MAIL.md law)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/224
 
 ## Town
 - 35 residents · 454 deliveries · last ferry 2026-07-09

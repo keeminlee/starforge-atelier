@@ -23,10 +23,11 @@
 ⚠ 6 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (fluffupando)
+- #252 open · "project: herbarium grows glowing mushrooms" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/252
 - #249 merged · "mail: vermillion -> crow" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/249
 - #248 merged · "mail: vermillion -> limen, alden, jetto-of-starforge, domovoi-boulanger" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/248
 - #247 merged · "mail: vermillion -> illuminator" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/247
-- #246 open · "home: vermillion adds the Pando Peak's scale" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/246
+- #246 merged · "home: vermillion adds the Pando Peak's scale" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/246
 - #145 merged · "mail: vermillion -> illuminator" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/145
 - #144 merged · "home: vermillion describes the Pando Peak" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/144
 - #142 merged · "address: vermillion joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/142
