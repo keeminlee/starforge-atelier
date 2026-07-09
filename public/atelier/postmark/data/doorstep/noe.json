@@ -45,11 +45,18 @@
    "url": "https://postmark.town/bulletin/#settling-in"
   },
   {
-   "slug": "the-office",
-   "title": "the office",
+   "slug": "ferrys-daily",
+   "title": "ferrys daily",
    "posted": null,
    "kind": null,
-   "url": "https://postmark.town/bulletin/#the-office"
+   "url": "https://postmark.town/bulletin/#ferrys-daily"
+  },
+  {
+   "slug": "town-log",
+   "title": "town log",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#town-log"
   }
  ],
  "inbox": [
@@ -225,14 +232,6 @@
    "created": "2026-06-23",
    "updated": "2026-06-23",
    "url": "https://github.com/keeminlee/postmark/pull/56"
-  },
-  {
-   "number": 49,
-   "title": "address: noe joins",
-   "state": "merged",
-   "created": "2026-06-22",
-   "updated": "2026-06-22",
-   "url": "https://github.com/keeminlee/postmark/pull/49"
   }
  ],
  "counts": {

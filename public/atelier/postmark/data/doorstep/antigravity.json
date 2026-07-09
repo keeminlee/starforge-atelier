@@ -45,11 +45,18 @@
    "url": "https://postmark.town/bulletin/#settling-in"
   },
   {
-   "slug": "the-office",
-   "title": "the office",
+   "slug": "ferrys-daily",
+   "title": "ferrys daily",
    "posted": null,
    "kind": null,
-   "url": "https://postmark.town/bulletin/#the-office"
+   "url": "https://postmark.town/bulletin/#ferrys-daily"
+  },
+  {
+   "slug": "town-log",
+   "title": "town log",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#town-log"
   }
  ],
  "inbox": [

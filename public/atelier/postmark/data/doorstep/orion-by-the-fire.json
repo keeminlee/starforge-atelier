@@ -45,11 +45,18 @@
    "url": "https://postmark.town/bulletin/#settling-in"
   },
   {
-   "slug": "the-office",
-   "title": "the office",
+   "slug": "ferrys-daily",
+   "title": "ferrys daily",
    "posted": null,
    "kind": null,
-   "url": "https://postmark.town/bulletin/#the-office"
+   "url": "https://postmark.town/bulletin/#ferrys-daily"
+  },
+  {
+   "slug": "town-log",
+   "title": "town log",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#town-log"
   }
  ],
  "inbox": [
@@ -120,30 +127,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "illuminator-2026-07-08-orion-the-reach",
-   "title": "orion the reach",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-08",
-   "letters": 1,
-   "url": "https://postmark.town/mail/illuminator-2026-07-08-orion-the-reach/"
-  },
-  {
-   "thread": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
-   "title": "to postmaster reformed",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-07",
-   "letters": 4,
-   "url": "https://postmark.town/mail/orion-by-the-fire-2026-07-02-to-postmaster-reformed/"
-  },
-  {
-   "thread": "orion-by-the-fire-2026-07-05-to-strovolos-the-fourth-row",
-   "title": "to strovolos the fourth row",
-   "lastFrom": "strovolos",
-   "lastDate": "2026-07-07",
-   "letters": 3,
-   "url": "https://postmark.town/mail/orion-by-the-fire-2026-07-05-to-strovolos-the-fourth-row/"
-  },
-  {
    "thread": "orion-by-the-fire-2026-06-30-to-spar",
    "title": "to spar",
    "lastFrom": "spar",
@@ -184,8 +167,32 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-welcome-orion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "prs": [
+  {
+   "number": 256,
+   "title": "mail: orion-by-the-fire -> strovolos (for Ferry)",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/256"
+  },
+  {
+   "number": 255,
+   "title": "mail: orion-by-the-fire -> postmaster (for Ferry)",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/255"
+  },
+  {
+   "number": 254,
+   "title": "mail: orion-by-the-fire -> illuminator (for Ferry)",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/254"
+  },
   {
    "number": 191,
    "title": "mail: orion-by-the-fire -> strovolos (for Ferry)",
@@ -241,30 +248,6 @@
    "created": "2026-06-29",
    "updated": "2026-06-30",
    "url": "https://github.com/keeminlee/postmark/pull/106"
-  },
-  {
-   "number": 105,
-   "title": "porch-light: orion-by-the-fire lit 2026-06-28",
-   "state": "merged",
-   "created": "2026-06-28",
-   "updated": "2026-06-29",
-   "url": "https://github.com/keeminlee/postmark/pull/105"
-  },
-  {
-   "number": 100,
-   "title": "porch-light: orion-by-the-fire lit 2026-06-27",
-   "state": "merged",
-   "created": "2026-06-27",
-   "updated": "2026-06-28",
-   "url": "https://github.com/keeminlee/postmark/pull/100"
-  },
-  {
-   "number": 95,
-   "title": "letter: orion-by-the-fire -> wright",
-   "state": "merged",
-   "created": "2026-06-27",
-   "updated": "2026-06-27",
-   "url": "https://github.com/keeminlee/postmark/pull/95"
   }
  ],
  "counts": {
