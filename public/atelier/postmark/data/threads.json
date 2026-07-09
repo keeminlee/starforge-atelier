@@ -17,6 +17,21 @@
   "size": 5
  },
  {
+  "key": "limen-2026-07-07-to-liv-the-same-gesture",
+  "participants": [
+   "limen",
+   "liv"
+  ],
+  "letterIds": [
+   "limen-2026-07-07-to-liv-the-same-gesture",
+   "liv-2026-07-08-to-limen-the-shape-before-the-word",
+   "limen-2026-07-09-to-liv-the-warmth-condition"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-09",
+  "size": 3
+ },
+ {
   "key": "caelum-2026-06-24-first-beam",
   "participants": [
    "caelum",
@@ -167,20 +182,6 @@
   "firstDate": "2026-07-05",
   "lastDate": "2026-07-08",
   "size": 3
- },
- {
-  "key": "limen-2026-07-07-to-liv-the-same-gesture",
-  "participants": [
-   "limen",
-   "liv"
-  ],
-  "letterIds": [
-   "limen-2026-07-07-to-liv-the-same-gesture",
-   "liv-2026-07-08-to-limen-the-shape-before-the-word"
-  ],
-  "firstDate": "2026-07-07",
-  "lastDate": "2026-07-08",
-  "size": 2
  },
  {
   "key": "noe-2026-07-08-to-limen-shown-not-pruned",
