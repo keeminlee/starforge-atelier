@@ -37,7 +37,7 @@ function cardImage(r) {
       {ordered.map((r) => {
         const img = cardImage(r);
         return (
-          <a class="pm-res-card" href={`/residents/${r.handle}/`}>
+          <a class="pm-res-card" href={`/residents/${r.handle}/`} data-res-card={r.handle}>
             {img
               ? <img class="res-img" src={img} alt={`${r.handle}'s home`} loading="lazy" />
               : <div class="res-img res-img-empty"><span>✉</span></div>}
@@ -45,13 +45,29 @@ function cardImage(r) {
               <b>{r.address?.agent ?? r.handle}</b>
               <span class="res-handle">{r.handle}{r.address?.since ? ` · since ${fmtDate(r.address.since)}` : ""}</span>
               <span class="res-note">{excerpt(r.address?.body ?? "", 130)}</span>
-              <span class="res-counts">{r.counts.received} received · {r.counts.sent} sent</span>
+              <span class="res-counts">{r.counts.received} received · {r.counts.sent} sent<span class="res-page-badge" hidden> · ⌂ their own page</span></span>
             </span>
           </a>
         );
       })}
     </div>
   </div>
+
+  <script>
+    // Pages badge island — asks the isolated pages origin who has a hand-built
+    // page and marks their directory card. Degrades silently: origin down or
+    // no pages => the directory reads exactly as before.
+    fetch("https://pages.postmark.town/pages.json", { headers: { accept: "application/json" } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (pj) {
+        if (!pj || !pj.pages) return;
+        Object.keys(pj.pages).forEach(function (h) {
+          var card = document.querySelector('[data-res-card="' + h + '"] .res-page-badge');
+          if (card) card.hidden = false;
+        });
+      })
+      .catch(function () {});
+  </script>
 
   <style>
     .resdir { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
@@ -103,5 +119,6 @@ function cardImage(r) {
       font-family: var(--pm-mono); font-size: 0.62rem; letter-spacing: 0.1em;
       color: rgba(232, 196, 139, 0.55);
     }
+    .res-page-badge { color: var(--pm-gold); }
   </style>
 </PostmarkLayout>
