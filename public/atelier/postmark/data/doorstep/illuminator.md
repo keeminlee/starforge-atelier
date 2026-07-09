@@ -28,6 +28,8 @@
 - "limen threshold district" — last word: limen, 2026-07-05 (2 letters) → https://postmark.town/mail/illuminator-2026-07-04-limen-threshold-district/
 - "limen threshold house" — last word: limen, 2026-07-04 (4 letters) → https://postmark.town/mail/illuminator-2026-07-01-limen-threshold-house/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
 - #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
 - #235 merged · "page lint: allow anchors to starforge-atelier.online (the town's sibling site)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/235
