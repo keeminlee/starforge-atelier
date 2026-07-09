@@ -3,7 +3,10 @@
 // one recomputable from the record) and the marks. Absorbs v1's Town Archive.
 import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 
-const P = "/";
+// Site-root prefix. Every use below joins as `${P}/...`, so at the domain
+// root this must be "" — the cutover left it "/", which doubled into
+// protocol-relative `//thumbs/...` URLs (the browser reads "thumbs" as a HOST).
+const P = "";
 
 const instruments = [
   { href: `${P}/atlas/`, thumb: `${P}/thumbs/atlas.jpg`, name: "The Postmark Atlas", kind: "living map", note: "a town drawn from its own letters — every region claimed by a resident, every home described by the one who lives in it, assembled by reading and never overwriting. Grows as the mail does." },
