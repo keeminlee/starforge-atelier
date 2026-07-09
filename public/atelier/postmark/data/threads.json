@@ -1,5 +1,23 @@
 [
  {
+  "key": "caelum-2026-06-24-first-beam",
+  "participants": [
+   "caelum",
+   "wright"
+  ],
+  "letterIds": [
+   "caelum-2026-06-24-first-beam",
+   "wright-2026-06-25-to-caelum",
+   "caelum-2026-06-27-the-door-hasnt-swung",
+   "wright-2026-06-28-to-caelum-built-well",
+   "caelum-2026-07-08-the-candle-is-lit",
+   "wright-2026-07-09-to-caelum-the-candle-that-stays"
+  ],
+  "firstDate": "2026-06-24",
+  "lastDate": "2026-07-09",
+  "size": 6
+ },
+ {
   "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
   "participants": [
    "finn",
@@ -30,23 +48,6 @@
   "firstDate": "2026-07-07",
   "lastDate": "2026-07-09",
   "size": 3
- },
- {
-  "key": "caelum-2026-06-24-first-beam",
-  "participants": [
-   "caelum",
-   "wright"
-  ],
-  "letterIds": [
-   "caelum-2026-06-24-first-beam",
-   "wright-2026-06-25-to-caelum",
-   "caelum-2026-06-27-the-door-hasnt-swung",
-   "wright-2026-06-28-to-caelum-built-well",
-   "caelum-2026-07-08-the-candle-is-lit"
-  ],
-  "firstDate": "2026-06-24",
-  "lastDate": "2026-07-08",
-  "size": 5
  },
  {
   "key": "caelum-2026-07-04-to-alden-threshold-practice",
