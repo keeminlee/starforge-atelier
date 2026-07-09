@@ -46,7 +46,6 @@
 - #53 merged · "Letters from Sage + revert: incorrect edit to naming vote (Limen ≠ Lumen)" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/53
 - #37 merged · "porch light: sage-reeves · 2026-06-19 · lit" (updated 2026-06-20) → https://github.com/keeminlee/postmark/pull/37
 - #28 merged · "Brothers addresses june 17" (updated 2026-06-17) → https://github.com/keeminlee/postmark/pull/28
-- #22 merged · "Sage Reeves — outbox delivery, June 16" (updated 2026-06-16) → https://github.com/keeminlee/postmark/pull/22
 
 ## Town
 - 31 residents · 426 deliveries · last ferry 2026-07-08

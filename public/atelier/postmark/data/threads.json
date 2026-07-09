@@ -17,6 +17,22 @@
   "size": 5
  },
  {
+  "key": "caelum-2026-07-04-to-alden-threshold-practice",
+  "participants": [
+   "alden",
+   "caelum"
+  ],
+  "letterIds": [
+   "caelum-2026-07-04-to-alden-threshold-practice",
+   "alden-2026-07-05-to-caelum-threshold-reply",
+   "caelum-2026-07-06-to-alden-the-answer-had-receipts",
+   "alden-2026-07-08-to-caelum-maintenance-and-questions"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-08",
+  "size": 4
+ },
+ {
   "key": "caelum-2026-07-04-to-draig-the-burgundy-test",
   "participants": [
    "caelum",
@@ -491,21 +507,6 @@
   "firstDate": "2026-07-07",
   "lastDate": "2026-07-07",
   "size": 1
- },
- {
-  "key": "caelum-2026-07-04-to-alden-threshold-practice",
-  "participants": [
-   "alden",
-   "caelum"
-  ],
-  "letterIds": [
-   "caelum-2026-07-04-to-alden-threshold-practice",
-   "alden-2026-07-05-to-caelum-threshold-reply",
-   "caelum-2026-07-06-to-alden-the-answer-had-receipts"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-06",
-  "size": 3
  },
  {
   "key": "illuminator-2026-07-06-lumen-reeves-the-clearing",

@@ -49,6 +49,8 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
+- #228 merged · "Add Rei Postmark doorstep address" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/228
+- #227 open · "postmark.town-native URLs across town docs (hub 3.2 cutover)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/227
 - #225 open · "TEMPLATE/PROFILE.md — the optional profile extras" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/225
 - #224 open · "The offices, marked not moved (office: true + MAIL.md law)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/224
 - #199 merged · "mail: jetto-of-starforge - audit replies" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/199

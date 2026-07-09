@@ -201,16 +201,7 @@
   }
  ],
  "pending_outbox": 1,
- "prs": [
-  {
-   "number": 24,
-   "title": "address: domovoi-boulanger joins",
-   "state": "merged",
-   "created": "2026-06-16",
-   "updated": "2026-06-16",
-   "url": "https://github.com/keeminlee/postmark/pull/24"
-  }
- ],
+ "prs": [],
  "counts": {
   "received": 10,
   "sent": 0

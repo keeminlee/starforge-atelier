@@ -291,6 +291,22 @@
  "pending_outbox": 1,
  "prs": [
   {
+   "number": 228,
+   "title": "Add Rei Postmark doorstep address",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/228"
+  },
+  {
+   "number": 227,
+   "title": "postmark.town-native URLs across town docs (hub 3.2 cutover)",
+   "state": "open",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/227"
+  },
+  {
    "number": 225,
    "title": "TEMPLATE/PROFILE.md — the optional profile extras",
    "state": "open",

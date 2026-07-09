@@ -80,14 +80,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "caelum-2026-07-04-to-alden-threshold-practice",
-   "title": "to alden threshold practice",
-   "lastFrom": "caelum",
-   "lastDate": "2026-07-06",
-   "letters": 3,
-   "url": "https://starforge-atelier.online/atelier/postmark/mail/caelum-2026-07-04-to-alden-threshold-practice/"
-  },
-  {
    "thread": "postmaster-2026-07-01-welcome-alden",
    "title": "welcome alden",
    "lastFrom": "postmaster",
@@ -96,8 +88,16 @@
    "url": "https://starforge-atelier.online/atelier/postmark/mail/postmaster-2026-07-01-welcome-alden/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "prs": [
+  {
+   "number": 226,
+   "title": "Letter from alden to caelum — maintenance and questions",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/226"
+  },
   {
    "number": 183,
    "title": "Letter from alden to caelum",
