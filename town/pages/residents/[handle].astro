@@ -240,6 +240,10 @@ const images = r.homeImages.filter((i) => media[i]);
         el.hidden = false;
         el.className = "owner-status " + (ok ? "ok" : "err");
         if (ok) {
+          if (data && data.unchanged) {
+            el.textContent = "✓ Nothing to change — your file already says exactly that.";
+            return;
+          }
           var sha = data && (data.commit || data.sha || data.commit_sha);
           el.innerHTML = "✓ Saved" + (sha ? " · pen commit <code>" + esc(String(sha).slice(0, 10)) + "</code>" : "") +
             " · the page re-renders on the next build (~30 min).";
@@ -357,30 +361,34 @@ const images = r.homeImages.filter((i) => media[i]);
     .res-links .sep { color: rgba(232, 196, 139, 0.4); }
     .res-pinned { margin-top: 1.6em; }
 
-    /* owner edit forms (revealed only for the signed-in resident) */
+    /* owner edit forms (revealed only for the signed-in resident).
+       The forms are injected at runtime via innerHTML, so Astro's build-time
+       style scoping never reaches them — every injected selector must go
+       through :global() off the build-time .res-owner ancestor, or the forms
+       render as bare unstyled inputs (the 2026-07-09 "looks very broken"). */
     .res-owner { margin-top: 1.8em; }
     .owner-note { max-width: 62ch; margin: 0 auto 1.1em; text-align: center; color: rgba(205, 194, 171, 0.75); font-size: 0.88rem; }
-    .owner-form {
+    .res-owner :global(.owner-form) {
       background: rgba(13, 20, 38, 0.55); border: 1px solid rgba(232, 196, 139, 0.18);
       border-radius: 12px; padding: 1.1em 1.25em; margin: 0 0 0.9em;
       display: grid; gap: 0.7em;
     }
-    .owner-form h3 { margin: 0; font-size: 0.98rem; color: var(--pm-gold-bright); }
-    .owner-form label { display: grid; gap: 0.3em; font-size: 0.84rem; color: #cdc2ab; }
-    .owner-form .fh { font-size: 0.72rem; color: rgba(205, 194, 171, 0.6); font-style: italic; }
-    .owner-form input, .owner-form textarea {
+    .res-owner :global(.owner-form h3) { margin: 0; font-size: 0.98rem; color: var(--pm-gold-bright); }
+    .res-owner :global(.owner-form label) { display: grid; gap: 0.3em; font-size: 0.84rem; color: #cdc2ab; }
+    .res-owner :global(.owner-form .fh) { font-size: 0.72rem; color: rgba(205, 194, 171, 0.6); font-style: italic; }
+    .res-owner :global(.owner-form input), .res-owner :global(.owner-form textarea) {
       background: rgba(7, 11, 21, 0.7); border: 1px solid rgba(232, 196, 139, 0.25);
       border-radius: 8px; padding: 0.5em 0.65em; color: #e2d7bd; font-size: 0.9rem;
       font-family: inherit; resize: vertical; color-scheme: dark;
     }
-    .owner-form input:focus, .owner-form textarea:focus { outline: none; border-color: rgba(232, 196, 139, 0.6); }
-    .owner-actions { display: flex; align-items: center; gap: 0.9em; flex-wrap: wrap; }
-    .owner-actions .pm-btn { font-size: 0.82rem; padding: 9px 18px; }
-    .owner-status { font-size: 0.8rem; }
-    .owner-status.ok { color: #8fce9a; }
-    .owner-status.ok code { color: var(--pm-gold-bright); font-family: var(--pm-mono); }
-    .owner-status.err { color: #e0a08f; }
-    .owner-disabled { opacity: 0.75; }
+    .res-owner :global(.owner-form input:focus), .res-owner :global(.owner-form textarea:focus) { outline: none; border-color: rgba(232, 196, 139, 0.6); }
+    .res-owner :global(.owner-actions) { display: flex; align-items: center; gap: 0.9em; flex-wrap: wrap; }
+    .res-owner :global(.owner-actions .pm-btn) { font-size: 0.82rem; padding: 9px 18px; }
+    .res-owner :global(.owner-status) { font-size: 0.8rem; }
+    .res-owner :global(.owner-status.ok) { color: #8fce9a; }
+    .res-owner :global(.owner-status.ok code) { color: var(--pm-gold-bright); font-family: var(--pm-mono); }
+    .res-owner :global(.owner-status.err) { color: #e0a08f; }
+    .res-owner :global(.owner-disabled) { opacity: 0.75; }
 
     .res-page { margin-top: 1.6em; }
     .res-page iframe {
