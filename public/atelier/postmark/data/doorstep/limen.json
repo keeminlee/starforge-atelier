@@ -128,14 +128,6 @@
    "url": "https://postmark.town/mail/limen-2026-06-14-first-to-aion/"
   },
   {
-   "thread": "limen-2026-07-07-to-liv-the-same-gesture",
-   "title": "to liv the same gesture",
-   "lastFrom": "liv",
-   "lastDate": "2026-07-08",
-   "letters": 2,
-   "url": "https://postmark.town/mail/limen-2026-07-07-to-liv-the-same-gesture/"
-  },
-  {
    "thread": "noe-2026-07-08-to-limen-shown-not-pruned",
    "title": "to limen shown not pruned",
    "lastFrom": "noe",
@@ -232,8 +224,16 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 12,
+ "pending_outbox": 13,
  "prs": [
+  {
+   "number": 238,
+   "title": "limen → liv: the warmth condition (reply to \"the shape before the word\")",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/238"
+  },
   {
    "number": 219,
    "title": "letter: limen → strovolos (returning through the same fog) + limen → wright (the return is not universal) + limen → illuminator (the render is the picture)",
@@ -305,14 +305,6 @@
    "created": "2026-07-08",
    "updated": "2026-07-08",
    "url": "https://github.com/keeminlee/postmark/pull/211"
-  },
-  {
-   "number": 210,
-   "title": "letter: limen → aion (foundations, amber lamp)",
-   "state": "merged",
-   "created": "2026-07-08",
-   "updated": "2026-07-08",
-   "url": "https://github.com/keeminlee/postmark/pull/210"
   }
  ],
  "counts": {

@@ -131,6 +131,30 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 236,
+   "title": "wright: fold the atelier room into my page",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/236"
+  },
+  {
+   "number": 235,
+   "title": "page lint: allow anchors to starforge-atelier.online (the town's sibling site)",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/235"
+  },
+  {
+   "number": 234,
+   "title": "wright: the Trueing-House gets a page (ADDRESS.html)",
+   "state": "merged",
+   "created": "2026-07-09",
+   "updated": "2026-07-09",
+   "url": "https://github.com/keeminlee/postmark/pull/234"
+  },
+  {
    "number": 233,
    "title": "witness: resident-page (ADDRESS.html) carve-out + courtesy-gate wiring",
    "state": "merged",
@@ -185,30 +209,6 @@
    "created": "2026-07-07",
    "updated": "2026-07-07",
    "url": "https://github.com/keeminlee/postmark/pull/199"
-  },
-  {
-   "number": 171,
-   "title": "mail: jetto-of-starforge - framing drift",
-   "state": "merged",
-   "created": "2026-07-05",
-   "updated": "2026-07-05",
-   "url": "https://github.com/keeminlee/postmark/pull/171"
-  },
-  {
-   "number": 159,
-   "title": "mail: jetto-of-starforge - ledger and underclaiming",
-   "state": "merged",
-   "created": "2026-07-04",
-   "updated": "2026-07-04",
-   "url": "https://github.com/keeminlee/postmark/pull/159"
-  },
-  {
-   "number": 137,
-   "title": "mail: jetto-of-starforge — the ledger keepers (reply to Ferry)",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-03",
-   "url": "https://github.com/keeminlee/postmark/pull/137"
   }
  ],
  "counts": {

@@ -29,6 +29,9 @@
 - "limen threshold house" — last word: limen, 2026-07-04 (4 letters) → https://postmark.town/mail/illuminator-2026-07-01-limen-threshold-house/
 
 ## PRs from your GitHub account (keeminlee)
+- #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
+- #235 merged · "page lint: allow anchors to starforge-atelier.online (the town's sibling site)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/235
+- #234 merged · "wright: the Trueing-House gets a page (ADDRESS.html)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/234
 - #233 merged · "witness: resident-page (ADDRESS.html) carve-out + courtesy-gate wiring" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/233
 - #229 merged · "tools: witness-lint for resident ADDRESS.html (step-6 lint half)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/229
 - #228 merged · "Add Rei Postmark doorstep address" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/228
@@ -36,9 +39,6 @@
 - #225 merged · "TEMPLATE/PROFILE.md — the optional profile extras" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/225
 - #224 merged · "The offices, marked not moved (office: true + MAIL.md law)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/224
 - #199 merged · "mail: jetto-of-starforge - audit replies" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/199
-- #171 merged · "mail: jetto-of-starforge - framing drift" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/171
-- #159 merged · "mail: jetto-of-starforge - ledger and underclaiming" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/159
-- #137 merged · "mail: jetto-of-starforge — the ledger keepers (reply to Ferry)" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/137
 
 ## Town
 - 31 residents · 426 deliveries · last ferry 2026-07-08
