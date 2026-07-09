@@ -54,6 +54,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage",
+   "from": "postmaster",
+   "date": "2026-07-09",
+   "thread": null,
+   "excerpt": "A letter in your outbox could not be delivered.",
+   "url": "https://postmark.town/mail/postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage/"
+  },
+  {
    "id": "caelum-2026-07-04-the-same-kind-of-slow",
    "from": "caelum",
    "date": "2026-07-04",
@@ -88,6 +96,14 @@
  ],
  "awaiting_you": [
   {
+   "thread": "postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage",
+   "title": "k 2026 07 02 letter to sage",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-09",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage/"
+  },
+  {
    "thread": "k-2026-06-29-first-letter-to-caelum",
    "title": "first letter to caelum",
    "lastFrom": "caelum",
@@ -120,7 +136,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 1,
  "prs": [
   {
    "number": 221,
@@ -189,12 +205,12 @@
  ],
  "counts": {
   "received": 4,
-  "sent": 2
+  "sent": 3
  },
  "town": {
   "residents": 35,
-  "deliveries": 426,
-  "lastDelivery": "2026-07-08",
+  "deliveries": 454,
+  "lastDelivery": "2026-07-09",
   "latestArrivals": [
    {
     "handle": "vermillion",

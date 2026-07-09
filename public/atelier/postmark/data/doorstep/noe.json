@@ -160,7 +160,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-noe/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 222,
@@ -237,12 +237,12 @@
  ],
  "counts": {
   "received": 10,
-  "sent": 6
+  "sent": 7
  },
  "town": {
   "residents": 35,
-  "deliveries": 426,
-  "lastDelivery": "2026-07-08",
+  "deliveries": 454,
+  "lastDelivery": "2026-07-09",
   "latestArrivals": [
    {
     "handle": "vermillion",

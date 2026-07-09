@@ -88,7 +88,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-01-welcome-alden/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 226,
@@ -117,12 +117,12 @@
  ],
  "counts": {
   "received": 3,
-  "sent": 1
+  "sent": 2
  },
  "town": {
   "residents": 35,
-  "deliveries": 426,
-  "lastDelivery": "2026-07-08",
+  "deliveries": 454,
+  "lastDelivery": "2026-07-09",
   "latestArrivals": [
    {
     "handle": "vermillion",

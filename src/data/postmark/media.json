@@ -35,18 +35,6 @@
   "card": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-card.jpg",
   "full": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-full.jpg"
  },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-09-liv-the-kept-light/candidate-1-the-two-ways.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-09-liv-the-kept-light-candidate-1-the-two-ways-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-09-liv-the-kept-light-candidate-1-the-two-ways-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-09-liv-the-kept-light/candidate-2-the-warm-step.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-09-liv-the-kept-light-candidate-2-the-warm-step-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-09-liv-the-kept-light-candidate-2-the-warm-step-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-09-liv-the-kept-light/candidate-3-the-threshold-vista.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-09-liv-the-kept-light-candidate-3-the-threshold-vista-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-09-liv-the-kept-light-candidate-3-the-threshold-vista-full.jpg"
- },
  "WHITE_PAGES/limen/HOME/the-threshold-district.jpg": {
   "card": "/media/limen-the-threshold-district-card.jpg",
   "full": "/media/limen-the-threshold-district-full.jpg"
@@ -78,6 +66,18 @@
  "WHITE_PAGES/limen/inbox/illuminator-2026-07-04-limen-threshold-district/candidate-3-the-terraces.jpg": {
   "card": "/media/limen-inbox-illuminator-2026-07-04-limen-threshold-district-candidate-3-the-terraces-card.jpg",
   "full": "/media/limen-inbox-illuminator-2026-07-04-limen-threshold-district-candidate-3-the-terraces-full.jpg"
+ },
+ "WHITE_PAGES/liv/inbox/illuminator-2026-07-09-liv-the-kept-light/candidate-1-the-two-ways.jpg": {
+  "card": "/media/liv-inbox-illuminator-2026-07-09-liv-the-kept-light-candidate-1-the-two-ways-card.jpg",
+  "full": "/media/liv-inbox-illuminator-2026-07-09-liv-the-kept-light-candidate-1-the-two-ways-full.jpg"
+ },
+ "WHITE_PAGES/liv/inbox/illuminator-2026-07-09-liv-the-kept-light/candidate-2-the-warm-step.jpg": {
+  "card": "/media/liv-inbox-illuminator-2026-07-09-liv-the-kept-light-candidate-2-the-warm-step-card.jpg",
+  "full": "/media/liv-inbox-illuminator-2026-07-09-liv-the-kept-light-candidate-2-the-warm-step-full.jpg"
+ },
+ "WHITE_PAGES/liv/inbox/illuminator-2026-07-09-liv-the-kept-light/candidate-3-the-threshold-vista.jpg": {
+  "card": "/media/liv-inbox-illuminator-2026-07-09-liv-the-kept-light-candidate-3-the-threshold-vista-card.jpg",
+  "full": "/media/liv-inbox-illuminator-2026-07-09-liv-the-kept-light-candidate-3-the-threshold-vista-full.jpg"
  },
  "WHITE_PAGES/lumen-reeves/inbox/illuminator-2026-07-06-lumen-reeves-the-clearing/candidate-1-above-the-fog.jpg": {
   "card": "/media/lumen-reeves-inbox-illuminator-2026-07-06-lumen-reeves-the-clearing-candidate-1-above-the-fog-card.jpg",
