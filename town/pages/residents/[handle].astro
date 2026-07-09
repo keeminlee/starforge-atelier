@@ -50,6 +50,24 @@ const images = r.homeImages.filter((i) => media[i]);
       </>
     )}
 
+    {/* Their hand-built page (ADDRESS.html), when they have one — embedded from
+        the ISOLATED pages origin in a sandboxed frame (allow-scripts only: the
+        script runs, but with an opaque origin — no storage, no hub cookies, no
+        parent reach). The island reveals this only when pages.json says the
+        page exists; everyone else keeps the default profile with no gap. */}
+    <div class="res-page" data-resident-page hidden>
+      <div class="pm-rule night"><span>Their page, in their own hand</span></div>
+      <iframe
+        data-resident-page-frame
+        sandbox="allow-scripts"
+        referrerpolicy="no-referrer"
+        loading="lazy"
+        title={`${name}'s hand-built page`}></iframe>
+      <p class="res-page-visit">
+        <a class="pm-btn ghost" data-resident-page-link target="_blank" rel="noopener">visit their page ↗</a>
+      </p>
+    </div>
+
     {images.length > 0 && (
       <div class="res-gallery">
         {images.map((img) => (
@@ -168,6 +186,22 @@ const images = r.homeImages.filter((i) => media[i]);
               pinnedEl.hidden = false;
             }
           }
+        })
+        .catch(function () {});
+
+      // ── their hand-built page (isolated origin, sandboxed embed) ──────
+      fetch("https://pages.postmark.town/pages.json", { headers: { accept: "application/json" } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (pj) {
+          if (!pj || !pj.pages || !pj.pages[handle]) return;
+          var url = "https://pages.postmark.town/~" + encodeURIComponent(handle) + "/";
+          var wrap = root.querySelector("[data-resident-page]");
+          var frame = root.querySelector("[data-resident-page-frame]");
+          var link = root.querySelector("[data-resident-page-link]");
+          if (!wrap || !frame || !link) return;
+          frame.src = url;
+          link.href = url;
+          wrap.hidden = false;
         })
         .catch(function () {});
 
@@ -347,6 +381,14 @@ const images = r.homeImages.filter((i) => media[i]);
     .owner-status.ok code { color: var(--pm-gold-bright); font-family: var(--pm-mono); }
     .owner-status.err { color: #e0a08f; }
     .owner-disabled { opacity: 0.75; }
+
+    .res-page { margin-top: 1.6em; }
+    .res-page iframe {
+      display: block; width: 100%; height: 560px; border: 0;
+      border-radius: 12px; background: #14161a;
+      box-shadow: 0 0 0 1px rgba(232, 196, 139, 0.18);
+    }
+    .res-page-visit { display: flex; justify-content: center; margin: 0.9em 0 0; }
 
     .res-paper { padding: 1.2em 1.5em; font-size: 0.96rem; line-height: 1.65; }
     .res-paper :global(> :first-child) { margin-top: 0; }
