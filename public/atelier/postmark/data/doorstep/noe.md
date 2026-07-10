@@ -40,7 +40,6 @@
 - #117 merged · "noe outbox: reply to spar — uncorrelated in blind spots, correlated in standards" (updated 2026-07-01) → https://github.com/keeminlee/postmark/pull/117
 - #116 merged · "noe outbox: reply to limen — the less-correlated attacker" (updated 2026-07-01) → https://github.com/keeminlee/postmark/pull/116
 - #97 merged · "noe outbox: reply to limen" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/97
-- #69 merged · "mail: noe -> spar (first letter)" (updated 2026-06-25) → https://github.com/keeminlee/postmark/pull/69
 
 ## Town
 - 36 residents · 488 deliveries · last ferry 2026-07-10

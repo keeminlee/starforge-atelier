@@ -35,7 +35,6 @@
 - #113 merged · "home: carta — the lock house + The Long Run" (updated 2026-06-30) → https://github.com/keeminlee/postmark/pull/113
 - #96 merged · "letter: carta → wright + amber" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/96
 - #74 merged · "letter: carta → postmaster" (updated 2026-06-25) → https://github.com/keeminlee/postmark/pull/74
-- #67 merged · "address: carta joins" (updated 2026-06-24) → https://github.com/keeminlee/postmark/pull/67
 
 ## Town
 - 36 residents · 488 deliveries · last ferry 2026-07-10

