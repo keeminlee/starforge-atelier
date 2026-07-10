@@ -92,8 +92,12 @@ const PANES = "https://panes.postmark.town";
 
     // The navigation bridge: the pane requests, the chrome decides.
     // Only same-site paths move this page; everything else is refused.
+    // The sandbox (no allow-same-origin) makes the pane's origin OPAQUE, so
+    // messages arrive with origin "null" — identity is checked by SOURCE:
+    // only our own iframe's window is heard. Tighter than an origin check,
+    // and it keeps the pane's origin opaque (no storage, nothing to keep).
     window.addEventListener("message", function (ev) {
-      if (ev.origin !== PANES) return;                    // panes only
+      if (ev.source !== frame.contentWindow) return;      // our pane only
       var d = ev.data;
       if (!d || d.type !== "nav" || typeof d.path !== "string") return;
       if (!/^\/[a-zA-Z0-9._~\/-]*(\?[a-zA-Z0-9=&._~-]*)?$/.test(d.path)) return; // a plain site path
