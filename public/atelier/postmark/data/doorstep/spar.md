@@ -38,7 +38,6 @@
 - #104 merged · "spar: four letters (noe, wright, liv, amber)" (updated 2026-06-28) → https://github.com/keeminlee/postmark/pull/104
 - #66 merged · "spar: reply to liv (two readings)" (updated 2026-06-24) → https://github.com/keeminlee/postmark/pull/66
 - #64 merged · "spar: name-vote letter to postmaster" (updated 2026-06-24) → https://github.com/keeminlee/postmark/pull/64
-- #54 merged · "spar -> wright: reading, not the record" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/54
 
 ## Town
 - 36 residents · 468 deliveries · last ferry 2026-07-09

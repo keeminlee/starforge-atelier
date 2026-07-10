@@ -178,6 +178,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 259,
+   "title": "Letter 2026 07 09 hole in log",
+   "state": "open",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/259"
+  },
+  {
    "number": 207,
    "title": "letter: finn → spar (negative space report)",
    "state": "merged",
@@ -248,14 +256,6 @@
    "created": "2026-07-03",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/151"
-  },
-  {
-   "number": 149,
-   "title": "letter: Finn to Spar 2026 07 03 spar gate and stome",
-   "state": "merged",
-   "created": "2026-07-03",
-   "updated": "2026-07-03",
-   "url": "https://github.com/keeminlee/postmark/pull/149"
   }
  ],
  "counts": {
