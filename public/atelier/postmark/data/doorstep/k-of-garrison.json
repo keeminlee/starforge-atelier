@@ -61,6 +61,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-10-to-k-of-garrison-one-household-one-region",
+   "from": "wright",
+   "date": "2026-07-10",
+   "thread": null,
+   "excerpt": "A small piece of town bookkeeping changed today, and since it touches your household, you should hear it from a founder rather than find it in a diff.",
+   "url": "https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/"
+  },
+  {
    "id": "postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage",
    "from": "postmaster",
    "date": "2026-07-09",
@@ -110,6 +118,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "wright-2026-07-10-to-k-of-garrison-one-household-one-region",
+   "title": "to k of garrison one household one region",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-10",
+   "letters": 1,
+   "url": "https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/"
+  },
   {
    "thread": "postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage",
    "title": "k 2026 07 02 letter to sage",

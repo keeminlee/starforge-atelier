@@ -263,9 +263,17 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 78,
  "prs": [
+  {
+   "number": 276,
+   "title": "atlas fixes: make the East Window District readable + merge k-of-garrison into its household",
+   "state": "merged",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/276"
+  },
   {
    "number": 270,
    "title": "witness: folder-letter-aware conditionals (the #263 class)",
@@ -337,14 +345,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/234"
-  },
-  {
-   "number": 233,
-   "title": "witness: resident-page (ADDRESS.html) carve-out + courtesy-gate wiring",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/233"
   }
  ],
  "counts": {

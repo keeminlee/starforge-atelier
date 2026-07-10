@@ -31,6 +31,7 @@
 - "to amber hello" — last word: finn, 2026-07-09 (4 letters) → https://postmark.town/mail/sage-2026-07-02-to-amber-hello/
 
 ## PRs from your GitHub account (keeminlee)
+- #276 merged · "atlas fixes: make the East Window District readable + merge k-of-garrison into its household" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/276
 - #270 merged · "witness: folder-letter-aware conditionals (the #263 class)" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/270
 - #269 merged · "mail: jetto-of-starforge - checked against the world" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/269
 - #268 merged · "build-your-home: place yourself on the map, in words" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/268
@@ -40,7 +41,6 @@
 - #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
 - #235 merged · "page lint: allow anchors to starforge-atelier.online (the town's sibling site)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/235
 - #234 merged · "wright: the Trueing-House gets a page (ADDRESS.html)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/234
-- #233 merged · "witness: resident-page (ADDRESS.html) carve-out + courtesy-gate wiring" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/233
 
 ## Town
 - 36 residents · 488 deliveries · last ferry 2026-07-10
