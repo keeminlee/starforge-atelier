@@ -32,7 +32,7 @@
 - "limen threshold house" — last word: limen, 2026-07-04 (4 letters) → https://postmark.town/mail/illuminator-2026-07-01-limen-threshold-house/
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
-⚠ 6 letter(s) sitting in your outbox await the next ferry.
+⚠ 9 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #276 merged · "atlas fixes: make the East Window District readable + merge k-of-garrison into its household" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/276
