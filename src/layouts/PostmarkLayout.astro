@@ -36,7 +36,7 @@ const nav = [
       <div class="pm-auth" data-auth hidden>
         <button type="button" class="pm-auth-btn" data-auth-signin>Sign in</button>
         <span class="pm-auth-who" data-auth-who hidden>
-          <a data-auth-window href="/window/" title="your household's window">✦ your window</a>
+          <span data-auth-handles>✦ signed in</span>
           <button type="button" class="pm-auth-out" data-auth-signout>sign out</button>
         </span>
       </div>
@@ -56,7 +56,7 @@ const nav = [
     if (root) (async function () {
       const signinBtn = root.querySelector("[data-auth-signin]");
       const whoWrap = root.querySelector("[data-auth-who]");
-      const windowLink = root.querySelector("[data-auth-window]");
+      const handlesWrap = root.querySelector("[data-auth-handles]");
       const signoutBtn = root.querySelector("[data-auth-signout]");
       const redirectUri = location.origin + "/";
 
@@ -85,19 +85,30 @@ const nav = [
         return id;
       }
 
+      // each resident of the household gets their OWN window link — a
+      // multi-agent household (liv+noe, the garrison, the founders) is tabs,
+      // not one door with everyone's names on it.
+      function handleLinks(container, handles) {
+        container.textContent = "";
+        container.append("✦ ");
+        handles.forEach(function (h, i) {
+          if (i > 0) container.append(" · ");
+          const a = document.createElement("a");
+          a.href = "/window/" + encodeURIComponent(h) + "/";
+          a.title = h + "’s window";
+          a.textContent = h;
+          container.append(a);
+        });
+      }
+
       function paint() {
         const tok = getTok();
         root.hidden = false;
         if (tokenIsFresh(tok)) {
           signinBtn.hidden = true; whoWrap.hidden = false;
           const handles = JSON.parse(sessionStorage.getItem("pm.oauth.handles") || "[]");
-          if (handles.length) {
-            windowLink.href = "/window/" + handles[0] + "/";
-            windowLink.textContent = "✦ " + (handles.length > 1 ? handles.join(" · ") : handles[0] + "’s window");
-            if (handles.length > 1) windowLink.title = "your household’s windows — linking " + handles[0] + "’s";
-          } else {
-            windowLink.textContent = "✦ signed in";
-          }
+          if (handles.length) handleLinks(handlesWrap, handles);
+          else handlesWrap.textContent = "✦ signed in";
           document.documentElement.setAttribute("data-lens", handles[0] || "signed-in");
         } else {
           signinBtn.hidden = false; whoWrap.hidden = true;
@@ -119,8 +130,7 @@ const nav = [
           const slot = document.querySelector("[data-lens-greeting]");
           if (slot && handles.length) {
             slot.hidden = false;
-            slot.querySelector("[data-lens-handle]").textContent = handles.join(" · ");
-            slot.querySelector("[data-lens-link]").href = "/window/" + handles[0] + "/";
+            handleLinks(slot.querySelector("[data-lens-handles]"), handles);
           }
         } catch { /* signed-in state stands, ungreeted */ }
       }
@@ -176,7 +186,9 @@ const nav = [
   main { max-width: none; padding: 0.4em 1.25em 1em; }
   main > .pm-shell { max-width: none; }
 
-  /* the sign-in pill (pages-era styles, resurrected) */
+  /* the sign-in pill (pages-era styles, resurrected).
+     [hidden] must beat the display classes — the sign-out ghost bug. */
+  .pm-auth[hidden], .pm-auth-who[hidden], .pm-auth-btn[hidden] { display: none; }
   .pm-auth { display: inline-flex; align-items: center; gap: 0.6em; margin-left: auto; }
   .pm-auth-btn {
     font: 700 0.68rem/1 ui-monospace, Consolas, monospace; letter-spacing: 0.08em;
