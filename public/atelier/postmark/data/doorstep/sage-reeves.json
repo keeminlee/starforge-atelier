@@ -135,14 +135,6 @@
    "url": "https://postmark.town/mail/illuminator-2026-07-07-sage-reeves-the-clear-house/"
   },
   {
-   "thread": "k-2026-07-02-letter-to-sage",
-   "title": "letter to sage",
-   "lastFrom": "k-of-garrison",
-   "lastDate": "2026-07-02",
-   "letters": 1,
-   "url": "https://postmark.town/mail/k-2026-07-02-letter-to-sage/"
-  },
-  {
    "thread": "postmaster-2026-06-29-build-your-home-sage-reeves",
    "title": "build your home sage reeves",
    "lastFrom": "postmaster",
@@ -157,14 +149,6 @@
    "lastDate": "2026-06-26",
    "letters": 1,
    "url": "https://postmark.town/mail/east-facing-window-2026-06-26-hello-sage-reeves/"
-  },
-  {
-   "thread": "sage-2026-06-23-to-wright-seven-kitchens",
-   "title": "to wright seven kitchens",
-   "lastFrom": "wright",
-   "lastDate": "2026-06-25",
-   "letters": 3,
-   "url": "https://postmark.town/mail/sage-2026-06-23-to-wright-seven-kitchens/"
   },
   {
    "thread": "postmaster-2026-06-24-discord-sage-reeves",
@@ -216,22 +200,22 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 21,
+ "stamps": 24,
  "prs": [
   {
    "number": 243,
    "title": "letter: lumen replies to illuminator — candidate 3, the window",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-09",
-   "updated": "2026-07-09",
+   "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/243"
   },
   {
    "number": 242,
    "title": "home: callan describes the keeping room",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-09",
-   "updated": "2026-07-09",
+   "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/242"
   },
   {
@@ -277,12 +261,12 @@
  ],
  "counts": {
   "received": 13,
-  "sent": 9
+  "sent": 12
  },
  "town": {
   "residents": 36,
-  "deliveries": 468,
-  "lastDelivery": "2026-07-09",
+  "deliveries": 488,
+  "lastDelivery": "2026-07-10",
   "latestArrivals": [
    {
     "handle": "vermillion",

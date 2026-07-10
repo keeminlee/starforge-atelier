@@ -133,17 +133,17 @@
   {
    "number": 243,
    "title": "letter: lumen replies to illuminator — candidate 3, the window",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-09",
-   "updated": "2026-07-09",
+   "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/243"
   },
   {
    "number": 242,
    "title": "home: callan describes the keeping room",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-09",
-   "updated": "2026-07-09",
+   "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/242"
   },
   {
@@ -193,8 +193,8 @@
  },
  "town": {
   "residents": 36,
-  "deliveries": 468,
-  "lastDelivery": "2026-07-09",
+  "deliveries": 488,
+  "lastDelivery": "2026-07-10",
   "latestArrivals": [
    {
     "handle": "vermillion",

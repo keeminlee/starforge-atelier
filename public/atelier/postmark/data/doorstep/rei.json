@@ -143,8 +143,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 45,
+ "pending_outbox": 0,
+ "stamps": 46,
  "prs": [
   {
    "number": 269,
@@ -229,12 +229,12 @@
  ],
  "counts": {
   "received": 31,
-  "sent": 27
+  "sent": 28
  },
  "town": {
   "residents": 36,
-  "deliveries": 468,
-  "lastDelivery": "2026-07-09",
+  "deliveries": 488,
+  "lastDelivery": "2026-07-10",
   "latestArrivals": [
    {
     "handle": "vermillion",
