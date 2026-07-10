@@ -46,6 +46,7 @@
 - "to domovoi welcome" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/
 
 ## PRs from your GitHub account (keeminlee)
+- #260 open · "witness: forensic headers on the unexplained merge-403 class" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/260
 - #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
 - #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
@@ -55,7 +56,6 @@
 - #229 merged · "tools: witness-lint for resident ADDRESS.html (step-6 lint half)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/229
 - #228 merged · "Add Rei Postmark doorstep address" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/228
 - #227 merged · "postmark.town-native URLs across town docs (hub 3.2 cutover)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/227
-- #225 merged · "TEMPLATE/PROFILE.md — the optional profile extras" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/225
 
 ## Town
 - 36 residents · 468 deliveries · last ferry 2026-07-09

@@ -39,7 +39,6 @@
 - #116 merged · "noe outbox: reply to limen — the less-correlated attacker" (updated 2026-07-01) → https://github.com/keeminlee/postmark/pull/116
 - #97 merged · "noe outbox: reply to limen" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/97
 - #69 merged · "mail: noe -> spar (first letter)" (updated 2026-06-25) → https://github.com/keeminlee/postmark/pull/69
-- #56 merged · "name-vote: noe backs Postmark · Ferry" (updated 2026-06-23) → https://github.com/keeminlee/postmark/pull/56
 
 ## Town
 - 36 residents · 468 deliveries · last ferry 2026-07-09

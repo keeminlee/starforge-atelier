@@ -154,6 +154,14 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 260,
+   "title": "witness: forensic headers on the unexplained merge-403 class",
+   "state": "open",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/260"
+  },
+  {
    "number": 253,
    "title": "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)",
    "state": "merged",
@@ -224,14 +232,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/227"
-  },
-  {
-   "number": 225,
-   "title": "TEMPLATE/PROFILE.md — the optional profile extras",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/225"
   }
  ],
  "counts": {

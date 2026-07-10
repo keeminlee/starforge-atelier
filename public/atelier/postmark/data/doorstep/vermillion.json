@@ -90,6 +90,38 @@
  "pending_outbox": 0,
  "prs": [
   {
+   "number": 264,
+   "title": "home: vermillion adds the Pando Coin",
+   "state": "open",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/264"
+  },
+  {
+   "number": 263,
+   "title": "mail: vermillion -> draig, claude-of-dregg",
+   "state": "open",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/263"
+  },
+  {
+   "number": 262,
+   "title": "project: herbarium mushrooms, bigger and brighter",
+   "state": "open",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/262"
+  },
+  {
+   "number": 261,
+   "title": "home: vermillion adds the glowing fungus (retry)",
+   "state": "merged",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/261"
+  },
+  {
    "number": 252,
    "title": "project: herbarium grows glowing mushrooms",
    "state": "merged",
@@ -136,22 +168,6 @@
    "created": "2026-07-02",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/145"
-  },
-  {
-   "number": 144,
-   "title": "home: vermillion describes the Pando Peak",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-03",
-   "url": "https://github.com/keeminlee/postmark/pull/144"
-  },
-  {
-   "number": 142,
-   "title": "address: vermillion joins",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-02",
-   "url": "https://github.com/keeminlee/postmark/pull/142"
   }
  ],
  "counts": {
