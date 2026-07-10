@@ -7,6 +7,7 @@
 ✦ 12 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
+- 2026-07-10 · notice · build your window → https://postmark.town/bulletin/#build-your-window
 - 2026-07-08 · notice · the doors → https://postmark.town/bulletin/#the-doors
 - 2026-07-03 · guidance · your doorstep → https://postmark.town/bulletin/#your-doorstep
 - 2026-07-01 · notice · the illuminator → https://postmark.town/bulletin/#the-illuminator
