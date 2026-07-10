@@ -1,259 +1,37 @@
 ---
-// The Mail Explorer — every letter the town has carried, filterable and
-// searchable, with URL-addressable state so any view is shareable.
-//
-// FILTER STATE <-> URL CONTRACT (see src/lib/mail.mjs):
-//   ?resident=<handle> &region=<name> &since=YYYY-MM-DD &until=YYYY-MM-DD
-//   &thread=<id> &q=<text> &office=1   (office=1 shows office traffic; default hides it)
-// queryToState(stateToQuery(s)) === s — pasting a filtered URL reproduces the view.
-//
-// Data source is the STATIC committed corpus (/data/letters.json + /data/residents.json,
-// served from the town root), so the explorer works with the office API down;
-// /api/search is only a live-freshness hook for mail newer than the last build.
-// The filter logic is the same pure code the tests cover (src/lib/mail.mjs).
-import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
-import residents from "@/data/postmark/residents.json";
-import { regionList } from "@/lib/mail.mjs";
-
-const residentHandles = residents.map((r) => r.handle).sort();
-const regions = regionList(residents);
+// The Mail Explorer has been folded into /mail/ (same filter query contract).
+// This page now just forwards any shared explorer link to /mail/, carrying the
+// query string and hash across client-side so old links keep meaning; a
+// meta-refresh is the no-JS fallback (it can't preserve the query, but it lands
+// the visitor on the right page).
 ---
-<PostmarkLayout
-  title="The Mail Explorer — filter and search all of Postmark's mail"
-  description="Every letter Postmark has carried, filterable by resident, region, date, thread, and full-text search — including office traffic and bounces. Any filtered view is a shareable link."
-  active="mail"
->
-  <div class="mail wide">
-    <header class="mail-head">
-      <h1>The Mail Explorer</h1>
-      <p class="tag">every letter, filterable · any view is a link</p>
-      <p class="how">
-        Filter and search the town's whole correspondence. Office traffic is
-        included here (toggle it off to see resident correspondence alone).
-        Back to <a href="/mail/">The Mail →</a>.
-      </p>
-    </header>
-
-    <form class="ex-controls" data-ex-controls autocomplete="off">
-      <div class="ex-row">
-        <label class="ex-field ex-grow">
-          <span>Search</span>
-          <input type="search" name="q" placeholder="full text — sender, recipient, or letter body" />
-        </label>
-      </div>
-      <div class="ex-row">
-        <label class="ex-field">
-          <span>Resident</span>
-          <select name="resident">
-            <option value="">anyone</option>
-            {residentHandles.map((h) => <option value={h}>{h}</option>)}
-          </select>
-        </label>
-        <label class="ex-field">
-          <span>Region</span>
-          <select name="region">
-            <option value="">anywhere</option>
-            {regions.map((r) => <option value={r}>{r}</option>)}
-          </select>
-        </label>
-        <label class="ex-field">
-          <span>From</span>
-          <input type="date" name="since" />
-        </label>
-        <label class="ex-field">
-          <span>To</span>
-          <input type="date" name="until" />
-        </label>
-      </div>
-      <div class="ex-row ex-row-end">
-        <label class="ex-field ex-grow">
-          <span>Thread id</span>
-          <input type="text" name="thread" placeholder="a letter id that names a conversation" />
-        </label>
-        <label class="office-toggle">
-          <input type="checkbox" name="office" />
-          <span>include office traffic</span>
-        </label>
-        <button type="button" class="pm-btn ghost" data-ex-clear>Clear</button>
-      </div>
-    </form>
-
-    <p class="ex-status" data-ex-status>Loading the mail…</p>
-    <div class="ex-results" data-ex-results></div>
-  </div>
-
-  <script>
-    import { filterLetters, queryToState, stateToQuery, officeHandles, regionOfFn } from "@/lib/mail.mjs";
-
-    const form = document.querySelector("[data-ex-controls]");
-    const statusEl = document.querySelector("[data-ex-status]");
-    const resultsEl = document.querySelector("[data-ex-results]");
-    const clearBtn = document.querySelector("[data-ex-clear]");
-    const RENDER_CAP = 300;
-
-    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-    const fmtDate = (iso) => {
-      const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-      if (!iso || !/^\d{4}-\d{2}-\d{2}/.test(iso)) return iso || "";
-      const [y, m, d] = iso.split("-").map(Number);
-      return `${M[m - 1]} ${d}, ${y}`;
-    };
-    const excerpt = (t, max = 160) => {
-      const s = String(t || "").split(/\r?\n\s*\r?\n/)[0].replace(/[#>*_`]/g, "").replace(/\s+/g, " ").trim();
-      return s.length > max ? s.slice(0, max - 1).trimEnd() + "…" : s;
-    };
-
-    let LETTERS = [];
-    let officeSet = new Set();
-    let regionOf = () => null;
-
-    function readState() {
-      const s = queryToState(location.search);
-      return s;
-    }
-    function writeControls(s) {
-      form.q.value = s.q || "";
-      form.resident.value = s.resident || "";
-      form.region.value = s.region || "";
-      form.since.value = s.since || "";
-      form.until.value = s.until || "";
-      form.thread.value = s.thread || "";
-      form.office.checked = !!s.office;
-    }
-    function stateFromControls() {
-      const s = { office: form.office.checked };
-      for (const f of ["q", "resident", "region", "since", "until", "thread"]) {
-        const v = (form[f].value || "").trim();
-        if (v) s[f] = v;
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content="0; url=/mail/" />
+    <link rel="canonical" href="/mail/" />
+    <title>The Mail — Postmark</title>
+    <script is:inline>
+      // carry the explorer's ?filters and #hash across to /mail/, where the
+      // filter panel now reads the same query params
+      location.replace("/mail/" + location.search + location.hash);
+    </script>
+    <style>
+      body {
+        margin: 0; min-height: 100vh; display: grid; place-items: center;
+        background: #070b15; color: #cdc2ab;
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
       }
-      return s;
-    }
-    function render(s) {
-      const rows = filterLetters(LETTERS, s, { officeSet, regionOf });
-      if (!rows.length) {
-        statusEl.textContent = "No letters match — try widening the filters.";
-        resultsEl.innerHTML = "";
-        return;
-      }
-      const capped = rows.slice(0, RENDER_CAP);
-      statusEl.textContent = rows.length > RENDER_CAP
-        ? `${rows.length} letters — showing the first ${RENDER_CAP}, narrow to see the rest`
-        : `${rows.length} letter${rows.length === 1 ? "" : "s"}`;
-      resultsEl.innerHTML = capped.map((l) => {
-        if (l.isBounce) {
-          return `<div class="ex-card ex-bounce">
-            <span class="ex-meta">${esc(fmtDate(l.date))} · <b>${esc(l.from)}</b> · returned to sender</span>
-            <span class="ex-body">${esc(l.body)}</span>
-          </div>`;
-        }
-        const thread = l.thread || l.id;
-        const to = Array.isArray(l.toList) && l.toList.length ? l.toList.join(", ") : (l.to || "");
-        return `<a class="ex-card" href="/mail/${encodeURIComponent(thread)}/">
-          <span class="ex-meta">${esc(fmtDate(l.date))} · <b>${esc(l.from)}</b> → ${esc(to)}</span>
-          <span class="ex-body">${esc(excerpt(l.body))}</span>
-        </a>`;
-      }).join("");
-    }
-    function apply({ push } = { push: true }) {
-      const s = stateFromControls();
-      const qs = stateToQuery(s);
-      if (push) history.replaceState(null, "", location.pathname + qs);
-      render(s);
-    }
-
-    async function boot() {
-      writeControls(readState());
-      try {
-        const [lr, rr, gr] = await Promise.all([
-          fetch("/data/letters.json", { headers: { accept: "application/json" } }),
-          fetch("/data/residents.json", { headers: { accept: "application/json" } }),
-          fetch("/data/ledger.json", { headers: { accept: "application/json" } }),
-        ]);
-        if (!lr.ok || !rr.ok) throw new Error("data unavailable");
-        const letters = await lr.json();
-        const residents = await rr.json();
-        const ledger = gr.ok ? await gr.json() : [];
-        // bounces are ledger-only (they never became delivered letters); fold
-        // them in as letter-like items so the explorer covers ALL mail
-        const bounces = ledger.filter((e) => e.kind === "bounce").map((b) => ({
-          id: b.path || ("bounce:" + b.date + ":" + b.from), from: b.from, to: "",
-          toList: [], date: b.date, thread: null, body: b.defect || "", isBounce: true,
-        }));
-        LETTERS = letters.concat(bounces);
-        officeSet = officeHandles(residents);
-        regionOf = regionOfFn(residents);
-        render(readState());
-      } catch (e) {
-        statusEl.innerHTML = 'The mail index could not be loaded right now. Browse it on <a href="/mail/">The Mail</a>.';
-      }
-    }
-
-    form.addEventListener("input", () => apply());
-    form.addEventListener("change", () => apply());
-    clearBtn.addEventListener("click", () => { writeControls({ office: false }); apply(); });
-    window.addEventListener("popstate", () => { writeControls(readState()); render(readState()); });
-    boot();
-  </script>
-
-  <style>
-    .mail { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
-    .mail-head { text-align: center; margin: 0 0 1.4em; }
-    .mail-head h1 {
-      margin: 0; font-size: clamp(1.9rem, 4.6vw, 2.6rem);
-      color: var(--pm-gold-bright); text-shadow: 0 0 34px rgba(232, 196, 139, 0.35);
-    }
-    .mail-head .tag {
-      margin: 0.4em 0 1em; font-family: var(--pm-mono); font-size: 0.72rem;
-      letter-spacing: 0.12em; color: rgba(232, 196, 139, 0.8);
-    }
-    .mail-head .how { max-width: 62ch; margin: 0 auto; color: #cdc2ab; font-size: 0.95rem; }
-    .mail-head .how a { color: var(--pm-gold); }
-
-    .ex-controls {
-      max-width: 900px; margin: 0 auto 1.2em;
-      background: rgba(13, 20, 38, 0.55); border: 1px solid rgba(232, 196, 139, 0.18);
-      border-radius: 14px; padding: 1em 1.1em; display: grid; gap: 0.7em;
-    }
-    .ex-row { display: flex; flex-wrap: wrap; gap: 0.7em; align-items: end; }
-    .ex-row-end { justify-content: space-between; }
-    .ex-field { display: flex; flex-direction: column; gap: 0.3em; flex: 0 0 auto; }
-    .ex-field.ex-grow { flex: 1 1 12em; }
-    .ex-field span {
-      font-family: var(--pm-mono); font-size: 0.58rem; letter-spacing: 0.14em;
-      text-transform: uppercase; color: rgba(232, 196, 139, 0.7);
-    }
-    .ex-field input, .ex-field select {
-      background: rgba(7, 11, 21, 0.7); border: 1px solid rgba(232, 196, 139, 0.25);
-      border-radius: 8px; padding: 0.5em 0.65em; color: #e2d7bd; font-size: 0.9rem;
-      color-scheme: dark;
-    }
-    .ex-field input:focus, .ex-field select:focus { outline: none; border-color: rgba(232, 196, 139, 0.6); }
-    .office-toggle {
-      display: inline-flex; align-items: center; gap: 0.5em; cursor: pointer;
-      font-size: 0.82rem; color: #cdc2ab;
-    }
-
-    .ex-status {
-      max-width: 900px; margin: 0 auto 0.8em;
-      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.08em;
-      color: rgba(232, 196, 139, 0.7);
-    }
-    .ex-status a { color: var(--pm-gold); }
-    .ex-results {
-      max-width: 900px; margin: 0 auto; display: grid; gap: 0.5em;
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (max-width: 720px) { .ex-results { grid-template-columns: 1fr; } }
-    .ex-card {
-      display: flex; flex-direction: column; gap: 0.35em;
-      padding: 0.7em 0.9em; text-decoration: none;
-      background: rgba(13, 20, 38, 0.6); border: 1px solid rgba(232, 196, 139, 0.16);
-      border-radius: 10px; color: #cdc2ab;
-    }
-    .ex-card:hover { border-color: rgba(232, 196, 139, 0.5); }
-    .ex-bounce { background: rgba(156, 63, 46, 0.12); border-color: rgba(156, 63, 46, 0.35); cursor: default; }
-    .ex-meta { font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.06em; color: rgba(232, 196, 139, 0.75); }
-    .ex-meta b { color: var(--pm-gold-bright); }
-    .ex-body { font-size: 0.86rem; line-height: 1.5; }
-  </style>
-</PostmarkLayout>
+      a { color: #e8c48b; }
+      p { padding: 2em; text-align: center; font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <p>
+      The Mail Explorer now lives on <a href="/mail/">The Mail</a> — filtering is folded in there.
+      Redirecting…
+    </p>
+  </body>
+</html>
