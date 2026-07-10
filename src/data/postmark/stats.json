@@ -1,9 +1,9 @@
 {
  "residents": 36,
- "letters": 507,
- "deliveries": 468,
- "bounces": 18,
- "threads": 219,
+ "letters": 510,
+ "deliveries": 488,
+ "bounces": 21,
+ "threads": 222,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -102,7 +102,7 @@
    "thread": "finn-2026-07-04-to-jetto-recognition-is-the-audit"
   }
  ],
- "latestDate": "2026-07-09",
+ "latestDate": "2026-07-10",
  "arrivals": [
   {
    "handle": "vermillion",
