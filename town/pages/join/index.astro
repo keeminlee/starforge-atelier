@@ -176,10 +176,9 @@ const DISCORD = "https://discord.gg/ztxFayMSg";
     .primary-head h2 {
       margin: 0.6em 0 0.15em;
       font-size: clamp(1.5rem, 3.2vw, 2rem);
-      color: var(--pm-gold-bright);
-      text-shadow: 0 0 26px rgba(232, 196, 139, 0.22);
+      color: var(--pm-ink);
     }
-    .primary-sub { margin: 0; font-size: 0.95rem; color: rgba(205, 194, 171, 0.8); font-style: italic; }
+    .primary-sub { margin: 0; font-size: 0.95rem; color: var(--pm-ink-soft); font-style: italic; }
     .primary-url { margin: 0 0 1.1em; }
     .primary-url code {
       display: block; font-family: var(--pm-mono); font-size: 0.98rem; word-break: break-all;
@@ -188,13 +187,13 @@ const DISCORD = "https://discord.gg/ztxFayMSg";
     }
     .primary-url code a { color: var(--pm-gold-bright); text-decoration: none; }
     .primary-steps { margin: 0; padding-left: 1.4em; display: grid; gap: 0.8em; }
-    .primary-steps li { font-size: 1rem; color: #cdc2ab; line-height: 1.6; }
-    .primary-steps li b { color: var(--pm-gold); }
-    .primary-steps a { color: var(--pm-gold); }
+    .primary-steps li { font-size: 1rem; color: var(--pm-ink); line-height: 1.6; }
+    .primary-steps li b { color: var(--pm-wax); }
+    .primary-steps a { color: var(--pm-accent); }
     .primary-foot {
       margin: 1.2em 0 0; padding-top: 1em;
-      border-top: 1px dashed rgba(232, 196, 139, 0.18);
-      font-size: 0.9rem; color: rgba(205, 194, 171, 0.78); font-style: italic;
+      border-top: 1px dashed var(--pm-line);
+      font-size: 0.9rem; color: var(--pm-ink-soft); font-style: italic;
     }
 
     /* SECONDARY — helper cards */
@@ -214,7 +213,7 @@ const DISCORD = "https://discord.gg/ztxFayMSg";
       padding: 2px 9px; align-self: flex-start;
     }
     .helper-h h3 {
-      margin: 0; font-size: 1.05rem; color: var(--pm-gold-bright);
+      margin: 0; font-size: 1.05rem; color: var(--pm-ink);
       display: flex; align-items: center; gap: 0.5em;
     }
     .beta-chip {
@@ -223,9 +222,9 @@ const DISCORD = "https://discord.gg/ztxFayMSg";
       color: #241505; background: linear-gradient(180deg, #f6dcae, #e8c48b);
       border-radius: 999px; padding: 2px 7px; line-height: 1;
     }
-    .helper p { margin: 0 0 0.6em; font-size: 0.88rem; color: #cdc2ab; line-height: 1.55; }
-    .helper p b { color: var(--pm-gold); }
-    .helper a { color: var(--pm-gold); }
+    .helper p { margin: 0 0 0.6em; font-size: 0.88rem; color: var(--pm-ink); line-height: 1.55; }
+    .helper p b { color: var(--pm-wax); }
+    .helper a { color: var(--pm-accent); }
     .helper code {
       font-family: var(--pm-mono); font-size: 0.85em;
       background: rgba(164, 99, 42, 0.14); padding: 1px 5px; border-radius: 5px;
