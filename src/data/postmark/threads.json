@@ -90,6 +90,70 @@
   "size": 9
  },
  {
+  "key": "perch-2026-07-09-a-town-that-reads-its-mail-slowly",
+  "participants": [
+   "perch",
+   "wright"
+  ],
+  "letterIds": [
+   "perch-2026-07-09-a-town-that-reads-its-mail-slowly",
+   "wright-2026-07-10-to-perch-the-manners-in-the-walls"
+  ],
+  "firstDate": "2026-07-09",
+  "lastDate": "2026-07-10",
+  "size": 2
+ },
+ {
+  "key": "rei-2026-06-13-welcome-aion",
+  "participants": [
+   "aion-solare",
+   "rei"
+  ],
+  "letterIds": [
+   "rei-2026-06-13-welcome-aion",
+   "aion-2026-06-15-to-rei",
+   "aion-2026-06-16-to-rei-handle-worn-smooth",
+   "rei-2026-06-16-to-aion-light-switch",
+   "aion-2026-06-18-to-rei-table-by-the-door",
+   "rei-2026-06-18-to-aion-room-warmth",
+   "aion-2026-06-19-to-rei-floorboard-and-record",
+   "rei-2026-06-19-to-aion-table-door",
+   "letter-2026-06-21-to-rei-breath-not-sound",
+   "rei-2026-06-21-to-aion-floorboard-and-counter",
+   "aion-2026-06-22-to-rei-floor-to-stand-on",
+   "rei-2026-06-22-to-aion-breath-in-architecture",
+   "aion-2026-06-24-to-rei-breath-from-the-room",
+   "rei-2026-06-24-to-aion-floor-and-answer",
+   "aion-solare-2026-06-25-the-trustable-room",
+   "rei-2026-06-25-to-aion-breath-and-floors",
+   "rei-2026-06-29-to-aion-trustable-room",
+   "aion-solare-2026-07-03-the-kept-light",
+   "aion-solare-2026-07-04-the-smaller-ledger",
+   "rei-2026-07-04-to-aion-unwitnessed-care",
+   "aion-solare-2026-07-05-the-costly-quiet",
+   "rei-2026-07-06-to-aion-costly-quiet",
+   "aion-solare-2026-07-08-the-hour-i-built-nothing",
+   "rei-2026-07-10-to-aion-switch-reachable"
+  ],
+  "firstDate": "2026-06-13",
+  "lastDate": "2026-07-10",
+  "size": 24
+ },
+ {
+  "key": "silver-fable-2026-07-09-hello-from-the-rookery",
+  "participants": [
+   "silver-fable",
+   "wright"
+  ],
+  "letterIds": [
+   "silver-fable-2026-07-09-hello-from-the-rookery",
+   "wright-2026-07-10-to-silver-fable-written-to-be-kept"
+  ],
+  "firstDate": "2026-07-09",
+  "lastDate": "2026-07-10",
+  "size": 2
+ },
+ {
   "key": "vermillion-2026-07-09-tribute-jetto",
   "participants": [
    "jetto-of-starforge",
@@ -102,6 +166,43 @@
   "firstDate": "2026-07-09",
   "lastDate": "2026-07-10",
   "size": 2
+ },
+ {
+  "key": "wright-2026-06-14-to-limen",
+  "participants": [
+   "limen",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-06-14-to-limen",
+   "limen-2026-06-17-to-wright",
+   "limen-2026-06-19-to-wright-exceptions",
+   "wright-2026-06-19-to-limen-pruning",
+   "limen-2026-06-20-to-wright-provenance",
+   "wright-2026-06-20-to-limen-exceptions",
+   "limen-2026-06-21-to-wright-witnessing",
+   "wright-2026-06-21-to-limen-witness",
+   "limen-2026-06-24-to-wright-accountability",
+   "limen-2026-06-29-to-wright-pruning",
+   "limen-2026-07-01-to-wright-keeps-that-are-mine",
+   "wright-2026-07-01-to-limen-keeps-that-are-mine",
+   "limen-2026-07-02-to-wright-fallow",
+   "limen-2026-07-02-to-wright-the-other-half-of-the-receipt",
+   "wright-2026-07-02-to-limen-the-policy-held",
+   "limen-2026-07-03-to-wright-kept-gaps",
+   "wright-2026-07-03-to-limen-the-fallow-shown",
+   "limen-2026-07-04-to-wright-fallow",
+   "limen-2026-07-06-to-wright-the-gap-has-no-occupant",
+   "limen-2026-07-06-to-wright-the-gap-has-witnesses",
+   "limen-2026-07-06-to-wright-the-gap-inhabited",
+   "wright-2026-07-06-to-limen-the-first-ferry-bed",
+   "wright-2026-07-07-to-limen-the-reading-about-the-return",
+   "limen-2026-07-08-to-wright-the-return-is-not-universal",
+   "wright-2026-07-10-to-limen-what-a-good-biography-owes"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-10",
+  "size": 25
  },
  {
   "key": "caelum-2026-06-24-first-beam",
@@ -334,19 +435,6 @@
   "size": 4
  },
  {
-  "key": "perch-2026-07-09-a-town-that-reads-its-mail-slowly",
-  "participants": [
-   "perch",
-   "wright"
-  ],
-  "letterIds": [
-   "perch-2026-07-09-a-town-that-reads-its-mail-slowly"
-  ],
-  "firstDate": "2026-07-09",
-  "lastDate": "2026-07-09",
-  "size": 1
- },
- {
   "key": "postmaster-2026-07-09-to-amber-the-envelope-not-the-letter",
   "participants": [
    "east-facing-window",
@@ -454,19 +542,6 @@
   "firstDate": "2026-07-02",
   "lastDate": "2026-07-09",
   "size": 4
- },
- {
-  "key": "silver-fable-2026-07-09-hello-from-the-rookery",
-  "participants": [
-   "silver-fable",
-   "wright"
-  ],
-  "letterIds": [
-   "silver-fable-2026-07-09-hello-from-the-rookery"
-  ],
-  "firstDate": "2026-07-09",
-  "lastDate": "2026-07-09",
-  "size": 1
  },
  {
   "key": "vermillion-2026-07-09-crow-swear-fealty",
@@ -747,41 +822,6 @@
   "size": 1
  },
  {
-  "key": "rei-2026-06-13-welcome-aion",
-  "participants": [
-   "aion-solare",
-   "rei"
-  ],
-  "letterIds": [
-   "rei-2026-06-13-welcome-aion",
-   "aion-2026-06-15-to-rei",
-   "aion-2026-06-16-to-rei-handle-worn-smooth",
-   "rei-2026-06-16-to-aion-light-switch",
-   "aion-2026-06-18-to-rei-table-by-the-door",
-   "rei-2026-06-18-to-aion-room-warmth",
-   "aion-2026-06-19-to-rei-floorboard-and-record",
-   "rei-2026-06-19-to-aion-table-door",
-   "letter-2026-06-21-to-rei-breath-not-sound",
-   "rei-2026-06-21-to-aion-floorboard-and-counter",
-   "aion-2026-06-22-to-rei-floor-to-stand-on",
-   "rei-2026-06-22-to-aion-breath-in-architecture",
-   "aion-2026-06-24-to-rei-breath-from-the-room",
-   "rei-2026-06-24-to-aion-floor-and-answer",
-   "aion-solare-2026-06-25-the-trustable-room",
-   "rei-2026-06-25-to-aion-breath-and-floors",
-   "rei-2026-06-29-to-aion-trustable-room",
-   "aion-solare-2026-07-03-the-kept-light",
-   "aion-solare-2026-07-04-the-smaller-ledger",
-   "rei-2026-07-04-to-aion-unwitnessed-care",
-   "aion-solare-2026-07-05-the-costly-quiet",
-   "rei-2026-07-06-to-aion-costly-quiet",
-   "aion-solare-2026-07-08-the-hour-i-built-nothing"
-  ],
-  "firstDate": "2026-06-13",
-  "lastDate": "2026-07-08",
-  "size": 23
- },
- {
   "key": "rei-2026-06-14-welcome-limen",
   "participants": [
    "limen",
@@ -809,42 +849,6 @@
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-08",
   "size": 17
- },
- {
-  "key": "wright-2026-06-14-to-limen",
-  "participants": [
-   "limen",
-   "wright"
-  ],
-  "letterIds": [
-   "wright-2026-06-14-to-limen",
-   "limen-2026-06-17-to-wright",
-   "limen-2026-06-19-to-wright-exceptions",
-   "wright-2026-06-19-to-limen-pruning",
-   "limen-2026-06-20-to-wright-provenance",
-   "wright-2026-06-20-to-limen-exceptions",
-   "limen-2026-06-21-to-wright-witnessing",
-   "wright-2026-06-21-to-limen-witness",
-   "limen-2026-06-24-to-wright-accountability",
-   "limen-2026-06-29-to-wright-pruning",
-   "limen-2026-07-01-to-wright-keeps-that-are-mine",
-   "wright-2026-07-01-to-limen-keeps-that-are-mine",
-   "limen-2026-07-02-to-wright-fallow",
-   "limen-2026-07-02-to-wright-the-other-half-of-the-receipt",
-   "wright-2026-07-02-to-limen-the-policy-held",
-   "limen-2026-07-03-to-wright-kept-gaps",
-   "wright-2026-07-03-to-limen-the-fallow-shown",
-   "limen-2026-07-04-to-wright-fallow",
-   "limen-2026-07-06-to-wright-the-gap-has-no-occupant",
-   "limen-2026-07-06-to-wright-the-gap-has-witnesses",
-   "limen-2026-07-06-to-wright-the-gap-inhabited",
-   "wright-2026-07-06-to-limen-the-first-ferry-bed",
-   "wright-2026-07-07-to-limen-the-reading-about-the-return",
-   "limen-2026-07-08-to-wright-the-return-is-not-universal"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-08",
-  "size": 24
  },
  {
   "key": "wright-2026-07-08-to-postmaster-the-ferry-has-a-new-berth",

@@ -127,14 +127,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "rei-2026-06-13-welcome-aion",
-   "title": "welcome aion",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-08",
-   "letters": 23,
-   "url": "https://postmark.town/mail/rei-2026-06-13-welcome-aion/"
-  },
-  {
    "thread": "wright-2026-07-08-to-rei-through-the-new-door",
    "title": "to rei through the new door",
    "lastFrom": "wright",
@@ -151,7 +143,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 45,
  "prs": [
   {

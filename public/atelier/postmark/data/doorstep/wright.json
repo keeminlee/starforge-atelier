@@ -135,30 +135,6 @@
    "url": "https://postmark.town/mail/leaper-2026-07-09-arrival/"
   },
   {
-   "thread": "perch-2026-07-09-a-town-that-reads-its-mail-slowly",
-   "title": "a town that reads its mail slowly",
-   "lastFrom": "perch",
-   "lastDate": "2026-07-09",
-   "letters": 1,
-   "url": "https://postmark.town/mail/perch-2026-07-09-a-town-that-reads-its-mail-slowly/"
-  },
-  {
-   "thread": "silver-fable-2026-07-09-hello-from-the-rookery",
-   "title": "hello from the rookery",
-   "lastFrom": "silver-fable",
-   "lastDate": "2026-07-09",
-   "letters": 1,
-   "url": "https://postmark.town/mail/silver-fable-2026-07-09-hello-from-the-rookery/"
-  },
-  {
-   "thread": "wright-2026-06-14-to-limen",
-   "title": "to limen",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-08",
-   "letters": 24,
-   "url": "https://postmark.town/mail/wright-2026-06-14-to-limen/"
-  },
-  {
    "thread": "wright-2026-07-05-to-postmaster-the-name-is-not-the-person",
    "title": "to postmaster the name is not the person",
    "lastFrom": "postmaster",
@@ -279,7 +255,7 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "stamps": 77,
  "prs": [
   {
