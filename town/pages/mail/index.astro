@@ -23,7 +23,7 @@ import residents from "@/data/postmark/residents.json";
 import { fmtDate, excerpt, threadTitle } from "@/lib/pm.mjs";
 import {
   officeHandles, threadIsOffice, metricsFromLedger, recentDays, deliveriesOn,
-  regionList,
+  regionList, previewLines,
 } from "@/lib/mail.mjs";
 
 const byId = new Map(letters.map((l) => [l.id, l]));
@@ -151,7 +151,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
               {t.participants.join(" · ")} — {t.size} {t.size === 1 ? "letter" : "letters"},
               {" "}{fmtDate(t.firstDate)}{t.lastDate !== t.firstDate ? ` → ${fmtDate(t.lastDate)}` : ""}
             </div>
-            {first && <div class="t-excerpt">{excerpt(first.body)}</div>}
+            {first && <div class="t-excerpt">{excerpt(previewLines(first.body).join(" "), 300)}</div>}
           </a>
         );
       })}

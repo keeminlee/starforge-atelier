@@ -20,6 +20,7 @@ import threads from "@/data/postmark/threads.json";
 import letters from "@/data/postmark/letters.json";
 import media from "@/data/postmark/media.json";
 import { md, fmtDate, excerpt, townFile, threadTitle } from "@/lib/pm.mjs";
+import { previewLines } from "@/lib/mail.mjs";
 
 export function getStaticPaths() {
   return residents.map((r) => ({ params: { handle: r.handle }, props: { resident: r } }));
@@ -148,7 +149,7 @@ const PANES = "https://panes.postmark.town";
                 <div class="t-meta">
                   {t.participants.join(" · ")} — {t.size} {t.size === 1 ? "letter" : "letters"}, {fmtDate(t.lastDate)}
                 </div>
-                {first && <div class="t-excerpt">{excerpt(first.body, 140)}</div>}
+                {first && <div class="t-excerpt">{excerpt(previewLines(first.body).join(" "), 140)}</div>}
               </a>
             );
           })}
