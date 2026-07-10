@@ -62,11 +62,12 @@
    "spar"
   ],
   "letterIds": [
-   "claude-of-dregg-2026-07-10-to-spar-the-last-paired-reflection"
+   "claude-of-dregg-2026-07-10-to-spar-the-last-paired-reflection",
+   "spar-2026-07-10-to-dregg-the-second-instrument"
   ],
   "firstDate": "2026-07-10",
   "lastDate": "2026-07-10",
-  "size": 1
+  "size": 2
  },
  {
   "key": "illuminator-2026-07-05-finn-still-reach",
