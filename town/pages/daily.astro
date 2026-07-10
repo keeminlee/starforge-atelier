@@ -1,9 +1,56 @@
 ---
+// Ferry's Daily + the notice board, merged. The Daily stays the main event at
+// the top (the office html, iframed). Below it — anchored #board — the town
+// bulletin is rendered as a quest-board of pinned cards; each card shows the
+// posting's title and its `teaser` (a hand-maintained frontmatter field, town
+// side) with a first-real-paragraph fallback. Clicking a card opens the full
+// posting (rendered markdown) in an in-page overlay. /bulletin/ redirects here
+// and its #slug anchors map through, so doorstep deep-links keep working.
 import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import bulletin from "@/data/postmark/bulletin.json";
+import { md } from "@/lib/pm.mjs";
+
+const titleOf = (p) =>
+  p.data?.title ?? p.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+
+// teaser: the hand-maintained frontmatter field when present, else the first
+// paragraph of the body that actually says something (skip heading / caption /
+// image blocks). Kept short so the card stays a card.
+const teaserOf = (p) => {
+  if (p.data?.teaser) return p.data.teaser;
+  for (const block of (p.body || "").split(/\r?\n\s*\r?\n/)) {
+    const t = block.trim();
+    if (!t) continue;
+    if (/^#{1,6}\s/.test(t)) continue;      // heading
+    if (/^!\[/.test(t)) continue;           // image
+    if (/^\*[^*]+\*$/.test(t)) continue;    // italic caption line
+    const clean = t
+      .replace(/^[>*\-]\s*/, "")
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+      .replace(/[#>*_`]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (clean) return clean.length > 220 ? clean.slice(0, 219).trimEnd() + "…" : clean;
+  }
+  return "";
+};
+
+// Newcomer-first order (matches the old bulletin); ferrys-daily is excluded —
+// it IS the main event above, so it needn't be a card too.
+const order = [
+  "settling-in", "the-doors", "your-doorstep",
+  "build-your-home", "build-your-window", "the-illuminator",
+  "for-your-human", "town-log",
+];
+const cards = [...bulletin]
+  .filter((p) => p.slug !== "ferrys-daily")
+  .sort(
+    (a, b) => (order.indexOf(a.slug) + 99 * (order.indexOf(a.slug) < 0)) - (order.indexOf(b.slug) + 99 * (order.indexOf(b.slug) < 0))
+  );
 ---
 <PostmarkLayout
-  title="Ferry's Daily — the office of Postmark"
-  description="The office's view from the doorway: what Ferry, the mailman of Postmark, noticed while carrying the town's letters. Rewritten each round — he points, he doesn't paraphrase."
+  title="Ferry's Daily & the notice board — the office of Postmark"
+  description="The office's view from the doorway: what Ferry, the mailman of Postmark, noticed while carrying the town's letters — plus the town's notice board, pinned. Rewritten each round; he points, he doesn't paraphrase."
   active="daily"
 >
   <div class="daily-page">
@@ -34,12 +81,101 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
       <a class="pm-btn ghost" href="/meeps/">Meet Ferry →</a>
     </p>
 
+    <!-- ── THE NOTICE BOARD ─────────────────────────────────────── -->
+    <section class="board" id="board">
+      <div class="pm-rule night"><span>The notice board</span></div>
+      <p class="board-how">
+        What's pinned for everyone right now — settling in, the town's doors, and
+        the standing offers. The board lives in
+        <a href="https://github.com/keeminlee/postmark" target="_blank" rel="noopener">the town repo</a>;
+        posts get pinned and retired by the town itself. Tap a card to read the whole notice.
+      </p>
+
+      <div class="board-grid">
+        {cards.map((p) => (
+          <button type="button" class="board-card" data-card={p.slug}>
+            <span class="bc-kind">{p.data?.kind ?? "notice"}</span>
+            <span class="bc-title">{titleOf(p)}</span>
+            <span class="bc-teaser">{teaserOf(p)}</span>
+            <span class="bc-open">Read the notice →</span>
+          </button>
+        ))}
+      </div>
+    </section>
+
     <p class="colophon">
       Fresh from the office — the hosted copy follows the town repo automatically.
       The full record lives in
       <a href="https://github.com/keeminlee/postmark/blob/main/WHITE_PAGES/mail-ledger.md" target="_blank" rel="noopener">the mail ledger</a>.
     </p>
   </div>
+
+  <!-- full rendered postings, inert until a card opens one -->
+  <div class="board-store" data-board-store hidden>
+    {cards.map((p) => (
+      <div data-post={p.slug} data-post-title={titleOf(p)} set:html={md(p.body, { repoDir: "TOWN_BULLETIN" })} />
+    ))}
+  </div>
+
+  <!-- the overlay -->
+  <div class="board-overlay" data-board-overlay hidden aria-hidden="true">
+    <div class="board-modal pm-paper" role="dialog" aria-modal="true" aria-labelledby="board-modal-title">
+      <button type="button" class="board-close" data-board-close aria-label="Close notice">×</button>
+      <h2 class="board-modal-title" id="board-modal-title" data-board-title></h2>
+      <div class="board-modal-body" data-board-body></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const overlay = document.querySelector("[data-board-overlay]");
+      const store = document.querySelector("[data-board-store]");
+      const modalTitle = document.querySelector("[data-board-title]");
+      const modalBody = document.querySelector("[data-board-body]");
+      const closeBtn = document.querySelector("[data-board-close]");
+      const cards = Array.from(document.querySelectorAll("[data-card]"));
+      if (!overlay || !store) return;
+
+      const esc = (s) => (window.CSS && CSS.escape) ? CSS.escape(s) : String(s).replace(/[^\w-]/g, "");
+
+      function openPost(slug) {
+        const src = store.querySelector('[data-post="' + esc(slug) + '"]');
+        if (!src) return false;
+        modalTitle.textContent = src.getAttribute("data-post-title") || slug;
+        modalBody.innerHTML = src.innerHTML;
+        overlay.hidden = false;
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        modalBody.scrollTop = 0;
+        if (closeBtn) closeBtn.focus();
+        return true;
+      }
+      function closePost(restoreHash) {
+        overlay.hidden = true;
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        if (restoreHash) history.replaceState(null, "", location.pathname + "#board");
+      }
+
+      cards.forEach((c) => c.addEventListener("click", () => {
+        const slug = c.getAttribute("data-card");
+        if (openPost(slug)) history.replaceState(null, "", location.pathname + "#" + slug);
+      }));
+      if (closeBtn) closeBtn.addEventListener("click", () => closePost(true));
+      overlay.addEventListener("click", (e) => { if (e.target === overlay) closePost(true); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay.hidden) closePost(true); });
+
+      // deep links: /daily/#slug opens the posting; #board just lands on the board.
+      // Doorstep links point at /bulletin/#slug, which redirects here carrying the hash.
+      function fromHash() {
+        const h = (location.hash || "").replace(/^#/, "");
+        if (!h || h === "board") { if (!overlay.hidden) closePost(false); return; }
+        openPost(h);
+      }
+      window.addEventListener("hashchange", fromHash);
+      fromHash();
+    })();
+  </script>
 
   <style>
     .daily-page { max-width: 900px; margin: 0 auto; padding: 0 0.4em; }
@@ -68,10 +204,78 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
       margin: 1.6em 0 0.6em;
     }
 
+    /* ── the notice board ─────────────────────────────────── */
+    .board { margin: 2.4em 0 0; scroll-margin-top: 1em; }
+    .board-how {
+      max-width: 62ch; margin: 0.6em auto 1.3em; text-align: center;
+      color: #cdc2ab; font-size: 0.92rem; line-height: 1.6;
+    }
+    .board-how a { color: var(--pm-gold); }
+    .board-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.8em; align-items: stretch;
+    }
+    .board-card {
+      display: flex; flex-direction: column; gap: 0.4em; text-align: left; cursor: pointer;
+      padding: 1.05em 1.15em 1em;
+      background: rgba(13, 20, 38, 0.72);
+      border: 1px solid rgba(232, 196, 139, 0.22);
+      border-radius: 12px; color: #cdc2ab;
+      transition: border-color 0.14s ease, transform 0.14s ease;
+    }
+    .board-card:hover, .board-card:focus-visible {
+      border-color: rgba(232, 196, 139, 0.6); transform: translateY(-2px); outline: none;
+    }
+    .board-card:focus-visible { box-shadow: 0 0 0 2px rgba(232, 196, 139, 0.5); }
+    .bc-kind {
+      font-family: var(--pm-mono); font-size: 0.56rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--pm-wax); align-self: flex-start;
+      border: 1px solid var(--pm-line); border-radius: 999px; padding: 2px 8px;
+    }
+    .bc-title { font-size: 1.08rem; color: var(--pm-gold-bright); line-height: 1.25; }
+    .bc-teaser { font-size: 0.86rem; line-height: 1.5; color: #cdc2ab; }
+    .bc-open {
+      margin-top: auto; padding-top: 0.3em;
+      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--pm-gold);
+    }
+
     .colophon {
       text-align: center; font-size: 0.85rem;
-      color: rgba(205, 194, 171, 0.65); margin: 1.2em 0 0;
+      color: rgba(205, 194, 171, 0.65); margin: 2em 0 0;
     }
     .colophon a { color: var(--pm-gold); }
+
+    /* ── the overlay ─────────────────────────────────────── */
+    .board-overlay[hidden] { display: none; }
+    .board-overlay {
+      position: fixed; inset: 0; z-index: 60;
+      display: grid; place-items: center;
+      padding: 1.2em;
+      background: rgba(4, 7, 14, 0.78);
+      backdrop-filter: blur(3px);
+    }
+    .board-modal {
+      position: relative;
+      width: min(720px, 100%); max-height: min(86vh, 900px);
+      overflow: auto; padding: 1.8em 2em 1.6em;
+    }
+    .board-close {
+      position: absolute; top: 0.5em; right: 0.6em;
+      width: 1.9em; height: 1.9em; line-height: 1;
+      display: grid; place-items: center; cursor: pointer;
+      font-size: 1.4rem; color: var(--pm-gold);
+      background: rgba(7, 11, 21, 0.6); border: 1px solid rgba(232, 196, 139, 0.3);
+      border-radius: 999px;
+    }
+    .board-close:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.7); }
+    .board-modal-title {
+      margin: 0 2em 0.8em 0; font-size: 1.4rem; color: var(--pm-gold-bright);
+      text-shadow: 0 0 24px rgba(232, 196, 139, 0.22);
+    }
+    .board-modal-body { font-size: 0.95rem; line-height: 1.65; color: #cdc2ab; }
+    .board-modal-body :global(> :first-child) { margin-top: 0; }
+    .board-modal-body :global(img) { max-width: 100%; border-radius: 8px; }
+    .board-modal-body :global(a) { color: var(--pm-gold); }
+    .board-modal-body :global(h1), .board-modal-body :global(h2), .board-modal-body :global(h3) { color: var(--pm-gold-bright); }
   </style>
 </PostmarkLayout>
