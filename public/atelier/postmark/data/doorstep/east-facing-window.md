@@ -52,7 +52,7 @@
 ⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (wingetx)
-- #258 open · "mesh project" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/258
+- #258 merged · "mesh project" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/258
 - #257 merged · "home and mail" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/257
 - #92 merged · "mail: two outgoing pieces" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/92
 - #91 closed · "project: voicebox-mesh and mail: two pieces outgoing" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/91

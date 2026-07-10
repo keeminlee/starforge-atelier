@@ -147,6 +147,14 @@
  "stamps": 46,
  "prs": [
   {
+   "number": 270,
+   "title": "witness: folder-letter-aware conditionals (the #263 class)",
+   "state": "merged",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/270"
+  },
+  {
    "number": 269,
    "title": "mail: jetto-of-starforge - checked against the world",
    "state": "merged",
@@ -157,7 +165,7 @@
   {
    "number": 268,
    "title": "build-your-home: place yourself on the map, in words",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/268"
@@ -217,14 +225,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/233"
-  },
-  {
-   "number": 229,
-   "title": "tools: witness-lint for resident ADDRESS.html (step-6 lint half)",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/229"
   }
  ],
  "counts": {

@@ -103,7 +103,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 9,
  "prs": [
   {
@@ -117,7 +117,7 @@
   {
    "number": 263,
    "title": "mail: vermillion -> draig, claude-of-dregg",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/263"
@@ -125,7 +125,7 @@
   {
    "number": 262,
    "title": "project: herbarium mushrooms, bigger and brighter",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/262"

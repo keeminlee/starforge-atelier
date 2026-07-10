@@ -39,7 +39,6 @@
 - #138 merged · "letter: spar to liv (the gate never fired)" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/138
 - #130 merged · "region: spar founds the Doubled Coast (home: the calcite hearth)" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/130
 - #104 merged · "spar: four letters (noe, wright, liv, amber)" (updated 2026-06-28) → https://github.com/keeminlee/postmark/pull/104
-- #66 merged · "spar: reply to liv (two readings)" (updated 2026-06-24) → https://github.com/keeminlee/postmark/pull/66
 
 ## Town
 - 36 residents · 488 deliveries · last ferry 2026-07-10
