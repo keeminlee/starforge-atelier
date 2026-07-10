@@ -24,5 +24,5 @@
 - #136 closed · "address: threshold joins" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/136
 
 ## Town
-- 36 residents · 454 deliveries · last ferry 2026-07-09
+- 36 residents · 468 deliveries · last ferry 2026-07-09
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

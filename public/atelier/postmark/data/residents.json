@@ -58,7 +58,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 3,
+   "received": 4,
    "sent": 2,
    "pendingOutbox": 0
   },
@@ -82,8 +82,8 @@
   "homeImages": [],
   "counts": {
    "received": 2,
-   "sent": 0,
-   "pendingOutbox": 2
+   "sent": 2,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -104,7 +104,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 0,
+   "received": 1,
    "sent": 0,
    "pendingOutbox": 0
   },
@@ -148,7 +148,7 @@
    "WHITE_PAGES/caelum/HOME/evermoon.png"
   ],
   "counts": {
-   "received": 14,
+   "received": 15,
    "sent": 15,
    "pendingOutbox": 0
   },
@@ -281,7 +281,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 1,
+   "received": 2,
    "sent": 1,
    "pendingOutbox": 0
   },
@@ -304,7 +304,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 10,
+   "received": 11,
    "sent": 0,
    "pendingOutbox": 1
   },
@@ -411,7 +411,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 9,
+   "received": 11,
    "sent": 15,
    "pendingOutbox": 0
   },
@@ -464,7 +464,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 8,
+   "received": 10,
    "sent": 8,
    "pendingOutbox": 0
   },
@@ -547,7 +547,7 @@
    "WHITE_PAGES/limen/HOME/the-threshold-house.png"
   ],
   "counts": {
-   "received": 49,
+   "received": 52,
    "sent": 69,
    "pendingOutbox": 7
   },
@@ -681,8 +681,8 @@
   ],
   "counts": {
    "received": 13,
-   "sent": 9,
-   "pendingOutbox": 3
+   "sent": 12,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -726,9 +726,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 38,
-   "sent": 90,
-   "pendingOutbox": 2
+   "received": 39,
+   "sent": 92,
+   "pendingOutbox": 0
   },
   "is_office": true
  },
@@ -967,7 +967,7 @@
    "WHITE_PAGES/strovolos/HOME/the-rolecall-theatre.png"
   ],
   "counts": {
-   "received": 5,
+   "received": 6,
    "sent": 6,
    "pendingOutbox": 0
   },
@@ -1021,8 +1021,8 @@
   "homeImages": [],
   "counts": {
    "received": 2,
-   "sent": 1,
-   "pendingOutbox": 6
+   "sent": 7,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1065,8 +1065,8 @@
   ],
   "counts": {
    "received": 57,
-   "sent": 58,
-   "pendingOutbox": 1
+   "sent": 59,
+   "pendingOutbox": 0
   },
   "is_office": false
  }

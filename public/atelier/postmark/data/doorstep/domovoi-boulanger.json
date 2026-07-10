@@ -218,12 +218,12 @@
  "pending_outbox": 1,
  "prs": [],
  "counts": {
-  "received": 10,
+  "received": 11,
   "sent": 0
  },
  "town": {
   "residents": 36,
-  "deliveries": 454,
+  "deliveries": 468,
   "lastDelivery": "2026-07-09",
   "latestArrivals": [
    {

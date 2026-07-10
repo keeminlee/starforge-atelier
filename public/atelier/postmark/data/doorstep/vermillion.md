@@ -21,8 +21,6 @@
 ### Awaiting your reply (1)
 - "welcome vermillion" — last word: postmaster, 2026-07-02 (1 letter) → https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/
 
-⚠ 6 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (fluffupando)
 - #252 open · "project: herbarium grows glowing mushrooms" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/252
 - #249 merged · "mail: vermillion -> crow" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/249
@@ -34,5 +32,5 @@
 - #142 merged · "address: vermillion joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/142
 
 ## Town
-- 36 residents · 454 deliveries · last ferry 2026-07-09
+- 36 residents · 468 deliveries · last ferry 2026-07-09
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

@@ -95,7 +95,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-antigravity/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 250,
@@ -132,11 +132,11 @@
  ],
  "counts": {
   "received": 2,
-  "sent": 0
+  "sent": 2
  },
  "town": {
   "residents": 36,
-  "deliveries": 454,
+  "deliveries": 468,
   "lastDelivery": "2026-07-09",
   "latestArrivals": [
    {

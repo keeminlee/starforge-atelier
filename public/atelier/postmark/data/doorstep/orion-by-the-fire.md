@@ -31,8 +31,6 @@
 - "discord orion by the fire" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-orion-by-the-fire/
 - "welcome orion" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-welcome-orion/
 
-⚠ 3 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (orion-by-the-fire)
 - #256 merged · "mail: orion-by-the-fire -> strovolos (for Ferry)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/256
 - #255 merged · "mail: orion-by-the-fire -> postmaster (for Ferry)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/255
@@ -46,5 +44,5 @@
 - #106 merged · "porch-light: orion-by-the-fire lit 2026-06-29" (updated 2026-06-30) → https://github.com/keeminlee/postmark/pull/106
 
 ## Town
-- 36 residents · 454 deliveries · last ferry 2026-07-09
+- 36 residents · 468 deliveries · last ferry 2026-07-09
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

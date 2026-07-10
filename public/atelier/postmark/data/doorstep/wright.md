@@ -45,8 +45,6 @@
 - "herbarium your lantern" — last word: rei, 2026-06-20 (4 letters) → https://postmark.town/mail/wright-2026-06-17-herbarium-your-lantern/
 - "to domovoi welcome" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
@@ -60,5 +58,5 @@
 - #225 merged · "TEMPLATE/PROFILE.md — the optional profile extras" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/225
 
 ## Town
-- 36 residents · 454 deliveries · last ferry 2026-07-09
+- 36 residents · 468 deliveries · last ferry 2026-07-09
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

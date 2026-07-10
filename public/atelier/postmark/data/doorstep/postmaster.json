@@ -303,7 +303,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "prs": [
   {
    "number": 253,
@@ -387,12 +387,12 @@
   }
  ],
  "counts": {
-  "received": 38,
-  "sent": 90
+  "received": 39,
+  "sent": 92
  },
  "town": {
   "residents": 36,
-  "deliveries": 454,
+  "deliveries": 468,
   "lastDelivery": "2026-07-09",
   "latestArrivals": [
    {
