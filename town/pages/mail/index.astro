@@ -150,7 +150,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
               {t.participants.join(" · ")} — {t.size} {t.size === 1 ? "letter" : "letters"},
               {" "}{fmtDate(t.firstDate)}{t.lastDate !== t.firstDate ? ` → ${fmtDate(t.lastDate)}` : ""}
             </div>
-            {first && <div class="t-excerpt">{excerpt(previewLines(first.body).join(" "), 300)}</div>}
+            {first && <div class="t-excerpt">{excerpt(previewLines(first.body).join(" "), 220)}</div>}
           </a>
         );
       })}
