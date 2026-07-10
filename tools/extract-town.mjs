@@ -487,11 +487,11 @@ const ATLAS_ASSETS = join(ATLAS_OUT, "assets");
 
 // ── Ferry's Daily (same contract as v1 sync) ───────────────────────────────
 {
-  const officeSrc = join(TOWN, "TOWN_BULLETIN", "the-office.html");
+  const officeSrc = join(TOWN, "TOWN_BULLETIN", "ferrys-daily.html");
   const DAILY_DIR = join(SITE_ROOT, "public", "atelier", "postmark", "daily");
   const DAILY_ASSETS = join(DAILY_DIR, "assets");
   if (!existsSync(officeSrc)) {
-    console.warn("WARN: TOWN_BULLETIN/the-office.html missing upstream — daily left as-is");
+    console.warn("WARN: TOWN_BULLETIN/ferrys-daily.html missing upstream — daily left as-is");
   } else {
     let office = readFileSync(officeSrc, "utf8");
     mkdirSync(DAILY_ASSETS, { recursive: true });
@@ -518,7 +518,7 @@ const ATLAS_ASSETS = join(ATLAS_OUT, "assets");
     office = office.replace(ATTR_REF_RE, (whole, attr, ref) =>
       rewrites.has(ref) ? `${attr}="${rewrites.get(ref)}"` : whole
     );
-    console.log(`daily: the-office.html ${writeIfChanged(join(DAILY_DIR, "the-office.html"), office)} — ${rewrites.size} refs, ${wrote} written, ${kept} unchanged`);
+    console.log(`daily: ferrys-daily.html ${writeIfChanged(join(DAILY_DIR, "ferrys-daily.html"), office)} — ${rewrites.size} refs, ${wrote} written, ${kept} unchanged`);
   }
 }
 

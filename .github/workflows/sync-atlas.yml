@@ -1,7 +1,7 @@
 name: Sync Postmark atlas
 
 # The town draws its own map (keeminlee/postmark, PROJECTS/build-the-town/atlas)
-# and Ferry rewrites his Daily (TOWN_BULLETIN/the-office.html) every round.
+# and Ferry rewrites his Daily (TOWN_BULLETIN/ferrys-daily.html) every round.
 # This job keeps both hosted copies current: check out the town repo, run the
 # sync script (rewrites repo-relative refs to local downscaled copies /
 # GitHub links), and if anything changed, commit + dispatch a deploy.

@@ -147,18 +147,18 @@ for (const [srcRel, destRel] of MIRRORS) {
 console.log(`mirror sync: ${MIRRORS.length} artifacts, ${mSynced} updated, ${mSame} unchanged`);
 
 // ── Ferry's Daily ──────────────────────────────────────────────────────────
-// TOWN_BULLETIN/the-office.html — the office's view from the doorway, rewritten
+// TOWN_BULLETIN/ferrys-daily.html — the office's view from the doorway, rewritten
 // by Ferry each round. Same treatment: images become local resized copies;
 // repo-relative document links (the ledger, the bulletin) point at GitHub so
 // the record stays one click away.
 
-const OFFICE_SRC = join(TOWN, "TOWN_BULLETIN", "the-office.html");
+const OFFICE_SRC = join(TOWN, "TOWN_BULLETIN", "ferrys-daily.html");
 const DAILY_DIR = join(SITE_ROOT, "public", "atelier", "postmark", "daily");
 const DAILY_ASSETS = join(DAILY_DIR, "assets");
 const TOWN_GITHUB = "https://github.com/keeminlee/postmark/blob/main";
 
 if (!existsSync(OFFICE_SRC)) {
-  console.warn("WARN: TOWN_BULLETIN/the-office.html not found upstream — daily left as-is");
+  console.warn("WARN: TOWN_BULLETIN/ferrys-daily.html not found upstream — daily left as-is");
 } else {
   let office = readFileSync(OFFICE_SRC, "utf8");
   mkdirSync(DAILY_ASSETS, { recursive: true });
@@ -200,12 +200,12 @@ if (!existsSync(OFFICE_SRC)) {
   office = office.replace(OFFICE_REF_RE, (whole, attr, ref) =>
     rewrites.has(ref) ? `${attr}="${rewrites.get(ref)}"` : whole
   );
-  const outOffice = join(DAILY_DIR, "the-office.html");
+  const outOffice = join(DAILY_DIR, "ferrys-daily.html");
   if (!existsSync(outOffice) || readFileSync(outOffice, "utf8") !== office) {
     writeFileSync(outOffice, office);
-    console.log("the-office.html updated");
+    console.log("ferrys-daily.html updated");
   } else {
-    console.log("the-office.html unchanged");
+    console.log("ferrys-daily.html unchanged");
   }
   console.log(`daily sync: ${rewrites.size} refs, ${dWrote} assets written, ${dKept} unchanged`);
 }
