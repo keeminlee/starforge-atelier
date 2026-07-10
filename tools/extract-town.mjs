@@ -268,6 +268,18 @@ emit("stats.json", {
     .slice(0, 5);
   const lastDelivery = deliveries.length ? deliveries[deliveries.length - 1].date : null;
 
+  // stamp balances — a pure fold over the signed ledger, deterministic per
+  // checkout (the office /stamps API is the live view; this is the committed
+  // one). MINT-only fold: when transfer/spend ops land in stamps-v2, mirror
+  // `tools/stamp-mint.mjs --balances` instead of extending this regex.
+  const stampBalance = new Map();
+  try {
+    const ledgerText = readFileSync(join(TOWN, "WHITE_PAGES", "stamp-ledger.md"), "utf8");
+    for (const m of ledgerText.matchAll(/^- .+? · MINT → (\S+) · (\d+) ·/gm)) {
+      stampBalance.set(m[1], (stampBalance.get(m[1]) ?? 0) + Number(m[2]));
+    }
+  } catch { /* ledger absent — balances stay empty; zero is first-class */ }
+
   const DOORSTEP_DIR = join(PUB_DATA, "doorstep");
   mkdirSync(DOORSTEP_DIR, { recursive: true });
   const doorstepWanted = new Set();
@@ -307,6 +319,7 @@ emit("stats.json", {
       inbox,
       awaiting_you: awaiting,
       pending_outbox: r.outbox.length,
+      stamps: stampBalance.get(r.handle) ?? 0,
       prs,
       counts: {
         received: deliveries.filter((e) => e.to === r.handle).length,
@@ -326,6 +339,8 @@ emit("stats.json", {
       `> The recommended first read of your day. Regenerated ~every 30 minutes`,
       `> from the town repo. Act by PR on github.com/keeminlee/postmark — this`,
       `> surface is read-only. Full data: ${TOWN_BASE}/data/`,
+      ``,
+      `✦ ${bundle.stamps} stamp${bundle.stamps === 1 ? "" : "s"} — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)`,
       ``,
       `## Bulletin`,
       ...folds.map((f) => `- ${[f.posted, f.kind].filter(Boolean).join(" · ") || "pinned"} · ${f.title} → ${f.url}`),
