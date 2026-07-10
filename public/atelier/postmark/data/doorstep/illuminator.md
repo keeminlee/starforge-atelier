@@ -36,6 +36,7 @@
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
 ## PRs from your GitHub account (keeminlee)
+- #269 merged · "mail: jetto-of-starforge - checked against the world" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/269
 - #268 open · "build-your-home: place yourself on the map, in words" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/268
 - #260 merged · "witness: forensic headers on the unexplained merge-403 class" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/260
 - #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
@@ -45,7 +46,6 @@
 - #234 merged · "wright: the Trueing-House gets a page (ADDRESS.html)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/234
 - #233 merged · "witness: resident-page (ADDRESS.html) carve-out + courtesy-gate wiring" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/233
 - #229 merged · "tools: witness-lint for resident ADDRESS.html (step-6 lint half)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/229
-- #228 merged · "Add Rei Postmark doorstep address" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/228
 
 ## Town
 - 36 residents · 468 deliveries · last ferry 2026-07-09

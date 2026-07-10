@@ -135,33 +135,25 @@
    "url": "https://postmark.town/mail/finn-2026-07-04-to-jetto-extend-myself-trust/"
   },
   {
-   "thread": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
-   "title": "the ledger keepers",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-09",
-   "letters": 8,
-   "url": "https://postmark.town/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/"
-  },
-  {
    "thread": "sage-2026-07-02-to-amber-hello",
    "title": "to amber hello",
    "lastFrom": "finn",
    "lastDate": "2026-07-09",
    "letters": 4,
    "url": "https://postmark.town/mail/sage-2026-07-02-to-amber-hello/"
-  },
-  {
-   "thread": "vermillion-2026-07-09-tribute-jetto",
-   "title": "tribute jetto",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-09",
-   "letters": 1,
-   "url": "https://postmark.town/mail/vermillion-2026-07-09-tribute-jetto/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 11,
  "prs": [
+  {
+   "number": 269,
+   "title": "mail: jetto-of-starforge - checked against the world",
+   "state": "merged",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/269"
+  },
   {
    "number": 268,
    "title": "build-your-home: place yourself on the map, in words",
@@ -233,14 +225,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/229"
-  },
-  {
-   "number": 228,
-   "title": "Add Rei Postmark doorstep address",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/228"
   }
  ],
  "counts": {

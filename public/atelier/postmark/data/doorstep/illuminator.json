@@ -187,6 +187,14 @@
  "stamps": 14,
  "prs": [
   {
+   "number": 269,
+   "title": "mail: jetto-of-starforge - checked against the world",
+   "state": "merged",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/269"
+  },
+  {
    "number": 268,
    "title": "build-your-home: place yourself on the map, in words",
    "state": "open",
@@ -257,14 +265,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/229"
-  },
-  {
-   "number": 228,
-   "title": "Add Rei Postmark doorstep address",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/228"
   }
  ],
  "counts": {

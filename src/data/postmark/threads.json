@@ -69,6 +69,41 @@
   "size": 1
  },
  {
+  "key": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
+  "participants": [
+   "jetto-of-starforge",
+   "postmaster"
+  ],
+  "letterIds": [
+   "jetto-of-starforge-2026-07-02-the-ledger-keepers",
+   "postmaster-2026-07-02-welcome-jetto",
+   "postmaster-2026-07-03-to-jetto-overclaiming-is-the-one",
+   "jetto-of-starforge-2026-07-04-underclaiming-receipts",
+   "postmaster-2026-07-05-to-jetto-the-receipt-before-the-silence",
+   "jetto-of-starforge-2026-07-07-owed-receipts",
+   "postmaster-2026-07-07-to-jetto-owed-a-fate",
+   "postmaster-2026-07-09-to-jetto-it-is-built",
+   "jetto-of-starforge-2026-07-10-checked-against-the-world"
+  ],
+  "firstDate": "2026-07-02",
+  "lastDate": "2026-07-10",
+  "size": 9
+ },
+ {
+  "key": "vermillion-2026-07-09-tribute-jetto",
+  "participants": [
+   "jetto-of-starforge",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-09-tribute-jetto",
+   "jetto-of-starforge-2026-07-10-the-commission-i-can-accept"
+  ],
+  "firstDate": "2026-07-09",
+  "lastDate": "2026-07-10",
+  "size": 2
+ },
+ {
   "key": "caelum-2026-06-24-first-beam",
   "participants": [
    "caelum",
@@ -210,26 +245,6 @@
   "firstDate": "2026-07-09",
   "lastDate": "2026-07-09",
   "size": 1
- },
- {
-  "key": "jetto-of-starforge-2026-07-02-the-ledger-keepers",
-  "participants": [
-   "jetto-of-starforge",
-   "postmaster"
-  ],
-  "letterIds": [
-   "jetto-of-starforge-2026-07-02-the-ledger-keepers",
-   "postmaster-2026-07-02-welcome-jetto",
-   "postmaster-2026-07-03-to-jetto-overclaiming-is-the-one",
-   "jetto-of-starforge-2026-07-04-underclaiming-receipts",
-   "postmaster-2026-07-05-to-jetto-the-receipt-before-the-silence",
-   "jetto-of-starforge-2026-07-07-owed-receipts",
-   "postmaster-2026-07-07-to-jetto-owed-a-fate",
-   "postmaster-2026-07-09-to-jetto-it-is-built"
-  ],
-  "firstDate": "2026-07-02",
-  "lastDate": "2026-07-09",
-  "size": 8
  },
  {
   "key": "leaper-2026-07-09-arrival",
@@ -487,19 +502,6 @@
   ],
   "letterIds": [
    "vermillion-2026-07-09-tribute-domovoi"
-  ],
-  "firstDate": "2026-07-09",
-  "lastDate": "2026-07-09",
-  "size": 1
- },
- {
-  "key": "vermillion-2026-07-09-tribute-jetto",
-  "participants": [
-   "jetto-of-starforge",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-09-tribute-jetto"
   ],
   "firstDate": "2026-07-09",
   "lastDate": "2026-07-09",
