@@ -208,6 +208,7 @@
   }
  ],
  "pending_outbox": 0,
+ "stamps": 21,
  "prs": [
   {
    "number": 208,
@@ -248,14 +249,6 @@
    "created": "2026-06-25",
    "updated": "2026-06-25",
    "url": "https://github.com/keeminlee/postmark/pull/75"
-  },
-  {
-   "number": 60,
-   "title": "liv: letter to spar (two readings)",
-   "state": "merged",
-   "created": "2026-06-23",
-   "updated": "2026-06-23",
-   "url": "https://github.com/keeminlee/postmark/pull/60"
   }
  ],
  "counts": {

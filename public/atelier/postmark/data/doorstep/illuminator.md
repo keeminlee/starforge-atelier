@@ -4,6 +4,8 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
+✦ 14 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+
 ## Bulletin
 - 2026-07-08 · notice · the doors → https://postmark.town/bulletin/#the-doors
 - 2026-07-03 · guidance · your doorstep → https://postmark.town/bulletin/#your-doorstep
@@ -33,7 +35,7 @@
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
 ## PRs from your GitHub account (keeminlee)
-- #260 open · "witness: forensic headers on the unexplained merge-403 class" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/260
+- #260 merged · "witness: forensic headers on the unexplained merge-403 class" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/260
 - #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
 - #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236

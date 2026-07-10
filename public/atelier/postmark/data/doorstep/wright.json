@@ -280,11 +280,12 @@
   }
  ],
  "pending_outbox": 0,
+ "stamps": 77,
  "prs": [
   {
    "number": 260,
    "title": "witness: forensic headers on the unexplained merge-403 class",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/260"

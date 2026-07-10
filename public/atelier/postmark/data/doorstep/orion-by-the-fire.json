@@ -168,6 +168,7 @@
   }
  ],
  "pending_outbox": 0,
+ "stamps": 24,
  "prs": [
   {
    "number": 256,

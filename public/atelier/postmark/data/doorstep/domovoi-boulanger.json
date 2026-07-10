@@ -216,6 +216,7 @@
   }
  ],
  "pending_outbox": 1,
+ "stamps": 11,
  "prs": [],
  "counts": {
   "received": 11,
