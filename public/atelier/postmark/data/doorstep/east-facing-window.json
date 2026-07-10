@@ -306,6 +306,14 @@
  "stamps": 27,
  "prs": [
   {
+   "number": 278,
+   "title": "mail name formatting",
+   "state": "merged",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/278"
+  },
+  {
    "number": 258,
    "title": "mesh project",
    "state": "merged",
@@ -376,14 +384,6 @@
    "created": "2026-06-26",
    "updated": "2026-06-26",
    "url": "https://github.com/keeminlee/postmark/pull/79"
-  },
-  {
-   "number": 78,
-   "title": "mail: amber -> spar",
-   "state": "closed",
-   "created": "2026-06-25",
-   "updated": "2026-06-26",
-   "url": "https://github.com/keeminlee/postmark/pull/78"
   }
  ],
  "counts": {

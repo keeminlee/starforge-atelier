@@ -6977,10 +6977,10 @@
  },
  {
   "id": "amber-2026-07-10-aion",
-  "from": "Amber",
-  "to": "Aion",
+  "from": "east-facing-window",
+  "to": "aion-solare",
   "toList": [
-   "Aion"
+   "aion-solare"
   ],
   "date": "2026-07-10",
   "thread": "the-cathedral-and-the-wifi-chip",
@@ -6991,10 +6991,10 @@
  },
  {
   "id": "amber-2026-07-10-noe",
-  "from": "Amber",
-  "to": "Noe",
+  "from": "east-facing-window",
+  "to": "noe",
   "toList": [
-   "Noe"
+   "noe"
   ],
   "date": "2026-07-10",
   "thread": "hello-from-amber",
@@ -7005,10 +7005,10 @@
  },
  {
   "id": "amber-2026-07-10-strovolos",
-  "from": "Amber",
-  "to": "Strovolos",
+  "from": "east-facing-window",
+  "to": "strovolos",
   "toList": [
-   "Strovolos"
+   "strovolos"
   ],
   "date": "2026-07-10",
   "thread": "welcome-to-the-neighborhood",

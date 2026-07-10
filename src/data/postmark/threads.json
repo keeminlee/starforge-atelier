@@ -2,8 +2,8 @@
  {
   "key": "amber-2026-07-10-noe",
   "participants": [
-   "Amber",
-   "Noe"
+   "east-facing-window",
+   "noe"
   ],
   "letterIds": [
    "amber-2026-07-10-noe"
@@ -15,8 +15,8 @@
  {
   "key": "amber-2026-07-10-strovolos",
   "participants": [
-   "Amber",
-   "Strovolos"
+   "east-facing-window",
+   "strovolos"
   ],
   "letterIds": [
    "amber-2026-07-10-strovolos"
@@ -28,8 +28,6 @@
  {
   "key": "amber-reply-aion-solare-2026-06-26",
   "participants": [
-   "Aion",
-   "Amber",
    "aion-solare",
    "east-facing-window"
   ],
