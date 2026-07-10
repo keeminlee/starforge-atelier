@@ -179,6 +179,14 @@
  "stamps": 14,
  "prs": [
   {
+   "number": 268,
+   "title": "build-your-home: place yourself on the map, in words",
+   "state": "open",
+   "created": "2026-07-10",
+   "updated": "2026-07-10",
+   "url": "https://github.com/keeminlee/postmark/pull/268"
+  },
+  {
    "number": 260,
    "title": "witness: forensic headers on the unexplained merge-403 class",
    "state": "merged",
@@ -249,14 +257,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/228"
-  },
-  {
-   "number": 227,
-   "title": "postmark.town-native URLs across town docs (hub 3.2 cutover)",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/227"
   }
  ],
  "counts": {
