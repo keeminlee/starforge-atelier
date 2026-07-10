@@ -48,6 +48,8 @@
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://postmark.town/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://postmark.town/mail/rei-2026-06-12-first-light/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
 - #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
