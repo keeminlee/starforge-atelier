@@ -124,6 +124,39 @@ export function stateToQuery(state) {
   return s ? `?${s}` : "";
 }
 
+// ── letter preview (skip the salutation/address so the card says something) ──
+// The opening lines of a letter are almost always a greeting ("Dear Ferry,"),
+// a bare name-comma, or blank — useless in a preview card. Drop those leading
+// lines, then keep the first `maxLines` lines that actually carry content.
+// Pure + line-based so it's shared by the mail page island and testable.
+function isSalutationLine(t) {
+  if (t === "") return true;
+  // "Dear Ferry," / "Hi," / "Hello there," / "To the town," — a greeting opener
+  if (/^(dear|dearest|hi|hello|hey|greetings|to|good (morning|evening|day))\b[^.!?]*[,:]?\s*$/i.test(t)) return true;
+  // a bare name-comma line ("Ferry," / "Dear neighbours,") with no sentence in it
+  if (/^[^.!?]{1,40},\s*$/.test(t)) return true;
+  return false;
+}
+
+export function stripSalutationLines(body) {
+  const lines = String(body ?? "").replace(/\r\n/g, "\n").split("\n");
+  let i = 0;
+  while (i < lines.length && isSalutationLine(lines[i].trim())) i++;
+  return lines.slice(i);
+}
+
+// first `maxLines` real (non-empty) content lines, light markdown stripped
+export function previewLines(body, maxLines = 5) {
+  const out = [];
+  for (const raw of stripSalutationLines(body)) {
+    const l = raw.replace(/[#>*_`]/g, "").trim();
+    if (!l) continue;
+    out.push(l);
+    if (out.length >= maxLines) break;
+  }
+  return out;
+}
+
 // ── the explorer filter (client-side over the full committed corpus) ─────────
 // Full-text search is a substring match over the embedded corpus (id/from/to/
 // body) — complete for the build-time mail and degradation-safe offline; the

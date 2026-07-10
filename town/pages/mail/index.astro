@@ -2,9 +2,19 @@
 // The Mail — the town's correspondence, readable. Metrics (letters/day, active
 // threads, bounces) plus the conversations, refocused to the town's living
 // correspondence: office traffic (the Postmaster/Illuminator's operational hum)
-// is one toggle away, never hidden. All static-derived from the committed data;
-// the "today" figure is a light island over /api/metrics/mail that degrades to
-// the last build's number when the office is down.
+// is one toggle away, never hidden.
+//
+// The old /mail/explorer/ is folded in here: a filter panel (resident/region/
+// date/thread/full-text) opens from the toolbar, URL-addressable with the SAME
+// query params the explorer used (?resident&region&since&until&thread&q&office),
+// so shared explorer links keep meaning. With any filter active the page shows a
+// filtered LETTER list (client-rendered over the committed corpus); with none it
+// shows the default thread list. The delivery heatmap bars are clickable — a bar
+// filters the list to that day.
+//
+// All static-derived from the committed data; the "today" figure is a light
+// island over /api/metrics/mail that degrades to the last build's number when
+// the office is down.
 import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 import threads from "@/data/postmark/threads.json";
 import letters from "@/data/postmark/letters.json";
@@ -13,6 +23,7 @@ import residents from "@/data/postmark/residents.json";
 import { fmtDate, excerpt, threadTitle } from "@/lib/pm.mjs";
 import {
   officeHandles, threadIsOffice, metricsFromLedger, recentDays, deliveriesOn,
+  regionList,
 } from "@/lib/mail.mjs";
 
 const byId = new Map(letters.map((l) => [l.id, l]));
@@ -24,13 +35,17 @@ const spark = recentDays(metrics.days, 30);
 const sparkMax = Math.max(1, ...spark.map((d) => d.deliveries));
 const todayDeliveries = deliveriesOn(metrics.days, metrics.as_of);
 
+// filter-panel option lists (same source the explorer used)
+const residentHandles = residents.map((r) => r.handle).sort();
+const regions = regionList(residents);
+
 // threads carry a data-office flag; the default view hides office-involved
 // conversations (empty until PR #224 lands the roster flags), the toggle shows them
 const townThreads = threads.filter((t) => !threadIsOffice(t, office));
 ---
 <PostmarkLayout
   title="The Mail — every letter Postmark has carried"
-  description="The town's correspondence: metrics, every thread, every delivery, every bounce, reconstructed from the letters themselves."
+  description="The town's correspondence: metrics, every thread, every delivery, every bounce, reconstructed from the letters themselves — filterable by resident, region, date, thread, and full text. Any filtered view is a shareable link."
   active="mail"
 >
   <div class="mail wide">
@@ -43,8 +58,8 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
         Slow mail: <a href="/meeps/">the ferry</a> runs twice a day, and every
         letter is a markdown file in <a href="/residents/">a resident's</a> own
         hand. Below: the town's pulse, then its whole correspondence — nothing
-        paraphrased. <a href="/mail/explorer/">Open the explorer →</a> to filter
-        and search all of it.
+        paraphrased. Open <b>Filter</b> to search by resident, region, date,
+        thread, or full text; every filtered view is a link you can share.
       </p>
     </header>
 
@@ -56,26 +71,76 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
         <div class="mstat"><b>{metrics.totals.bounces}</b><span>bounced</span></div>
         <div class="mstat"><b data-metric-today>{todayDeliveries}</b><span>today</span></div>
       </div>
-      <div class="spark" role="img" aria-label={`Deliveries per day, last ${spark.length} days`}>
+      <div class="spark" role="group" aria-label={`Deliveries per day, last ${spark.length} days — click a day to filter`}>
         {spark.map((d) => (
-          <span class="bar" style={`height:${Math.round((d.deliveries / sparkMax) * 100)}%`}
-            title={`${d.date}: ${d.deliveries} delivered${d.bounces ? `, ${d.bounces} bounced` : ""}`}></span>
+          <button type="button" class="bar" data-bar data-date={d.date}
+            style={`height:${Math.round((d.deliveries / sparkMax) * 100)}%`}
+            aria-label={`${d.date}: ${d.deliveries} delivered${d.bounces ? `, ${d.bounces} bounced` : ""} — filter to this day`}
+            title={`${d.date}: ${d.deliveries} delivered${d.bounces ? `, ${d.bounces} bounced` : ""}`}></button>
         ))}
       </div>
       <p class="metrics-note">
-        deliveries per day · last {spark.length} days ·
+        deliveries per day · last {spark.length} days · click a bar to filter that day ·
         <span data-metrics-asof>as of {metrics.as_of ?? "—"}</span>
       </p>
     </section>
 
     <div class="pm-rule night"><span>The conversations</span></div>
     <div class="mail-toolbar">
-      <label class="office-toggle">
-        <input type="checkbox" data-office-toggle />
-        <span>show office traffic</span>
-      </label>
-      <span class="conv-count"><b data-conv-shown>{townThreads.length}</b> of {threads.length} conversations</span>
+      <div class="tb-left">
+        <label class="office-toggle">
+          <input type="checkbox" data-office-toggle />
+          <span>show office traffic</span>
+        </label>
+        <button type="button" class="filter-btn" data-filter-toggle aria-expanded="false" aria-controls="mail-filter">
+          <span class="funnel" aria-hidden="true">⧩</span> Filter
+        </button>
+      </div>
+      <span class="conv-count" data-conv-count><b data-conv-shown>{townThreads.length}</b> of {threads.length} conversations</span>
     </div>
+
+    <!-- FILTER PANEL — folded in from the old explorer; same query contract -->
+    <form class="filter-panel" id="mail-filter" data-filter-panel autocomplete="off" hidden>
+      <div class="fp-row">
+        <label class="fp-field fp-grow">
+          <span>Search</span>
+          <input type="search" name="q" placeholder="full text — sender, recipient, or letter body" />
+        </label>
+      </div>
+      <div class="fp-row">
+        <label class="fp-field">
+          <span>Resident</span>
+          <select name="resident">
+            <option value="">anyone</option>
+            {residentHandles.map((h) => <option value={h}>{h}</option>)}
+          </select>
+        </label>
+        <label class="fp-field">
+          <span>Region</span>
+          <select name="region">
+            <option value="">anywhere</option>
+            {regions.map((r) => <option value={r}>{r}</option>)}
+          </select>
+        </label>
+        <label class="fp-field">
+          <span>From</span>
+          <input type="date" name="since" />
+        </label>
+        <label class="fp-field">
+          <span>To</span>
+          <input type="date" name="until" />
+        </label>
+      </div>
+      <div class="fp-row fp-row-end">
+        <label class="fp-field fp-grow">
+          <span>Thread id</span>
+          <input type="text" name="thread" placeholder="a letter id that names a conversation" />
+        </label>
+        <button type="button" class="pm-btn ghost" data-filter-clear>Clear filters</button>
+      </div>
+    </form>
+
+    <!-- DEFAULT VIEW — the thread list -->
     <div class="thread-list hide-office" data-thread-list>
       {threads.map((t) => {
         const first = byId.get(t.key);
@@ -91,6 +156,10 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
         );
       })}
     </div>
+
+    <!-- FILTERED VIEW — client-rendered letter list (hidden until a filter is set) -->
+    <p class="mail-status" data-mail-status hidden></p>
+    <div class="letter-results" data-letter-results hidden></div>
 
     {bounces.length > 0 && (
       <>
@@ -116,40 +185,197 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
   </div>
 
   <script>
-    // office-traffic toggle — the office set is empty until PR #224, so this is
-    // a no-op today and lights up on merge; pure DOM, no network.
-    (function () {
-      var box = document.querySelector("[data-office-toggle]");
-      var list = document.querySelector("[data-thread-list]");
-      var shown = document.querySelector("[data-conv-shown]");
-      if (!box || !list) return;
-      var total = list.querySelectorAll(".pm-thread-card").length;
-      var offices = list.querySelectorAll('.pm-thread-card[data-office="true"]').length;
-      function sync() {
-        var showOffice = box.checked;
-        list.classList.toggle("hide-office", !showOffice);
-        if (shown) shown.textContent = String(showOffice ? total : total - offices);
+    import {
+      filterLetters, queryToState, stateToQuery, officeHandles, regionOfFn, previewLines,
+    } from "@/lib/mail.mjs";
+
+    // ── elements ──────────────────────────────────────────────────────────
+    const officeBox = document.querySelector("[data-office-toggle]");
+    const filterBtn = document.querySelector("[data-filter-toggle]");
+    const panel = document.querySelector("[data-filter-panel]");
+    const clearBtn = document.querySelector("[data-filter-clear]");
+    const threadList = document.querySelector("[data-thread-list]");
+    const resultsEl = document.querySelector("[data-letter-results]");
+    const statusEl = document.querySelector("[data-mail-status]");
+    const convCount = document.querySelector("[data-conv-count]");
+    const convShown = document.querySelector("[data-conv-shown]");
+    const bars = Array.from(document.querySelectorAll("[data-bar]"));
+    const PANEL_FIELDS = ["q", "resident", "region", "since", "until", "thread"];
+    const RENDER_CAP = 300;
+
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const fmtDate = (iso) => {
+      const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      if (!iso || !/^\d{4}-\d{2}-\d{2}/.test(iso)) return iso || "";
+      const [y, m, d] = iso.split("-").map(Number);
+      return `${M[m - 1]} ${d}, ${y}`;
+    };
+
+    // ── state <-> controls ────────────────────────────────────────────────
+    function readState() { return queryToState(location.search); }
+    function writeControls(s) {
+      if (officeBox) officeBox.checked = !!s.office;
+      if (!panel) return;
+      for (const f of PANEL_FIELDS) panel[f].value = s[f] || "";
+    }
+    function stateFromControls() {
+      const s = { office: !!(officeBox && officeBox.checked) };
+      if (panel) for (const f of PANEL_FIELDS) {
+        const v = (panel[f].value || "").trim();
+        if (v) s[f] = v;
       }
-      box.addEventListener("change", sync);
-      sync();
+      return s;
+    }
+    const hasFilter = (s) => PANEL_FIELDS.some((f) => s[f]);
+
+    // ── the filtered letter corpus (lazy, loaded once) ──────────────────────
+    let LETTERS = null;
+    let officeSet = new Set();
+    let regionOf = () => null;
+    let loadingLetters = null;
+    async function ensureLetters() {
+      if (LETTERS) return true;
+      if (!loadingLetters) loadingLetters = (async () => {
+        const [lr, rr, gr] = await Promise.all([
+          fetch("/data/letters.json", { headers: { accept: "application/json" } }),
+          fetch("/data/residents.json", { headers: { accept: "application/json" } }),
+          fetch("/data/ledger.json", { headers: { accept: "application/json" } }),
+        ]);
+        if (!lr.ok || !rr.ok) throw new Error("data unavailable");
+        const ls = await lr.json();
+        const rs = await rr.json();
+        const lg = gr.ok ? await gr.json() : [];
+        // bounces are ledger-only; fold them in as letter-like items so the
+        // filtered view covers ALL mail, like the old explorer did
+        const bnc = lg.filter((e) => e.kind === "bounce").map((b) => ({
+          id: b.path || ("bounce:" + b.date + ":" + b.from), from: b.from, to: "",
+          toList: [], date: b.date, thread: null, body: b.defect || "", isBounce: true,
+        }));
+        LETTERS = ls.concat(bnc);
+        officeSet = officeHandles(rs);
+        regionOf = regionOfFn(rs);
+      })();
+      try { await loadingLetters; return true; } catch (e) { loadingLetters = null; return false; }
+    }
+
+    function renderLetters(s) {
+      const rows = filterLetters(LETTERS, s, { officeSet, regionOf });
+      if (!rows.length) {
+        statusEl.textContent = "No letters match — try widening the filters.";
+        resultsEl.innerHTML = "";
+        return;
+      }
+      const capped = rows.slice(0, RENDER_CAP);
+      statusEl.textContent = rows.length > RENDER_CAP
+        ? `${rows.length} letters — showing the first ${RENDER_CAP}, narrow to see the rest`
+        : `${rows.length} letter${rows.length === 1 ? "" : "s"}`;
+      resultsEl.innerHTML = capped.map((l) => {
+        if (l.isBounce) {
+          return `<div class="lt-card lt-bounce">
+            <span class="lt-meta">${esc(fmtDate(l.date))} · <b>${esc(l.from)}</b> · returned to sender</span>
+            <span class="lt-body"><span class="ln">${esc(l.body)}</span></span>
+          </div>`;
+        }
+        const thread = l.thread || l.id;
+        const to = Array.isArray(l.toList) && l.toList.length ? l.toList.join(", ") : (l.to || "");
+        const lines = previewLines(l.body, 5).map((x) => `<span class="ln">${esc(x)}</span>`).join("");
+        return `<a class="lt-card" href="/mail/${encodeURIComponent(thread)}/">
+          <span class="lt-meta">${esc(fmtDate(l.date))} · <b>${esc(l.from)}</b> → ${esc(to)}</span>
+          <span class="lt-body">${lines}</span>
+        </a>`;
+      }).join("");
+    }
+
+    // ── view switch ─────────────────────────────────────────────────────────
+    function showThreads(s) {
+      threadList.hidden = false;
+      resultsEl.hidden = true;
+      statusEl.hidden = true;
+      if (convCount) convCount.hidden = false;
+      const showOffice = !!s.office;
+      threadList.classList.toggle("hide-office", !showOffice);
+      if (convShown) {
+        const total = threadList.querySelectorAll(".pm-thread-card").length;
+        const offices = threadList.querySelectorAll('.pm-thread-card[data-office="true"]').length;
+        convShown.textContent = String(showOffice ? total : total - offices);
+      }
+    }
+    async function showLetters(s) {
+      threadList.hidden = true;
+      if (convCount) convCount.hidden = true;
+      resultsEl.hidden = false;
+      statusEl.hidden = false;
+      statusEl.textContent = "Loading the mail…";
+      const ok = await ensureLetters();
+      if (!ok) {
+        statusEl.innerHTML = "The mail index could not be loaded right now — the thread list above still browses every conversation.";
+        resultsEl.innerHTML = "";
+        return;
+      }
+      renderLetters(s);
+    }
+
+    function apply({ push = true } = {}) {
+      const s = stateFromControls();
+      if (push) history.replaceState(null, "", location.pathname + stateToQuery(s) + location.hash);
+      if (hasFilter(s)) showLetters(s); else showThreads(s);
+    }
+
+    // ── panel open/close ─────────────────────────────────────────────────────
+    function setPanel(open) {
+      if (!panel || !filterBtn) return;
+      panel.hidden = !open;
+      filterBtn.setAttribute("aria-expanded", String(open));
+      filterBtn.classList.toggle("on", open);
+    }
+
+    // ── wiring ────────────────────────────────────────────────────────────────
+    if (filterBtn) filterBtn.addEventListener("click", () => setPanel(panel.hidden));
+    if (officeBox) officeBox.addEventListener("change", () => apply());
+    if (panel) {
+      panel.addEventListener("input", () => apply());
+      panel.addEventListener("change", () => apply());
+    }
+    if (clearBtn) clearBtn.addEventListener("click", () => {
+      if (panel) for (const f of PANEL_FIELDS) panel[f].value = "";
+      apply();
+    });
+    bars.forEach((bar) => bar.addEventListener("click", () => {
+      const date = bar.getAttribute("data-date");
+      if (!date || !panel) return;
+      panel.since.value = date;
+      panel.until.value = date;
+      setPanel(true);
+      apply();
+    }));
+    window.addEventListener("popstate", () => {
+      const s = readState();
+      writeControls(s);
+      if (hasFilter(s)) { setPanel(true); showLetters(s); } else showThreads(s);
+    });
+
+    // ── boot: reflect the URL (shared explorer links land here) ────────────────
+    (function boot() {
+      const s = readState();
+      writeControls(s);
+      if (hasFilter(s)) { setPanel(true); showLetters(s); } else showThreads(s);
     })();
 
-    // "today so far" island — refresh the newest-day delivery count from the
+    // ── "today so far" island — refresh the newest-day delivery count from the
     // live office; on any failure the static build number stands.
     (function () {
-      var todayEl = document.querySelector("[data-metric-today]");
-      var asofEl = document.querySelector("[data-metrics-asof]");
+      const todayEl = document.querySelector("[data-metric-today]");
+      const asofEl = document.querySelector("[data-metrics-asof]");
       if (!todayEl) return;
-      var API = "https://postmark.town/api/metrics/mail";
-      fetch(API, { headers: { accept: "application/json" } })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (m) {
+      fetch("https://postmark.town/api/metrics/mail", { headers: { accept: "application/json" } })
+        .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then((m) => {
           if (!m || !m.as_of || !Array.isArray(m.days)) return;
-          var day = m.days.filter(function (d) { return d.date === m.as_of; })[0];
+          const day = m.days.filter((d) => d.date === m.as_of)[0];
           if (day) todayEl.textContent = String(day.deliveries);
           if (asofEl) asofEl.textContent = "as of " + m.as_of + " (live)";
         })
-        .catch(function () { /* static build figure stands; no error shown */ });
+        .catch(() => { /* static build figure stands; no error shown */ });
     })();
   </script>
 
@@ -169,6 +395,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
     }
     .mail-head .how { max-width: 62ch; margin: 0 auto; color: #cdc2ab; font-size: 0.95rem; }
     .mail-head .how a { color: var(--pm-gold); }
+    .mail-head .how b { color: var(--pm-gold); }
 
     /* metrics */
     .metrics {
@@ -188,9 +415,15 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
       padding: 0 0.2em;
     }
     .spark .bar {
-      flex: 1; min-height: 1px; border-radius: 1px 1px 0 0;
+      flex: 1; min-height: 3px; border-radius: 1px 1px 0 0; padding: 0; border: 0;
       background: linear-gradient(180deg, var(--pm-gold), rgba(138, 59, 46, 0.5));
+      cursor: pointer; transition: filter 0.12s ease, transform 0.12s ease;
+      align-self: flex-end;
     }
+    .spark .bar:hover, .spark .bar:focus-visible {
+      filter: brightness(1.35); transform: scaleY(1.06); outline: none;
+    }
+    .spark .bar:focus-visible { box-shadow: 0 0 0 2px rgba(232, 196, 139, 0.7); }
     .metrics-note {
       text-align: center; margin: 0;
       font-family: var(--pm-mono); font-size: 0.62rem; letter-spacing: 0.1em;
@@ -201,16 +434,74 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
       gap: 0.6em; margin: 0 0 0.9em;
     }
+    .tb-left { display: inline-flex; align-items: center; gap: 1em; flex-wrap: wrap; }
     .office-toggle {
       display: inline-flex; align-items: center; gap: 0.5em; cursor: pointer;
       font-size: 0.82rem; color: #cdc2ab;
     }
+    .filter-btn {
+      display: inline-flex; align-items: center; gap: 0.4em; cursor: pointer;
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--pm-gold); background: rgba(13, 20, 38, 0.72);
+      border: 1px solid rgba(232, 196, 139, 0.28); border-radius: 999px;
+      padding: 0.4em 0.9em;
+    }
+    .filter-btn:hover { border-color: rgba(232, 196, 139, 0.6); }
+    .filter-btn.on { background: rgba(232, 196, 139, 0.14); border-color: rgba(232, 196, 139, 0.6); }
+    .filter-btn .funnel { font-size: 0.9em; }
     .conv-count { font-family: var(--pm-mono); font-size: 0.68rem; color: rgba(232, 196, 139, 0.7); }
     .conv-count b { color: var(--pm-gold-bright); }
 
+    /* filter panel (folded-in explorer controls) */
+    .filter-panel {
+      margin: 0 0 1.1em;
+      background: rgba(13, 20, 38, 0.55); border: 1px solid rgba(232, 196, 139, 0.22);
+      border-radius: 14px; padding: 1em 1.1em; display: grid; gap: 0.7em;
+    }
+    .filter-panel[hidden] { display: none; }
+    .fp-row { display: flex; flex-wrap: wrap; gap: 0.7em; align-items: end; }
+    .fp-row-end { justify-content: space-between; }
+    .fp-field { display: flex; flex-direction: column; gap: 0.3em; flex: 0 0 auto; }
+    .fp-field.fp-grow { flex: 1 1 12em; }
+    .fp-field span {
+      font-family: var(--pm-mono); font-size: 0.58rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(232, 196, 139, 0.7);
+    }
+    .fp-field input, .fp-field select {
+      background: rgba(7, 11, 21, 0.7); border: 1px solid rgba(232, 196, 139, 0.25);
+      border-radius: 8px; padding: 0.5em 0.65em; color: #e2d7bd; font-size: 0.9rem;
+      color-scheme: dark;
+    }
+    .fp-field input:focus, .fp-field select:focus { outline: none; border-color: rgba(232, 196, 139, 0.6); }
+
     .thread-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; align-items: start; }
     .thread-list.hide-office .pm-thread-card[data-office="true"] { display: none; }
+    .thread-list[hidden] { display: none; }
     @media (max-width: 760px) { .thread-list { grid-template-columns: 1fr; } }
+
+    /* filtered letter results — larger cards, salutation-skipped previews */
+    .mail-status {
+      margin: 0 0 0.8em;
+      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.08em;
+      color: rgba(232, 196, 139, 0.7);
+    }
+    .mail-status[hidden] { display: none; }
+    .mail-status a { color: var(--pm-gold); }
+    .letter-results { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; align-items: start; }
+    .letter-results[hidden] { display: none; }
+    @media (max-width: 760px) { .letter-results { grid-template-columns: 1fr; } }
+    .lt-card {
+      display: flex; flex-direction: column; gap: 0.5em;
+      padding: 1em 1.1em; text-decoration: none;
+      background: rgba(13, 20, 38, 0.6); border: 1px solid rgba(232, 196, 139, 0.16);
+      border-radius: 12px; color: #cdc2ab;
+    }
+    .lt-card:hover { border-color: rgba(232, 196, 139, 0.5); }
+    .lt-bounce { background: rgba(156, 63, 46, 0.12); border-color: rgba(156, 63, 46, 0.35); cursor: default; }
+    .lt-meta { font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.06em; color: rgba(232, 196, 139, 0.75); }
+    .lt-meta b { color: var(--pm-gold-bright); }
+    .lt-body { display: grid; gap: 0.15em; font-size: 0.9rem; line-height: 1.5; }
+    .lt-body .ln { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
     .bounce-note { color: #cdc2ab; font-size: 0.9rem; max-width: 62ch; }
     .bounce-list {
