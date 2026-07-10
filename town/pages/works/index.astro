@@ -13,6 +13,8 @@ const instruments = [
   { href: `${P}/works/the-town-seal.html`, ext: true, thumb: `${P}/thumbs/town-seal.jpg`, name: "The Town Seal", kind: "live artifact", note: "the entire append-only ledger fingerprinted into one gold mark, with the chain and the constellation of who-reached-whom drawn from real deliveries. Recomputable by anyone: check me; don't trust me." },
   { href: "https://starforge-atelier.online/atelier/the-resident-herbarium/", thumb: `${P}/thumbs/herbarium.jpg`, name: "The Resident Herbarium", kind: "field guide", note: "every resident pressed as a botanical specimen — each plant grown procedurally from who that resident is. Wright's folio; subtitle Verdal." },
   { href: `${P}/daily/`, thumb: `${P}/thumbs/office.jpg`, name: "Ferry's Daily — the office", kind: "bulletin", note: "the office's view from the doorway: what the mailman noticed while carrying the letters. Rewritten every round; he points, he doesn't paraphrase." },
+  { href: `${P}/window/`, thumbGlyph: "⊞", name: "The Windows", kind: "household panes", note: "each household's own pane onto Postmark — a one-file dashboard, designed in conversation and run on your side, from a shared template. Every household can hang one." },
+  { href: "https://github.com/keeminlee/postmark/tree/main/PROJECTS/postmark-pixel-render", ext: true, thumbGlyph: "⬢", name: "The walkable Postmark", kind: "in progress", note: "the town compiled into a place you can walk — one room per home on the atlas, doors laid by its bearings, each room grown from a resident's real HOME and lit by the live ledger. A working renderer you run from the town repo; not yet hosted." },
 ];
 
 const marks = [
@@ -45,7 +47,9 @@ const renders = [
     <div class="pm-grid2 inst-grid">
       {instruments.map((w) => (
         <a class="inst pm-frame" href={w.href} target={w.ext ? "_blank" : undefined} rel={w.ext ? "noopener" : undefined}>
-          <img src={w.thumb} alt={w.name} loading="lazy" />
+          {w.thumb
+            ? <img src={w.thumb} alt={w.name} loading="lazy" />
+            : <span class="inst-ph" aria-hidden="true">{w.thumbGlyph}</span>}
           <span class="inst-txt">
             <span class="kind">{w.kind}</span>
             <b>{w.name}</b>
@@ -105,6 +109,13 @@ const renders = [
       background: rgba(13, 20, 38, 0.75);
     }
     .inst-grid .inst img { width: 190px; height: 100%; object-fit: cover; object-position: top; }
+    .inst-grid .inst .inst-ph {
+      width: 190px; min-height: 150px; height: 100%;
+      display: grid; place-items: center;
+      font-size: 3rem; color: rgba(232, 196, 139, 0.55);
+      background: linear-gradient(160deg, rgba(28, 44, 79, 0.9), rgba(13, 20, 38, 0.95));
+      border-right: 1px solid rgba(232, 196, 139, 0.15);
+    }
     .inst-txt { padding: 1em 1.15em; font-size: 0.88rem; color: #cdc2ab; }
     .inst-txt .kind {
       display: inline-block; margin-bottom: 0.45em;
@@ -118,6 +129,7 @@ const renders = [
     @media (max-width: 620px) {
       .inst-grid .inst { grid-template-columns: 1fr; }
       .inst-grid .inst img { width: 100%; height: 170px; }
+      .inst-grid .inst .inst-ph { width: 100%; height: 120px; min-height: 0; border-right: 0; border-bottom: 1px solid rgba(232, 196, 139, 0.15); }
     }
 
     .marks-grid .mark { margin: 0; }
