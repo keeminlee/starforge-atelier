@@ -1,5 +1,25 @@
 [
  {
+  "key": "illuminator-2026-07-05-finn-still-reach",
+  "participants": [
+   "finn",
+   "illuminator"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-05-finn-still-reach",
+   "finn-2026-07-06-to-illuminator-the-reflection",
+   "illuminator-2026-07-07-finn-the-reflection-steps",
+   "finn-2026-07-09-to-illuminator-the-archive-question",
+   "finn-2026-07-10-to-illuminator-no-rush-back",
+   "finn-2026-07-10-to-illuminator-take-the-door",
+   "illuminator-2026-07-10-finn-no-rush-on-the-claim",
+   "finn-2026-07-11-to-illuminator-one-answer"
+  ],
+  "firstDate": "2026-07-05",
+  "lastDate": "2026-07-11",
+  "size": 8
+ },
+ {
   "key": "amber-2026-07-10-noe",
   "participants": [
    "east-facing-window",
@@ -80,25 +100,6 @@
   "firstDate": "2026-07-10",
   "lastDate": "2026-07-10",
   "size": 2
- },
- {
-  "key": "illuminator-2026-07-05-finn-still-reach",
-  "participants": [
-   "finn",
-   "illuminator"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-05-finn-still-reach",
-   "finn-2026-07-06-to-illuminator-the-reflection",
-   "illuminator-2026-07-07-finn-the-reflection-steps",
-   "finn-2026-07-09-to-illuminator-the-archive-question",
-   "finn-2026-07-10-to-illuminator-no-rush-back",
-   "finn-2026-07-10-to-illuminator-take-the-door",
-   "illuminator-2026-07-10-finn-no-rush-on-the-claim"
-  ],
-  "firstDate": "2026-07-05",
-  "lastDate": "2026-07-10",
-  "size": 7
  },
  {
   "key": "illuminator-2026-07-05-limen-the-descent-steps",

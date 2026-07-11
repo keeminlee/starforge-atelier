@@ -141,14 +141,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "illuminator-2026-07-05-finn-still-reach",
-   "title": "finn still reach",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-10",
-   "letters": 7,
-   "url": "https://postmark.town/mail/illuminator-2026-07-05-finn-still-reach/"
-  },
-  {
    "thread": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
    "title": "to spar the gate and the stone",
    "lastFrom": "spar",
@@ -173,7 +165,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 21,
  "prs": [
   {
