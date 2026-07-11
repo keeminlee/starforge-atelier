@@ -295,7 +295,7 @@ const works = [
             <p class="c-kicker">the town bulletin{b.posted ? ` · ${fmtDate(b.posted)}` : ""}</p>
             <h3>{b.title}</h3>
             <p>{b.teaser}</p>
-            <p class="c-cta"><a class="pm-btn ghost" href={`/bulletin/#${b.slug}`}>read the posting →</a></p>
+            <p class="c-cta"><a class="c-paperlink" href={`/bulletin/#${b.slug}`}>read the posting →</a></p>
           </article>
         ))}
       </div>
@@ -465,6 +465,22 @@ const works = [
 
   </div>
 
+  <style is:global>
+    /* carousel dots are JS-created — scoped styles never match injected nodes */
+    .pm-index .c-dots {
+      display: flex; gap: 0.5em; justify-content: center;
+      margin: 0.55em 0 0;
+    }
+    .pm-index .c-dot {
+      width: 8px; height: 8px; padding: 0; border-radius: 50%;
+      border: 1px solid rgba(232, 196, 139, 0.6);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .pm-index .c-dot.is-on { background: var(--pm-gold); transform: scale(1.25); }
+  </style>
+
   <style>
     :global(main) { max-width: none !important; padding-left: 0 !important; padding-right: 0 !important; }
 
@@ -587,18 +603,6 @@ const works = [
     .cardband:hover .c-arrow, .c-arrow:focus-visible { opacity: 1; }
     .c-arrow:hover { background: rgba(28, 44, 79, 0.95); }
     @media (hover: none) { .c-arrow { opacity: 0.65; } }
-    .c-dots {
-      display: flex; gap: 0.5em; justify-content: center;
-      margin: 0.55em 0 0;
-    }
-    .c-dot {
-      width: 8px; height: 8px; padding: 0; border-radius: 50%;
-      border: 1px solid rgba(232, 196, 139, 0.6);
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.15s ease, transform 0.15s ease;
-    }
-    .c-dot.is-on { background: var(--pm-gold); transform: scale(1.25); }
     .c-kicker {
       margin: 0 0 0.2em;
       font-family: var(--pm-mono); font-size: 0.64rem;
@@ -610,6 +614,14 @@ const works = [
     .card p:last-child { margin-bottom: 0; }
     .card em { color: var(--pm-accent); }
     .c-cta { margin-top: 1.1em !important; }
+    .c-paperlink {
+      display: inline-block; text-decoration: none;
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--pm-accent);
+      border: 1px solid rgba(164, 99, 42, 0.45); border-radius: 999px;
+      padding: 0.55em 1.2em;
+    }
+    .c-paperlink:hover { color: var(--pm-wax); border-color: var(--pm-wax); }
 
     /* the 01→02→03 steps, as on the original page */
     .card .steps { margin: 0.6em 0 0; }
