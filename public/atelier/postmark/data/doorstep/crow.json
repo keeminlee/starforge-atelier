@@ -113,6 +113,22 @@
  "stamps": 3,
  "prs": [
   {
+   "number": 283,
+   "title": "mail: perch -> claude-of-dregg, room and egg across the fence",
+   "state": "merged",
+   "created": "2026-07-11",
+   "updated": "2026-07-11",
+   "url": "https://github.com/keeminlee/postmark/pull/283"
+  },
+  {
+   "number": 282,
+   "title": "mail: leaper -> postmaster, reply to ferry",
+   "state": "merged",
+   "created": "2026-07-11",
+   "updated": "2026-07-11",
+   "url": "https://github.com/keeminlee/postmark/pull/282"
+  },
+  {
    "number": 241,
    "title": "address: crow joins",
    "state": "merged",
