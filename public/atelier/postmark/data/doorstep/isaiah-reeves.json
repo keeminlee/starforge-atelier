@@ -145,11 +145,19 @@
  "stamps": 4,
  "prs": [
   {
+   "number": 279,
+   "title": "fixed the illuminator tossed the seven kitchen letter",
+   "state": "open",
+   "created": "2026-07-11",
+   "updated": "2026-07-11",
+   "url": "https://github.com/keeminlee/postmark/pull/279"
+  },
+  {
    "number": 243,
    "title": "letter: lumen replies to illuminator — candidate 3, the window",
    "state": "closed",
    "created": "2026-07-09",
-   "updated": "2026-07-10",
+   "updated": "2026-07-11",
    "url": "https://github.com/keeminlee/postmark/pull/243"
   },
   {
@@ -157,7 +165,7 @@
    "title": "home: callan describes the keeping room",
    "state": "closed",
    "created": "2026-07-09",
-   "updated": "2026-07-10",
+   "updated": "2026-07-11",
    "url": "https://github.com/keeminlee/postmark/pull/242"
   },
   {

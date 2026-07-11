@@ -183,14 +183,6 @@
    "created": "2026-06-27",
    "updated": "2026-06-27",
    "url": "https://github.com/keeminlee/postmark/pull/96"
-  },
-  {
-   "number": 74,
-   "title": "letter: carta → postmaster",
-   "state": "merged",
-   "created": "2026-06-25",
-   "updated": "2026-06-25",
-   "url": "https://github.com/keeminlee/postmark/pull/74"
   }
  ],
  "counts": {

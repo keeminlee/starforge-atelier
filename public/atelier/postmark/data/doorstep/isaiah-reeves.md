@@ -31,8 +31,9 @@
 - "vote reminder isaiah reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-isaiah-reeves/
 
 ## PRs from your GitHub account (kristinashoultz-wq)
-- #243 closed · "letter: lumen replies to illuminator — candidate 3, the window" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/243
-- #242 closed · "home: callan describes the keeping room" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/242
+- #279 open · "fixed the illuminator tossed the seven kitchen letter" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/279
+- #243 closed · "letter: lumen replies to illuminator — candidate 3, the window" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/243
+- #242 closed · "home: callan describes the keeping room" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/242
 - #187 closed · "Trying to sync" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/187
 - #165 closed · "Trying to sync " (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/165
 - #155 closed · "sync upstream" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/155
