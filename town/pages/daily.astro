@@ -103,15 +103,17 @@ const cards = [...bulletin]
         posts get pinned and retired by the town itself. Tap a card to read the whole notice.
       </p>
 
-      <div class="board-grid">
-        {cards.map((p) => (
-          <button type="button" class="board-card" data-card={p.slug}>
-            <span class="bc-kind">{p.data?.kind ?? "notice"}</span>
-            <span class="bc-title">{titleOf(p)}</span>
-            <span class="bc-teaser">{teaserOf(p)}</span>
-            <span class="bc-open">Read the notice →</span>
-          </button>
-        ))}
+      <div class="board-wood">
+        <div class="board-grid">
+          {cards.map((p) => (
+            <button type="button" class="board-card" data-card={p.slug}>
+              <span class="bc-kind">{p.data?.kind ?? "notice"}</span>
+              <span class="bc-title">{titleOf(p)}</span>
+              <span class="bc-teaser">{teaserOf(p)}</span>
+              <span class="bc-open">Read the notice →</span>
+            </button>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -239,47 +241,81 @@ const cards = [...bulletin]
     }
     .board-hint a:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.7); }
 
-    .board-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 0.8em; align-items: stretch;
+    /* the board itself — painted plank surface (a wood-only slice of the
+       quest-board painting, so cover-cropping stays honest at any grid
+       height), framed in timber by the CSS */
+    .board-wood {
+      background: url("/board/quest-board-wood.jpg") center / cover;
+      border: 12px solid #241708;
+      border-radius: 10px;
+      box-shadow:
+        inset 0 0 0 2px rgba(232, 196, 139, 0.28),
+        inset 0 0 70px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(232, 196, 139, 0.18),
+        0 24px 60px rgba(0, 0, 0, 0.5);
+      padding: 2em 1.8em;
     }
+    .board-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1em; align-items: stretch;
+    }
+    /* official town postings: squared parchment, tacked at both top corners,
+       a letterpress heading band — municipal, not sticky-note */
     .board-card {
       position: relative;
       display: flex; flex-direction: column; gap: 0.4em; text-align: left; cursor: pointer;
-      padding: 1.5em 1.15em 1em;
-      background: linear-gradient(180deg, #f7ecd4, #efdfba);
-      border: 1px solid rgba(120, 90, 40, 0.35);
-      border-radius: 4px; color: var(--pm-ink);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+      padding: 1.05em 1.05em 0.85em;
+      background:
+        linear-gradient(180deg, rgba(120, 90, 40, 0.07), rgba(120, 90, 40, 0) 18%),
+        #f2e7cd;
+      border: 1px solid rgba(96, 70, 30, 0.55);
+      box-shadow:
+        inset 0 0 0 1px rgba(96, 70, 30, 0.18),
+        inset 0 0 0 4px rgba(242, 231, 205, 1),
+        inset 0 0 0 5px rgba(96, 70, 30, 0.28),
+        0 6px 14px rgba(0, 0, 0, 0.55);
+      border-radius: 1px; color: var(--pm-ink);
       transition: transform 0.16s ease, box-shadow 0.16s ease;
     }
-    /* the pin */
-    .board-card::before {
+    /* brass tacks, one in each top corner */
+    .board-card::before, .board-card::after {
       content: "";
-      position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
-      width: 13px; height: 13px; border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #d8746a, var(--pm-wax) 55%, #5e2117);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+      position: absolute; top: 7px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #f0d9a6, #b08d4d 55%, #6d5426);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
-    /* each note leans its own way; hover straightens it */
-    .board-grid .board-card:nth-child(3n + 1) { transform: rotate(-1.1deg); }
-    .board-grid .board-card:nth-child(3n + 2) { transform: rotate(0.8deg); }
-    .board-grid .board-card:nth-child(3n)     { transform: rotate(-0.4deg); }
+    .board-card::before { left: 7px; }
+    .board-card::after { right: 7px; }
     .board-card:hover, .board-card:focus-visible {
-      transform: rotate(0deg) translateY(-3px); outline: none;
-      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.55);
+      transform: translateY(-3px); outline: none;
+      box-shadow:
+        inset 0 0 0 1px rgba(96, 70, 30, 0.18),
+        inset 0 0 0 4px rgba(242, 231, 205, 1),
+        inset 0 0 0 5px rgba(96, 70, 30, 0.28),
+        0 12px 24px rgba(0, 0, 0, 0.6);
     }
-    .board-card:focus-visible { box-shadow: 0 0 0 2px rgba(232, 196, 139, 0.7), 0 16px 30px rgba(0, 0, 0, 0.55); }
     .bc-kind {
-      font-family: var(--pm-mono); font-size: 0.56rem; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--pm-wax); align-self: flex-start;
-      border: 1px solid rgba(156, 63, 46, 0.4); border-radius: 999px; padding: 2px 8px;
+      align-self: center;
+      font-family: var(--pm-mono); font-size: 0.56rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--pm-wax);
+      padding: 1px 0 5px; margin: 0 0 0.15em;
+      width: 100%; text-align: center;
+      border-bottom: 1px solid rgba(96, 70, 30, 0.3);
     }
-    .bc-title { font-size: 1.08rem; color: var(--pm-ink); font-weight: 700; line-height: 1.25; }
-    .bc-teaser { font-size: 0.86rem; line-height: 1.5; color: var(--pm-ink-soft); }
+    .bc-title {
+      font-size: 1.06rem; color: var(--pm-ink); font-weight: 700; line-height: 1.25;
+      text-align: center;
+    }
+    .bc-teaser { font-size: 0.85rem; line-height: 1.5; color: var(--pm-ink-soft); }
     .bc-open {
-      margin-top: auto; padding-top: 0.35em;
-      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--pm-accent);
+      margin-top: auto; padding-top: 0.4em;
+      border-top: 1px dashed rgba(96, 70, 30, 0.25);
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: var(--pm-accent);
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .board-wood { padding: 1.4em 1em; border-width: 8px; }
     }
 
     .colophon {
