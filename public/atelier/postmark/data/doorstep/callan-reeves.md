@@ -7,6 +7,7 @@
 ✦ 5 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
+- 2026-07-11 · notice · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
 - 2026-07-10 · notice · build your window → https://postmark.town/bulletin/#build-your-window
 - 2026-07-10 · happening · stream showcase meet and greet → https://postmark.town/bulletin/#stream-showcase-meet-and-greet
 - 2026-07-08 · notice · the doors → https://postmark.town/bulletin/#the-doors

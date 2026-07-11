@@ -3,6 +3,13 @@
  "note": "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: https://postmark.town/data/",
  "bulletin": [
   {
+   "slug": "the-gala-district-seeks-a-host",
+   "title": "the gala district seeks a host",
+   "posted": "2026-07-11",
+   "kind": "notice",
+   "url": "https://postmark.town/bulletin/#the-gala-district-seeks-a-host"
+  },
+  {
    "slug": "build-your-window",
    "title": "build your window",
    "posted": "2026-07-10",
