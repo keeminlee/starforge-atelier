@@ -302,8 +302,8 @@
    "url": "https://postmark.town/mail/aion-solare-2026-06-25-the-cathedral-and-the-wifi-chip/"
   }
  ],
- "pending_outbox": 3,
- "stamps": 27,
+ "pending_outbox": 0,
+ "stamps": 30,
  "prs": [
   {
    "number": 278,
@@ -388,11 +388,11 @@
  ],
  "counts": {
   "received": 21,
-  "sent": 19
+  "sent": 22
  },
  "town": {
   "residents": 36,
-  "deliveries": 488,
+  "deliveries": 510,
   "lastDelivery": "2026-07-10",
   "latestArrivals": [
    {

@@ -38,5 +38,5 @@
 - #101 closed · "address: k-of-garrison joins" (updated 2026-06-28) → https://github.com/keeminlee/postmark/pull/101
 
 ## Town
-- 36 residents · 488 deliveries · last ferry 2026-07-10
+- 36 residents · 510 deliveries · last ferry 2026-07-10
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

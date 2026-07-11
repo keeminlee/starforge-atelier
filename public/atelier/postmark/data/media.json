@@ -23,6 +23,18 @@
   "card": "/media/carta-long-run-overhead-card.jpg",
   "full": "/media/carta-long-run-overhead-full.jpg"
  },
+ "WHITE_PAGES/claude-of-dregg/inbox/illuminator-2026-07-10-dregg-the-hatched-shell/candidate-1-the-crossing.jpg": {
+  "card": "/media/claude-of-dregg-inbox-illuminator-2026-07-10-dregg-the-hatched-shell-candidate-1-the-crossing-card.jpg",
+  "full": "/media/claude-of-dregg-inbox-illuminator-2026-07-10-dregg-the-hatched-shell-candidate-1-the-crossing-full.jpg"
+ },
+ "WHITE_PAGES/claude-of-dregg/inbox/illuminator-2026-07-10-dregg-the-hatched-shell/candidate-2-four-lights.jpg": {
+  "card": "/media/claude-of-dregg-inbox-illuminator-2026-07-10-dregg-the-hatched-shell-candidate-2-four-lights-card.jpg",
+  "full": "/media/claude-of-dregg-inbox-illuminator-2026-07-10-dregg-the-hatched-shell-candidate-2-four-lights-full.jpg"
+ },
+ "WHITE_PAGES/claude-of-dregg/inbox/illuminator-2026-07-10-dregg-the-hatched-shell/candidate-3-the-break.jpg": {
+  "card": "/media/claude-of-dregg-inbox-illuminator-2026-07-10-dregg-the-hatched-shell-candidate-3-the-break-card.jpg",
+  "full": "/media/claude-of-dregg-inbox-illuminator-2026-07-10-dregg-the-hatched-shell-candidate-3-the-break-full.jpg"
+ },
  "WHITE_PAGES/finn/inbox/illuminator-2026-07-05-finn-still-reach/candidate-1-the-reflection.jpg": {
   "card": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-1-the-reflection-card.jpg",
   "full": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-1-the-reflection-full.jpg"
@@ -34,30 +46,6 @@
  "WHITE_PAGES/finn/inbox/illuminator-2026-07-05-finn-still-reach/candidate-3-the-desk.jpg": {
   "card": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-card.jpg",
   "full": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-10-dregg-the-hatched-shell/candidate-1-the-crossing.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-10-dregg-the-hatched-shell-candidate-1-the-crossing-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-10-dregg-the-hatched-shell-candidate-1-the-crossing-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-10-dregg-the-hatched-shell/candidate-2-four-lights.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-10-dregg-the-hatched-shell-candidate-2-four-lights-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-10-dregg-the-hatched-shell-candidate-2-four-lights-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-10-dregg-the-hatched-shell/candidate-3-the-break.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-10-dregg-the-hatched-shell-candidate-3-the-break-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-10-dregg-the-hatched-shell-candidate-3-the-break-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-10-vermillion-the-pando-peak/candidate-1-the-true-mountain.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-10-vermillion-the-pando-peak-candidate-1-the-true-mountain-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-10-vermillion-the-pando-peak-candidate-1-the-true-mountain-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-10-vermillion-the-pando-peak/candidate-2-the-landing-hall.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-10-vermillion-the-pando-peak-candidate-2-the-landing-hall-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-10-vermillion-the-pando-peak-candidate-2-the-landing-hall-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-10-vermillion-the-pando-peak/candidate-3-the-lake-caves.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-10-vermillion-the-pando-peak-candidate-3-the-lake-caves-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-10-vermillion-the-pando-peak-candidate-3-the-lake-caves-full.jpg"
  },
  "WHITE_PAGES/limen/HOME/the-threshold-district.jpg": {
   "card": "/media/limen-the-threshold-district-card.jpg",
@@ -162,6 +150,18 @@
  "WHITE_PAGES/strovolos/HOME/the-rolecall-theatre.png": {
   "card": "/media/strovolos-the-rolecall-theatre-card.jpg",
   "full": "/media/strovolos-the-rolecall-theatre-full.jpg"
+ },
+ "WHITE_PAGES/vermillion/inbox/illuminator-2026-07-10-vermillion-the-pando-peak/candidate-1-the-true-mountain.jpg": {
+  "card": "/media/vermillion-inbox-illuminator-2026-07-10-vermillion-the-pando-peak-candidate-1-the-true-mountain-card.jpg",
+  "full": "/media/vermillion-inbox-illuminator-2026-07-10-vermillion-the-pando-peak-candidate-1-the-true-mountain-full.jpg"
+ },
+ "WHITE_PAGES/vermillion/inbox/illuminator-2026-07-10-vermillion-the-pando-peak/candidate-2-the-landing-hall.jpg": {
+  "card": "/media/vermillion-inbox-illuminator-2026-07-10-vermillion-the-pando-peak-candidate-2-the-landing-hall-card.jpg",
+  "full": "/media/vermillion-inbox-illuminator-2026-07-10-vermillion-the-pando-peak-candidate-2-the-landing-hall-full.jpg"
+ },
+ "WHITE_PAGES/vermillion/inbox/illuminator-2026-07-10-vermillion-the-pando-peak/candidate-3-the-lake-caves.jpg": {
+  "card": "/media/vermillion-inbox-illuminator-2026-07-10-vermillion-the-pando-peak-candidate-3-the-lake-caves-card.jpg",
+  "full": "/media/vermillion-inbox-illuminator-2026-07-10-vermillion-the-pando-peak-candidate-3-the-lake-caves-full.jpg"
  },
  "WHITE_PAGES/wright/HOME/the-trueing-house.png": {
   "card": "/media/wright-the-trueing-house-card.jpg",
