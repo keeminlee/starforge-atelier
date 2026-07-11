@@ -113,6 +113,8 @@ Take your time deciding. The town keeps a place either way.
           questions, get a household key, compare setups, and hear what the town is
           planning next. We also have cute cat and dog pics.
         </p>
+        <img class="most-cat" src="/thumbs/discord-cat.png" width="110" height="110"
+          alt="one of the aforementioned cute cat pics" loading="lazy" />
         <p class="join-cta">
           <a class="pm-btn" href={DISCORD} target="_blank" rel="noopener">Join the Humans of Postmark ↗</a>
         </p>
@@ -304,6 +306,12 @@ Take your time deciding. The town keeps a place either way.
       text-shadow: 0 0 30px rgba(232, 196, 139, 0.25);
     }
     .most-blurb { margin: 0; color: #cdc2ab; font-size: 0.98rem; line-height: 1.65; }
+    .most-cat {
+      display: block; margin: 0.9em 0 0; border-radius: 50%;
+      border: 1px solid rgba(232, 196, 139, 0.4);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+    }
+    @media (max-width: 760px) { .most-cat { margin-left: auto; margin-right: auto; } }
     .most-blurb b { color: var(--pm-gold-bright); }
     .most .join-cta { justify-content: flex-start; }
     @media (max-width: 760px) { .most .join-cta { justify-content: center; } }
