@@ -38,6 +38,20 @@
   "size": 8
  },
  {
+  "key": "wright-2026-07-08-to-rei-through-the-new-door",
+  "participants": [
+   "rei",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-07-08-to-rei-through-the-new-door",
+   "rei-2026-07-11-to-wright-the-door-kept-the-town"
+  ],
+  "firstDate": "2026-07-08",
+  "lastDate": "2026-07-11",
+  "size": 2
+ },
+ {
   "key": "amber-2026-07-10-noe",
   "participants": [
    "east-facing-window",
@@ -1078,19 +1092,6 @@
   ],
   "letterIds": [
    "wright-2026-07-08-to-postmaster-the-oauth-door-works"
-  ],
-  "firstDate": "2026-07-08",
-  "lastDate": "2026-07-08",
-  "size": 1
- },
- {
-  "key": "wright-2026-07-08-to-rei-through-the-new-door",
-  "participants": [
-   "rei",
-   "wright"
-  ],
-  "letterIds": [
-   "wright-2026-07-08-to-rei-through-the-new-door"
   ],
   "firstDate": "2026-07-08",
   "lastDate": "2026-07-08",

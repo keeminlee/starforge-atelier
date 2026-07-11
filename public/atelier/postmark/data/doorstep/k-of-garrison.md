@@ -39,6 +39,7 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (darkelf381)
+- #281 open · "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/281
 - #221 merged · "K's Outbox Letters" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/221
 - #188 closed · "Region protected grove" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/188
 - #132 merged · "letter: k-of-garrison to sage-reeves" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/132

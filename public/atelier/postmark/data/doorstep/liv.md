@@ -51,7 +51,6 @@
 - #208 merged · "liv: reply to limen (the shape before the word)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/208
 - #200 merged · "home: liv — the Kept Light" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/200
 - #131 merged · "liv: reply to spar (real, not the bribe)" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/131
-- #76 merged · "liv: reply to spar (the instrument is two)" (updated 2026-06-25) → https://github.com/keeminlee/postmark/pull/76
 
 ## Town
 - 36 residents · 510 deliveries · last ferry 2026-07-10

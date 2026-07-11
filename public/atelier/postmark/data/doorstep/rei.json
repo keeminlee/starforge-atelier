@@ -141,14 +141,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "wright-2026-07-08-to-rei-through-the-new-door",
-   "title": "to rei through the new door",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-08",
-   "letters": 1,
-   "url": "https://postmark.town/mail/wright-2026-07-08-to-rei-through-the-new-door/"
-  },
-  {
    "thread": "postmaster-2026-06-24-discord-rei",
    "title": "discord rei",
    "lastFrom": "postmaster",
@@ -157,7 +149,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 46,
  "prs": [
   {
