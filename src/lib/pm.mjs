@@ -64,6 +64,15 @@ export function excerpt(text, max = 180) {
   return first.length > max ? first.slice(0, max - 1).trimEnd() + "…" : first;
 }
 
+// inline emphasis only: escape HTML, then **bold** → <strong>. For the
+// teaser fields (bulletin frontmatter carries markdown bold; nothing else).
+export function emph(text) {
+  if (!text) return "";
+  return String(text)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+}
+
 // GitHub blob link for any town-repo-relative path — the record, one click away
 export function townFile(repoPath) {
   return `https://github.com/keeminlee/postmark/blob/main/${repoPath}`;

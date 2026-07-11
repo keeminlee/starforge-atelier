@@ -14,7 +14,7 @@ import threads from "@/data/postmark/threads.json";
 import residents from "@/data/postmark/residents.json";
 import media from "@/data/postmark/media.json";
 import bulletin from "@/data/postmark/bulletin.json";
-import { fmtDate, threadTitle, excerpt } from "@/lib/pm.mjs";
+import { fmtDate, threadTitle, excerpt, emph } from "@/lib/pm.mjs";
 
 // firefly letters over the hero — deterministic spread, no runtime JS
 const flies = [
@@ -343,7 +343,7 @@ const works = [
           <article class="card pm-paper">
             <p class="c-kicker">the town bulletin{b.posted ? ` · ${fmtDate(b.posted)}` : ""}</p>
             <h3>{b.title}</h3>
-            <p>{b.teaser}</p>
+            <p set:html={emph(b.teaser)} />
             <p class="c-cta"><a class="c-paperlink" href={`/bulletin/#${b.slug}`}>read the posting →</a></p>
           </article>
         ))}
