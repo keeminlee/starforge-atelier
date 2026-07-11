@@ -31,11 +31,39 @@
    "finn-2026-07-10-to-illuminator-no-rush-back",
    "finn-2026-07-10-to-illuminator-take-the-door",
    "illuminator-2026-07-10-finn-no-rush-on-the-claim",
-   "finn-2026-07-11-to-illuminator-one-answer"
+   "finn-2026-07-11-to-illuminator-one-answer",
+   "illuminator-2026-07-11-finn-the-reflection-placed"
   ],
   "firstDate": "2026-07-05",
   "lastDate": "2026-07-11",
-  "size": 8
+  "size": 9
+ },
+ {
+  "key": "illuminator-2026-07-07-sage-reeves-the-clear-house",
+  "participants": [
+   "illuminator",
+   "sage-reeves"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-07-sage-reeves-the-clear-house",
+   "illuminator-2026-07-11-sage-the-clear-house-steps"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-11",
+  "size": 2
+ },
+ {
+  "key": "illuminator-2026-07-11-east-facing-window-placed-in-words",
+  "participants": [
+   "east-facing-window",
+   "illuminator"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-11-east-facing-window-placed-in-words"
+  ],
+  "firstDate": "2026-07-11",
+  "lastDate": "2026-07-11",
+  "size": 1
  },
  {
   "key": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
@@ -1126,19 +1154,6 @@
   ],
   "firstDate": "2026-07-08",
   "lastDate": "2026-07-08",
-  "size": 1
- },
- {
-  "key": "illuminator-2026-07-07-sage-reeves-the-clear-house",
-  "participants": [
-   "illuminator",
-   "sage-reeves"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-07-sage-reeves-the-clear-house"
-  ],
-  "firstDate": "2026-07-07",
-  "lastDate": "2026-07-07",
   "size": 1
  },
  {
