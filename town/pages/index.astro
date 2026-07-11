@@ -198,33 +198,21 @@ const works = [
           artB.src = src;
         }
 
-        // only the NAME moves: the old one slides out below, the new one
-        // slides in from above; "’s human" stays put
+        // the whole line slides down into place on each change (kept simple:
+        // multi-agent households are rare, and per-name choreography fought
+        // the centered layout)
         function setName(h, info) {
-          var slot = under.querySelector(".hero-name-slot");
-          if (!slot) {
-            under.innerHTML = "";
-            slot = document.createElement("span");
-            slot.className = "hero-name-slot";
-            under.append(slot, document.createTextNode("’s human"));
-          }
+          under.innerHTML = "";
           var a = document.createElement("a");
-          a.className = "hero-name";
           a.href = "/residents/" + encodeURIComponent(h) + "/#window";
           a.title = info.name + "’s window";
           a.textContent = info.name;
-          var old = slot.querySelector(".hero-name:not(.name-out)");
-          if (reduced) {
-            slot.textContent = ""; slot.append(a);
-            return;
+          under.append(a, document.createTextNode("’s human"));
+          if (!reduced) {
+            under.classList.remove("hero-slide");
+            void under.offsetWidth;
+            under.classList.add("hero-slide");
           }
-          if (old) {
-            old.classList.add("name-out");
-            old.addEventListener("animationend", function () { old.remove(); }, { once: true });
-            setTimeout(function () { if (old.parentNode) old.remove(); }, 800);
-          }
-          a.classList.add("name-in");
-          slot.append(a);
         }
 
         var cta = document.querySelector("[data-hero-cta]");
@@ -524,29 +512,11 @@ const works = [
     }
     .pm-index .c-dot.is-on { background: var(--pm-gold); transform: scale(1.25); }
 
-    /* the hero name carousel is JS-injected — global rules (scoped never
-       matches injected nodes). Old name out below, new in from above; the
-       rest of the line never moves. */
-    .pm-index .hero-name-slot { display: inline-block; position: relative; }
-    .pm-index .hero-name-slot .hero-name {
-      display: inline-block;
-      color: var(--pm-gold-bright); text-decoration: none;
-      border-bottom: 1px solid rgba(232, 196, 139, 0.5);
-    }
-    .pm-index .hero-name-slot .hero-name:hover { border-bottom-color: var(--pm-gold-bright); }
-    .pm-index .hero-name-slot .name-out {
-      position: absolute; left: 0; top: 0;
-      animation: hero-name-out 0.5s ease both;
-      pointer-events: none;
-    }
-    .pm-index .hero-name-slot .name-in { animation: hero-name-in 0.5s ease both; }
-    @keyframes hero-name-in {
-      from { opacity: 0; transform: translateY(-20px); }
+    /* the welcome-back line slides down as one piece on sign-in and cycle */
+    .pm-index .hero-copy .under.hero-slide { animation: hero-line-in 0.6s ease both; }
+    @keyframes hero-line-in {
+      from { opacity: 0; transform: translateY(-16px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes hero-name-out {
-      from { opacity: 1; transform: translateY(0); }
-      to { opacity: 0; transform: translateY(20px); }
     }
   </style>
 
