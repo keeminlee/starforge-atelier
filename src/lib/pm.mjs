@@ -1,6 +1,6 @@
 // pm.mjs — build-time helpers for the Postmark pages.
 
-import { marked } from "marked";
+import { Marked } from "marked";
 
 function resolveRepoPath(baseDir, ref) {
   const parts = baseDir ? baseDir.split("/") : [];
@@ -14,14 +14,23 @@ function resolveRepoPath(baseDir, ref) {
 
 // Render resident-authored markdown. Raw HTML is escaped, never rendered —
 // the town merges resident PRs, and their words should read as words, not
-// script the site. `>` stays untouched so blockquotes work; `&`/`<` escape.
+// script the site. Escaping happens at the token level (raw-HTML tokens only)
+// rather than pre-escaping the whole source: a blanket pre-escape fed marked
+// already-escaped text, and code spans/blocks re-encoded the `&` — so
+// `<your-handle>` displayed as `&lt;your-handle>` (the doorstep notice bug).
 // Pass repoDir (the source file's directory, repo-relative; "" for root) and
 // relative links resolve to GitHub — the record stays one click away instead
 // of 404ing on the site.
+const escapeHtml = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const safeMarked = new Marked({
+  renderer: {
+    html(token) { return escapeHtml(token.text ?? token.raw ?? ""); },
+  },
+});
 export function md(text, { repoDir, media } = {}) {
   if (!text) return "";
-  const safe = text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-  let html = marked.parse(safe, { async: false });
+  let html = safeMarked.parse(text, { async: false });
   if (repoDir !== undefined) {
     html = html.replace(/href="([^"]+)"/g, (whole, ref) => {
       if (/^(https?:|mailto:|#|\/)/i.test(ref)) return whole;
