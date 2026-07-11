@@ -290,39 +290,41 @@
 }
 
 /* ── the side rail: in-page navigation, sitewide pattern ──
-   Wrap a page's body in .pm-railwrap and put a .pm-siderail nav first;
-   below 1240px the rail hides and the page reads exactly as before. */
+   The rail floats in the LEFT GUTTER beside the page's content column —
+   content keeps its original width and centering, always. Markup:
+   .pm-railwrap > .pm-gutter > nav.pm-siderail, then .rail-main.
+   The gutter is display:none by default; each page turns it on at its own
+   breakpoint (whenever the real gutter has ~160px of room). Low-specificity
+   selectors on purpose: page-scoped styles may override (the resident pills). */
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .pm [id] { scroll-margin-top: 24px; }
-.pm .pm-siderail { display: none; }
-@media (min-width: 1240px) {
-  .pm .pm-railwrap {
-    display: grid; grid-template-columns: 168px minmax(0, 1fr);
-    gap: 2.2em; align-items: start;
-  }
-  .pm .pm-siderail {
-    display: flex; flex-direction: column; gap: 0.1em;
-    position: sticky; top: 26px;
-    padding: 0.3em 0;
-    border-left: 1px solid rgba(232, 196, 139, 0.18);
-  }
-  .pm .pm-siderail .rail-head {
-    font-family: var(--pm-mono); font-size: 0.56rem; letter-spacing: 0.18em;
-    text-transform: uppercase; color: rgba(232, 196, 139, 0.45);
-    padding: 0.3em 0.95em 0.55em;
-  }
-  .pm .pm-siderail a, .pm .pm-siderail button {
-    display: block; text-align: left; background: none; border: 0; cursor: pointer;
-    font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.1em;
-    color: rgba(232, 196, 139, 0.55); text-decoration: none;
-    padding: 0.5em 0.95em;
-    border-left: 2px solid transparent; margin-left: -1px;
-    transition: color 0.12s ease, border-color 0.12s ease;
-  }
-  .pm .pm-siderail a:hover, .pm .pm-siderail button:hover { color: var(--pm-gold); }
-  .pm .pm-siderail a.is-on, .pm .pm-siderail button[aria-selected="true"] {
-    color: var(--pm-gold-bright); border-left-color: var(--pm-gold);
-  }
+.pm-railwrap { position: relative; }
+.pm-gutter {
+  display: none;
+  position: absolute; left: -156px; top: 0; bottom: 0; width: 140px;
+}
+.pm-siderail {
+  position: sticky; top: 26px;
+  display: flex; flex-direction: column; gap: 0.1em;
+  padding: 0.3em 0;
+  border-left: 1px solid rgba(232, 196, 139, 0.18);
+}
+.pm-siderail .rail-head {
+  font-family: var(--pm-mono); font-size: 0.56rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(232, 196, 139, 0.45);
+  padding: 0.3em 0.85em 0.55em;
+}
+.pm-siderail a, .pm-siderail button {
+  display: block; text-align: left; background: none; border: 0; cursor: pointer;
+  font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.08em;
+  color: rgba(232, 196, 139, 0.55); text-decoration: none;
+  padding: 0.5em 0.85em;
+  border-left: 2px solid transparent; margin-left: -1px;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+.pm-siderail a:hover, .pm-siderail button:hover { color: var(--pm-gold); }
+.pm-siderail a.is-on, .pm-siderail button[aria-selected="true"] {
+  color: var(--pm-gold-bright); border-left-color: var(--pm-gold);
 }
 
 /* ── responsive helpers ── */

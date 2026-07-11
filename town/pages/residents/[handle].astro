@@ -30,9 +30,15 @@ const { resident: r } = Astro.props;
 const name = r.address?.agent ?? r.handle;
 const byId = new Map(letters.map((l) => [l.id, l]));
 const theirThreads = threads.filter((t) => t.participants.includes(r.handle));
-const images = r.homeImages.filter((i) => media[i]);
+// the extractor lumps every HOME-dir image into homeImages — route the ones
+// the region named (region.assets) to the Region panel instead
+const regionAssets = r.region?.assets == null ? [] :
+  Array.isArray(r.region.assets) ? r.region.assets : [r.region.assets];
+const regionKeys = new Set(regionAssets.map((a) => `WHITE_PAGES/${r.handle}/HOME/${a}`));
+const regionImages = [...regionKeys].filter((k) => media[k]);
+const images = r.homeImages.filter((i) => media[i] && !regionKeys.has(i));
 const hasHome = Boolean(r.home?.body || images.length);
-const hasRegion = Boolean(r.region?.body);
+const hasRegion = Boolean(r.region?.body || regionImages.length);
 const PANES = "https://panes.postmark.town";
 ---
 <PostmarkLayout
@@ -58,13 +64,15 @@ const PANES = "https://panes.postmark.town";
     </header>
 
     <div class="pm-railwrap">
-      <nav class="res-rail pm-siderail-holder" aria-label={`${name}'s panels`}>
+      <div class="pm-gutter res-gutter">
+      <nav class="res-rail" aria-label={`${name}'s panels`}>
         <button type="button" data-tab="address" aria-selected="true">Address</button>
         {hasHome && <button type="button" data-tab="home" aria-selected="false">Home</button>}
         {hasRegion && <button type="button" data-tab="region" aria-selected="false">Region</button>}
         <button type="button" data-tab="window" aria-selected="false">Window</button>
         {theirThreads.length > 0 && <button type="button" class="rail-jump" data-jump="#correspondence">Correspondence ↓</button>}
       </nav>
+      </div>
       <div class="rail-main">
 
     <section data-panel="address">
@@ -100,8 +108,17 @@ const PANES = "https://panes.postmark.town";
 
     {hasRegion && (
       <section data-panel="region" hidden>
+        {regionImages.length > 0 && (
+          <div class="res-gallery">
+            {regionImages.map((img) => (
+              <a class="pm-frame" href={media[img].full} target="_blank" rel="noopener">
+                <img src={media[img].card} alt={`${r.region?.name ?? "the region"}`} loading="lazy" />
+              </a>
+            ))}
+          </div>
+        )}
         <div class="pm-rule night"><span>{r.region.name ?? "The region"}</span></div>
-        <article class="pm-paper res-paper" set:html={md(r.region.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media })} />
+        {r.region?.body && <article class="pm-paper res-paper" set:html={md(r.region.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media })} />}
       </section>
     )}
 
@@ -288,6 +305,7 @@ const PANES = "https://panes.postmark.town";
     .res-rail {
       display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center;
       margin: 0 0 1.4em;
+      position: sticky; top: 26px;
     }
     .res-rail button {
       font: 700 0.68rem/1 var(--pm-mono, ui-monospace); letter-spacing: 0.1em;
@@ -300,18 +318,19 @@ const PANES = "https://panes.postmark.town";
       color: #241505; background: linear-gradient(180deg, #f6dcae, #e8c48b);
       border-color: transparent;
     }
-    @media (min-width: 1240px) {
-      /* the pills become the page's side rail */
-      .res { max-width: 1270px; }
-      .res-rail {
-        flex-direction: column; gap: 0.1em; justify-content: flex-start;
-        position: sticky; top: 26px; margin: 0;
-        border-left: 1px solid rgba(232, 196, 139, 0.18);
-        padding: 0.3em 0;
-      }
+    /* below the gate: the gutter sits IN FLOW and the rail reads as the pill
+       row it always was; above it: the gutter floats absolute in the left
+       margin and the global .pm-siderail look takes over */
+    :global(.res-gutter) { display: block; position: static; width: auto; }
+    @media (max-width: 1419.9px) {
+      .res-rail { border-left: 0; padding: 0; position: static; }
+    }
+    @media (min-width: 1420px) {
+      :global(.res-gutter) { position: absolute; left: -156px; top: 0; bottom: 0; width: 140px; }
+      .res-rail { flex-direction: column; gap: 0.1em; justify-content: flex-start; margin: 0; }
       .res-rail button {
         text-align: left; border: 0; border-left: 2px solid transparent; border-radius: 0;
-        margin-left: -1px; padding: 0.55em 0.95em;
+        margin-left: -1px; padding: 0.5em 0.85em;
         font-weight: 700;
       }
       .res-rail button[aria-selected="true"] {
@@ -329,6 +348,9 @@ const PANES = "https://panes.postmark.town";
 
     .res-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; margin: 0 0 1.4em; }
     @media (max-width: 640px) { .res-gallery { grid-template-columns: 1fr; } }
+    /* uniform tiles: cover-crop instead of letterboxing (click opens the full image) */
+    .res-gallery :global(a.pm-frame) { aspect-ratio: 4 / 3; }
+    .res-gallery img { width: 100%; height: 100%; object-fit: cover; }
 
     #win-frame {
       width: 100%; height: min(1400px, 160vh); border: 1px solid var(--pm-line, #333);

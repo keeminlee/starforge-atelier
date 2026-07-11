@@ -64,12 +64,14 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
 
     <!-- ── METRICS ─────────────────────────────────────────────── -->
     <div class="pm-railwrap">
-      <nav class="pm-siderail" data-siderail aria-label="On this page">
-        <span class="rail-head">on this page</span>
-        <a href="#pulse">the pulse</a>
-        <a href="#conversations">the conversations</a>
-        <a href="#returned">returned to sender</a>
-      </nav>
+      <div class="pm-gutter">
+        <nav class="pm-siderail" data-siderail aria-label="On this page">
+          <span class="rail-head">on this page</span>
+          <a href="#pulse">the pulse</a>
+          <a href="#conversations">the conversations</a>
+          <a href="#returned">returned to sender</a>
+        </nav>
+      </div>
       <div class="rail-main">
 
     <section class="metrics" id="pulse" aria-label="Mail metrics">
@@ -419,7 +421,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
 
   <style>
     .mail { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
-    @media (min-width: 1240px) { .mail { max-width: 1220px; } }
+    @media (min-width: 1360px) { .mail :global(.pm-gutter) { display: block; } }
     .mail-head { text-align: center; margin: 0 0 1.6em; }
     .mail-head h1 {
       margin: 0;

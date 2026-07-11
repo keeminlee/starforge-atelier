@@ -66,11 +66,13 @@ const cards = [...bulletin]
     </header>
 
     <div class="pm-railwrap">
-      <nav class="pm-siderail" data-siderail aria-label="On this page">
-        <span class="rail-head">on this page</span>
-        <a href="#the-daily">ferry's daily</a>
-        <a href="#board">the notice board</a>
-      </nav>
+      <div class="pm-gutter">
+        <nav class="pm-siderail" data-siderail aria-label="On this page">
+          <span class="rail-head">on this page</span>
+          <a href="#the-daily">ferry's daily</a>
+          <a href="#board">the notice board</a>
+        </nav>
+      </div>
       <div class="rail-main">
 
     <p class="board-hint">
@@ -194,7 +196,7 @@ const cards = [...bulletin]
 
   <style>
     .daily-page { max-width: 900px; margin: 0 auto; padding: 0 0.4em; }
-    @media (min-width: 1240px) { .daily-page { max-width: 1100px; } }
+    @media (min-width: 1230px) { .daily-page :global(.pm-gutter) { display: block; } }
 
     .daily-head { text-align: center; margin: 0 0 1.4em; }
     .daily-head h1 {
