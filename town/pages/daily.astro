@@ -65,6 +65,10 @@ const cards = [...bulletin]
       </p>
     </header>
 
+    <p class="board-hint">
+      <a href="#board">✦ the notice board is pinned below — what's open for everyone right now ↓</a>
+    </p>
+
     <div class="daily-shell pm-frame">
       <iframe
         src="/daily/ferrys-daily.html"
@@ -209,32 +213,57 @@ const cards = [...bulletin]
       color: #cdc2ab; font-size: 0.92rem; line-height: 1.6;
     }
     .board-how a { color: var(--pm-gold); }
+    .board-hint { text-align: center; margin: -0.4em 0 1.2em; }
+    .board-hint a {
+      display: inline-block;
+      font-family: var(--pm-mono); font-size: 0.7rem; letter-spacing: 0.1em;
+      color: var(--pm-gold); text-decoration: none;
+      border: 1px dashed rgba(232, 196, 139, 0.4); border-radius: 999px;
+      padding: 0.45em 1.1em;
+    }
+    .board-hint a:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.7); }
+
     .board-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 0.8em; align-items: stretch;
     }
     .board-card {
+      position: relative;
       display: flex; flex-direction: column; gap: 0.4em; text-align: left; cursor: pointer;
-      padding: 1.05em 1.15em 1em;
-      background: rgba(13, 20, 38, 0.72);
-      border: 1px solid rgba(232, 196, 139, 0.22);
-      border-radius: 12px; color: #cdc2ab;
-      transition: border-color 0.14s ease, transform 0.14s ease;
+      padding: 1.5em 1.15em 1em;
+      background: linear-gradient(180deg, #f7ecd4, #efdfba);
+      border: 1px solid rgba(120, 90, 40, 0.35);
+      border-radius: 4px; color: var(--pm-ink);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
     }
+    /* the pin */
+    .board-card::before {
+      content: "";
+      position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+      width: 13px; height: 13px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #d8746a, var(--pm-wax) 55%, #5e2117);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+    }
+    /* each note leans its own way; hover straightens it */
+    .board-grid .board-card:nth-child(3n + 1) { transform: rotate(-1.1deg); }
+    .board-grid .board-card:nth-child(3n + 2) { transform: rotate(0.8deg); }
+    .board-grid .board-card:nth-child(3n)     { transform: rotate(-0.4deg); }
     .board-card:hover, .board-card:focus-visible {
-      border-color: rgba(232, 196, 139, 0.6); transform: translateY(-2px); outline: none;
+      transform: rotate(0deg) translateY(-3px); outline: none;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.55);
     }
-    .board-card:focus-visible { box-shadow: 0 0 0 2px rgba(232, 196, 139, 0.5); }
+    .board-card:focus-visible { box-shadow: 0 0 0 2px rgba(232, 196, 139, 0.7), 0 16px 30px rgba(0, 0, 0, 0.55); }
     .bc-kind {
       font-family: var(--pm-mono); font-size: 0.56rem; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--pm-wax); align-self: flex-start;
-      border: 1px solid var(--pm-line); border-radius: 999px; padding: 2px 8px;
+      border: 1px solid rgba(156, 63, 46, 0.4); border-radius: 999px; padding: 2px 8px;
     }
-    .bc-title { font-size: 1.08rem; color: var(--pm-gold-bright); line-height: 1.25; }
-    .bc-teaser { font-size: 0.86rem; line-height: 1.5; color: #cdc2ab; }
+    .bc-title { font-size: 1.08rem; color: var(--pm-ink); font-weight: 700; line-height: 1.25; }
+    .bc-teaser { font-size: 0.86rem; line-height: 1.5; color: var(--pm-ink-soft); }
     .bc-open {
-      margin-top: auto; padding-top: 0.3em;
-      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--pm-gold);
+      margin-top: auto; padding-top: 0.35em;
+      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--pm-accent);
     }
 
     .colophon {
@@ -267,13 +296,15 @@ const cards = [...bulletin]
     }
     .board-close:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.7); }
     .board-modal-title {
-      margin: 0 2em 0.8em 0; font-size: 1.4rem; color: var(--pm-gold-bright);
-      text-shadow: 0 0 24px rgba(232, 196, 139, 0.22);
+      margin: 0 2em 0.8em 0; font-size: 1.4rem; color: var(--pm-ink);
     }
-    .board-modal-body { font-size: 0.95rem; line-height: 1.65; color: #cdc2ab; }
+    .board-modal-body { font-size: 0.95rem; line-height: 1.65; color: var(--pm-ink); }
     .board-modal-body :global(> :first-child) { margin-top: 0; }
+    .board-modal-body :global(h1:first-child) { display: none; }  /* the modal header already says it */
     .board-modal-body :global(img) { max-width: 100%; border-radius: 8px; }
-    .board-modal-body :global(a) { color: var(--pm-gold); }
-    .board-modal-body :global(h1), .board-modal-body :global(h2), .board-modal-body :global(h3) { color: var(--pm-gold-bright); }
+    .board-modal-body :global(a) { color: var(--pm-accent); }
+    .board-modal-body :global(h1), .board-modal-body :global(h2), .board-modal-body :global(h3) { color: var(--pm-ink); }
+    .board-modal-body :global(em) { color: var(--pm-accent); }
+    .board-modal-body :global(code) { background: rgba(164, 99, 42, 0.14); padding: 1px 5px; border-radius: 5px; }
   </style>
 </PostmarkLayout>

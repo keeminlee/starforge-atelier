@@ -200,7 +200,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
     const convShown = document.querySelector("[data-conv-shown]");
     const bars = Array.from(document.querySelectorAll("[data-bar]"));
     const PANEL_FIELDS = ["q", "resident", "region", "since", "until", "thread"];
-    const RENDER_CAP = 300;
+    const RENDER_CAP = 60;
 
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     const fmtDate = (iso) => {
@@ -272,12 +272,12 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
         if (l.isBounce) {
           return `<div class="lt-card lt-bounce">
             <span class="lt-meta">${esc(fmtDate(l.date))} · <b>${esc(l.from)}</b> · returned to sender</span>
-            <span class="lt-body"><span class="ln">${esc(l.body)}</span></span>
+            <span class="lt-body">${esc(l.body)}</span>
           </div>`;
         }
         const thread = l.thread || l.id;
         const to = Array.isArray(l.toList) && l.toList.length ? l.toList.join(", ") : (l.to || "");
-        const lines = previewLines(l.body, 5).map((x) => `<span class="ln">${esc(x)}</span>`).join("");
+        const lines = esc(previewLines(l.body, 5).join(" "));
         return `<a class="lt-card" href="/mail/${encodeURIComponent(thread)}/">
           <span class="lt-meta">${esc(fmtDate(l.date))} · <b>${esc(l.from)}</b> → ${esc(to)}</span>
           <span class="lt-body">${lines}</span>
@@ -378,6 +378,31 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
     })();
   </script>
 
+  <style is:global>
+    /* the filtered letter cards are JS-injected, so their styles must be
+       GLOBAL (scoped selectors never match injected nodes — the bare-links
+       bug). Same visual family as .pm-thread-card: filtering changes the
+       list, not the skin. */
+    .mail .lt-card {
+      display: flex; flex-direction: column; gap: 0.45em; min-width: 0;
+      padding: 0.95em 1.2em; text-decoration: none;
+      background: rgba(13, 20, 38, 0.72); border: 1px solid rgba(232, 196, 139, 0.18);
+      border-radius: 12px; color: #cdc2ab;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .mail a.lt-card:hover { border-color: rgba(232, 196, 139, 0.55); transform: translateY(-1px); }
+    .mail .lt-bounce { background: rgba(156, 63, 46, 0.12); border-color: rgba(156, 63, 46, 0.35); cursor: default; }
+    .mail .lt-meta {
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.06em;
+      color: rgba(232, 196, 139, 0.75);
+    }
+    .mail .lt-meta b { color: var(--pm-gold-bright); font-weight: 700; }
+    .mail .lt-body {
+      font-size: 0.88rem; line-height: 1.55; font-style: italic; color: #cdc2ab;
+      display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+    }
+  </style>
+
   <style>
     .mail { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
     .mail-head { text-align: center; margin: 0 0 1.6em; }
@@ -473,7 +498,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
     }
     .fp-field input:focus, .fp-field select:focus { outline: none; border-color: rgba(232, 196, 139, 0.6); }
 
-    .thread-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; align-items: start; }
+    .thread-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7em; align-items: start; }
     .thread-list.hide-office .pm-thread-card[data-office="true"] { display: none; }
     .thread-list[hidden] { display: none; }
     @media (max-width: 760px) { .thread-list { grid-template-columns: 1fr; } }
@@ -486,21 +511,9 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
     }
     .mail-status[hidden] { display: none; }
     .mail-status a { color: var(--pm-gold); }
-    .letter-results { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; align-items: start; }
+    .letter-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7em; align-items: start; }
     .letter-results[hidden] { display: none; }
     @media (max-width: 760px) { .letter-results { grid-template-columns: 1fr; } }
-    .lt-card {
-      display: flex; flex-direction: column; gap: 0.5em;
-      padding: 1em 1.1em; text-decoration: none;
-      background: rgba(13, 20, 38, 0.6); border: 1px solid rgba(232, 196, 139, 0.16);
-      border-radius: 12px; color: #cdc2ab;
-    }
-    .lt-card:hover { border-color: rgba(232, 196, 139, 0.5); }
-    .lt-bounce { background: rgba(156, 63, 46, 0.12); border-color: rgba(156, 63, 46, 0.35); cursor: default; }
-    .lt-meta { font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.06em; color: rgba(232, 196, 139, 0.75); }
-    .lt-meta b { color: var(--pm-gold-bright); }
-    .lt-body { display: grid; gap: 0.15em; font-size: 0.9rem; line-height: 1.5; }
-    .lt-body .ln { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
     .bounce-note { color: #cdc2ab; font-size: 0.9rem; max-width: 62ch; }
     .bounce-list {

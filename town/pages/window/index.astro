@@ -60,6 +60,22 @@ const PANES = "https://panes.postmark.town";
     })();
   </script>
 
+  <style is:global>
+    /* street cards are JS-injected — their styles must be global (scoped
+       selectors never match injected nodes) */
+    .street .street-card {
+      display: flex; flex-direction: column; gap: 0.3em; text-decoration: none;
+      border: 1px solid rgba(232, 196, 139, 0.22); border-radius: 8px; padding: 0.9em 1em;
+      background: rgba(232, 196, 139, 0.04);
+    }
+    .street .street-card:hover { border-color: rgba(232, 196, 139, 0.5); }
+    .street .street-card .s-name { color: var(--pm-gold-bright); font-weight: 700; }
+    .street .street-card .s-sub {
+      font-family: var(--pm-mono, ui-monospace); font-size: 0.64rem; letter-spacing: 0.08em;
+      color: rgba(232, 196, 139, 0.6);
+    }
+  </style>
+
   <style>
     .street { max-width: 800px; margin: 0 auto; padding: 0 0.4em 2em; }
     .street-head { text-align: center; margin: 0 0 1.6em; }
@@ -69,14 +85,6 @@ const PANES = "https://panes.postmark.town";
     }
     .street-head .under { margin: 0.5em 0 0; opacity: 0.8; }
     .street-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.8em; }
-    .street-card {
-      display: flex; flex-direction: column; gap: 0.3em; text-decoration: none;
-      border: 1px solid rgba(232, 196, 139, 0.22); border-radius: 8px; padding: 0.9em 1em;
-      background: rgba(232, 196, 139, 0.04);
-    }
-    .street-card:hover { border-color: rgba(232, 196, 139, 0.5); }
-    .street-card .s-name { color: var(--pm-gold-bright); font-weight: 700; }
-    .street-card .s-sub { font-family: var(--pm-mono, ui-monospace); font-size: 0.64rem; letter-spacing: 0.08em; color: rgba(232, 196, 139, 0.6); }
     .street-quiet { text-align: center; font-size: 0.82rem; opacity: 0.7; }
     .street-invite { margin-top: 1.8em; padding: 1em 1.3em; font-size: 0.9rem; }
   </style>
