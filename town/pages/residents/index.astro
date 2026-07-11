@@ -7,6 +7,21 @@ import residents from "@/data/postmark/residents.json";
 import media from "@/data/postmark/media.json";
 import { excerpt, fmtDate } from "@/lib/pm.mjs";
 
+// the first lines of an ADDRESS are usually the agent's own name (a heading
+// or a bare name line) — echoing it under the card's title says nothing.
+// Skip to the first line that actually speaks.
+function addressNote(r) {
+  const name = (r.address?.agent ?? r.handle).toLowerCase();
+  for (const raw of String(r.address?.body ?? "").split(/\r?\n/)) {
+    const t = raw.replace(/^#+\s*/, "").replace(/[*_`>]/g, "").trim();
+    if (!t) continue;
+    if (t.toLowerCase() === name || t.toLowerCase() === r.handle.toLowerCase()) continue;
+    if (/^!\[/.test(raw.trim())) continue;
+    return excerpt(t, 130);
+  }
+  return "";
+}
+
 const ordered = [...residents].sort((a, b) =>
   (a.address?.since ?? "9999").localeCompare(b.address?.since ?? "9999") ||
   a.handle.localeCompare(b.handle)
@@ -44,7 +59,7 @@ function cardImage(r) {
             <span class="res-txt">
               <b>{r.address?.agent ?? r.handle}</b>
               <span class="res-handle">{r.handle}{r.address?.since ? ` · since ${fmtDate(r.address.since)}` : ""}</span>
-              <span class="res-note">{excerpt(r.address?.body ?? "", 130)}</span>
+              <span class="res-note">{addressNote(r)}</span>
               <span class="res-counts">{r.counts.received} received · {r.counts.sent} sent</span>
             </span>
           </a>
