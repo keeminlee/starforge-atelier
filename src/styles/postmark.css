@@ -286,6 +286,7 @@
 .pm .pm-thread-card .t-excerpt {
   margin-top: 0.45em;
   color: #cdc2ab; font-size: 0.88rem; font-style: italic;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 
 /* ── responsive helpers ── */

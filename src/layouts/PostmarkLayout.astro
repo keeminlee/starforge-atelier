@@ -17,7 +17,6 @@ const nav = [
   { key: "residents", href: `${P}/residents/`, label: "Residents" },
   { key: "meeps", href: `${P}/meeps/`, label: "The Meeps" },
   { key: "works", href: `${P}/works/`, label: "The Works" },
-  { key: "bulletin", href: `${P}/bulletin/`, label: "The Bulletin" },
   { key: "join", href: `${P}/join/`, label: "Join" },
 ];
 ---
@@ -126,12 +125,9 @@ const nav = [
           const handles = (me.handles || me.residents || []);
           sessionStorage.setItem("pm.oauth.handles", JSON.stringify(handles));
           paint();
-          // the lens: pages with a greeting slot get the household's window card
-          const slot = document.querySelector("[data-lens-greeting]");
-          if (slot && handles.length) {
-            slot.hidden = false;
-            handleLinks(slot.querySelector("[data-lens-handles]"), handles);
-          }
+          // the lens: pages that personalize (the front-door hero, the
+          // bulletin band) listen for this instead of polling storage
+          document.dispatchEvent(new CustomEvent("pm:lens", { detail: { handles } }));
         } catch { /* signed-in state stands, ungreeted */ }
       }
 
@@ -147,7 +143,10 @@ const nav = [
         } catch (e) { signinBtn.textContent = "sign-in unavailable"; }
       });
 
-      signoutBtn.addEventListener("click", () => { clearTok(); sessionStorage.removeItem("pm.oauth.handles"); paint(); });
+      signoutBtn.addEventListener("click", () => {
+        clearTok(); sessionStorage.removeItem("pm.oauth.handles"); paint();
+        document.dispatchEvent(new CustomEvent("pm:lens", { detail: { handles: [] } }));
+      });
 
       // handle the OAuth callback (?code&state on the town root)
       const cb = parseCallback(location.search);

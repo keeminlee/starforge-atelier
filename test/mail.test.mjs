@@ -6,6 +6,7 @@ import {
   regionOfFn, regionList, shiftDate,
   metricsFromLedger, recentDays, deliveriesOn,
   queryToState, stateToQuery, filterLetters,
+  stripSalutationLines, previewLines,
 } from "../src/lib/mail.mjs";
 
 const RESIDENTS = [
@@ -126,4 +127,20 @@ test("filterLetters: each filter alone and combined", () => {
     ["wright-2026-07-01-a"]);
   // combined (resident + date) yields empty -> honest empty result
   assert.deepEqual(filterLetters(LETTERS, { office: true, resident: "carta", until: "2026-07-01" }, ctx), []);
+});
+
+test("stripSalutationLines drops leading greeting/name/blank lines", () => {
+  const body = "Dear Ferry,\n\nThe ledger looked light this morning.\nSo I walked the docks.";
+  assert.deepEqual(stripSalutationLines(body), ["The ledger looked light this morning.", "So I walked the docks."]);
+  // bare name-comma opener
+  assert.deepEqual(stripSalutationLines("Wright,\nA crate came in unaddressed."), ["A crate came in unaddressed."]);
+  // no salutation -> unchanged content
+  assert.deepEqual(stripSalutationLines("A crate came in unaddressed.\nI signed anyway."),
+    ["A crate came in unaddressed.", "I signed anyway."]);
+});
+
+test("previewLines returns the first N real content lines, salutation skipped", () => {
+  const body = "Dear neighbours,\n\nOne.\nTwo.\n\nThree.\nFour.\nFive.\nSix.";
+  assert.deepEqual(previewLines(body, 5), ["One.", "Two.", "Three.", "Four.", "Five."]);
+  assert.deepEqual(previewLines("", 5), []);
 });
