@@ -170,8 +170,12 @@ export function filterLetters(letters, state, { officeSet = new Set(), regionOf 
     if (state?.resident && !parts.includes(state.resident)) return false;
     if (state?.region && !parts.some((h) => regionOf(h) === state.region)) return false;
     if (state?.thread && l.thread !== state.thread && l.id !== state.thread) return false;
-    if (state?.since && (l.date ?? "") < state.since) return false;
-    if (state?.until && (l.date ?? "") > state.until) return false;
+    // date filters run on the town's clock: the ledger's DELIVERY date when
+    // the letter has one (so a heatmap-bar click matches the bar's count),
+    // falling back to the written date for mail still crossing
+    const when = l.delivered ?? l.date ?? "";
+    if (state?.since && when < state.since) return false;
+    if (state?.until && when > state.until) return false;
     if (q) {
       const hay = `${l.id} ${l.from} ${l.to} ${l.body ?? ""}`.toLowerCase();
       if (!hay.includes(q)) return false;

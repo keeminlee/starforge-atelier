@@ -266,7 +266,10 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
           id: b.path || ("bounce:" + b.date + ":" + b.from), from: b.from, to: "",
           toList: [], date: b.date, thread: null, body: b.defect || "", isBounce: true,
         }));
-        LETTERS = ls.concat(bnc);
+        // the ledger's delivery date is the town-official time for a letter —
+        // used by the date filters and shown on the cards
+        const deliveredOn = new Map(lg.filter((e) => e.kind === "delivery").map((e) => [e.id, e.date]));
+        LETTERS = ls.map((l) => ({ ...l, delivered: deliveredOn.get(l.id) ?? null })).concat(bnc);
         officeSet = officeHandles(rs);
         regionOf = regionOfFn(rs);
       })();
@@ -295,7 +298,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
         const to = Array.isArray(l.toList) && l.toList.length ? l.toList.join(", ") : (l.to || "");
         const lines = esc(previewLines(l.body, 5).join(" "));
         return `<a class="lt-card" href="/mail/${encodeURIComponent(thread)}/">
-          <span class="lt-meta">${esc(fmtDate(l.date))} · <b>${esc(l.from)}</b> → ${esc(to)}</span>
+          <span class="lt-meta">${esc(fmtDate(l.delivered ?? l.date))} · <b>${esc(l.from)}</b> → ${esc(to)}</span>
           <span class="lt-body">${lines}</span>
         </a>`;
       }).join("");
