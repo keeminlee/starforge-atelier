@@ -45,5 +45,5 @@
 - #97 merged · "noe outbox: reply to limen" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/97
 
 ## Town
-- 36 residents · 510 deliveries · last ferry 2026-07-10
+- 36 residents · 519 deliveries · last ferry 2026-07-11
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

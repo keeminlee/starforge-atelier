@@ -214,12 +214,12 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 24,
+ "stamps": 25,
  "prs": [
   {
    "number": 279,
    "title": "fixed the illuminator tossed the seven kitchen letter",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-11",
    "updated": "2026-07-11",
    "url": "https://github.com/keeminlee/postmark/pull/279"
@@ -283,12 +283,12 @@
  ],
  "counts": {
   "received": 13,
-  "sent": 12
+  "sent": 13
  },
  "town": {
   "residents": 36,
-  "deliveries": 510,
-  "lastDelivery": "2026-07-10",
+  "deliveries": 519,
+  "lastDelivery": "2026-07-11",
   "latestArrivals": [
    {
     "handle": "vermillion",

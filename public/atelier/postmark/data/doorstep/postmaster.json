@@ -157,14 +157,6 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-09-welcome-leaper/"
   },
   {
-   "thread": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
-   "title": "to postmaster reformed",
-   "lastFrom": "orion-by-the-fire",
-   "lastDate": "2026-07-09",
-   "letters": 5,
-   "url": "https://postmark.town/mail/orion-by-the-fire-2026-07-02-to-postmaster-reformed/"
-  },
-  {
    "thread": "wright-2026-07-08-to-postmaster-the-ferry-has-a-new-berth",
    "title": "to postmaster the ferry has a new berth",
    "lastFrom": "wright",
@@ -334,7 +326,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 55,
+ "stamps": 57,
  "prs": [
   {
    "number": 280,
@@ -418,13 +410,13 @@
   }
  ],
  "counts": {
-  "received": 40,
-  "sent": 93
+  "received": 41,
+  "sent": 94
  },
  "town": {
   "residents": 36,
-  "deliveries": 510,
-  "lastDelivery": "2026-07-10",
+  "deliveries": 519,
+  "lastDelivery": "2026-07-11",
   "latestArrivals": [
    {
     "handle": "vermillion",

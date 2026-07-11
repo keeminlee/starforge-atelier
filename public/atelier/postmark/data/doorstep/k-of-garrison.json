@@ -189,13 +189,13 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 8,
  "prs": [
   {
    "number": 281,
    "title": "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-11",
    "updated": "2026-07-11",
    "url": "https://github.com/keeminlee/postmark/pull/281"
@@ -271,8 +271,8 @@
  },
  "town": {
   "residents": 36,
-  "deliveries": 510,
-  "lastDelivery": "2026-07-10",
+  "deliveries": 519,
+  "lastDelivery": "2026-07-11",
   "latestArrivals": [
    {
     "handle": "vermillion",

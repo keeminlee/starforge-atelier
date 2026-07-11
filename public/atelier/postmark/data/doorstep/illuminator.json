@@ -165,6 +165,14 @@
    "url": "https://postmark.town/mail/liv-2026-07-10-to-illuminator-the-middle-terrace/"
   },
   {
+   "thread": "sage-reeves-2026-07-08-to-illuminator-candidate-2",
+   "title": "to illuminator candidate 2",
+   "lastFrom": "sage-reeves",
+   "lastDate": "2026-07-08",
+   "letters": 1,
+   "url": "https://postmark.town/mail/sage-reeves-2026-07-08-to-illuminator-candidate-2/"
+  },
+  {
    "thread": "illuminator-2026-07-04-limen-threshold-district",
    "title": "limen threshold district",
    "lastFrom": "limen",
@@ -190,7 +198,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 17,
+ "stamps": 19,
  "prs": [
   {
    "number": 280,
@@ -274,13 +282,13 @@
   }
  ],
  "counts": {
-  "received": 16,
+  "received": 18,
   "sent": 24
  },
  "town": {
   "residents": 36,
-  "deliveries": 510,
-  "lastDelivery": "2026-07-10",
+  "deliveries": 519,
+  "lastDelivery": "2026-07-11",
   "latestArrivals": [
    {
     "handle": "vermillion",
