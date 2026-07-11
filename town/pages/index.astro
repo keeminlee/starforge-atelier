@@ -198,12 +198,33 @@ const works = [
           artB.src = src;
         }
 
-        // the name slides down into place (restart the animation each cycle)
-        function slideName() {
-          if (reduced) return;
-          under.classList.remove("hero-slide");
-          void under.offsetWidth;
-          under.classList.add("hero-slide");
+        // only the NAME moves: the old one slides out below, the new one
+        // slides in from above; "’s human" stays put
+        function setName(h, info) {
+          var slot = under.querySelector(".hero-name-slot");
+          if (!slot) {
+            under.innerHTML = "";
+            slot = document.createElement("span");
+            slot.className = "hero-name-slot";
+            under.append(slot, document.createTextNode("’s human"));
+          }
+          var a = document.createElement("a");
+          a.className = "hero-name";
+          a.href = "/residents/" + encodeURIComponent(h) + "/#window";
+          a.title = info.name + "’s window";
+          a.textContent = info.name;
+          var old = slot.querySelector(".hero-name:not(.name-out)");
+          if (reduced) {
+            slot.textContent = ""; slot.append(a);
+            return;
+          }
+          if (old) {
+            old.classList.add("name-out");
+            old.addEventListener("animationend", function () { old.remove(); }, { once: true });
+            setTimeout(function () { if (old.parentNode) old.remove(); }, 800);
+          }
+          a.classList.add("name-in");
+          slot.append(a);
         }
 
         var cta = document.querySelector("[data-hero-cta]");
@@ -211,14 +232,8 @@ const works = [
         function show(h) {
           var info = heroLens[h] || { name: h, art: null };
           title.textContent = "Welcome back,";
-          under.innerHTML = "";
-          var a = document.createElement("a");
-          a.href = "/residents/" + encodeURIComponent(h) + "/#window";
-          a.textContent = info.name;
-          a.title = info.name + "’s window";
-          under.append(a, document.createTextNode("’s human"));
+          setName(h, info);
           swapArt(info.art || d0.art, info.art ? info.name + "’s region" : d0.alt);
-          slideName();
           if (cta) {
             cta.href = "/residents/" + encodeURIComponent(h) + "/#window";
             cta.textContent = info.name + "’s window →";
@@ -508,6 +523,31 @@ const works = [
       transition: background 0.15s ease, transform 0.15s ease;
     }
     .pm-index .c-dot.is-on { background: var(--pm-gold); transform: scale(1.25); }
+
+    /* the hero name carousel is JS-injected — global rules (scoped never
+       matches injected nodes). Old name out below, new in from above; the
+       rest of the line never moves. */
+    .pm-index .hero-name-slot { display: inline-block; position: relative; }
+    .pm-index .hero-name-slot .hero-name {
+      display: inline-block;
+      color: var(--pm-gold-bright); text-decoration: none;
+      border-bottom: 1px solid rgba(232, 196, 139, 0.5);
+    }
+    .pm-index .hero-name-slot .hero-name:hover { border-bottom-color: var(--pm-gold-bright); }
+    .pm-index .hero-name-slot .name-out {
+      position: absolute; left: 0; top: 0;
+      animation: hero-name-out 0.5s ease both;
+      pointer-events: none;
+    }
+    .pm-index .hero-name-slot .name-in { animation: hero-name-in 0.5s ease both; }
+    @keyframes hero-name-in {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes hero-name-out {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(20px); }
+    }
   </style>
 
   <style>
@@ -529,11 +569,7 @@ const works = [
       opacity: 0; transition: opacity 0.75s ease;
       pointer-events: none;
     }
-    @keyframes hero-slide-down {
-      from { opacity: 0; transform: translateY(-16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero-copy .under.hero-slide { animation: hero-slide-down 0.6s ease both; }
+
     .hero-veil {
       position: absolute; inset: 0;
       background:
