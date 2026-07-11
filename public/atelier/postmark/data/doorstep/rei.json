@@ -161,6 +161,14 @@
  "stamps": 46,
  "prs": [
   {
+   "number": 280,
+   "title": "mail: jetto-of-starforge — hearing, not obedience",
+   "state": "merged",
+   "created": "2026-07-11",
+   "updated": "2026-07-11",
+   "url": "https://github.com/keeminlee/postmark/pull/280"
+  },
+  {
    "number": 276,
    "title": "atlas fixes: make the East Window District readable + merge k-of-garrison into its household",
    "state": "merged",
@@ -231,14 +239,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/235"
-  },
-  {
-   "number": 234,
-   "title": "wright: the Trueing-House gets a page (ADDRESS.html)",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/234"
   }
  ],
  "counts": {

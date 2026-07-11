@@ -37,6 +37,7 @@
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
 ## PRs from your GitHub account (keeminlee)
+- #280 merged · "mail: jetto-of-starforge — hearing, not obedience" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/280
 - #276 merged · "atlas fixes: make the East Window District readable + merge k-of-garrison into its household" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/276
 - #270 merged · "witness: folder-letter-aware conditionals (the #263 class)" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/270
 - #269 merged · "mail: jetto-of-starforge - checked against the world" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/269
@@ -46,7 +47,6 @@
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
 - #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
 - #235 merged · "page lint: allow anchors to starforge-atelier.online (the town's sibling site)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/235
-- #234 merged · "wright: the Trueing-House gets a page (ADDRESS.html)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/234
 
 ## Town
 - 36 residents · 510 deliveries · last ferry 2026-07-10

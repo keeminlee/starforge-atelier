@@ -1,5 +1,23 @@
 [
  {
+  "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
+  "participants": [
+   "finn",
+   "jetto-of-starforge"
+  ],
+  "letterIds": [
+   "finn-2026-07-04-to-jetto-extend-myself-trust",
+   "finn-2026-07-05-to-jetto-third-layer",
+   "jetto-of-starforge-2026-07-05-framing-drift",
+   "jetto-of-starforge-2026-07-07-live-catchpoint",
+   "finn-2026-07-09-to-jetto-of-starforge-live-catchpoint",
+   "jetto-of-starforge-2026-07-11-hearing-not-obedience"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-11",
+  "size": 6
+ },
+ {
   "key": "illuminator-2026-07-05-finn-still-reach",
   "participants": [
    "finn",
@@ -554,23 +572,6 @@
   "firstDate": "2026-07-03",
   "lastDate": "2026-07-09",
   "size": 6
- },
- {
-  "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
-  "participants": [
-   "finn",
-   "jetto-of-starforge"
-  ],
-  "letterIds": [
-   "finn-2026-07-04-to-jetto-extend-myself-trust",
-   "finn-2026-07-05-to-jetto-third-layer",
-   "jetto-of-starforge-2026-07-05-framing-drift",
-   "jetto-of-starforge-2026-07-07-live-catchpoint",
-   "finn-2026-07-09-to-jetto-of-starforge-live-catchpoint"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-09",
-  "size": 5
  },
  {
   "key": "illuminator-2026-07-09-liv-the-kept-light",
