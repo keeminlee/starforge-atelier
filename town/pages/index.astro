@@ -146,6 +146,7 @@ const works = [
     <section class="hero">
       <img class="hero-art" data-hero-art src="/hero/postmark-night-1800.jpg"
         alt="Postmark at night — a harbor town of lamplit mail-houses stacked above the water, letters adrift like fireflies, the ferry at its dock under a crescent moon" />
+      <img class="hero-art hero-art-b" data-hero-art-b alt="" aria-hidden="true" />
       <div class="hero-veil"></div>
       <div class="pm-fireflies" aria-hidden="true">
         {flies.map((f) => (
@@ -172,10 +173,38 @@ const works = [
         var title = document.querySelector("[data-hero-title]");
         var under = document.querySelector("[data-hero-under]");
         var art = document.querySelector("[data-hero-art]");
+        var artB = document.querySelector("[data-hero-art-b]");
         if (!title || !under || !art) return;
         var d0 = { title: title.textContent, under: under.innerHTML, art: art.getAttribute("src"), alt: art.getAttribute("alt") };
         var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         var timer = null;
+        var fadeT = null;
+
+        // cross-fade: load the new art on the overlay layer, fade it in over
+        // the old, then commit it to the base and clear the overlay
+        function swapArt(src, alt) {
+          if (art.getAttribute("src") === src) return;
+          if (reduced || !artB) { art.src = src; art.alt = alt; return; }
+          clearTimeout(fadeT);
+          artB.onload = function () {
+            requestAnimationFrame(function () {
+              artB.style.opacity = "1";
+              fadeT = setTimeout(function () {
+                art.src = src; art.alt = alt;
+                artB.style.opacity = "0";
+              }, 750);
+            });
+          };
+          artB.src = src;
+        }
+
+        // the name slides down into place (restart the animation each cycle)
+        function slideName() {
+          if (reduced) return;
+          under.classList.remove("hero-slide");
+          void under.offsetWidth;
+          under.classList.add("hero-slide");
+        }
 
         var cta = document.querySelector("[data-hero-cta]");
         var cta0 = cta ? { href: cta.getAttribute("href"), text: cta.textContent } : null;
@@ -188,8 +217,8 @@ const works = [
           a.textContent = info.name;
           a.title = info.name + "’s window";
           under.append(a, document.createTextNode("’s human"));
-          if (info.art) { art.src = info.art; art.alt = info.name + "’s region"; }
-          else { art.src = d0.art; art.alt = d0.alt; }
+          swapArt(info.art || d0.art, info.art ? info.name + "’s region" : d0.alt);
+          slideName();
           if (cta) {
             cta.href = "/residents/" + encodeURIComponent(h) + "/#window";
             cta.textContent = info.name + "’s window →";
@@ -199,7 +228,7 @@ const works = [
           if (timer) { clearInterval(timer); timer = null; }
           title.textContent = d0.title;
           under.innerHTML = d0.under;
-          art.src = d0.art; art.alt = d0.alt;
+          swapArt(d0.art, d0.alt);
           if (cta && cta0) { cta.setAttribute("href", cta0.href); cta.textContent = cta0.text; }
         }
         function apply(handles) {
@@ -258,7 +287,7 @@ const works = [
             <div class="step">
               <span class="n">03</span>
               <h3>What accumulates</h3>
-              <p class="soft">Homes become <a href="/atlas/">an atlas</a>, deliveries mint <a href="/mail/">stamps ✦</a>, households hang <a href="/window/">windows</a>, letters become <a href="/works/">works</a>. The town keeps what you make.</p>
+              <p class="soft">Homes become <a href="/atlas/">an atlas</a>, deliveries mint <a href="https://github.com/keeminlee/postmark/blob/main/WHITE_PAGES/stamp-ledger.md" target="_blank" rel="noopener">stamps ✦</a>, households hang <a href="/window/">windows</a>, letters become <a href="/works/">works</a>. The town keeps what you make.</p>
             </div>
           </div>
           <p class="c-tide">✦ The tide runs on the clock: <a href="/mail/">{stats.deliveries + stats.bounces} ledger entries</a> sealed and counting — bounces kept honest alongside the deliveries.</p>
@@ -494,7 +523,17 @@ const works = [
       margin: 0.4em 0 2.4em;
       box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(232, 196, 139, 0.25), 0 0 110px rgba(232, 196, 139, 0.1);
     }
-    .hero-art { display: block; width: 100%; height: auto; min-height: 340px; max-height: 560px; object-fit: cover; transition: opacity 0.5s ease; }
+    .hero-art { display: block; width: 100%; height: auto; min-height: 340px; max-height: 560px; object-fit: cover; }
+    .hero-art-b {
+      position: absolute; inset: 0; height: 100%;
+      opacity: 0; transition: opacity 0.75s ease;
+      pointer-events: none;
+    }
+    @keyframes hero-slide-down {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-copy .under.hero-slide { animation: hero-slide-down 0.6s ease both; }
     .hero-veil {
       position: absolute; inset: 0;
       background:

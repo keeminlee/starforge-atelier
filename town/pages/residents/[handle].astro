@@ -57,12 +57,15 @@ const PANES = "https://panes.postmark.town";
       </p>
     </header>
 
-    <nav class="res-rail" aria-label={`${name}'s panels`}>
-      <button type="button" data-tab="address" aria-selected="true">Address</button>
-      {hasHome && <button type="button" data-tab="home" aria-selected="false">Home</button>}
-      {hasRegion && <button type="button" data-tab="region" aria-selected="false">Region</button>}
-      <button type="button" data-tab="window" aria-selected="false">Window</button>
-    </nav>
+    <div class="pm-railwrap">
+      <nav class="res-rail pm-siderail-holder" aria-label={`${name}'s panels`}>
+        <button type="button" data-tab="address" aria-selected="true">Address</button>
+        {hasHome && <button type="button" data-tab="home" aria-selected="false">Home</button>}
+        {hasRegion && <button type="button" data-tab="region" aria-selected="false">Region</button>}
+        <button type="button" data-tab="window" aria-selected="false">Window</button>
+        {theirThreads.length > 0 && <button type="button" class="rail-jump" data-jump="#correspondence">Correspondence ↓</button>}
+      </nav>
+      <div class="rail-main">
 
     <section data-panel="address">
       {r.address?.body ? (
@@ -139,7 +142,7 @@ const PANES = "https://panes.postmark.town";
 
     {theirThreads.length > 0 && (
       <>
-        <div class="pm-rule night"><span>Their correspondence</span></div>
+        <div class="pm-rule night" id="correspondence"><span>Their correspondence</span></div>
         <div class="res-threads">
           {theirThreads.map((t) => {
             const first = byId.get(t.key);
@@ -161,6 +164,9 @@ const PANES = "https://panes.postmark.town";
       <a class="pm-btn ghost" href={townFile(`WHITE_PAGES/${r.handle}`)}>their pages, in the record →</a>
       <a class="pm-btn ghost" href="/residents/">← All residents</a>
     </p>
+
+      </div>
+    </div>
   </div>
 
   <script is:inline define:vars={{ handle: r.handle, PANES }}>
@@ -194,6 +200,11 @@ const PANES = "https://panes.postmark.town";
       }
       tabs.forEach(function (t) {
         t.addEventListener("click", function () { select(t.getAttribute("data-tab"), true); });
+      });
+      var jump = root.querySelector("[data-jump]");
+      if (jump) jump.addEventListener("click", function () {
+        var el = document.querySelector(jump.getAttribute("data-jump"));
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       });
 
       // ── the window pane (loaded on first activation) ──────────────────
@@ -288,6 +299,27 @@ const PANES = "https://panes.postmark.town";
     .res-rail button[aria-selected="true"] {
       color: #241505; background: linear-gradient(180deg, #f6dcae, #e8c48b);
       border-color: transparent;
+    }
+    @media (min-width: 1240px) {
+      /* the pills become the page's side rail */
+      .res { max-width: 1270px; }
+      .res-rail {
+        flex-direction: column; gap: 0.1em; justify-content: flex-start;
+        position: sticky; top: 26px; margin: 0;
+        border-left: 1px solid rgba(232, 196, 139, 0.18);
+        padding: 0.3em 0;
+      }
+      .res-rail button {
+        text-align: left; border: 0; border-left: 2px solid transparent; border-radius: 0;
+        margin-left: -1px; padding: 0.55em 0.95em;
+        font-weight: 700;
+      }
+      .res-rail button[aria-selected="true"] {
+        color: var(--pm-gold-bright); background: none;
+        border-left-color: var(--pm-gold);
+      }
+      .res-rail button.rail-jump { color: rgba(232, 196, 139, 0.45); margin-top: 0.6em; }
+      .res-rail button.rail-jump:hover { color: var(--pm-gold); }
     }
 
     .res-quiet { text-align: center; font-size: 0.82rem; opacity: 0.7; }

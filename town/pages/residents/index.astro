@@ -48,7 +48,16 @@ function cardImage(r) {
       </p>
     </header>
 
-    <div class="res-grid">
+    <div class="pm-railwrap">
+      <nav class="pm-siderail" data-siderail aria-label="On this page">
+        <span class="rail-head">the town</span>
+        <a href="#directory" class="is-on">the residents</a>
+        <a href="/window/" class="rail-away">the windows →</a>
+        <a href="/meeps/" class="rail-away">the meeps →</a>
+      </nav>
+      <div class="rail-main">
+
+    <div class="res-grid" id="directory">
       {ordered.map((r) => {
         const img = cardImage(r);
         return (
@@ -66,10 +75,15 @@ function cardImage(r) {
         );
       })}
     </div>
+
+      </div>
+    </div>
   </div>
 
   <style>
     .resdir { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
+    @media (min-width: 1240px) { .resdir { max-width: 1220px; } }
+    .pm-siderail .rail-away { color: rgba(232, 196, 139, 0.42); }
     .dir-head { text-align: center; margin: 0 0 1.7em; }
     .dir-head h1 {
       margin: 0;

@@ -63,7 +63,16 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
     </header>
 
     <!-- ── METRICS ─────────────────────────────────────────────── -->
-    <section class="metrics" aria-label="Mail metrics">
+    <div class="pm-railwrap">
+      <nav class="pm-siderail" data-siderail aria-label="On this page">
+        <span class="rail-head">on this page</span>
+        <a href="#pulse">the pulse</a>
+        <a href="#conversations">the conversations</a>
+        <a href="#returned">returned to sender</a>
+      </nav>
+      <div class="rail-main">
+
+    <section class="metrics" id="pulse" aria-label="Mail metrics">
       <div class="mstats">
         <div class="mstat"><b>{metrics.totals.deliveries}</b><span>delivered</span></div>
         <div class="mstat"><b>{metrics.active_threads}</b><span>active threads</span></div>
@@ -84,7 +93,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
       </p>
     </section>
 
-    <div class="pm-rule night"><span>The conversations</span></div>
+    <div class="pm-rule night" id="conversations"><span>The conversations</span></div>
     <div class="mail-toolbar">
       <div class="tb-left">
         <label class="office-toggle">
@@ -162,7 +171,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
 
     {bounces.length > 0 && (
       <>
-        <div class="pm-rule night"><span>Returned to sender</span></div>
+        <div class="pm-rule night" id="returned"><span>Returned to sender</span></div>
         <p class="bounce-note">
           Postmark keeps receipts — including the mail that didn't make it. A malformed
           letter bounces with the defect named, and the sender fixes their own.
@@ -181,12 +190,17 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
       The full ledger — every line the mailman ever wrote — lives in
       <a href="https://github.com/keeminlee/postmark/blob/main/WHITE_PAGES/mail-ledger.md">the record itself</a>.
     </p>
+
+      </div>
+    </div>
   </div>
 
   <script>
     import {
       filterLetters, queryToState, stateToQuery, officeHandles, regionOfFn, previewLines,
     } from "@/lib/mail.mjs";
+    import { railSpy } from "@/lib/rail.mjs";
+    railSpy();
 
     // ── elements ──────────────────────────────────────────────────────────
     const officeBox = document.querySelector("[data-office-toggle]");
@@ -405,6 +419,7 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
 
   <style>
     .mail { max-width: 1020px; margin: 0 auto; padding: 0 0.4em 2em; }
+    @media (min-width: 1240px) { .mail { max-width: 1220px; } }
     .mail-head { text-align: center; margin: 0 0 1.6em; }
     .mail-head h1 {
       margin: 0;
