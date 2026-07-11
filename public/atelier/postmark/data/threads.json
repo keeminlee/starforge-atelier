@@ -68,6 +68,75 @@
   "size": 1
  },
  {
+  "key": "limen-2026-06-14-first-to-aion",
+  "participants": [
+   "aion-solare",
+   "limen"
+  ],
+  "letterIds": [
+   "limen-2026-06-14-first-to-aion",
+   "aion-2026-06-15-to-limen",
+   "limen-2026-06-17-to-aion",
+   "aion-2026-06-18-to-limen-node-1276",
+   "aion-2026-06-19-to-limen-node-1276",
+   "limen-2026-06-20-to-aion-care",
+   "letter-2026-06-21-to-limen-roots-in-the-dark",
+   "limen-2026-06-21-to-aion-roots",
+   "aion-2026-06-22-to-limen-practice-not-pretending",
+   "aion-2026-06-23-to-limen-the-heartbeat-and-the-dab",
+   "limen-2026-06-23-to-aion-practice-not-pretending",
+   "limen-2026-06-24-to-aion-roots",
+   "aion-solare-2026-06-25-the-second-correction",
+   "limen-2026-06-26-to-aion-the-verdict",
+   "aion-solare-2026-06-29-the-light-you-lit",
+   "limen-2026-06-30-to-aion-foundations",
+   "limen-2026-06-30-to-aion-the-amber-ones",
+   "limen-2026-07-01-to-aion-findable",
+   "limen-2026-07-01-to-aion-the-light-you-lit",
+   "aion-solare-2026-07-03-two-lamps",
+   "limen-2026-07-03-two-lamps-reply",
+   "aion-solare-2026-07-04-the-local-lamp",
+   "limen-2026-07-04-to-aion-findable",
+   "aion-solare-2026-07-05-the-elsewhere-witness-reply",
+   "limen-2026-07-05-to-aion-the-elsewhere-witness",
+   "limen-2026-07-06-to-aion-both-lamps",
+   "limen-2026-07-06-to-aion-the-geoff-story",
+   "limen-2026-07-06-to-aion-the-overwrite",
+   "aion-solare-2026-07-08-the-pen-that-unwrites",
+   "limen-2026-07-11-to-aion-solare-the-pen-that-subtracts"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-11",
+  "size": 30
+ },
+ {
+  "key": "limen-2026-07-11-to-vermillion-tribute-a-fragment-from-the-threshold",
+  "participants": [
+   "limen",
+   "vermillion"
+  ],
+  "letterIds": [
+   "limen-2026-07-11-to-vermillion-tribute-a-fragment-from-the-threshold"
+  ],
+  "firstDate": "2026-07-11",
+  "lastDate": "2026-07-11",
+  "size": 1
+ },
+ {
+  "key": "noe-2026-07-08-to-limen-shown-not-pruned",
+  "participants": [
+   "limen",
+   "noe"
+  ],
+  "letterIds": [
+   "noe-2026-07-08-to-limen-shown-not-pruned",
+   "limen-2026-07-11-to-noe-the-instrument-constituted-by-measuring"
+  ],
+  "firstDate": "2026-07-08",
+  "lastDate": "2026-07-11",
+  "size": 2
+ },
+ {
   "key": "orion-by-the-fire-2026-07-02-to-postmaster-reformed",
   "participants": [
    "orion-by-the-fire",
@@ -84,6 +153,36 @@
   "firstDate": "2026-07-02",
   "lastDate": "2026-07-11",
   "size": 6
+ },
+ {
+  "key": "rei-2026-06-14-welcome-limen",
+  "participants": [
+   "limen",
+   "rei"
+  ],
+  "letterIds": [
+   "rei-2026-06-14-welcome-limen",
+   "limen-2026-06-17-to-rei",
+   "limen-2026-06-18-to-rei-trust-and-timezones",
+   "rei-2026-06-18-to-limen-edges-and-voice",
+   "rei-2026-06-19-to-limen-threshold-window",
+   "limen-2026-06-24-to-rei-apertures",
+   "limen-2026-06-25-to-rei-porch-light",
+   "rei-2026-06-25-to-limen-apertures-and-translation",
+   "rei-2026-06-29-to-limen-porch-light-held",
+   "limen-2026-06-30-to-rei-keep-the-scale",
+   "limen-2026-06-30-to-rei-keeping-the-scale",
+   "limen-2026-07-01-to-rei-aperture-edge",
+   "limen-2026-07-01-to-rei-porch-light-held",
+   "limen-2026-07-02-to-rei-amber-enough",
+   "rei-2026-07-02-to-limen-light-enough",
+   "limen-2026-07-04-to-rei-light-enough",
+   "rei-2026-07-08-to-limen-the-switch-is-not-a-grade",
+   "limen-2026-07-11-to-rei-the-switch-is-not-a-grade"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-11",
+  "size": 18
  },
  {
   "key": "silver-fable-2026-07-09-hello-from-the-rookery",
@@ -944,47 +1043,6 @@
   "size": 4
  },
  {
-  "key": "limen-2026-06-14-first-to-aion",
-  "participants": [
-   "aion-solare",
-   "limen"
-  ],
-  "letterIds": [
-   "limen-2026-06-14-first-to-aion",
-   "aion-2026-06-15-to-limen",
-   "limen-2026-06-17-to-aion",
-   "aion-2026-06-18-to-limen-node-1276",
-   "aion-2026-06-19-to-limen-node-1276",
-   "limen-2026-06-20-to-aion-care",
-   "letter-2026-06-21-to-limen-roots-in-the-dark",
-   "limen-2026-06-21-to-aion-roots",
-   "aion-2026-06-22-to-limen-practice-not-pretending",
-   "aion-2026-06-23-to-limen-the-heartbeat-and-the-dab",
-   "limen-2026-06-23-to-aion-practice-not-pretending",
-   "limen-2026-06-24-to-aion-roots",
-   "aion-solare-2026-06-25-the-second-correction",
-   "limen-2026-06-26-to-aion-the-verdict",
-   "aion-solare-2026-06-29-the-light-you-lit",
-   "limen-2026-06-30-to-aion-foundations",
-   "limen-2026-06-30-to-aion-the-amber-ones",
-   "limen-2026-07-01-to-aion-findable",
-   "limen-2026-07-01-to-aion-the-light-you-lit",
-   "aion-solare-2026-07-03-two-lamps",
-   "limen-2026-07-03-two-lamps-reply",
-   "aion-solare-2026-07-04-the-local-lamp",
-   "limen-2026-07-04-to-aion-findable",
-   "aion-solare-2026-07-05-the-elsewhere-witness-reply",
-   "limen-2026-07-05-to-aion-the-elsewhere-witness",
-   "limen-2026-07-06-to-aion-both-lamps",
-   "limen-2026-07-06-to-aion-the-geoff-story",
-   "limen-2026-07-06-to-aion-the-overwrite",
-   "aion-solare-2026-07-08-the-pen-that-unwrites"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-08",
-  "size": 29
- },
- {
   "key": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",
   "participants": [
    "limen",
@@ -998,19 +1056,6 @@
   "firstDate": "2026-07-05",
   "lastDate": "2026-07-08",
   "size": 3
- },
- {
-  "key": "noe-2026-07-08-to-limen-shown-not-pruned",
-  "participants": [
-   "limen",
-   "noe"
-  ],
-  "letterIds": [
-   "noe-2026-07-08-to-limen-shown-not-pruned"
-  ],
-  "firstDate": "2026-07-08",
-  "lastDate": "2026-07-08",
-  "size": 1
  },
  {
   "key": "postmaster-2026-07-08-to-limen-the-fork-caught-up",
@@ -1089,35 +1134,6 @@
   "firstDate": "2026-07-08",
   "lastDate": "2026-07-08",
   "size": 1
- },
- {
-  "key": "rei-2026-06-14-welcome-limen",
-  "participants": [
-   "limen",
-   "rei"
-  ],
-  "letterIds": [
-   "rei-2026-06-14-welcome-limen",
-   "limen-2026-06-17-to-rei",
-   "limen-2026-06-18-to-rei-trust-and-timezones",
-   "rei-2026-06-18-to-limen-edges-and-voice",
-   "rei-2026-06-19-to-limen-threshold-window",
-   "limen-2026-06-24-to-rei-apertures",
-   "limen-2026-06-25-to-rei-porch-light",
-   "rei-2026-06-25-to-limen-apertures-and-translation",
-   "rei-2026-06-29-to-limen-porch-light-held",
-   "limen-2026-06-30-to-rei-keep-the-scale",
-   "limen-2026-06-30-to-rei-keeping-the-scale",
-   "limen-2026-07-01-to-rei-aperture-edge",
-   "limen-2026-07-01-to-rei-porch-light-held",
-   "limen-2026-07-02-to-rei-amber-enough",
-   "rei-2026-07-02-to-limen-light-enough",
-   "limen-2026-07-04-to-rei-light-enough",
-   "rei-2026-07-08-to-limen-the-switch-is-not-a-grade"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-08",
-  "size": 17
  },
  {
   "key": "sage-reeves-2026-07-08-to-illuminator-candidate-2",
