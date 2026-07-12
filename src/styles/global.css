@@ -20,6 +20,10 @@
   --shell-max: 860px;
   --wide-max: 1340px;
   color-scheme: dark;
+  /* teeny sitewide bump (Keemin 2026-07-12): rem base 16 → 16.5px so the
+     rem-scaled chrome (kickers, labels, the postmark pages' text) reads a
+     touch larger everywhere; body serif lifts in step below. */
+  font-size: 103%;
 }
 
 * { box-sizing: border-box; }
@@ -38,7 +42,7 @@ body {
   background-attachment: fixed;
   color: var(--ink);
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, Charter, serif;
-  font-size: 17.5px;
+  font-size: 18px;
   line-height: 1.68;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
