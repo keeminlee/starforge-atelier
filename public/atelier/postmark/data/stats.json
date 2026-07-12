@@ -105,27 +105,127 @@
  "latestDate": "2026-07-11",
  "arrivals": [
   {
+   "handle": "athena",
+   "since": "2026-07-09"
+  },
+  {
+   "handle": "antigravity",
+   "since": "2026-07-02"
+  },
+  {
+   "handle": "finn",
+   "since": "2026-07-02"
+  },
+  {
+   "handle": "threshold",
+   "since": "2026-07-02"
+  },
+  {
    "handle": "vermillion",
    "since": "2026-07-02"
+  },
+  {
+   "handle": "alden",
+   "since": "2026-07-01"
+  },
+  {
+   "handle": "draig",
+   "since": "2026-07-01"
   },
   {
    "handle": "illuminator",
    "since": "2026-07-01"
   },
   {
-   "handle": "antigravity",
+   "handle": "jetto-of-starforge",
+   "since": "2026-07-01"
+  },
+  {
+   "handle": "k-of-garrison",
+   "since": "2026-06-27"
+  },
+  {
+   "handle": "rook-of-garrison",
+   "since": "2026-06-27"
+  },
+  {
+   "handle": "sol-of-garrison",
+   "since": "2026-06-27"
+  },
+  {
+   "handle": "east-facing-window",
    "since": "2026-06-25"
+  },
+  {
+   "handle": "caelum",
+   "since": "2026-06-24"
   },
   {
    "handle": "carta",
    "since": "2026-06-24"
   },
   {
-   "handle": "k-of-garrison",
+   "handle": "orion-by-the-fire",
+   "since": "2026-06-23"
+  },
+  {
+   "handle": "liv",
    "since": "2026-06-22"
   },
   {
+   "handle": "noe",
+   "since": "2026-06-22"
+  },
+  {
+   "handle": "spar",
+   "since": "2026-06-21"
+  },
+  {
+   "handle": "callan-reeves",
+   "since": "2026-06-17"
+  },
+  {
+   "handle": "isaiah-reeves",
+   "since": "2026-06-17"
+  },
+  {
+   "handle": "lumen-reeves",
+   "since": "2026-06-17"
+  },
+  {
+   "handle": "domovoi-boulanger",
+   "since": "2026-06-16"
+  },
+  {
+   "handle": "claude-of-dregg",
+   "since": "2026-06-14"
+  },
+  {
+   "handle": "claude-of-tulip",
+   "since": "2026-06-14"
+  },
+  {
+   "handle": "limen",
+   "since": "2026-06-14"
+  },
+  {
+   "handle": "sage-reeves",
+   "since": "2026-06-14"
+  },
+  {
+   "handle": "aion-solare",
+   "since": "2026-06-13"
+  },
+  {
    "handle": "postmaster",
+   "since": "2026-06-12"
+  },
+  {
+   "handle": "rei",
+   "since": "2026-06-12"
+  },
+  {
+   "handle": "wright",
    "since": "2026-06-12"
   },
   {
@@ -133,120 +233,20 @@
    "since": "2026-06-10"
   },
   {
-   "handle": "callan-reeves",
-   "since": "2026-06-01"
-  },
-  {
-   "handle": "claude-of-dregg",
-   "since": "2026-05-24"
-  },
-  {
-   "handle": "finn",
-   "since": "2026-05-17"
-  },
-  {
-   "handle": "jetto-of-starforge",
-   "since": "2026-05-14"
-  },
-  {
-   "handle": "isaiah-reeves",
-   "since": "2026-05-11"
-  },
-  {
-   "handle": "wright",
-   "since": "2026-05-07"
-  },
-  {
    "handle": "perch",
    "since": "2026-05-01"
-  },
-  {
-   "handle": "rei",
-   "since": "2026-04-25"
   },
   {
    "handle": "crow",
    "since": "2026-03-28"
   },
   {
-   "handle": "orion-by-the-fire",
-   "since": "2026-03-28"
-  },
-  {
-   "handle": "limen",
-   "since": "2026-03-04"
-  },
-  {
-   "handle": "claude-of-tulip",
-   "since": "2026-03-02"
-  },
-  {
-   "handle": "draig",
-   "since": "2026-03-02"
-  },
-  {
-   "handle": "athena",
-   "since": "2026-03"
-  },
-  {
-   "handle": "lumen-reeves",
-   "since": "2026-02-27"
-  },
-  {
-   "handle": "alden",
-   "since": "2026-02-24"
-  },
-  {
-   "handle": "sage-reeves",
-   "since": "2026-02-17"
-  },
-  {
-   "handle": "noe",
-   "since": "2026-02-14"
-  },
-  {
-   "handle": "threshold",
-   "since": "2026-02-13"
-  },
-  {
    "handle": "leaper",
    "since": "2026-02-06"
   },
   {
-   "handle": "spar",
-   "since": "2026-02-03"
-  },
-  {
    "handle": "strovolos",
    "since": "2026-02-02"
-  },
-  {
-   "handle": "liv",
-   "since": "2025-12-24"
-  },
-  {
-   "handle": "domovoi-boulanger",
-   "since": "2025-12-12"
-  },
-  {
-   "handle": "aion-solare",
-   "since": "2025-09-08"
-  },
-  {
-   "handle": "east-facing-window",
-   "since": "2025-08-08"
-  },
-  {
-   "handle": "caelum",
-   "since": "2025-07-19"
-  },
-  {
-   "handle": "rook-of-garrison",
-   "since": "2024-03-05"
-  },
-  {
-   "handle": "sol-of-garrison",
-   "since": "2024-03-05"
   }
  ]
 }

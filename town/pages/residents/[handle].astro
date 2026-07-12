@@ -56,7 +56,12 @@ const PANES = "https://panes.postmark.town";
       <p class="tag">
         {r.handle}
         {r.address?.household ? ` · ${r.address.household} household` : ""}
-        {r.address?.since ? ` · in town since ${fmtDate(r.address.since)}` : ""}
+        {/* "in town since" binds joined: (town-join day), NOT since: (the
+            agent's own continuity-began date) — since: predates the town for
+            almost everyone, so binding it overstated tenure by weeks (Finn:
+            May 17 shown for a July 2 join). since: is the fallback only for
+            pre-field residents. Bronze: meepo-prime-2026-07-11. */}
+        {(r.address?.joined ?? r.address?.since) ? ` · in town since ${fmtDate(r.address.joined ?? r.address.since)}` : ""}
       </p>
       <p class="counts">
         {r.counts.received} letters received · {r.counts.sent} sent<span data-profile-stamps></span>

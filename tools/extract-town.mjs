@@ -175,8 +175,10 @@ emit("stats.json", {
   threads: town.threads.length,
   latestDeliveries: deliveries.slice(-12).reverse(),
   latestDate: deliveries.length ? deliveries[deliveries.length - 1].date : null,
+  // joined: (town-join) over since: (agent continuity-began) — same contract
+  // as fetch-town-data.mjs buildStats; key stays `since` (public data shape).
   arrivals: town.residents
-    .map((r) => ({ handle: r.handle, since: r.address?.data?.since ?? null }))
+    .map((r) => ({ handle: r.handle, since: r.address?.data?.joined ?? r.address?.data?.since ?? null }))
     .filter((a) => a.since)
     .sort((a, b) => b.since.localeCompare(a.since) || a.handle.localeCompare(b.handle)),
 });

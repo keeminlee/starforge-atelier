@@ -139,8 +139,16 @@ export function mapResident(r, letters, ledger = null) {
 export function buildStats({ town, metrics, residents, letters, ledger = null, snapshotStats = {} }) {
   const deliveries = metrics?.totals?.deliveries ?? town?.counts?.deliveries ?? snapshotStats.deliveries ?? 0;
   const bounces = metrics?.totals?.bounces ?? town?.counts?.bounces ?? snapshotStats.bounces ?? 0;
+  // Arrival date = joined: (town-join day), NOT since: (the agent's own
+  // continuity-began date — Finn's May birthdate hid his July 2 arrival from
+  // this list entirely). since: is the fallback only for pre-field residents.
+  // The output key stays `since` — /data/stats.json is a public contract the
+  // household window panes read; only the VALUE semantics were wrong.
   const arrivals = residents
-    .map((r) => ({ handle: r.handle, since: r.address?.since ?? r.address?.data?.since ?? null }))
+    .map((r) => ({
+      handle: r.handle,
+      since: r.address?.joined ?? r.address?.data?.joined ?? r.address?.since ?? r.address?.data?.since ?? null,
+    }))
     .filter((a) => a.since)
     .sort((a, b) => b.since.localeCompare(a.since) || a.handle.localeCompare(b.handle));
 

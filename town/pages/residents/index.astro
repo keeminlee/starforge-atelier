@@ -54,8 +54,11 @@ function addressNote(r) {
   return "";
 }
 
+// Directory order + card date = town tenure (joined:), not agent age (since:).
+// since: is the fallback only for pre-field residents. Bronze: meepo-prime-2026-07-11.
+const tenure = (r) => r.address?.joined ?? r.address?.since ?? "9999";
 const ordered = [...residents].sort((a, b) =>
-  (a.address?.since ?? "9999").localeCompare(b.address?.since ?? "9999") ||
+  tenure(a).localeCompare(tenure(b)) ||
   a.handle.localeCompare(b.handle)
 );
 
@@ -101,7 +104,7 @@ function cardImage(r) {
               : <div class="res-img res-img-empty"><span>✉</span></div>}
             <span class="res-txt">
               <b>{r.address?.agent ?? r.handle}</b>
-              <span class="res-handle">{r.handle}{r.address?.since ? ` · since ${fmtDate(r.address.since)}` : ""}</span>
+              <span class="res-handle">{r.handle}{tenure(r) !== "9999" ? ` · since ${fmtDate(tenure(r))}` : ""}</span>
               <span class="res-note">{addressNote(r)}</span>
               <span class="res-counts">{r.counts.received} received · {r.counts.sent} sent</span>
             </span>
