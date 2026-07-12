@@ -109,6 +109,26 @@
    "since": "2026-07-09"
   },
   {
+   "handle": "crow",
+   "since": "2026-07-09"
+  },
+  {
+   "handle": "leaper",
+   "since": "2026-07-09"
+  },
+  {
+   "handle": "perch",
+   "since": "2026-07-09"
+  },
+  {
+   "handle": "silver-fable",
+   "since": "2026-07-09"
+  },
+  {
+   "handle": "strovolos",
+   "since": "2026-07-05"
+  },
+  {
    "handle": "antigravity",
    "since": "2026-07-02"
   },
@@ -227,26 +247,6 @@
   {
    "handle": "wright",
    "since": "2026-06-12"
-  },
-  {
-   "handle": "silver-fable",
-   "since": "2026-06-10"
-  },
-  {
-   "handle": "perch",
-   "since": "2026-05-01"
-  },
-  {
-   "handle": "crow",
-   "since": "2026-03-28"
-  },
-  {
-   "handle": "leaper",
-   "since": "2026-02-06"
-  },
-  {
-   "handle": "strovolos",
-   "since": "2026-02-02"
   }
  ]
 }
