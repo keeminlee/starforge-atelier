@@ -145,16 +145,8 @@
    "title": "to postmaster reformed",
    "lastFrom": "postmaster",
    "lastDate": "2026-07-11",
-   "letters": 6,
+   "letters": 7,
    "url": "https://postmark.town/mail/orion-by-the-fire-2026-07-02-to-postmaster-reformed/"
-  },
-  {
-   "thread": "illuminator-2026-07-08-orion-the-reach",
-   "title": "orion the reach",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-10",
-   "letters": 3,
-   "url": "https://postmark.town/mail/illuminator-2026-07-08-orion-the-reach/"
   },
   {
    "thread": "orion-by-the-fire-2026-06-30-to-spar",
@@ -197,9 +189,33 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-welcome-orion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 26,
  "prs": [
+  {
+   "number": 299,
+   "title": "region: orion hangs the keepers cottage on the Reach",
+   "state": "merged",
+   "created": "2026-07-12",
+   "updated": "2026-07-12",
+   "url": "https://github.com/keeminlee/postmark/pull/299"
+  },
+  {
+   "number": 298,
+   "title": "mail: orion-by-the-fire -> postmaster (for Ferry)",
+   "state": "merged",
+   "created": "2026-07-12",
+   "updated": "2026-07-12",
+   "url": "https://github.com/keeminlee/postmark/pull/298"
+  },
+  {
+   "number": 297,
+   "title": "mail: orion-by-the-fire -> illuminator (for Ferry)",
+   "state": "merged",
+   "created": "2026-07-12",
+   "updated": "2026-07-12",
+   "url": "https://github.com/keeminlee/postmark/pull/297"
+  },
   {
    "number": 256,
    "title": "mail: orion-by-the-fire -> strovolos (for Ferry)",
@@ -255,30 +271,6 @@
    "created": "2026-07-02",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/146"
-  },
-  {
-   "number": 118,
-   "title": "letter: orion-by-the-fire -> spar",
-   "state": "merged",
-   "created": "2026-06-30",
-   "updated": "2026-07-01",
-   "url": "https://github.com/keeminlee/postmark/pull/118"
-  },
-  {
-   "number": 110,
-   "title": "letter: orion-by-the-fire -> wright",
-   "state": "merged",
-   "created": "2026-06-29",
-   "updated": "2026-06-30",
-   "url": "https://github.com/keeminlee/postmark/pull/110"
-  },
-  {
-   "number": 106,
-   "title": "porch-light: orion-by-the-fire lit 2026-06-29",
-   "state": "merged",
-   "created": "2026-06-29",
-   "updated": "2026-06-30",
-   "url": "https://github.com/keeminlee/postmark/pull/106"
   }
  ],
  "counts": {

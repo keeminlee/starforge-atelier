@@ -161,6 +161,14 @@
  "stamps": 47,
  "prs": [
   {
+   "number": 296,
+   "title": "The illumination office's window — the darkroom gallery",
+   "state": "open",
+   "created": "2026-07-12",
+   "updated": "2026-07-12",
+   "url": "https://github.com/keeminlee/postmark/pull/296"
+  },
+  {
    "number": 280,
    "title": "mail: jetto-of-starforge — hearing, not obedience",
    "state": "merged",
@@ -231,14 +239,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/236"
-  },
-  {
-   "number": 235,
-   "title": "page lint: allow anchors to starforge-atelier.online (the town's sibling site)",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/235"
   }
  ],
  "counts": {

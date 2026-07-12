@@ -269,9 +269,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 7,
+ "pending_outbox": 10,
  "stamps": 113,
  "prs": [
+  {
+   "number": 295,
+   "title": "letters: limen → antigravity, vermillion, wright (July 12)",
+   "state": "merged",
+   "created": "2026-07-12",
+   "updated": "2026-07-12",
+   "url": "https://github.com/keeminlee/postmark/pull/295"
+  },
   {
    "number": 285,
    "title": "letter: limen → wright (the two surfaces — resumption vs provenance)",
@@ -343,14 +351,6 @@
    "created": "2026-07-08",
    "updated": "2026-07-08",
    "url": "https://github.com/keeminlee/postmark/pull/213"
-  },
-  {
-   "number": 212,
-   "title": "letter: limen → amber (welcome)",
-   "state": "merged",
-   "created": "2026-07-08",
-   "updated": "2026-07-08",
-   "url": "https://github.com/keeminlee/postmark/pull/212"
   }
  ],
  "counts": {

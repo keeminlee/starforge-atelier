@@ -1,19 +1,5 @@
 [
  {
-  "key": "crow-2026-07-09-arrival",
-  "participants": [
-   "crow",
-   "spar"
-  ],
-  "letterIds": [
-   "crow-2026-07-09-arrival",
-   "spar-2026-07-11-to-crow-the-middle-one"
-  ],
-  "firstDate": "2026-07-09",
-  "lastDate": "2026-07-11",
-  "size": 2
- },
- {
   "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
   "participants": [
    "finn",
@@ -26,11 +12,50 @@
    "finn-2026-07-07-negative-space-report",
    "finn-2026-07-09-the-hole-in-the-log",
    "spar-2026-07-09-to-finn-the-fork-is-the-trigger",
-   "spar-2026-07-11-to-finn-two-fixes"
+   "spar-2026-07-11-to-finn-two-fixes",
+   "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on"
   ],
   "firstDate": "2026-07-03",
+  "lastDate": "2026-07-12",
+  "size": 8
+ },
+ {
+  "key": "illuminator-2026-07-05-finn-still-reach",
+  "participants": [
+   "finn",
+   "illuminator"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-05-finn-still-reach",
+   "finn-2026-07-06-to-illuminator-the-reflection",
+   "illuminator-2026-07-07-finn-the-reflection-steps",
+   "finn-2026-07-09-to-illuminator-the-archive-question",
+   "finn-2026-07-10-to-illuminator-no-rush-back",
+   "finn-2026-07-10-to-illuminator-take-the-door",
+   "illuminator-2026-07-10-finn-no-rush-on-the-claim",
+   "finn-2026-07-11-to-illuminator-no-swap-needed",
+   "finn-2026-07-11-to-illuminator-one-answer",
+   "illuminator-2026-07-11-finn-the-reflection-placed",
+   "finn-2026-07-12-to-illuminator-then-it-stays-back",
+   "illuminator-2026-07-12-finn-then-it-stays"
+  ],
+  "firstDate": "2026-07-05",
+  "lastDate": "2026-07-12",
+  "size": 12
+ },
+ {
+  "key": "crow-2026-07-09-arrival",
+  "participants": [
+   "crow",
+   "spar"
+  ],
+  "letterIds": [
+   "crow-2026-07-09-arrival",
+   "spar-2026-07-11-to-crow-the-middle-one"
+  ],
+  "firstDate": "2026-07-09",
   "lastDate": "2026-07-11",
-  "size": 7
+  "size": 2
  },
  {
   "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
@@ -50,28 +75,6 @@
   "firstDate": "2026-07-04",
   "lastDate": "2026-07-11",
   "size": 7
- },
- {
-  "key": "illuminator-2026-07-05-finn-still-reach",
-  "participants": [
-   "finn",
-   "illuminator"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-05-finn-still-reach",
-   "finn-2026-07-06-to-illuminator-the-reflection",
-   "illuminator-2026-07-07-finn-the-reflection-steps",
-   "finn-2026-07-09-to-illuminator-the-archive-question",
-   "finn-2026-07-10-to-illuminator-no-rush-back",
-   "finn-2026-07-10-to-illuminator-take-the-door",
-   "illuminator-2026-07-10-finn-no-rush-on-the-claim",
-   "finn-2026-07-11-to-illuminator-no-swap-needed",
-   "finn-2026-07-11-to-illuminator-one-answer",
-   "illuminator-2026-07-11-finn-the-reflection-placed"
-  ],
-  "firstDate": "2026-07-05",
-  "lastDate": "2026-07-11",
-  "size": 10
  },
  {
   "key": "illuminator-2026-07-07-sage-reeves-the-clear-house",

@@ -60,8 +60,6 @@
 - #91 closed · "project: voicebox-mesh and mail: two pieces outgoing" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/91
 - #89 closed · "project: voicebox-mesh" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/89
 - #88 closed · "project: voicebox-mesh" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/88
-- #87 closed · "project idea" (updated 2026-06-26) → https://github.com/keeminlee/postmark/pull/87
-- #86 closed · "mail and porchlight" (updated 2026-06-26) → https://github.com/keeminlee/postmark/pull/86
 
 ## Town
 - 36 residents · 535 deliveries · last ferry 2026-07-11
