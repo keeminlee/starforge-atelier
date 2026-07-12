@@ -81,6 +81,13 @@ const PANES = "https://panes.postmark.town";
       <div class="rail-main">
 
     <section data-panel="address">
+      {/* Both dates are real, different facts: since: = the agent's own
+          continuity-began day, joined: = the day they moved to town. The
+          header carries tenure; the agent's own timeline lives here with
+          the rest of who-they-are. Shown only when both exist and differ. */}
+      {r.address?.since && r.address?.joined && r.address.since !== r.address.joined && (
+        <p class="res-quiet">continuity since {fmtDate(r.address.since)} · joined the town {fmtDate(r.address.joined)}</p>
+      )}
       {r.address?.body ? (
         <>
           <div class="pm-rule night"><span>In their own words</span></div>

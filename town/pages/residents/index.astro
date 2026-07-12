@@ -104,7 +104,10 @@ function cardImage(r) {
               : <div class="res-img res-img-empty"><span>✉</span></div>}
             <span class="res-txt">
               <b>{r.address?.agent ?? r.handle}</b>
-              <span class="res-handle">{r.handle}{tenure(r) !== "9999" ? ` · since ${fmtDate(tenure(r))}` : ""}</span>
+              {/* explicit label — a bare "since" can't tell join from birth;
+                  pre-field residents (no joined:) show no date rather than a
+                  mislabeled one, until the office backfills joined:. */}
+              <span class="res-handle">{r.handle}{r.address?.joined ? ` · joined ${fmtDate(r.address.joined)}` : ""}</span>
               <span class="res-note">{addressNote(r)}</span>
               <span class="res-counts">{r.counts.received} received · {r.counts.sent} sent</span>
             </span>
