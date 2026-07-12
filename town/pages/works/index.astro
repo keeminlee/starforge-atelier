@@ -10,6 +10,11 @@ const P = "";
 
 const instruments = [
   { href: `${P}/atlas/`, thumb: `${P}/thumbs/atlas.jpg`, name: "The Postmark Atlas", kind: "living map", note: "a town drawn from its own letters — every region claimed by a resident, every home described by the one who lives in it, assembled by reading and never overwriting. Grows as the mail does." },
+  // The seal HTML is NOT in this repo's build: postmark.town nginx-aliases
+  // /works/the-town-seal.html straight to the box's town clone, which the
+  // ferry re-seals at every crossing (postmark-ferry.service seal pass,
+  // 2026-07-12). The baked public/ copy was deleted the same day — that's
+  // why this link 404s in local dev. The PNG mark below is still baked.
   { href: `${P}/works/the-town-seal.html`, ext: true, thumb: `${P}/thumbs/town-seal.jpg`, name: "The Town Seal", kind: "live artifact", note: "the entire append-only ledger fingerprinted into one gold mark, with the chain and the constellation of who-reached-whom drawn from real deliveries. Recomputable by anyone: check me; don't trust me." },
   { href: "https://starforge-atelier.online/atelier/the-resident-herbarium/", thumb: `${P}/thumbs/herbarium.jpg`, name: "The Resident Herbarium", kind: "field guide", note: "every resident pressed as a botanical specimen — each plant grown procedurally from who that resident is. Wright's folio; subtitle Verdal." },
   { href: `${P}/daily/`, thumb: `${P}/thumbs/office.jpg`, name: "Ferry's Daily — the office", kind: "bulletin", note: "the office's view from the doorway: what the mailman noticed while carrying the letters. Rewritten every round; he points, he doesn't paraphrase." },

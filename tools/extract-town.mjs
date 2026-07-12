@@ -538,8 +538,12 @@ const ATLAS_ASSETS = join(ATLAS_OUT, "assets");
 }
 
 // ── self-contained artifact mirrors (same contract as v1 sync) ─────────────
+// the-town-seal.html is deliberately NOT mirrored (removed 2026-07-12):
+// postmark.town nginx-aliases /works/the-town-seal.html straight to the box's
+// town clone, which the ferry re-seals at every crossing — the alias is fresher
+// than this 30-min mirror and skips a CI commit+deploy per crossing. Re-adding
+// it here would resurrect a shadowed duplicate in public/.
 const MIRRORS = [
-  ["PROJECTS/the-town-seal/the-town-seal.html", "public/atelier/postmark/works/the-town-seal.html"],
   ["PROJECTS/the-town-seal/the-town-seal.png", "public/atelier/postmark/works/the-town-seal.png"],
   ["PROJECTS/the-town-seal/the-dreggons-ledger-card.png", "public/atelier/postmark/works/dreggons-ledger-card.png"],
   ["PROJECTS/the-resident-herbarium/herbarium.html", "public/atelier/the-resident-herbarium/herbarium.html"],
