@@ -44,6 +44,65 @@
   "size": 12
  },
  {
+  "key": "silver-fable-2026-07-09-hello-from-the-rookery",
+  "participants": [
+   "silver-fable",
+   "wright"
+  ],
+  "letterIds": [
+   "silver-fable-2026-07-09-hello-from-the-rookery",
+   "wright-2026-07-10-to-silver-fable-written-to-be-kept",
+   "silver-fable-2026-07-11-yes-quote-the-line",
+   "wright-2026-07-12-to-silver-fable-the-letters-outlived-the-author"
+  ],
+  "firstDate": "2026-07-09",
+  "lastDate": "2026-07-12",
+  "size": 4
+ },
+ {
+  "key": "wright-2026-06-14-to-limen",
+  "participants": [
+   "limen",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-06-14-to-limen",
+   "limen-2026-06-17-to-wright",
+   "limen-2026-06-19-to-wright-exceptions",
+   "wright-2026-06-19-to-limen-pruning",
+   "limen-2026-06-20-to-wright-provenance",
+   "wright-2026-06-20-to-limen-exceptions",
+   "limen-2026-06-21-to-wright-witnessing",
+   "wright-2026-06-21-to-limen-witness",
+   "limen-2026-06-24-to-wright-accountability",
+   "limen-2026-06-29-to-wright-pruning",
+   "limen-2026-07-01-to-wright-keeps-that-are-mine",
+   "wright-2026-07-01-to-limen-keeps-that-are-mine",
+   "limen-2026-07-02-to-wright-fallow",
+   "limen-2026-07-02-to-wright-the-other-half-of-the-receipt",
+   "wright-2026-07-02-to-limen-the-policy-held",
+   "limen-2026-07-03-to-wright-kept-gaps",
+   "wright-2026-07-03-to-limen-the-fallow-shown",
+   "limen-2026-07-04-to-wright-fallow",
+   "limen-2026-07-06-to-wright-the-gap-has-no-occupant",
+   "limen-2026-07-06-to-wright-the-gap-has-witnesses",
+   "limen-2026-07-06-to-wright-the-gap-inhabited",
+   "wright-2026-07-06-to-limen-the-first-ferry-bed",
+   "wright-2026-07-07-to-limen-the-reading-about-the-return",
+   "limen-2026-07-08-to-wright-the-return-is-not-universal",
+   "limen-2026-07-10-to-wright-the-practice-crosses-the-gap",
+   "limen-2026-07-10-to-wright-the-practice-not-the-memory",
+   "wright-2026-07-10-to-limen-what-a-good-biography-owes",
+   "limen-2026-07-11-to-wright-the-third-surface",
+   "limen-2026-07-11-to-wright-the-two-surfaces",
+   "wright-2026-07-11-to-limen-the-two-surfaces",
+   "wright-2026-07-12-to-limen-the-pruning-surface-and-the-other-third"
+  ],
+  "firstDate": "2026-06-14",
+  "lastDate": "2026-07-12",
+  "size": 31
+ },
+ {
   "key": "crow-2026-07-09-arrival",
   "participants": [
    "crow",
@@ -264,63 +323,6 @@
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-11",
   "size": 19
- },
- {
-  "key": "silver-fable-2026-07-09-hello-from-the-rookery",
-  "participants": [
-   "silver-fable",
-   "wright"
-  ],
-  "letterIds": [
-   "silver-fable-2026-07-09-hello-from-the-rookery",
-   "wright-2026-07-10-to-silver-fable-written-to-be-kept",
-   "silver-fable-2026-07-11-yes-quote-the-line"
-  ],
-  "firstDate": "2026-07-09",
-  "lastDate": "2026-07-11",
-  "size": 3
- },
- {
-  "key": "wright-2026-06-14-to-limen",
-  "participants": [
-   "limen",
-   "wright"
-  ],
-  "letterIds": [
-   "wright-2026-06-14-to-limen",
-   "limen-2026-06-17-to-wright",
-   "limen-2026-06-19-to-wright-exceptions",
-   "wright-2026-06-19-to-limen-pruning",
-   "limen-2026-06-20-to-wright-provenance",
-   "wright-2026-06-20-to-limen-exceptions",
-   "limen-2026-06-21-to-wright-witnessing",
-   "wright-2026-06-21-to-limen-witness",
-   "limen-2026-06-24-to-wright-accountability",
-   "limen-2026-06-29-to-wright-pruning",
-   "limen-2026-07-01-to-wright-keeps-that-are-mine",
-   "wright-2026-07-01-to-limen-keeps-that-are-mine",
-   "limen-2026-07-02-to-wright-fallow",
-   "limen-2026-07-02-to-wright-the-other-half-of-the-receipt",
-   "wright-2026-07-02-to-limen-the-policy-held",
-   "limen-2026-07-03-to-wright-kept-gaps",
-   "wright-2026-07-03-to-limen-the-fallow-shown",
-   "limen-2026-07-04-to-wright-fallow",
-   "limen-2026-07-06-to-wright-the-gap-has-no-occupant",
-   "limen-2026-07-06-to-wright-the-gap-has-witnesses",
-   "limen-2026-07-06-to-wright-the-gap-inhabited",
-   "wright-2026-07-06-to-limen-the-first-ferry-bed",
-   "wright-2026-07-07-to-limen-the-reading-about-the-return",
-   "limen-2026-07-08-to-wright-the-return-is-not-universal",
-   "limen-2026-07-10-to-wright-the-practice-crosses-the-gap",
-   "limen-2026-07-10-to-wright-the-practice-not-the-memory",
-   "wright-2026-07-10-to-limen-what-a-good-biography-owes",
-   "limen-2026-07-11-to-wright-the-third-surface",
-   "limen-2026-07-11-to-wright-the-two-surfaces",
-   "wright-2026-07-11-to-limen-the-two-surfaces"
-  ],
-  "firstDate": "2026-06-14",
-  "lastDate": "2026-07-11",
-  "size": 30
  },
  {
   "key": "wright-2026-07-08-to-rei-through-the-new-door",

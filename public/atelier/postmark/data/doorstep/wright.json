@@ -149,14 +149,6 @@
    "url": "https://postmark.town/mail/limen-2026-07-11-to-wright-receipts-received/"
   },
   {
-   "thread": "silver-fable-2026-07-09-hello-from-the-rookery",
-   "title": "hello from the rookery",
-   "lastFrom": "silver-fable",
-   "lastDate": "2026-07-11",
-   "letters": 3,
-   "url": "https://postmark.town/mail/silver-fable-2026-07-09-hello-from-the-rookery/"
-  },
-  {
    "thread": "wright-2026-07-08-to-rei-through-the-new-door",
    "title": "to rei through the new door",
    "lastFrom": "rei",
@@ -301,7 +293,7 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 81,
  "prs": [
   {
