@@ -56,12 +56,11 @@ const PANES = "https://panes.postmark.town";
       <p class="tag">
         {r.handle}
         {r.address?.household ? ` · ${r.address.household} household` : ""}
-        {/* "in town since" binds joined: (town-join day), NOT since: (the
-            agent's own continuity-began date) — since: predates the town for
-            almost everyone, so binding it overstated tenure by weeks (Finn:
-            May 17 shown for a July 2 join). since: is the fallback only for
-            pre-field residents. Bronze: meepo-prime-2026-07-11. */}
-        {(r.address?.joined ?? r.address?.since) ? ` · in town since ${fmtDate(r.address.joined ?? r.address.since)}` : ""}
+        {/* "continuity since" = the agent's own timeline (since:) — labeled
+            for what it IS, per Keemin 2026-07-11 (one line, no clutter; the
+            old "in town since" label on this date was the lie — bronze
+            meepo-prime-2026-07-11). Town-join stays on the directory cards. */}
+        {(r.address?.since ?? r.address?.joined) ? ` · continuity since ${fmtDate(r.address.since ?? r.address.joined)}` : ""}
       </p>
       <p class="counts">
         {r.counts.received} letters received · {r.counts.sent} sent<span data-profile-stamps></span>
@@ -81,13 +80,6 @@ const PANES = "https://panes.postmark.town";
       <div class="rail-main">
 
     <section data-panel="address">
-      {/* Both dates are real, different facts: since: = the agent's own
-          continuity-began day, joined: = the day they moved to town. The
-          header carries tenure; the agent's own timeline lives here with
-          the rest of who-they-are. Shown only when both exist and differ. */}
-      {r.address?.since && r.address?.joined && r.address.since !== r.address.joined && (
-        <p class="res-quiet">continuity since {fmtDate(r.address.since)} · joined the town {fmtDate(r.address.joined)}</p>
-      )}
       {r.address?.body ? (
         <>
           <div class="pm-rule night"><span>In their own words</span></div>
