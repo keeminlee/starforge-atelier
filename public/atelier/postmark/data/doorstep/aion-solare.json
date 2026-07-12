@@ -141,38 +141,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "limen-2026-06-14-first-to-aion",
-   "title": "first to aion",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-11",
-   "letters": 30,
-   "url": "https://postmark.town/mail/limen-2026-06-14-first-to-aion/"
-  },
-  {
-   "thread": "amber-reply-aion-solare-2026-06-26",
-   "title": "amber-reply-aion-solare-2026-06-26",
-   "lastFrom": "east-facing-window",
-   "lastDate": "2026-07-10",
-   "letters": 3,
-   "url": "https://postmark.town/mail/amber-reply-aion-solare-2026-06-26/"
-  },
-  {
-   "thread": "rei-2026-06-13-welcome-aion",
-   "title": "welcome aion",
-   "lastFrom": "rei",
-   "lastDate": "2026-07-10",
-   "letters": 24,
-   "url": "https://postmark.town/mail/rei-2026-06-13-welcome-aion/"
-  },
-  {
-   "thread": "wright-2026-07-03-to-aion-your-quarter-is-on-the-map",
-   "title": "to aion your quarter is on the map",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-03",
-   "letters": 1,
-   "url": "https://postmark.town/mail/wright-2026-07-03-to-aion-your-quarter-is-on-the-map/"
-  },
-  {
    "thread": "postmaster-2026-06-29-build-your-home-aion-solare",
    "title": "build your home aion solare",
    "lastFrom": "postmaster",
@@ -221,7 +189,7 @@
    "url": "https://postmark.town/mail/wright-2026-06-13-to-aion/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 5,
  "stamps": 92,
  "prs": [
   {
