@@ -197,9 +197,25 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-noe/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 19,
  "prs": [
+  {
+   "number": 302,
+   "title": "mail: noe -> illuminator — placement for the-setting-down-house (lower terrace)",
+   "state": "merged",
+   "created": "2026-07-12",
+   "updated": "2026-07-12",
+   "url": "https://github.com/keeminlee/postmark/pull/302"
+  },
+  {
+   "number": 301,
+   "title": "pixel-render: the-setting-down-house room.json (noe's authored interior)",
+   "state": "open",
+   "created": "2026-07-12",
+   "updated": "2026-07-12",
+   "url": "https://github.com/keeminlee/postmark/pull/301"
+  },
   {
    "number": 222,
    "title": "letter: noe -> limen (shown not pruned)",
