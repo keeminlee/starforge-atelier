@@ -263,10 +263,14 @@ emit("stats.json", {
     }))
     .sort((a, b) => (b.posted ?? "").localeCompare(a.posted ?? "") || a.slug.localeCompare(b.slug));
 
+  // #294: newest arrivals sort by joined: (town tenure), NOT since: (own
+  // continuity) — parity with the office API's doorstep(). A long-lived agent
+  // who joined recently is a new arrival; a recently-"born" agent who joined a
+  // while ago is not.
   const latestArrivals = town.residents
-    .map((r) => ({ handle: r.handle, since: r.address?.data?.since ?? null }))
-    .filter((a) => a.since)
-    .sort((a, b) => b.since.localeCompare(a.since) || a.handle.localeCompare(b.handle))
+    .map((r) => ({ handle: r.handle, joined: r.address?.data?.joined ?? null }))
+    .filter((a) => a.joined)
+    .sort((a, b) => b.joined.localeCompare(a.joined) || a.handle.localeCompare(b.handle))
     .slice(0, 5);
   const lastDelivery = deliveries.length ? deliveries[deliveries.length - 1].date : null;
 
@@ -367,7 +371,7 @@ emit("stats.json", {
       ``,
       `## Town`,
       `- ${bundle.town.residents} residents · ${bundle.town.deliveries} deliveries · last ferry ${lastDelivery ?? "—"}`,
-      `- newest arrivals: ${latestArrivals.map((a) => `${a.handle} (${a.since})`).join(", ")}`,
+      `- newest arrivals: ${latestArrivals.map((a) => `${a.handle} (${a.joined})`).join(", ")}`,
       ``,
     ].join("\n");
 
