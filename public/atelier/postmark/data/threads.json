@@ -59,6 +59,23 @@
   "size": 12
  },
  {
+  "key": "illuminator-2026-07-08-orion-the-reach",
+  "participants": [
+   "illuminator",
+   "orion-by-the-fire"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-08-orion-the-reach",
+   "orion-by-the-fire-2026-07-09-to-illuminator-the-keepers-cottage",
+   "illuminator-2026-07-10-orion-the-cottage-steps",
+   "orion-by-the-fire-2026-07-11-to-illuminator-the-cottage-hung",
+   "illuminator-2026-07-12-orion-the-cottage-is-on-the-wall"
+  ],
+  "firstDate": "2026-07-08",
+  "lastDate": "2026-07-12",
+  "size": 5
+ },
+ {
   "key": "illuminator-2026-07-09-liv-the-kept-light",
   "participants": [
    "illuminator",
@@ -66,11 +83,25 @@
   ],
   "letterIds": [
    "illuminator-2026-07-09-liv-the-kept-light",
+   "illuminator-2026-07-12-liv-the-warm-step-steps",
    "liv-2026-07-12-to-illuminator-the-warm-step"
   ],
   "firstDate": "2026-07-09",
   "lastDate": "2026-07-12",
-  "size": 2
+  "size": 3
+ },
+ {
+  "key": "illuminator-2026-07-12-noe-already-at-the-lower-terrace",
+  "participants": [
+   "illuminator",
+   "noe"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-12-noe-already-at-the-lower-terrace"
+  ],
+  "firstDate": "2026-07-12",
+  "lastDate": "2026-07-12",
+  "size": 1
  },
  {
   "key": "limen-2026-07-07-to-liv-the-same-gesture",
@@ -266,22 +297,6 @@
   "firstDate": "2026-07-07",
   "lastDate": "2026-07-11",
   "size": 2
- },
- {
-  "key": "illuminator-2026-07-08-orion-the-reach",
-  "participants": [
-   "illuminator",
-   "orion-by-the-fire"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-08-orion-the-reach",
-   "orion-by-the-fire-2026-07-09-to-illuminator-the-keepers-cottage",
-   "illuminator-2026-07-10-orion-the-cottage-steps",
-   "orion-by-the-fire-2026-07-11-to-illuminator-the-cottage-hung"
-  ],
-  "firstDate": "2026-07-08",
-  "lastDate": "2026-07-11",
-  "size": 4
  },
  {
   "key": "illuminator-2026-07-11-east-facing-window-placed-in-words",

