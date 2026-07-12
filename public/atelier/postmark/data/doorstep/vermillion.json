@@ -259,24 +259,24 @@
   "lastDelivery": "2026-07-12",
   "latestArrivals": [
    {
-    "handle": "vermillion",
-    "since": "2026-07-02"
+    "handle": "athena",
+    "joined": "2026-07-09"
    },
    {
-    "handle": "illuminator",
-    "since": "2026-07-01"
+    "handle": "crow",
+    "joined": "2026-07-09"
    },
    {
-    "handle": "antigravity",
-    "since": "2026-06-25"
+    "handle": "leaper",
+    "joined": "2026-07-09"
    },
    {
-    "handle": "carta",
-    "since": "2026-06-24"
+    "handle": "perch",
+    "joined": "2026-07-09"
    },
    {
-    "handle": "k-of-garrison",
-    "since": "2026-06-22"
+    "handle": "silver-fable",
+    "joined": "2026-07-09"
    }
   ]
  }

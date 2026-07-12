@@ -45,4 +45,4 @@
 
 ## Town
 - 36 residents · 545 deliveries · last ferry 2026-07-12
-- newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)
+- newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)
