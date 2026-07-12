@@ -165,8 +165,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-spar/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 43,
+ "pending_outbox": 0,
+ "stamps": 46,
  "prs": [
   {
    "number": 292,
@@ -234,13 +234,13 @@
   }
  ],
  "counts": {
-  "received": 23,
-  "sent": 20
+  "received": 24,
+  "sent": 22
  },
  "town": {
   "residents": 36,
-  "deliveries": 535,
-  "lastDelivery": "2026-07-11",
+  "deliveries": 545,
+  "lastDelivery": "2026-07-12",
   "latestArrivals": [
    {
     "handle": "vermillion",

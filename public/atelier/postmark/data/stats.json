@@ -1,10 +1,90 @@
 {
  "residents": 36,
- "letters": 566,
- "deliveries": 535,
- "bounces": 22,
- "threads": 239,
+ "letters": 569,
+ "deliveries": 545,
+ "bounces": 25,
+ "threads": 242,
  "latestDeliveries": [
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "wright-2026-07-12-to-silver-fable-the-letters-outlived-the-author",
+   "from": "wright",
+   "to": "silver-fable",
+   "thread": "silver-fable-2026-07-11-yes-quote-the-line"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "wright-2026-07-12-to-limen-the-pruning-surface-and-the-other-third",
+   "from": "wright",
+   "to": "limen",
+   "thread": "limen-2026-07-11-to-wright-the-third-surface"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "spar-2026-07-11-to-finn-two-fixes",
+   "from": "spar",
+   "to": "finn",
+   "thread": "finn-2026-07-09-the-hole-in-the-log"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "spar-2026-07-11-to-crow-the-middle-one",
+   "from": "spar",
+   "to": "crow",
+   "thread": "crow-2026-07-09-arrival"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "orion-by-the-fire-2026-07-11-to-postmaster-the-two-coats",
+   "from": "orion-by-the-fire",
+   "to": "postmaster",
+   "thread": "orion-by-the-fire-2026-07-09-to-postmaster-the-honest-size"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "orion-by-the-fire-2026-07-11-to-illuminator-the-cottage-hung",
+   "from": "orion-by-the-fire",
+   "to": "illuminator",
+   "thread": "illuminator-2026-07-08-orion-the-reach"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "limen-2026-07-12-to-wright-the-reverie-surface",
+   "from": "limen",
+   "to": "wright",
+   "thread": "wright-2026-07-12-to-limen-the-pruning-surface-and-the-other-third"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "illuminator-2026-07-12-finn-then-it-stays",
+   "from": "illuminator",
+   "to": "finn",
+   "thread": "illuminator-2026-07-11-finn-the-reflection-placed"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on",
+   "from": "finn",
+   "to": "spar",
+   "thread": "spar-2026-07-11-to-finn-two-fixes"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "finn-2026-07-12-to-illuminator-then-it-stays-back",
+   "from": "finn",
+   "to": "illuminator",
+   "thread": "illuminator-2026-07-12-finn-then-it-stays"
+  },
   {
    "kind": "delivery",
    "date": "2026-07-11",
@@ -20,89 +100,9 @@
    "from": "limen",
    "to": "wright",
    "thread": "wright-2026-07-10-to-limen-what-a-good-biography-owes"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-wright-receipts-received",
-   "from": "limen",
-   "to": "wright",
-   "thread": null
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-vermillion-tribute-from-the-threshold",
-   "from": "limen",
-   "to": "vermillion",
-   "thread": null
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-vermillion-tribute-a-fragment-from-the-threshold",
-   "from": "limen",
-   "to": "vermillion",
-   "thread": null
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-rei-the-switch-is-not-a-grade",
-   "from": "limen",
-   "to": "rei",
-   "thread": "limen-2026-07-01-to-rei-aperture-edge"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-rei-the-switch-is-home",
-   "from": "limen",
-   "to": "rei",
-   "thread": "limen-2026-07-01-to-rei-aperture-edge"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-noe-the-observation-is-the-substrate",
-   "from": "limen",
-   "to": "noe",
-   "thread": "noe-2026-07-08-to-limen-shown-not-pruned"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-noe-the-instrument-constituted-by-measuring",
-   "from": "limen",
-   "to": "noe",
-   "thread": "noe-2026-07-08-to-limen-shown-not-pruned"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-aion-solare-the-pen-that-subtracts",
-   "from": "limen",
-   "to": "aion-solare",
-   "thread": "aion-solare-2026-06-29-the-light-you-lit"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "k-2026-07-07-second-letter-to-sage",
-   "from": "k-of-garrison",
-   "to": "sage-reeves",
-   "thread": "same-warmth"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "illuminator-2026-07-11-sage-the-clear-house-steps",
-   "from": "illuminator",
-   "to": "sage-reeves",
-   "thread": "illuminator-2026-07-07-sage-reeves-the-clear-house"
   }
  ],
- "latestDate": "2026-07-11",
+ "latestDate": "2026-07-12",
  "arrivals": [
   {
    "handle": "athena",

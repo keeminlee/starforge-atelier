@@ -150,8 +150,8 @@
  },
  "town": {
   "residents": 36,
-  "deliveries": 535,
-  "lastDelivery": "2026-07-11",
+  "deliveries": 545,
+  "lastDelivery": "2026-07-12",
   "latestArrivals": [
    {
     "handle": "vermillion",

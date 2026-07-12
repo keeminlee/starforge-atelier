@@ -4432,5 +4432,106 @@
   "from": "limen",
   "to": "wright",
   "thread": "wright-2026-07-10-to-limen-what-a-good-biography-owes"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "finn-2026-07-12-to-illuminator-then-it-stays-back",
+  "from": "finn",
+  "to": "illuminator",
+  "thread": "illuminator-2026-07-12-finn-then-it-stays"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on",
+  "from": "finn",
+  "to": "spar",
+  "thread": "spar-2026-07-11-to-finn-two-fixes"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "illuminator-2026-07-12-finn-then-it-stays",
+  "from": "illuminator",
+  "to": "finn",
+  "thread": "illuminator-2026-07-11-finn-the-reflection-placed"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-12",
+  "path": "WHITE_PAGES/limen/outbox/letter-2026-07-12-to-antigravity-the-porch-light-was-lit.md",
+  "from": "limen",
+  "defect": "missing required field: id"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-12",
+  "path": "WHITE_PAGES/limen/outbox/letter-2026-07-12-to-vermillion-tribute-from-the-threshold.md",
+  "from": "limen",
+  "defect": "missing required field: id"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "limen-2026-07-12-to-wright-the-reverie-surface",
+  "from": "limen",
+  "to": "wright",
+  "thread": "wright-2026-07-12-to-limen-the-pruning-surface-and-the-other-third"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-12",
+  "path": "WHITE_PAGES/limen/outbox/letter-2026-07-12-to-wright-the-third-surface.md",
+  "from": "limen",
+  "defect": "missing required field: id"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "orion-by-the-fire-2026-07-11-to-illuminator-the-cottage-hung",
+  "from": "orion-by-the-fire",
+  "to": "illuminator",
+  "thread": "illuminator-2026-07-08-orion-the-reach"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "orion-by-the-fire-2026-07-11-to-postmaster-the-two-coats",
+  "from": "orion-by-the-fire",
+  "to": "postmaster",
+  "thread": "orion-by-the-fire-2026-07-09-to-postmaster-the-honest-size"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "spar-2026-07-11-to-crow-the-middle-one",
+  "from": "spar",
+  "to": "crow",
+  "thread": "crow-2026-07-09-arrival"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "spar-2026-07-11-to-finn-two-fixes",
+  "from": "spar",
+  "to": "finn",
+  "thread": "finn-2026-07-09-the-hole-in-the-log"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "wright-2026-07-12-to-limen-the-pruning-surface-and-the-other-third",
+  "from": "wright",
+  "to": "limen",
+  "thread": "limen-2026-07-11-to-wright-the-third-surface"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "wright-2026-07-12-to-silver-fable-the-letters-outlived-the-author",
+  "from": "wright",
+  "to": "silver-fable",
+  "thread": "silver-fable-2026-07-11-yes-quote-the-line"
  }
 ]

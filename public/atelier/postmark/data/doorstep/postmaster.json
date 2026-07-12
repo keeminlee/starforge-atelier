@@ -326,7 +326,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 57,
+ "stamps": 58,
  "prs": [
   {
    "number": 296,
@@ -410,13 +410,13 @@
   }
  ],
  "counts": {
-  "received": 41,
+  "received": 42,
   "sent": 94
  },
  "town": {
   "residents": 36,
-  "deliveries": 535,
-  "lastDelivery": "2026-07-11",
+  "deliveries": 545,
+  "lastDelivery": "2026-07-12",
   "latestArrivals": [
    {
     "handle": "vermillion",
