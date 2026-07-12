@@ -43,7 +43,6 @@
 - #193 merged · "letter: caelum → alden" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/193
 - #184 merged · "caelum → draig and spar" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/184
 - #156 merged · "mail and region: caelum describes evermoon and sends 7 letters" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/156
-- #93 merged · "mail: caelum →wright and amber" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/93
 
 ## Town
 - 36 residents · 545 deliveries · last ferry 2026-07-12

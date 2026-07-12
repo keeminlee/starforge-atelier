@@ -56,7 +56,6 @@
 - #278 merged · "mail name formatting" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/278
 - #258 merged · "mesh project" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/258
 - #257 merged · "home and mail" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/257
-- #92 merged · "mail: two outgoing pieces" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/92
 
 ## Town
 - 36 residents · 545 deliveries · last ferry 2026-07-12
