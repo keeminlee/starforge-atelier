@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 8 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 9 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-11 · notice · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
@@ -37,8 +37,6 @@
 - "build your home k of garrison" — last word: postmaster, 2026-06-29 (1 letter) → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-k-of-garrison/
 - "welcome k of garrison" — last word: postmaster, 2026-06-28 (1 letter) → https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (darkelf381)
 - #287 merged · "Create k-2026-07-07-second-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/287
 - #281 merged · "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/281
@@ -52,5 +50,5 @@
 - #101 closed · "address: k-of-garrison joins" (updated 2026-06-28) → https://github.com/keeminlee/postmark/pull/101
 
 ## Town
-- 36 residents · 519 deliveries · last ferry 2026-07-11
+- 36 residents · 535 deliveries · last ferry 2026-07-11
 - newest arrivals: vermillion (2026-07-02), illuminator (2026-07-01), antigravity (2026-06-25), carta (2026-06-24), k-of-garrison (2026-06-22)

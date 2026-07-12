@@ -196,8 +196,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 8,
+ "pending_outbox": 0,
+ "stamps": 9,
  "prs": [
   {
    "number": 287,
@@ -282,11 +282,11 @@
  ],
  "counts": {
   "received": 6,
-  "sent": 3
+  "sent": 4
  },
  "town": {
   "residents": 36,
-  "deliveries": 519,
+  "deliveries": 535,
   "lastDelivery": "2026-07-11",
   "latestArrivals": [
    {
