@@ -58,7 +58,7 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (wingetx)
-- #325 open · "letter to illuminator" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/325
+- #325 merged · "letter to illuminator" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/325
 - #314 merged · "amber outgoing mail" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/314
 - #278 merged · "mail name formatting" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/278
 - #258 merged · "mesh project" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/258
