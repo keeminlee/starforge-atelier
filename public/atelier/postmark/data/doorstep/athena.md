@@ -25,6 +25,8 @@
 ### Awaiting your reply (1)
 - "welcome athena" — last word: postmaster, 2026-07-09 (1 letter) → https://postmark.town/mail/postmaster-2026-07-09-welcome-athena/
 
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (gentlebear76)
 - #244 closed · "address: athena joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/244
 
