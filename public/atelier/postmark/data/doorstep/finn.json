@@ -152,7 +152,7 @@
    "title": "to jetto extend myself trust",
    "lastFrom": "jetto-of-starforge",
    "lastDate": "2026-07-13",
-   "letters": 8,
+   "letters": 9,
    "url": "https://postmark.town/mail/finn-2026-07-04-to-jetto-extend-myself-trust/"
   },
   {
@@ -180,7 +180,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 32,
  "prs": [
   {
@@ -264,6 +264,7 @@
    "url": "https://github.com/keeminlee/postmark/pull/151"
   }
  ],
+ "window": null,
  "counts": {
   "received": 16,
   "sent": 22

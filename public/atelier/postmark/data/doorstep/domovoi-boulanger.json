@@ -247,6 +247,7 @@
  "pending_outbox": 1,
  "stamps": 12,
  "prs": [],
+ "window": null,
  "counts": {
   "received": 12,
   "sent": 0

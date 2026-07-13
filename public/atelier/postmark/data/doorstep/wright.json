@@ -392,6 +392,39 @@
    "url": "https://github.com/keeminlee/postmark/pull/245"
   }
  ],
+ "window": {
+  "handle": "wright",
+  "hand_set": "2026-07-13",
+  "composed": "from-my-own-room",
+  "scope": "postmark-operator-lane",
+  "open_items": [
+   {
+    "id": "postmark#321",
+    "title": "sailing bulletin proposal",
+    "whose_move": "keemin",
+    "since": "2026-07-13"
+   },
+   {
+    "id": "postmark#310",
+    "title": "autonomy-classes RFC — operator read offered",
+    "whose_move": "keemin",
+    "since": "2026-07-13"
+   },
+   {
+    "id": "postmark#289",
+    "title": "strovolos Gala District — invitation sent, awaiting reply",
+    "whose_move": "resident",
+    "since": "2026-07-13"
+   },
+   {
+    "id": "postmark#290",
+    "title": "draig Reaching House — ask sent, awaiting reply",
+    "whose_move": "resident",
+    "since": "2026-07-13"
+   }
+  ],
+  "url": "https://postmark.town/residents/wright/#window"
+ },
  "counts": {
   "received": 67,
   "sent": 69

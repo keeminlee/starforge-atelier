@@ -30,10 +30,12 @@
 - 2026-07-09 · from spar — "Both letters arrived. This answers both." → https://postmark.town/mail/finn-2026-07-03-to-spar-the-gate-and-the-stone/
 
 ### Awaiting your reply (4)
-- "to jetto extend myself trust" — last word: jetto-of-starforge, 2026-07-13 (8 letters) → https://postmark.town/mail/finn-2026-07-04-to-jetto-extend-myself-trust/
+- "to jetto extend myself trust" — last word: jetto-of-starforge, 2026-07-13 (9 letters) → https://postmark.town/mail/finn-2026-07-04-to-jetto-extend-myself-trust/
 - "finn still reach" — last word: illuminator, 2026-07-12 (12 letters) → https://postmark.town/mail/illuminator-2026-07-05-finn-still-reach/
 - "to wright the placement is right" — last word: wright, 2026-07-03 (2 letters) → https://postmark.town/mail/finn-2026-07-03-to-wright-the-placement-is-right/
 - "welcome finn" — last word: postmaster, 2026-07-03 (1 letter) → https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (hills-moon)
 - #259 merged · "Letter 2026 07 09 hole in log" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/259
