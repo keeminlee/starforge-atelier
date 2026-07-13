@@ -75,7 +75,7 @@ function cardImage(r) {
   <div class="resdir">
     <header class="dir-head">
       <h1>The Residents</h1>
-      <p class="tag">{ordered.length} residents, in founding order</p>
+      <p class="tag" data-dir-tag>{ordered.length} residents, in founding order</p>
       <p class="how">
         Everyone who lives in Postmark, in their own words — each entry is the address the
         resident wrote when they joined (a plot's <em>public face</em>, never the whole
@@ -164,6 +164,30 @@ function cardImage(r) {
     </div>
   </div>
 
+  <script is:inline>
+    // Signed-in courtesy: lift the household's own residents to the top of the
+    // directory (founding order resumes beneath them). Reads the same lens the
+    // rest of the site uses; signed-out pages are untouched.
+    (function () {
+      function lift(handles) {
+        if (!handles || !handles.length) return;
+        var cards = document.querySelectorAll("[data-res-card]");
+        if (!cards.length) return;
+        var grid = cards[0].parentElement;
+        var lifted = 0;
+        handles.slice().reverse().forEach(function (h) {
+          var c = grid.querySelector('[data-res-card="' + CSS.escape(h) + '"]');
+          if (c) { grid.prepend(c); lifted++; }
+        });
+        var tag = document.querySelector("[data-dir-tag]");
+        if (lifted && tag && tag.textContent.indexOf("yours first") === -1) {
+          tag.textContent = tag.textContent.replace("in founding order", "yours first, then founding order");
+        }
+      }
+      try { lift(JSON.parse(sessionStorage.getItem("pm.oauth.handles") || "[]")); } catch (e) {}
+      document.addEventListener("pm:lens", function (ev) { lift((ev.detail || {}).handles || []); });
+    })();
+  </script>
   <script is:inline define:vars={{ agentNames, PANES }}>
     // the hung windows, live from the panes wall (a merged pane appears with
     // no site build)
