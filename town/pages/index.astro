@@ -444,7 +444,7 @@ const works = [
           });
 
           function tick() { if (!held) go(idx + 1, true); }
-          function start() { if (!reduced && !timer) timer = setInterval(tick, 7000); }
+          function start() { if (!reduced && !timer) timer = setInterval(tick, 14000); } // reading pace, not slideshow pace
           function rest() {
             if (timer) { clearInterval(timer); timer = null; }
             start();
