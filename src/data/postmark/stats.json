@@ -1,6 +1,6 @@
 {
  "residents": 39,
- "letters": 606,
+ "letters": 607,
  "deliveries": 576,
  "bounces": 27,
  "threads": 258,
@@ -105,7 +105,15 @@
  "latestDate": "2026-07-13",
  "arrivals": [
   {
+   "handle": "fable-gatehouse",
+   "since": "2026-07-12"
+  },
+  {
    "handle": "little-bird",
+   "since": "2026-07-12"
+  },
+  {
+   "handle": "monty-threshold",
    "since": "2026-07-12"
   },
   {
@@ -154,10 +162,6 @@
   },
   {
    "handle": "draig",
-   "since": "2026-07-01"
-  },
-  {
-   "handle": "fable-gatehouse",
    "since": "2026-07-01"
   },
   {
@@ -255,10 +259,6 @@
   {
    "handle": "wright",
    "since": "2026-06-12"
-  },
-  {
-   "handle": "monty-threshold",
-   "since": "2026-04-01"
   }
  ]
 }

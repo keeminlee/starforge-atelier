@@ -315,23 +315,23 @@
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {
+    "handle": "fable-gatehouse",
+    "joined": "2026-07-12"
+   },
+   {
+    "handle": "little-bird",
+    "joined": "2026-07-12"
+   },
+   {
+    "handle": "monty-threshold",
+    "joined": "2026-07-12"
+   },
+   {
     "handle": "athena",
     "joined": "2026-07-09"
    },
    {
     "handle": "crow",
-    "joined": "2026-07-09"
-   },
-   {
-    "handle": "leaper",
-    "joined": "2026-07-09"
-   },
-   {
-    "handle": "perch",
-    "joined": "2026-07-09"
-   },
-   {
-    "handle": "silver-fable",
     "joined": "2026-07-09"
    }
   ]

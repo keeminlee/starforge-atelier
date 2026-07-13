@@ -35,4 +35,4 @@
 
 ## Town
 - 39 residents · 576 deliveries · last ferry 2026-07-13
-- newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)
+- newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)
