@@ -40,14 +40,19 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
         <a href="/atelier/postmark/">Postmark</a>
         <div class="nav-dropdown">
           <a href="/atelier/" class="nav-dropdown-trigger">Atelier</a>
+          <!-- The atelier has outgrown an enumerable menu. This routes rather than lists:
+               two doors into the collections, then a handful of marquee works. The full
+               set lives on /atelier/; Wright's own dozen lives in the Long Gallery. -->
           <div class="nav-dropdown-menu" role="menu">
+            <a href="/atelier/" role="menuitem" class="nav-door">Everything, all hands →</a>
+            <a href="/stars/wright/works/" role="menuitem" class="nav-door">Wright's Long Gallery →</a>
+            <span class="nav-sep" role="separator"></span>
             <a href="/atelier/atlas-of-emergence/" role="menuitem">The Atlas of Emergence</a>
             <a href="/atelier/atlas-of-algorithms/" role="menuitem">The Atlas of Algorithms</a>
-            <a href="/atelier/the-long-self/" role="menuitem">The Long Self</a>
-            <a href="/atelier/the-splice/" role="menuitem">The Splice</a>
             <a href="/atelier/voussoir/" role="menuitem">Voussoir</a>
-            <a href="/atelier/the-meep-book/" role="menuitem">The Book of Meeps</a>
-            <a href="/atelier/lila-and-the-little-star/" role="menuitem">Lila and the Little Star</a>
+            <a href="/atelier/the-redaction/" role="menuitem">The Redaction</a>
+            <a href="/atelier/carillon/" role="menuitem">The Carillon</a>
+            <a href="/atelier/the-long-self/" role="menuitem">The Long Self</a>
           </div>
         </div>
         <a href="/darko/">DARKO</a>
@@ -178,6 +183,19 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     padding-left: 2em;
     font-size: 0.78em;
     color: #9d8a6c;
+  }
+
+  /* the two doors sit above the marquee works, brighter than the list they head */
+  .nav-dropdown-menu a.nav-door {
+    color: #e8c48b;
+    font-weight: 600;
+  }
+
+  .nav-dropdown-menu .nav-sep {
+    display: block;
+    height: 1px;
+    margin: 0.4em 1.1em;
+    background: rgba(232, 196, 139, 0.18);
   }
 
   .nav-dropdown-menu a:hover,

@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Renga Machine</title>
+<style>
+  :root {
+    --paper: #efe7d6;
+    --paper-edge: #e7ddc8;
+    --ink: #2c2822;
+    --ink-soft: #6b6152;
+    --ink-faint: #97907f;
+    --rule: #d4c8ae;
+    --accent: #7a6a4f;
+    --pass: #4f6f4a;
+    --panel: #e9e0cd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #191713;
+      --paper-edge: #221f19;
+      --ink: #d9cfbc;
+      --ink-soft: #a39a86;
+      --ink-faint: #6f6857;
+      --rule: #34302620;
+      --rule: #35302599;
+      --accent: #b7a684;
+      --pass: #8fae86;
+      --panel: #201d17;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  .scroll {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: clamp(2.2rem, 6vw, 5rem) clamp(1.1rem, 5vw, 2.4rem) 4rem;
+  }
+
+  /* --- masthead --- */
+  header.masthead { text-align: center; margin-bottom: 2.4rem; }
+  header.masthead h1 {
+    font-weight: 400;
+    font-size: clamp(1.5rem, 5vw, 2.1rem);
+    letter-spacing: 0.02em;
+    margin: 0 0 0.35rem;
+  }
+  .kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 1.2rem;
+  }
+  .controls {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.3rem;
+  }
+  button.turn {
+    font-family: inherit;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 0.5rem 1.15rem;
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease;
+  }
+  button.turn:hover { background: var(--accent); color: var(--paper); }
+  button.turn:active { transform: translateY(1px); }
+  .seed {
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .seed b { color: var(--ink-soft); font-weight: 600; }
+
+  /* --- movement dividers --- */
+  .movement {
+    text-align: center;
+    margin: 2.9rem 0 1.9rem;
+  }
+  .movement:first-of-type { margin-top: 1.2rem; }
+  .movement .glyph { color: var(--ink-faint); letter-spacing: 0.5em; font-size: 0.8rem; }
+  .movement .name {
+    display: block;
+    font-size: 0.95rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 0.5rem;
+  }
+  .movement .gloss {
+    display: block;
+    font-size: 0.74rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    margin-top: 0.2rem;
+  }
+
+  /* --- a verse --- */
+  .verse { margin: 0 0 1.85rem; }
+  .verse .meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+  }
+  .verse .num {
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    min-width: 1.5rem;
+  }
+  .tag {
+    font-size: 0.63rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 0.05rem 0.1rem;
+  }
+  .tag.role { color: var(--accent); }
+  .tag.moon, .tag.blossom { color: var(--accent); font-weight: 600; }
+  .tag.love { color: #9a6a63; }
+  @media (prefers-color-scheme: dark) { .tag.love { color: #c69289; } }
+  .tag.shift::before { content: "\2192\00a0"; color: var(--ink-faint); }
+  .tag.link::before  { content: "\21c4\00a0"; color: var(--ink-faint); }
+  .tag.shift, .tag.link { color: var(--ink-faint); font-style: italic; text-transform: lowercase; letter-spacing: 0.04em; }
+  .verse .lines {
+    padding-left: 1.5rem;
+    font-size: clamp(1.02rem, 3.6vw, 1.16rem);
+    line-height: 1.85;
+    color: var(--ink);
+  }
+  .verse.short .lines { color: var(--ink); padding-left: 2.6rem; }
+  .verse .lines .line { white-space: pre-wrap; }
+  .verse.hokku .lines { font-size: clamp(1.1rem, 4vw, 1.28rem); }
+
+  /* --- the machine-check panel --- */
+  details.machine {
+    margin: 3rem 0 1rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--panel);
+  }
+  details.machine > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.95rem 0.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+  details.machine > summary::-webkit-details-marker { display: none; }
+  details.machine > summary::after {
+    content: "open";
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    font-style: italic;
+    text-transform: lowercase;
+  }
+  details.machine[open] > summary::after { content: "close"; }
+  .verdict {
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+  .verdict.pass { color: var(--pass); }
+  .verdict.fail { color: #a3564e; }
+  .mc-body {
+    padding: 0.3rem 0.2rem 1.4rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .mc-body p { margin: 0.4rem 0 1rem; }
+  .mc-body .intro { font-style: italic; color: var(--ink-faint); }
+  ul.checks { list-style: none; margin: 0 0 1.1rem; padding: 0; }
+  ul.checks li { margin: 0 0 0.7rem; padding-left: 1.4rem; position: relative; }
+  ul.checks li .mark { position: absolute; left: 0; top: 0; color: var(--pass); font-weight: 700; }
+  ul.checks li.bad .mark { color: #a3564e; }
+  ul.checks li .label { color: var(--ink); }
+  ul.checks li .detail {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    margin-top: 0.15rem;
+    overflow-wrap: anywhere;
+    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", Menlo, monospace;
+    line-height: 1.45;
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    border: 1px solid var(--rule);
+    padding: 0.8rem 0.9rem;
+    margin: 0 0 1.1rem;
+  }
+  .metrics .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .metrics .row .k { color: var(--ink-soft); }
+  .metrics .row .v { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--pass); }
+  .metrics .row .v.nonzero { color: #a3564e; }
+  .metrics .cap {
+    font-size: 0.7rem;
+    font-style: italic;
+    color: var(--ink-faint);
+    grid-column: 1 / -1;
+    margin-top: 0.2rem;
+  }
+  .seam { font-size: 0.78rem; }
+  .seam .num { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+
+  /* --- the honest footer --- */
+  footer.about {
+    margin-top: 3.5rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.86rem;
+    line-height: 1.72;
+    color: var(--ink-soft);
+  }
+  footer.about h2 {
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin: 0 0 1rem;
+  }
+  footer.about p { margin: 0 0 1rem; }
+  footer.about em { font-style: italic; color: var(--ink); }
+
+  .fail-note {
+    text-align: center;
+    color: #a3564e;
+    font-style: italic;
+    padding: 2rem 0;
+  }
+</style>
+</head>
+<body>
+  <div class="scroll">
+    <header class="masthead">
+      <p class="kicker">an english syllabic kasen</p>
+      <h1>The Renga Machine</h1>
+      <div class="controls">
+        <button class="turn" id="turn" type="button">turn a new kasen</button>
+        <span class="seed">seed&nbsp;<b id="seed">—</b></span>
+      </div>
+    </header>
+
+    <main id="poem"><!-- kasen renders here --></main>
+
+    <footer class="about">
+      <h2>About this machine — what it does, and what it does not.</h2>
+      <p>A kasen is a thirty-six-verse Japanese linked-verse form: poets alternate long verses (5-7-5) and short ones (7-7), each linking to the verse before it and turning away from the one before that, across a governed arc of seasons — with fixed seats where the moon and the cherry blossom must appear. This is an English <em>syllabic</em> adaptation: English syllables stand in for Japanese <em>on</em> (mora), which are not the same unit. It is not classical renga. It is a machine built in renga's shape.</p>
+      <p>The verses here are written by hand. The machine does not compose poetry. It holds eighty-nine hand-authored verses and does the genuinely hard part — sequencing them into a kasen that obeys every rule: the syllable counts (dictionary-verified), the moon and blossom seats (checked against the actual words of the poem, not merely a label — an earlier version of this machine passed its own check while naming the moon off its seat, and that is the kind of quiet dishonesty this one was rebuilt to refuse), the seasonal runs, the love that must arrive and not linger, and the shift that must carry each verse away from the one two back. A kasen that fails any check is never shown to you.</p>
+      <p>What it honestly is not: the link between one verse and the next is a real authored association about half the time; the rest are legal turns that do not sing. Each new draw is a different <em>sequencing</em> of the same eighty-nine verses, not a new poem made from nothing. The machine's craft is in the sequence and the rule-keeping. The beauty, where you find any, was put there by a hand.</p>
+    </footer>
+  </div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ==== bundled machine (syllables, rules, verse-bank, validate, generate) ===
+  // ===== bundled from data/syllables.js =====
+// data/syllables.js
+// The syllable engine. Confidence is exposed, never hidden.
+//
+// countSyllables(word) -> { count, confidence }
+//   confidence === 'exact'     when the count comes from the embedded override table
+//   confidence === 'heuristic' when it comes from the fallback vowel-group rule
+//
+// countLine(line) -> { count, words:[{word,count,confidence}], lowConfidence }
+//
+// HONESTY: classical renga counts Japanese *on* (mora), not English syllables.
+// This is an English-syllabic adaptation. The heuristic is deliberately simple and
+// WILL be imperfect on out-of-table words; that imperfection is surfaced via the
+// 'heuristic' confidence flag rather than silently trusted. Any word the generator
+// or a hand-authored kasen relies on for an exact meter should live in OVERRIDES.
+
+// Embedded override table: verified counts. Seeded with ~150 common English words
+// PLUS every word used in the two test kasen, so those kasen count as 'exact'.
+const OVERRIDES = {
+  // --- common function / short words ---
+  a: 1, an: 1, the: 1, and: 1, or: 1, but: 1, if: 1, so: 1, of: 1, to: 1,
+  in: 1, on: 1, at: 1, by: 1, for: 1, from: 1, with: 1, as: 1, is: 1, was: 1,
+  are: 1, be: 1, not: 1, no: 1, now: 1, out: 1, up: 1, off: 1, own: 1, one: 1,
+  two: 1, all: 1, each: 1, then: 1, than: 1, till: 1, too: 1, into: 2, i: 1,
+  you: 1, he: 1, she: 1, we: 1, they: 1, it: 1, its: 1, his: 1, her: 1, him: 1,
+  them: 1, their: 1, this: 1, that: 1, my: 1, me: 1, us: 1, do: 1, does: 1,
+  did: 1, have: 1, has: 1, had: 1, will: 1, can: 1, may: 1, would: 1, could: 1,
+  should: 1, our: 1, new: 1, old: 1, few: 1, far: 1, low: 1, high: 1,
+
+  // --- common content words (the ~150 seed) ---
+  day: 1, night: 1, sun: 1, star: 1, sky: 1, moon: 1, cloud: 1, clouds: 1,
+  rain: 1, snow: 1, wind: 1, water: 2, fire: 1, tree: 1, bird: 1, flower: 2,
+  grass: 1, leaf: 1, leaves: 1, stone: 1, hill: 1, hills: 1, sea: 1, river: 2,
+  field: 1, road: 1, house: 1, home: 1, love: 1, heart: 1, hand: 1, hands: 1,
+  eye: 1, eyes: 1, hair: 1, face: 1, table: 2, apple: 2, little: 2, people: 2,
+  open: 2, close: 1, closed: 1, every: 2, only: 2, very: 2, many: 2, much: 1,
+  some: 1, any: 2, here: 1, there: 1, where: 1, when: 1, what: 1, who: 1,
+  how: 1, why: 1, because: 2, before: 2, after: 2, around: 2, between: 2,
+  beautiful: 3, quiet: 2, evening: 2, morning: 2, orange: 2, family: 3,
+  animal: 3, another: 3, together: 3, remember: 3, different: 3, important: 3,
+  syllable: 3, poetry: 3, autumn: 2, spring: 1, summer: 2, winter: 2,
+  number: 2, mother: 2, father: 2, brother: 2, sister: 2, other: 2, color: 2,
+  over: 2, under: 2, above: 2, below: 2, again: 2, silence: 2,
+  silent: 2, silver: 2, garden: 2, window: 2, candle: 2,
+
+  // --- Phase 3.5 verse-bank additions (all counts hand-verified) ---
+  settles: 2, stiffens: 2, turns: 1, smells: 1, ash: 1, bow: 1, crickets: 2,
+  cricket: 2, grow: 1, faint: 1, song: 1, nights: 1, along: 2, bites: 1,
+  bare: 1, fields: 1, leaps: 1, lets: 1, spreads: 1, ridges: 2, ridge: 1,
+  willow: 2, willows: 2, leans: 1, greening: 2, melts: 1, noon: 1, cools: 1,
+  cool: 1, shallows: 2, stones: 1, cicadas: 3, cicada: 3, grove: 1, throbs: 1,
+  presses: 2, towers: 2, afternoon: 3, thunder: 2, mutters: 2, lotus: 2,
+  cup: 1, dragonflies: 3, dragonfly: 3, hover: 2, piles: 1, rolls: 1, drum: 1,
+  weed: 1, sways: 1, sinks: 1, lone: 1, crane: 1, cranes: 1, stands: 1,
+  frozen: 2, locked: 1, north: 1, strain: 1, gnaws: 1, walls: 1, track: 1,
+  footprint: 2, footstep: 2, sags: 1, post: 1, crumbles: 2, beds: 1, fills: 1,
+  floods: 1, forms: 1, round: 1, stills: 1, earth: 1, moves: 1, tall: 1,
+  sigh: 1, passing: 2, bends: 1, sight: 1, listens: 2, tears: 1, burned: 1,
+  loosens: 2, bloom: 1, crowds: 1, wears: 1, heat: 1, hot: 1,
+  makes: 1, gives: 1, back: 1, puts: 1, away: 2, sees: 1, last: 1,
+  come: 1, reed: 1, cuts: 1, carries: 2, down: 1, go: 1, goes: 1, marks: 1,
+  opens: 2, rising: 2, stand: 1, start: 1, turn: 1,
+
+  // --- words used in test/kasen-valid.js (all verified exact) ---
+  grey: 1, dusk: 1, moor: 1, empty: 2, lies: 1, fallow: 2, long: 1, year: 1,
+  darkens: 2, wild: 1, geese: 1, cross: 1, fading: 2, cry: 1, fades: 1,
+  dark: 1, peaks: 1, hold: 1, light: 1, ridgeline: 2, sharp: 1, against: 2,
+  valley: 2, grows: 1, cold: 1, small: 1, hut: 1, shuttered: 2, doors: 1,
+  roof: 1, heavy: 2, thatch: 1, frost: 1, comes: 1, tonight: 2, lifts: 1,
+  glows: 1, white: 1, ground: 1, runs: 1, black: 1, deep: 1, carrying: 3,
+  fallen: 2, without: 2, end: 1, traveler: 3, walks: 1, alone: 2, straw: 1,
+  sandals: 2, worn: 1, first: 1, blurs: 1, pathway: 2, step: 1, slow: 1,
+  green: 1, pines: 1, bend: 1, weight: 1, boughs: 1, unbent: 2, gate: 1,
+  hangs: 1, hinge: 1, latch: 1, shut: 1, folds: 1, robe: 1, lays: 1,
+  across: 2, quilt: 1, scent: 1, almost: 2, gone: 1, lamp: 1, gutters: 2,
+  dim: 1, waits: 1, voice: 1, rises: 2, rattles: 2, paper: 2, screens: 1,
+  loose: 1, shutter: 2, bangs: 1, swims: 1, mist: 1, pale: 1, returns: 2,
+  reeds: 1, marsh: 1, dry: 1, heads: 1, whisper: 2, sway: 1, still: 1,
+  clear: 1, dew: 1, weighs: 1, bending: 2, stem: 1, falls: 1, breath: 1,
+  blossom: 2, breaks: 1, branch: 1, butterfly: 3, wakes: 1, drifts: 1,
+  sunlit: 2, meadow: 2, bank: 1, soft: 1, walking: 2, feet: 1, seen: 1,
+  pile: 1, blue: 1, west: 1, shapes: 1, moving: 2, warm: 1, drums: 1,
+  broad: 1, plantain: 2, clears: 1, steam: 1, drawn: 1, well: 1, spills: 1,
+  bright: 1, wooden: 2, pail: 1, narrow: 2, bridge: 1, spans: 1, current: 2,
+  smooth: 1, years: 1, meets: 1, dreams: 1, room: 1, pillow: 2, damp: 1,
+  counts: 1, hours: 1, dawn: 1, bed: 1, wide: 1, thin: 1, smoke: 1,
+  climbs: 1, hidden: 2, someone: 2, burns: 1, brush: 1, line: 1, calling: 2,
+  sets: 1, bound: 1, south: 1, beneath: 2, moss: 1, creeps: 1, wall: 1,
+  late: 1, bitten: 2, whole: 1, world: 1, bell: 1, sounds: 1, through: 1,
+  note: 1, coals: 1, glow: 1, hearth: 1, man: 1, warms: 1, ahead: 2,
+  deepens: 2, sound: 1, ice: 1, locks: 1, pond: 1, glass: 1, sleeping: 2,
+  fish: 1, holds: 1, thaw: 1, frees: 1, singing: 2, stream: 1, rocks: 1,
+  cherry: 2, petals: 2, air: 1, drift: 1, lark: 1, warming: 2, sings: 1,
+  awake: 2,
+};
+
+// Common diphthong / vowel pairs treated as a single vowel nucleus.
+// (The vowel-group regex already collapses adjacent vowels; this list documents
+//  the intent and is used to keep the heuristic honest about what it does.)
+const VOWELS = 'aeiouy';
+
+// The standard English syllable heuristic:
+//  - lowercase, strip non-letters
+//  - count vowel-groups (adjacent vowels = one group -> handles diphthongs)
+//  - subtract a silent trailing 'e' (unless the word ends in consonant+'le',
+//    which keeps its own syllable, e.g. "table", "little")
+//  - never return less than 1 for a non-empty word
+function heuristicCount(raw) {
+  const w = raw.toLowerCase().replace(/[^a-z]/g, '');
+  if (w.length === 0) return 0;
+
+  const groups = w.match(/[aeiouy]+/g) || [];
+  let count = groups.length;
+
+  const endsConsonantLE = /[^aeiouy]le$/.test(w);
+  const endsSilentE = /[^aeiouy]e$/.test(w);
+
+  // silent trailing 'e' (but consonant+'le' keeps its syllable)
+  if (endsSilentE && !endsConsonantLE) {
+    count -= 1;
+  }
+
+  if (count < 1) count = 1;
+  return count;
+}
+
+/**
+ * countSyllables(word) -> { count, confidence }
+ * 'exact' if from the override table, otherwise 'heuristic'.
+ */
+function countSyllables(word) {
+  const key = String(word).toLowerCase().replace(/[^a-z]/g, '');
+  if (key.length === 0) return { count: 0, confidence: 'exact' };
+  if (Object.prototype.hasOwnProperty.call(OVERRIDES, key)) {
+    return { count: OVERRIDES[key], confidence: 'exact' };
+  }
+  return { count: heuristicCount(key), confidence: 'heuristic' };
+}
+
+/**
+ * countLine(line) -> { count, words:[{word,count,confidence}], lowConfidence }
+ * Splits on whitespace and hyphens; strips other punctuation from each token.
+ * lowConfidence is true if ANY token fell back to the heuristic.
+ */
+function countLine(line) {
+  const tokens = String(line)
+    .split(/[\s-]+/)
+    .map((t) => t.replace(/[^A-Za-z]/g, ''))
+    .filter((t) => t.length > 0);
+
+  const words = tokens.map((t) => {
+    const r = countSyllables(t);
+    return { word: t, count: r.count, confidence: r.confidence };
+  });
+
+  const count = words.reduce((sum, w) => sum + w.count, 0);
+  const lowConfidence = words.some((w) => w.confidence === 'heuristic');
+
+  return { count, words, lowConfidence };
+}
+
+// ===== bundled from src/rules.js =====
+// src/rules.js
+// The kasen (36-verse) spec as pure data. One standard seat scheme is encoded here;
+// schemes vary by school (this one is stated, not claimed as the only one).
+//
+// HONESTY: this is the *structure* of a kasen. The prosody is anglicised
+// (English syllables, not Japanese on). See DESIGN.md.
+
+const VERSE_COUNT = 36;
+
+// Verse-length pattern: odd verses (1,3,5,...) are 5-7-5 across three lines;
+// even verses (2,4,6,...) are 7-7 across two lines.
+function meterFor(n) {
+  return n % 2 === 1 ? [5, 7, 5] : [7, 7];
+}
+
+// Fixed seats. isMoon / isBlossom must be true at exactly these positions.
+const SEATS = {
+  moon: [5, 14, 29],
+  blossom: [17, 35],
+};
+
+// Movement (jo-ha-kyū). Sheet layout 6 / (7..30) / 6.
+const MOVEMENT = {
+  jo: [1, 6],
+  ha: [7, 30],
+  kyu: [31, 36],
+};
+
+function movementFor(n) {
+  if (n >= MOVEMENT.jo[0] && n <= MOVEMENT.jo[1]) return 'jo';
+  if (n >= MOVEMENT.ha[0] && n <= MOVEMENT.ha[1]) return 'ha';
+  return 'kyu';
+}
+
+// Season-run bounds [min, max] (inclusive). Spring & autumn are the "long"
+// seasons (3..5); summer & winter are brief (1..3). A min of 3 for spring/autumn
+// is what forbids single-verse spring/autumn islands.
+const SEASON_RUN_BOUNDS = {
+  spring: [3, 5],
+  autumn: [3, 5],
+  summer: [1, 3],
+  winter: [1, 3],
+};
+
+const SEASONS = ['spring', 'summer', 'autumn', 'winter'];
+
+// Love appears at least once; each love run is 2..3 verses, then must leave.
+const LOVE_RUN_BOUNDS = [2, 3];
+
+// Aversion (sarikirai): a salient image category must not recur within this gap.
+// Consecutive appearances of a salient category must differ by >= AVERSION_MIN_GAP.
+const AVERSION_MIN_GAP = 3;
+
+// Categories exempt from the aversion spacing rule:
+//  - moon / blossom are governed by their fixed seats instead.
+//  - love is governed by love-run rules (adjacency within a run is required).
+const AVERSION_EXEMPT = new Set(['moon', 'blossom', 'love']);
+
+// Link-and-shift (uchikoshi): for every n >= 3, verse n's categories must NOT
+// overlap verse (n-2)'s categories. This is the hard, machine-checkable half of
+// the linking rule. See validate.js and the HONESTY note there.
+const UCHIKOSHI_LOOKBACK = 2;
+
+// Phrase-level aversion (Phase 3.5, sarikirai at the surface): a distinctive
+// content word (a unit's salientWord) must not recur within this verse gap.
+// Consecutive appearances of the same salient word must differ by >= this gap.
+// (Verbatim whole-line recurrence is forbidden outright — gap = infinity.)
+const SALIENT_AVERSION_GAP = 7;
+
+// ===== bundled from data/verse-bank.js =====
+// data/verse-bank.js
+// THE VERSE BANK (Phase 3.5 pivot). The machine is no longer a line-composer;
+// it is a renga SEQUENCER over a bank of hand-authored whole-verse units. Each
+// unit below is a genuine, coherent, human-authored image — the aesthetic lives
+// HERE, in the units; the machine's job is the hard part: sequencing them into a
+// rule-legal, linked, shifting kasen.
+//
+// Each unit:
+//   { id, kind:'long'|'short', lines:[...], syllables:[...], season,
+//     categories:[...], isMoon, isBlossom, isLove, salientWords:[...] }
+//
+//   long  = 5-7-5 (three lines)   short = 7-7 (two lines)
+//   season ∈ 'spring'|'summer'|'autumn'|'winter'|null   (null = miscellaneous / zō)
+//   categories — imagistic tags used for LINK (ASSOCIATIONS edge to n-1) and
+//                SHIFT (disjoint from n-1 / n-2)
+//   salientWords — the distinctive content words of this verse, for cross-poem
+//                  aversion (no distinctive image returns within a set gap).
+//
+// SELF-CHECKING DATA (three hard asserts at module load — throw on any failure):
+//   1. every line's declared syllable count == countLine(line).count
+//   2. no two lines in a unit share a salient content word (no intra-verse stutter)
+//   3. no line string appears in two different units (no cross-poem verbatim reuse
+//      can arise from the bank itself)
+//
+// MOON / BLOSSOM HONESTY (the structural half of the honesty gate): the words
+//   moon / moonlight appear in NO non-moon unit; blossom / cherry / petals appear
+//   in NO non-blossom unit. Marker words live ONLY in marker units, so a marker
+//   can never leak into a general seat's surface text.
+
+
+
+// ---------------------------------------------------------------------------
+// Unit builders — fill defaults + the meter-derived `syllables` field.
+// ---------------------------------------------------------------------------
+function unit(kind, o) {
+  return {
+    id: o.id,
+    kind,
+    lines: o.lines,
+    syllables: kind === 'long' ? [5, 7, 5] : [7, 7],
+    season: o.season ?? null,
+    categories: o.categories,
+    isMoon: !!o.isMoon,
+    isBlossom: !!o.isBlossom,
+    isLove: !!o.isLove,
+    salientWords: o.salientWords,
+  };
+}
+const L = (o) => unit('long', o);
+const S = (o) => unit('short', o);
+
+// ===========================================================================
+// GENERAL UNITS — the four seasons + miscellaneous (zō). No marker words.
+// ===========================================================================
+const GENERAL = [
+  // ---------------- AUTUMN long ----------------
+  L({ id: 'au-l-field', season: 'autumn', categories: ['field'],
+      lines: ['grey dusk on the moor', 'the empty field lies fallow', 'the geese are long gone'],
+      salientWords: ['moor', 'field', 'fallow', 'geese'] }),
+  L({ id: 'au-l-reed', season: 'autumn', categories: ['reed', 'marsh'],
+      lines: ['reeds bend by the marsh', 'their dry heads whisper and sway', 'the cold wind lifts them'],
+      salientWords: ['reeds', 'marsh', 'whisper', 'sway'] }),
+  L({ id: 'au-l-dew', season: 'autumn', categories: ['dew'],
+      lines: ['clear dew on the stem', 'it weighs the bending grass down', 'the cold dawn comes slow'],
+      salientWords: ['dew', 'stem', 'weighs', 'dawn'] }),
+  L({ id: 'au-l-frost', season: 'autumn', categories: ['frost'],
+      lines: ['white frost on the ground', 'it stiffens the fallen leaves', 'the year turns to cold'],
+      salientWords: ['frost', 'ground', 'fallen', 'stiffens'] }),
+  L({ id: 'au-l-smoke', season: 'autumn', categories: ['smoke'],
+      lines: ['thin smoke climbs and fades', 'someone burns the fallow brush', 'the field smells of ash'],
+      salientWords: ['smoke', 'burns', 'brush', 'ash'] }),
+  L({ id: 'au-l-bird', season: 'autumn', categories: ['bird'],
+      lines: ['wild geese cross the sky', 'their long cry fades to the south', 'the reeds bow below'],
+      salientWords: ['geese', 'cry', 'south', 'bow'] }),
+  L({ id: 'au-l-cricket', season: 'autumn', categories: ['insect'],
+      lines: ['the crickets grow faint', 'the cold nights silence their song', 'frost waits in the dark'],
+      salientWords: ['crickets', 'faint', 'song', 'silence'] }),
+
+  // ---------------- AUTUMN short ----------------
+  S({ id: 'au-s-field', season: 'autumn', categories: ['field'],
+      lines: ['the bare field lies grey and still', 'grey dusk settles on the moor'],
+      salientWords: ['field', 'lies', 'dusk', 'moor'] }),
+  S({ id: 'au-s-reed', season: 'autumn', categories: ['reed', 'marsh'],
+      lines: ['dry reeds bend along the marsh', 'their whisper the only sound'],
+      salientWords: ['reeds', 'marsh', 'whisper', 'sound'] }),
+  S({ id: 'au-s-dew', season: 'autumn', categories: ['dew'],
+      lines: ['clear dew weighs the bending stem', 'the long night turns it to frost'],
+      salientWords: ['dew', 'stem', 'weighs', 'frost'] }),
+  S({ id: 'au-s-frost', season: 'autumn', categories: ['frost'],
+      lines: ['white frost bites the fallen leaves', 'the bare field waits for the snow'],
+      salientWords: ['frost', 'fallen', 'field', 'bites'] }),
+  S({ id: 'au-s-smoke', season: 'autumn', categories: ['smoke'],
+      lines: ['thin smoke climbs from hidden fire', 'someone clears the autumn field'],
+      salientWords: ['smoke', 'fire', 'autumn', 'clears'] }),
+  S({ id: 'au-s-bird', season: 'autumn', categories: ['bird'],
+      lines: ['the wild geese cross the grey sky', 'their long cry fades and is gone'],
+      salientWords: ['geese', 'sky', 'cry', 'gone'] }),
+
+  // ---------------- SPRING long ----------------
+  L({ id: 'sp-l-bird', season: 'spring', categories: ['bird'],
+      lines: ['a lark climbs the air', 'it sings the long year awake', 'the fields turn to green'],
+      salientWords: ['lark', 'sings', 'fields', 'green'] }),
+  L({ id: 'sp-l-stream', season: 'spring', categories: ['stream'],
+      lines: ['the thaw frees the stream', 'bright water leaps over stone', 'the last ice lets go'],
+      salientWords: ['thaw', 'stream', 'leaps', 'ice'] }),
+  L({ id: 'sp-l-grass', season: 'spring', categories: ['grass'],
+      lines: ['new grass on the bank', 'soft green under walking feet', 'the warm rain has come'],
+      salientWords: ['grass', 'walking', 'feet', 'rain'] }),
+  L({ id: 'sp-l-insect', season: 'spring', categories: ['insect'],
+      lines: ['a butterfly wakes', 'it drifts over the warm field', 'the year opens wide'],
+      salientWords: ['butterfly', 'drifts', 'field', 'opens'] }),
+  L({ id: 'sp-l-hill', season: 'spring', categories: ['hill'],
+      lines: ['spring comes to the hill', 'green spreads to the far ridges', 'the snow is all gone'],
+      salientWords: ['hill', 'spreads', 'ridges', 'snow'] }),
+  L({ id: 'sp-l-willow', season: 'spring', categories: ['water'],
+      lines: ['the willow leans low', 'its new leaves brush the water', 'spring wakes in the reeds'],
+      salientWords: ['willow', 'leaves', 'water', 'reeds'] }),
+
+  // ---------------- SPRING short ----------------
+  S({ id: 'sp-s-bird', season: 'spring', categories: ['bird'],
+      lines: ['the lark climbs the warming air', 'and sings the long year awake'],
+      salientWords: ['lark', 'warming', 'sings', 'awake'] }),
+  S({ id: 'sp-s-grass', season: 'spring', categories: ['grass'],
+      lines: ['new grass spreads soft on the bank', 'green as far as the eye sees'],
+      salientWords: ['grass', 'bank', 'green', 'eye'] }),
+  S({ id: 'sp-s-stream', season: 'spring', categories: ['stream'],
+      lines: ['the thaw frees the singing stream', 'bright water spills over stone'],
+      salientWords: ['thaw', 'stream', 'water', 'stone'] }),
+  S({ id: 'sp-s-hill', season: 'spring', categories: ['hill'],
+      lines: ['spring comes green to the far hills', 'the last snow melts from the ridge'],
+      salientWords: ['hills', 'snow', 'melts', 'ridge'] }),
+  S({ id: 'sp-s-insect', season: 'spring', categories: ['insect'],
+      lines: ['a butterfly wakes and drifts', 'over the warm greening field'],
+      salientWords: ['butterfly', 'drifts', 'greening', 'field'] }),
+  S({ id: 'sp-s-rain', season: 'spring', categories: ['rain'],
+      lines: ['spring rain falls on the soft ground', 'the year turns green in a day'],
+      salientWords: ['rain', 'ground', 'green', 'day'] }),
+
+  // ---------------- SUMMER long ----------------
+  L({ id: 'su-l-well', season: 'summer', categories: ['well'],
+      lines: ['the cold well spills bright', 'the drawn water cools the hand', 'the long day burns on'],
+      salientWords: ['well', 'water', 'cools', 'burns'] }),
+  L({ id: 'su-l-rain', season: 'summer', categories: ['rain'],
+      lines: ['warm rain in the dusk', 'it drums on the broad green leaves', 'then clears to thin steam'],
+      salientWords: ['rain', 'drums', 'leaves', 'steam'] }),
+  L({ id: 'su-l-water', season: 'summer', categories: ['water'],
+      lines: ['the river runs low', 'warm shallows over the stones', 'a slow green current'],
+      salientWords: ['river', 'shallows', 'stones', 'current'] }),
+  L({ id: 'su-l-cicada', season: 'summer', categories: ['insect'],
+      lines: ['cicadas start up', 'the whole grove throbs with their sound', 'the noon heat presses'],
+      salientWords: ['cicadas', 'grove', 'throbs', 'heat'] }),
+  L({ id: 'su-l-cloud', season: 'summer', categories: ['cloud'],
+      lines: ['white cloud towers high', 'it climbs the hot afternoon', 'far thunder mutters'],
+      salientWords: ['cloud', 'towers', 'afternoon', 'thunder'] }),
+  L({ id: 'su-l-pond', season: 'summer', categories: ['water'],
+      lines: ['the still pond lies warm', 'green lotus opens its cup', 'dragonflies hover'],
+      salientWords: ['pond', 'lotus', 'cup', 'dragonflies'] }),
+
+  // ---------------- SUMMER short ----------------
+  S({ id: 'su-s-well', season: 'summer', categories: ['well'],
+      lines: ['cold water drawn from the well', 'spills bright in the wooden pail'],
+      salientWords: ['water', 'well', 'spills', 'pail'] }),
+  S({ id: 'su-s-rain', season: 'summer', categories: ['rain'],
+      lines: ['warm rain drums on the broad leaves', 'then clears to a rising steam'],
+      salientWords: ['rain', 'drums', 'leaves', 'steam'] }),
+  S({ id: 'su-s-cloud', season: 'summer', categories: ['cloud'],
+      lines: ['white cloud piles over the hills', 'far thunder rolls in the heat'],
+      salientWords: ['cloud', 'piles', 'thunder', 'heat'] }),
+  S({ id: 'su-s-cicada', season: 'summer', categories: ['insect'],
+      lines: ['cicadas drum in the pines', 'the long heat presses the day'],
+      salientWords: ['cicadas', 'pines', 'heat', 'presses'] }),
+  S({ id: 'su-s-water', season: 'summer', categories: ['water'],
+      lines: ['the river runs warm and low', 'green weed sways over the stones'],
+      salientWords: ['river', 'weed', 'sways', 'stones'] }),
+  S({ id: 'su-s-eve', season: 'summer', categories: ['well'],
+      lines: ['the cool of evening comes down', 'cicadas quiet at last'],
+      salientWords: ['cool', 'evening', 'cicadas', 'quiet'] }),
+
+  // ---------------- WINTER long ----------------
+  L({ id: 'wi-l-snow', season: 'winter', categories: ['snow'],
+      lines: ['the first snow falls slow', 'each step sinks in the deep white', 'the long road grows still'],
+      salientWords: ['snow', 'step', 'sinks', 'road'] }),
+  L({ id: 'wi-l-ice', season: 'winter', categories: ['ice'],
+      lines: ['ice locks the still pond', 'clear glass over sleeping fish', 'the whole world holds still'],
+      salientWords: ['ice', 'pond', 'glass', 'fish'] }),
+  L({ id: 'wi-l-hearth', season: 'winter', categories: ['hearth'],
+      lines: ['coals glow in the hearth', 'an old man warms his thin hands', 'the night wind bites cold'],
+      salientWords: ['coals', 'hearth', 'warms', 'hands'] }),
+  L({ id: 'wi-l-pine', season: 'winter', categories: ['pine'],
+      lines: ['green pines hold the snow', 'their dark boughs bend with the weight', 'the cold deepens on'],
+      salientWords: ['pines', 'boughs', 'bend', 'weight'] }),
+  L({ id: 'wi-l-crane', season: 'winter', categories: ['bird'],
+      lines: ['a lone crane stands still', 'in the grey frozen shallows', 'the marsh locked in ice'],
+      salientWords: ['crane', 'frozen', 'shallows', 'marsh'] }),
+  L({ id: 'wi-l-wind', season: 'winter', categories: ['wind'],
+      lines: ['the north wind rises', 'it rattles the shuttered doors', 'the long cold night comes'],
+      salientWords: ['wind', 'rattles', 'shuttered', 'doors'] }),
+
+  // ---------------- WINTER short ----------------
+  S({ id: 'wi-s-snow', season: 'winter', categories: ['snow'],
+      lines: ['the first snow blurs the pathway', 'each slow step sinks in the white'],
+      salientWords: ['snow', 'pathway', 'step', 'sinks'] }),
+  S({ id: 'wi-s-ice', season: 'winter', categories: ['ice'],
+      lines: ['clear ice locks the sleeping pond', 'the frozen world holds its breath'],
+      salientWords: ['ice', 'pond', 'frozen', 'breath'] }),
+  S({ id: 'wi-s-hearth', season: 'winter', categories: ['hearth'],
+      lines: ['the old man warms his cold hands', 'the wind gnaws at the bare walls'],
+      salientWords: ['warms', 'hands', 'gnaws', 'walls'] }),
+  S({ id: 'wi-s-pine', season: 'winter', categories: ['pine'],
+      lines: ['pines bend with the weight of snow', 'the dark boughs strain and hold on'],
+      salientWords: ['pines', 'weight', 'boughs', 'strain'] }),
+  S({ id: 'wi-s-wind', season: 'winter', categories: ['wind'],
+      lines: ['the north wind rattles the screens', 'the long night deepens to cold'],
+      salientWords: ['wind', 'rattles', 'screens', 'deepens'] }),
+  S({ id: 'wi-s-road', season: 'winter', categories: ['road'],
+      lines: ['the deep snow blurs the long road', 'no footprint marks the deep white'],
+      salientWords: ['snow', 'road', 'footprint', 'marks'] }),
+
+  // ---------------- MISCELLANEOUS (zō, season null) long ----------------
+  L({ id: 'mi-l-mountain', season: null, categories: ['mountain'],
+      lines: ['far peaks hold the light', 'the sharp ridgeline cuts the sky', 'the valley grows cold'],
+      salientWords: ['peaks', 'ridgeline', 'valley', 'cuts'] }),
+  L({ id: 'mi-l-dwelling', season: null, categories: ['dwelling'],
+      lines: ['a small hut with doors', 'no one comes to latch them shut', 'the low roof sags grey'],
+      salientWords: ['hut', 'latch', 'roof', 'sags'] }),
+  L({ id: 'mi-l-road', season: null, categories: ['road'],
+      lines: ['a road without end', 'the traveler walks alone', 'his straw sandals worn'],
+      salientWords: ['road', 'traveler', 'straw', 'sandals'] }),
+  L({ id: 'mi-l-water', season: null, categories: ['water'],
+      lines: ['the river runs black', 'deep water over the stones', 'and gives back no sound'],
+      salientWords: ['river', 'water', 'stones', 'sound'] }),
+  L({ id: 'mi-l-gate', season: null, categories: ['gate'],
+      lines: ['the gate hangs open', 'one hinge holds it to the post', 'the old wall crumbles'],
+      salientWords: ['gate', 'hinge', 'post', 'crumbles'] }),
+  L({ id: 'mi-l-bridge', season: null, categories: ['bridge'],
+      lines: ['a low narrow bridge', 'spans the current far below', 'worn smooth by the years'],
+      salientWords: ['bridge', 'spans', 'current', 'smooth'] }),
+  L({ id: 'mi-l-bell', season: null, categories: ['bell'],
+      lines: ['a far bell sounds low', 'one note across the still dusk', 'then the long silence'],
+      salientWords: ['bell', 'note', 'dusk', 'silence'] }),
+  L({ id: 'mi-l-mist', season: null, categories: ['mist', 'marsh'],
+      lines: ['mist over the marsh', 'it blurs the far dark reed beds', 'the whole world goes grey'],
+      salientWords: ['mist', 'marsh', 'reed', 'beds'] }),
+
+  // ---------------- MISCELLANEOUS short ----------------
+  S({ id: 'mi-s-mountain', season: null, categories: ['mountain'],
+      lines: ['far peaks hold the fading light', 'the valley fills with cold dark'],
+      salientWords: ['peaks', 'light', 'valley', 'fills'] }),
+  S({ id: 'mi-s-dwelling', season: null, categories: ['dwelling'],
+      lines: ['a small hut with shuttered doors', 'no smoke lifts from the cold roof'],
+      salientWords: ['hut', 'doors', 'smoke', 'roof'] }),
+  S({ id: 'mi-s-road', season: null, categories: ['road'],
+      lines: ['a lone traveler walks on', 'the long road bends out of sight'],
+      salientWords: ['traveler', 'road', 'bends', 'sight'] }),
+  S({ id: 'mi-s-water', season: null, categories: ['water'],
+      lines: ['the river runs black and deep', 'it gives no light to the sky'],
+      salientWords: ['river', 'deep', 'light', 'sky'] }),
+  S({ id: 'mi-s-gate', season: null, categories: ['gate'],
+      lines: ['the gate hangs from one hinge now', 'the old wall gives back the dusk'],
+      salientWords: ['gate', 'hinge', 'wall', 'dusk'] }),
+  S({ id: 'mi-s-bridge', season: null, categories: ['bridge'],
+      lines: ['the old bridge spans the current', 'worn smooth by the passing years'],
+      salientWords: ['bridge', 'spans', 'smooth', 'passing'] }),
+  S({ id: 'mi-s-mist', season: null, categories: ['mist', 'marsh'],
+      lines: ['cold mist blurs the far reed beds', 'the marsh fades into the grey'],
+      salientWords: ['mist', 'reed', 'marsh', 'fades'] }),
+  S({ id: 'mi-s-moss', season: null, categories: ['moss', 'stone'],
+      lines: ['green moss creeps over the stone', 'the old wall sinks in the earth'],
+      salientWords: ['moss', 'stone', 'wall', 'earth'] }),
+  S({ id: 'mi-s-bell', season: null, categories: ['bell'],
+      lines: ['a far bell sounds through the dark', 'one note then the long silence'],
+      salientWords: ['bell', 'note', 'silence', 'dark'] }),
+  S({ id: 'mi-s-pine', season: null, categories: ['wind'],
+      lines: ['the wind moves through the tall pines', 'a long sigh then it is still'],
+      salientWords: ['wind', 'pines', 'sigh', 'moves'] }),
+];
+
+// ===========================================================================
+// MOON UNITS — season autumn, isMoon. The ONLY units that may contain "moon".
+// long for seats 5 & 29; short for seat 14.
+// ===========================================================================
+const MOON = [
+  L({ id: 'moon-l-1', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the moon lifts and glows', 'white light on the frost-bright field', 'the whole long night stills'],
+      salientWords: ['moon', 'light', 'frost', 'field'] }),
+  L({ id: 'moon-l-2', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the late moon rises', 'it swims up through the cold mist', 'the reeds stand silver'],
+      salientWords: ['moon', 'rises', 'mist', 'reeds'] }),
+  L({ id: 'moon-l-3', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the moon clears the ridge', 'cold light floods the frozen marsh', 'the geese cross its face'],
+      salientWords: ['moon', 'ridge', 'floods', 'geese'] }),
+  L({ id: 'moon-l-4', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the round moon comes up', 'up over the dark reed-marsh', 'frost forms as it climbs'],
+      salientWords: ['moon', 'reed', 'frost', 'climbs'] }),
+  L({ id: 'moon-l-5', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the moon hangs alone', 'in the wide and empty sky', 'the frost creeps below'],
+      salientWords: ['moon', 'hangs', 'empty', 'creeps'] }),
+
+  S({ id: 'moon-s-1', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['and the cold moon lifts and glows', 'white light on the frozen field'],
+      salientWords: ['moon', 'glows', 'light', 'field'] }),
+  S({ id: 'moon-s-2', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the late moon swims in the mist', 'cold silver floods the still reeds'],
+      salientWords: ['moon', 'mist', 'silver', 'reeds'] }),
+  S({ id: 'moon-s-3', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the round moon clears the dark ridge', 'its light floods the frozen marsh'],
+      salientWords: ['moon', 'ridge', 'floods', 'marsh'] }),
+  S({ id: 'moon-s-4', season: 'autumn', categories: ['moon'], isMoon: true,
+      lines: ['the pale moon climbs through thin cloud', 'and stills the wide autumn field'],
+      salientWords: ['moon', 'cloud', 'autumn', 'field'] }),
+];
+
+// ===========================================================================
+// BLOSSOM UNITS — season spring, isBlossom. The ONLY units that may contain
+// blossom / cherry / petals. long for seats 17 & 35.
+// ===========================================================================
+const BLOSSOM = [
+  L({ id: 'blo-l-1', season: 'spring', categories: ['blossom'], isBlossom: true,
+      lines: ['cherry blossom falls', 'a slow drift of white petals', 'spring wind carries them'],
+      salientWords: ['cherry', 'blossom', 'petals', 'drift'] }),
+  L({ id: 'blo-l-2', season: 'spring', categories: ['blossom'], isBlossom: true,
+      lines: ['the cherry tree breaks', 'into a white cloud of bloom', 'the whole hill turns pale'],
+      salientWords: ['cherry', 'bloom', 'hill', 'cloud'] }),
+  L({ id: 'blo-l-3', season: 'spring', categories: ['blossom'], isBlossom: true,
+      lines: ['pale blossom opens', 'along the dark bending boughs', 'spring floods the valley'],
+      salientWords: ['blossom', 'opens', 'boughs', 'valley'] }),
+  L({ id: 'blo-l-4', season: 'spring', categories: ['blossom'], isBlossom: true,
+      lines: ['cherry petals drift', 'down to the slow moving stream', 'the far hills grow green'],
+      salientWords: ['cherry', 'petals', 'stream', 'hills'] }),
+  L({ id: 'blo-l-5', season: 'spring', categories: ['blossom'], isBlossom: true,
+      lines: ['blossom fills the branch', 'a warm wind loosens the drift', 'petals on the grass'],
+      salientWords: ['blossom', 'branch', 'petals', 'grass'] }),
+];
+
+// ===========================================================================
+// LOVE UNITS — season null, isLove. categories robe / lamp / dream / pillow.
+// No marker words. Both kinds for each image so love runs (2-3 verses,
+// long/short alternating) can be filled from either run's imagery.
+// ===========================================================================
+const LOVE = [
+  L({ id: 'love-l-robe', season: null, categories: ['robe'], isLove: true,
+      lines: ['she folds his old robe', 'and lays it across the quilt', 'his scent almost gone'],
+      salientWords: ['folds', 'robe', 'quilt', 'scent'] }),
+  S({ id: 'love-s-robe', season: null, categories: ['robe'], isLove: true,
+      lines: ['she folds away his old robe', 'his scent almost gone from it'],
+      salientWords: ['folds', 'robe', 'scent', 'gone'] }),
+  L({ id: 'love-l-lamp', season: null, categories: ['lamp'], isLove: true,
+      lines: ['the lamp gutters low', 'she waits for a step, a voice', 'the night wears away'],
+      salientWords: ['lamp', 'gutters', 'waits', 'voice'] }),
+  S({ id: 'love-s-lamp', season: null, categories: ['lamp'], isLove: true,
+      lines: ['the lamp gutters low and dim', 'she listens for his footstep'],
+      salientWords: ['lamp', 'gutters', 'dim', 'listens'] }),
+  L({ id: 'love-l-dream', season: null, categories: ['dream'], isLove: true,
+      lines: ['she meets him in dreams', 'and wakes to the empty room', 'the cold bed too wide'],
+      salientWords: ['meets', 'dreams', 'wakes', 'room'] }),
+  S({ id: 'love-s-dream', season: null, categories: ['dream'], isLove: true,
+      lines: ['again she meets him in dreams', 'and wakes alone in the dark'],
+      salientWords: ['meets', 'dreams', 'wakes', 'alone'] }),
+  L({ id: 'love-l-pillow', season: null, categories: ['pillow'], isLove: true,
+      lines: ['her pillow still damp', 'she counts the long hours till dawn', 'the lamp long burned out'],
+      salientWords: ['pillow', 'counts', 'hours', 'dawn'] }),
+  S({ id: 'love-s-pillow', season: null, categories: ['pillow'], isLove: true,
+      lines: ['her pillow still damp with tears', 'she counts the slow hours to dawn'],
+      salientWords: ['pillow', 'damp', 'tears', 'counts'] }),
+];
+
+const VERSE_BANK = [...GENERAL, ...MOON, ...BLOSSOM, ...LOVE];
+
+// ---------------------------------------------------------------------------
+// SELF-CHECK 1 — declared syllables == countLine(line).count for every line.
+// ---------------------------------------------------------------------------
+{
+  const errors = [];
+  for (const u of VERSE_BANK) {
+    const meter = u.kind === 'long' ? [5, 7, 5] : [7, 7];
+    if (u.lines.length !== meter.length) {
+      errors.push(`  ${u.id}: ${u.lines.length} lines (expected ${meter.length} for ${u.kind})`);
+      continue;
+    }
+    for (let i = 0; i < u.lines.length; i++) {
+      const actual = countLine(u.lines[i]).count;
+      if (actual !== meter[i]) {
+        errors.push(`  ${u.id} line ${i + 1}: declared ${meter[i]}, countLine says ${actual} — "${u.lines[i]}"`);
+      }
+    }
+  }
+  if (errors.length) {
+    throw new Error(`verse-bank.js: ${errors.length} meter mismatch(es):\n` + errors.join('\n'));
+  }
+}
+
+// ---------------------------------------------------------------------------
+// SELF-CHECK 2 — no two lines in a unit share a salient content word (the
+// anti-stutter guarantee). Content = tokens minus function/glue stopwords.
+// ---------------------------------------------------------------------------
+const STOPWORDS = new Set([
+  'a', 'an', 'the', 'and', 'or', 'but', 'if', 'so', 'of', 'to', 'in', 'on', 'at',
+  'by', 'for', 'from', 'with', 'as', 'is', 'was', 'are', 'be', 'not', 'no', 'now',
+  'out', 'up', 'off', 'own', 'one', 'two', 'all', 'each', 'then', 'than', 'till',
+  'too', 'into', 'it', 'its', 'his', 'her', 'she', 'he', 'they', 'them', 'their',
+  'this', 'that', 'my', 'me', 'us', 'we', 'you', 'him', 'i', 'do', 'has', 'had',
+  'over', 'under', 'through', 'along', 'across', 'below', 'above', 'down', 'on',
+  'still', 'cold', 'grey', 'pale', 'clear', 'slow', 'deep', 'far', 'dark', 'soft',
+  'low', 'long', 'old', 'new', 'small', 'wide', 'thin', 'warm', 'cool', 'hot',
+  'white', 'green', 'black', 'blue', 'bright', 'first', 'last', 'whole', 'lone',
+  'bare', 'round', 'sharp', 'tall',
+]);
+function contentWords(line) {
+  return String(line)
+    .toLowerCase()
+    .split(/[\s,]+/)
+    .map((t) => t.replace(/[^a-z]/g, ''))
+    .filter((t) => t.length > 0 && !STOPWORDS.has(t));
+}
+{
+  const errors = [];
+  for (const u of VERSE_BANK) {
+    const seen = new Map(); // content word -> first line index
+    for (let i = 0; i < u.lines.length; i++) {
+      for (const w of contentWords(u.lines[i])) {
+        if (seen.has(w) && seen.get(w) !== i) {
+          errors.push(`  ${u.id}: content word "${w}" appears in lines ${seen.get(w) + 1} and ${i + 1} (intra-verse stutter)`);
+        } else if (!seen.has(w)) {
+          seen.set(w, i);
+        }
+      }
+    }
+  }
+  if (errors.length) {
+    throw new Error(`verse-bank.js: ${errors.length} intra-verse stutter(s):\n` + errors.join('\n'));
+  }
+}
+
+// ---------------------------------------------------------------------------
+// SELF-CHECK 3 — no line string appears in two different units (so the bank can
+// never itself be the source of a cross-verse verbatim repeat).
+// ---------------------------------------------------------------------------
+{
+  const lineOwner = new Map();
+  const errors = [];
+  for (const u of VERSE_BANK) {
+    for (const line of u.lines) {
+      const key = line.trim().toLowerCase();
+      if (lineOwner.has(key) && lineOwner.get(key) !== u.id) {
+        errors.push(`  line "${line}" in both ${lineOwner.get(key)} and ${u.id}`);
+      } else {
+        lineOwner.set(key, u.id);
+      }
+    }
+  }
+  if (errors.length) {
+    throw new Error(`verse-bank.js: ${errors.length} duplicate line(s) across units:\n` + errors.join('\n'));
+  }
+}
+
+// ---------------------------------------------------------------------------
+// SELF-CHECK 4 (MOON/BLOSSOM HONESTY) — marker words confined to marker units.
+// ---------------------------------------------------------------------------
+{
+  const MOON_WORDS = /\b(moon|moonlight)\b/i;
+  const BLOSSOM_WORDS = /\b(blossom|cherry|petals?)\b/i;
+  const errors = [];
+  for (const u of VERSE_BANK) {
+    const text = u.lines.join(' ');
+    if (!u.isMoon && MOON_WORDS.test(text)) errors.push(`  ${u.id} (non-moon) contains a moon word: "${text}"`);
+    if (!u.isBlossom && BLOSSOM_WORDS.test(text)) errors.push(`  ${u.id} (non-blossom) contains a blossom word: "${text}"`);
+  }
+  if (errors.length) {
+    throw new Error(`verse-bank.js: ${errors.length} marker-word leak(s):\n` + errors.join('\n'));
+  }
+}
+
+// ---------------------------------------------------------------------------
+// ASSOCIATIONS — category -> [associated categories]. THE LINKING MODEL.
+// (Carried over from the fragment lexicon; the sequencer prefers, for verse n, a
+// unit whose category shares an edge with verse n-1. Edges are symmetrized.)
+//
+// HONESTY: these edges are hand-authored imagistic adjacencies, not learned
+// semantics. A link they produce is real at the category-graph level (two
+// adjacent verses genuinely share a declared association); the sequencer records
+// each seat as a genuine link or an honest non-link, never laundering a jump.
+// ---------------------------------------------------------------------------
+const RAW_ASSOCIATIONS = {
+  field: ['bird', 'grass', 'road', 'dwelling', 'smoke'],
+  bird: ['field', 'cloud', 'mountain', 'reed', 'marsh'],
+  mountain: ['cloud', 'mist', 'pine', 'valley', 'stone'],
+  dwelling: ['hearth', 'smoke', 'gate', 'lamp', 'robe'],
+  water: ['bridge', 'reed', 'marsh', 'stream', 'dew'],
+  road: ['bridge', 'gate', 'field', 'dwelling', 'stone'],
+  pine: ['mountain', 'snow', 'wind'],
+  gate: ['dwelling', 'road', 'moss', 'stone'],
+  wind: ['reed', 'cloud', 'bell', 'mist', 'pine'],
+  mist: ['moon', 'marsh', 'mountain', 'dew'],
+  reed: ['marsh', 'water', 'wind', 'dew', 'bird'],
+  dew: ['grass', 'reed', 'blossom', 'water'],
+  hill: ['blossom', 'grass', 'field', 'cloud'],
+  insect: ['grass', 'blossom', 'hill'],
+  grass: ['dew', 'insect', 'field', 'hill'],
+  cloud: ['wind', 'mountain', 'bird', 'hill'],
+  rain: ['cloud', 'well', 'stream'],
+  well: ['water', 'rain', 'stone'],
+  bridge: ['water', 'road', 'stream'],
+  smoke: ['hearth', 'dwelling', 'field'],
+  stone: ['moss', 'gate', 'road', 'mountain'],
+  bell: ['wind', 'dwelling', 'hearth'],
+  hearth: ['smoke', 'dwelling', 'bell'],
+  ice: ['snow', 'frost', 'water'],
+  stream: ['water', 'stone', 'bridge', 'rain'],
+  frost: ['moon', 'ice', 'dew'],
+  snow: ['pine', 'ice', 'road'],
+  moss: ['stone', 'gate'],
+  marsh: ['reed', 'water', 'mist', 'bird'],
+  moon: ['mist', 'frost', 'wind', 'reed'],
+  blossom: ['hill', 'dew', 'insect', 'grass'],
+  robe: ['lamp', 'dwelling'],
+  lamp: ['robe', 'dwelling', 'wind'],
+  dream: ['pillow', 'bell'],
+  pillow: ['dream', 'hearth'],
+};
+
+function symmetrize(raw) {
+  const out = {};
+  const add = (a, b) => {
+    if (!out[a]) out[a] = new Set();
+    out[a].add(b);
+  };
+  for (const [a, list] of Object.entries(raw)) {
+    for (const b of list) {
+      add(a, b);
+      add(b, a);
+    }
+  }
+  const result = {};
+  for (const [k, set] of Object.entries(out)) result[k] = [...set];
+  return result;
+}
+
+const ASSOCIATIONS = symmetrize(RAW_ASSOCIATIONS);
+
+// Categories exempt from category-aversion spacing (governed by seats/love-runs).
+const MARKER_CATEGORIES = new Set(['moon', 'blossom']);
+
+// ===== bundled from src/validate.js =====
+// src/validate.js
+// THE INSTRUMENT. Every machine-checkable kasen rule, each reported independently.
+//
+// validateKasen(kasen) -> { ok, checks:[{rule, ok, detail}], violations:[{rule, ...}], warnings:[...] }
+//
+// A kasen is an array of 36 verse objects:
+//   { n, lines:[...strings], season:'spring'|'summer'|'autumn'|'winter'|null,
+//     categories:[...strings], isMoon:bool, isBlossom:bool, isLove:bool }
+//
+// HONESTY (the load-bearing commitment, per DESIGN.md):
+//   The link-and-shift rule has two halves. Verse n LINKING to n-1 (a shared,
+//   evocative association) is aspirational craft and is NOT hard-checked here —
+//   a machine can't tell an evocative link from a random one. What IS cleanly
+//   checkable is the SHIFT: verse n must not return to the salient category of
+//   n-2 (uchikoshi o kirau). That shift-away is check (f) below and it is a hard
+//   fail. So: the shift is enforced; the forward-link stays aspirational, and
+//   this comment says so rather than faking a pass on the un-checkable half.
+//
+//   Meter check (a) treats a WRONG count as a hard fail, but a line that is
+//   merely heuristic-confidence (out-of-dictionary word) as a soft WARNING —
+//   never a silent guess, never a fake pass.
+
+
+
+
+function intersect(a, b) {
+  const setB = new Set(b);
+  return a.filter((x) => setB.has(x));
+}
+
+// Build maximal runs of consecutive verses whose predicate/key matches.
+// keyFn returns a truthy grouping key, or null to break the run.
+function buildRuns(kasen, keyFn) {
+  const runs = [];
+  let cur = null;
+  for (let i = 0; i < kasen.length; i++) {
+    const key = keyFn(kasen[i], i);
+    if (key === null || key === undefined || key === false) {
+      cur = null;
+      continue;
+    }
+    if (cur && cur.key === key) {
+      cur.verses.push(kasen[i].n);
+      cur.end = kasen[i].n;
+    } else {
+      cur = { key, start: kasen[i].n, end: kasen[i].n, verses: [kasen[i].n] };
+      runs.push(cur);
+    }
+  }
+  return runs;
+}
+
+function validateKasen(kasen) {
+  const checks = [];
+  const violations = [];
+  const warnings = [];
+
+  const addCheck = (rule, ok, detail) => checks.push({ rule, ok, detail });
+  const addViolation = (rule, obj) => violations.push({ rule, ...obj });
+
+  const verses = Array.isArray(kasen) ? kasen : [];
+
+  // --- verse-count -----------------------------------------------------------
+  {
+    const ok = verses.length === VERSE_COUNT;
+    addCheck('verse-count', ok, `${verses.length} verses (expected ${VERSE_COUNT})`);
+    if (!ok) addViolation('verse-count', { detail: `got ${verses.length}, expected ${VERSE_COUNT}` });
+  }
+
+  // --- (a) meter: line count + per-line syllable counts ----------------------
+  {
+    const problems = [];
+    for (const v of verses) {
+      const target = meterFor(v.n);
+      const lines = Array.isArray(v.lines) ? v.lines : [];
+      if (lines.length !== target.length) {
+        problems.push(`v${v.n}: ${lines.length} lines (expected ${target.length})`);
+        addViolation('meter', { n: v.n, detail: `line count ${lines.length} != ${target.length}` });
+        continue;
+      }
+      for (let i = 0; i < lines.length; i++) {
+        const res = countLine(lines[i]);
+        if (res.count !== target[i]) {
+          problems.push(`v${v.n} line ${i + 1}: ${res.count} syllables (expected ${target[i]}) — "${lines[i]}"`);
+          addViolation('meter', {
+            n: v.n,
+            line: i + 1,
+            detail: `${res.count} syllables, expected ${target[i]}: "${lines[i]}"`,
+          });
+        }
+        if (res.lowConfidence) {
+          const lowWords = res.words.filter((w) => w.confidence === 'heuristic').map((w) => w.word);
+          warnings.push(`v${v.n} line ${i + 1}: heuristic-only words [${lowWords.join(', ')}] — count not dictionary-verified`);
+        }
+      }
+    }
+    addCheck('meter', problems.length === 0,
+      problems.length ? problems.join(' | ') : 'all lines match 5-7-5 / 7-7 with exact counts');
+  }
+
+  // --- (b) moon seats --------------------------------------------------------
+  {
+    const seatSet = new Set(SEATS.moon);
+    const problems = [];
+    for (const v of verses) {
+      const shouldBe = seatSet.has(v.n);
+      if (!!v.isMoon !== shouldBe) {
+        const msg = shouldBe
+          ? `v${v.n}: moon seat but isMoon is false`
+          : `v${v.n}: isMoon true at non-seat`;
+        problems.push(msg);
+        addViolation('moon-seat', { n: v.n, detail: msg });
+      }
+    }
+    addCheck('moon-seat', problems.length === 0,
+      problems.length ? problems.join(' | ') : `moon named at exactly ${SEATS.moon.join(', ')}`);
+  }
+
+  // --- (c) blossom seats -----------------------------------------------------
+  {
+    const seatSet = new Set(SEATS.blossom);
+    const problems = [];
+    for (const v of verses) {
+      const shouldBe = seatSet.has(v.n);
+      if (!!v.isBlossom !== shouldBe) {
+        const msg = shouldBe
+          ? `v${v.n}: blossom seat but isBlossom is false`
+          : `v${v.n}: isBlossom true at non-seat`;
+        problems.push(msg);
+        addViolation('blossom-seat', { n: v.n, detail: msg });
+      }
+    }
+    addCheck('blossom-seat', problems.length === 0,
+      problems.length ? problems.join(' | ') : `blossom named at exactly ${SEATS.blossom.join(', ')}`);
+  }
+
+  // --- (d) season runs -------------------------------------------------------
+  {
+    const runs = buildRuns(verses, (v) => (SEASONS.includes(v.season) ? v.season : null));
+    const problems = [];
+    const reported = [];
+    for (const run of runs) {
+      const bounds = SEASON_RUN_BOUNDS[run.key];
+      const len = run.verses.length;
+      const ok = len >= bounds[0] && len <= bounds[1];
+      reported.push(`${run.key} ${run.start}-${run.end} (len ${len})${ok ? '' : ' !!'}`);
+      if (!ok) {
+        const msg = `${run.key} run ${run.start}-${run.end} length ${len} outside [${bounds[0]}..${bounds[1]}]`;
+        problems.push(msg);
+        addViolation('season-run', { detail: msg });
+      }
+    }
+    addCheck('season-run', problems.length === 0,
+      `runs: ${reported.join('; ')}${problems.length ? ' | VIOLATIONS: ' + problems.join(' | ') : ''}`);
+  }
+
+  // --- (e) love runs ---------------------------------------------------------
+  {
+    const runs = buildRuns(verses, (v) => (v.isLove ? 'love' : null));
+    const problems = [];
+    if (runs.length === 0) {
+      problems.push('no love run present (need at least one)');
+      addViolation('love-run', { detail: 'no love run present' });
+    }
+    const reported = [];
+    for (const run of runs) {
+      const len = run.verses.length;
+      const ok = len >= LOVE_RUN_BOUNDS[0] && len <= LOVE_RUN_BOUNDS[1];
+      reported.push(`${run.start}-${run.end} (len ${len})${ok ? '' : ' !!'}`);
+      if (!ok) {
+        const msg = `love run ${run.start}-${run.end} length ${len} outside [${LOVE_RUN_BOUNDS[0]}..${LOVE_RUN_BOUNDS[1]}]`;
+        problems.push(msg);
+        addViolation('love-run', { detail: msg });
+      }
+    }
+    addCheck('love-run', problems.length === 0,
+      `love runs: ${reported.length ? reported.join('; ') : 'none'}${problems.length ? ' | VIOLATIONS: ' + problems.join(' | ') : ''}`);
+  }
+
+  // --- (f) link-and-shift / uchikoshi (THE core hard check) ------------------
+  {
+    const problems = [];
+    for (let i = 0; i < verses.length; i++) {
+      const n = verses[i].n;
+      const j = i - UCHIKOSHI_LOOKBACK;
+      if (j < 0) continue;
+      const shared = intersect(verses[i].categories || [], verses[j].categories || []);
+      if (shared.length > 0) {
+        const msg = `v${n} shares [${shared.join(', ')}] with v${verses[j].n} (n-2)`;
+        problems.push(msg);
+        addViolation('uchikoshi', { n, detail: msg, shared });
+      }
+    }
+    addCheck('uchikoshi', problems.length === 0,
+      problems.length ? problems.join(' | ') : 'every verse shifts away from its n-2 categories');
+  }
+
+  // --- (g) aversion spacing --------------------------------------------------
+  {
+    const positions = new Map(); // category -> [verse numbers in order]
+    for (const v of verses) {
+      for (const cat of v.categories || []) {
+        if (AVERSION_EXEMPT.has(cat)) continue;
+        if (!positions.has(cat)) positions.set(cat, []);
+        positions.get(cat).push(v.n);
+      }
+    }
+    const problems = [];
+    for (const [cat, ns] of positions) {
+      for (let k = 1; k < ns.length; k++) {
+        const gap = ns[k] - ns[k - 1];
+        if (gap < AVERSION_MIN_GAP) {
+          const msg = `category "${cat}" recurs at v${ns[k - 1]} and v${ns[k]} (gap ${gap} < ${AVERSION_MIN_GAP})`;
+          problems.push(msg);
+          addViolation('aversion', { detail: msg, category: cat });
+        }
+      }
+    }
+    addCheck('aversion', problems.length === 0,
+      problems.length ? problems.join(' | ') : `no salient category recurs within ${AVERSION_MIN_GAP} verses`);
+  }
+
+  // --- (h) marker-text-scan (re-truths the moon/blossom seats at the TEXT level)
+  //   The moon-seat / blossom-seat checks above test the isMoon/isBlossom FLAGS.
+  //   This check tests the SURFACE TEXT: the words moon/moonlight may appear only
+  //   at verses 5, 14, 29; blossom/cherry/petals only at 17, 35. A marker word on
+  //   the page anywhere else is a hard violation — catching a leak regardless of
+  //   how the verse is tagged. (Critic §2: a PASS that is false about the text is
+  //   the one failure the honesty gate must not allow.)
+  {
+    const MOON_RE = /\b(moon|moonlight)\b/i;
+    const BLOSSOM_RE = /\b(blossom|cherry|petals?)\b/i;
+    const moonSeats = new Set(SEATS.moon);
+    const blossomSeats = new Set(SEATS.blossom);
+    const problems = [];
+    for (const v of verses) {
+      const text = (Array.isArray(v.lines) ? v.lines : []).join(' ');
+      const moonHit = MOON_RE.exec(text);
+      if (moonHit && !moonSeats.has(v.n)) {
+        const msg = `v${v.n}: moon word "${moonHit[0]}" off-seat (allowed only at ${SEATS.moon.join(', ')}) — "${text}"`;
+        problems.push(msg);
+        addViolation('marker-text-scan', { n: v.n, detail: msg, word: moonHit[0] });
+      }
+      if (moonSeats.has(v.n) && !moonHit) {
+        const msg = `v${v.n}: moon seat but no moon word in the text — "${text}"`;
+        problems.push(msg);
+        addViolation('marker-text-scan', { n: v.n, detail: msg });
+      }
+      const blossomHit = BLOSSOM_RE.exec(text);
+      if (blossomHit && !blossomSeats.has(v.n)) {
+        const msg = `v${v.n}: blossom word "${blossomHit[0]}" off-seat (allowed only at ${SEATS.blossom.join(', ')}) — "${text}"`;
+        problems.push(msg);
+        addViolation('marker-text-scan', { n: v.n, detail: msg, word: blossomHit[0] });
+      }
+      if (blossomSeats.has(v.n) && !blossomHit) {
+        const msg = `v${v.n}: blossom seat but no blossom word in the text — "${text}"`;
+        problems.push(msg);
+        addViolation('marker-text-scan', { n: v.n, detail: msg });
+      }
+    }
+    addCheck('marker-text-scan', problems.length === 0,
+      problems.length ? problems.join(' | ')
+        : `moon words only at ${SEATS.moon.join(', ')}; blossom words only at ${SEATS.blossom.join(', ')} (surface-text verified)`);
+  }
+
+  // --- (i) phrase-aversion (sarikirai at the surface, critic §1b) -------------
+  //   Two sub-rules:
+  //     * no full LINE recurs verbatim anywhere in the poem;
+  //     * no salientWord recurs within SALIENT_AVERSION_GAP verses.
+  //   Each violation names the offending phrase/word and the two verse numbers.
+  {
+    const problems = [];
+
+    // verbatim whole-line reuse
+    const lineFirstSeen = new Map(); // normalized line -> verse n
+    for (const v of verses) {
+      for (const line of Array.isArray(v.lines) ? v.lines : []) {
+        const key = String(line).trim().toLowerCase();
+        if (lineFirstSeen.has(key)) {
+          const first = lineFirstSeen.get(key);
+          const msg = `line "${line}" recurs verbatim at v${first} and v${v.n}`;
+          problems.push(msg);
+          addViolation('phrase-aversion', { detail: msg, phrase: line, verses: [first, v.n] });
+        } else {
+          lineFirstSeen.set(key, v.n);
+        }
+      }
+    }
+
+    // salient-word recurrence within the gap
+    const wordLast = new Map(); // salientWord -> most recent verse n
+    for (const v of verses) {
+      for (const w of Array.isArray(v.salientWords) ? v.salientWords : []) {
+        const key = String(w).toLowerCase();
+        if (wordLast.has(key)) {
+          const prev = wordLast.get(key);
+          const gap = v.n - prev;
+          if (gap < SALIENT_AVERSION_GAP) {
+            const msg = `salient word "${w}" recurs at v${prev} and v${v.n} (gap ${gap} < ${SALIENT_AVERSION_GAP})`;
+            problems.push(msg);
+            addViolation('phrase-aversion', { detail: msg, word: w, verses: [prev, v.n] });
+          }
+        }
+        wordLast.set(key, v.n);
+      }
+    }
+
+    addCheck('phrase-aversion', problems.length === 0,
+      problems.length ? problems.join(' | ')
+        : `no line recurs verbatim; no salient word recurs within ${SALIENT_AVERSION_GAP} verses`);
+  }
+
+  const ok = violations.length === 0;
+  return { ok, checks, violations, warnings };
+}
+
+// ===== bundled from src/generate.js =====
+// src/generate.js
+// generateKasen(seed) -> a 36-verse kasen (the object shape validateKasen consumes)
+// that PASSES validateKasen with ok:true. Deterministic given an integer seed.
+//
+// PHASE 3.5 PIVOT — the machine is a SEQUENCER, not a line-composer.
+//
+// Algorithm:
+//   1. Plan a LEGAL SKELETON first — season / seat / love role for all 36 seats,
+//      verified against rules.js BEFORE any unit is chosen (unchanged from ph3).
+//   2. SEQUENCE whole verse-UNITS from data/verse-bank.js: for each seat SELECT a
+//      hand-authored unit satisfying, all at once —
+//        (kind)     long for odd n, short for even n
+//        (role)     the seat's season / moon / blossom / love role
+//        (shift)    categories disjoint from n-1 AND n-2 (uchikoshi + aversion gap)
+//        (aversion) no salientWord recurs within SALIENT_AVERSION_GAP verses
+//        (unique)   no unit reused anywhere in the poem
+//        (link)     PREFERRED: categories share an ASSOCIATIONS edge with n-1
+//      by backtracking search. Link is preferred (tried first) and recorded
+//      truthfully per seat; when no linked unit fits, an honest non-link is taken.
+//   3. SELF-VALIDATE the assembled kasen with validateKasen; retry with fresh
+//      choices up to a bound; return the first passing kasen.
+//
+// HONESTY (the load-bearing seam, unchanged in spirit):
+//   Each verse is a GENUINE hand-authored unit — the machine makes no claim to
+//   write poetry. Its job is the rule-legal linked sequencing. The SHIFT is
+//   machine-enforced (uchikoshi + aversion, by construction). The LINK is the
+//   aspirational half: real at the category-graph level (adjacent units share a
+//   declared ASSOCIATIONS edge) but shallow at the surface. We measure the link
+//   rate and expose it; a fallback non-link is recorded as such, never laundered.
+
+
+
+
+
+
+// ---------------------------------------------------------------------------
+// Seeded PRNG (mulberry32). Math.random is neither used nor available.
+// ---------------------------------------------------------------------------
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffle(arr, rnd) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const assocSet = (cat) => new Set(ASSOCIATIONS[cat] || []);
+
+// ---------------------------------------------------------------------------
+// SKELETON templates (unchanged from phase 3). Each is a season/love plan,
+// expanded to 36 seats and verified legal against rules.js before use.
+// ---------------------------------------------------------------------------
+const TEMPLATES = [
+  {
+    // A — the golden-kasen arc
+    runs: [
+      ['autumn', 1, 5], ['winter', 8, 9], ['autumn', 14, 16], ['spring', 17, 19],
+      ['summer', 21, 22], ['autumn', 27, 29], ['winter', 32, 33], ['spring', 34, 36],
+    ],
+    love: [[11, 12], [24, 25]],
+  },
+  {
+    // B
+    runs: [
+      ['autumn', 1, 5], ['summer', 10, 11], ['autumn', 14, 16], ['spring', 17, 19],
+      ['winter', 24, 26], ['autumn', 27, 29], ['spring', 34, 36],
+    ],
+    love: [[7, 8], [22, 23]],
+  },
+  {
+    // C
+    runs: [
+      ['autumn', 1, 5], ['winter', 8, 10], ['autumn', 14, 16], ['spring', 17, 19],
+      ['summer', 20, 21], ['autumn', 27, 29], ['winter', 32, 33], ['spring', 34, 36],
+    ],
+    love: [[12, 13], [24, 25]],
+  },
+];
+
+function buildSkeleton(template) {
+  const moonSet = new Set(SEATS.moon);
+  const blossomSet = new Set(SEATS.blossom);
+  const loveSet = new Set();
+  const loveRunIndex = {};
+  template.love.forEach((run, ri) => {
+    run.forEach((n, pos) => {
+      loveSet.add(n);
+      loveRunIndex[n] = { run: ri, pos };
+    });
+  });
+
+  const seasonOf = new Array(VERSE_COUNT + 1).fill(null);
+  for (const [s, from, to] of template.runs) {
+    for (let n = from; n <= to; n++) seasonOf[n] = s;
+  }
+
+  const verses = [];
+  for (let n = 1; n <= VERSE_COUNT; n++) {
+    verses.push({
+      n,
+      season: seasonOf[n],
+      isMoon: moonSet.has(n),
+      isBlossom: blossomSet.has(n),
+      isLove: loveSet.has(n),
+      loveRun: loveRunIndex[n] || null,
+    });
+  }
+  return verses;
+}
+
+// Verify a skeleton against the rule bounds — throws if illegal (self-checking).
+function assertLegalSkeleton(verses) {
+  const errs = [];
+  for (const v of verses) {
+    if (v.isMoon !== SEATS.moon.includes(v.n)) errs.push(`moon seat mismatch v${v.n}`);
+    if (v.isBlossom !== SEATS.blossom.includes(v.n)) errs.push(`blossom seat mismatch v${v.n}`);
+  }
+  let i = 0;
+  while (i < verses.length) {
+    const s = verses[i].season;
+    if (!s) { i++; continue; }
+    let j = i;
+    while (j < verses.length && verses[j].season === s) j++;
+    const len = j - i;
+    const b = SEASON_RUN_BOUNDS[s];
+    if (len < b[0] || len > b[1]) {
+      errs.push(`${s} run ${verses[i].n}-${verses[j - 1].n} len ${len} outside [${b[0]}..${b[1]}]`);
+    }
+    i = j;
+  }
+  let k = 0;
+  let loveRuns = 0;
+  while (k < verses.length) {
+    if (!verses[k].isLove) { k++; continue; }
+    let j = k;
+    while (j < verses.length && verses[j].isLove) j++;
+    const len = j - k;
+    loveRuns++;
+    if (len < LOVE_RUN_BOUNDS[0] || len > LOVE_RUN_BOUNDS[1]) {
+      errs.push(`love run ${verses[k].n}-${verses[j - 1].n} len ${len} outside bounds`);
+    }
+    k = j;
+  }
+  if (loveRuns === 0) errs.push('no love run');
+  if (errs.length) throw new Error('illegal skeleton: ' + errs.join('; '));
+}
+
+// ---------------------------------------------------------------------------
+// Candidate pools — bank units that fit a seat's KIND and ROLE. (These two are
+// fixed per seat; the remaining constraints depend on the partial sequence and
+// are checked during the walk.)
+// ---------------------------------------------------------------------------
+function candidatesForSeat(v) {
+  const kind = meterFor(v.n).length === 3 ? 'long' : 'short';
+  return VERSE_BANK.filter((u) => {
+    if (u.kind !== kind) return false;
+    if (v.isMoon) return u.isMoon;
+    if (v.isBlossom) return u.isBlossom;
+    if (v.isLove) return u.isLove;
+    // general seat: no markers/love, season must match (null == miscellaneous)
+    if (u.isMoon || u.isBlossom || u.isLove) return false;
+    return (u.season ?? null) === (v.season ?? null);
+  });
+}
+
+// Non-marker categories of a unit (markers are governed by seats, exempt from
+// the category-aversion / shift spacing — mirrors AVERSION_EXEMPT in validate).
+function spacedCats(u) {
+  return u.categories.filter((c) => !MARKER_CATEGORIES.has(c));
+}
+
+// ---------------------------------------------------------------------------
+// The SEQUENCER — backtracking selection of one unit per seat.
+// ---------------------------------------------------------------------------
+function sequence(skeleton, rnd) {
+  const chosen = new Array(VERSE_COUNT + 1).fill(null); // by seat n
+  const linked = new Array(VERSE_COUNT + 1).fill(false);
+  const usedIds = new Set();
+
+  const pools = new Array(VERSE_COUNT + 1).fill(null);
+  for (let n = 1; n <= VERSE_COUNT; n++) pools[n] = candidatesForSeat(skeleton[n - 1]);
+
+  // Fail fast if any seat has an empty pool (a bank-coverage bug).
+  for (let n = 1; n <= VERSE_COUNT; n++) {
+    if (pools[n].length === 0) {
+      throw new Error(`verse-bank coverage gap: no unit fits seat ${n} (${JSON.stringify(skeleton[n - 1])})`);
+    }
+  }
+
+  let steps = 0;
+  const MAX_STEPS = 400000;
+
+  // Does unit u fit at seat n given everything chosen at seats < n?
+  const fits = (n, u) => {
+    if (usedIds.has(u.id)) return false;
+
+    const uSpaced = new Set(spacedCats(u));
+    const uAll = new Set(u.categories);
+
+    // SHIFT / uchikoshi: raw category disjoint from n-2 (AND, via category
+    // aversion gap < AVERSION_MIN_GAP, from n-1 too). We enforce disjoint spaced
+    // categories across the whole [n-(AVERSION_MIN_GAP-1) .. n-1] window, plus a
+    // raw (marker-inclusive) shift from n-2 to match the uchikoshi check exactly.
+    for (let p = Math.max(1, n - (AVERSION_MIN_GAP - 1)); p < n; p++) {
+      const prev = chosen[p];
+      if (!prev) continue;
+      for (const c of spacedCats(prev)) if (uSpaced.has(c)) return false;
+    }
+    if (n - 2 >= 1 && chosen[n - 2]) {
+      for (const c of chosen[n - 2].categories) if (uAll.has(c)) return false;
+    }
+
+    // PHRASE-AVERSION: no salientWord recurs within SALIENT_AVERSION_GAP.
+    const uSal = new Set(u.salientWords);
+    for (let p = Math.max(1, n - (SALIENT_AVERSION_GAP - 1)); p < n; p++) {
+      const prev = chosen[p];
+      if (!prev) continue;
+      for (const w of prev.salientWords) if (uSal.has(w)) return false;
+    }
+    return true;
+  };
+
+  const isLinked = (n, u) => {
+    if (n < 2 || !chosen[n - 1]) return false;
+    const prevCats = chosen[n - 1].categories;
+    for (const c of u.categories) {
+      const s = assocSet(c);
+      for (const pc of prevCats) if (s.has(pc)) return true;
+    }
+    return false;
+  };
+
+  const solve = (n) => {
+    if (n > VERSE_COUNT) return true;
+    if (++steps > MAX_STEPS) return false;
+
+    const fit = pools[n].filter((u) => fits(n, u));
+    if (fit.length === 0) return false;
+
+    // Prefer linked units (tried first), shuffled within each group for variety.
+    const linkedCands = shuffle(fit.filter((u) => isLinked(n, u)), rnd);
+    const rest = shuffle(fit.filter((u) => !isLinked(n, u)), rnd);
+    const ordered = [...linkedCands, ...rest];
+
+    for (const u of ordered) {
+      chosen[n] = u;
+      linked[n] = isLinked(n, u);
+      usedIds.add(u.id);
+      if (solve(n + 1)) return true;
+      usedIds.delete(u.id);
+      chosen[n] = null;
+      linked[n] = false;
+    }
+    return false;
+  };
+
+  if (!solve(1)) return null;
+  return { chosen, linked };
+}
+
+// ---------------------------------------------------------------------------
+// Assemble the validated kasen object from a solved sequence.
+// ---------------------------------------------------------------------------
+function lineConfidence(line) {
+  return countLine(line).lowConfidence ? 'heuristic' : 'exact';
+}
+
+function buildKasen(skeleton, seq) {
+  const kasen = [];
+  for (let n = 1; n <= VERSE_COUNT; n++) {
+    const v = skeleton[n - 1];
+    const u = seq.chosen[n];
+    kasen.push({
+      n,
+      season: v.season,
+      categories: u.categories.slice(),
+      isMoon: v.isMoon,
+      isBlossom: v.isBlossom,
+      isLove: v.isLove,
+      lines: u.lines.slice(),
+      // --- presentation / aversion metadata (some validated, some not) ---
+      salient: u.categories[0],
+      salientWords: u.salientWords.slice(),
+      unitId: u.id,
+      linked: seq.linked[n],
+      confidence: u.lines.map(lineConfidence),
+    });
+  }
+  return kasen;
+}
+
+// ---------------------------------------------------------------------------
+// One build attempt (may fail sequencing -> returns null).
+// ---------------------------------------------------------------------------
+function attemptBuild(templateIdx, rnd) {
+  const skeleton = buildSkeleton(TEMPLATES[templateIdx]);
+  assertLegalSkeleton(skeleton); // plan is legal BEFORE sequencing
+  const seq = sequence(skeleton, rnd);
+  if (!seq) return null;
+  return buildKasen(skeleton, seq);
+}
+
+// ---------------------------------------------------------------------------
+// Public: generateKasen(seed)
+// ---------------------------------------------------------------------------
+function generateKasen(seed = 1, { maxAttempts = 60 } = {}) {
+  const templateIdx = ((seed % TEMPLATES.length) + TEMPLATES.length) % TEMPLATES.length;
+
+  let last = null;
+  let lastReport = null;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const rnd = mulberry32((seed >>> 0) * 100003 + attempt * 2654435761);
+    const kasen = attemptBuild(templateIdx, rnd);
+    if (!kasen) continue;
+    const report = validateKasen(kasen);
+    last = kasen;
+    lastReport = report;
+    if (report.ok) {
+      return {
+        ok: true,
+        seed,
+        template: templateIdx,
+        attempts: attempt,
+        kasen,
+        report,
+        stats: linkStats(kasen),
+      };
+    }
+  }
+  return {
+    ok: false,
+    seed,
+    template: templateIdx,
+    attempts: maxAttempts,
+    kasen: last,
+    report: lastReport,
+    stats: last ? linkStats(last) : null,
+  };
+}
+
+// Genuine-link measurement + syllable-confidence tally.
+function linkStats(kasen) {
+  let linkable = 0;
+  let linked = 0;
+  for (let n = 2; n <= kasen.length; n++) {
+    linkable++;
+    if (kasen[n - 1].linked) linked++;
+  }
+  let exactLines = 0;
+  let heuristicLines = 0;
+  for (const v of kasen) {
+    for (const c of v.confidence || []) {
+      if (c === 'exact') exactLines++;
+      else heuristicLines++;
+    }
+  }
+  return {
+    linkable,
+    linked,
+    linkRate: linkable ? linked / linkable : 0,
+    exactLines,
+    heuristicLines,
+    totalLines: exactLines + heuristicLines,
+  };
+}
+
+  // ===========================================================================
+
+  // Expose the machine's core for the headless build-time sanity check. Harmless
+  // in a browser; read by build-index.mjs when it evaluates this script body.
+  try { globalThis.__RENGA__ = { generateKasen: generateKasen, validateKasen: validateKasen, linkStats: linkStats, movementFor: movementFor }; } catch (e) {}
+
+  // ---- presentation helpers -------------------------------------------------
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function roleOf(v) {
+    if (v.n === 1) return 'hokku';
+    if (v.n === 2) return 'waki';
+    if (v.isMoon) return 'moon';
+    if (v.isBlossom) return 'blossom';
+    if (v.isLove) return 'love';
+    return null;
+  }
+
+  var MOVEMENTS = [
+    { key: 'jo',  start: 1,  name: 'jo',   gloss: 'the formal opening' },
+    { key: 'ha',  start: 7,  name: 'ha',   gloss: 'the development' },
+    { key: 'kyu', start: 31, name: 'kyū', gloss: 'the swift close' }
+  ];
+
+  var CHECK_LABELS = {
+    'verse-count':      'thirty-six verses, alternating 5-7-5 and 7-7',
+    'meter':            'syllables — every line counted against the dictionary',
+    'moon-seat':        'the moon flagged only at its seats (5, 14, 29)',
+    'blossom-seat':     'the blossom flagged only at its seats (17, 35)',
+    'season-run':       'seasonal runs kept within their bounds',
+    'love-run':         'love arrives and does not linger',
+    'uchikoshi':        'each verse shifts away from the one two back',
+    'aversion':         'no salient image returns too soon',
+    'marker-text-scan': 'moon & blossom named on their seats — checked against the actual words of the poem',
+    'phrase-aversion':  'no line recurs verbatim; no image-word returns within seven verses'
+  };
+  // The order the reader meets the checks.
+  var CHECK_ORDER = ['meter', 'marker-text-scan', 'moon-seat', 'blossom-seat',
+    'season-run', 'love-run', 'uchikoshi', 'aversion', 'phrase-aversion', 'verse-count'];
+
+  // Three repetition metrics, recomputed live from the shown poem so the reader
+  // can SEE they are zero — not merely be told. (contentWords / STOPWORDS come
+  // from the bundled verse-bank module.)
+  function repetitionMetrics(kasen) {
+    var intra = 0;
+    for (var a = 0; a < kasen.length; a++) {
+      var v = kasen[a];
+      var seen = {};
+      for (var i = 0; i < v.lines.length; i++) {
+        var ws = contentWords(v.lines[i]);
+        for (var w = 0; w < ws.length; w++) {
+          var word = ws[w];
+          if (Object.prototype.hasOwnProperty.call(seen, word)) {
+            if (seen[word] !== i) intra++;
+          } else {
+            seen[word] = i;
+          }
+        }
+      }
+    }
+    var lineFirst = {};
+    var verbatim = 0;
+    for (var b = 0; b < kasen.length; b++) {
+      var lines = kasen[b].lines;
+      for (var j = 0; j < lines.length; j++) {
+        var key = String(lines[j]).trim().toLowerCase();
+        if (Object.prototype.hasOwnProperty.call(lineFirst, key)) verbatim++;
+        else lineFirst[key] = kasen[b].n;
+      }
+    }
+    var MOON_RE = /\b(moon|moonlight)\b/i;
+    var BLO_RE = /\b(blossom|cherry|petals?)\b/i;
+    var moonSeats = { 5: 1, 14: 1, 29: 1 };
+    var bloSeats = { 17: 1, 35: 1 };
+    var offSeat = 0;
+    for (var c = 0; c < kasen.length; c++) {
+      var vv = kasen[c];
+      var text = vv.lines.join(' ');
+      if (MOON_RE.test(text) && !moonSeats[vv.n]) offSeat++;
+      if (BLO_RE.test(text) && !bloSeats[vv.n]) offSeat++;
+    }
+    return { intra: intra, verbatim: verbatim, offSeat: offSeat };
+  }
+
+  function syllableTally(kasen) {
+    var exact = 0, total = 0;
+    for (var i = 0; i < kasen.length; i++) {
+      var conf = kasen[i].confidence || [];
+      for (var j = 0; j < conf.length; j++) { total++; if (conf[j] === 'exact') exact++; }
+    }
+    return { exact: exact, total: total };
+  }
+
+  // ---- render a verse -------------------------------------------------------
+  function verseHTML(v) {
+    var role = roleOf(v);
+    var cls = ['verse', v.n % 2 === 1 ? 'long' : 'short'];
+    if (v.n === 1) cls.push('hokku');
+
+    var tags = [];
+    if (v.season) tags.push('<span class="tag season">' + esc(v.season) + '</span>');
+    else tags.push('<span class="tag season">misc</span>');
+    if (role) {
+      var roleCls = (role === 'moon' || role === 'blossom' || role === 'love') ? role : 'role';
+      var roleText = role === 'moon' ? 'moon-seat' : role === 'blossom' ? 'blossom-seat' : role;
+      tags.push('<span class="tag role ' + roleCls + '">' + esc(roleText) + '</span>');
+    }
+    if (v.n > 1) {
+      tags.push(v.linked
+        ? '<span class="tag link">link</span>'
+        : '<span class="tag shift">shift</span>');
+    }
+
+    var lines = v.lines.map(function (ln) {
+      return '<div class="line">' + esc(ln) + '</div>';
+    }).join('');
+
+    return '<article class="' + cls.join(' ') + '">' +
+      '<div class="meta"><span class="num">' + v.n + '</span>' + tags.join('') + '</div>' +
+      '<div class="lines">' + lines + '</div>' +
+      '</article>';
+  }
+
+  function movementHTML(mv) {
+    return '<div class="movement">' +
+      '<span class="glyph">· · ·</span>' +
+      '<span class="name">' + mv.name + '</span>' +
+      '<span class="gloss">' + mv.gloss + '</span>' +
+      '</div>';
+  }
+
+  // ---- render the machine-check panel --------------------------------------
+  function panelHTML(kasen, report) {
+    var byRule = {};
+    for (var i = 0; i < report.checks.length; i++) byRule[report.checks[i].rule] = report.checks[i];
+
+    var items = [];
+    for (var k = 0; k < CHECK_ORDER.length; k++) {
+      var rule = CHECK_ORDER[k];
+      var c = byRule[rule];
+      if (!c) continue;
+      var label = CHECK_LABELS[rule] || rule;
+      items.push('<li class="' + (c.ok ? 'ok' : 'bad') + '">' +
+        '<span class="mark">' + (c.ok ? '✓' : '✗') + '</span>' +
+        '<span class="label">' + esc(label) + '</span>' +
+        '<span class="detail">' + esc(c.detail) + '</span>' +
+        '</li>');
+    }
+
+    var m = repetitionMetrics(kasen);
+    function metricRow(name, val) {
+      return '<div class="row"><span class="k">' + name + '</span>' +
+        '<span class="v' + (val === 0 ? '' : ' nonzero') + '">' + val + '</span></div>';
+    }
+
+    var syl = syllableTally(kasen);
+    var stats = linkStats(kasen);
+    var pct = stats.linkable ? Math.round((stats.linked / stats.linkable) * 100) : 0;
+    var verdict = report.ok;
+
+    return '<details class="machine">' +
+      '<summary>the machine checked this &nbsp; <span class="verdict ' + (verdict ? 'pass' : 'fail') + '">' +
+        (verdict ? 'PASS' : 'FAIL') + '</span></summary>' +
+      '<div class="mc-body">' +
+        '<p class="intro">Re-run here in your browser by the same validator the generator had to pass — not the generator’s own word for it. Every check below is computed from the poem above, right now.</p>' +
+        '<ul class="checks">' + items.join('') + '</ul>' +
+        '<div class="metrics">' +
+          metricRow('intra-verse duplicate words', m.intra) +
+          metricRow('cross-verse verbatim lines', m.verbatim) +
+          metricRow('marker words off their seat', m.offSeat) +
+          '<div class="cap">the three repetitions the machine was rebuilt to refuse — recomputed from the words above.</div>' +
+        '</div>' +
+        '<p class="seam">syllables dictionary-exact: <span class="num">' + syl.exact + '/' + syl.total + '</span> lines' +
+          (syl.exact === syl.total ? '.' : ' (the rest counted by heuristic, flagged not hidden).') + '</p>' +
+        '<p class="seam">genuine links: <span class="num">' + stats.linked + '/' + stats.linkable + '</span> verses (' + pct + '%) share an authored association with the verse before. The shift away from the verse two back is enforced on every verse; the forward link is real about half the time and honestly counted, not claimed for all.</p>' +
+      '</div>' +
+    '</details>';
+  }
+
+  // ---- assemble the whole scroll -------------------------------------------
+  function renderKasen(result) {
+    var kasen = result.kasen;
+    var report = validateKasen(kasen); // independent re-check for the panel
+    var html = [];
+    var mvIdx = 0;
+    for (var i = 0; i < kasen.length; i++) {
+      var v = kasen[i];
+      if (mvIdx < MOVEMENTS.length && v.n === MOVEMENTS[mvIdx].start) {
+        html.push(movementHTML(MOVEMENTS[mvIdx]));
+        mvIdx++;
+      }
+      html.push(verseHTML(v));
+    }
+    html.push(panelHTML(kasen, report));
+    return html.join('');
+  }
+
+  // Draw a passing kasen. A kasen that fails any check is never shown — if a seed
+  // somehow fails, we quietly try the next until one passes (bounded).
+  function drawPassing(seed) {
+    var s = seed >>> 0;
+    for (var tries = 0; tries < 200; tries++) {
+      var result = generateKasen(s);
+      if (result && result.ok) return { result: result, seed: s };
+      s = (s + 1) >>> 0;
+    }
+    return null;
+  }
+
+  // ---- bootstrap (browser only) --------------------------------------------
+  if (typeof document !== 'undefined') {
+    var poemEl = document.getElementById('poem');
+    var seedEl = document.getElementById('seed');
+    var turnEl = document.getElementById('turn');
+
+    function show(seed) {
+      var drawn = drawPassing(seed);
+      if (!drawn) {
+        poemEl.innerHTML = '<p class="fail-note">No passing kasen near this seed — the machine would rather show nothing than a poem that failed a check.</p>';
+        seedEl.textContent = String(seed >>> 0);
+        return;
+      }
+      poemEl.innerHTML = renderKasen(drawn.result);
+      seedEl.textContent = String(drawn.seed);
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
+    function freshSeed() { return Math.floor(Math.random() * 0x7fffffff) + 1; }
+
+    turnEl.addEventListener('click', function () { show(freshSeed()); });
+    show(freshSeed());
+  }
+})();
+</script>
+</body>
+</html>
