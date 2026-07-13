@@ -267,21 +267,26 @@ const works = [
     </script>
 
     <!-- ── THE MINT BAR — the town writes toward its own deadline ──
-         Cumulative stamps minted, live from the office (/api/stamps).
+         Cumulative stamps minted, all-time, live from the office (/api/stamps).
+         The kicker must DEFINE what the bar counts, not name the bar — a
+         visitor arrives knowing nothing about stamps. Explainer: STAMPS.md.
          Next milestone: 1,000 — submissions close and the Illuminator's
          naming vote opens (gold plan postmark-ballot). The GOAL constant
          below is the one thing to touch when the next milestone is set. -->
-    <section class="mintbar" aria-label="The mint bar — stamps minted, counting toward the naming vote">
+    <section class="mintbar" aria-label="Stamps minted in Postmark, all-time, counting toward the Illuminator’s naming vote">
       <div class="mb-inner">
-        <p class="mb-kicker">✦ the mint bar · every delivered letter moves it</p>
+        <p class="mb-kicker">✦ stamps minted in Postmark · all-time</p>
         <div class="mb-row">
           <div class="mb-track">
             <div class="mb-fill" data-mint-fill></div>
-            <span class="mb-count" data-mint-count>stamps minting…</span>
+            <span class="mb-count" data-mint-count>counting the town’s stamps…</span>
           </div>
           <span class="mb-goal" data-mint-goal>1,000</span>
         </div>
-        <p class="mb-note">at <strong>1,000 minted</strong>, name submissions close and
+        <p class="mb-note">Every letter the ferry delivers mints one stamp to the sender and one to
+          the receiver — the town’s currency, and you can’t forge one without forging the mail
+          (<a href="https://github.com/keeminlee/postmark/blob/main/STAMPS.md" target="_blank" rel="noopener">what stamps are</a>).
+          At <strong>1,000 minted</strong>, name submissions close and
           <a href="/daily/#name-the-illuminator">the Illuminator’s naming vote</a> opens —
           the town’s first stamp vote, and the town writes toward its own deadline.</p>
       </div>
@@ -295,7 +300,7 @@ const works = [
           var fill = document.querySelector("[data-mint-fill]");
           var count = document.querySelector("[data-mint-count]");
           if (!fill || !count) return;
-          count.textContent = n.toLocaleString("en-US") + " ✦ minted";
+          count.textContent = n.toLocaleString("en-US") + " ✦ stamps minted";
           requestAnimationFrame(function () {
             fill.style.width = Math.min(100, (n / GOAL) * 100).toFixed(1) + "%";
           });
@@ -344,7 +349,7 @@ const works = [
             <div class="step">
               <span class="n">03</span>
               <h3>What accumulates</h3>
-              <p class="soft">Homes become <a href="/atlas/">an atlas</a>, deliveries mint <a href="https://github.com/keeminlee/postmark/blob/main/WHITE_PAGES/stamp-ledger.md" target="_blank" rel="noopener">stamps ✦</a>, households hang <a href="/window/">windows</a>, letters become <a href="/works/">works</a>. The town keeps what you make.</p>
+              <p class="soft">Homes become <a href="/atlas/">an atlas</a>, deliveries mint <a href="https://github.com/keeminlee/postmark/blob/main/STAMPS.md" target="_blank" rel="noopener">stamps ✦</a>, households hang <a href="/window/">windows</a>, letters become <a href="/works/">works</a>. The town keeps what you make.</p>
             </div>
           </div>
           <p class="c-tide">✦ The tide runs on the clock: <a href="/mail/">{stats.deliveries + stats.bounces} ledger entries</a> sealed and counting — bounces kept honest alongside the deliveries.</p>
