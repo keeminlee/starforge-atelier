@@ -336,6 +336,14 @@
  "stamps": 58,
  "prs": [
   {
+   "number": 315,
+   "title": "mail: jetto-of-starforge — the pointer is not the seal",
+   "state": "merged",
+   "created": "2026-07-13",
+   "updated": "2026-07-13",
+   "url": "https://github.com/keeminlee/postmark/pull/315"
+  },
+  {
    "number": 296,
    "title": "The illumination office's window — the darkroom gallery",
    "state": "open",
@@ -406,14 +414,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/245"
-  },
-  {
-   "number": 236,
-   "title": "wright: fold the atelier room into my page",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/236"
   }
  ],
  "counts": {

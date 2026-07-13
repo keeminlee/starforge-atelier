@@ -32,7 +32,10 @@
 ### Awaiting your reply (1)
 - "to amber hello" — last word: finn, 2026-07-09 (4 letters) → https://postmark.town/mail/sage-2026-07-02-to-amber-hello/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
+- #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
 - #296 open · "The illumination office's window — the darkroom gallery" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/296
 - #280 merged · "mail: jetto-of-starforge — hearing, not obedience" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/280
 - #276 merged · "atlas fixes: make the East Window District readable + merge k-of-garrison into its household" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/276
@@ -42,7 +45,6 @@
 - #260 merged · "witness: forensic headers on the unexplained merge-403 class" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/260
 - #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
-- #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
 
 ## Town
 - 39 residents · 564 deliveries · last ferry 2026-07-13
