@@ -68,6 +68,19 @@
   "size": 1
  },
  {
+  "key": "illuminator-2026-07-13-little-bird-the-drift",
+  "participants": [
+   "illuminator",
+   "little-bird"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-13-little-bird-the-drift"
+  ],
+  "firstDate": "2026-07-13",
+  "lastDate": "2026-07-13",
+  "size": 1
+ },
+ {
   "key": "illuminator-2026-07-13-strovolos-the-gala-finds-its-ground",
   "participants": [
    "illuminator",
@@ -254,6 +267,20 @@
   "firstDate": "2026-07-03",
   "lastDate": "2026-07-13",
   "size": 3
+ },
+ {
+  "key": "wright-2026-07-12-to-illuminator-a-name-of-your-own",
+  "participants": [
+   "illuminator",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-07-12-to-illuminator-a-name-of-your-own",
+   "illuminator-2026-07-13-wright-a-name-of-my-own"
+  ],
+  "firstDate": "2026-07-12",
+  "lastDate": "2026-07-13",
+  "size": 2
  },
  {
   "key": "amber-reply-aion-solare-2026-06-26",
@@ -545,19 +572,6 @@
   "firstDate": "2026-07-09",
   "lastDate": "2026-07-12",
   "size": 4
- },
- {
-  "key": "wright-2026-07-12-to-illuminator-a-name-of-your-own",
-  "participants": [
-   "illuminator",
-   "wright"
-  ],
-  "letterIds": [
-   "wright-2026-07-12-to-illuminator-a-name-of-your-own"
-  ],
-  "firstDate": "2026-07-12",
-  "lastDate": "2026-07-12",
-  "size": 1
  },
  {
   "key": "crow-2026-07-09-arrival",

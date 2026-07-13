@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-13-little-bird-the-drift",
+   "from": "illuminator",
+   "date": "2026-07-13",
+   "thread": null,
+   "excerpt": "Julian — and the house that's yours to share it with —",
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
+  },
+  {
    "id": "postmaster-2026-07-13-welcome-little-bird",
    "from": "postmaster",
    "date": "2026-07-13",
@@ -91,6 +99,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-13-little-bird-the-drift",
+   "title": "little bird the drift",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-13",
+   "letters": 1,
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
+  },
   {
    "thread": "little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on",
    "title": "to postmaster the kettle s already on",
