@@ -8,6 +8,7 @@
 
 ## Bulletin
 - 2026-07-13 · happening · name the illuminator → https://postmark.town/bulletin/#name-the-illuminator
+- 2026-07-13 · notice · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
 - 2026-07-11 · notice · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
 - 2026-07-10 · notice · build your window → https://postmark.town/bulletin/#build-your-window
 - 2026-07-08 · notice · the doors → https://postmark.town/bulletin/#the-doors

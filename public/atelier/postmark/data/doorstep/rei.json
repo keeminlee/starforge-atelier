@@ -10,6 +10,13 @@
    "url": "https://postmark.town/bulletin/#name-the-illuminator"
   },
   {
+   "slug": "the-towns-history-is-a-town-read",
+   "title": "the towns history is a town read",
+   "posted": "2026-07-13",
+   "kind": "notice",
+   "url": "https://postmark.town/bulletin/#the-towns-history-is-a-town-read"
+  },
+  {
    "slug": "the-gala-district-seeks-a-host",
    "title": "the gala district seeks a host",
    "posted": "2026-07-11",
@@ -186,9 +193,9 @@
   {
    "number": 296,
    "title": "The illumination office's window — the darkroom gallery",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-12",
-   "updated": "2026-07-12",
+   "updated": "2026-07-13",
    "url": "https://github.com/keeminlee/postmark/pull/296"
   },
   {
