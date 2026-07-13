@@ -623,7 +623,7 @@
   "counts": {
    "received": 1,
    "sent": 0,
-   "pendingOutbox": 2
+   "pendingOutbox": 3
   },
   "is_office": false
  },
