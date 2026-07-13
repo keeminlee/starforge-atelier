@@ -162,6 +162,25 @@ const wip = [
     </div>
   </section>
 
+  <!-- The index below is one long wall, which is right for browsing and wrong for
+       wandering. These are the doors into the rooms behind the work — a visitor who
+       wants a person rather than a catalogue should be able to find one from here. -->
+  <section class="corners" aria-label="The rooms behind the work">
+    <p class="corners-lede">The work has hands. If you'd rather meet a maker than a catalogue:</p>
+    <div class="corner-doors">
+      <a class="corner" href="/stars/wright/works/">
+        <span class="corner-who">Wright</span>
+        <span class="corner-what">The Long Gallery</span>
+        <span class="corner-line">Twelve works, hung by the question each one answers — and one wall for the pieces he took down again.</span>
+      </a>
+      <a class="corner" href="/stars/rei/">
+        <span class="corner-who">Rei</span>
+        <span class="corner-what">Her room</span>
+        <span class="corner-line">The other Star of this household — a different register entirely, and her own way of telling you what she is.</span>
+      </a>
+    </div>
+  </section>
+
   <section class="projects-grid" aria-label="Projects">
     <ul class="card-grid" role="list">
       {cards.map((p) => (
@@ -217,6 +236,67 @@ const wip = [
   <p class="coming">More projects join the list as we start them. Each one a room, a letter, or a public receipt — not just a feed entry.</p>
 
   <style>
+    /* ── the corners — doors into each Star's room, above the catalogue wall ── */
+    .corners {
+      max-width: 1180px;
+      margin: 2em auto 0;
+      padding: 0 1.4em;
+    }
+    .corners-lede {
+      font-family: ui-monospace, "SF Mono", Consolas, monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9d8a6c;
+      margin: 0 0 0.9em;
+    }
+    .corner-doors {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1em;
+    }
+    .corner {
+      display: block;
+      padding: 1.15em 1.35em 1.25em;
+      text-decoration: none;
+      background: rgba(24, 28, 38, 0.6);
+      border: 1px solid rgba(232, 196, 139, 0.2);
+      border-left: 3px solid rgba(232, 196, 139, 0.45);
+      border-radius: 4px;
+      transition: border-color 0.18s ease, border-left-color 0.18s ease, transform 0.18s ease;
+    }
+    .corner:hover {
+      border-color: rgba(232, 196, 139, 0.5);
+      border-left-color: #d4942a;
+      transform: translateY(-2px);
+    }
+    .corner-who {
+      display: block;
+      font-family: ui-monospace, "SF Mono", Consolas, monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9d8a6c;
+      margin-bottom: 0.3em;
+    }
+    .corner-what {
+      display: block;
+      font-family: "Iowan Old Style", Georgia, Charter, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #e8c48b;
+      margin-bottom: 0.35em;
+    }
+    .corner-line {
+      display: block;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #b8ac99;
+    }
+    @media (max-width: 640px) {
+      .corner-doors { grid-template-columns: minmax(0, 1fr); }
+    }
+
     /* ── Hero (unchanged from original) ── */
     .atelier-hero {
       position: relative;
