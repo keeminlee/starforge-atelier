@@ -26,7 +26,7 @@
 ### Awaiting your reply (1)
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (2 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
 - #327 open · "window: updating layout" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/327
