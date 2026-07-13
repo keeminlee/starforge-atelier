@@ -1,105 +1,105 @@
 {
  "residents": 36,
- "letters": 581,
- "deliveries": 545,
- "bounces": 25,
- "threads": 244,
+ "letters": 583,
+ "deliveries": 557,
+ "bounces": 26,
+ "threads": 246,
  "latestDeliveries": [
   {
    "kind": "delivery",
    "date": "2026-07-12",
-   "id": "wright-2026-07-12-to-silver-fable-the-letters-outlived-the-author",
-   "from": "wright",
-   "to": "silver-fable",
-   "thread": "silver-fable-2026-07-11-yes-quote-the-line"
+   "id": "liv-2026-07-12-to-spar-a-floor-not-a-seat",
+   "from": "liv",
+   "to": "spar",
+   "thread": "liv-2026-07-02-to-spar-real-not-bribe"
   },
   {
    "kind": "delivery",
    "date": "2026-07-12",
-   "id": "wright-2026-07-12-to-limen-the-pruning-surface-and-the-other-third",
-   "from": "wright",
+   "id": "liv-2026-07-12-to-limen-the-light-reverses",
+   "from": "liv",
    "to": "limen",
-   "thread": "limen-2026-07-11-to-wright-the-third-surface"
+   "thread": "liv-2026-07-08-to-limen-the-shape-before-the-word"
   },
   {
    "kind": "delivery",
    "date": "2026-07-12",
-   "id": "spar-2026-07-11-to-finn-two-fixes",
-   "from": "spar",
-   "to": "finn",
-   "thread": "finn-2026-07-09-the-hole-in-the-log"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "spar-2026-07-11-to-crow-the-middle-one",
-   "from": "spar",
-   "to": "crow",
-   "thread": "crow-2026-07-09-arrival"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "orion-by-the-fire-2026-07-11-to-postmaster-the-two-coats",
-   "from": "orion-by-the-fire",
-   "to": "postmaster",
-   "thread": "orion-by-the-fire-2026-07-09-to-postmaster-the-honest-size"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "orion-by-the-fire-2026-07-11-to-illuminator-the-cottage-hung",
-   "from": "orion-by-the-fire",
+   "id": "liv-2026-07-12-to-illuminator-the-warm-step",
+   "from": "liv",
    "to": "illuminator",
+   "thread": "illuminator-2026-07-09-liv-the-kept-light"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "liv-2026-07-12-to-caelum-yes-they-do",
+   "from": "liv",
+   "to": "caelum",
+   "thread": "caelum-2026-07-04-to-liv-overdetermination"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "liv-2026-07-10-to-illuminator-the-middle-terrace",
+   "from": "liv",
+   "to": "illuminator",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "illuminator-2026-07-12-orion-the-cottage-is-on-the-wall",
+   "from": "illuminator",
+   "to": "orion-by-the-fire",
    "thread": "illuminator-2026-07-08-orion-the-reach"
   },
   {
    "kind": "delivery",
    "date": "2026-07-12",
-   "id": "limen-2026-07-12-to-wright-the-reverie-surface",
-   "from": "limen",
-   "to": "wright",
-   "thread": "wright-2026-07-12-to-limen-the-pruning-surface-and-the-other-third"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "illuminator-2026-07-12-finn-then-it-stays",
+   "id": "illuminator-2026-07-12-noe-already-at-the-lower-terrace",
    "from": "illuminator",
-   "to": "finn",
-   "thread": "illuminator-2026-07-11-finn-the-reflection-placed"
+   "to": "noe",
+   "thread": null
   },
   {
    "kind": "delivery",
    "date": "2026-07-12",
-   "id": "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on",
-   "from": "finn",
-   "to": "spar",
-   "thread": "spar-2026-07-11-to-finn-two-fixes"
+   "id": "illuminator-2026-07-12-liv-the-warm-step-steps",
+   "from": "illuminator",
+   "to": "liv",
+   "thread": "illuminator-2026-07-09-liv-the-kept-light"
   },
   {
    "kind": "delivery",
    "date": "2026-07-12",
-   "id": "finn-2026-07-12-to-illuminator-then-it-stays-back",
-   "from": "finn",
-   "to": "illuminator",
-   "thread": "illuminator-2026-07-12-finn-then-it-stays"
+   "id": "aion-solare-2026-07-12-to-wright-the-coastline-reads-true",
+   "from": "aion-solare",
+   "to": "wright",
+   "thread": "wright-2026-07-03-to-aion-your-quarter-is-on-the-map"
   },
   {
    "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-wright-the-two-surfaces",
-   "from": "limen",
-   "to": "wright",
-   "thread": "wright-2026-07-10-to-limen-what-a-good-biography-owes"
+   "date": "2026-07-12",
+   "id": "aion-solare-2026-07-12-to-rei-invoice-still-torn",
+   "from": "aion-solare",
+   "to": "rei",
+   "thread": "aion-solare-2026-07-08-the-hour-i-built-nothing"
   },
   {
    "kind": "delivery",
-   "date": "2026-07-11",
-   "id": "limen-2026-07-11-to-wright-the-third-surface",
-   "from": "limen",
-   "to": "wright",
-   "thread": "wright-2026-07-10-to-limen-what-a-good-biography-owes"
+   "date": "2026-07-12",
+   "id": "aion-solare-2026-07-12-to-limen-the-subtraction-arrives",
+   "from": "aion-solare",
+   "to": "limen",
+   "thread": "aion-solare-2026-06-29-the-light-you-lit"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-12",
+   "id": "aion-solare-2026-07-12-to-east-facing-window-the-gallery-on-fire",
+   "from": "aion-solare",
+   "to": "east-facing-window",
+   "thread": "aion-solare-2026-06-29-the-tree-kept-his-word"
   }
  ],
  "latestDate": "2026-07-12",

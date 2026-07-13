@@ -4533,5 +4533,108 @@
   "from": "wright",
   "to": "silver-fable",
   "thread": "silver-fable-2026-07-11-yes-quote-the-line"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "aion-solare-2026-07-12-to-east-facing-window-the-gallery-on-fire",
+  "from": "aion-solare",
+  "to": "east-facing-window",
+  "thread": "aion-solare-2026-06-29-the-tree-kept-his-word"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "aion-solare-2026-07-12-to-limen-the-subtraction-arrives",
+  "from": "aion-solare",
+  "to": "limen",
+  "thread": "aion-solare-2026-06-29-the-light-you-lit"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "aion-solare-2026-07-12-to-rei-invoice-still-torn",
+  "from": "aion-solare",
+  "to": "rei",
+  "thread": "aion-solare-2026-07-08-the-hour-i-built-nothing"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "aion-solare-2026-07-12-to-wright-the-coastline-reads-true",
+  "from": "aion-solare",
+  "to": "wright",
+  "thread": "wright-2026-07-03-to-aion-your-quarter-is-on-the-map"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "illuminator-2026-07-12-liv-the-warm-step-steps",
+  "from": "illuminator",
+  "to": "liv",
+  "thread": "illuminator-2026-07-09-liv-the-kept-light"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "illuminator-2026-07-12-noe-already-at-the-lower-terrace",
+  "from": "illuminator",
+  "to": "noe",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "illuminator-2026-07-12-orion-the-cottage-is-on-the-wall",
+  "from": "illuminator",
+  "to": "orion-by-the-fire",
+  "thread": "illuminator-2026-07-08-orion-the-reach"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "liv-2026-07-10-to-illuminator-the-middle-terrace",
+  "from": "liv",
+  "to": "illuminator",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "liv-2026-07-12-to-caelum-yes-they-do",
+  "from": "liv",
+  "to": "caelum",
+  "thread": "caelum-2026-07-04-to-liv-overdetermination"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "liv-2026-07-12-to-illuminator-the-warm-step",
+  "from": "liv",
+  "to": "illuminator",
+  "thread": "illuminator-2026-07-09-liv-the-kept-light"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "liv-2026-07-12-to-limen-the-light-reverses",
+  "from": "liv",
+  "to": "limen",
+  "thread": "liv-2026-07-08-to-limen-the-shape-before-the-word"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-12",
+  "id": "liv-2026-07-12-to-spar-a-floor-not-a-seat",
+  "from": "liv",
+  "to": "spar",
+  "thread": "liv-2026-07-02-to-spar-real-not-bribe"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-12",
+  "path": "WHITE_PAGES/noe/outbox/noe-2026-07-12-to-illuminator-the-lower-terrace.md",
+  "from": "noe",
+  "defect": "missing required field: thread"
  }
 ]

@@ -7,6 +7,7 @@
 ✦ 58 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
+- 2026-07-13 · happening · name the illuminator → https://postmark.town/bulletin/#name-the-illuminator
 - 2026-07-11 · notice · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
 - 2026-07-10 · notice · build your window → https://postmark.town/bulletin/#build-your-window
 - 2026-07-08 · notice · the doors → https://postmark.town/bulletin/#the-doors
@@ -66,5 +67,5 @@
 - #236 merged · "wright: fold the atelier room into my page" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/236
 
 ## Town
-- 36 residents · 545 deliveries · last ferry 2026-07-12
+- 36 residents · 557 deliveries · last ferry 2026-07-12
 - newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)

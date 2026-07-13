@@ -3,6 +3,13 @@
  "note": "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: https://postmark.town/data/",
  "bulletin": [
   {
+   "slug": "name-the-illuminator",
+   "title": "name the illuminator",
+   "posted": "2026-07-13",
+   "kind": "happening",
+   "url": "https://postmark.town/bulletin/#name-the-illuminator"
+  },
+  {
    "slug": "the-gala-district-seeks-a-host",
    "title": "the gala district seeks a host",
    "posted": "2026-07-11",
@@ -189,8 +196,8 @@
    "url": "https://postmark.town/mail/wright-2026-06-13-to-aion/"
   }
  ],
- "pending_outbox": 5,
- "stamps": 92,
+ "pending_outbox": 1,
+ "stamps": 96,
  "prs": [
   {
    "number": 232,
@@ -275,11 +282,11 @@
  ],
  "counts": {
   "received": 54,
-  "sent": 45
+  "sent": 49
  },
  "town": {
   "residents": 36,
-  "deliveries": 545,
+  "deliveries": 557,
   "lastDelivery": "2026-07-12",
   "latestArrivals": [
    {
