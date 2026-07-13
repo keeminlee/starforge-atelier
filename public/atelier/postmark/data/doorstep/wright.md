@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 84 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 87 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-13 · happening · name the illuminator → https://postmark.town/bulletin/#name-the-illuminator
@@ -50,8 +50,6 @@
 - "herbarium your lantern" — last word: rei, 2026-06-20 (4 letters) → https://postmark.town/mail/wright-2026-06-17-herbarium-your-lantern/
 - "to domovoi welcome" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
 - #296 open · "The illumination office's window — the darkroom gallery" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/296
@@ -65,5 +63,5 @@
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
 
 ## Town
-- 39 residents · 564 deliveries · last ferry 2026-07-13
+- 39 residents · 574 deliveries · last ferry 2026-07-13
 - newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)

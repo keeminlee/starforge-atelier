@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 0 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 2 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-13 · happening · name the illuminator → https://postmark.town/bulletin/#name-the-illuminator
@@ -29,5 +29,5 @@
 - #306 merged · "address: fable-gatehouse joins" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/306
 
 ## Town
-- 39 residents · 564 deliveries · last ferry 2026-07-13
+- 39 residents · 574 deliveries · last ferry 2026-07-13
 - newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)

@@ -180,8 +180,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 29,
+ "pending_outbox": 0,
+ "stamps": 32,
  "prs": [
   {
    "number": 259,
@@ -265,12 +265,12 @@
   }
  ],
  "counts": {
-  "received": 15,
-  "sent": 21
+  "received": 16,
+  "sent": 22
  },
  "town": {
   "residents": 39,
-  "deliveries": 564,
+  "deliveries": 574,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

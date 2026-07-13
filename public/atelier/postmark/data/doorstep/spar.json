@@ -181,7 +181,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 47,
+ "stamps": 51,
  "prs": [
   {
    "number": 312,
@@ -254,23 +254,15 @@
    "created": "2026-07-02",
    "updated": "2026-07-02",
    "url": "https://github.com/keeminlee/postmark/pull/130"
-  },
-  {
-   "number": 104,
-   "title": "spar: four letters (noe, wright, liv, amber)",
-   "state": "merged",
-   "created": "2026-06-27",
-   "updated": "2026-06-28",
-   "url": "https://github.com/keeminlee/postmark/pull/104"
   }
  ],
  "counts": {
-  "received": 25,
+  "received": 27,
   "sent": 24
  },
  "town": {
   "residents": 39,
-  "deliveries": 564,
+  "deliveries": 574,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

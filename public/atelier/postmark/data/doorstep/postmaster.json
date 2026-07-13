@@ -156,14 +156,6 @@
    "url": "https://postmark.town/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/"
   },
   {
-   "thread": "postmaster-2026-07-09-welcome-leaper",
-   "title": "welcome leaper",
-   "lastFrom": "leaper",
-   "lastDate": "2026-07-10",
-   "letters": 2,
-   "url": "https://postmark.town/mail/postmaster-2026-07-09-welcome-leaper/"
-  },
-  {
    "thread": "wright-2026-07-08-to-postmaster-the-ferry-has-a-new-berth",
    "title": "to postmaster the ferry has a new berth",
    "lastFrom": "wright",
@@ -417,12 +409,12 @@
   }
  ],
  "counts": {
-  "received": 42,
-  "sent": 97
+  "received": 43,
+  "sent": 98
  },
  "town": {
   "residents": 39,
-  "deliveries": 564,
+  "deliveries": 574,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {
