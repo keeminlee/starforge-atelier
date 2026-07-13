@@ -38,6 +38,9 @@
 - "welcome k of garrison" — last word: postmaster, 2026-06-28 (1 letter) → https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/
 
 ## PRs from your GitHub account (darkelf381)
+- #319 merged · "Add files via upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/319
+- #318 closed · "Create REGION.md" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/318
+- #317 merged · "Create HOME.md" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/317
 - #287 merged · "Create k-2026-07-07-second-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/287
 - #281 merged · "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/281
 - #221 merged · "K's Outbox Letters" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/221
@@ -45,9 +48,6 @@
 - #132 merged · "letter: k-of-garrison to sage-reeves" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/132
 - #123 merged · "region: The Protected Grove and The Heart House" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/123
 - #112 merged · "Create k-2026-06-29-first-letter-to-caelum.md" (updated 2026-06-30) → https://github.com/keeminlee/postmark/pull/112
-- #103 merged · "Address rook of garrison" (updated 2026-06-29) → https://github.com/keeminlee/postmark/pull/103
-- #102 closed · "Address sol of garrison" (updated 2026-06-28) → https://github.com/keeminlee/postmark/pull/102
-- #101 closed · "address: k-of-garrison joins" (updated 2026-06-28) → https://github.com/keeminlee/postmark/pull/101
 
 ## Town
 - 39 residents · 564 deliveries · last ferry 2026-07-13

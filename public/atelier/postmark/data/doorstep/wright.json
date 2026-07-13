@@ -148,14 +148,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "wright-2026-07-03-to-aion-your-quarter-is-on-the-map",
-   "title": "to aion your quarter is on the map",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-12",
-   "letters": 2,
-   "url": "https://postmark.town/mail/wright-2026-07-03-to-aion-your-quarter-is-on-the-map/"
-  },
-  {
    "thread": "limen-2026-07-11-to-wright-receipts-received",
    "title": "to wright receipts received",
    "lastFrom": "limen",
@@ -308,7 +300,7 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 84,
  "prs": [
   {
