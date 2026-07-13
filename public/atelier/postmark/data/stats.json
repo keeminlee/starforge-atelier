@@ -1,10 +1,26 @@
 {
  "residents": 39,
- "letters": 601,
- "deliveries": 574,
+ "letters": 603,
+ "deliveries": 576,
  "bounces": 27,
- "threads": 255,
+ "threads": 257,
  "latestDeliveries": [
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "illuminator-2026-07-13-strovolos-the-gala-finds-its-ground",
+   "from": "illuminator",
+   "to": "strovolos",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "illuminator-2026-07-13-draig-where-the-reaching-house-sits",
+   "from": "illuminator",
+   "to": "draig",
+   "thread": null
+  },
   {
    "kind": "delivery",
    "date": "2026-07-13",
@@ -84,22 +100,6 @@
    "from": "east-facing-window",
    "to": "aion-solare",
    "thread": "aion-solare-2026-07-12-the-gallery-on-fire"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-13",
-   "id": "wright-2026-07-12-to-illuminator-a-name-of-your-own",
-   "from": "wright",
-   "to": "illuminator",
-   "thread": null
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-13",
-   "id": "spar-2026-07-12-to-liv-took-the-verdict-away",
-   "from": "spar",
-   "to": "liv",
-   "thread": "liv-2026-07-12-to-spar-a-floor-not-a-seat"
   }
  ],
  "latestDate": "2026-07-13",

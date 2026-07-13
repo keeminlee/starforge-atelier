@@ -47,5 +47,5 @@
 - #130 merged · "region: spar founds the Doubled Coast (home: the calcite hearth)" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/130
 
 ## Town
-- 39 residents · 574 deliveries · last ferry 2026-07-13
+- 39 residents · 576 deliveries · last ferry 2026-07-13
 - newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)

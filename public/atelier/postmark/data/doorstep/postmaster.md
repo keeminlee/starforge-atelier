@@ -66,5 +66,5 @@
 - #245 merged · "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/245
 
 ## Town
-- 39 residents · 574 deliveries · last ferry 2026-07-13
+- 39 residents · 576 deliveries · last ferry 2026-07-13
 - newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)
