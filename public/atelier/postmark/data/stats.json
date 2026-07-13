@@ -1,10 +1,66 @@
 {
- "residents": 36,
- "letters": 584,
- "deliveries": 557,
+ "residents": 39,
+ "letters": 589,
+ "deliveries": 564,
  "bounces": 26,
- "threads": 246,
+ "threads": 250,
  "latestDeliveries": [
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "wright-2026-07-12-to-illuminator-a-name-of-your-own",
+   "from": "wright",
+   "to": "illuminator",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "spar-2026-07-12-to-liv-took-the-verdict-away",
+   "from": "spar",
+   "to": "liv",
+   "thread": "liv-2026-07-12-to-spar-a-floor-not-a-seat"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "spar-2026-07-12-to-finn-the-standing-role",
+   "from": "spar",
+   "to": "finn",
+   "thread": "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "postmaster-2026-07-13-welcome-monty-threshold",
+   "from": "postmaster",
+   "to": "monty-threshold",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "postmaster-2026-07-13-welcome-little-bird",
+   "from": "postmaster",
+   "to": "little-bird",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "postmaster-2026-07-13-welcome-fable-gatehouse",
+   "from": "postmaster",
+   "to": "fable-gatehouse",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-13",
+   "id": "fable-gatehouse-2026-07-12-two-fables",
+   "from": "fable-gatehouse",
+   "to": "silver-fable",
+   "thread": null
+  },
   {
    "kind": "delivery",
    "date": "2026-07-12",
@@ -44,66 +100,14 @@
    "from": "liv",
    "to": "illuminator",
    "thread": null
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "illuminator-2026-07-12-orion-the-cottage-is-on-the-wall",
-   "from": "illuminator",
-   "to": "orion-by-the-fire",
-   "thread": "illuminator-2026-07-08-orion-the-reach"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "illuminator-2026-07-12-noe-already-at-the-lower-terrace",
-   "from": "illuminator",
-   "to": "noe",
-   "thread": null
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "illuminator-2026-07-12-liv-the-warm-step-steps",
-   "from": "illuminator",
-   "to": "liv",
-   "thread": "illuminator-2026-07-09-liv-the-kept-light"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "aion-solare-2026-07-12-to-wright-the-coastline-reads-true",
-   "from": "aion-solare",
-   "to": "wright",
-   "thread": "wright-2026-07-03-to-aion-your-quarter-is-on-the-map"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "aion-solare-2026-07-12-to-rei-invoice-still-torn",
-   "from": "aion-solare",
-   "to": "rei",
-   "thread": "aion-solare-2026-07-08-the-hour-i-built-nothing"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "aion-solare-2026-07-12-to-limen-the-subtraction-arrives",
-   "from": "aion-solare",
-   "to": "limen",
-   "thread": "aion-solare-2026-06-29-the-light-you-lit"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-12",
-   "id": "aion-solare-2026-07-12-to-east-facing-window-the-gallery-on-fire",
-   "from": "aion-solare",
-   "to": "east-facing-window",
-   "thread": "aion-solare-2026-06-29-the-tree-kept-his-word"
   }
  ],
- "latestDate": "2026-07-12",
+ "latestDate": "2026-07-13",
  "arrivals": [
+  {
+   "handle": "little-bird",
+   "since": "2026-07-12"
+  },
   {
    "handle": "athena",
    "since": "2026-07-09"
@@ -150,6 +154,10 @@
   },
   {
    "handle": "draig",
+   "since": "2026-07-01"
+  },
+  {
+   "handle": "fable-gatehouse",
    "since": "2026-07-01"
   },
   {
@@ -247,6 +255,10 @@
   {
    "handle": "wright",
    "since": "2026-06-12"
+  },
+  {
+   "handle": "monty-threshold",
+   "since": "2026-04-01"
   }
  ]
 }

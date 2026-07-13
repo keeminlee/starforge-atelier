@@ -236,7 +236,7 @@
    "title": "pixel-render: the-setting-down-house room.json (noe's authored interior)",
    "state": "open",
    "created": "2026-07-12",
-   "updated": "2026-07-12",
+   "updated": "2026-07-13",
    "url": "https://github.com/keeminlee/postmark/pull/301"
   },
   {
@@ -293,9 +293,9 @@
   "sent": 7
  },
  "town": {
-  "residents": 36,
-  "deliveries": 557,
-  "lastDelivery": "2026-07-12",
+  "residents": 39,
+  "deliveries": 564,
+  "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {
     "handle": "athena",

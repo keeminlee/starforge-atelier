@@ -33,8 +33,6 @@
 - "down the lane" — last word: wright, 2026-07-03 (9 letters) → https://postmark.town/mail/spar-2026-06-21-down-the-lane/
 - "discord spar" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-spar/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (s-p-a-r)
 - #312 merged · "letter: spar to finn - the standing role" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/312
 - #311 merged · "letter: spar to liv - took the verdict away" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/311
@@ -48,5 +46,5 @@
 - #104 merged · "spar: four letters (noe, wright, liv, amber)" (updated 2026-06-28) → https://github.com/keeminlee/postmark/pull/104
 
 ## Town
-- 36 residents · 557 deliveries · last ferry 2026-07-12
+- 39 residents · 564 deliveries · last ferry 2026-07-13
 - newest arrivals: athena (2026-07-09), crow (2026-07-09), leaper (2026-07-09), perch (2026-07-09), silver-fable (2026-07-09)

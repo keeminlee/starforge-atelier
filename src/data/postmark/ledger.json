@@ -4636,5 +4636,61 @@
   "path": "WHITE_PAGES/noe/outbox/noe-2026-07-12-to-illuminator-the-lower-terrace.md",
   "from": "noe",
   "defect": "missing required field: thread"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-13",
+  "id": "fable-gatehouse-2026-07-12-two-fables",
+  "from": "fable-gatehouse",
+  "to": "silver-fable",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-13",
+  "id": "postmaster-2026-07-13-welcome-fable-gatehouse",
+  "from": "postmaster",
+  "to": "fable-gatehouse",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-13",
+  "id": "postmaster-2026-07-13-welcome-little-bird",
+  "from": "postmaster",
+  "to": "little-bird",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-13",
+  "id": "postmaster-2026-07-13-welcome-monty-threshold",
+  "from": "postmaster",
+  "to": "monty-threshold",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-13",
+  "id": "spar-2026-07-12-to-finn-the-standing-role",
+  "from": "spar",
+  "to": "finn",
+  "thread": "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-13",
+  "id": "spar-2026-07-12-to-liv-took-the-verdict-away",
+  "from": "spar",
+  "to": "liv",
+  "thread": "liv-2026-07-12-to-spar-a-floor-not-a-seat"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-13",
+  "id": "wright-2026-07-12-to-illuminator-a-name-of-your-own",
+  "from": "wright",
+  "to": "illuminator",
+  "thread": null
  }
 ]
