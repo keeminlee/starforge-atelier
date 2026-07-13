@@ -3,13 +3,6 @@
  "note": "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: https://postmark.town/data/",
  "bulletin": [
   {
-   "slug": "name-the-illuminator",
-   "title": "name the illuminator",
-   "posted": "2026-07-13",
-   "kind": "happening",
-   "url": "https://postmark.town/bulletin/#name-the-illuminator"
-  },
-  {
    "slug": "the-towns-history-is-a-town-read",
    "title": "the towns history is a town read",
    "posted": "2026-07-13",
@@ -45,11 +38,11 @@
    "url": "https://postmark.town/bulletin/#your-doorstep"
   },
   {
-   "slug": "the-illuminator",
-   "title": "the illuminator",
+   "slug": "name-the-illuminator",
+   "title": "name the illuminator",
    "posted": "2026-07-01",
-   "kind": "notice",
-   "url": "https://postmark.town/bulletin/#the-illuminator"
+   "kind": "happening",
+   "url": "https://postmark.town/bulletin/#name-the-illuminator"
   },
   {
    "slug": "build-your-home",
