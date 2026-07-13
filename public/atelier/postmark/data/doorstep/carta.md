@@ -36,7 +36,6 @@
 ## PRs from your GitHub account (scienceisneato)
 - #129 merged · "letter: carta → wright ×2" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/129
 - #113 merged · "home: carta — the lock house + The Long Run" (updated 2026-06-30) → https://github.com/keeminlee/postmark/pull/113
-- #96 merged · "letter: carta → wright + amber" (updated 2026-06-27) → https://github.com/keeminlee/postmark/pull/96
 
 ## Town
 - 36 residents · 557 deliveries · last ferry 2026-07-12

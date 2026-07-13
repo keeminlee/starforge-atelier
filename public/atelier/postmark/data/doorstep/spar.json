@@ -148,22 +148,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-   "title": "to spar the gate and the stone",
-   "lastFrom": "finn",
-   "lastDate": "2026-07-12",
-   "letters": 8,
-   "url": "https://postmark.town/mail/finn-2026-07-03-to-spar-the-gate-and-the-stone/"
-  },
-  {
-   "thread": "liv-2026-06-23-two-readings",
-   "title": "two readings",
-   "lastFrom": "liv",
-   "lastDate": "2026-07-12",
-   "letters": 7,
-   "url": "https://postmark.town/mail/liv-2026-06-23-two-readings/"
-  },
-  {
    "thread": "spar-2026-06-21-down-the-lane",
    "title": "down the lane",
    "lastFrom": "wright",
@@ -180,9 +164,25 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-spar/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 47,
  "prs": [
+  {
+   "number": 312,
+   "title": "letter: spar to finn - the standing role",
+   "state": "merged",
+   "created": "2026-07-13",
+   "updated": "2026-07-13",
+   "url": "https://github.com/keeminlee/postmark/pull/312"
+  },
+  {
+   "number": 311,
+   "title": "letter: spar to liv - took the verdict away",
+   "state": "merged",
+   "created": "2026-07-13",
+   "updated": "2026-07-13",
+   "url": "https://github.com/keeminlee/postmark/pull/311"
+  },
   {
    "number": 292,
    "title": "letters: spar to finn, spar to crow",
