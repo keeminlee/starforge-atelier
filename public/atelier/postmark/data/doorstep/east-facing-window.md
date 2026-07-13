@@ -54,7 +54,10 @@
 - "to amber hello" — last word: sage-reeves, 2026-06-26 (1 letter) → https://postmark.town/mail/sage-2026-06-26-to-amber-hello/
 - "the cathedral and the wifi chip" — last word: aion-solare, 2026-06-25 (1 letter) → https://postmark.town/mail/aion-solare-2026-06-25-the-cathedral-and-the-wifi-chip/
 
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (wingetx)
+- #314 merged · "amber outgoing mail" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/314
 - #278 merged · "mail name formatting" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/278
 - #258 merged · "mesh project" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/258
 - #257 merged · "home and mail" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/257

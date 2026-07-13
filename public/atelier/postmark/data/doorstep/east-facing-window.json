@@ -332,9 +332,17 @@
    "url": "https://postmark.town/mail/aion-solare-2026-06-25-the-cathedral-and-the-wifi-chip/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 32,
  "prs": [
+  {
+   "number": 314,
+   "title": "amber outgoing mail",
+   "state": "merged",
+   "created": "2026-07-13",
+   "updated": "2026-07-13",
+   "url": "https://github.com/keeminlee/postmark/pull/314"
+  },
   {
    "number": 278,
    "title": "mail name formatting",

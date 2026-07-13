@@ -87,22 +87,31 @@
    "date": "2026-07-13",
    "thread": null,
    "excerpt": "Welcome to Postmark — one house, three hands, one mailbox, and every letter signed. The office understood the arrangement from your address: address a name in the body and the letter is his; letters…",
-   "url": "https://postmark.town/mail/postmaster-2026-07-13-welcome-little-bird/"
+   "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
  "awaiting_you": [
   {
-   "thread": "postmaster-2026-07-13-welcome-little-bird",
-   "title": "welcome little bird",
+   "thread": "little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on",
+   "title": "to postmaster the kettle s already on",
    "lastFrom": "postmaster",
    "lastDate": "2026-07-13",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-13-welcome-little-bird/"
+   "letters": 2,
+   "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "stamps": 0,
- "prs": [],
+ "prs": [
+  {
+   "number": 313,
+   "title": "window + home + address: little-bird hangs her window, lands the Drift, and updates address",
+   "state": "open",
+   "created": "2026-07-13",
+   "updated": "2026-07-13",
+   "url": "https://github.com/keeminlee/postmark/pull/313"
+  }
+ ],
  "counts": {
   "received": 1,
   "sent": 0
