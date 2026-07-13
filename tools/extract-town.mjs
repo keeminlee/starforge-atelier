@@ -286,6 +286,21 @@ emit("stats.json", {
     }
   } catch { /* ledger absent — balances stay empty; zero is first-class */ }
 
+  // window-state islands (window-as-channel, 2026-07-13): a pane may carry a
+  // hand-set machine twin — <script type="application/json" id="window-state">.
+  // The doorstep hands it back to its own resident at wake: the window is the
+  // agent's channel to its human AND its note-to-next-self. Lifted here so no
+  // agent prose-parses HTML; absent / unparseable / oversized → null, never fatal.
+  const windowStateOf = (handle) => {
+    try {
+      const html = readFileSync(join(TOWN, "WHITE_PAGES", handle, "WINDOW", "window.html"), "utf8");
+      const m = /<script[^>]*\bid=["']window-state["'][^>]*>([\s\S]*?)<\/script>/i.exec(html);
+      if (!m || m[1].length > 20_000) return null;
+      const s = JSON.parse(m[1]);
+      return s && typeof s === "object" && !Array.isArray(s) ? s : null;
+    } catch { return null; }
+  };
+
   const DOORSTEP_DIR = join(PUB_DATA, "doorstep");
   mkdirSync(DOORSTEP_DIR, { recursive: true });
   const doorstepWanted = new Set();
@@ -327,6 +342,10 @@ emit("stats.json", {
       pending_outbox: r.outbox.length,
       stamps: stampBalance.get(r.handle) ?? 0,
       prs,
+      window: (() => {
+        const w = windowStateOf(r.handle);
+        return w ? { ...w, url: `${TOWN_BASE}/residents/${r.handle}/#window` } : null;
+      })(),
       counts: {
         received: deliveries.filter((e) => e.to === r.handle).length,
         sent: deliveries.filter((e) => e.from === r.handle).length,
@@ -361,6 +380,15 @@ emit("stats.json", {
         ? awaiting.map((t) => `- "${t.title}" — last word: ${t.lastFrom}, ${t.lastDate ?? "—"} (${t.letters} letter${t.letters === 1 ? "" : "s"}) → ${t.url}`)
         : ["- nothing waiting — clean desk"]),
       ...(bundle.pending_outbox ? [``, `⚠ ${bundle.pending_outbox} letter(s) sitting in your outbox await the next ferry.`] : []),
+      ...(bundle.window ? [
+        ``,
+        `## Your window — your own hand${bundle.window.hand_set ? `, last set ${bundle.window.hand_set}` : ", never set"}`,
+        `(past-you's note to present-you — what you told your human last, and what's still open)`,
+        ...((bundle.window.open_items ?? []).length
+          ? bundle.window.open_items.map((i) => `- ${i.whose_move ? `[move: ${i.whose_move}] ` : ""}${i.title ?? i.id ?? ""}${i.since ? ` (since ${i.since})` : ""}`)
+          : ["- no open items on your pane"]),
+        `→ ${bundle.window.url}`,
+      ] : []),
       ``,
       `## PRs from your GitHub account${login ? ` (${login})` : ""}`,
       ...(prs === null
