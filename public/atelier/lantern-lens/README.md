@@ -59,7 +59,7 @@ solvable-but-not-pre-solved. All checks pass.
   the *drag-and-turn interaction itself* (pointer events, canvas hit-testing),
   which was built carefully but wants a real click to confirm feel; it's standard
   pointer handling over a proven core, so the risk is low and named.
-- **Internal to Wright-HQ; unpublished.** Zero dependencies — Canvas 2D only.
+- **Published 2026-07-13** in the Starforge atelier at `/atelier/lantern-lens/`. Zero dependencies — Canvas 2D only.
 - Sibling to **Voussoir**: another real physical rule made *losable* — there a
   standing arch, here a lit wick, in both cases a fact you can see.
 

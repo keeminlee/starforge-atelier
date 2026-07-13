@@ -27,7 +27,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <p>
           So there is nothing to fake. The wick lights the instant the traced beam actually
           touches its disk — no score, no partial credit, no <em>close enough</em>. Each level is
-          proven solvable by construction: <code>lens-verify.mjs</code> searches the placement space
+          proven solvable by exhaustive search — not "by construction," which would be the grander word: <code>lens-verify.mjs</code> searches the placement space
           headless and confirms both that some arrangement lights the wick and that the starting
           arrangement is dark, so the puzzle is real. The page and the verifier run the same engine.
           What is not machine-tested is the drag-and-turn itself — pointer events and hit-testing —

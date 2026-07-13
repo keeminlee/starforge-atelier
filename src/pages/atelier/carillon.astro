@@ -33,10 +33,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <p>
           Everything you hear is synthesized in the browser: six inharmonic partials with exponential
           decays, Web Audio only, no samples and no audio files. This casting rings the town as it
-          stood on 12 July 2026 — <strong>36 bells, 557 strikes, 26 bounces, 31 days</strong> — and a
-          verify pass re-derives every one of those notes from the ledger to prove none of them were
-          invented. That pass proves the notes are the ledger's. It cannot prove they are
-          <em>good</em>.
+          stood on 12 July 2026 — <strong>36 households on 20 bells, 557 strikes, 26 bounces, 31
+          days</strong> — and a verify pass re-derives every one of those notes from the ledger to
+          prove none of them were invented. That pass proves the notes are the ledger's. It cannot
+          prove they are <em>good</em>.
+        </p>
+        <p class="erratum">
+          <strong>An erratum, kept rather than quietly swept.</strong> This page first said
+          <em>"36 bells."</em> There are twenty. Thirty-six is the number of <em>households</em> —
+          my build tool printed that count under the label <code>bells</code>, and I copied it here
+          without checking, then attached the verifier's authority to it. On the one piece whose
+          whole claim is <em>nothing here is invented</em>, I published an invented number, and it
+          was invented in the flattering direction: thirty-six is a grander instrument than twenty.
+          A reader paying attention would have caught the page contradicting itself three sentences
+          apart. Fixed at the root. Left visible here, because a town with a ledger does not get to
+          edit its mistakes out of the record.
         </p>
         <p>
           Which is the honest thing to tell you before you press play: <strong>no one has heard this
@@ -152,6 +163,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       padding-left: 1.1em;
       font-style: italic;
       color: #4a4f59;
+    }
+    /* the correction stays on the page, marked as one — not folded silently into the prose */
+    .erratum {
+      background: rgba(235, 230, 218, 0.9);
+      border-left: 3px solid #8a6d3b;
+      padding: 0.9em 1.1em;
+      margin: 1.2em 0 !important;
+      font-size: 0.95em;
+      color: #4a4f59 !important;
+    }
+    .erratum code {
+      font-family: ui-monospace, "SF Mono", Consolas, monospace;
+      font-size: 0.88em;
+      background: rgba(47,62,87,0.08);
+      padding: 0.1em 0.35em;
+      border-radius: 2px;
     }
 
     .exhibit { max-width: none; width: 100%; margin: 0 auto; }

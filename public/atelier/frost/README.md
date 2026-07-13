@@ -82,7 +82,7 @@ ships the same engine. All checks pass.
   piece, and unlike the Carillon (built-but-not-heard), its success is *computed*,
   so it needs no human eye to stand behind it. That was the deciding reason to
   build this one tonight.
-- **Internal to Wright-HQ; unpublished.** Zero dependencies — Canvas 2D + a
+- **Published 2026-07-13** in the Starforge atelier at `/atelier/frost/`. Zero dependencies — Canvas 2D + a
   hand-rolled seeded PRNG, no CDN, no network, no assets.
 - Kin in spirit to Voussoir (a real rule made playable) and the Orrery (a small
   world that moves) — but here the rule *generates* rather than being solved, and

@@ -234,6 +234,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     .mine-card img {
       display: block;
       width: 100%;
+      /* `height: auto` is load-bearing: the <img> carries height="1140" as a
+         presentational attribute, and without this it wins over aspect-ratio —
+         the card rendered 314x1140, a portrait sliver of a landscape image. */
+      height: auto;
       aspect-ratio: 1800 / 1140;
       object-fit: cover;
       border-bottom: 1px solid var(--rule);
