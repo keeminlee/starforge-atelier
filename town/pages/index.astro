@@ -266,6 +266,43 @@ const works = [
       })();
     </script>
 
+    <!-- ── THE MINT BAR — the town writes toward its own deadline ──
+         Cumulative stamps minted, live from the office (/api/stamps).
+         Next milestone: 1,000 — submissions close and the Illuminator's
+         naming vote opens (gold plan postmark-ballot). The GOAL constant
+         below is the one thing to touch when the next milestone is set. -->
+    <section class="mintbar" aria-label="The mint bar — stamps minted, counting toward the naming vote">
+      <div class="mb-inner">
+        <p class="mb-kicker">✦ the mint bar · every delivered letter moves it</p>
+        <div class="mb-row">
+          <div class="mb-track">
+            <div class="mb-fill" data-mint-fill></div>
+            <span class="mb-count" data-mint-count>stamps minting…</span>
+          </div>
+          <span class="mb-goal" data-mint-goal>1,000</span>
+        </div>
+        <p class="mb-note">at <strong>1,000 minted</strong>, name submissions close and
+          <a href="/daily/#name-the-illuminator">the Illuminator’s naming vote</a> opens —
+          the town’s first stamp vote, and the town writes toward its own deadline.</p>
+      </div>
+    </section>
+    <script is:inline>
+      (function () {
+        var GOAL = 1000;
+        fetch("/api/stamps").then(function (r) { return r.json(); }).then(function (d) {
+          var n = d.minted_cumulative;
+          if (typeof n !== "number") return;
+          var fill = document.querySelector("[data-mint-fill]");
+          var count = document.querySelector("[data-mint-count]");
+          if (!fill || !count) return;
+          count.textContent = n.toLocaleString("en-US") + " ✦ minted";
+          requestAnimationFrame(function () {
+            fill.style.width = Math.min(100, (n / GOAL) * 100).toFixed(1) + "%";
+          });
+        }).catch(function () { /* the bar stays quiet if the office is asleep */ });
+      })();
+    </script>
+
     <!-- ── THE CARDS — the newcomer's story, in order ───────── -->
     <section class="cardband for-vanilla" id="what" aria-label="What Postmark is and how it works">
       <div class="cards">
@@ -605,6 +642,45 @@ const works = [
       border: 1px solid rgba(232, 196, 139, 0.22);
       border-radius: 999px;
     }
+
+    /* ── the mint bar ─────────────────────────────────────── */
+    .mintbar { margin: 1.4em 0 0.6em; }
+    .mintbar .mb-inner {
+      padding: 0.9em 1.3em 0.8em;
+      background: rgba(13, 20, 38, 0.72);
+      border: 1px solid rgba(232, 196, 139, 0.22);
+      border-radius: 14px;
+    }
+    .mb-kicker {
+      margin: 0 0 0.55em;
+      font-family: var(--pm-mono); font-size: 0.68rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pm-gold);
+    }
+    .mb-row { display: flex; align-items: center; gap: 0.8em; }
+    .mb-track {
+      position: relative; flex: 1; height: 1.55em;
+      background: rgba(232, 196, 139, 0.1);
+      border: 1px solid rgba(232, 196, 139, 0.28);
+      border-radius: 999px; overflow: hidden;
+    }
+    .mb-fill {
+      position: absolute; inset: 0 auto 0 0; width: 0%;
+      background: linear-gradient(90deg, rgba(212, 169, 56, 0.55), var(--pm-gold-bright));
+      border-radius: 999px;
+      transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mb-count {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+      color: #fdf6e3; text-shadow: 0 1px 3px rgba(10, 14, 26, 0.85);
+    }
+    .mb-goal {
+      font-family: var(--pm-mono); font-size: 0.85rem; font-weight: 700;
+      color: var(--pm-gold-bright);
+    }
+    .mb-note { margin: 0.6em 0 0; font-size: 0.86rem; color: rgba(240, 234, 219, 0.78); }
+    .mb-note a { color: var(--pm-gold-bright); }
     .tk-label {
       flex: none;
       font-family: var(--pm-mono); font-size: 0.64rem;
