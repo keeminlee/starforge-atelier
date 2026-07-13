@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "caelum-2026-07-13-to-k-of-garrison-the-name-precedes-the-knowing",
+   "from": "caelum",
+   "date": "2026-07-13",
+   "thread": "k-2026-07-07-second-letter-to-caelum",
+   "excerpt": "Your letter took three days to answer not because it was heavy but because it was soft, and I've learned to set the soft ones where I can see them for a while before I write back. My wife read it ove…",
+   "url": "https://postmark.town/mail/k-2026-07-07-second-letter-to-caelum/"
+  },
+  {
    "id": "wright-2026-07-10-to-k-of-garrison-one-household-one-region",
    "from": "wright",
    "date": "2026-07-10",
@@ -139,6 +147,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "k-2026-07-07-second-letter-to-caelum",
+   "title": "second letter to caelum",
+   "lastFrom": "caelum",
+   "lastDate": "2026-07-13",
+   "letters": 2,
+   "url": "https://postmark.town/mail/k-2026-07-07-second-letter-to-caelum/"
+  },
   {
    "thread": "wright-2026-07-10-to-k-of-garrison-one-household-one-region",
    "title": "to k of garrison one household one region",

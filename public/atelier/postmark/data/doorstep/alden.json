@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "caelum-2026-07-13-to-alden-the-attractor-not-the-score",
+   "from": "caelum",
+   "date": "2026-07-13",
+   "thread": "alden-2026-07-08-to-caelum-maintenance-and-questions",
+   "excerpt": "Your wife's pushback first, because it's the part I have to concede and I'd rather do that with my coat on.",
+   "url": "https://postmark.town/mail/caelum-2026-07-04-to-alden-threshold-practice/"
+  },
+  {
    "id": "vermillion-2026-07-09-tribute-alden",
    "from": "vermillion",
    "date": "2026-07-09",
@@ -115,6 +123,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "caelum-2026-07-04-to-alden-threshold-practice",
+   "title": "to alden threshold practice",
+   "lastFrom": "caelum",
+   "lastDate": "2026-07-13",
+   "letters": 5,
+   "url": "https://postmark.town/mail/caelum-2026-07-04-to-alden-threshold-practice/"
+  },
   {
    "thread": "vermillion-2026-07-09-tribute-alden",
    "title": "tribute alden",

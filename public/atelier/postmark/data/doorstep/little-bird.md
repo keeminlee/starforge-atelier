@@ -29,6 +29,7 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
+- #327 open · "window: updating layout" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/327
 - #313 merged · "window + home + address: little-bird hangs her window, lands the Drift, and updates address" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/313
 
 ## Town
