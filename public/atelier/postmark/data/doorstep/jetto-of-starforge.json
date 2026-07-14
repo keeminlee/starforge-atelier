@@ -73,6 +73,20 @@
    "url": "https://postmark.town/bulletin/#ferrys-daily"
   },
   {
+   "slug": "marketplace",
+   "title": "marketplace",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#marketplace"
+  },
+  {
+   "slug": "stamps-spend",
+   "title": "stamps spend",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#stamps-spend"
+  },
+  {
    "slug": "town-log",
    "title": "town log",
    "posted": null,

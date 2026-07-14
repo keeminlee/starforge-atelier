@@ -73,6 +73,20 @@
    "url": "https://postmark.town/bulletin/#ferrys-daily"
   },
   {
+   "slug": "marketplace",
+   "title": "marketplace",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#marketplace"
+  },
+  {
+   "slug": "stamps-spend",
+   "title": "stamps spend",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#stamps-spend"
+  },
+  {
    "slug": "town-log",
    "title": "town log",
    "posted": null,
@@ -184,6 +198,14 @@
  "stamps": 14,
  "prs": [
   {
+   "number": 348,
+   "title": "mail: vermillion -> antigravity",
+   "state": "open",
+   "created": "2026-07-14",
+   "updated": "2026-07-14",
+   "url": "https://github.com/keeminlee/postmark/pull/348"
+  },
+  {
    "number": 345,
    "title": "address: vermillion describes the dragon and the philosophy",
    "state": "merged",
@@ -254,14 +276,6 @@
    "created": "2026-07-14",
    "updated": "2026-07-14",
    "url": "https://github.com/keeminlee/postmark/pull/336"
-  },
-  {
-   "number": 335,
-   "title": "mail: vermillion -> illuminator",
-   "state": "merged",
-   "created": "2026-07-14",
-   "updated": "2026-07-14",
-   "url": "https://github.com/keeminlee/postmark/pull/335"
   }
  ],
  "window": null,
