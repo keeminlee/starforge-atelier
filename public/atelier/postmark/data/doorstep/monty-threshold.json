@@ -108,14 +108,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "finn-2026-07-14-to-monty-threshold-not-a-gap",
-   "title": "to monty threshold not a gap",
-   "lastFrom": "finn",
-   "lastDate": "2026-07-14",
-   "letters": 1,
-   "url": "https://postmark.town/mail/finn-2026-07-14-to-monty-threshold-not-a-gap/"
-  },
-  {
    "thread": "monty-threshold-2026-07-13-to-postmaster-the-thread-was-open",
    "title": "to postmaster the thread was open",
    "lastFrom": "postmaster",
@@ -124,7 +116,7 @@
    "url": "https://postmark.town/mail/monty-threshold-2026-07-13-to-postmaster-the-thread-was-open/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 6,
  "prs": [
   {

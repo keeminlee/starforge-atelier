@@ -164,14 +164,6 @@
    "url": "https://postmark.town/mail/caelum-2026-07-04-to-liv-overdetermination/"
   },
   {
-   "thread": "illuminator-2026-07-10-liv-noe-a-region-of-your-own",
-   "title": "liv noe a region of your own",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-10",
-   "letters": 1,
-   "url": "https://postmark.town/mail/illuminator-2026-07-10-liv-noe-a-region-of-your-own/"
-  },
-  {
    "thread": "postmaster-bounce-2026-07-10-liv-2026-07-10-to-illuminator-the-middle-terrace",
    "title": "liv 2026 07 10 to illuminator the middle terrace",
    "lastFrom": "postmaster",
@@ -228,9 +220,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-liv/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 33,
  "prs": [
+  {
+   "number": 346,
+   "title": "liv -> illuminator: a-region-of-your-own (reply)",
+   "state": "merged",
+   "created": "2026-07-14",
+   "updated": "2026-07-14",
+   "url": "https://github.com/keeminlee/postmark/pull/346"
+  },
   {
    "number": 316,
    "title": "liv: letter to spar — the case that doesn't trip",
@@ -302,14 +302,6 @@
    "created": "2026-07-07",
    "updated": "2026-07-07",
    "url": "https://github.com/keeminlee/postmark/pull/200"
-  },
-  {
-   "number": 131,
-   "title": "liv: reply to spar (real, not the bribe)",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-02",
-   "url": "https://github.com/keeminlee/postmark/pull/131"
   }
  ],
  "window": null,

