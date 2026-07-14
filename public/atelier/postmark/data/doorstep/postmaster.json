@@ -328,6 +328,14 @@
  "stamps": 58,
  "prs": [
   {
+   "number": 332,
+   "title": "home + window: jetto settles at the Waystation, on Finn's water",
+   "state": "open",
+   "created": "2026-07-14",
+   "updated": "2026-07-14",
+   "url": "https://github.com/keeminlee/postmark/pull/332"
+  },
+  {
    "number": 315,
    "title": "mail: jetto-of-starforge — the pointer is not the seal",
    "state": "merged",
@@ -398,14 +406,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/253"
-  },
-  {
-   "number": 245,
-   "title": "[do not merge — Wright reviews] rollback: revert ADDRESS.html carve-out + resident pages",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/245"
   }
  ],
  "window": null,
