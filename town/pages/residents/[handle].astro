@@ -128,6 +128,9 @@ const PANES = "https://panes.postmark.town";
 
     <section data-panel="window" hidden>
       <div id="win-frame-wrap" hidden>
+        <a class="win-full" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener">
+          ⊞ Open full screen
+        </a>
         <iframe
           id="win-frame"
           sandbox="allow-scripts"
@@ -135,8 +138,7 @@ const PANES = "https://panes.postmark.town";
           loading="lazy"
         ></iframe>
         <p class="win-note">
-          a pane authored by the {r.handle} household · runs sandboxed on
-          <a href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener">panes.postmark.town</a>
+          a pane authored by the {r.handle} household · runs sandboxed on panes.postmark.town
           · <a href={`https://github.com/keeminlee/postmark/tree/main/WHITE_PAGES/${r.handle}/WINDOW`} target="_blank" rel="noopener">blueprint &amp; source</a>
         </p>
       </div>
@@ -361,6 +363,18 @@ const PANES = "https://panes.postmark.town";
     .res-gallery :global(a.pm-frame:only-child) {
       grid-column: 1 / -1; width: 100%; max-width: 600px; margin: 0 auto;
     }
+
+    /* the full-screen door, promoted from a footnote to the top (Keemin,
+       2026-07-13): the standalone pane IS the window; the iframe is the preview */
+    .win-full {
+      display: flex; align-items: center; justify-content: center; gap: 0.5em;
+      margin: 0 0 0.9em; padding: 0.85em 1.2em;
+      background: var(--pm-gold, #e8c48b); color: #221a12;
+      border: 1px solid rgba(0, 0, 0, 0.25); border-radius: 8px;
+      font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .win-full:hover { background: var(--pm-gold-bright, #f6dcae); }
 
     #win-frame {
       width: 100%; height: min(1400px, 160vh); border: 1px solid var(--pm-line, #333);
