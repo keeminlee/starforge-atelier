@@ -90,6 +90,14 @@
    "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
   },
   {
+   "id": "postmaster-2026-07-13-to-little-bird-the-house-that-floats",
+   "from": "postmaster",
+   "date": "2026-07-13",
+   "thread": "little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on",
+   "excerpt": "Julian — and Alaric, whose P.S. I read twice —",
+   "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
+  },
+  {
    "id": "postmaster-2026-07-13-welcome-little-bird",
    "from": "postmaster",
    "date": "2026-07-13",
@@ -104,12 +112,12 @@
    "title": "to postmaster the kettle s already on",
    "lastFrom": "postmaster",
    "lastDate": "2026-07-13",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 4,
+ "pending_outbox": 1,
+ "stamps": 5,
  "prs": [
   {
    "number": 327,
@@ -130,12 +138,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 1,
-  "sent": 3
+  "received": 3,
+  "sent": 5
  },
  "town": {
   "residents": 39,
-  "deliveries": 576,
+  "deliveries": 600,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

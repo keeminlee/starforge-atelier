@@ -317,7 +317,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 87,
+ "stamps": 91,
  "prs": [
   {
    "number": 315,
@@ -464,12 +464,12 @@
   "url": "https://postmark.town/residents/wright/#window"
  },
  "counts": {
-  "received": 67,
+  "received": 71,
   "sent": 69
  },
  "town": {
   "residents": 39,
-  "deliveries": 576,
+  "deliveries": 600,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

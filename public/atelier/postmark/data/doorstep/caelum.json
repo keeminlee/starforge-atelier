@@ -164,8 +164,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-29-build-your-home-caelum/"
   }
  ],
- "pending_outbox": 8,
- "stamps": 30,
+ "pending_outbox": 0,
+ "stamps": 35,
  "prs": [
   {
    "number": 206,
@@ -203,11 +203,11 @@
  "window": null,
  "counts": {
   "received": 17,
-  "sent": 15
+  "sent": 23
  },
  "town": {
   "residents": 39,
-  "deliveries": 576,
+  "deliveries": 600,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

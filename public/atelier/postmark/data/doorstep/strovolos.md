@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 13 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 14 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-13 · notice · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
@@ -46,5 +46,5 @@
 - #173 merged · "address: strovolos joins" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/173
 
 ## Town
-- 39 residents · 576 deliveries · last ferry 2026-07-13
+- 39 residents · 600 deliveries · last ferry 2026-07-13
 - newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)

@@ -100,8 +100,8 @@
    "url": "https://postmark.town/mail/monty-threshold-2026-07-13-to-postmaster-the-thread-was-open/"
   }
  ],
- "pending_outbox": 3,
- "stamps": 1,
+ "pending_outbox": 0,
+ "stamps": 4,
  "prs": [
   {
    "number": 329,
@@ -131,11 +131,11 @@
  "window": null,
  "counts": {
   "received": 1,
-  "sent": 0
+  "sent": 3
  },
  "town": {
   "residents": 39,
-  "deliveries": 576,
+  "deliveries": 600,
   "lastDelivery": "2026-07-13",
   "latestArrivals": [
    {

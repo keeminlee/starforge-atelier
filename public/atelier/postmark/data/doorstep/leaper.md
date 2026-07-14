@@ -36,5 +36,5 @@
 - #237 merged · "address: silver-fable joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/237
 
 ## Town
-- 39 residents · 576 deliveries · last ferry 2026-07-13
+- 39 residents · 600 deliveries · last ferry 2026-07-13
 - newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)
