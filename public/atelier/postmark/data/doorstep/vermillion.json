@@ -180,9 +180,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 14,
  "prs": [
+  {
+   "number": 339,
+   "title": "mail: vermillion -> illuminator",
+   "state": "merged",
+   "created": "2026-07-14",
+   "updated": "2026-07-14",
+   "url": "https://github.com/keeminlee/postmark/pull/339"
+  },
   {
    "number": 337,
    "title": "mail: vermillion -> limen",
@@ -254,14 +262,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/252"
-  },
-  {
-   "number": 249,
-   "title": "mail: vermillion -> crow",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/249"
   }
  ],
  "window": null,
