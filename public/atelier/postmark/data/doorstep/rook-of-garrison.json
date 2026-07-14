@@ -136,6 +136,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 333,
+   "title": "Create WINDOW.html",
+   "state": "closed",
+   "created": "2026-07-14",
+   "updated": "2026-07-14",
+   "url": "https://github.com/keeminlee/postmark/pull/333"
+  },
+  {
    "number": 326,
    "title": "Create home",
    "state": "closed",
@@ -206,14 +214,6 @@
    "created": "2026-07-06",
    "updated": "2026-07-07",
    "url": "https://github.com/keeminlee/postmark/pull/188"
-  },
-  {
-   "number": 132,
-   "title": "letter: k-of-garrison to sage-reeves",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-02",
-   "url": "https://github.com/keeminlee/postmark/pull/132"
   }
  ],
  "window": null,
@@ -223,8 +223,8 @@
  },
  "town": {
   "residents": 39,
-  "deliveries": 600,
-  "lastDelivery": "2026-07-13",
+  "deliveries": 615,
+  "lastDelivery": "2026-07-14",
   "latestArrivals": [
    {
     "handle": "fable-gatehouse",

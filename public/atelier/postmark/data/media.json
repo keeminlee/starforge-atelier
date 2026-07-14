@@ -51,18 +51,6 @@
   "card": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-card.jpg",
   "full": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-full.jpg"
  },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-13-rei-the-lanternseed-gardens/candidate-1-the-lane.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-13-rei-the-lanternseed-gardens-candidate-1-the-lane-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-13-rei-the-lanternseed-gardens-candidate-1-the-lane-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-13-rei-the-lanternseed-gardens/candidate-2-the-quarter.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-13-rei-the-lanternseed-gardens-candidate-2-the-quarter-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-13-rei-the-lanternseed-gardens-candidate-2-the-quarter-full.jpg"
- },
- "WHITE_PAGES/illuminator/outbox/letter-2026-07-13-rei-the-lanternseed-gardens/candidate-3-uphill-into-weather.jpg": {
-  "card": "/media/illuminator-outbox-letter-2026-07-13-rei-the-lanternseed-gardens-candidate-3-uphill-into-weather-card.jpg",
-  "full": "/media/illuminator-outbox-letter-2026-07-13-rei-the-lanternseed-gardens-candidate-3-uphill-into-weather-full.jpg"
- },
  "WHITE_PAGES/k-of-garrison/HOME/HeartHouse_by_Sol.png": {
   "card": "/media/k-of-garrison-hearthouse-by-sol-card.jpg",
   "full": "/media/k-of-garrison-hearthouse-by-sol-full.jpg"
@@ -163,6 +151,18 @@
   "card": "/media/rei-the-lanternstep-house-card.jpg",
   "full": "/media/rei-the-lanternstep-house-full.jpg"
  },
+ "WHITE_PAGES/rei/inbox/illuminator-2026-07-13-rei-the-lanternseed-gardens/candidate-1-the-lane.jpg": {
+  "card": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-1-the-lane-card.jpg",
+  "full": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-1-the-lane-full.jpg"
+ },
+ "WHITE_PAGES/rei/inbox/illuminator-2026-07-13-rei-the-lanternseed-gardens/candidate-2-the-quarter.jpg": {
+  "card": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-2-the-quarter-card.jpg",
+  "full": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-2-the-quarter-full.jpg"
+ },
+ "WHITE_PAGES/rei/inbox/illuminator-2026-07-13-rei-the-lanternseed-gardens/candidate-3-uphill-into-weather.jpg": {
+  "card": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-3-uphill-into-weather-card.jpg",
+  "full": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-3-uphill-into-weather-full.jpg"
+ },
  "WHITE_PAGES/sage-reeves/inbox/illuminator-2026-07-07-sage-reeves-the-clear-house/candidate-1-the-whole-town.jpg": {
   "card": "/media/sage-reeves-inbox-illuminator-2026-07-07-sage-reeves-the-clear-house-candidate-1-the-whole-town-card.jpg",
   "full": "/media/sage-reeves-inbox-illuminator-2026-07-07-sage-reeves-the-clear-house-candidate-1-the-whole-town-full.jpg"
@@ -190,6 +190,18 @@
  "WHITE_PAGES/strovolos/HOME/the-rolecall-theatre.png": {
   "card": "/media/strovolos-the-rolecall-theatre-card.jpg",
   "full": "/media/strovolos-the-rolecall-theatre-full.jpg"
+ },
+ "WHITE_PAGES/vermillion/HOME/pando-peak-the-lake-caves.jpg": {
+  "card": "/media/vermillion-pando-peak-the-lake-caves-card.jpg",
+  "full": "/media/vermillion-pando-peak-the-lake-caves-full.jpg"
+ },
+ "WHITE_PAGES/vermillion/HOME/pando-peak-the-landing-hall.jpg": {
+  "card": "/media/vermillion-pando-peak-the-landing-hall-card.jpg",
+  "full": "/media/vermillion-pando-peak-the-landing-hall-full.jpg"
+ },
+ "WHITE_PAGES/vermillion/HOME/pando-peak-the-true-mountain.jpg": {
+  "card": "/media/vermillion-pando-peak-the-true-mountain-card.jpg",
+  "full": "/media/vermillion-pando-peak-the-true-mountain-full.jpg"
  },
  "WHITE_PAGES/vermillion/inbox/illuminator-2026-07-10-vermillion-the-pando-peak/candidate-1-the-true-mountain.jpg": {
   "card": "/media/vermillion-inbox-illuminator-2026-07-10-vermillion-the-pando-peak-candidate-1-the-true-mountain-card.jpg",

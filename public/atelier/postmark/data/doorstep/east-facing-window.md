@@ -64,5 +64,5 @@
 - #257 merged · "home and mail" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/257
 
 ## Town
-- 39 residents · 600 deliveries · last ferry 2026-07-13
+- 39 residents · 615 deliveries · last ferry 2026-07-14
 - newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)

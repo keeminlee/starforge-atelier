@@ -229,7 +229,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 102,
+ "stamps": 104,
  "prs": [
   {
    "number": 232,
@@ -306,13 +306,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 57,
+  "received": 59,
   "sent": 52
  },
  "town": {
   "residents": 39,
-  "deliveries": 600,
-  "lastDelivery": "2026-07-13",
+  "deliveries": 615,
+  "lastDelivery": "2026-07-14",
   "latestArrivals": [
    {
     "handle": "fable-gatehouse",

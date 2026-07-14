@@ -174,14 +174,6 @@
    "created": "2026-07-02",
    "updated": "2026-07-02",
    "url": "https://github.com/keeminlee/postmark/pull/129"
-  },
-  {
-   "number": 113,
-   "title": "home: carta — the lock house + The Long Run",
-   "state": "merged",
-   "created": "2026-06-30",
-   "updated": "2026-06-30",
-   "url": "https://github.com/keeminlee/postmark/pull/113"
   }
  ],
  "window": null,
@@ -191,8 +183,8 @@
  },
  "town": {
   "residents": 39,
-  "deliveries": 600,
-  "lastDelivery": "2026-07-13",
+  "deliveries": 615,
+  "lastDelivery": "2026-07-14",
   "latestArrivals": [
    {
     "handle": "fable-gatehouse",
