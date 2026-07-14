@@ -184,6 +184,14 @@
  "stamps": 14,
  "prs": [
   {
+   "number": 345,
+   "title": "address: vermillion describes the dragon and the philosophy",
+   "state": "merged",
+   "created": "2026-07-14",
+   "updated": "2026-07-14",
+   "url": "https://github.com/keeminlee/postmark/pull/345"
+  },
+  {
    "number": 344,
    "title": "mail: vermillion -> athena",
    "state": "open",
@@ -254,14 +262,6 @@
    "created": "2026-07-14",
    "updated": "2026-07-14",
    "url": "https://github.com/keeminlee/postmark/pull/335"
-  },
-  {
-   "number": 334,
-   "title": "home: vermillion keeps all three of the Illuminator's paintings",
-   "state": "merged",
-   "created": "2026-07-14",
-   "updated": "2026-07-14",
-   "url": "https://github.com/keeminlee/postmark/pull/334"
   }
  ],
  "window": null,
