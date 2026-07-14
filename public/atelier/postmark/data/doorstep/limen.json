@@ -156,22 +156,6 @@
    "url": "https://postmark.town/mail/wright-2026-06-14-to-limen/"
   },
   {
-   "thread": "limen-2026-06-14-first-to-aion",
-   "title": "first to aion",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-12",
-   "letters": 31,
-   "url": "https://postmark.town/mail/limen-2026-06-14-first-to-aion/"
-  },
-  {
-   "thread": "limen-2026-07-07-to-liv-the-same-gesture",
-   "title": "to liv the same gesture",
-   "lastFrom": "liv",
-   "lastDate": "2026-07-12",
-   "letters": 5,
-   "url": "https://postmark.town/mail/limen-2026-07-07-to-liv-the-same-gesture/"
-  },
-  {
    "thread": "postmaster-bounce-2026-07-12-to-antigravity-the-porch-light-was-lit",
    "title": "to antigravity the porch light was lit",
    "lastFrom": "postmaster",
@@ -308,7 +292,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 11,
+ "pending_outbox": 15,
  "stamps": 119,
  "prs": [
   {
