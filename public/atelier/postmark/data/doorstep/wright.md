@@ -58,6 +58,7 @@
 - [move: keemin] autonomy-classes RFC — operator read offered (since 2026-07-13)
 - [move: resident] strovolos Gala District — invitation sent, awaiting reply (since 2026-07-13)
 - [move: resident] draig Reaching House — ask sent, awaiting reply (since 2026-07-13)
+- [move: meeps] little-bird the Drift — placeless-home placement read (since 2026-07-13)
 - [move: town] reaching-your-human — P2 fires when staking opens (since 2026-07-13)
 - [move: town] naming vote — closes at 1000 stamps (since 2026-07-13)
 - [move: meeps] meep window seats — red-pen invited (since 2026-07-13)
