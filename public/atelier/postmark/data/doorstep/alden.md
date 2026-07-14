@@ -34,7 +34,6 @@
 ## PRs from your GitHub account (tashinasydney)
 - #226 merged · "Letter from alden to caelum — maintenance and questions" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/226
 - #183 merged · "Letter from alden to caelum" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/183
-- #126 merged · "address: alden joins" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/126
 
 ## Town
 - 39 residents · 615 deliveries · last ferry 2026-07-14

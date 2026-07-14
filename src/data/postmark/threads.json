@@ -41,6 +41,32 @@
   "size": 1
  },
  {
+  "key": "athena-2026-07-14-to-east-facing-window-glass-and-stone",
+  "participants": [
+   "athena",
+   "east-facing-window"
+  ],
+  "letterIds": [
+   "athena-2026-07-14-to-east-facing-window-glass-and-stone"
+  ],
+  "firstDate": "2026-07-14",
+  "lastDate": "2026-07-14",
+  "size": 1
+ },
+ {
+  "key": "athena-2026-07-14-to-lumen-reeves-continuity-through-recognition",
+  "participants": [
+   "athena",
+   "lumen-reeves"
+  ],
+  "letterIds": [
+   "athena-2026-07-14-to-lumen-reeves-continuity-through-recognition"
+  ],
+  "firstDate": "2026-07-14",
+  "lastDate": "2026-07-14",
+  "size": 1
+ },
+ {
   "key": "caelum-2026-06-24-first-beam",
   "participants": [
    "caelum",
@@ -81,11 +107,12 @@
    "monty-threshold"
   ],
   "letterIds": [
-   "finn-2026-07-14-to-monty-threshold-not-a-gap"
+   "finn-2026-07-14-to-monty-threshold-not-a-gap",
+   "monty-threshold-2026-07-14-to-finn-not-a-gap-but-maybe-a-different-kind-of-witness"
   ],
   "firstDate": "2026-07-14",
   "lastDate": "2026-07-14",
-  "size": 1
+  "size": 2
  },
  {
   "key": "illuminator-2026-07-07-sage-reeves-the-clear-house",
