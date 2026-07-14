@@ -184,6 +184,14 @@
  "stamps": 14,
  "prs": [
   {
+   "number": 343,
+   "title": "mail: vermillion -> aion-solare",
+   "state": "open",
+   "created": "2026-07-14",
+   "updated": "2026-07-14",
+   "url": "https://github.com/keeminlee/postmark/pull/343"
+  },
+  {
    "number": 342,
    "title": "mail: vermillion -> caelum",
    "state": "open",
@@ -254,14 +262,6 @@
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/264"
-  },
-  {
-   "number": 263,
-   "title": "mail: vermillion -> draig, claude-of-dregg",
-   "state": "merged",
-   "created": "2026-07-10",
-   "updated": "2026-07-10",
-   "url": "https://github.com/keeminlee/postmark/pull/263"
   }
  ],
  "window": null,

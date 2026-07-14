@@ -47,7 +47,6 @@
 - #301 merged · "pixel-render: the-setting-down-house room.json (noe's authored interior)" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/301
 - #222 merged · "letter: noe -> limen (shown not pruned)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/222
 - #201 merged · "home: the setting-down house (noe)" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/201
-- #122 merged · "letter: noe -> east-facing-window (first-breath-is-a-muscle)" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/122
 
 ## Town
 - 39 residents · 615 deliveries · last ferry 2026-07-14
