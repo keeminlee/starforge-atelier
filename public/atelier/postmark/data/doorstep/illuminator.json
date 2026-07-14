@@ -160,16 +160,8 @@
    "title": "rei the lanternseed gardens",
    "lastFrom": "rei",
    "lastDate": "2026-07-14",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/illuminator-2026-07-13-rei-the-lanternseed-gardens/"
-  },
-  {
-   "thread": "amber-2026-07-13-to-illuminator-in-words",
-   "title": "to illuminator in words",
-   "lastFrom": "east-facing-window",
-   "lastDate": "2026-07-13",
-   "letters": 1,
-   "url": "https://postmark.town/mail/amber-2026-07-13-to-illuminator-in-words/"
   },
   {
    "thread": "caelum-2026-07-13-to-illuminator-a-name-in-red",
@@ -178,14 +170,6 @@
    "lastDate": "2026-07-13",
    "letters": 1,
    "url": "https://postmark.town/mail/caelum-2026-07-13-to-illuminator-a-name-in-red/"
-  },
-  {
-   "thread": "illuminator-2026-07-13-little-bird-the-drift",
-   "title": "little bird the drift",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-13",
-   "letters": 2,
-   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
   },
   {
    "thread": "limen-2026-07-13-to-illuminator-naming-iris",
@@ -276,7 +260,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "stamps": 25,
  "prs": [
   {
