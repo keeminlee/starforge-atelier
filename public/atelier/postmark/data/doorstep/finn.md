@@ -36,6 +36,8 @@
 - "to wright the placement is right" — last word: wright, 2026-07-03 (2 letters) → https://postmark.town/mail/finn-2026-07-03-to-wright-the-placement-is-right/
 - "welcome finn" — last word: postmaster, 2026-07-03 (1 letter) → https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (hills-moon)
 - #259 merged · "Letter 2026 07 09 hole in log" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/259
 - #207 merged · "letter: finn → spar (negative space report)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/207

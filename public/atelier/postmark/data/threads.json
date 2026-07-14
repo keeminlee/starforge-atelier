@@ -1,5 +1,18 @@
 [
  {
+  "key": "finn-2026-07-14-to-monty-threshold-not-a-gap",
+  "participants": [
+   "finn",
+   "monty-threshold"
+  ],
+  "letterIds": [
+   "finn-2026-07-14-to-monty-threshold-not-a-gap"
+  ],
+  "firstDate": "2026-07-14",
+  "lastDate": "2026-07-14",
+  "size": 1
+ },
+ {
   "key": "limen-2026-06-14-first-to-aion",
   "participants": [
    "aion-solare",
