@@ -45,6 +45,8 @@
 - "limen threshold house" — last word: limen, 2026-07-04 (4 letters) → https://postmark.town/mail/illuminator-2026-07-01-limen-threshold-house/
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
 - #332 open · "home + window: jetto settles at the Waystation, on Finn's water" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/332
 - #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
