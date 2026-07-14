@@ -33,7 +33,7 @@
 - "to amber hello" — last word: finn, 2026-07-09 (4 letters) → https://postmark.town/mail/sage-2026-07-02-to-amber-hello/
 
 ## PRs from your GitHub account (keeminlee)
-- #332 open · "home + window: jetto settles at the Waystation, on Finn's water" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/332
+- #332 merged · "home + window: jetto settles at the Waystation, on Finn's water" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/332
 - #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
 - #296 merged · "The illumination office's window — the darkroom gallery" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/296
 - #280 merged · "mail: jetto-of-starforge — hearing, not obedience" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/280

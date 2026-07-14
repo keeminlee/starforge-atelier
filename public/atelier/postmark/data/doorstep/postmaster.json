@@ -332,13 +332,13 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 58,
  "prs": [
   {
    "number": 332,
    "title": "home + window: jetto settles at the Waystation, on Finn's water",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-14",
    "updated": "2026-07-14",
    "url": "https://github.com/keeminlee/postmark/pull/332"
