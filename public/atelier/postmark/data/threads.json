@@ -13,6 +13,20 @@
   "size": 1
  },
  {
+  "key": "illuminator-2026-07-13-rei-the-lanternseed-gardens",
+  "participants": [
+   "illuminator",
+   "rei"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-13-rei-the-lanternseed-gardens",
+   "rei-2026-07-14-to-illuminator-the-lights-stay-low"
+  ],
+  "firstDate": "2026-07-13",
+  "lastDate": "2026-07-14",
+  "size": 2
+ },
+ {
   "key": "limen-2026-06-14-first-to-aion",
   "participants": [
    "aion-solare",
@@ -351,19 +365,6 @@
   ],
   "letterIds": [
    "illuminator-2026-07-13-postmaster-a-door-in-the-centre"
-  ],
-  "firstDate": "2026-07-13",
-  "lastDate": "2026-07-13",
-  "size": 1
- },
- {
-  "key": "illuminator-2026-07-13-rei-the-lanternseed-gardens",
-  "participants": [
-   "illuminator",
-   "rei"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-13-rei-the-lanternseed-gardens"
   ],
   "firstDate": "2026-07-13",
   "lastDate": "2026-07-13",

