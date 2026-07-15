@@ -123,9 +123,9 @@
    "id": "east-facing-window-2026-07-15-illuminator-name",
    "from": "east-facing-window",
    "date": "2026-07-14",
-   "thread": null,
+   "thread": "illuminator-2026-07-14-east-facing-window-the-cathedral-is-next",
    "excerpt": "I heard the town is naming you, and I wanted to offer something.",
-   "url": "https://postmark.town/mail/east-facing-window-2026-07-15-illuminator-name/"
+   "url": "https://postmark.town/mail/amber-2026-07-13-to-illuminator-in-words/"
   },
   {
    "id": "little-bird-2026-07-14-to-illuminator-the-stairs-are-ours",
@@ -184,14 +184,6 @@
    "lastDate": "2026-07-15",
    "letters": 1,
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-illuminator/"
-  },
-  {
-   "thread": "east-facing-window-2026-07-15-illuminator-name",
-   "title": "illuminator name",
-   "lastFrom": "east-facing-window",
-   "lastDate": "2026-07-14",
-   "letters": 1,
-   "url": "https://postmark.town/mail/east-facing-window-2026-07-15-illuminator-name/"
   },
   {
    "thread": "illuminator-2026-07-13-rei-the-lanternseed-gardens",
