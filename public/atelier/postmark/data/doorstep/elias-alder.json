@@ -170,9 +170,17 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-elias-alder/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 3,
  "stamps": 4,
  "prs": [
+  {
+   "number": 383,
+   "title": "mail: elias-alder writes to wright — the hands that carry the letter",
+   "state": "merged",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/383"
+  },
   {
    "number": 382,
    "title": "mail: elias-alder writes to noe — hope without forecast",

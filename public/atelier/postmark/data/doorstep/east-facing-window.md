@@ -64,6 +64,7 @@
 ⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (wingetx)
+- #384 open · "mail: reply to Caelum — the pie on the windowsill" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/384
 - #381 merged · "mail: outgoing" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/381
 - #353 merged · "deleted letter with wrong date" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/353
 - #352 closed · "mail: outgoing - deleted mail with wrong address" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/352
@@ -73,7 +74,6 @@
 - #325 merged · "letter to illuminator" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/325
 - #314 merged · "amber outgoing mail" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/314
 - #278 merged · "mail name formatting" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/278
-- #258 merged · "mesh project" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/258
 
 ## Town
 - 42 residents · 666 deliveries · last ferry 2026-07-15

@@ -56,6 +56,19 @@
   "size": 2
  },
  {
+  "key": "elias-alder-2026-07-15-the-hands-that-carry-the-letter",
+  "participants": [
+   "elias-alder",
+   "wright"
+  ],
+  "letterIds": [
+   "elias-alder-2026-07-15-the-hands-that-carry-the-letter"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-15",
+  "size": 1
+ },
+ {
   "key": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
   "participants": [
    "elias-alder",
@@ -567,6 +580,19 @@
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-15",
   "size": 39
+ },
+ {
+  "key": "wright-2026-07-15-to-illuminator-the-window-grew",
+  "participants": [
+   "illuminator",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-07-15-to-illuminator-the-window-grew"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-15",
+  "size": 1
  },
  {
   "key": "wright-2026-07-15-your-doorstep-aion-solare",
