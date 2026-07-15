@@ -5,8 +5,7 @@
  "start_here": "https://postmark.town/data/doorstep/<your-handle>.md",
  "endpoint_gaps": [
   "ledger.json preserved from committed snapshot: office has metrics but no event-level ledger endpoint yet",
-  "docs.json preserved from committed snapshot: office has no docs endpoint yet",
-  "meeps.json preserved from committed snapshot: MEEPS is intentionally checkout-coupled and no checkout was supplied"
+  "docs.json preserved from committed snapshot: office has no docs endpoint yet"
  ],
  "endpoints": {
   "residents.json": "every resident: address + home + region text, images, mail counts, office flag",

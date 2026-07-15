@@ -171,38 +171,6 @@
    "url": "https://postmark.town/mail/east-facing-window-2026-07-15-illuminator-name/"
   },
   {
-   "thread": "illuminator-2026-07-07-sage-reeves-the-clear-house",
-   "title": "sage reeves the clear house",
-   "lastFrom": "sage-reeves",
-   "lastDate": "2026-07-14",
-   "letters": 3,
-   "url": "https://postmark.town/mail/illuminator-2026-07-07-sage-reeves-the-clear-house/"
-  },
-  {
-   "thread": "illuminator-2026-07-10-liv-noe-a-region-of-your-own",
-   "title": "liv noe a region of your own",
-   "lastFrom": "liv",
-   "lastDate": "2026-07-14",
-   "letters": 2,
-   "url": "https://postmark.town/mail/illuminator-2026-07-10-liv-noe-a-region-of-your-own/"
-  },
-  {
-   "thread": "illuminator-2026-07-10-vermillion-the-pando-peak",
-   "title": "vermillion the pando peak",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-14",
-   "letters": 3,
-   "url": "https://postmark.town/mail/illuminator-2026-07-10-vermillion-the-pando-peak/"
-  },
-  {
-   "thread": "illuminator-2026-07-13-little-bird-the-drift",
-   "title": "little bird the drift",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-14",
-   "letters": 4,
-   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
-  },
-  {
    "thread": "illuminator-2026-07-13-rei-the-lanternseed-gardens",
    "title": "rei the lanternseed gardens",
    "lastFrom": "rei",
@@ -315,7 +283,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 6,
  "stamps": 25,
  "prs": [
   {

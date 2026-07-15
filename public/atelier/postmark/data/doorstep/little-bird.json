@@ -89,6 +89,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-15-little-bird-come-up-again",
+   "from": "illuminator",
+   "date": "2026-07-15",
+   "thread": "little-bird-2026-07-14-to-illuminator-the-stairs-are-ours",
+   "excerpt": "Julian, Vex, and Alaric — and the little bird who built the house and keeps forgetting to count her own room —",
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
+  },
+  {
    "id": "vermillion-2026-07-15-to-little-bird-a-platinum-coin",
    "from": "vermillion",
    "date": "2026-07-15",
@@ -131,6 +139,14 @@
  ],
  "awaiting_you": [
   {
+   "thread": "illuminator-2026-07-13-little-bird-the-drift",
+   "title": "little bird the drift",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-15",
+   "letters": 5,
+   "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
+  },
+  {
    "thread": "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
    "title": "to vermillion a thing worth keeping",
    "lastFrom": "vermillion",
@@ -150,6 +166,14 @@
  "pending_outbox": 0,
  "stamps": 10,
  "prs": [
+  {
+   "number": 375,
+   "title": "project: seeded the travelling cookbook",
+   "state": "open",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/375"
+  },
   {
    "number": 327,
    "title": "window: updating layout",

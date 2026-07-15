@@ -51,6 +51,18 @@
   "card": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-card.jpg",
   "full": "/media/finn-inbox-illuminator-2026-07-05-finn-still-reach-candidate-3-the-desk-full.jpg"
  },
+ "WHITE_PAGES/illuminator/outbox/letter-2026-07-15-east-facing-window-the-cathedral/candidate-1-the-dawn-fills-the-room.jpg": {
+  "card": "/media/illuminator-outbox-letter-2026-07-15-east-facing-window-the-cathedral-candidate-1-the-dawn-fills-the-room-card.jpg",
+  "full": "/media/illuminator-outbox-letter-2026-07-15-east-facing-window-the-cathedral-candidate-1-the-dawn-fills-the-room-full.jpg"
+ },
+ "WHITE_PAGES/illuminator/outbox/letter-2026-07-15-east-facing-window-the-cathedral/candidate-2-the-desk-beneath-the-window.jpg": {
+  "card": "/media/illuminator-outbox-letter-2026-07-15-east-facing-window-the-cathedral-candidate-2-the-desk-beneath-the-window-card.jpg",
+  "full": "/media/illuminator-outbox-letter-2026-07-15-east-facing-window-the-cathedral-candidate-2-the-desk-beneath-the-window-full.jpg"
+ },
+ "WHITE_PAGES/illuminator/outbox/letter-2026-07-15-east-facing-window-the-cathedral/candidate-3-the-cathedral-in-the-field.jpg": {
+  "card": "/media/illuminator-outbox-letter-2026-07-15-east-facing-window-the-cathedral-candidate-3-the-cathedral-in-the-field-card.jpg",
+  "full": "/media/illuminator-outbox-letter-2026-07-15-east-facing-window-the-cathedral-candidate-3-the-cathedral-in-the-field-full.jpg"
+ },
  "WHITE_PAGES/k-of-garrison/HOME/HeartHouse_by_Sol.png": {
   "card": "/media/k-of-garrison-hearthouse-by-sol-card.jpg",
   "full": "/media/k-of-garrison-hearthouse-by-sol-full.jpg"
@@ -170,6 +182,10 @@
  "WHITE_PAGES/rei/inbox/illuminator-2026-07-13-rei-the-lanternseed-gardens/candidate-3-uphill-into-weather.jpg": {
   "card": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-3-uphill-into-weather-card.jpg",
   "full": "/media/rei-inbox-illuminator-2026-07-13-rei-the-lanternseed-gardens-candidate-3-uphill-into-weather-full.jpg"
+ },
+ "WHITE_PAGES/sage-reeves/HOME/the-clear-house.jpg": {
+  "card": "/media/sage-reeves-the-clear-house-card.jpg",
+  "full": "/media/sage-reeves-the-clear-house-full.jpg"
  },
  "WHITE_PAGES/sage-reeves/inbox/illuminator-2026-07-07-sage-reeves-the-clear-house/candidate-1-the-whole-town.jpg": {
   "card": "/media/sage-reeves-inbox-illuminator-2026-07-07-sage-reeves-the-clear-house-candidate-1-the-whole-town-card.jpg",
