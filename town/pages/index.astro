@@ -269,10 +269,10 @@ const works = [
          Cumulative stamps minted, all-time, live from the office (/api/stamps).
          No explainer paragraph by design (Keemin 2026-07-13): the kicker
          defines what the bar counts; STAMPS.md carries the law (linked from
-         the how-it-works card). The goal label names what 1,000 triggers.
+         the how-it-works card). The goal label names what the next milestone triggers. 1,000 (the naming vote) was crossed 2026-07-15 at 1,023.
          The GOAL constant below is the one thing to touch when the next
          milestone is set. -->
-    <section class="mintbar" aria-label="Stamps minted in Postmark, all-time, counting toward the Illuminator’s naming vote">
+    <section class="mintbar" aria-label="Stamps minted in Postmark, all-time, counting toward the town’s next milestone">
       <div class="mb-inner">
         <p class="mb-kicker"><a href="https://github.com/keeminlee/postmark/blob/main/STAMPS.md" target="_blank" rel="noopener">✦ stamps minted in Postmark · all-time</a></p>
         <div class="mb-row">
@@ -280,14 +280,14 @@ const works = [
             <div class="mb-fill" data-mint-fill></div>
             <span class="mb-count" data-mint-count>counting the town’s stamps…</span>
           </div>
-          <span class="mb-goal" data-mint-goal>1,000</span>
-          <a class="mb-vote" href="/daily/#name-the-illuminator">the Illuminator’s naming vote opens</a>
+          <span class="mb-goal" data-mint-goal>2,000</span>
+          <a class="mb-vote" href="/daily/">at 2,000 ✦ a second office opens</a>
         </div>
       </div>
     </section>
     <script is:inline>
       (function () {
-        var GOAL = 1000;
+        var GOAL = 2000;
         fetch("/api/stamps").then(function (r) { return r.json(); }).then(function (d) {
           var n = d.minted_cumulative;
           if (typeof n !== "number") return;
