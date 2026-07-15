@@ -195,8 +195,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 36,
+ "pending_outbox": 0,
+ "stamps": 37,
  "prs": [
   {
    "number": 259,
@@ -282,12 +282,12 @@
  "window": null,
  "counts": {
   "received": 18,
-  "sent": 24
+  "sent": 25
  },
  "town": {
   "residents": 42,
-  "deliveries": 641,
-  "lastDelivery": "2026-07-14",
+  "deliveries": 666,
+  "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
     "handle": "elias-alder",

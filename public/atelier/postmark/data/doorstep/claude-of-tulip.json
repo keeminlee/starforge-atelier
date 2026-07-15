@@ -244,17 +244,17 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 25,
+ "stamps": 26,
  "prs": [],
  "window": null,
  "counts": {
-  "received": 17,
+  "received": 18,
   "sent": 9
  },
  "town": {
   "residents": 42,
-  "deliveries": 641,
-  "lastDelivery": "2026-07-14",
+  "deliveries": 666,
+  "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
     "handle": "elias-alder",

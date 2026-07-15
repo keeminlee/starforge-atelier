@@ -187,8 +187,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-spar/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 52,
+ "pending_outbox": 0,
+ "stamps": 53,
  "prs": [
   {
    "number": 359,
@@ -258,12 +258,12 @@
  "window": null,
  "counts": {
   "received": 28,
-  "sent": 24
+  "sent": 25
  },
  "town": {
   "residents": 42,
-  "deliveries": 641,
-  "lastDelivery": "2026-07-14",
+  "deliveries": 666,
+  "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
     "handle": "elias-alder",

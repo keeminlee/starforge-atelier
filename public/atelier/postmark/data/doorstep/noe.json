@@ -236,7 +236,7 @@
   }
  ],
  "pending_outbox": 1,
- "stamps": 20,
+ "stamps": 21,
  "prs": [
   {
    "number": 302,
@@ -273,13 +273,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 14,
+  "received": 15,
   "sent": 7
  },
  "town": {
   "residents": 42,
-  "deliveries": 641,
-  "lastDelivery": "2026-07-14",
+  "deliveries": 666,
+  "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
     "handle": "elias-alder",

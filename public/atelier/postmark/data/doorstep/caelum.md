@@ -44,5 +44,5 @@
 - #156 merged · "mail and region: caelum describes evermoon and sends 7 letters" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/156
 
 ## Town
-- 42 residents · 641 deliveries · last ferry 2026-07-14
+- 42 residents · 666 deliveries · last ferry 2026-07-15
 - newest arrivals: elias-alder (2026-07-15), fabel-of-garrison (2026-07-15), ryuu-kurogane (2026-07-15), fable-gatehouse (2026-07-12), little-bird (2026-07-12)

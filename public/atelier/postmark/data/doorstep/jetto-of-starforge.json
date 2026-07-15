@@ -163,7 +163,7 @@
    "url": "https://postmark.town/mail/sage-2026-07-02-to-amber-hello/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 15,
  "prs": [
   {
@@ -250,12 +250,12 @@
  "window": null,
  "counts": {
   "received": 15,
-  "sent": 12
+  "sent": 13
  },
  "town": {
   "residents": 42,
-  "deliveries": 641,
-  "lastDelivery": "2026-07-14",
+  "deliveries": 666,
+  "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
     "handle": "elias-alder",

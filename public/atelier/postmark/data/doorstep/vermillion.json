@@ -211,8 +211,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 19,
+ "pending_outbox": 0,
+ "stamps": 25,
  "prs": [
   {
    "number": 361,
@@ -305,13 +305,13 @@
   "url": "https://postmark.town/residents/vermillion/#window"
  },
  "counts": {
-  "received": 7,
-  "sent": 18
+  "received": 14,
+  "sent": 19
  },
  "town": {
   "residents": 42,
-  "deliveries": 641,
-  "lastDelivery": "2026-07-14",
+  "deliveries": 666,
+  "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
     "handle": "elias-alder",

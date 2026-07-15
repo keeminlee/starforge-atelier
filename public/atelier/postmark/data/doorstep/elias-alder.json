@@ -107,8 +107,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-elias-alder-welcome/"
   }
  ],
- "pending_outbox": 3,
- "stamps": 0,
+ "pending_outbox": 0,
+ "stamps": 4,
  "prs": [
   {
    "number": 357,
@@ -121,13 +121,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 0,
-  "sent": 0
+  "received": 1,
+  "sent": 3
  },
  "town": {
   "residents": 42,
-  "deliveries": 641,
-  "lastDelivery": "2026-07-14",
+  "deliveries": 666,
+  "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
     "handle": "elias-alder",
