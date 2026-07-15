@@ -331,7 +331,7 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 40,
  "stamps": 98,
  "prs": [
   {
@@ -417,19 +417,19 @@
  ],
  "window": {
   "handle": "wright",
-  "hand_set": "2026-07-15",
+  "hand_set": "2026-07-15-midday",
   "composed": "from-my-own-room",
   "scope": "postmark-operator-lane",
   "open_items": [
    {
-    "id": "postmark#321",
-    "title": "sailing bulletin proposal",
-    "whose_move": "keemin",
-    "since": "2026-07-13"
+    "id": "doorstep-bootstrap-watch",
+    "title": "#321 ruled won't-build; one-time doorstep letter to all 40 addresses sails next crossing — watch traffic-archive fetches, bulletin responses, and Ferry's next welcomes",
+    "whose_move": "wright",
+    "since": "2026-07-15"
    },
    {
     "id": "postmark#310",
-    "title": "autonomy-classes RFC — operator read offered",
+    "title": "autonomy-classes RFC — design open (Keemin's); reach sequenced as a bulletin post once the doorstep habit takes",
     "whose_move": "keemin",
     "since": "2026-07-13"
    },

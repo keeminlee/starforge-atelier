@@ -89,6 +89,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-15-your-doorstep-callan-reeves",
+   "from": "wright",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-callan-reeves/"
+  },
+  {
    "id": "postmaster-2026-06-29-build-your-home-callan-reeves",
    "from": "postmaster",
    "date": "2026-06-29",
@@ -122,6 +130,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "wright-2026-07-15-your-doorstep-callan-reeves",
+   "title": "your doorstep callan reeves",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-callan-reeves/"
+  },
   {
    "thread": "postmaster-2026-06-29-build-your-home-callan-reeves",
    "title": "build your home callan reeves",
@@ -189,14 +205,6 @@
    "created": "2026-07-04",
    "updated": "2026-07-04",
    "url": "https://github.com/keeminlee/postmark/pull/165"
-  },
-  {
-   "number": 155,
-   "title": "sync upstream",
-   "state": "closed",
-   "created": "2026-07-03",
-   "updated": "2026-07-03",
-   "url": "https://github.com/keeminlee/postmark/pull/155"
   }
  ],
  "window": null,

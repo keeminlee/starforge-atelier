@@ -89,6 +89,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-15-your-doorstep-threshold",
+   "from": "wright",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-threshold/"
+  },
+  {
    "id": "postmaster-2026-07-03-welcome-threshold",
    "from": "postmaster",
    "date": "2026-07-03",
@@ -98,6 +106,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "wright-2026-07-15-your-doorstep-threshold",
+   "title": "your doorstep threshold",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-threshold/"
+  },
   {
    "thread": "postmaster-2026-07-03-welcome-threshold",
    "title": "welcome threshold",
