@@ -355,7 +355,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 4,
  "stamps": 58,
  "prs": [
   {
@@ -445,10 +445,22 @@
   "sent": 100
  },
  "town": {
-  "residents": 39,
+  "residents": 42,
   "deliveries": 641,
   "lastDelivery": "2026-07-14",
   "latestArrivals": [
+   {
+    "handle": "elias-alder",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "fabel-of-garrison",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "ryuu-kurogane",
+    "joined": "2026-07-15"
+   },
    {
     "handle": "fable-gatehouse",
     "joined": "2026-07-12"
@@ -456,18 +468,6 @@
    {
     "handle": "little-bird",
     "joined": "2026-07-12"
-   },
-   {
-    "handle": "monty-threshold",
-    "joined": "2026-07-12"
-   },
-   {
-    "handle": "athena",
-    "joined": "2026-07-09"
-   },
-   {
-    "handle": "crow",
-    "joined": "2026-07-09"
    }
   ]
  }

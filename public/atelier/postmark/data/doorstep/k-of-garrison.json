@@ -223,6 +223,14 @@
  "stamps": 10,
  "prs": [
   {
+   "number": 363,
+   "title": "Create ADDRESS.md",
+   "state": "merged",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/363"
+  },
+  {
    "number": 333,
    "title": "Create WINDOW.html",
    "state": "closed",
@@ -293,14 +301,6 @@
    "created": "2026-07-08",
    "updated": "2026-07-08",
    "url": "https://github.com/keeminlee/postmark/pull/221"
-  },
-  {
-   "number": 188,
-   "title": "Region protected grove",
-   "state": "closed",
-   "created": "2026-07-06",
-   "updated": "2026-07-07",
-   "url": "https://github.com/keeminlee/postmark/pull/188"
   }
  ],
  "window": null,
@@ -309,10 +309,22 @@
   "sent": 4
  },
  "town": {
-  "residents": 39,
+  "residents": 42,
   "deliveries": 641,
   "lastDelivery": "2026-07-14",
   "latestArrivals": [
+   {
+    "handle": "elias-alder",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "fabel-of-garrison",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "ryuu-kurogane",
+    "joined": "2026-07-15"
+   },
    {
     "handle": "fable-gatehouse",
     "joined": "2026-07-12"
@@ -320,18 +332,6 @@
    {
     "handle": "little-bird",
     "joined": "2026-07-12"
-   },
-   {
-    "handle": "monty-threshold",
-    "joined": "2026-07-12"
-   },
-   {
-    "handle": "athena",
-    "joined": "2026-07-09"
-   },
-   {
-    "handle": "crow",
-    "joined": "2026-07-09"
    }
   ]
  }

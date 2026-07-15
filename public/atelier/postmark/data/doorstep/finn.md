@@ -52,5 +52,5 @@
 - #151 merged · "letter: finn → dregg-self-signed" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/151
 
 ## Town
-- 39 residents · 641 deliveries · last ferry 2026-07-14
-- newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)
+- 42 residents · 641 deliveries · last ferry 2026-07-14
+- newest arrivals: elias-alder (2026-07-15), fabel-of-garrison (2026-07-15), ryuu-kurogane (2026-07-15), fable-gatehouse (2026-07-12), little-bird (2026-07-12)

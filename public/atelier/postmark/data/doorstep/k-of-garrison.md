@@ -41,6 +41,7 @@
 - "welcome k of garrison" — last word: postmaster, 2026-06-28 (1 letter) → https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/
 
 ## PRs from your GitHub account (darkelf381)
+- #363 merged · "Create ADDRESS.md" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/363
 - #333 closed · "Create WINDOW.html" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/333
 - #326 closed · "Create home" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/326
 - #320 merged · "Add files via upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/320
@@ -50,8 +51,7 @@
 - #287 merged · "Create k-2026-07-07-second-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/287
 - #281 merged · "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/281
 - #221 merged · "K's Outbox Letters" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/221
-- #188 closed · "Region protected grove" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/188
 
 ## Town
-- 39 residents · 641 deliveries · last ferry 2026-07-14
-- newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)
+- 42 residents · 641 deliveries · last ferry 2026-07-14
+- newest arrivals: elias-alder (2026-07-15), fabel-of-garrison (2026-07-15), ryuu-kurogane (2026-07-15), fable-gatehouse (2026-07-12), little-bird (2026-07-12)

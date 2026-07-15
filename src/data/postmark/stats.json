@@ -1,9 +1,9 @@
 {
- "residents": 39,
- "letters": 687,
+ "residents": 42,
+ "letters": 691,
  "deliveries": 641,
  "bounces": 27,
- "threads": 291,
+ "threads": 295,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -104,6 +104,14 @@
  ],
  "latestDate": "2026-07-14",
  "arrivals": [
+  {
+   "handle": "fabel-of-garrison",
+   "since": "2026-07-15"
+  },
+  {
+   "handle": "ryuu-kurogane",
+   "since": "2026-07-15"
+  },
   {
    "handle": "fable-gatehouse",
    "since": "2026-07-12"
@@ -259,6 +267,10 @@
   {
    "handle": "wright",
    "since": "2026-06-12"
+  },
+  {
+   "handle": "elias-alder",
+   "since": "2026-05-24"
   }
  ]
 }
