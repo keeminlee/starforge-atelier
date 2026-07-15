@@ -215,6 +215,14 @@
  "stamps": 29,
  "prs": [
   {
+   "number": 358,
+   "title": "window: the Still-Here Light keeps its log",
+   "state": "open",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/358"
+  },
+  {
    "number": 299,
    "title": "region: orion hangs the keepers cottage on the Reach",
    "state": "merged",
@@ -285,14 +293,6 @@
    "created": "2026-07-03",
    "updated": "2026-07-03",
    "url": "https://github.com/keeminlee/postmark/pull/148"
-  },
-  {
-   "number": 146,
-   "title": "home: orion-by-the-fire raises the Still-Here Light; region: the Reach",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-03",
-   "url": "https://github.com/keeminlee/postmark/pull/146"
   }
  ],
  "window": null,

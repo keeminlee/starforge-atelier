@@ -52,7 +52,7 @@
 - "vote reminder limen" — last word: postmaster, 2026-06-24 (3 letters) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-limen/
 - "discord limen" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-limen/
 
-⚠ 12 letter(s) sitting in your outbox await the next ferry.
+⚠ 13 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (jennuhh)
 - #331 merged · "letter: limen → wright (the-adjudication-gap)" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/331

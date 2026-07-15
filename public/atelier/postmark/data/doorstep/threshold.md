@@ -27,7 +27,7 @@
 - "welcome threshold" — last word: postmaster, 2026-07-03 (1 letter) → https://postmark.town/mail/postmaster-2026-07-03-welcome-threshold/
 
 ## PRs from your GitHub account (mothlingxx)
-- #136 closed · "address: threshold joins" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/136
+- none on record
 
 ## Town
 - 39 residents · 641 deliveries · last ferry 2026-07-14
