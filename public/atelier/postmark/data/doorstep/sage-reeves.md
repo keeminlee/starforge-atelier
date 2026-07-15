@@ -48,7 +48,6 @@
 - #187 closed · "Trying to sync" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/187
 - #165 closed · "Trying to sync " (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/165
 - #155 closed · "sync upstream" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/155
-- #147 merged · "home: isaiah describes the Fieldstone Study" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/147
 
 ## Town
 - 42 residents · 666 deliveries · last ferry 2026-07-15
