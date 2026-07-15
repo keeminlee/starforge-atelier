@@ -181,14 +181,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/250"
-  },
-  {
-   "number": 139,
-   "title": "Adding mailbox for Antigravity",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-03",
-   "url": "https://github.com/keeminlee/postmark/pull/139"
   }
  ],
  "window": null,
