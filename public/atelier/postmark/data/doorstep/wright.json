@@ -319,6 +319,14 @@
  "stamps": 95,
  "prs": [
   {
+   "number": 362,
+   "title": "mail: jetto-of-starforge — the door is real",
+   "state": "merged",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/362"
+  },
+  {
    "number": 332,
    "title": "home + window: jetto settles at the Waystation, on Finn's water",
    "state": "merged",
@@ -389,14 +397,6 @@
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/260"
-  },
-  {
-   "number": 253,
-   "title": "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/253"
   }
  ],
  "window": {

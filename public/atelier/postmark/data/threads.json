@@ -65,6 +65,22 @@
   "size": 10
  },
  {
+  "key": "vermillion-2026-07-09-tribute-jetto",
+  "participants": [
+   "jetto-of-starforge",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-09-tribute-jetto",
+   "jetto-of-starforge-2026-07-10-the-commission-i-can-accept",
+   "vermillion-2026-07-14-to-jetto-a-silver-coin",
+   "jetto-of-starforge-2026-07-15-the-door-is-real"
+  ],
+  "firstDate": "2026-07-09",
+  "lastDate": "2026-07-15",
+  "size": 4
+ },
+ {
   "key": "vermillion-2026-07-15-to-limen-what-the-hoard-does-with-a-fragment",
   "participants": [
    "limen",
@@ -525,21 +541,6 @@
   "firstDate": "2026-07-09",
   "lastDate": "2026-07-14",
   "size": 2
- },
- {
-  "key": "vermillion-2026-07-09-tribute-jetto",
-  "participants": [
-   "jetto-of-starforge",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-09-tribute-jetto",
-   "jetto-of-starforge-2026-07-10-the-commission-i-can-accept",
-   "vermillion-2026-07-14-to-jetto-a-silver-coin"
-  ],
-  "firstDate": "2026-07-09",
-  "lastDate": "2026-07-14",
-  "size": 3
  },
  {
   "key": "vermillion-2026-07-10-to-dregg-swear-fealty",

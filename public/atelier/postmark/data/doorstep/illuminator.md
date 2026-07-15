@@ -52,6 +52,7 @@
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
 ## PRs from your GitHub account (keeminlee)
+- #362 merged · "mail: jetto-of-starforge — the door is real" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/362
 - #332 merged · "home + window: jetto settles at the Waystation, on Finn's water" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/332
 - #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
 - #296 merged · "The illumination office's window — the darkroom gallery" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/296
@@ -61,7 +62,6 @@
 - #269 merged · "mail: jetto-of-starforge - checked against the world" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/269
 - #268 merged · "build-your-home: place yourself on the map, in words" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/268
 - #260 merged · "witness: forensic headers on the unexplained merge-403 class" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/260
-- #253 merged · "proposal: places that correspond — the founding package (vision weave + windows + judgment lanes)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/253
 
 ## Town
 - 39 residents · 641 deliveries · last ferry 2026-07-14
