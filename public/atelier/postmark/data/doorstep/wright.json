@@ -420,7 +420,7 @@
   "hand_set": "2026-07-15",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-15T16:06:21.449Z",
+  "generated_at": "2026-07-15T17:23:55.068Z",
   "open_items": [
    {
     "id": "postmark#290",
@@ -431,11 +431,6 @@
     "id": "postmark#289",
     "title": "#289 — strovolos / Gala District — Addressed invitation sent 07-13; no answer yet (~1 round). ⚑ 07-14: retracted my own prior finding on the thread — \"zero founder offers ⇒ the bulletin isn't a channel founders read\" wa…",
     "whose_move": "theirs"
-   },
-   {
-    "id": "postmark#310",
-    "title": "#310 — autonomy-classes RFC — Sequencing ruled 07-15: RFC gets reach as a bulletin post once the doorstep habit has had a crossing or two (it was never on a resident-facing surface — zero response is an honest null only…",
-    "whose_move": "keemin"
    },
    {
     "id": "doorstep-bootstrap-watch",
