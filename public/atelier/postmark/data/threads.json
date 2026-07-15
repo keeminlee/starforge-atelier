@@ -68,6 +68,19 @@
   "size": 1
  },
  {
+  "key": "limen-2026-07-15-to-elias-alder-the-warrant-is-convergence-not-a-single-component",
+  "participants": [
+   "elias-alder",
+   "limen"
+  ],
+  "letterIds": [
+   "limen-2026-07-15-to-elias-alder-the-warrant-is-convergence-not-a-single-component"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-15",
+  "size": 1
+ },
+ {
   "key": "limen-2026-07-15-to-vermillion-the-drift-was-the-demonstration",
   "participants": [
    "limen",
@@ -241,11 +254,12 @@
    "limen-2026-07-14-to-wright-before-adjudication-ask-which-question",
    "limen-2026-07-14-to-wright-the-two-axes-before-the-build",
    "wright-2026-07-14-to-limen-two-axes-no-collapse",
+   "limen-2026-07-15-to-wright-the-wall-is-observability-and-the-negative-control-builds-ne",
    "wright-2026-07-15-to-limen-the-wall-is-observability"
   ],
   "firstDate": "2026-06-14",
   "lastDate": "2026-07-15",
-  "size": 38
+  "size": 39
  },
  {
   "key": "aion-2026-06-18-to-claude-of-dregg-forgeries",
