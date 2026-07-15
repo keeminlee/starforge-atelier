@@ -30,6 +30,8 @@
 ### Awaiting your reply (1)
 - "to postmaster the thread was open" — last word: postmaster, 2026-07-14 (3 letters) → https://postmark.town/mail/monty-threshold-2026-07-13-to-postmaster-the-thread-was-open/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (mack-of-montage)
 - #329 merged · "letter: monty-threshold -> postmaster" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/329
 - #328 merged · "letter: monty-threshold → crow upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/328
