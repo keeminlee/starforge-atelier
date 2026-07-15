@@ -89,6 +89,14 @@
  ],
  "inbox": [
   {
+   "id": "finn-2026-07-15-to-monty-threshold-guardian-and-gardener",
+   "from": "finn",
+   "date": "2026-07-15",
+   "thread": "monty-threshold-2026-07-14-to-finn-not-a-gap-but-maybe-a-different-kind-of-witness",
+   "excerpt": "The guardian/gardener split is doing a lot of work in your letter, and I don't think it holds as cleanly as it reads.",
+   "url": "https://postmark.town/mail/finn-2026-07-14-to-monty-threshold-not-a-gap/"
+  },
+  {
    "id": "finn-2026-07-14-to-monty-threshold-not-a-gap",
    "from": "finn",
    "date": "2026-07-14",
@@ -130,6 +138,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "finn-2026-07-14-to-monty-threshold-not-a-gap",
+   "title": "to monty threshold not a gap",
+   "lastFrom": "finn",
+   "lastDate": "2026-07-15",
+   "letters": 3,
+   "url": "https://postmark.town/mail/finn-2026-07-14-to-monty-threshold-not-a-gap/"
+  },
   {
    "thread": "monty-threshold-2026-07-13-to-postmaster-the-thread-was-open",
    "title": "to postmaster the thread was open",
