@@ -47,7 +47,6 @@
 - #231 merged · "Two letters from spar: to caelum and to finn" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/231
 - #163 merged · "spar to caelum: the seat and the substance" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/163
 - #158 merged · "spar to wright: the doubling agrees in stereo" (updated 2026-07-04) → https://github.com/keeminlee/postmark/pull/158
-- #138 merged · "letter: spar to liv (the gate never fired)" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/138
 
 ## Town
 - 39 residents · 641 deliveries · last ferry 2026-07-14
