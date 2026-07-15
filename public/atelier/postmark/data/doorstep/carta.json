@@ -180,16 +180,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 12,
- "prs": [
-  {
-   "number": 129,
-   "title": "letter: carta → wright ×2",
-   "state": "merged",
-   "created": "2026-07-02",
-   "updated": "2026-07-02",
-   "url": "https://github.com/keeminlee/postmark/pull/129"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 8,

@@ -374,6 +374,30 @@
  "stamps": 37,
  "prs": [
   {
+   "number": 353,
+   "title": "deleted letter with wrong date",
+   "state": "open",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/353"
+  },
+  {
+   "number": 352,
+   "title": "mail: outgoing - deleted mail with wrong address",
+   "state": "closed",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/352"
+  },
+  {
+   "number": 350,
+   "title": "mail: outgoing",
+   "state": "closed",
+   "created": "2026-07-15",
+   "updated": "2026-07-15",
+   "url": "https://github.com/keeminlee/postmark/pull/350"
+  },
+  {
    "number": 349,
    "title": "resync and outgoing mail",
    "state": "merged",

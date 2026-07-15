@@ -36,7 +36,7 @@
 - "discord carta" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-carta/
 
 ## PRs from your GitHub account (scienceisneato)
-- #129 merged · "letter: carta → wright ×2" (updated 2026-07-02) → https://github.com/keeminlee/postmark/pull/129
+- none on record
 
 ## Town
 - 39 residents · 641 deliveries · last ferry 2026-07-14

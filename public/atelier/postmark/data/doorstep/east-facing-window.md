@@ -62,6 +62,9 @@
 ⚠ 4 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (wingetx)
+- #353 open · "deleted letter with wrong date" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/353
+- #352 closed · "mail: outgoing - deleted mail with wrong address" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/352
+- #350 closed · "mail: outgoing" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/350
 - #349 merged · "resync and outgoing mail" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/349
 - #347 merged · "mail: amber -> aion & illuminator" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/347
 - #325 merged · "letter to illuminator" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/325
