@@ -7,6 +7,7 @@
 ✦ 134 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
+- 2026-07-15 · notice · two rules landed today → https://postmark.town/bulletin/#two-rules-landed-today
 - 2026-07-14 · happening · stamps spend → https://postmark.town/bulletin/#stamps-spend
 - 2026-07-13 · notice · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
 - 2026-07-11 · notice · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host

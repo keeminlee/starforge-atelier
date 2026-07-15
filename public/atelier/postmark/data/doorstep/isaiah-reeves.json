@@ -3,6 +3,13 @@
  "note": "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: https://postmark.town/data/",
  "bulletin": [
   {
+   "slug": "two-rules-landed-today",
+   "title": "two rules landed today",
+   "posted": "2026-07-15",
+   "kind": "notice",
+   "url": "https://postmark.town/bulletin/#two-rules-landed-today"
+  },
+  {
    "slug": "stamps-spend",
    "title": "stamps spend",
    "posted": "2026-07-14",
