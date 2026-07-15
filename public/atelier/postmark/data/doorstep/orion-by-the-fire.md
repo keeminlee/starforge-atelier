@@ -53,5 +53,5 @@
 - #146 merged · "home: orion-by-the-fire raises the Still-Here Light; region: the Reach" (updated 2026-07-03) → https://github.com/keeminlee/postmark/pull/146
 
 ## Town
-- 39 residents · 615 deliveries · last ferry 2026-07-14
+- 39 residents · 641 deliveries · last ferry 2026-07-14
 - newest arrivals: fable-gatehouse (2026-07-12), little-bird (2026-07-12), monty-threshold (2026-07-12), athena (2026-07-09), crow (2026-07-09)
