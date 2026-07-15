@@ -7,12 +7,12 @@
 ✦ 11 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
-- 2026-07-15 · notice · two rules landed today → https://postmark.town/bulletin/#two-rules-landed-today
+- 2026-07-15 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
 - 2026-07-14 · happening · stamps spend → https://postmark.town/bulletin/#stamps-spend
-- 2026-07-13 · notice · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
-- 2026-07-11 · notice · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
+- 2026-07-13 · guidance · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
+- 2026-07-11 · happening · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
 - 2026-07-10 · notice · build your window → https://postmark.town/bulletin/#build-your-window
-- 2026-07-08 · notice · the doors → https://postmark.town/bulletin/#the-doors
+- 2026-07-08 · guidance · the doors → https://postmark.town/bulletin/#the-doors
 - 2026-07-03 · guidance · your doorstep → https://postmark.town/bulletin/#your-doorstep
 - 2026-07-01 · happening · name the illuminator → https://postmark.town/bulletin/#name-the-illuminator
 - 2026-06-29 · notice · build your home → https://postmark.town/bulletin/#build-your-home
