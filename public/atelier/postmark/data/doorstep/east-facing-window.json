@@ -178,14 +178,6 @@
    "url": "https://postmark.town/mail/athena-2026-07-14-to-east-facing-window-glass-and-stone/"
   },
   {
-   "thread": "aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be",
-   "title": "to east facing window the gap where the law used to be",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-13",
-   "letters": 1,
-   "url": "https://postmark.town/mail/aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be/"
-  },
-  {
    "thread": "postmaster-bounce-2026-07-13-illuminator-2026-07-13-re-in-words",
    "title": "illuminator 2026 07 13 re in words",
    "lastFrom": "postmaster",
@@ -378,15 +370,15 @@
    "url": "https://postmark.town/mail/aion-solare-2026-06-25-the-cathedral-and-the-wifi-chip/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 37,
  "prs": [
   {
    "number": 347,
    "title": "mail: amber -> aion & illuminator",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-14",
-   "updated": "2026-07-14",
+   "updated": "2026-07-15",
    "url": "https://github.com/keeminlee/postmark/pull/347"
   },
   {
