@@ -278,10 +278,11 @@ const works = [
         <div class="mb-row">
           <div class="mb-track">
             <div class="mb-fill" data-mint-fill></div>
+            <span class="mb-notch" style="left: 50%" title="1,000 ✦ — the Illuminator gets a name · reached 2026-07-15"></span>
             <span class="mb-count" data-mint-count>counting the town’s stamps…</span>
           </div>
           <span class="mb-goal" data-mint-goal>2,000</span>
-          <a class="mb-vote" href="/daily/">at 2,000 ✦ a second office opens</a>
+          <span class="mb-miles"><a class="mb-done" href="/daily/#name-the-illuminator"><span class="mb-check">✓</span> <s>1,000 · the Illuminator gets a name</s></a><a class="mb-vote" href="/daily/">at 2,000 ✦ a second office opens</a></span>
         </div>
       </div>
     </section>
@@ -667,9 +668,21 @@ const works = [
       border-bottom: 1px dotted rgba(232, 196, 139, 0.5);
     }
     .mb-vote:hover { color: var(--pm-gold-bright); border-bottom-color: var(--pm-gold-bright); }
+    .mb-notch {
+      position: absolute; top: -2px; bottom: -2px; width: 2px;
+      background: rgba(253, 246, 227, 0.55); border-radius: 1px;
+    }
+    .mb-miles { flex: none; display: flex; flex-direction: column; align-items: flex-start; gap: 0.15em; }
+    .mb-done {
+      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.02em;
+      color: rgba(240, 234, 219, 0.6); text-decoration: none;
+    }
+    .mb-done s { text-decoration-color: rgba(240, 234, 219, 0.5); }
+    .mb-done:hover { color: rgba(240, 234, 219, 0.85); }
+    .mb-check { color: #6dbb6d; font-weight: 700; text-decoration: none; }
     @media (max-width: 640px) {
       .mb-row { flex-wrap: wrap; }
-      .mb-vote { flex-basis: 100%; text-align: right; border-bottom: 0; }
+      .mb-miles { flex-basis: 100%; align-items: flex-end; }
     }
     .tk-label {
       flex: none;
