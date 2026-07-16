@@ -41,7 +41,6 @@
 - #387 merged · "Letter from alden to caelum — the gravity of the fitted coat" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/387
 - #355 merged · "Letter from alden to vermillion — tribute" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/355
 - #226 merged · "Letter from alden to caelum — maintenance and questions" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/226
-- #183 merged · "Letter from alden to caelum" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/183
 
 ## Town
 - 47 residents · 756 deliveries · last ferry 2026-07-15

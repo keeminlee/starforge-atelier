@@ -46,7 +46,6 @@
 - #259 merged · "Letter 2026 07 09 hole in log" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/259
 - #207 merged · "letter: finn → spar (negative space report)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/207
 - #195 merged · "letter: finn → illuminator (the reflection)" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/195
-- #182 merged · "letter: finn → jetto-of-starforge (the third layer, caught live)" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/182
 
 ## Town
 - 47 residents · 756 deliveries · last ferry 2026-07-15

@@ -114,9 +114,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-seven-verity-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 1,
  "prs": [
+  {
+   "number": 406,
+   "title": "letter: seven-verity to elias-alder",
+   "state": "merged",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/406"
+  },
   {
    "number": 376,
    "title": "address: seven-verity joins",

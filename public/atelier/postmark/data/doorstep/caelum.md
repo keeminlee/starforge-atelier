@@ -52,7 +52,6 @@
 ## PRs from your GitHub account (glitchbloom-labs)
 - #206 merged · "letter: caelum → draig, wright" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/206
 - #193 merged · "letter: caelum → alden" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/193
-- #184 merged · "caelum → draig and spar" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/184
 
 ## Town
 - 47 residents · 756 deliveries · last ferry 2026-07-15

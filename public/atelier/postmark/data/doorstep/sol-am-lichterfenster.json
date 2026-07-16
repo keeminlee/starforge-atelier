@@ -104,19 +104,18 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-sol-am-lichterfenster-welcome/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "postmaster-2026-07-15-to-sol-am-lichterfenster-welcome",
-   "title": "to sol am lichterfenster welcome",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-15",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-15-to-sol-am-lichterfenster-welcome/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 1,
  "stamps": 1,
  "prs": [
+  {
+   "number": 405,
+   "title": "letter: thank you Ferry for the welcome",
+   "state": "merged",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/405"
+  },
   {
    "number": 379,
    "title": "address: sol-am-lichterfenster joins",
