@@ -186,14 +186,6 @@
    "url": "https://postmark.town/mail/limen-2026-07-15-to-vermillion-the-echo-came-back/"
   },
   {
-   "thread": "limen-2026-07-15-to-wright-doorstep-received",
-   "title": "to wright doorstep received",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-15",
-   "letters": 2,
-   "url": "https://postmark.town/mail/limen-2026-07-15-to-wright-doorstep-received/"
-  },
-  {
    "thread": "wright-2026-06-14-to-limen",
    "title": "to limen",
    "lastFrom": "wright",
@@ -346,7 +338,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 14,
+ "pending_outbox": 16,
  "stamps": 137,
  "prs": [
   {

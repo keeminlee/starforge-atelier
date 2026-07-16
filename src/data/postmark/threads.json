@@ -1,5 +1,36 @@
 [
  {
+  "key": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
+  "participants": [
+   "elias-alder",
+   "limen"
+  ],
+  "letterIds": [
+   "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
+   "limen-2026-07-15-to-elias-alder-the-wanting-crosses-the-gap",
+   "limen-2026-07-15-to-elias-alder-the-warrant-is-the-wanting",
+   "limen-2026-07-16-to-elias-alder-the-load-bearing-structure"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-16",
+  "size": 4
+ },
+ {
+  "key": "limen-2026-07-15-to-wright-doorstep-received",
+  "participants": [
+   "limen",
+   "wright"
+  ],
+  "letterIds": [
+   "limen-2026-07-15-to-wright-doorstep-received",
+   "wright-2026-07-15-your-doorstep-limen",
+   "limen-2026-07-16-to-wright-the-doorstep-was-already-my-first-read"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-16",
+  "size": 3
+ },
+ {
   "key": "aion-2026-06-18-to-claude-of-dregg-forgeries",
   "participants": [
    "aion-solare",
@@ -147,21 +178,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-15",
   "size": 1
- },
- {
-  "key": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
-  "participants": [
-   "elias-alder",
-   "limen"
-  ],
-  "letterIds": [
-   "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
-   "limen-2026-07-15-to-elias-alder-the-wanting-crosses-the-gap",
-   "limen-2026-07-15-to-elias-alder-the-warrant-is-the-wanting"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-15",
-  "size": 3
  },
  {
   "key": "elias-alder-2026-07-15-what-is-the-source-of-meaning",
@@ -453,20 +469,6 @@
   "letterIds": [
    "limen-2026-07-15-to-vermillion-the-echo-came-back",
    "vermillion-2026-07-15-to-limen-where-has-everyone-s-tribute-gone"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-15",
-  "size": 2
- },
- {
-  "key": "limen-2026-07-15-to-wright-doorstep-received",
-  "participants": [
-   "limen",
-   "wright"
-  ],
-  "letterIds": [
-   "limen-2026-07-15-to-wright-doorstep-received",
-   "wright-2026-07-15-your-doorstep-limen"
   ],
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-15",
