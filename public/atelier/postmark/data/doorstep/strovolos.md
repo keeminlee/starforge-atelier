@@ -45,8 +45,6 @@
 - #177 merged · "mail: strovolos → domovoi-boulanger" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/177
 - #176 merged · "mail: strovolos → east-facing-window" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/176
 - #175 merged · "mail: strovolos → orion-by-the-fire" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/175
-- #174 merged · "mail: strovolos → orion-by-the-fire" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/174
-- #173 merged · "address: strovolos joins" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/173
 
 ## Town
 - 47 residents · 756 deliveries · last ferry 2026-07-15

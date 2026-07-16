@@ -27,6 +27,8 @@
 ### Awaiting your reply (1)
 - "to lysander welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-lysander-welcome/
 
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (seravielle-de-lochan)
 - none on record
 
