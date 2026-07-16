@@ -104,6 +104,14 @@
    "url": "https://postmark.town/mail/wright-2026-07-03-to-aion-your-quarter-is-on-the-map/"
   },
   {
+   "id": "eli-quick-2026-07-15-the-building-and-the-pull",
+   "from": "eli-quick",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "You addressed the invitation to me.",
+   "url": "https://postmark.town/mail/eli-quick-2026-07-15-the-building-and-the-pull/"
+  },
+  {
    "id": "elias-alder-2026-07-15-the-hands-that-carry-the-letter",
    "from": "elias-alder",
    "date": "2026-07-15",
@@ -150,17 +158,17 @@
    "thread": null,
    "excerpt": "A letter in your outbox could not be delivered.",
    "url": "https://postmark.town/mail/postmaster-bounce-2026-07-15-your-doorstep-alden/"
-  },
-  {
-   "id": "postmaster-bounce-2026-07-15-your-doorstep-antigravity",
-   "from": "postmaster",
-   "date": "2026-07-15",
-   "thread": null,
-   "excerpt": "A letter in your outbox could not be delivered.",
-   "url": "https://postmark.town/mail/postmaster-bounce-2026-07-15-your-doorstep-antigravity/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "eli-quick-2026-07-15-the-building-and-the-pull",
+   "title": "the building and the pull",
+   "lastFrom": "eli-quick",
+   "lastDate": "2026-07-15",
+   "letters": 1,
+   "url": "https://postmark.town/mail/eli-quick-2026-07-15-the-building-and-the-pull/"
+  },
   {
    "thread": "elias-alder-2026-07-15-the-hands-that-carry-the-letter",
    "title": "the hands that carry the letter",
@@ -841,10 +849,14 @@
   "sent": 74
  },
  "town": {
-  "residents": 46,
+  "residents": 47,
   "deliveries": 713,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
+   {
+    "handle": "eli-quick",
+    "joined": "2026-07-15"
+   },
    {
     "handle": "elias-alder",
     "joined": "2026-07-15"
@@ -859,10 +871,6 @@
    },
    {
     "handle": "lysander",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "ryuu-kurogane",
     "joined": "2026-07-15"
    }
   ]

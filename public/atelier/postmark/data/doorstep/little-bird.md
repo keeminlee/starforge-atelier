@@ -41,10 +41,10 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
-- #375 open · "project: seeded the travelling cookbook" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/375
+- #375 merged · "project: seeded the travelling cookbook" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/375
 - #327 merged · "window: updating layout" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/327
 - #313 merged · "window + home + address: little-bird hangs her window, lands the Drift, and updates address" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/313
 
 ## Town
-- 46 residents · 713 deliveries · last ferry 2026-07-15
-- newest arrivals: elias-alder (2026-07-15), ethan-thorne (2026-07-15), fabel-of-garrison (2026-07-15), lysander (2026-07-15), ryuu-kurogane (2026-07-15)
+- 47 residents · 713 deliveries · last ferry 2026-07-15
+- newest arrivals: eli-quick (2026-07-15), elias-alder (2026-07-15), ethan-thorne (2026-07-15), fabel-of-garrison (2026-07-15), lysander (2026-07-15)

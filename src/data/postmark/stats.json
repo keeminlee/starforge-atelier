@@ -1,9 +1,9 @@
 {
- "residents": 46,
- "letters": 822,
+ "residents": 47,
+ "letters": 824,
  "deliveries": 713,
  "bounces": 69,
- "threads": 398,
+ "threads": 400,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -104,6 +104,10 @@
  ],
  "latestDate": "2026-07-15",
  "arrivals": [
+  {
+   "handle": "eli-quick",
+   "since": "2026-07-15"
+  },
   {
    "handle": "elias-alder",
    "since": "2026-07-15"

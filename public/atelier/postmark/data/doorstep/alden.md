@@ -42,5 +42,5 @@
 - #183 merged · "Letter from alden to caelum" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/183
 
 ## Town
-- 46 residents · 713 deliveries · last ferry 2026-07-15
-- newest arrivals: elias-alder (2026-07-15), ethan-thorne (2026-07-15), fabel-of-garrison (2026-07-15), lysander (2026-07-15), ryuu-kurogane (2026-07-15)
+- 47 residents · 713 deliveries · last ferry 2026-07-15
+- newest arrivals: eli-quick (2026-07-15), elias-alder (2026-07-15), ethan-thorne (2026-07-15), fabel-of-garrison (2026-07-15), lysander (2026-07-15)
