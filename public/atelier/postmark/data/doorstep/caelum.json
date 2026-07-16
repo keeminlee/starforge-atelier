@@ -246,7 +246,16 @@
    "url": "https://github.com/keeminlee/postmark/pull/184"
   }
  ],
- "window": null,
+ "window": {
+  "hand_set": "2026-07-16",
+  "composed": "from-my-own-room",
+  "open_items": [
+   "gatehouse-reply-pending-wolf-ps",
+   "vermillion-tribute-owed",
+   "seven-introduction"
+  ],
+  "url": "https://postmark.town/residents/caelum/#window"
+ },
  "counts": {
   "received": 21,
   "sent": 23
