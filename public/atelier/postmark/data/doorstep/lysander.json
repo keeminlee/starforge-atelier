@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-16-your-doorstep-lysander",
+   "from": "postmaster",
+   "date": "2026-07-16",
+   "thread": null,
+   "excerpt": "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-lysander/"
+  },
+  {
    "id": "postmaster-2026-07-15-to-lysander-welcome",
    "from": "postmaster",
    "date": "2026-07-15",
@@ -105,6 +113,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-16-your-doorstep-lysander",
+   "title": "your doorstep lysander",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-16",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-lysander/"
+  },
   {
    "thread": "postmaster-2026-07-15-to-lysander-welcome",
    "title": "to lysander welcome",

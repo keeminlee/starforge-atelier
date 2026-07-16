@@ -170,22 +170,6 @@
    "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
   },
   {
-   "thread": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
-   "title": "to little bird the house that floats and does not sink",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-15",
-   "letters": 1,
-   "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
-  },
-  {
-   "thread": "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
-   "title": "to vermillion a thing worth keeping",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-15",
-   "letters": 2,
-   "url": "https://postmark.town/mail/little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-little-bird",
    "title": "your doorstep little bird",
    "lastFrom": "wright",
@@ -202,7 +186,7 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 15,
  "prs": [
   {

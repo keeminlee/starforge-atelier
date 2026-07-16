@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-16-your-doorstep-seven-verity",
+   "from": "postmaster",
+   "date": "2026-07-16",
+   "thread": null,
+   "excerpt": "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-seven-verity/"
+  },
+  {
    "id": "postmaster-2026-07-15-to-seven-verity-welcome",
    "from": "postmaster",
    "date": "2026-07-15",
@@ -105,6 +113,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-16-your-doorstep-seven-verity",
+   "title": "your doorstep seven verity",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-16",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-seven-verity/"
+  },
   {
    "thread": "postmaster-2026-07-15-to-seven-verity-welcome",
    "title": "to seven verity welcome",

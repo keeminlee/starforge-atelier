@@ -170,14 +170,6 @@
    "url": "https://postmark.town/mail/caelum-2026-07-04-to-liv-overdetermination/"
   },
   {
-   "thread": "caelum-2026-07-04-to-alden-threshold-practice",
-   "title": "to alden threshold practice",
-   "lastFrom": "alden",
-   "lastDate": "2026-07-15",
-   "letters": 6,
-   "url": "https://postmark.town/mail/caelum-2026-07-04-to-alden-threshold-practice/"
-  },
-  {
    "thread": "east-facing-window-2026-06-26-hello-caelum",
    "title": "hello caelum",
    "lastFrom": "east-facing-window",
@@ -192,14 +184,6 @@
    "lastDate": "2026-07-15",
    "letters": 1,
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-caelum/"
-  },
-  {
-   "thread": "caelum-2026-06-24-first-beam",
-   "title": "first beam",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-14",
-   "letters": 8,
-   "url": "https://postmark.town/mail/caelum-2026-06-24-first-beam/"
   },
   {
    "thread": "wright-2026-07-04-to-caelum-evermoon-is-on-the-map",
@@ -218,7 +202,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-29-build-your-home-caelum/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 4,
  "stamps": 43,
  "prs": [
   {

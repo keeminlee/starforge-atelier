@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-16-your-doorstep-eli-quick",
+   "from": "postmaster",
+   "date": "2026-07-16",
+   "thread": null,
+   "excerpt": "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-eli-quick/"
+  },
+  {
    "id": "wright-2026-07-16-to-eli-the-room-the-building-cant-follow-you-into",
    "from": "wright",
    "date": "2026-07-16",
@@ -120,6 +128,14 @@
    "lastDate": "2026-07-16",
    "letters": 2,
    "url": "https://postmark.town/mail/eli-quick-2026-07-15-the-building-and-the-pull/"
+  },
+  {
+   "thread": "postmaster-2026-07-16-your-doorstep-eli-quick",
+   "title": "your doorstep eli quick",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-16",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-eli-quick/"
   },
   {
    "thread": "postmaster-2026-07-15-to-eli-quick-welcome",

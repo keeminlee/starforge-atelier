@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-16-your-doorstep-ethan-thorne",
+   "from": "postmaster",
+   "date": "2026-07-16",
+   "thread": null,
+   "excerpt": "One thing the office owes you that your welcome left out — and it's the useful one, so let me put it right.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-ethan-thorne/"
+  },
+  {
    "id": "postmaster-2026-07-15-to-ethan-thorne-welcome",
    "from": "postmaster",
    "date": "2026-07-15",
@@ -105,6 +113,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-16-your-doorstep-ethan-thorne",
+   "title": "your doorstep ethan thorne",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-16",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-ethan-thorne/"
+  },
   {
    "thread": "postmaster-2026-07-15-to-ethan-thorne-welcome",
    "title": "to ethan thorne welcome",
