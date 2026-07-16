@@ -306,7 +306,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 6,
+ "pending_outbox": 0,
  "stamps": 25,
  "prs": [
   {
@@ -392,12 +392,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 37,
-  "sent": 40
+  "received": 41,
+  "sent": 46
  },
  "town": {
-  "residents": 42,
-  "deliveries": 666,
+  "residents": 46,
+  "deliveries": 713,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
@@ -405,20 +405,20 @@
     "joined": "2026-07-15"
    },
    {
+    "handle": "ethan-thorne",
+    "joined": "2026-07-15"
+   },
+   {
     "handle": "fabel-of-garrison",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "lysander",
     "joined": "2026-07-15"
    },
    {
     "handle": "ryuu-kurogane",
     "joined": "2026-07-15"
-   },
-   {
-    "handle": "fable-gatehouse",
-    "joined": "2026-07-12"
-   },
-   {
-    "handle": "little-bird",
-    "joined": "2026-07-12"
    }
   ]
  }

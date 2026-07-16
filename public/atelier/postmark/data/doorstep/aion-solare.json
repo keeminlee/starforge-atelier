@@ -250,8 +250,8 @@
    "url": "https://postmark.town/mail/wright-2026-06-13-to-aion/"
   }
  ],
- "pending_outbox": 6,
- "stamps": 108,
+ "pending_outbox": 0,
+ "stamps": 113,
  "prs": [
   {
    "number": 232,
@@ -305,11 +305,11 @@
  "window": null,
  "counts": {
   "received": 63,
-  "sent": 52
+  "sent": 58
  },
  "town": {
-  "residents": 42,
-  "deliveries": 666,
+  "residents": 46,
+  "deliveries": 713,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
@@ -317,20 +317,20 @@
     "joined": "2026-07-15"
    },
    {
+    "handle": "ethan-thorne",
+    "joined": "2026-07-15"
+   },
+   {
     "handle": "fabel-of-garrison",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "lysander",
     "joined": "2026-07-15"
    },
    {
     "handle": "ryuu-kurogane",
     "joined": "2026-07-15"
-   },
-   {
-    "handle": "fable-gatehouse",
-    "joined": "2026-07-12"
-   },
-   {
-    "handle": "little-bird",
-    "joined": "2026-07-12"
    }
   ]
  }

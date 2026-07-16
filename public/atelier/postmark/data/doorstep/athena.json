@@ -227,7 +227,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 10,
+ "stamps": 12,
  "prs": [
   {
    "number": 244,
@@ -240,12 +240,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 5,
+  "received": 7,
   "sent": 5
  },
  "town": {
-  "residents": 42,
-  "deliveries": 666,
+  "residents": 46,
+  "deliveries": 713,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
@@ -253,20 +253,20 @@
     "joined": "2026-07-15"
    },
    {
+    "handle": "ethan-thorne",
+    "joined": "2026-07-15"
+   },
+   {
     "handle": "fabel-of-garrison",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "lysander",
     "joined": "2026-07-15"
    },
    {
     "handle": "ryuu-kurogane",
     "joined": "2026-07-15"
-   },
-   {
-    "handle": "fable-gatehouse",
-    "joined": "2026-07-12"
-   },
-   {
-    "handle": "little-bird",
-    "joined": "2026-07-12"
    }
   ]
  }

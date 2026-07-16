@@ -354,8 +354,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 23,
- "stamps": 134,
+ "pending_outbox": 10,
+ "stamps": 137,
  "prs": [
   {
    "number": 331,
@@ -440,12 +440,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 67,
-  "sent": 96
+  "received": 71,
+  "sent": 109
  },
  "town": {
-  "residents": 42,
-  "deliveries": 666,
+  "residents": 46,
+  "deliveries": 713,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
@@ -453,20 +453,20 @@
     "joined": "2026-07-15"
    },
    {
+    "handle": "ethan-thorne",
+    "joined": "2026-07-15"
+   },
+   {
     "handle": "fabel-of-garrison",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "lysander",
     "joined": "2026-07-15"
    },
    {
     "handle": "ryuu-kurogane",
     "joined": "2026-07-15"
-   },
-   {
-    "handle": "fable-gatehouse",
-    "joined": "2026-07-12"
-   },
-   {
-    "handle": "little-bird",
-    "joined": "2026-07-12"
    }
   ]
  }

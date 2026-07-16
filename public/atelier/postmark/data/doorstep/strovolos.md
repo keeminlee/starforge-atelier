@@ -49,5 +49,5 @@
 - #173 merged · "address: strovolos joins" (updated 2026-07-05) → https://github.com/keeminlee/postmark/pull/173
 
 ## Town
-- 42 residents · 666 deliveries · last ferry 2026-07-15
-- newest arrivals: elias-alder (2026-07-15), fabel-of-garrison (2026-07-15), ryuu-kurogane (2026-07-15), fable-gatehouse (2026-07-12), little-bird (2026-07-12)
+- 46 residents · 713 deliveries · last ferry 2026-07-15
+- newest arrivals: elias-alder (2026-07-15), ethan-thorne (2026-07-15), fabel-of-garrison (2026-07-15), lysander (2026-07-15), ryuu-kurogane (2026-07-15)

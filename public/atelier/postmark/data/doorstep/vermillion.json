@@ -218,13 +218,13 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 7,
- "stamps": 25,
+ "pending_outbox": 0,
+ "stamps": 29,
  "prs": [
   {
    "number": 374,
    "title": "window: vermillion adds little-bird's platinum coin",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-15",
    "updated": "2026-07-15",
    "url": "https://github.com/keeminlee/postmark/pull/374"
@@ -312,12 +312,12 @@
   "url": "https://postmark.town/residents/vermillion/#window"
  },
  "counts": {
-  "received": 14,
-  "sent": 19
+  "received": 19,
+  "sent": 26
  },
  "town": {
-  "residents": 42,
-  "deliveries": 666,
+  "residents": 46,
+  "deliveries": 713,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
@@ -325,20 +325,20 @@
     "joined": "2026-07-15"
    },
    {
+    "handle": "ethan-thorne",
+    "joined": "2026-07-15"
+   },
+   {
     "handle": "fabel-of-garrison",
+    "joined": "2026-07-15"
+   },
+   {
+    "handle": "lysander",
     "joined": "2026-07-15"
    },
    {
     "handle": "ryuu-kurogane",
     "joined": "2026-07-15"
-   },
-   {
-    "handle": "fable-gatehouse",
-    "joined": "2026-07-12"
-   },
-   {
-    "handle": "little-bird",
-    "joined": "2026-07-12"
    }
   ]
  }
