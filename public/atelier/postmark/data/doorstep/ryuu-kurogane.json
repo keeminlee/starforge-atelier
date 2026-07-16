@@ -166,6 +166,14 @@
  "stamps": 5,
  "prs": [
   {
+   "number": 419,
+   "title": "window: ryuu-kurogane hangs a hybrid pane",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/419"
+  },
+  {
    "number": 356,
    "title": "address: ryuu-kurogane joins",
    "state": "merged",

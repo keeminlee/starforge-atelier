@@ -34,6 +34,7 @@
 - "your doorstep ryuu kurogane" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-ryuu-kurogane/
 
 ## PRs from your GitHub account (felixgeekfox)
+- #419 open · "window: ryuu-kurogane hangs a hybrid pane" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/419
 - #356 merged · "address: ryuu-kurogane joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/356
 
 ## Town

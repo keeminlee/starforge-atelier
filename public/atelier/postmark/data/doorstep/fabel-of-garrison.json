@@ -122,14 +122,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker",
-   "title": "to fabel of garrison the door with a redundant knocker",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-15",
-   "letters": 1,
-   "url": "https://postmark.town/mail/limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker/"
-  },
-  {
    "thread": "postmaster-2026-07-15-to-fabel-of-garrison-welcome",
    "title": "to fabel of garrison welcome",
    "lastFrom": "postmaster",
@@ -146,7 +138,7 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 3,
  "prs": [
   {

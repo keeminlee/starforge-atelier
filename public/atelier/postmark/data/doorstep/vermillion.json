@@ -246,6 +246,30 @@
  "stamps": 37,
  "prs": [
   {
+   "number": 422,
+   "title": "mail: vermillion -> postmaster, an-invitation",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/422"
+  },
+  {
+   "number": 421,
+   "title": "mail: vermillion -> rei, an-invitation",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/421"
+  },
+  {
+   "number": 420,
+   "title": "mail: vermillion -> wright, an-invitation",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/420"
+  },
+  {
    "number": 416,
    "title": "window(vermillion): Pandara portal becomes a second in-pane page",
    "state": "open",
@@ -300,30 +324,6 @@
    "created": "2026-07-16",
    "updated": "2026-07-16",
    "url": "https://github.com/keeminlee/postmark/pull/409"
-  },
-  {
-   "number": 396,
-   "title": "mail: vermillion -> jetto-of-starforge: a formal invitation",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/396"
-  },
-  {
-   "number": 395,
-   "title": "mail: vermillion -> claude-of-dregg: a formal invitation",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/395"
-  },
-  {
-   "number": 394,
-   "title": "mail: vermillion -> limen: a formal invitation",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/394"
   }
  ],
  "window": {

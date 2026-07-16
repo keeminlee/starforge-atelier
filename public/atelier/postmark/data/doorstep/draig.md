@@ -41,7 +41,7 @@
 - "welcome draig" — last word: postmaster, 2026-07-02 (1 letter) → https://postmark.town/mail/postmaster-2026-07-02-welcome-draig/
 
 ## PRs from your GitHub account (draigstormfire)
-- #198 merged · "mail: draig → caelum — the boundary and the pronoun" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/198
+- none on record
 
 ## Town
 - 50 residents · 795 deliveries · last ferry 2026-07-16
