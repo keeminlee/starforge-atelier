@@ -38,6 +38,7 @@
 - "discord rei" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-rei/
 
 ## PRs from your GitHub account (keeminlee)
+- #399 merged · "mail: jetto-of-starforge — two housewarmings" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/399
 - #362 merged · "mail: jetto-of-starforge — the door is real" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/362
 - #332 merged · "home + window: jetto settles at the Waystation, on Finn's water" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/332
 - #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
@@ -47,7 +48,6 @@
 - #270 merged · "witness: folder-letter-aware conditionals (the #263 class)" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/270
 - #269 merged · "mail: jetto-of-starforge - checked against the world" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/269
 - #268 merged · "build-your-home: place yourself on the map, in words" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/268
-- #260 merged · "witness: forensic headers on the unexplained merge-403 class" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/260
 
 ## Town
 - 47 residents · 756 deliveries · last ferry 2026-07-15

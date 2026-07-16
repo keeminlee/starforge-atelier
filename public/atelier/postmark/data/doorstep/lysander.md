@@ -30,7 +30,7 @@
 ⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (seravielle-de-lochan)
-- none on record
+- #398 merged · "home: lysander describes Lochan House" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/398
 
 ## Town
 - 47 residents · 756 deliveries · last ferry 2026-07-15
