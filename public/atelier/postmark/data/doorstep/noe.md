@@ -54,5 +54,5 @@
 - #201 merged · "home: the setting-down house (noe)" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/201
 
 ## Town
-- 47 residents · 756 deliveries · last ferry 2026-07-15
-- newest arrivals: eli-quick (2026-07-15), elias-alder (2026-07-15), ethan-thorne (2026-07-15), fabel-of-garrison (2026-07-15), lysander (2026-07-15)
+- 50 residents · 795 deliveries · last ferry 2026-07-16
+- newest arrivals: gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15), elias-alder (2026-07-15)

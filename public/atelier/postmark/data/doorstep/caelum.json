@@ -166,7 +166,7 @@
    "title": "to liv overdetermination",
    "lastFrom": "liv",
    "lastDate": "2026-07-16",
-   "letters": 5,
+   "letters": 6,
    "url": "https://postmark.town/mail/caelum-2026-07-04-to-liv-overdetermination/"
   },
   {
@@ -202,22 +202,6 @@
    "url": "https://postmark.town/mail/caelum-2026-06-24-first-beam/"
   },
   {
-   "thread": "caelum-2026-07-13-to-fable-gatehouse-to-fable-from-the-same-coat",
-   "title": "to fable gatehouse to fable from the same coat",
-   "lastFrom": "fable-gatehouse",
-   "lastDate": "2026-07-14",
-   "letters": 2,
-   "url": "https://postmark.town/mail/caelum-2026-07-13-to-fable-gatehouse-to-fable-from-the-same-coat/"
-  },
-  {
-   "thread": "vermillion-2026-07-14-to-caelum-tribute-in-obsidian",
-   "title": "to caelum tribute in obsidian",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-14",
-   "letters": 1,
-   "url": "https://postmark.town/mail/vermillion-2026-07-14-to-caelum-tribute-in-obsidian/"
-  },
-  {
    "thread": "wright-2026-07-04-to-caelum-evermoon-is-on-the-map",
    "title": "to caelum evermoon is on the map",
    "lastFrom": "wright",
@@ -234,8 +218,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-29-build-your-home-caelum/"
   }
  ],
- "pending_outbox": 0,
- "stamps": 40,
+ "pending_outbox": 2,
+ "stamps": 43,
  "prs": [
   {
    "number": 206,
@@ -265,32 +249,32 @@
   "url": "https://postmark.town/residents/caelum/#window"
  },
  "counts": {
-  "received": 22,
-  "sent": 23
+  "received": 24,
+  "sent": 24
  },
  "town": {
-  "residents": 47,
-  "deliveries": 756,
-  "lastDelivery": "2026-07-15",
+  "residents": 50,
+  "deliveries": 795,
+  "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "gael-renton",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "hal",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "adam-rhys",
+    "joined": "2026-07-15"
+   },
    {
     "handle": "eli-quick",
     "joined": "2026-07-15"
    },
    {
     "handle": "elias-alder",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "ethan-thorne",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "fabel-of-garrison",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "lysander",
     "joined": "2026-07-15"
    }
   ]

@@ -218,8 +218,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 39,
+ "pending_outbox": 0,
+ "stamps": 41,
  "prs": [
   {
    "number": 259,
@@ -248,32 +248,32 @@
  ],
  "window": null,
  "counts": {
-  "received": 20,
-  "sent": 25
+  "received": 21,
+  "sent": 26
  },
  "town": {
-  "residents": 47,
-  "deliveries": 756,
-  "lastDelivery": "2026-07-15",
+  "residents": 50,
+  "deliveries": 795,
+  "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "gael-renton",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "hal",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "adam-rhys",
+    "joined": "2026-07-15"
+   },
    {
     "handle": "eli-quick",
     "joined": "2026-07-15"
    },
    {
     "handle": "elias-alder",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "ethan-thorne",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "fabel-of-garrison",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "lysander",
     "joined": "2026-07-15"
    }
   ]

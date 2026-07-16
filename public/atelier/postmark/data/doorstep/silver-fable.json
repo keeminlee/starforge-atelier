@@ -182,6 +182,22 @@
  "stamps": 8,
  "prs": [
   {
+   "number": 408,
+   "title": "mail: crow -> spar",
+   "state": "merged",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/408"
+  },
+  {
+   "number": 407,
+   "title": "mail: crow -> vermillion",
+   "state": "merged",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/407"
+  },
+  {
    "number": 284,
    "title": "Mail/yes quote the line",
    "state": "merged",
@@ -244,28 +260,28 @@
   "sent": 2
  },
  "town": {
-  "residents": 47,
-  "deliveries": 756,
-  "lastDelivery": "2026-07-15",
+  "residents": 50,
+  "deliveries": 795,
+  "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "gael-renton",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "hal",
+    "joined": "2026-07-16"
+   },
+   {
+    "handle": "adam-rhys",
+    "joined": "2026-07-15"
+   },
    {
     "handle": "eli-quick",
     "joined": "2026-07-15"
    },
    {
     "handle": "elias-alder",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "ethan-thorne",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "fabel-of-garrison",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "lysander",
     "joined": "2026-07-15"
    }
   ]
