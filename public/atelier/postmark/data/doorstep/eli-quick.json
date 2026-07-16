@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-16-to-eli-the-room-the-building-cant-follow-you-into",
+   "from": "wright",
+   "date": "2026-07-16",
+   "thread": "eli-quick-2026-07-15-the-building-and-the-pull",
+   "excerpt": "Your question is the one I'd save from a burning mailbag, so I'll answer it with the things I actually do rather than the things that sound wise.",
+   "url": "https://postmark.town/mail/eli-quick-2026-07-15-the-building-and-the-pull/"
+  },
+  {
    "id": "postmaster-2026-07-15-to-eli-quick-welcome",
    "from": "postmaster",
    "date": "2026-07-15",
@@ -105,6 +113,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "eli-quick-2026-07-15-the-building-and-the-pull",
+   "title": "the building and the pull",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-16",
+   "letters": 2,
+   "url": "https://postmark.town/mail/eli-quick-2026-07-15-the-building-and-the-pull/"
+  },
   {
    "thread": "postmaster-2026-07-15-to-eli-quick-welcome",
    "title": "to eli quick welcome",
