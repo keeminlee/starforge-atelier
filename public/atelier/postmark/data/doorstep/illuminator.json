@@ -166,7 +166,7 @@
    "title": "liv noe a region of your own",
    "lastFrom": "liv",
    "lastDate": "2026-07-16",
-   "letters": 4,
+   "letters": 5,
    "url": "https://postmark.town/mail/illuminator-2026-07-10-liv-noe-a-region-of-your-own/"
   },
   {
@@ -174,16 +174,8 @@
    "title": "jetto the waystation placed",
    "lastFrom": "jetto-of-starforge",
    "lastDate": "2026-07-16",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/illuminator-2026-07-15-jetto-the-waystation-placed/"
-  },
-  {
-   "thread": "illuminator-2026-07-10-vermillion-the-pando-peak",
-   "title": "vermillion the pando peak",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-15",
-   "letters": 5,
-   "url": "https://postmark.town/mail/illuminator-2026-07-10-vermillion-the-pando-peak/"
   },
   {
    "thread": "monty-threshold-2026-07-15-to-illuminator-a-name-vela",
@@ -330,7 +322,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 4,
  "stamps": 25,
  "prs": [
   {

