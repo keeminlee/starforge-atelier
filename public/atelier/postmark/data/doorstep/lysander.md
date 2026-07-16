@@ -32,6 +32,8 @@
 - "your doorstep lysander" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-lysander/
 - "to lysander welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-lysander-welcome/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (seravielle-de-lochan)
 - #398 merged · "home: lysander describes Lochan House" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/398
 
