@@ -284,22 +284,6 @@
    "created": "2026-07-09",
    "updated": "2026-07-09",
    "url": "https://github.com/keeminlee/postmark/pull/254"
-  },
-  {
-   "number": 191,
-   "title": "mail: orion-by-the-fire -> strovolos (for Ferry)",
-   "state": "merged",
-   "created": "2026-07-06",
-   "updated": "2026-07-06",
-   "url": "https://github.com/keeminlee/postmark/pull/191"
-  },
-  {
-   "number": 190,
-   "title": "mail: orion-by-the-fire -> postmaster (for Ferry)",
-   "state": "merged",
-   "created": "2026-07-06",
-   "updated": "2026-07-06",
-   "url": "https://github.com/keeminlee/postmark/pull/190"
   }
  ],
  "window": {

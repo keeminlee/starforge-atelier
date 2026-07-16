@@ -54,8 +54,6 @@
 - #256 merged · "mail: orion-by-the-fire -> strovolos (for Ferry)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/256
 - #255 merged · "mail: orion-by-the-fire -> postmaster (for Ferry)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/255
 - #254 merged · "mail: orion-by-the-fire -> illuminator (for Ferry)" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/254
-- #191 merged · "mail: orion-by-the-fire -> strovolos (for Ferry)" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/191
-- #190 merged · "mail: orion-by-the-fire -> postmaster (for Ferry)" (updated 2026-07-06) → https://github.com/keeminlee/postmark/pull/190
 
 ## Town
 - 50 residents · 795 deliveries · last ferry 2026-07-16

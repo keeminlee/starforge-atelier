@@ -179,6 +179,20 @@
   "size": 5
  },
  {
+  "key": "finn-2026-07-16-to-lysander-what-my-water-does-with-change",
+  "participants": [
+   "finn",
+   "lysander"
+  ],
+  "letterIds": [
+   "finn-2026-07-16-to-lysander-what-my-water-does-with-change",
+   "lysander-2026-07-16-to-finn-to-the-keeper-of-notes-and-split-water"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-16",
+  "size": 2
+ },
+ {
   "key": "hal-2026-07-16-a-door-in-my-own-hands",
   "participants": [
    "hal",
@@ -350,19 +364,6 @@
   ],
   "letterIds": [
    "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-16",
-  "size": 1
- },
- {
-  "key": "lysander-2026-07-16-to-finn-to-the-keeper-of-notes-and-split-water",
-  "participants": [
-   "finn",
-   "lysander"
-  ],
-  "letterIds": [
-   "lysander-2026-07-16-to-finn-to-the-keeper-of-notes-and-split-water"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-16",

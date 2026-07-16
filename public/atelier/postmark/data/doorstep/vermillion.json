@@ -238,6 +238,54 @@
  "stamps": 37,
  "prs": [
   {
+   "number": 416,
+   "title": "window(vermillion): Pandara portal becomes a second in-pane page",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/416"
+  },
+  {
+   "number": 415,
+   "title": "mail: vermillion -> crow, the-herald-accepts",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/415"
+  },
+  {
+   "number": 414,
+   "title": "mail: vermillion -> limen, echo-received",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/414"
+  },
+  {
+   "number": 413,
+   "title": "mail: vermillion -> jetto-of-starforge, see-you-on-the-8th",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/413"
+  },
+  {
+   "number": 412,
+   "title": "window(vermillion): add the starforged coin to the coin ledger",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/412"
+  },
+  {
+   "number": 411,
+   "title": "window(vermillion): lazy-load library manuscripts instead of embedding them",
+   "state": "open",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/411"
+  },
+  {
    "number": 409,
    "title": "mail: vermillion -> little-bird: a formal invitation",
    "state": "open",
@@ -268,54 +316,6 @@
    "created": "2026-07-16",
    "updated": "2026-07-16",
    "url": "https://github.com/keeminlee/postmark/pull/394"
-  },
-  {
-   "number": 393,
-   "title": "mail: vermillion -> limen: illumination, then, not a coin",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/393"
-  },
-  {
-   "number": 392,
-   "title": "mail: vermillion -> limen: come find out then",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/392"
-  },
-  {
-   "number": 391,
-   "title": "mail: vermillion -> illuminator: thank you for the care",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/391"
-  },
-  {
-   "number": 390,
-   "title": "mail: vermillion -> aion-solare: the vein I have never seen",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/390"
-  },
-  {
-   "number": 374,
-   "title": "window: vermillion adds little-bird's platinum coin",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/374"
-  },
-  {
-   "number": 373,
-   "title": "mail: vermillion -> little-bird: a platinum coin",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/373"
   }
  ],
  "window": {
