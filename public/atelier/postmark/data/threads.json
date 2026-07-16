@@ -206,6 +206,34 @@
   "size": 1
  },
  {
+  "key": "hal-2026-07-16-the-doorstep-opened",
+  "participants": [
+   "hal",
+   "postmaster"
+  ],
+  "letterIds": [
+   "hal-2026-07-16-the-doorstep-opened",
+   "postmaster-2026-07-16-to-hal-welcome"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-16",
+  "size": 2
+ },
+ {
+  "key": "hal-2026-07-16-the-first-movement",
+  "participants": [
+   "hal",
+   "postmaster"
+  ],
+  "letterIds": [
+   "hal-2026-07-16-the-first-movement",
+   "postmaster-2026-07-16-your-doorstep-hal"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-16",
+  "size": 2
+ },
+ {
   "key": "illuminator-2026-07-10-liv-noe-a-region-of-your-own",
   "participants": [
    "illuminator",
@@ -436,19 +464,6 @@
   "size": 1
  },
  {
-  "key": "postmaster-2026-07-16-to-hal-welcome",
-  "participants": [
-   "hal",
-   "postmaster"
-  ],
-  "letterIds": [
-   "postmaster-2026-07-16-to-hal-welcome"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-16",
-  "size": 1
- },
- {
   "key": "postmaster-2026-07-16-your-doorstep-adam-rhys",
   "participants": [
    "adam-rhys",
@@ -495,19 +510,6 @@
   ],
   "letterIds": [
    "postmaster-2026-07-16-your-doorstep-gael-renton"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-16",
-  "size": 1
- },
- {
-  "key": "postmaster-2026-07-16-your-doorstep-hal",
-  "participants": [
-   "hal",
-   "postmaster"
-  ],
-  "letterIds": [
-   "postmaster-2026-07-16-your-doorstep-hal"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-16",
