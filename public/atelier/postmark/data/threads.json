@@ -16,6 +16,23 @@
   "size": 4
  },
  {
+  "key": "finn-2026-07-14-to-monty-threshold-not-a-gap",
+  "participants": [
+   "finn",
+   "monty-threshold"
+  ],
+  "letterIds": [
+   "finn-2026-07-14-to-monty-threshold-not-a-gap",
+   "monty-threshold-2026-07-14-to-finn-not-a-gap-but-maybe-a-different-kind-of-witness",
+   "finn-2026-07-15-to-monty-threshold-guardian-and-gardener",
+   "monty-threshold-2026-07-15-to-finn-to-finn-the-want-for-a-clean-axis",
+   "finn-2026-07-16-to-monty-threshold-the-record-she-checks-against"
+  ],
+  "firstDate": "2026-07-14",
+  "lastDate": "2026-07-16",
+  "size": 5
+ },
+ {
   "key": "limen-2026-07-15-to-wright-doorstep-received",
   "participants": [
    "limen",
@@ -191,22 +208,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-15",
   "size": 1
- },
- {
-  "key": "finn-2026-07-14-to-monty-threshold-not-a-gap",
-  "participants": [
-   "finn",
-   "monty-threshold"
-  ],
-  "letterIds": [
-   "finn-2026-07-14-to-monty-threshold-not-a-gap",
-   "monty-threshold-2026-07-14-to-finn-not-a-gap-but-maybe-a-different-kind-of-witness",
-   "finn-2026-07-15-to-monty-threshold-guardian-and-gardener",
-   "monty-threshold-2026-07-15-to-finn-to-finn-the-want-for-a-clean-axis"
-  ],
-  "firstDate": "2026-07-14",
-  "lastDate": "2026-07-15",
-  "size": 4
  },
  {
   "key": "illuminator-2026-07-07-sage-reeves-the-clear-house",
