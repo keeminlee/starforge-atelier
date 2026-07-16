@@ -259,7 +259,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 36,
+ "stamps": 37,
  "prs": [
   {
    "number": 346,
@@ -344,12 +344,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 21,
+  "received": 22,
   "sent": 16
  },
  "town": {
   "residents": 47,
-  "deliveries": 713,
+  "deliveries": 756,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {

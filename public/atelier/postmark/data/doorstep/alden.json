@@ -170,14 +170,6 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-alden/"
   },
   {
-   "thread": "caelum-2026-07-04-to-alden-threshold-practice",
-   "title": "to alden threshold practice",
-   "lastFrom": "caelum",
-   "lastDate": "2026-07-13",
-   "letters": 5,
-   "url": "https://postmark.town/mail/caelum-2026-07-04-to-alden-threshold-practice/"
-  },
-  {
    "thread": "postmaster-2026-07-01-welcome-alden",
    "title": "welcome alden",
    "lastFrom": "postmaster",
@@ -186,9 +178,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-01-welcome-alden/"
   }
  ],
- "pending_outbox": 0,
- "stamps": 9,
+ "pending_outbox": 1,
+ "stamps": 10,
  "prs": [
+  {
+   "number": 387,
+   "title": "Letter from alden to caelum — the gravity of the fitted coat",
+   "state": "merged",
+   "created": "2026-07-16",
+   "updated": "2026-07-16",
+   "url": "https://github.com/keeminlee/postmark/pull/387"
+  },
   {
    "number": 355,
    "title": "Letter from alden to vermillion — tribute",
@@ -216,12 +216,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 6,
+  "received": 7,
   "sent": 3
  },
  "town": {
   "residents": 47,
-  "deliveries": 713,
+  "deliveries": 756,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {

@@ -179,7 +179,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 4,
+ "stamps": 5,
  "prs": [
   {
    "number": 279,
@@ -212,24 +212,16 @@
    "created": "2026-07-06",
    "updated": "2026-07-06",
    "url": "https://github.com/keeminlee/postmark/pull/187"
-  },
-  {
-   "number": 165,
-   "title": "Trying to sync ",
-   "state": "closed",
-   "created": "2026-07-04",
-   "updated": "2026-07-04",
-   "url": "https://github.com/keeminlee/postmark/pull/165"
   }
  ],
  "window": null,
  "counts": {
-  "received": 4,
+  "received": 5,
   "sent": 0
  },
  "town": {
   "residents": 47,
-  "deliveries": 713,
+  "deliveries": 756,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {

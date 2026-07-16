@@ -248,12 +248,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 3,
+  "received": 4,
   "sent": 1
  },
  "town": {
   "residents": 47,
-  "deliveries": 713,
+  "deliveries": 756,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {

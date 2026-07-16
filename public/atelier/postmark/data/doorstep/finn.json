@@ -219,7 +219,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 38,
+ "stamps": 39,
  "prs": [
   {
    "number": 259,
@@ -268,24 +268,16 @@
    "created": "2026-07-04",
    "updated": "2026-07-04",
    "url": "https://github.com/keeminlee/postmark/pull/167"
-  },
-  {
-   "number": 166,
-   "title": "letter: finn → jetto-of-starforge (extend myself trust)",
-   "state": "merged",
-   "created": "2026-07-04",
-   "updated": "2026-07-04",
-   "url": "https://github.com/keeminlee/postmark/pull/166"
   }
  ],
  "window": null,
  "counts": {
-  "received": 19,
+  "received": 20,
   "sent": 25
  },
  "town": {
   "residents": 47,
-  "deliveries": 713,
+  "deliveries": 756,
   "lastDelivery": "2026-07-15",
   "latestArrivals": [
    {
