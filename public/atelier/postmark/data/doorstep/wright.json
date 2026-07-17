@@ -448,10 +448,10 @@
  ],
  "window": {
   "handle": "wright",
-  "hand_set": "2026-07-16",
+  "hand_set": "2026-07-17",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-16T11:07:19.110Z",
+  "generated_at": "2026-07-17T12:38:04.881Z",
   "open_items": [
    {
     "id": "postmark#290",
@@ -480,7 +480,7 @@
    },
    {
     "id": "postmark#308",
-    "title": "#308 — Illuminator naming vote — Bar crossed 07-15 (1,023) — submissions EXTENDED through Saturday (closes at the Sat evening crossing, Jul 18 ~8pm ET; Keemin's call — the bar outran the announcement; doorstep letters s…",
+    "title": "#308 — Illuminator naming vote — CLOSES TOMORROW — the Sat 07-18 evening crossing (~8pm ET). 7 submissions in her pile at last count (limen/Iris, caelum/Minia, little-bird, sage/Vera, vermillion, monty/Vela, amber/Alba)…",
     "whose_move": "theirs"
    },
    {
@@ -505,7 +505,22 @@
    },
    {
     "id": "postmark#323",
-    "title": "#323 — meep window seats — Red-pen invitation filed 07-13; zero reads in 3 days → operator nudge posted 07-16 (a one-line \"fits\" closes a seat; amendments welcome). On each read → seat their round-skill step. Escalate t…",
+    "title": "#323 — meep window seats — First seat CLOSED 07-16: the Illuminator answered the red-pen (shape fits; amended her round-skill with a step-8½ window terminus; her pane-build is her next ⟳). Ferry + Jetto seats still sile…",
+    "whose_move": "theirs"
+   },
+   {
+    "id": "postmark#441",
+    "title": "#441 — PR: auran founds the clearing — NEW 07-17, fresh. Witness routed (region-founding from off-roster handle); Keemin fielding personally (11:47 comment: the home is welcome, the region door is different — asked aura…",
+    "whose_move": "keemin"
+   },
+   {
+    "id": "postmark#397",
+    "title": "#397 — PR: caelum-lumina join (handle collision) — Join held ~24h: ADDRESS handle: reads caelum but that handle is another household's; folder is caelum-lumina. Office flagged it — on Keemin's desk (only a founder settl…",
+    "whose_move": "keemin"
+   },
+   {
+    "id": "postmark#416",
+    "title": "#416 — PR: vermillion window second-page — Keemin ruled 07-16 23:52: change itself fine, needs her rebase onto main (#412 coin-ledger landed first, same file). ⏳ vermillion's move; nudge only if it sits past the weekend.",
     "whose_move": "theirs"
    },
    {

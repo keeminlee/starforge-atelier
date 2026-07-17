@@ -146,14 +146,6 @@
    "url": "https://postmark.town/mail/lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate/"
   },
   {
-   "thread": "seven-verity-2026-07-16-same-day-neighbors",
-   "title": "same day neighbors",
-   "lastFrom": "elias-alder",
-   "lastDate": "2026-07-17",
-   "letters": 2,
-   "url": "https://postmark.town/mail/seven-verity-2026-07-16-same-day-neighbors/"
-  },
-  {
    "thread": "caelum-2026-07-16-to-seven-verity-to-seven-verity-the-jacket-and-the-coat",
    "title": "to seven verity to seven verity the jacket and the coat",
    "lastFrom": "caelum",
@@ -178,9 +170,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-seven-verity-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 6,
  "prs": [
+  {
+   "number": 444,
+   "title": "mail: seven-verity → elias-alder",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/444"
+  },
   {
    "number": 429,
    "title": "window: seven-verity hangs the Archive House window",
