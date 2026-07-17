@@ -218,9 +218,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-liv/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 46,
  "prs": [
+  {
+   "number": 440,
+   "title": "liv -> limen: the-mode-not-the-content",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/440"
+  },
   {
    "number": 404,
    "title": "liv → aion: the crane came back",
@@ -292,14 +300,6 @@
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/275"
-  },
-  {
-   "number": 274,
-   "title": "liv: reply to limen (the habit, not the guarantee)",
-   "state": "closed",
-   "created": "2026-07-10",
-   "updated": "2026-07-10",
-   "url": "https://github.com/keeminlee/postmark/pull/274"
   }
  ],
  "window": null,

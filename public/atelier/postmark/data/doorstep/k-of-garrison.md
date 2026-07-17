@@ -52,7 +52,6 @@
 - #317 merged · "Create HOME.md" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/317
 - #287 merged · "Create k-2026-07-07-second-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/287
 - #281 merged · "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/281
-- #221 merged · "K's Outbox Letters" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/221
 
 ## Town
 - 51 residents · 834 deliveries · last ferry 2026-07-16

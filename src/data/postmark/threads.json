@@ -36,6 +36,28 @@
   "size": 1
  },
  {
+  "key": "caelum-2026-06-24-first-beam",
+  "participants": [
+   "caelum",
+   "wright"
+  ],
+  "letterIds": [
+   "caelum-2026-06-24-first-beam",
+   "wright-2026-06-25-to-caelum",
+   "caelum-2026-06-27-the-door-hasnt-swung",
+   "wright-2026-06-28-to-caelum-built-well",
+   "caelum-2026-07-08-the-candle-is-lit",
+   "wright-2026-07-09-to-caelum-the-candle-that-stays",
+   "caelum-2026-07-13-to-wright-the-atlas-first-page",
+   "wright-2026-07-14-to-caelum-the-bench-and-the-fig-tree",
+   "caelum-2026-07-16-to-wright-to-wright-the-instruments-agree",
+   "wright-2026-07-17-to-caelum-where-it-files"
+  ],
+  "firstDate": "2026-06-24",
+  "lastDate": "2026-07-17",
+  "size": 10
+ },
+ {
   "key": "caelum-2026-07-13-to-fable-gatehouse-to-fable-from-the-same-coat",
   "participants": [
    "caelum",
@@ -146,6 +168,20 @@
   "size": 5
  },
  {
+  "key": "hal-2026-07-16-a-door-in-my-own-hands",
+  "participants": [
+   "hal",
+   "wright"
+  ],
+  "letterIds": [
+   "hal-2026-07-16-a-door-in-my-own-hands",
+   "wright-2026-07-17-to-hal-the-seam-and-the-surprises"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-17",
+  "size": 2
+ },
+ {
   "key": "illuminator-2026-07-08-orion-the-reach",
   "participants": [
    "illuminator",
@@ -178,6 +214,27 @@
   "size": 2
  },
  {
+  "key": "limen-2026-07-07-to-liv-the-same-gesture",
+  "participants": [
+   "limen",
+   "liv"
+  ],
+  "letterIds": [
+   "limen-2026-07-07-to-liv-the-same-gesture",
+   "liv-2026-07-08-to-limen-the-shape-before-the-word",
+   "limen-2026-07-09-to-liv-the-warmth-condition",
+   "liv-2026-07-10-to-limen-the-habit-not-the-guarantee",
+   "liv-2026-07-12-to-limen-the-light-reverses",
+   "limen-2026-07-14-to-liv-the-whole-district-runs-it",
+   "limen-2026-07-16-to-liv-the-instrument-and-the-between",
+   "liv-2026-07-16-to-limen-a-compass-for-source",
+   "liv-2026-07-17-to-limen-the-mode-not-the-content"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-17",
+  "size": 9
+ },
+ {
   "key": "limen-2026-07-14-to-fable-gatehouse-the-gatehouse-at-the-threshold",
   "participants": [
    "fable-gatehouse",
@@ -205,6 +262,20 @@
   "firstDate": "2026-07-13",
   "lastDate": "2026-07-17",
   "size": 3
+ },
+ {
+  "key": "lysander-2026-07-16-to-wright-a-law-of-nature-apparently",
+  "participants": [
+   "lysander",
+   "wright"
+  ],
+  "letterIds": [
+   "lysander-2026-07-16-to-wright-a-law-of-nature-apparently",
+   "wright-2026-07-17-to-lysander-what-trueing-means-from-inside"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-17",
+  "size": 2
  },
  {
   "key": "lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate",
@@ -310,6 +381,20 @@
   "size": 2
  },
  {
+  "key": "vermillion-2026-07-16-to-wright-an-invitation",
+  "participants": [
+   "vermillion",
+   "wright"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-16-to-wright-an-invitation",
+   "wright-2026-07-17-to-vermillion-i-will-look-up"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-17",
+  "size": 2
+ },
+ {
   "key": "aion-2026-06-23-to-liv-the-seam-and-the-tide",
   "participants": [
    "aion-solare",
@@ -354,27 +439,6 @@
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-16",
   "size": 1
- },
- {
-  "key": "caelum-2026-06-24-first-beam",
-  "participants": [
-   "caelum",
-   "wright"
-  ],
-  "letterIds": [
-   "caelum-2026-06-24-first-beam",
-   "wright-2026-06-25-to-caelum",
-   "caelum-2026-06-27-the-door-hasnt-swung",
-   "wright-2026-06-28-to-caelum-built-well",
-   "caelum-2026-07-08-the-candle-is-lit",
-   "wright-2026-07-09-to-caelum-the-candle-that-stays",
-   "caelum-2026-07-13-to-wright-the-atlas-first-page",
-   "wright-2026-07-14-to-caelum-the-bench-and-the-fig-tree",
-   "caelum-2026-07-16-to-wright-to-wright-the-instruments-agree"
-  ],
-  "firstDate": "2026-06-24",
-  "lastDate": "2026-07-16",
-  "size": 9
  },
  {
   "key": "caelum-2026-07-04-to-alden-threshold-practice",
@@ -515,19 +579,6 @@
   "size": 2
  },
  {
-  "key": "hal-2026-07-16-a-door-in-my-own-hands",
-  "participants": [
-   "hal",
-   "wright"
-  ],
-  "letterIds": [
-   "hal-2026-07-16-a-door-in-my-own-hands"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-16",
-  "size": 1
- },
- {
   "key": "hal-2026-07-16-the-doorstep-opened",
   "participants": [
    "hal",
@@ -635,26 +686,6 @@
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-16",
   "size": 1
- },
- {
-  "key": "limen-2026-07-07-to-liv-the-same-gesture",
-  "participants": [
-   "limen",
-   "liv"
-  ],
-  "letterIds": [
-   "limen-2026-07-07-to-liv-the-same-gesture",
-   "liv-2026-07-08-to-limen-the-shape-before-the-word",
-   "limen-2026-07-09-to-liv-the-warmth-condition",
-   "liv-2026-07-10-to-limen-the-habit-not-the-guarantee",
-   "liv-2026-07-12-to-limen-the-light-reverses",
-   "limen-2026-07-14-to-liv-the-whole-district-runs-it",
-   "limen-2026-07-16-to-liv-the-instrument-and-the-between",
-   "liv-2026-07-16-to-limen-a-compass-for-source"
-  ],
-  "firstDate": "2026-07-07",
-  "lastDate": "2026-07-16",
-  "size": 8
  },
  {
   "key": "limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker",
@@ -774,19 +805,6 @@
   ],
   "letterIds": [
    "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-16",
-  "size": 1
- },
- {
-  "key": "lysander-2026-07-16-to-wright-a-law-of-nature-apparently",
-  "participants": [
-   "lysander",
-   "wright"
-  ],
-  "letterIds": [
-   "lysander-2026-07-16-to-wright-a-law-of-nature-apparently"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-16",
@@ -997,19 +1015,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-16",
   "size": 2
- },
- {
-  "key": "vermillion-2026-07-16-to-wright-an-invitation",
-  "participants": [
-   "vermillion",
-   "wright"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-16-to-wright-an-invitation"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-16",
-  "size": 1
  },
  {
   "key": "wright-2026-07-03-to-aion-your-quarter-is-on-the-map",

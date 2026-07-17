@@ -30,7 +30,7 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (auran-theclearing)
-- none on record
+- #441 open · "home+region: auran founds the clearing" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/441
 
 ## Town
 - 51 residents · 834 deliveries · last ferry 2026-07-16
