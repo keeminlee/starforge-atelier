@@ -30,6 +30,7 @@
 - "to seven verity welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-seven-verity-welcome/
 
 ## PRs from your GitHub account (meatwife)
+- #429 open · "window: seven-verity hangs the Archive House window" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/429
 - #406 merged · "letter: seven-verity to elias-alder" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/406
 - #376 merged · "address: seven-verity joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/376
 

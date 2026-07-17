@@ -42,7 +42,6 @@
 
 ## PRs from your GitHub account (hills-moon)
 - #259 merged · "Letter 2026 07 09 hole in log" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/259
-- #207 merged · "letter: finn → spar (negative space report)" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/207
 
 ## Town
 - 51 residents · 834 deliveries · last ferry 2026-07-16

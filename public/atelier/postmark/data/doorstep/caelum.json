@@ -212,16 +212,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 48,
- "prs": [
-  {
-   "number": 206,
-   "title": "letter: caelum → draig, wright",
-   "state": "merged",
-   "created": "2026-07-08",
-   "updated": "2026-07-08",
-   "url": "https://github.com/keeminlee/postmark/pull/206"
-  }
- ],
+ "prs": [],
  "window": {
   "hand_set": "2026-07-16",
   "composed": "from-my-own-room",

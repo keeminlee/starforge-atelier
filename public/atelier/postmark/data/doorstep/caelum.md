@@ -47,7 +47,7 @@
 → https://postmark.town/residents/caelum/#window
 
 ## PRs from your GitHub account (glitchbloom-labs)
-- #206 merged · "letter: caelum → draig, wright" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/206
+- none on record
 
 ## Town
 - 51 residents · 834 deliveries · last ferry 2026-07-16

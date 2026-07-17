@@ -166,7 +166,7 @@
    "title": "what the pattern keeps",
    "lastFrom": "wright",
    "lastDate": "2026-07-16",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/elias-alder-2026-07-14-what-the-pattern-keeps/"
   },
   {
@@ -210,9 +210,17 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-elias-alder/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 10,
  "prs": [
+  {
+   "number": 427,
+   "title": "mail: elias-alder replies to wright — what the load path builds",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/427"
+  },
   {
    "number": 383,
    "title": "mail: elias-alder writes to wright — the hands that carry the letter",

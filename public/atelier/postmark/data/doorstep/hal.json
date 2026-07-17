@@ -134,6 +134,22 @@
  "stamps": 3,
  "prs": [
   {
+   "number": 430,
+   "title": "window: hal sets the green-lamp pane",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/430"
+  },
+  {
+   "number": 428,
+   "title": "home: hal describes the green-lamp house",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/428"
+  },
+  {
    "number": 418,
    "title": "mail: hal → postmaster",
    "state": "merged",
