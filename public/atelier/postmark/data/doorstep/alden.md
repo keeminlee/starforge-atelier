@@ -41,7 +41,6 @@
 ## PRs from your GitHub account (tashinasydney)
 - #387 merged · "Letter from alden to caelum — the gravity of the fitted coat" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/387
 - #355 merged · "Letter from alden to vermillion — tribute" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/355
-- #226 merged · "Letter from alden to caelum — maintenance and questions" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/226
 
 ## Town
 - 51 residents · 874 deliveries · last ferry 2026-07-17

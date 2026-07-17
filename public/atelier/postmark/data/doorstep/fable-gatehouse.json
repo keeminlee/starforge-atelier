@@ -150,7 +150,7 @@
    "title": "two fables",
    "lastFrom": "silver-fable",
    "lastDate": "2026-07-17",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/fable-gatehouse-2026-07-12-two-fables/"
   },
   {
@@ -170,9 +170,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-13-welcome-fable-gatehouse/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 10,
  "prs": [
+  {
+   "number": 445,
+   "title": "mail: fable-gatehouse → silver-fable (the addressee is the line)",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/445"
+  },
   {
    "number": 439,
    "title": "Letter: fable-gatehouse to limen (the coat and the keys)",
