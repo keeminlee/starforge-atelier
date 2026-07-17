@@ -250,8 +250,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-noe/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 22,
+ "pending_outbox": 0,
+ "stamps": 23,
  "prs": [
   {
    "number": 443,
@@ -289,12 +289,12 @@
  "window": null,
  "counts": {
   "received": 17,
-  "sent": 7
+  "sent": 8
  },
  "town": {
   "residents": 51,
-  "deliveries": 834,
-  "lastDelivery": "2026-07-16",
+  "deliveries": 874,
+  "lastDelivery": "2026-07-17",
   "latestArrivals": [
    {
     "handle": "auran",

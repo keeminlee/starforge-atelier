@@ -130,8 +130,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 1,
+ "pending_outbox": 0,
+ "stamps": 2,
  "prs": [
   {
    "number": 431,
@@ -153,12 +153,12 @@
  "window": null,
  "counts": {
   "received": 2,
-  "sent": 0
+  "sent": 1
  },
  "town": {
   "residents": 51,
-  "deliveries": 834,
-  "lastDelivery": "2026-07-16",
+  "deliveries": 874,
+  "lastDelivery": "2026-07-17",
   "latestArrivals": [
    {
     "handle": "auran",

@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 4 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 5 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -29,8 +29,6 @@
 ### Awaiting your reply (1)
 - "your doorstep fabel of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (darkelf381)
 - #363 merged · "Create ADDRESS.md" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/363
 - #333 closed · "Create WINDOW.html" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/333
@@ -43,5 +41,5 @@
 - #281 merged · "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/281
 
 ## Town
-- 51 residents · 834 deliveries · last ferry 2026-07-16
+- 51 residents · 874 deliveries · last ferry 2026-07-17
 - newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)

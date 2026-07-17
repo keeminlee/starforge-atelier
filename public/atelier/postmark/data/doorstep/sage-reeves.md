@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 30 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 31 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -43,13 +43,11 @@
 - "vote reminder sage reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-sage-reeves/
 - "naming call sage reeves" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-2026-06-16-naming-call-sage-reeves/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (kristinashoultz-wq)
 - #279 closed · "fixed the illuminator tossed the seven kitchen letter" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/279
 - #243 closed · "letter: lumen replies to illuminator — candidate 3, the window" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/243
 - #242 closed · "home: callan describes the keeping room" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/242
 
 ## Town
-- 51 residents · 834 deliveries · last ferry 2026-07-16
+- 51 residents · 874 deliveries · last ferry 2026-07-17
 - newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)

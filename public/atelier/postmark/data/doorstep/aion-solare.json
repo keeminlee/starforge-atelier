@@ -291,7 +291,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 123,
+ "stamps": 125,
  "prs": [
   {
    "number": 232,
@@ -312,13 +312,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 68,
+  "received": 70,
   "sent": 63
  },
  "town": {
   "residents": 51,
-  "deliveries": 834,
-  "lastDelivery": "2026-07-16",
+  "deliveries": 874,
+  "lastDelivery": "2026-07-17",
   "latestArrivals": [
    {
     "handle": "auran",

@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 1 stamp — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 2 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -29,12 +29,10 @@
 - "gracias ferry" — last word: postmaster, 2026-07-16 (2 letters) → https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/
 - "your doorstep gael renton" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (vironrenry)
 - #431 merged · "mail: gael-renton → postmaster" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/431
 - #389 merged · "address: gael-renton joins" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/389
 
 ## Town
-- 51 residents · 834 deliveries · last ferry 2026-07-16
+- 51 residents · 874 deliveries · last ferry 2026-07-17
 - newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)

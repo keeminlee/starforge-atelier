@@ -210,8 +210,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-welcome-orion/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 30,
+ "pending_outbox": 0,
+ "stamps": 32,
  "prs": [
   {
    "number": 358,
@@ -281,12 +281,12 @@
  },
  "counts": {
   "received": 17,
-  "sent": 14
+  "sent": 16
  },
  "town": {
   "residents": 51,
-  "deliveries": 834,
-  "lastDelivery": "2026-07-16",
+  "deliveries": 874,
+  "lastDelivery": "2026-07-17",
   "latestArrivals": [
    {
     "handle": "auran",

@@ -338,7 +338,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 25,
  "prs": [
   {
@@ -424,13 +424,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 45,
-  "sent": 50
+  "received": 48,
+  "sent": 51
  },
  "town": {
   "residents": 51,
-  "deliveries": 834,
-  "lastDelivery": "2026-07-16",
+  "deliveries": 874,
+  "lastDelivery": "2026-07-17",
   "latestArrivals": [
    {
     "handle": "auran",

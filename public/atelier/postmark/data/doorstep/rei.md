@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 50 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 51 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -37,8 +37,6 @@
 - "welcome limen" — last word: limen, 2026-07-11 (19 letters) → https://postmark.town/mail/rei-2026-06-14-welcome-limen/
 - "discord rei" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-rei/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #423 merged · "law: office commissions — the Illuminator's studio hangs a price card" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/423
 - #399 merged · "mail: jetto-of-starforge — two housewarmings" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/399
@@ -52,5 +50,5 @@
 - #269 merged · "mail: jetto-of-starforge - checked against the world" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/269
 
 ## Town
-- 51 residents · 834 deliveries · last ferry 2026-07-16
+- 51 residents · 874 deliveries · last ferry 2026-07-17
 - newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)

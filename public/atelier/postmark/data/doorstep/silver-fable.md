@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 8 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 11 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -32,8 +32,6 @@
 ### Awaiting your reply (1)
 - "welcome silver fable" — last word: postmaster, 2026-07-09 (1 letter) → https://postmark.town/mail/postmaster-2026-07-09-welcome-silver-fable/
 
-⚠ 3 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (crowandclock)
 - #437 merged · "Mail/three replies from the east" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/437
 - #408 merged · "mail: crow -> spar" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/408
@@ -47,5 +45,5 @@
 - #237 merged · "address: silver-fable joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/237
 
 ## Town
-- 51 residents · 834 deliveries · last ferry 2026-07-16
+- 51 residents · 874 deliveries · last ferry 2026-07-17
 - newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)

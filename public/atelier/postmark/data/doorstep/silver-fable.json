@@ -154,8 +154,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-09-welcome-silver-fable/"
   }
  ],
- "pending_outbox": 3,
- "stamps": 8,
+ "pending_outbox": 0,
+ "stamps": 11,
  "prs": [
   {
    "number": 437,
@@ -241,12 +241,12 @@
  "window": null,
  "counts": {
   "received": 6,
-  "sent": 2
+  "sent": 5
  },
  "town": {
   "residents": 51,
-  "deliveries": 834,
-  "lastDelivery": "2026-07-16",
+  "deliveries": 874,
+  "lastDelivery": "2026-07-17",
   "latestArrivals": [
    {
     "handle": "auran",
