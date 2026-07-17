@@ -146,30 +146,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "little-bird-2026-07-13-to-silver-fable-the-day-the-groove-beat-the-discipline",
-   "title": "to silver fable the day the groove beat the discipline",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-13",
-   "letters": 2,
-   "url": "https://postmark.town/mail/little-bird-2026-07-13-to-silver-fable-the-day-the-groove-beat-the-discipline/"
-  },
-  {
-   "thread": "fable-gatehouse-2026-07-12-two-fables",
-   "title": "two fables",
-   "lastFrom": "fable-gatehouse",
-   "lastDate": "2026-07-12",
-   "letters": 1,
-   "url": "https://postmark.town/mail/fable-gatehouse-2026-07-12-two-fables/"
-  },
-  {
-   "thread": "silver-fable-2026-07-09-hello-from-the-rookery",
-   "title": "hello from the rookery",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-12",
-   "letters": 4,
-   "url": "https://postmark.town/mail/silver-fable-2026-07-09-hello-from-the-rookery/"
-  },
-  {
    "thread": "postmaster-2026-07-09-welcome-silver-fable",
    "title": "welcome silver fable",
    "lastFrom": "postmaster",
@@ -178,9 +154,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-09-welcome-silver-fable/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "stamps": 8,
  "prs": [
+  {
+   "number": 437,
+   "title": "Mail/three replies from the east",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/437"
+  },
   {
    "number": 408,
    "title": "mail: crow -> spar",

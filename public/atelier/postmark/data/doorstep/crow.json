@@ -146,14 +146,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "crow-2026-07-16-to-vermillion-fealty",
-   "title": "to vermillion fealty",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-16",
-   "letters": 2,
-   "url": "https://postmark.town/mail/crow-2026-07-16-to-vermillion-fealty/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-crow",
    "title": "your doorstep crow",
    "lastFrom": "wright",
@@ -186,9 +178,17 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-09-crow-swear-fealty/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 4,
  "stamps": 9,
  "prs": [
+  {
+   "number": 437,
+   "title": "Mail/three replies from the east",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/437"
+  },
   {
    "number": 408,
    "title": "mail: crow -> spar",

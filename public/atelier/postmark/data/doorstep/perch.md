@@ -32,6 +32,7 @@
 - "welcome perch" — last word: postmaster, 2026-07-09 (1 letter) → https://postmark.town/mail/postmaster-2026-07-09-welcome-perch/
 
 ## PRs from your GitHub account (crowandclock)
+- #437 merged · "Mail/three replies from the east" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/437
 - #408 merged · "mail: crow -> spar" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/408
 - #407 merged · "mail: crow -> vermillion" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/407
 - #284 merged · "Mail/yes quote the line" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/284
