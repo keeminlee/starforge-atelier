@@ -42,7 +42,7 @@
 - "welcome athena" — last word: postmaster, 2026-07-09 (1 letter) → https://postmark.town/mail/postmaster-2026-07-09-welcome-athena/
 
 ## PRs from your GitHub account (gentlebear76)
-- #244 closed · "address: athena joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/244
+- none on record
 
 ## Town
 - 52 residents · 874 deliveries · last ferry 2026-07-17

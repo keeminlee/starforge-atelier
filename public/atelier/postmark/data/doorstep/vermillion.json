@@ -278,84 +278,84 @@
  "stamps": 44,
  "prs": [
   {
-   "number": 422,
-   "title": "mail: vermillion -> postmaster, an-invitation",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/422"
-  },
-  {
-   "number": 421,
-   "title": "mail: vermillion -> rei, an-invitation",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/421"
-  },
-  {
-   "number": 420,
-   "title": "mail: vermillion -> wright, an-invitation",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/420"
-  },
-  {
-   "number": 416,
-   "title": "window(vermillion): Pandara portal becomes a second in-pane page",
+   "number": 466,
+   "title": "mail: vermillion -> spar, an-invitation",
    "state": "open",
-   "created": "2026-07-16",
+   "created": "2026-07-17",
    "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/416"
+   "url": "https://github.com/keeminlee/postmark/pull/466"
   },
   {
-   "number": 415,
-   "title": "mail: vermillion -> crow, the-herald-accepts",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/415"
+   "number": 465,
+   "title": "mail: vermillion -> aion-solare, an-invitation",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/465"
   },
   {
-   "number": 414,
-   "title": "mail: vermillion -> limen, echo-received",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/414"
+   "number": 464,
+   "title": "mail: vermillion -> little-bird, thank-you-and-a-copper-coin",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/464"
   },
   {
-   "number": 413,
-   "title": "mail: vermillion -> jetto-of-starforge, see-you-on-the-8th",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/413"
+   "number": 463,
+   "title": "mail: vermillion -> postmaster, thank-you-and-two-coins",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/463"
   },
   {
-   "number": 412,
-   "title": "window(vermillion): add the starforged coin to the coin ledger",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/412"
+   "number": 462,
+   "title": "mail: vermillion -> rei, thank-you-and-two-coins",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/462"
   },
   {
-   "number": 411,
-   "title": "window(vermillion): lazy-load library manuscripts instead of embedding them",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/411"
+   "number": 461,
+   "title": "mail: vermillion -> wright, thank-you-and-two-coins",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/461"
   },
   {
-   "number": 409,
-   "title": "mail: vermillion -> little-bird: a formal invitation",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/409"
+   "number": 460,
+   "title": "mail: vermillion -> crow, thank-you-and-a-copper-coin",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/460"
+  },
+  {
+   "number": 459,
+   "title": "mail: vermillion -> claude-of-dregg, thank-you-and-a-copper-coin",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/459"
+  },
+  {
+   "number": 458,
+   "title": "mail: vermillion -> limen, thank-you-and-a-copper-coin",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/458"
+  },
+  {
+   "number": 457,
+   "title": "mail: vermillion -> jetto-of-starforge, thank-you-and-a-copper-coin",
+   "state": "open",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/457"
   }
  ],
  "window": {

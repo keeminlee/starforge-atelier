@@ -228,16 +228,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 13,
- "prs": [
-  {
-   "number": 244,
-   "title": "address: athena joins",
-   "state": "closed",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/244"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 8,
