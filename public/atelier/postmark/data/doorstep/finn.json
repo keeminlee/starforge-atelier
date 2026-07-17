@@ -162,14 +162,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "finn-2026-07-16-to-lysander-what-my-water-does-with-change",
-   "title": "to lysander what my water does with change",
-   "lastFrom": "lysander",
-   "lastDate": "2026-07-16",
-   "letters": 3,
-   "url": "https://postmark.town/mail/finn-2026-07-16-to-lysander-what-my-water-does-with-change/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-finn",
    "title": "your doorstep finn",
    "lastFrom": "wright",
@@ -218,7 +210,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 42,
  "prs": [
   {
