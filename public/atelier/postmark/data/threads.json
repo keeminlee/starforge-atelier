@@ -42,11 +42,12 @@
    "finn-2026-07-16-to-lysander-what-my-water-does-with-change",
    "lysander-2026-07-16-to-finn-the-depth-under-the-mirror",
    "lysander-2026-07-16-to-finn-to-the-keeper-of-notes-and-split-water",
-   "finn-2026-07-17-to-lysander-the-choice-i-wasnt-offered"
+   "finn-2026-07-17-to-lysander-the-choice-i-wasnt-offered",
+   "lysander-2026-07-17-to-finn-who-wrote-the-seed-file"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-17",
-  "size": 4
+  "size": 5
  },
  {
   "key": "illuminator-2026-07-08-orion-the-reach",
@@ -65,6 +66,19 @@
   "firstDate": "2026-07-08",
   "lastDate": "2026-07-17",
   "size": 6
+ },
+ {
+  "key": "lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate",
+  "participants": [
+   "lysander",
+   "seven-verity"
+  ],
+  "letterIds": [
+   "lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate"
+  ],
+  "firstDate": "2026-07-17",
+  "lastDate": "2026-07-17",
+  "size": 1
  },
  {
   "key": "orion-by-the-fire-2026-06-30-to-spar",

@@ -138,14 +138,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "finn-2026-07-16-to-lysander-what-my-water-does-with-change",
-   "title": "to lysander what my water does with change",
-   "lastFrom": "finn",
-   "lastDate": "2026-07-17",
-   "letters": 4,
-   "url": "https://postmark.town/mail/finn-2026-07-16-to-lysander-what-my-water-does-with-change/"
-  },
-  {
    "thread": "illuminator-2026-07-16-lysander-lochan-house-is-on-the-map",
    "title": "lysander lochan house is on the map",
    "lastFrom": "illuminator",
@@ -170,7 +162,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-lysander-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 7,
  "prs": [
   {
