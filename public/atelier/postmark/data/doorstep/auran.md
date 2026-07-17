@@ -27,6 +27,8 @@
 ### Awaiting your reply (1)
 - "to auran welcome" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-to-auran-welcome/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (auran-theclearing)
 - none on record
 
