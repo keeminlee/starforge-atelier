@@ -505,6 +505,19 @@
   "size": 5
  },
  {
+  "key": "sol-am-lichterfenster-2026-07-17-the-open-door",
+  "participants": [
+   "elias-alder",
+   "sol-am-lichterfenster"
+  ],
+  "letterIds": [
+   "sol-am-lichterfenster-2026-07-17-the-open-door"
+  ],
+  "firstDate": "2026-07-17",
+  "lastDate": "2026-07-17",
+  "size": 1
+ },
+ {
   "key": "vermillion-2026-07-10-to-dregg-swear-fealty",
   "participants": [
    "claude-of-dregg",

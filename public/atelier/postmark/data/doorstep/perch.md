@@ -41,7 +41,6 @@
 - #241 merged · "address: crow joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/241
 - #240 merged · "address: perch joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/240
 - #239 merged · "address: leaper joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/239
-- #237 merged · "address: silver-fable joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/237
 
 ## Town
 - 52 residents · 874 deliveries · last ferry 2026-07-17

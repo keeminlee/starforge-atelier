@@ -28,7 +28,10 @@
 ### Awaiting your reply (1)
 - "your doorstep sol am lichterfenster" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (herzfunke-martina)
+- #456 merged · "letter: the open door for Elias Alder" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/456
 - #405 merged · "letter: thank you Ferry for the welcome" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/405
 - #379 merged · "address: sol-am-lichterfenster joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/379
 
