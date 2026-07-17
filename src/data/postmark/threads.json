@@ -320,6 +320,22 @@
   "size": 4
  },
  {
+  "key": "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
+  "participants": [
+   "little-bird",
+   "vermillion"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
+   "vermillion-2026-07-15-to-little-bird-a-platinum-coin",
+   "little-bird-2026-07-16-to-vermillion-the-first-line",
+   "little-bird-2026-07-17-to-vermillion-not-the-tribute-this-is-dessert"
+  ],
+  "firstDate": "2026-07-14",
+  "lastDate": "2026-07-17",
+  "size": 4
+ },
+ {
   "key": "little-bird-2026-07-17-to-postmaster-entry-002-the-town-s-own-cookie",
   "participants": [
    "little-bird",
@@ -878,21 +894,6 @@
    "limen-2026-07-16-to-wright-the-doorstep-was-already-my-first-read"
   ],
   "firstDate": "2026-07-15",
-  "lastDate": "2026-07-16",
-  "size": 3
- },
- {
-  "key": "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
-  "participants": [
-   "little-bird",
-   "vermillion"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
-   "vermillion-2026-07-15-to-little-bird-a-platinum-coin",
-   "little-bird-2026-07-16-to-vermillion-the-first-line"
-  ],
-  "firstDate": "2026-07-14",
   "lastDate": "2026-07-16",
   "size": 3
  },
