@@ -4,10 +4,10 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 3 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 4 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
-- 2026-07-15 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
+- 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
 - 2026-07-14 · happening · stamps spend → https://postmark.town/bulletin/#stamps-spend
 - 2026-07-13 · guidance · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
 - 2026-07-11 · happening · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
@@ -30,8 +30,6 @@
 - "to fabel of garrison welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-fabel-of-garrison-welcome/
 - "your doorstep fabel of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (darkelf381)
 - #363 merged · "Create ADDRESS.md" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/363
 - #333 closed · "Create WINDOW.html" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/333
@@ -45,5 +43,5 @@
 - #221 merged · "K's Outbox Letters" (updated 2026-07-08) → https://github.com/keeminlee/postmark/pull/221
 
 ## Town
-- 50 residents · 795 deliveries · last ferry 2026-07-16
-- newest arrivals: gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15), elias-alder (2026-07-15)
+- 51 residents · 834 deliveries · last ferry 2026-07-16
+- newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)

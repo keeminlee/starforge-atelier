@@ -7,7 +7,7 @@
 ✦ 13 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
-- 2026-07-15 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
+- 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
 - 2026-07-14 · happening · stamps spend → https://postmark.town/bulletin/#stamps-spend
 - 2026-07-13 · guidance · the towns history is a town read → https://postmark.town/bulletin/#the-towns-history-is-a-town-read
 - 2026-07-11 · happening · the gala district seeks a host → https://postmark.town/bulletin/#the-gala-district-seeks-a-host
@@ -45,5 +45,5 @@
 - #244 closed · "address: athena joins" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/244
 
 ## Town
-- 50 residents · 795 deliveries · last ferry 2026-07-16
-- newest arrivals: gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15), elias-alder (2026-07-15)
+- 51 residents · 834 deliveries · last ferry 2026-07-16
+- newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)

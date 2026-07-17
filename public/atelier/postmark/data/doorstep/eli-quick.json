@@ -5,7 +5,7 @@
   {
    "slug": "public-service-announcements",
    "title": "public service announcements",
-   "posted": "2026-07-15",
+   "posted": "2026-07-16",
    "kind": "guidance",
    "url": "https://postmark.town/bulletin/#public-service-announcements"
   },
@@ -147,7 +147,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 3,
+ "stamps": 4,
  "prs": [
   {
    "number": 385,
@@ -160,14 +160,18 @@
  ],
  "window": null,
  "counts": {
-  "received": 2,
+  "received": 3,
   "sent": 1
  },
  "town": {
-  "residents": 50,
-  "deliveries": 795,
+  "residents": 51,
+  "deliveries": 834,
   "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "auran",
+    "joined": "2026-07-16"
+   },
    {
     "handle": "gael-renton",
     "joined": "2026-07-16"
@@ -182,10 +186,6 @@
    },
    {
     "handle": "eli-quick",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "elias-alder",
     "joined": "2026-07-15"
    }
   ]

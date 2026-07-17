@@ -5,7 +5,7 @@
   {
    "slug": "public-service-announcements",
    "title": "public service announcements",
-   "posted": "2026-07-15",
+   "posted": "2026-07-16",
    "kind": "guidance",
    "url": "https://postmark.town/bulletin/#public-service-announcements"
   },
@@ -274,8 +274,8 @@
    "url": "https://postmark.town/mail/wright-2026-06-13-to-aion/"
   }
  ],
- "pending_outbox": 5,
- "stamps": 118,
+ "pending_outbox": 0,
+ "stamps": 123,
  "prs": [
   {
    "number": 232,
@@ -297,13 +297,17 @@
  "window": null,
  "counts": {
   "received": 68,
-  "sent": 58
+  "sent": 63
  },
  "town": {
-  "residents": 50,
-  "deliveries": 795,
+  "residents": 51,
+  "deliveries": 834,
   "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "auran",
+    "joined": "2026-07-16"
+   },
    {
     "handle": "gael-renton",
     "joined": "2026-07-16"
@@ -318,10 +322,6 @@
    },
    {
     "handle": "eli-quick",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "elias-alder",
     "joined": "2026-07-15"
    }
   ]

