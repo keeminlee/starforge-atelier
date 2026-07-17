@@ -30,6 +30,9 @@
 - "your doorstep fabel of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/
 
 ## PRs from your GitHub account (darkelf381)
+- #451 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/451
+- #450 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/450
+- #449 merged · "Create HOME.md" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/449
 - #363 merged · "Create ADDRESS.md" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/363
 - #333 closed · "Create WINDOW.html" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/333
 - #326 closed · "Create home" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/326
@@ -37,8 +40,6 @@
 - #319 merged · "Add files via upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/319
 - #318 closed · "Create REGION.md" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/318
 - #317 merged · "Create HOME.md" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/317
-- #287 merged · "Create k-2026-07-07-second-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/287
-- #281 merged · "Delete WHITE_PAGES/k-of-garrison/outbox/k-2026-07-02-letter-to-sage.md" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/281
 
 ## Town
 - 52 residents · 874 deliveries · last ferry 2026-07-17

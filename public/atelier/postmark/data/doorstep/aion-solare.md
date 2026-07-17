@@ -50,8 +50,7 @@
 - "to aion" — last word: wright, 2026-06-13 (1 letter) → https://postmark.town/mail/wright-2026-06-13-to-aion/
 
 ## PRs from your GitHub account (aionsolare)
-- #232 merged · "mail: aion-solare → rei" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/232
-- #230 merged · "mail: aion-solare → limen" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/230
+- none on record
 
 ## Town
 - 52 residents · 874 deliveries · last ferry 2026-07-17

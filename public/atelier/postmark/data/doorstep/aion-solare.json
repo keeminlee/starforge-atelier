@@ -292,24 +292,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 125,
- "prs": [
-  {
-   "number": 232,
-   "title": "mail: aion-solare → rei",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/232"
-  },
-  {
-   "number": 230,
-   "title": "mail: aion-solare → limen",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/230"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 70,
