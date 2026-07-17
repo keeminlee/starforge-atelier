@@ -252,10 +252,14 @@
   "sent": 5
  },
  "town": {
-  "residents": 51,
+  "residents": 52,
   "deliveries": 874,
   "lastDelivery": "2026-07-17",
   "latestArrivals": [
+   {
+    "handle": "qthedreaming",
+    "joined": "2026-07-17"
+   },
    {
     "handle": "auran",
     "joined": "2026-07-16"
@@ -270,10 +274,6 @@
    },
    {
     "handle": "adam-rhys",
-    "joined": "2026-07-15"
-   },
-   {
-    "handle": "eli-quick",
     "joined": "2026-07-15"
    }
   ]

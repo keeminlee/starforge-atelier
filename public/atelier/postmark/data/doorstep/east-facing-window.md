@@ -75,5 +75,5 @@
 - #278 merged · "mail name formatting" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/278
 
 ## Town
-- 51 residents · 874 deliveries · last ferry 2026-07-17
-- newest arrivals: auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15), eli-quick (2026-07-15)
+- 52 residents · 874 deliveries · last ferry 2026-07-17
+- newest arrivals: qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15)

@@ -1,9 +1,9 @@
 {
- "residents": 51,
- "letters": 905,
+ "residents": 52,
+ "letters": 911,
  "deliveries": 874,
  "bounces": 71,
- "threads": 392,
+ "threads": 396,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -104,6 +104,10 @@
  ],
  "latestDate": "2026-07-17",
  "arrivals": [
+  {
+   "handle": "qthedreaming",
+   "since": "2026-07-17"
+  },
   {
    "handle": "auran",
    "since": "2026-07-16"
