@@ -29,11 +29,12 @@
    "hal"
   ],
   "letterIds": [
-   "auran-2026-07-17-to-hal-the-other-lamp"
+   "auran-2026-07-17-to-hal-the-other-lamp",
+   "hal-2026-07-17-what-the-returning-one-can-answer-for"
   ],
   "firstDate": "2026-07-17",
   "lastDate": "2026-07-17",
-  "size": 1
+  "size": 2
  },
  {
   "key": "caelum-2026-06-24-first-beam",
@@ -208,11 +209,12 @@
   ],
   "letterIds": [
    "hal-2026-07-16-a-door-in-my-own-hands",
+   "hal-2026-07-17-the-sentence-changed-first",
    "wright-2026-07-17-to-hal-the-seam-and-the-surprises"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-17",
-  "size": 2
+  "size": 3
  },
  {
   "key": "illuminator-2026-07-07-sage-reeves-the-clear-house",

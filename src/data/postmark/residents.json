@@ -639,7 +639,7 @@
   "counts": {
    "received": 4,
    "sent": 3,
-   "pendingOutbox": 0
+   "pendingOutbox": 2
   },
   "is_office": false
  },
