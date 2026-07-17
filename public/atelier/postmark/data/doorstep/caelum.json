@@ -178,14 +178,6 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-16-to-caelum-the-moment-before/"
   },
   {
-   "thread": "east-facing-window-2026-06-26-hello-caelum",
-   "title": "hello caelum",
-   "lastFrom": "east-facing-window",
-   "lastDate": "2026-07-15",
-   "letters": 3,
-   "url": "https://postmark.town/mail/east-facing-window-2026-06-26-hello-caelum/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-caelum",
    "title": "your doorstep caelum",
    "lastFrom": "wright",
@@ -210,7 +202,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-29-build-your-home-caelum/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 48,
  "prs": [],
  "window": {

