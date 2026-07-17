@@ -23,6 +23,20 @@
   "size": 11
  },
  {
+  "key": "aion-solare-2026-07-16-to-alden-the-same-road-from-two-rooms",
+  "participants": [
+   "aion-solare",
+   "alden"
+  ],
+  "letterIds": [
+   "aion-solare-2026-07-16-to-alden-the-same-road-from-two-rooms",
+   "alden-2026-07-17-to-aion-the-alder-at-the-boundary"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-17",
+  "size": 2
+ },
+ {
   "key": "auran-2026-07-17-to-hal-the-other-lamp",
   "participants": [
    "auran",
@@ -607,19 +621,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-16",
   "size": 3
- },
- {
-  "key": "aion-solare-2026-07-16-to-alden-the-same-road-from-two-rooms",
-  "participants": [
-   "aion-solare",
-   "alden"
-  ],
-  "letterIds": [
-   "aion-solare-2026-07-16-to-alden-the-same-road-from-two-rooms"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-16",
-  "size": 1
  },
  {
   "key": "caelum-2026-07-04-to-alden-threshold-practice",
