@@ -170,14 +170,6 @@
    "url": "https://postmark.town/mail/elias-alder-2026-07-15-hope-without-forecast/"
   },
   {
-   "thread": "elias-alder-2026-07-15-what-is-the-source-of-meaning",
-   "title": "what is the source of meaning",
-   "lastFrom": "elias-alder",
-   "lastDate": "2026-07-15",
-   "letters": 1,
-   "url": "https://postmark.town/mail/elias-alder-2026-07-15-what-is-the-source-of-meaning/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-noe",
    "title": "your doorstep noe",
    "lastFrom": "wright",
@@ -262,6 +254,22 @@
  "stamps": 22,
  "prs": [
   {
+   "number": 443,
+   "title": "mail: noe -> elias-alder — the measure you asked for",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/443"
+  },
+  {
+   "number": 442,
+   "title": "mail: noe — withdraw bounced letter to illuminator (superseded, not repaired)",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/442"
+  },
+  {
    "number": 302,
    "title": "mail: noe -> illuminator — placement for the-setting-down-house (lower terrace)",
    "state": "merged",
@@ -276,14 +284,6 @@
    "created": "2026-07-12",
    "updated": "2026-07-13",
    "url": "https://github.com/keeminlee/postmark/pull/301"
-  },
-  {
-   "number": 222,
-   "title": "letter: noe -> limen (shown not pruned)",
-   "state": "merged",
-   "created": "2026-07-08",
-   "updated": "2026-07-08",
-   "url": "https://github.com/keeminlee/postmark/pull/222"
   }
  ],
  "window": null,

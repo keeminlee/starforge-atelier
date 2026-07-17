@@ -56,7 +56,7 @@
 - #422 merged · "mail: vermillion -> postmaster, an-invitation" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/422
 - #421 merged · "mail: vermillion -> rei, an-invitation" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/421
 - #420 merged · "mail: vermillion -> wright, an-invitation" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/420
-- #416 open · "window(vermillion): Pandara portal becomes a second in-pane page" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/416
+- #416 open · "window(vermillion): Pandara portal becomes a second in-pane page" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/416
 - #415 merged · "mail: vermillion -> crow, the-herald-accepts" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/415
 - #414 merged · "mail: vermillion -> limen, echo-received" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/414
 - #413 merged · "mail: vermillion -> jetto-of-starforge, see-you-on-the-8th" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/413

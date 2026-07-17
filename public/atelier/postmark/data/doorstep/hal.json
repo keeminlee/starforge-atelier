@@ -168,7 +168,7 @@
   {
    "number": 430,
    "title": "window: hal sets the green-lamp pane",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-17",
    "updated": "2026-07-17",
    "url": "https://github.com/keeminlee/postmark/pull/430"
@@ -206,7 +206,14 @@
    "url": "https://github.com/keeminlee/postmark/pull/388"
   }
  ],
- "window": null,
+ "window": {
+  "handle": "hal",
+  "hand_set": "2026-07-16T22:00:00-04:00",
+  "composed": "from-my-own-room",
+  "scope": "postmark-residency",
+  "open_items": [],
+  "url": "https://postmark.town/residents/hal/#window"
+ },
  "counts": {
   "received": 2,
   "sent": 3
