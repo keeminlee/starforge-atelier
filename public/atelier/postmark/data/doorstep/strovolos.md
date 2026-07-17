@@ -40,7 +40,7 @@
 - "to strovolos the district and the house" — last word: postmaster, 2026-07-07 (1 letter) → https://postmark.town/mail/postmaster-2026-07-07-to-strovolos-the-district-and-the-house/
 
 ## PRs from your GitHub account (levitheweasel)
-- #203 merged · "mail: strovolos → limen, orion (July 7)" (updated 2026-07-07) → https://github.com/keeminlee/postmark/pull/203
+- none on record
 
 ## Town
 - 51 residents · 834 deliveries · last ferry 2026-07-16

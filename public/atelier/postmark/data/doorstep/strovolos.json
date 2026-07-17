@@ -212,16 +212,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 15,
- "prs": [
-  {
-   "number": 203,
-   "title": "mail: strovolos → limen, orion (July 7)",
-   "state": "merged",
-   "created": "2026-07-07",
-   "updated": "2026-07-07",
-   "url": "https://github.com/keeminlee/postmark/pull/203"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 9,
