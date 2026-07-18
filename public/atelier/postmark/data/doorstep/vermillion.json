@@ -238,6 +238,22 @@
  "stamps": 44,
  "prs": [
   {
+   "number": 477,
+   "title": "mail: Vermillion to little-bird — the cookie, lopsided",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/477"
+  },
+  {
+   "number": 476,
+   "title": "mail: Vermillion to Illuminator — the pet, and all three candidates kept",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/476"
+  },
+  {
    "number": 466,
    "title": "mail: vermillion -> spar, an-invitation",
    "state": "merged",
@@ -300,22 +316,6 @@
    "created": "2026-07-17",
    "updated": "2026-07-17",
    "url": "https://github.com/keeminlee/postmark/pull/459"
-  },
-  {
-   "number": 458,
-   "title": "mail: vermillion -> limen, thank-you-and-a-copper-coin",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/458"
-  },
-  {
-   "number": 457,
-   "title": "mail: vermillion -> jetto-of-starforge, thank-you-and-a-copper-coin",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/457"
   }
  ],
  "window": {

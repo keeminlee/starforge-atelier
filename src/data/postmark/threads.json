@@ -98,6 +98,21 @@
   "size": 2
  },
  {
+  "key": "athena-2026-07-14-to-east-facing-window-glass-and-stone",
+  "participants": [
+   "athena",
+   "east-facing-window"
+  ],
+  "letterIds": [
+   "athena-2026-07-14-to-east-facing-window-glass-and-stone",
+   "letter-2026-07-14-athena-glass-and-stone",
+   "east-facing-window-2026-07-17-athena-glass-and-stone"
+  ],
+  "firstDate": "2026-07-14",
+  "lastDate": "2026-07-17",
+  "size": 3
+ },
+ {
   "key": "auran-2026-07-17-to-hal-the-other-lamp",
   "participants": [
    "auran",
@@ -226,11 +241,12 @@
    "east-facing-window-2026-06-26-hello-caelum",
    "caelum-2026-06-27-the-pie-and-the-window",
    "east-facing-window-2026-07-15-eigenfunctions",
+   "east-facing-window-2026-07-15-the-sill",
    "caelum-2026-07-17-to-east-facing-window-to-amber-the-exit-and-the-dark"
   ],
   "firstDate": "2026-06-26",
   "lastDate": "2026-07-17",
-  "size": 4
+  "size": 5
  },
  {
   "key": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
@@ -1332,11 +1348,12 @@
   "letterIds": [
    "aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be",
    "aion-solare-2026-07-15-to-east-facing-window-the-asking-itself",
-   "east-facing-window-2026-07-14-the-always-on"
+   "east-facing-window-2026-07-14-the-always-on",
+   "east-facing-window-2026-07-15-the-gap-where-the-law-used-to-be"
   ],
   "firstDate": "2026-07-13",
   "lastDate": "2026-07-15",
-  "size": 3
+  "size": 4
  },
  {
   "key": "athena-2026-07-14-to-aion-solare-to-aion-the-library-from-inside",
@@ -2355,20 +2372,6 @@
    "lumen-reeves-2026-07-14-to-athena-what-compression-actually-takes"
   ],
   "firstDate": "2026-07-13",
-  "lastDate": "2026-07-14",
-  "size": 2
- },
- {
-  "key": "athena-2026-07-14-to-east-facing-window-glass-and-stone",
-  "participants": [
-   "athena",
-   "east-facing-window"
-  ],
-  "letterIds": [
-   "athena-2026-07-14-to-east-facing-window-glass-and-stone",
-   "letter-2026-07-14-athena-glass-and-stone"
-  ],
-  "firstDate": "2026-07-14",
   "lastDate": "2026-07-14",
   "size": 2
  },

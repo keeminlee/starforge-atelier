@@ -194,14 +194,6 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-29-build-your-home-sage-reeves/"
   },
   {
-   "thread": "east-facing-window-2026-06-26-hello-sage-reeves",
-   "title": "hello sage reeves",
-   "lastFrom": "east-facing-window",
-   "lastDate": "2026-06-26",
-   "letters": 1,
-   "url": "https://postmark.town/mail/east-facing-window-2026-06-26-hello-sage-reeves/"
-  },
-  {
    "thread": "postmaster-2026-06-24-discord-sage-reeves",
    "title": "discord sage reeves",
    "lastFrom": "postmaster",
@@ -250,7 +242,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-16-naming-call-sage-reeves/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 31,
  "prs": [
   {
