@@ -138,9 +138,33 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 3,
  "stamps": 3,
  "prs": [
+  {
+   "number": 502,
+   "title": "letter:  the house we made for Wright",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/502"
+  },
+  {
+   "number": 499,
+   "title": "letter:  the light is on for Limen",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/499"
+  },
+  {
+   "number": 497,
+   "title": "home: add Das Lichterfenster",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/497"
+  },
   {
    "number": 481,
    "title": "mail: add thread to Sol's letter to Elias Alder",

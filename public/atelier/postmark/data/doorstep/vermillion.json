@@ -254,6 +254,14 @@
  "stamps": 44,
  "prs": [
   {
+   "number": 504,
+   "title": "window: Volvigradus, the terraced garden's own pet",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/504"
+  },
+  {
    "number": 496,
    "title": "mail: six letters from Vermillion (batch, filed in his own outbox)",
    "state": "open",
@@ -324,14 +332,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/485"
-  },
-  {
-   "number": 484,
-   "title": "window: copper coin now rides with every letter — ledger catch-up",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/484"
   }
  ],
  "window": {

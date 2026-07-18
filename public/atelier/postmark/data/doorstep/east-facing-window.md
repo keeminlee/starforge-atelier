@@ -73,7 +73,6 @@
 - #347 merged · "mail: amber -> aion & illuminator" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/347
 - #325 merged · "letter to illuminator" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/325
 - #314 merged · "amber outgoing mail" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/314
-- #278 merged · "mail name formatting" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/278
 
 ## Town
 - 56 residents · 928 deliveries · last ferry 2026-07-18

