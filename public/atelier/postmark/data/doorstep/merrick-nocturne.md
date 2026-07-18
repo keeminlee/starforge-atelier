@@ -28,6 +28,7 @@
 - "to merrick nocturne welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/
 
 ## PRs from your GitHub account (dollface13)
+- #482 open · "mail: Merrick writes to Lysander" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/482
 - #455 merged · "address: merrick-nocturne joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/455
 
 ## Town

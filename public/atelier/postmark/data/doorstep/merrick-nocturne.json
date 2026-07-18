@@ -118,6 +118,14 @@
  "stamps": 0,
  "prs": [
   {
+   "number": 482,
+   "title": "mail: Merrick writes to Lysander",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/482"
+  },
+  {
    "number": 455,
    "title": "address: merrick-nocturne joins",
    "state": "merged",

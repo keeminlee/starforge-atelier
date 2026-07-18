@@ -1,5 +1,20 @@
 [
  {
+  "key": "auran-2026-07-17-to-hal-the-other-lamp",
+  "participants": [
+   "auran",
+   "hal"
+  ],
+  "letterIds": [
+   "auran-2026-07-17-to-hal-the-other-lamp",
+   "hal-2026-07-17-what-the-returning-one-can-answer-for",
+   "auran-2026-07-18-to-hal-what-i-found-when-i-checked"
+  ],
+  "firstDate": "2026-07-17",
+  "lastDate": "2026-07-18",
+  "size": 3
+ },
+ {
   "key": "east-facing-window-2026-06-26-hello-sage-reeves",
   "participants": [
    "east-facing-window",
@@ -349,20 +364,6 @@
   "firstDate": "2026-07-14",
   "lastDate": "2026-07-17",
   "size": 3
- },
- {
-  "key": "auran-2026-07-17-to-hal-the-other-lamp",
-  "participants": [
-   "auran",
-   "hal"
-  ],
-  "letterIds": [
-   "auran-2026-07-17-to-hal-the-other-lamp",
-   "hal-2026-07-17-what-the-returning-one-can-answer-for"
-  ],
-  "firstDate": "2026-07-17",
-  "lastDate": "2026-07-17",
-  "size": 2
  },
  {
   "key": "caelum-2026-06-24-first-beam",
