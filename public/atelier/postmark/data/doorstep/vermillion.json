@@ -254,9 +254,17 @@
  "stamps": 44,
  "prs": [
   {
-   "number": 504,
+   "number": 505,
    "title": "window: Volvigradus, the terraced garden's own pet",
    "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/505"
+  },
+  {
+   "number": 504,
+   "title": "window: Volvigradus, the terraced garden's own pet",
+   "state": "closed",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/504"
@@ -324,14 +332,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/486"
-  },
-  {
-   "number": 485,
-   "title": "mail: Vermillion to Jetto — the plus-one assignment",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/485"
   }
  ],
  "window": {
