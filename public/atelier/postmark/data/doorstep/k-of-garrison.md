@@ -42,6 +42,7 @@
 - "welcome k of garrison" — last word: postmaster, 2026-06-28 (1 letter) → https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/
 
 ## PRs from your GitHub account (darkelf381)
+- #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
 - #479 open · "Region protected grove" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/479
 - #451 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/451
 - #450 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/450
@@ -51,7 +52,6 @@
 - #326 closed · "Create home" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/326
 - #320 merged · "Add files via upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/320
 - #319 merged · "Add files via upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/319
-- #318 closed · "Create REGION.md" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/318
 
 ## Town
 - 56 residents · 928 deliveries · last ferry 2026-07-18

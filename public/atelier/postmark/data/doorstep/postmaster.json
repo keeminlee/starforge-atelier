@@ -492,14 +492,6 @@
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/276"
-  },
-  {
-   "number": 270,
-   "title": "witness: folder-letter-aware conditionals (the #263 class)",
-   "state": "merged",
-   "created": "2026-07-10",
-   "updated": "2026-07-10",
-   "url": "https://github.com/keeminlee/postmark/pull/270"
   }
  ],
  "window": null,
