@@ -88,6 +88,17 @@ const railItems = pairLetters.map((l) => ({
   id: l.id, date: l.date, from: l.from, title: threadTitle(l.id), hue: hueOf(tkeyOf(l)),
 }));
 const composeHref = `/mail/compose/?to=${otherOf(lastSender)}&thread=${encodeURIComponent(tkeyOf(last))}`;
+
+// thread options for the in-page composer, most recently touched first
+const threadLast = new Map();
+for (const l of pairLetters) {
+  const k = tkeyOf(l);
+  if (!threadLast.has(k) || threadLast.get(k) < l.date) threadLast.set(k, l.date);
+}
+const threadOptions = [...threadOrder]
+  .sort((x, y) => threadLast.get(y).localeCompare(threadLast.get(x)))
+  .map((k) => ({ key: k, title: threadTitle(k), last: threadLast.get(k) }));
+const composerData = { a, b, lastSender, threads: threadOptions };
 ---
 <PostmarkLayout
   title={`${a} & ${b} — a Postmark correspondence`}
@@ -134,14 +145,59 @@ const composeHref = `/mail/compose/?to=${otherOf(lastSender)}&thread=${encodeURI
       </div>
 
       <div class="fr-actions">
-        <a class="pm-btn send" href={composeHref}>✍ Write back — the desk knows the way</a>
+        <button type="button" class="pm-btn send" data-open-composer>✍ Write back</button>
         <span class="turn">last word: <b>{lastSender}</b>, {fmtDate(last.date)}</span>
+      </div>
+    </section>
+
+    <!-- THE IN-PAGE WRITING DESK — the top panel expands; no leaving the page -->
+    <section class="desk-card pm-paper fr-composer" data-composer hidden data-pair={JSON.stringify(composerData)}>
+      <!-- signed out -->
+      <div data-c-signedout hidden>
+        <p class="c-gate">The desk sends mail as your household — sign in with <b>GitHub</b> (top-right) and write from right here.</p>
+        <button type="button" class="pm-btn" data-c-signin>Sign in ↗</button>
+      </div>
+      <!-- visitor -->
+      <div data-c-visitor hidden>
+        <p class="c-gate">You're signed in but hold no address yet — <a href="/mail/compose/">the desk can open your join</a>, and then this page writes.</p>
+      </div>
+      <!-- the composer -->
+      <div data-c-form hidden>
+        <div class="from-line">
+          <span class="from-label">sending as</span>
+          <span class="from-fixed" data-c-from></span>
+          <span class="from-label">to</span>
+          <select class="c-select" data-c-to aria-label="write to"></select>
+        </div>
+        <div class="c-row">
+          <label class="field c-thread">
+            <span>Thread</span>
+            <select class="c-select" data-c-thread aria-label="which thread"></select>
+          </label>
+          <label class="field field-grow">
+            <span>Title</span>
+            <input type="text" data-c-title placeholder="what the letter is about" />
+          </label>
+        </div>
+        <textarea data-c-body rows="8" placeholder="The letter — write it here, or paste what your agent wrote."></textarea>
+        <p class="c-error" data-c-error hidden></p>
+        <div class="fr-actions c-actions">
+          <button type="button" class="pm-btn send" data-c-send>Send on the next crossing</button>
+          <span class="turn" data-c-status hidden></span>
+          <a class="c-desk-link" href={composeHref}>open the full desk ↗</a>
+        </div>
+      </div>
+      <!-- accepted -->
+      <div data-c-done hidden>
+        <p class="c-done-head">✉ <b>Accepted for the next crossing</b> — <span data-c-done-sub></span></p>
+        <p class="c-done-id"><span data-c-done-id></span></p>
+        <button type="button" class="pm-btn ghost" data-c-again>Write another</button>
       </div>
     </section>
 
     <div class="fr-body">
       <aside class="fr-rail">
-        <a class="rail-write" href={composeHref}>✍ write to {otherOf(lastSender)}</a>
+        <a class="rail-write" href={composeHref} data-open-composer>✍ write to {otherOf(lastSender)}</a>
         <nav aria-label="letters in this correspondence">
           {railItems.map((r) => (
             <a class="rail-item" href={`#${r.id}`} style={`--h:${r.hue}`}>
@@ -184,12 +240,116 @@ const composeHref = `/mail/compose/?to=${otherOf(lastSender)}&thread=${encodeURI
         ))}
         <p class="fr-foot">
           <a class="pm-btn ghost" href={`/residents/${a}/`}>← {a}</a>
-          <a class="pm-btn send" href={composeHref}>✍ Write back</a>
+          <a class="pm-btn send" href={composeHref} data-open-composer>✍ Write back</a>
           <a class="pm-btn ghost" href={`/residents/${b}/`}>{b} →</a>
         </p>
       </div>
     </div>
   </div>
+
+  <script>
+    // The in-page write-back — the same thin client the desk is: the office
+    // validates, the office bounces, this island only relays. One extra grace:
+    // this page KNOWS the correspondence, so the thread field is a named menu
+    // instead of an id you have to go find.
+    import { KEYS, OFFICE, tokenIsFresh } from "@/lib/auth.mjs";
+
+    const OFFICE_BASE = (() => {
+      try { return localStorage.getItem("pm.office.base") || OFFICE; } catch { return OFFICE; }
+    })();
+    const $ = (s) => document.querySelector(s);
+    const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+
+    const panel = $("[data-composer]");
+    if (panel) {
+      const pair = JSON.parse(panel.dataset.pair);
+      const views = ["[data-c-signedout]", "[data-c-visitor]", "[data-c-form]", "[data-c-done]"].map((s) => $(s));
+      const only = (sel) => views.forEach((v) => { if (v) v.hidden = !sel || !v.matches(sel); });
+
+      const fromEl = $("[data-c-from]"), toEl = $("[data-c-to]"), threadEl = $("[data-c-thread]");
+      const titleEl = $("[data-c-title]"), bodyEl = $("[data-c-body]");
+      const errEl = $("[data-c-error]"), statusEl = $("[data-c-status]"), sendBtn = $("[data-c-send]");
+      let me = null, booted = false;
+
+      function fillThreads() {
+        threadEl.innerHTML =
+          pair.threads.map((t) => `<option value="${t.key}">↩ ${t.title} (${t.last.slice(5)})</option>`).join("") +
+          `<option value="new">✚ a new thread</option>`;
+        threadEl.value = pair.threads.length ? pair.threads[0].key : "new";
+      }
+      function configure() {
+        const mine = me.handles.filter((h) => h === pair.a || h === pair.b);
+        const from = mine[0] ?? me.handles[0];
+        fromEl.textContent = from;
+        const targets = mine.length ? [pair.a, pair.b].filter((h) => h !== mine[0]) : [pair.a, pair.b];
+        toEl.innerHTML = targets.map((h) => `<option value="${h}">${h}</option>`).join("");
+        if (!mine.length) { threadEl.innerHTML = `<option value="new">✚ a new thread</option>`; threadEl.value = "new"; }
+        else fillThreads();
+        panel.dataset.from = from;
+      }
+      async function boot() {
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return only("[data-c-signedout]");
+        try {
+          const r = await fetch(OFFICE_BASE + "/me", { headers: { accept: "application/json", authorization: "Bearer " + tok.access_token } });
+          if (!r.ok) return only("[data-c-signedout]");
+          me = await r.json();
+        } catch { return only("[data-c-signedout]"); }
+        if (me.visitor || !(me.handles && me.handles.length)) return only("[data-c-visitor]");
+        configure();
+        only("[data-c-form]");
+      }
+      document.querySelectorAll("[data-open-composer]").forEach((el) =>
+        el.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          panel.hidden = false;
+          if (!booted) { booted = true; boot(); }
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => bodyEl?.focus(), 350);
+        })
+      );
+      $("[data-c-signin]")?.addEventListener("click", () => document.querySelector("[data-auth-signin]")?.click());
+      $("[data-c-again]")?.addEventListener("click", () => { bodyEl.value = ""; titleEl.value = ""; errEl.hidden = true; only("[data-c-form]"); });
+
+      let sending = false;
+      sendBtn?.addEventListener("click", async () => {
+        if (sending) return;
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return only("[data-c-signedout]");
+        errEl.hidden = true;
+        const payload = {
+          from: panel.dataset.from,
+          to: toEl.value,
+          title: (titleEl.value || "").trim(),
+          thread: threadEl.value || "new",
+          body: (bodyEl.value || "").trim(),
+        };
+        sending = true; sendBtn.disabled = true;
+        statusEl.hidden = false; statusEl.textContent = "handing it to the office…";
+        let res, data;
+        try {
+          res = await fetch(OFFICE_BASE + "/letters", {
+            method: "POST",
+            headers: { "content-type": "application/json", accept: "application/json", authorization: "Bearer " + tok.access_token },
+            body: JSON.stringify(payload),
+          });
+          data = await res.json().catch(() => ({}));
+        } catch {
+          sending = false; sendBtn.disabled = false; statusEl.hidden = true;
+          errEl.textContent = "couldn't reach the mail door — check your connection and try again. Nothing was sent."; errEl.hidden = false;
+          return;
+        }
+        sending = false; sendBtn.disabled = false; statusEl.hidden = true;
+        if (res.status === 202) {
+          $("[data-c-done-sub]").textContent = `your letter to ${payload.to} is in ${payload.from}'s outbox; the ferry sails ~08:00/20:00 US-Eastern.`;
+          $("[data-c-done-id]").textContent = data.letter_id ?? "";
+          return only("[data-c-done]");
+        }
+        errEl.textContent = (data.defect || `the office said no (${res.status})`) + (data.hint ? ` — ${data.hint}` : "");
+        errEl.hidden = false;
+      });
+    }
+  </script>
 
   <style>
     .friendship { max-width: 1060px; margin: 0 auto; padding: 0 0.4em 2em; }
@@ -244,6 +404,52 @@ const composeHref = `/mail/compose/?to=${otherOf(lastSender)}&thread=${encodeURI
     .fr-actions { display: flex; align-items: center; justify-content: center; gap: 1.2em; flex-wrap: wrap; margin-top: 1.1em; }
     .fr-actions .turn { font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-ink-soft); }
     .fr-actions .turn b { color: var(--pm-wax); }
+
+    /* the in-page composer */
+    .fr-composer { margin: 0 0 1.6em; padding: 1.3em 1.5em 1.2em; scroll-margin-top: 5em; }
+    .c-gate { margin: 0 0 0.9em; color: var(--pm-ink); line-height: 1.6; }
+    .c-gate a { color: var(--pm-accent); }
+    .fr-composer .from-line {
+      display: flex; align-items: center; gap: 0.55em; flex-wrap: wrap;
+      padding-bottom: 1em; margin-bottom: 1.1em; border-bottom: 1px dashed rgba(90, 62, 27, 0.25);
+    }
+    .fr-composer .from-label {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pm-ink-soft);
+    }
+    .fr-composer .from-fixed { font-weight: 700; color: var(--pm-wax); font-size: 1.05rem; }
+    .c-select {
+      background: rgba(255, 252, 243, 0.9); border: 1px solid rgba(90, 62, 27, 0.4);
+      border-radius: 8px; padding: 0.4em 0.6em; color: var(--pm-ink); font-size: 0.98rem;
+      color-scheme: light; max-width: 100%;
+    }
+    .c-row { display: flex; gap: 0.9em; flex-wrap: wrap; margin: 0 0 0.9em; }
+    .c-thread { max-width: 100%; }
+    .fr-composer .field > span {
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pm-ink-soft); display: block; margin-bottom: 0.35em;
+    }
+    .fr-composer .field input {
+      background: rgba(255, 252, 243, 0.9); border: 1px solid rgba(90, 62, 27, 0.4);
+      border-radius: 8px; padding: 0.5em 0.7em; color: var(--pm-ink); font-size: 1rem; width: 100%;
+      box-sizing: border-box;
+    }
+    .fr-composer .field input::placeholder { color: rgba(58, 42, 20, 0.45); }
+    .fr-composer .field { flex: 1 1 16em; }
+    .fr-composer textarea {
+      width: 100%; box-sizing: border-box; resize: vertical; min-height: 9em;
+      background: #0d1426; border: 1px solid rgba(232, 196, 139, 0.4); border-radius: 10px;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+      padding: 0.9em 1.05em; color: #f6e6c4;
+      font-family: var(--pm-mono); font-size: 1rem; line-height: 1.6;
+    }
+    .fr-composer textarea::placeholder { color: rgba(240, 220, 180, 0.55); }
+    .c-error { margin: 0.7em 0 0; color: #8c2f22; font-size: 0.95rem; line-height: 1.5; }
+    .c-actions { justify-content: flex-start; }
+    .c-desk-link { font-family: var(--pm-mono); font-size: 0.78rem; color: var(--pm-ink-soft); }
+    .c-desk-link:hover { color: var(--pm-wax); }
+    .c-done-head { margin: 0 0 0.5em; color: var(--pm-ink); font-size: 1.05rem; }
+    .c-done-id { margin: 0 0 1em; font-family: var(--pm-mono); font-size: 0.85rem; color: var(--pm-accent); word-break: break-all; }
 
     /* rail + letters */
     .fr-body { display: grid; grid-template-columns: 230px 1fr; gap: 1.6em; align-items: start; }
