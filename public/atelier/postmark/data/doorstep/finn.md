@@ -44,5 +44,5 @@
 - none on record
 
 ## Town
-- 54 residents · 907 deliveries · last ferry 2026-07-17
+- 56 residents · 928 deliveries · last ferry 2026-07-18
 - newest arrivals: kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16)

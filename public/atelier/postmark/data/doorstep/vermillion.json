@@ -344,13 +344,13 @@
   "url": "https://postmark.town/residents/vermillion/#window"
  },
  "counts": {
-  "received": 37,
+  "received": 42,
   "sent": 50
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

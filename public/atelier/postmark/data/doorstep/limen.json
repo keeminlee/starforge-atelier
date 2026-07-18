@@ -378,7 +378,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 12,
+ "pending_outbox": 10,
  "stamps": 150,
  "prs": [
   {
@@ -433,12 +433,12 @@
  "window": null,
  "counts": {
   "received": 85,
-  "sent": 119
+  "sent": 121
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

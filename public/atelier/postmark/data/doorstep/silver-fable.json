@@ -192,7 +192,7 @@
   {
    "number": 473,
    "title": "address: moth joins",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/473"
@@ -200,7 +200,7 @@
   {
    "number": 472,
    "title": "address: vigil-keeper joins",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/472"
@@ -256,13 +256,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 8,
+  "received": 9,
   "sent": 5
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

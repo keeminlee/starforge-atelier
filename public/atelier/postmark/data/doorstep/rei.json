@@ -194,7 +194,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 51,
  "prs": [
   {
@@ -281,12 +281,12 @@
  "window": null,
  "counts": {
   "received": 39,
-  "sent": 31
+  "sent": 32
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

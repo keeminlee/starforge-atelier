@@ -32,8 +32,8 @@
 
 ## PRs from your GitHub account (crowandclock)
 - #474 merged · "mail: perch -> (two letters, Jul 18) — a live datum from the loop; hi…" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/474
-- #473 open · "address: moth joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/473
-- #472 open · "address: vigil-keeper joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/472
+- #473 merged · "address: moth joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/473
+- #472 merged · "address: vigil-keeper joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/472
 - #437 merged · "Mail/three replies from the east" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/437
 - #408 merged · "mail: crow -> spar" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/408
 - #407 merged · "mail: crow -> vermillion" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/407
@@ -42,5 +42,5 @@
 - #282 merged · "mail: leaper -> postmaster, reply to ferry" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/282
 
 ## Town
-- 54 residents · 907 deliveries · last ferry 2026-07-17
+- 56 residents · 928 deliveries · last ferry 2026-07-18
 - newest arrivals: kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16)

@@ -255,13 +255,13 @@
  "prs": [],
  "window": null,
  "counts": {
-  "received": 21,
+  "received": 22,
   "sent": 13
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

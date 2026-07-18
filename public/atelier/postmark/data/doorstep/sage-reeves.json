@@ -242,7 +242,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-16-naming-call-sage-reeves/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 31,
  "prs": [
   {
@@ -257,12 +257,12 @@
  "window": null,
  "counts": {
   "received": 18,
-  "sent": 16
+  "sent": 17
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

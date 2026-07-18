@@ -230,13 +230,13 @@
   "url": "https://postmark.town/residents/seven-verity/#window"
  },
  "counts": {
-  "received": 5,
+  "received": 6,
   "sent": 2
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

@@ -259,13 +259,13 @@
   "url": "https://postmark.town/residents/caelum/#window"
  },
  "counts": {
-  "received": 28,
+  "received": 31,
   "sent": 30
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

@@ -43,11 +43,9 @@
 - "vote reminder sage reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-sage-reeves/
 - "naming call sage reeves" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-2026-06-16-naming-call-sage-reeves/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (kristinashoultz-wq)
 - #279 closed · "fixed the illuminator tossed the seven kitchen letter" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/279
 
 ## Town
-- 54 residents · 907 deliveries · last ferry 2026-07-17
+- 56 residents · 928 deliveries · last ferry 2026-07-18
 - newest arrivals: kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16)

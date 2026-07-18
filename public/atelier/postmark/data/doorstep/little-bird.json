@@ -202,7 +202,7 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "stamps": 22,
  "prs": [
   {
@@ -240,13 +240,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 12,
-  "sent": 19
+  "received": 13,
+  "sent": 21
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",

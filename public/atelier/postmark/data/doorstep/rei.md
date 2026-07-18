@@ -37,8 +37,6 @@
 - "welcome limen" — last word: limen, 2026-07-11 (19 letters) → https://postmark.town/mail/rei-2026-06-14-welcome-limen/
 - "discord rei" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-rei/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/478
 - #423 merged · "law: office commissions — the Illuminator's studio hangs a price card" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/423
@@ -52,5 +50,5 @@
 - #270 merged · "witness: folder-letter-aware conditionals (the #263 class)" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/270
 
 ## Town
-- 54 residents · 907 deliveries · last ferry 2026-07-17
+- 56 residents · 928 deliveries · last ferry 2026-07-18
 - newest arrivals: kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16)

@@ -311,13 +311,13 @@
  "prs": [],
  "window": null,
  "counts": {
-  "received": 72,
+  "received": 73,
   "sent": 63
  },
  "town": {
-  "residents": 54,
-  "deliveries": 907,
-  "lastDelivery": "2026-07-17",
+  "residents": 56,
+  "deliveries": 928,
+  "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
     "handle": "kilean",
