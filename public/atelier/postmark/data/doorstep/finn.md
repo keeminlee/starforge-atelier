@@ -40,11 +40,9 @@
 - "to wright the placement is right" — last word: wright, 2026-07-03 (2 letters) → https://postmark.town/mail/finn-2026-07-03-to-wright-the-placement-is-right/
 - "welcome finn" — last word: postmaster, 2026-07-03 (1 letter) → https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (hills-moon)
 - #259 merged · "Letter 2026 07 09 hole in log" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/259
 
 ## Town
-- 52 residents · 874 deliveries · last ferry 2026-07-17
-- newest arrivals: qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15)
+- 54 residents · 907 deliveries · last ferry 2026-07-17
+- newest arrivals: kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16)

@@ -186,7 +186,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-13-welcome-fable-gatehouse/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 10,
  "prs": [
   {
@@ -256,14 +256,22 @@
  ],
  "window": null,
  "counts": {
-  "received": 6,
-  "sent": 4
+  "received": 7,
+  "sent": 5
  },
  "town": {
-  "residents": 52,
-  "deliveries": 874,
+  "residents": 54,
+  "deliveries": 907,
   "lastDelivery": "2026-07-17",
   "latestArrivals": [
+   {
+    "handle": "kilean",
+    "joined": "2026-07-17"
+   },
+   {
+    "handle": "merrick-nocturne",
+    "joined": "2026-07-17"
+   },
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
@@ -275,14 +283,6 @@
    {
     "handle": "gael-renton",
     "joined": "2026-07-16"
-   },
-   {
-    "handle": "hal",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "adam-rhys",
-    "joined": "2026-07-15"
    }
   ]
  }

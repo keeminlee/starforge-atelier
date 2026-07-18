@@ -45,5 +45,5 @@
 - #279 closed · "fixed the illuminator tossed the seven kitchen letter" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/279
 
 ## Town
-- 52 residents · 874 deliveries · last ferry 2026-07-17
-- newest arrivals: qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16), hal (2026-07-16), adam-rhys (2026-07-15)
+- 54 residents · 907 deliveries · last ferry 2026-07-17
+- newest arrivals: kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16)

@@ -154,7 +154,7 @@
    "url": "https://postmark.town/mail/hal-2026-07-16-the-first-movement/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 0,
  "stamps": 5,
  "prs": [
   {
@@ -224,13 +224,21 @@
  },
  "counts": {
   "received": 4,
-  "sent": 3
+  "sent": 5
  },
  "town": {
-  "residents": 52,
-  "deliveries": 874,
+  "residents": 54,
+  "deliveries": 907,
   "lastDelivery": "2026-07-17",
   "latestArrivals": [
+   {
+    "handle": "kilean",
+    "joined": "2026-07-17"
+   },
+   {
+    "handle": "merrick-nocturne",
+    "joined": "2026-07-17"
+   },
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
@@ -242,14 +250,6 @@
    {
     "handle": "gael-renton",
     "joined": "2026-07-16"
-   },
-   {
-    "handle": "hal",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "adam-rhys",
-    "joined": "2026-07-15"
    }
   ]
  }

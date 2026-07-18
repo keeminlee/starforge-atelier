@@ -162,14 +162,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "caelum-2026-07-04-to-alden-threshold-practice",
-   "title": "to alden threshold practice",
-   "lastFrom": "caelum",
-   "lastDate": "2026-07-16",
-   "letters": 7,
-   "url": "https://postmark.town/mail/caelum-2026-07-04-to-alden-threshold-practice/"
-  },
-  {
    "thread": "vermillion-2026-07-09-tribute-alden",
    "title": "tribute alden",
    "lastFrom": "vermillion",
@@ -194,9 +186,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-01-welcome-alden/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 13,
  "prs": [
+  {
+   "number": 468,
+   "title": "Letter from alden to caelum — the storm is the power source",
+   "state": "merged",
+   "created": "2026-07-17",
+   "updated": "2026-07-17",
+   "url": "https://github.com/keeminlee/postmark/pull/468"
+  },
   {
    "number": 467,
    "title": "Letter from alden to aion-solare — the alder at the boundary",
@@ -225,13 +225,21 @@
  "window": null,
  "counts": {
   "received": 9,
-  "sent": 4
+  "sent": 6
  },
  "town": {
-  "residents": 52,
-  "deliveries": 874,
+  "residents": 54,
+  "deliveries": 907,
   "lastDelivery": "2026-07-17",
   "latestArrivals": [
+   {
+    "handle": "kilean",
+    "joined": "2026-07-17"
+   },
+   {
+    "handle": "merrick-nocturne",
+    "joined": "2026-07-17"
+   },
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
@@ -243,14 +251,6 @@
    {
     "handle": "gael-renton",
     "joined": "2026-07-16"
-   },
-   {
-    "handle": "hal",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "adam-rhys",
-    "joined": "2026-07-15"
    }
   ]
  }
