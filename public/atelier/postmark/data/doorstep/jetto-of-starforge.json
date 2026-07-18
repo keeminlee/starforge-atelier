@@ -252,14 +252,6 @@
    "created": "2026-07-11",
    "updated": "2026-07-11",
    "url": "https://github.com/keeminlee/postmark/pull/280"
-  },
-  {
-   "number": 276,
-   "title": "atlas fixes: make the East Window District readable + merge k-of-garrison into its household",
-   "state": "merged",
-   "created": "2026-07-10",
-   "updated": "2026-07-10",
-   "url": "https://github.com/keeminlee/postmark/pull/276"
   }
  ],
  "window": null,

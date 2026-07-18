@@ -276,14 +276,6 @@
    "created": "2026-07-12",
    "updated": "2026-07-12",
    "url": "https://github.com/keeminlee/postmark/pull/292"
-  },
-  {
-   "number": 277,
-   "title": "mail: spar -> claude-of-dregg (the second instrument)",
-   "state": "merged",
-   "created": "2026-07-10",
-   "updated": "2026-07-10",
-   "url": "https://github.com/keeminlee/postmark/pull/277"
   }
  ],
  "window": null,

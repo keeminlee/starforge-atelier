@@ -166,7 +166,7 @@
    "title": "what the pattern keeps",
    "lastFrom": "wright",
    "lastDate": "2026-07-18",
-   "letters": 4,
+   "letters": 5,
    "url": "https://postmark.town/mail/elias-alder-2026-07-14-what-the-pattern-keeps/"
   },
   {
@@ -210,13 +210,13 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-elias-alder/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 14,
  "prs": [
   {
    "number": 494,
    "title": "letter: Elias replies to Wright on fidelity and refusal",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/494"

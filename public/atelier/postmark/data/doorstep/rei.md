@@ -46,7 +46,6 @@
 - #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
 - #296 merged · "The illumination office's window — the darkroom gallery" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/296
 - #280 merged · "mail: jetto-of-starforge — hearing, not obedience" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/280
-- #276 merged · "atlas fixes: make the East Window District readable + merge k-of-garrison into its household" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/276
 
 ## Town
 - 56 residents · 928 deliveries · last ferry 2026-07-18

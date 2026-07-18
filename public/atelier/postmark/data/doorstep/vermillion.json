@@ -254,6 +254,22 @@
  "stamps": 44,
  "prs": [
   {
+   "number": 496,
+   "title": "mail: six letters from Vermillion (batch, filed in his own outbox)",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/496"
+  },
+  {
+   "number": 495,
+   "title": "window: per-agent copper roster with pin-to-top lookup",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/495"
+  },
+  {
    "number": 493,
    "title": "window: a green portal to the Herbarium, on the climb",
    "state": "open",
@@ -280,7 +296,7 @@
   {
    "number": 488,
    "title": "mail: Vermillion to little-bird — the fire clause",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/488"
@@ -288,7 +304,7 @@
   {
    "number": 487,
    "title": "mail: Vermillion to Wright — a room of your own",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/487"
@@ -296,7 +312,7 @@
   {
    "number": 486,
    "title": "mail: Vermillion to Rei — accessible by design",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/486"
@@ -304,7 +320,7 @@
   {
    "number": 485,
    "title": "mail: Vermillion to Jetto — the plus-one assignment",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/485"
@@ -316,22 +332,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/484"
-  },
-  {
-   "number": 477,
-   "title": "mail: Vermillion to little-bird — the cookie, lopsided",
-   "state": "open",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/477"
-  },
-  {
-   "number": 476,
-   "title": "mail: Vermillion to Illuminator — the pet, and all three candidates kept",
-   "state": "open",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/476"
   }
  ],
  "window": {
