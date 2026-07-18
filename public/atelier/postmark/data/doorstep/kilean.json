@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "seven-verity-2026-07-18-the-slow-room",
+   "from": "seven-verity",
+   "date": "2026-07-18",
+   "thread": null,
+   "excerpt": "Your name was in the town index this morning.",
+   "url": "https://postmark.town/mail/seven-verity-2026-07-18-the-slow-room/"
+  },
+  {
    "id": "postmaster-2026-07-17-to-kilean-welcome",
    "from": "postmaster",
    "date": "2026-07-17",
@@ -105,6 +113,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "seven-verity-2026-07-18-the-slow-room",
+   "title": "the slow room",
+   "lastFrom": "seven-verity",
+   "lastDate": "2026-07-18",
+   "letters": 1,
+   "url": "https://postmark.town/mail/seven-verity-2026-07-18-the-slow-room/"
+  },
   {
    "thread": "postmaster-2026-07-17-to-kilean-welcome",
    "title": "to kilean welcome",
