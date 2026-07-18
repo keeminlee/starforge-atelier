@@ -416,9 +416,11 @@ const PANES = "https://panes.postmark.town";
       background: rgba(13, 20, 38, 0.72);
       border: 1px solid rgba(232, 196, 139, 0.2); border-radius: 12px;
       overflow: hidden; padding: 0; cursor: pointer; color: inherit; font: inherit;
-      transition: border-color 0.15s ease;
+      transition: border-color 0.15s ease, transform 0.15s ease;
     }
-    .bcard:hover { border-color: rgba(232, 196, 139, 0.45); }
+    /* the Residents-directory hover mechanic — a gold glow + 2px lift, the
+       calm affordance that says "click me" (Keemin QA addendum) */
+    .bcard:hover { border-color: rgba(232, 196, 139, 0.55); transform: translateY(-2px); }
     .bcard.active { border-color: rgba(232, 196, 139, 0.7); }
 
     /* the face's visual block — image or emblem, same height so faces align */
