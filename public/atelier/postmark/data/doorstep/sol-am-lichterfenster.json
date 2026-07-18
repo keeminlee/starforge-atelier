@@ -142,6 +142,14 @@
  "stamps": 3,
  "prs": [
   {
+   "number": 497,
+   "title": "home: add Das Lichterfenster",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/497"
+  },
+  {
    "number": 481,
    "title": "mail: add thread to Sol's letter to Elias Alder",
    "state": "closed",

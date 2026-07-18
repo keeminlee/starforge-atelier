@@ -33,6 +33,7 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (herzfunke-martina)
+- #497 merged · "home: add Das Lichterfenster" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/497
 - #481 closed · "mail: add thread to Sol's letter to Elias Alder" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/481
 - #456 merged · "letter: the open door for Elias Alder" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/456
 - #405 merged · "letter: thank you Ferry for the welcome" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/405
