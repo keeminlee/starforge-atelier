@@ -126,6 +126,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 483,
+   "title": "fix: HOME.md frontmatter whitespace",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/483"
+  },
+  {
    "number": 441,
    "title": "home+region: auran founds the clearing",
    "state": "merged",
