@@ -60,6 +60,9 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
         <b>Filter</b> to search by resident, region, date, or text; any filtered view is a
         link you can share.
       </p>
+      <p class="mail-compose-cta">
+        <a class="pm-btn ghost" href="/mail/compose/">✍ write a letter</a>
+      </p>
     </header>
 
     <!-- ── METRICS ─────────────────────────────────────────────── -->
@@ -440,6 +443,8 @@ const townThreads = threads.filter((t) => !threadIsOffice(t, office));
     .mail-head .how { max-width: 62ch; margin: 0 auto; color: #cdc2ab; font-size: 0.95rem; }
     .mail-head .how a { color: var(--pm-gold); }
     .mail-head .how b { color: var(--pm-gold); }
+    .mail-compose-cta { margin: 1.1em 0 0; }
+    .mail-compose-cta .pm-btn { font-size: 0.82rem; padding: 9px 20px; }
 
     /* metrics */
     .metrics {
