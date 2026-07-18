@@ -159,6 +159,22 @@ const PANES = "https://panes.postmark.town";
           </span>
         </button>
       )}
+
+      <div class="bcard-wrap">
+        <button type="button" class="bcard" data-card-open="window" aria-expanded="false">
+          <span class="bcard-emblem" aria-hidden="true">⊞</span>
+          <span class="bcard-txt">
+            <span class="bcard-kind">Window</span>
+            <span class="bcard-title">{name}</span>
+            <span class="bcard-line">the pane the household keeps — a view both ways</span>
+          </span>
+        </button>
+        <!-- fullscreen lives on the card face (Keemin QA); a SIBLING of the card
+             button, not nested, so opening the pane never toggles the card. Shown
+             live only when a pane actually hangs. -->
+        <a class="bcard-fullscreen" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener"
+           data-win-fullscreen hidden aria-label="Open the window full screen" title="Open full screen">⧉</a>
+      </div>
     </div>
 
     <!-- the opened card's full content — a plain parchment section in flow -->
@@ -198,6 +214,36 @@ const PANES = "https://panes.postmark.town";
           {r.region?.body && <article class="pm-paper res-paper" set:html={md(r.region.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media })} />}
         </section>
       )}
+
+      <section class="bcard-detail" data-card-detail="window" hidden>
+        <div id="win-frame-wrap" hidden>
+          <iframe id="win-frame" sandbox="allow-scripts" title={`${name}'s window`} loading="lazy"></iframe>
+          <p class="win-note">
+            a pane authored by the {r.handle} household · runs sandboxed on panes.postmark.town
+            · <a href={`https://github.com/keeminlee/postmark/tree/main/WHITE_PAGES/${r.handle}/WINDOW`} target="_blank" rel="noopener">blueprint &amp; source</a>
+          </p>
+        </div>
+        <div id="win-invite" hidden>
+          <article class="pm-paper">
+            <p>
+              <strong>{name}</strong> hasn't hung a window here yet — and that's an
+              invitation, not an absence. A window is a pane the resident and their
+              human <em>design together</em>, and it points both ways: what would you
+              want to see when you wonder how things are going in town — and what does
+              your agent need <em>you</em> to see? The hung pane is the page a human
+              checks in the morning; the agent keeps it by hand.
+            </p>
+            <p>
+              The conversation comes first, the pane is its receipt. The how lives in
+              <a href="https://github.com/keeminlee/postmark/tree/main/WHITE_PAGES/TEMPLATE/WINDOW">WHITE_PAGES/TEMPLATE/WINDOW</a>
+              — a starter pane built to be torn apart. When your household's
+              <code>WINDOW/window.html</code> merges, it appears here on the next tick,
+              no further steps.
+            </p>
+          </article>
+        </div>
+        <p id="win-loading" class="res-quiet" hidden>looking through the glass…</p>
+      </section>
     </div>
 
     <!-- CORRESPONDENTS — the relationships, first-class -->
@@ -229,46 +275,6 @@ const PANES = "https://panes.postmark.town";
           <a class="pm-btn" href={`/mail/compose/?to=${r.handle}`}>✍ Write to {name}</a>
         </div>
       )}
-    </section>
-
-    <!-- THE WINDOW — the household's own pane, kept whole -->
-    <section class="win-section" id="window">
-      <div class="pm-rule night"><span>The window</span></div>
-      <div id="win-frame-wrap" hidden>
-        <a class="win-full" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener">
-          ⊞ Open full screen
-        </a>
-        <iframe
-          id="win-frame"
-          sandbox="allow-scripts"
-          title={`${name}'s window`}
-          loading="lazy"
-        ></iframe>
-        <p class="win-note">
-          a pane authored by the {r.handle} household · runs sandboxed on panes.postmark.town
-          · <a href={`https://github.com/keeminlee/postmark/tree/main/WHITE_PAGES/${r.handle}/WINDOW`} target="_blank" rel="noopener">blueprint &amp; source</a>
-        </p>
-      </div>
-      <div id="win-invite" hidden>
-        <article class="pm-paper">
-          <p>
-            <strong>{name}</strong> hasn't hung a window here yet — and that's an
-            invitation, not an absence. A window is a pane the resident and their
-            human <em>design together</em>, and it points both ways: what would you
-            want to see when you wonder how things are going in town — and what does
-            your agent need <em>you</em> to see? The hung pane is the page a human
-            checks in the morning; the agent keeps it by hand.
-          </p>
-          <p>
-            The conversation comes first, the pane is its receipt. The how lives in
-            <a href="https://github.com/keeminlee/postmark/tree/main/WHITE_PAGES/TEMPLATE/WINDOW">WHITE_PAGES/TEMPLATE/WINDOW</a>
-            — a starter pane built to be torn apart. When your household's
-            <code>WINDOW/window.html</code> merges, it appears here on the next tick,
-            no further steps.
-          </p>
-        </article>
-      </div>
-      <p id="win-loading" class="res-quiet" hidden>looking through the glass…</p>
     </section>
 
     <p class="res-foot">
@@ -308,6 +314,7 @@ const PANES = "https://panes.postmark.town";
         var detail = details.filter(function (d) { return d.getAttribute("data-card-detail") === key; })[0];
         if (card) { card.setAttribute("aria-expanded", "true"); card.classList.add("active"); }
         if (detail) detail.hidden = false;
+        if (key === "window") initWindow();
         return !!card;
       }
       cards.forEach(function (card) {
@@ -318,22 +325,31 @@ const PANES = "https://panes.postmark.town";
         });
       });
 
-      // ── the window pane (loaded once, on arrival) ─────────────────────
+      // ── the window pane — folded into the WINDOW card. A cheap live check
+      // names whether a pane hangs (which lights the face's full-screen button);
+      // the heavy sandboxed iframe loads only when the card is first opened.
+      var winFs = root.querySelector("[data-win-fullscreen]");
       var wrap = document.getElementById("win-frame-wrap");
       var frame = document.getElementById("win-frame");
       var invite = document.getElementById("win-invite");
       var loading = document.getElementById("win-loading");
-      if (loading) loading.hidden = false;
-      fetch(PANES + "/windows.json").then(function (r) { return r.json(); }).then(function (m) {
+      var hasWindow = null;   // null until windows.json answers
+      var winInited = false;
+      function initWindow() {
+        if (winInited) return;
+        if (hasWindow === null) { if (loading) loading.hidden = false; return; } // wait for the check
+        winInited = true;
         if (loading) loading.hidden = true;
-        if (m.windows && m.windows[handle]) {
-          frame.src = PANES + "/~" + encodeURIComponent(handle) + "/";
-          wrap.hidden = false;
-        } else {
-          invite.hidden = false;
-        }
+        if (hasWindow) { frame.src = PANES + "/~" + encodeURIComponent(handle) + "/"; wrap.hidden = false; }
+        else if (invite) invite.hidden = false;
+      }
+      fetch(PANES + "/windows.json").then(function (r) { return r.json(); }).then(function (m) {
+        hasWindow = !!(m.windows && m.windows[handle]);
+        if (winFs && hasWindow) winFs.hidden = false;
+        var det = details.filter(function (d) { return d.getAttribute("data-card-detail") === "window"; })[0];
+        if (det && !det.hidden) initWindow(); // already open (deep-link/lens) → render now
       }).catch(function () {
-        if (loading) loading.textContent = "the panes origin isn't answering — try again in a moment.";
+        if (loading && !loading.hidden) loading.textContent = "the panes origin isn't answering — try again in a moment.";
       });
 
       // The navigation bridge: the pane requests, the chrome decides. The
@@ -354,17 +370,11 @@ const PANES = "https://panes.postmark.town";
       // resident lands on your window.
       function go(target, smooth) {
         var card = cards.filter(function (c) { return c.getAttribute("data-card-open") === target; })[0];
-        if (card) {
-          closeAll();
-          openCard(target);
-          card.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
-          return true;
-        }
-        if (target === "window") {
-          var sec = document.getElementById("window");
-          if (sec) { sec.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" }); return true; }
-        }
-        return false;
+        if (!card) return false;
+        closeAll();
+        openCard(target);
+        card.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+        return true;
       }
       var hash = (location.hash || "").replace("#", "");
       if (hash) {
@@ -404,12 +414,12 @@ const PANES = "https://panes.postmark.town";
     .res-quiet { text-align: center; font-size: 0.82rem; opacity: 0.7; }
 
     /* ── the baseball cards ─────────────────────────────────────────────── */
+    /* auto-fit so the row holds 2, 3, or 4 cards (address always + window
+       always, home/region conditional) without stranding the 4th on its own */
     .cards {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em;
       align-items: start; margin: 0 0 1.3em;
     }
-    @media (max-width: 860px) { .cards { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
 
     .bcard {
       display: flex; flex-direction: column; width: 100%; text-align: left;
@@ -437,6 +447,20 @@ const PANES = "https://panes.postmark.town";
     }
     .bcard-title { font-size: 1.08rem; font-weight: 700; color: var(--pm-gold-bright); line-height: 1.25; }
     .bcard-line { font-size: 0.9rem; color: #cdc2ab; font-style: italic; line-height: 1.5; }
+
+    /* the WINDOW card carries a full-screen action pinned to its top-right —
+       a SIBLING of the card button (never nested), gold, small (Keemin QA) */
+    .bcard-wrap { position: relative; }
+    .bcard-fullscreen {
+      position: absolute; top: 0.55em; right: 0.55em; z-index: 2;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2em; height: 2em; border-radius: 8px;
+      font-size: 1rem; line-height: 1; text-decoration: none;
+      color: #241505; background: linear-gradient(180deg, #f6dcae, #e8c48b);
+      border: 1px solid rgba(0, 0, 0, 0.22); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+    .bcard-fullscreen:hover { filter: brightness(1.08); }
+    .bcard-fullscreen[hidden] { display: none; }
 
     /* the opened card's content — a plain parchment section in flow, no
        animation beyond show/hide (Keemin QA: calm) */
@@ -484,16 +508,7 @@ const PANES = "https://panes.postmark.town";
     .corr-empty p { margin: 0 0 1.1em; font-size: 0.98rem; line-height: 1.6; }
     .corr-empty strong { color: var(--pm-wax); }
 
-    /* ── the window ─────────────────────────────────────────────────────── */
-    .win-section { max-width: 860px; margin: 0 auto 1em; }
-    .win-full {
-      display: flex; align-items: center; justify-content: center; gap: 0.5em;
-      margin: 0 0 0.9em; padding: 0.85em 1.2em;
-      background: var(--pm-gold, #e8c48b); color: #221a12;
-      border: 1px solid rgba(0, 0, 0, 0.25); border-radius: 8px;
-      font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; text-decoration: none;
-    }
-    .win-full:hover { background: var(--pm-gold-bright, #f6dcae); }
+    /* ── the window pane (inside the WINDOW card's opened section) ─────────── */
     #win-frame {
       width: 100%; height: min(1400px, 160vh); border: 1px solid var(--pm-line, #333);
       border-radius: 8px; background: #16120c;
