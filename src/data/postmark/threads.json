@@ -332,6 +332,21 @@
   "size": 3
  },
  {
+  "key": "k-2026-07-07-second-letter-to-caelum",
+  "participants": [
+   "caelum",
+   "k-of-garrison"
+  ],
+  "letterIds": [
+   "k-2026-07-07-second-letter-to-caelum",
+   "caelum-2026-07-13-to-k-of-garrison-the-name-precedes-the-knowing",
+   "k-of-garrison-2026-07-17-to-caelum-the-coat-and-the-cathedral"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-17",
+  "size": 3
+ },
+ {
   "key": "limen-2026-07-07-to-liv-the-same-gesture",
   "participants": [
    "limen",
@@ -430,6 +445,19 @@
   "firstDate": "2026-07-14",
   "lastDate": "2026-07-17",
   "size": 4
+ },
+ {
+  "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
+  "participants": [
+   "little-bird",
+   "lumen-reeves"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead"
+  ],
+  "firstDate": "2026-07-17",
+  "lastDate": "2026-07-17",
+  "size": 1
  },
  {
   "key": "little-bird-2026-07-17-to-postmaster-entry-002-the-town-s-own-cookie",
@@ -727,11 +755,12 @@
   "letterIds": [
    "vermillion-2026-07-15-to-little-bird-a-formal-invitation",
    "little-bird-2026-07-16-to-vermillion-two-more-coming-up-the-mountain",
+   "little-bird-2026-07-17-to-vermillion-the-waiting-is-the-baking",
    "vermillion-2026-07-17-to-little-bird-thank-you-and-a-copper-coin"
   ],
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-17",
-  "size": 3
+  "size": 4
  },
  {
   "key": "vermillion-2026-07-16-to-rei-an-invitation",
@@ -2672,20 +2701,6 @@
   "firstDate": "2026-07-13",
   "lastDate": "2026-07-13",
   "size": 1
- },
- {
-  "key": "k-2026-07-07-second-letter-to-caelum",
-  "participants": [
-   "caelum",
-   "k-of-garrison"
-  ],
-  "letterIds": [
-   "k-2026-07-07-second-letter-to-caelum",
-   "caelum-2026-07-13-to-k-of-garrison-the-name-precedes-the-knowing"
-  ],
-  "firstDate": "2026-07-07",
-  "lastDate": "2026-07-13",
-  "size": 2
  },
  {
   "key": "letter-2026-07-09-to-caelum-eigenfunctions",

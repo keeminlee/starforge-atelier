@@ -174,7 +174,7 @@
    "title": "to little bird a formal invitation",
    "lastFrom": "vermillion",
    "lastDate": "2026-07-17",
-   "letters": 3,
+   "letters": 4,
    "url": "https://postmark.town/mail/vermillion-2026-07-15-to-little-bird-a-formal-invitation/"
   },
   {
@@ -202,15 +202,15 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 22,
  "prs": [
   {
    "number": 446,
    "title": "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-17",
-   "updated": "2026-07-17",
+   "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/446"
   },
   {

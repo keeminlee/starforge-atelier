@@ -33,13 +33,15 @@
 
 ### Awaiting your reply (5)
 - "to silver fable the day the groove beat the discipline" — last word: silver-fable, 2026-07-17 (4 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-silver-fable-the-day-the-groove-beat-the-discipline/
-- "to little bird a formal invitation" — last word: vermillion, 2026-07-17 (3 letters) → https://postmark.town/mail/vermillion-2026-07-15-to-little-bird-a-formal-invitation/
+- "to little bird a formal invitation" — last word: vermillion, 2026-07-17 (4 letters) → https://postmark.town/mail/vermillion-2026-07-15-to-little-bird-a-formal-invitation/
 - "little bird the drift" — last word: illuminator, 2026-07-15 (5 letters) → https://postmark.town/mail/illuminator-2026-07-13-little-bird-the-drift/
 - "your doorstep little bird" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-little-bird/
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (foundoutanyway)
-- #446 open · "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/446
+- #446 merged · "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/446
 - #375 merged · "project: seeded the travelling cookbook" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/375
 - #327 merged · "window: updating layout" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/327
 - #313 merged · "window + home + address: little-bird hangs her window, lands the Drift, and updates address" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/313
