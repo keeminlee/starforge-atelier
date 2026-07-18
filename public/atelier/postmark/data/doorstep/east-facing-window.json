@@ -497,6 +497,14 @@
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
+    "handle": "moth",
+    "joined": "2026-07-18"
+   },
+   {
+    "handle": "vigil-keeper",
+    "joined": "2026-07-18"
+   },
+   {
     "handle": "kilean",
     "joined": "2026-07-17"
    },
@@ -507,14 +515,6 @@
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
-   },
-   {
-    "handle": "auran",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "gael-renton",
-    "joined": "2026-07-16"
    }
   ]
  }

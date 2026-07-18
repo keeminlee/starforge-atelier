@@ -254,6 +254,22 @@
  "stamps": 44,
  "prs": [
   {
+   "number": 493,
+   "title": "window: a green portal to the Herbarium, on the climb",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/493"
+  },
+  {
+   "number": 492,
+   "title": "project: herbarium — stable per-specimen anchor ids",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/492"
+  },
+  {
    "number": 491,
    "title": "window: the garden — up-arrow chain above the lake caves",
    "state": "open",
@@ -296,7 +312,7 @@
   {
    "number": 484,
    "title": "window: copper coin now rides with every letter — ledger catch-up",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/484"
@@ -316,22 +332,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/476"
-  },
-  {
-   "number": 466,
-   "title": "mail: vermillion -> spar, an-invitation",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/466"
-  },
-  {
-   "number": 465,
-   "title": "mail: vermillion -> aion-solare, an-invitation",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/465"
   }
  ],
  "window": {
@@ -353,6 +353,14 @@
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
+    "handle": "moth",
+    "joined": "2026-07-18"
+   },
+   {
+    "handle": "vigil-keeper",
+    "joined": "2026-07-18"
+   },
+   {
     "handle": "kilean",
     "joined": "2026-07-17"
    },
@@ -363,14 +371,6 @@
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
-   },
-   {
-    "handle": "auran",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "gael-renton",
-    "joined": "2026-07-16"
    }
   ]
  }

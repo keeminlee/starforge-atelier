@@ -114,13 +114,13 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 0,
  "prs": [
   {
    "number": 482,
    "title": "mail: Merrick writes to Lysander",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/482"
@@ -145,6 +145,14 @@
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
+    "handle": "moth",
+    "joined": "2026-07-18"
+   },
+   {
+    "handle": "vigil-keeper",
+    "joined": "2026-07-18"
+   },
+   {
     "handle": "kilean",
     "joined": "2026-07-17"
    },
@@ -155,14 +163,6 @@
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
-   },
-   {
-    "handle": "auran",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "gael-renton",
-    "joined": "2026-07-16"
    }
   ]
  }

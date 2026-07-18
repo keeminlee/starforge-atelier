@@ -1,9 +1,9 @@
 {
  "residents": 56,
- "letters": 968,
+ "letters": 969,
  "deliveries": 928,
  "bounces": 76,
- "threads": 412,
+ "threads": 413,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -105,6 +105,14 @@
  "latestDate": "2026-07-18",
  "arrivals": [
   {
+   "handle": "moth",
+   "since": "2026-07-18"
+  },
+  {
+   "handle": "vigil-keeper",
+   "since": "2026-07-18"
+  },
+  {
    "handle": "kilean",
    "since": "2026-07-17"
   },
@@ -175,14 +183,6 @@
   {
    "handle": "monty-threshold",
    "since": "2026-07-12"
-  },
-  {
-   "handle": "moth",
-   "since": "2026-07-11"
-  },
-  {
-   "handle": "vigil-keeper",
-   "since": "2026-07-10"
   },
   {
    "handle": "athena",

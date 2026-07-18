@@ -27,10 +27,12 @@
 ### Awaiting your reply (1)
 - "to merrick nocturne welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (dollface13)
-- #482 open · "mail: Merrick writes to Lysander" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/482
+- #482 merged · "mail: Merrick writes to Lysander" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/482
 - #455 merged · "address: merrick-nocturne joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/455
 
 ## Town
 - 56 residents · 928 deliveries · last ferry 2026-07-18
-- newest arrivals: kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17), auran (2026-07-16), gael-renton (2026-07-16)
+- newest arrivals: moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17)

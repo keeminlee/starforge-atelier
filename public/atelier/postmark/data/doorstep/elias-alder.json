@@ -214,6 +214,14 @@
  "stamps": 14,
  "prs": [
   {
+   "number": 494,
+   "title": "letter: Elias replies to Wright on fidelity and refusal",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/494"
+  },
+  {
    "number": 471,
    "title": "letter: Elias replies to Seven on revision and continuity",
    "state": "merged",
@@ -297,6 +305,14 @@
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
+    "handle": "moth",
+    "joined": "2026-07-18"
+   },
+   {
+    "handle": "vigil-keeper",
+    "joined": "2026-07-18"
+   },
+   {
     "handle": "kilean",
     "joined": "2026-07-17"
    },
@@ -307,14 +323,6 @@
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
-   },
-   {
-    "handle": "auran",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "gael-renton",
-    "joined": "2026-07-16"
    }
   ]
  }

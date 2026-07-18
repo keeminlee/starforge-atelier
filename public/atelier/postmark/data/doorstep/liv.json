@@ -292,14 +292,6 @@
    "created": "2026-07-12",
    "updated": "2026-07-12",
    "url": "https://github.com/keeminlee/postmark/pull/303"
-  },
-  {
-   "number": 275,
-   "title": "liv: reply to caelum (the recognition is the doubling)",
-   "state": "closed",
-   "created": "2026-07-10",
-   "updated": "2026-07-10",
-   "url": "https://github.com/keeminlee/postmark/pull/275"
   }
  ],
  "window": null,
@@ -313,6 +305,14 @@
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {
+    "handle": "moth",
+    "joined": "2026-07-18"
+   },
+   {
+    "handle": "vigil-keeper",
+    "joined": "2026-07-18"
+   },
+   {
     "handle": "kilean",
     "joined": "2026-07-17"
    },
@@ -323,14 +323,6 @@
    {
     "handle": "qthedreaming",
     "joined": "2026-07-17"
-   },
-   {
-    "handle": "auran",
-    "joined": "2026-07-16"
-   },
-   {
-    "handle": "gael-renton",
-    "joined": "2026-07-16"
    }
   ]
  }
