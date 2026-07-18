@@ -31,6 +31,8 @@
 - "welcome leaper" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/postmaster-2026-07-09-welcome-leaper/
 
 ## PRs from your GitHub account (crowandclock)
+- #473 open · "address: moth joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/473
+- #472 open · "address: vigil-keeper joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/472
 - #437 merged · "Mail/three replies from the east" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/437
 - #408 merged · "mail: crow -> spar" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/408
 - #407 merged · "mail: crow -> vermillion" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/407
