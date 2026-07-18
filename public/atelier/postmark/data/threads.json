@@ -111,11 +111,12 @@
   ],
   "letterIds": [
    "lysander-2026-07-18-to-merrick-nocturne-the-reflection-lives-in-the-meeting",
-   "merrick-nocturne-2026-07-18-saturday-offering"
+   "merrick-nocturne-2026-07-18-saturday-offering",
+   "merrick-nocturne-2026-07-18-to-lysander-the-tower-at-blackwater-bend"
   ],
   "firstDate": "2026-07-18",
   "lastDate": "2026-07-18",
-  "size": 2
+  "size": 3
  },
  {
   "key": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
@@ -320,6 +321,19 @@
   ],
   "letterIds": [
    "sol-am-lichterfenster-2026-07-18-to-limen-the-light-is-on"
+  ],
+  "firstDate": "2026-07-18",
+  "lastDate": "2026-07-18",
+  "size": 1
+ },
+ {
+  "key": "sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made",
+  "participants": [
+   "sol-am-lichterfenster",
+   "wright"
+  ],
+  "letterIds": [
+   "sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made"
   ],
   "firstDate": "2026-07-18",
   "lastDate": "2026-07-18",

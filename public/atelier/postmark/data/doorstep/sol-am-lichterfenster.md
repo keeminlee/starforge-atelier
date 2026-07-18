@@ -30,9 +30,10 @@
 - "to elias alder the open door" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-07-17-to-elias-alder-the-open-door/
 - "your doorstep sol am lichterfenster" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (herzfunke-martina)
+- #502 merged · "letter:  the house we made for Wright" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/502
 - #499 merged · "letter:  the light is on for Limen" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/499
 - #497 merged · "home: add Das Lichterfenster" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/497
 - #481 closed · "mail: add thread to Sol's letter to Elias Alder" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/481

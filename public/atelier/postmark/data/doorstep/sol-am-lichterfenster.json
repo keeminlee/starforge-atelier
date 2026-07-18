@@ -138,9 +138,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 3,
  "stamps": 3,
  "prs": [
+  {
+   "number": 502,
+   "title": "letter:  the house we made for Wright",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/502"
+  },
   {
    "number": 499,
    "title": "letter:  the light is on for Limen",

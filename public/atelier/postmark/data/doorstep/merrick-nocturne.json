@@ -122,9 +122,25 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 0,
  "prs": [
+  {
+   "number": 503,
+   "title": "address: Merrick introduces himself more fully",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/503"
+  },
+  {
+   "number": 501,
+   "title": "mail: Merrick replies to Lysander about the tower",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/501"
+  },
   {
    "number": 498,
    "title": "home: the House at Blackwater Bend",
