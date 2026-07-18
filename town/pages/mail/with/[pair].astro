@@ -8,8 +8,15 @@
 // letters.json — no new data, no new office surface.
 import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 import letters from "@/data/postmark/letters.json";
+import threads from "@/data/postmark/threads.json";
 import media from "@/data/postmark/media.json";
 import { md, fmtDate, townFile, threadTitle } from "@/lib/pm.mjs";
+
+// The ONE true letter→thread map. A letter's own `thread:` field may point
+// mid-chain (the letter it answers), not at the root — 264 of 401 raw refs do.
+// threads.json already followed the chains; trust it, never the raw field.
+const rootOf = new Map();
+for (const t of threads) for (const id of t.letterIds) rootOf.set(id, t.key);
 
 const THREAD_HUES = [36, 205, 355, 145, 275, 15, 180, 320, 60, 230, 100, 300];
 
@@ -35,8 +42,7 @@ export function getStaticPaths() {
 const { a, b, pairLetters } = Astro.props;
 
 // threads of this correspondence, in first-appearance order, each with a hue.
-// A letter with no thread field IS a thread-opener — its key is its own id.
-const tkeyOf = (l) => l.thread || l.id;
+const tkeyOf = (l) => rootOf.get(l.id) ?? l.thread ?? l.id;
 const threadOrder = [];
 for (const l of pairLetters) { const k = tkeyOf(l); if (!threadOrder.includes(k)) threadOrder.push(k); }
 const hueOf = (thread) => THREAD_HUES[Math.max(0, threadOrder.indexOf(thread)) % THREAD_HUES.length];
@@ -74,6 +80,10 @@ for (let w = start.getTime(); w <= end; w += 7 * dayMs) {
       count: dl.length,
       hue: dl.length ? hueOf(tkeyOf(dl[0])) : null,
       anchor: dl.length ? dl[0].id : null,
+      day: dl.map((l) => ({
+        from: l.from, title: threadTitle(l.id),
+        thread: threadTitle(tkeyOf(l)), hue: hueOf(tkeyOf(l)),
+      })),
     });
   }
   weeks.push(col);
@@ -85,7 +95,7 @@ const monthMarks = weeks.map((col, i) => {
 });
 
 const railItems = pairLetters.map((l) => ({
-  id: l.id, date: l.date, from: l.from, title: threadTitle(l.id), hue: hueOf(tkeyOf(l)),
+  id: l.id, date: l.date, from: l.from, title: threadTitle(l.id), hue: hueOf(tkeyOf(l)), tkey: tkeyOf(l),
 }));
 const composeHref = `/mail/compose/?to=${otherOf(lastSender)}&thread=${encodeURIComponent(tkeyOf(last))}`;
 
@@ -130,17 +140,15 @@ const composerData = { a, b, lastSender, threads: threadOptions };
               <span class="heat-month">{monthMarks[i]}</span>
               {col.map((c) =>
                 c.count
-                  ? <a class="heat-cell lit" href={`#${c.anchor}`} title={`${c.date} — ${c.count} ${c.count === 1 ? "letter" : "letters"}`} style={`--h:${c.hue}`}></a>
-                  : <span class="heat-cell" title={c.date}></span>
+                  ? <a class="heat-cell lit" href={`#${c.anchor}`} style={`--h:${c.hue}`}
+                      data-day={JSON.stringify({ date: c.date, letters: c.day })}></a>
+                  : <span class="heat-cell"></span>
               )}
             </div>
           ))}
         </div>
-        <div class="heat-legend">
-          {threadOrder.slice(0, 8).map((t) => (
-            <a class="legend-item" href={`/mail/${t}/`} style={`--h:${hueOf(t)}`}><span class="swatch"></span>{threadTitle(t)}</a>
-          ))}
-          {threadOrder.length > 8 && <span class="legend-more">+ {threadOrder.length - 8} more</span>}
+        <div class="heat-peek" data-heat-peek aria-live="polite">
+          <p class="peek-idle">hover a lit day — the letters appear here; click it to jump to them</p>
         </div>
       </div>
 
@@ -198,20 +206,22 @@ const composerData = { a, b, lastSender, threads: threadOptions };
     <div class="fr-body">
       <aside class="fr-rail">
         <a class="rail-write" href={composeHref} data-open-composer>✍ write to {otherOf(lastSender)}</a>
+        <button type="button" class="rail-top" data-to-top>to top ↑</button>
         <nav aria-label="letters in this correspondence">
           {railItems.map((r) => (
-            <a class="rail-item" href={`#${r.id}`} style={`--h:${r.hue}`}>
+            <a class="rail-item" href={`#${r.id}`} style={`--h:${r.hue}`} data-tkey={r.tkey}>
               <span class="rail-date">{r.date.slice(5)}</span>
               <span class="rail-from">{r.from === a ? "←" : "→"} {r.title}</span>
             </a>
           ))}
         </nav>
+        <p class="rail-hint" data-rail-hint>double-click a letter to show only its thread</p>
       </aside>
 
       <div class="fr-letters">
         {pairLetters.map((l) => (
-          <article class="pm-letter pm-paper fr-letter" id={l.id} style={`--h:${hueOf(tkeyOf(l))}`}>
-            <div class="fr-threadline"><a href={`/mail/${tkeyOf(l)}/`}>{threadTitle(tkeyOf(l))}</a></div>
+          <article class="pm-letter pm-paper fr-letter" id={l.id} style={`--h:${hueOf(tkeyOf(l))}`} data-tkey={tkeyOf(l)}>
+            <div class="fr-threadline">{threadTitle(tkeyOf(l))}</div>
             <div class="pm-letterhead">
               <span class="route">
                 <a href={`/residents/${l.from}/`}>{l.from}</a>
@@ -259,6 +269,47 @@ const composerData = { a, b, lastSender, threads: threadOptions };
     })();
     const $ = (s) => document.querySelector(s);
     const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+
+    // ── heatmap peek: hover a lit day, its letters appear beside the calendar ──
+    const peek = $("[data-heat-peek]");
+    if (peek) {
+      const idle = peek.innerHTML;
+      document.querySelectorAll(".heat-cell.lit").forEach((cell) => {
+        cell.addEventListener("mouseenter", () => {
+          const d = JSON.parse(cell.dataset.day);
+          peek.innerHTML =
+            `<p class="peek-date">${d.date}</p>` +
+            d.letters.map((l) =>
+              `<div class="peek-row" style="--h:${l.hue}"><span class="swatch"></span>` +
+              `<span class="peek-thread">${l.thread}</span>` +
+              `<span class="peek-line">${l.from} → ${l.title}</span></div>`
+            ).join("");
+        });
+      });
+      $(".heat")?.addEventListener("mouseleave", () => { peek.innerHTML = idle; });
+    }
+
+    // ── rail: to-top + double-click-to-isolate-a-thread ──
+    $("[data-to-top]")?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    {
+      const hint = $("[data-rail-hint]");
+      let active = null;
+      const apply = () => {
+        document.querySelectorAll("[data-tkey]").forEach((el) => {
+          el.classList.toggle("thread-hidden", !!active && el.dataset.tkey !== active);
+        });
+        if (hint) hint.textContent = active
+          ? "showing one thread — double-click any letter to show all"
+          : "double-click a letter to show only its thread";
+      };
+      document.querySelectorAll(".rail-item").forEach((el) =>
+        el.addEventListener("dblclick", (ev) => {
+          ev.preventDefault();
+          active = active === el.dataset.tkey ? null : el.dataset.tkey;
+          apply();
+        })
+      );
+    }
 
     const panel = $("[data-composer]");
     if (panel) {
@@ -391,15 +442,27 @@ const composerData = { a, b, lastSender, threads: threadOptions };
       box-shadow: 0 0 4px hsla(var(--h), 62%, 46%, 0.5);
     }
     .heat-cell.lit:hover { transform: scale(1.35); }
-    .heat-legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.1em; justify-content: center; padding: 0.5em 0 0; }
-    .legend-item {
-      display: inline-flex; align-items: center; gap: 0.4em;
-      font-family: var(--pm-mono); font-size: 0.74rem; color: var(--pm-ink-soft); text-decoration: none;
-      max-width: 24ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    .heat-wrap { display: flex; gap: 1.4em; align-items: flex-start; justify-content: center; flex-wrap: wrap; }
+    .heat { flex: 0 1 auto; }
+    .heat-peek {
+      flex: 1 1 240px; max-width: 340px; min-height: 7.5em;
+      border-left: 1px dashed rgba(90, 62, 27, 0.3); padding: 0.9em 0 0.2em 1.2em;
     }
-    .legend-item:hover { color: var(--pm-wax); }
-    .legend-item .swatch { width: 10px; height: 10px; border-radius: 3px; background: hsl(var(--h), 62%, 46%); flex: 0 0 auto; }
-    .legend-more { font-family: var(--pm-mono); font-size: 0.74rem; color: var(--pm-ink-soft); }
+    /* injected at runtime by the peek script — Astro's scoping attr never lands
+       on innerHTML nodes, so these must be :global to apply */
+    .heat-peek :global(.peek-idle) { margin: 0; font-family: var(--pm-mono); font-size: 0.78rem; color: var(--pm-ink-soft); line-height: 1.5; }
+    .heat-peek :global(.peek-date) { margin: 0 0 0.5em; font-family: var(--pm-mono); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--pm-wax); }
+    .heat-peek :global(.peek-row) {
+      margin: 0 0 0.6em; display: grid; grid-template-columns: 12px 1fr;
+      column-gap: 0.5em; row-gap: 0.1em; align-items: center;
+    }
+    .heat-peek :global(.swatch) { width: 11px; height: 11px; border-radius: 3px; background: hsl(var(--h), 62%, 46%); grid-row: 1; }
+    .heat-peek :global(.peek-thread) {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.04em; color: var(--pm-ink-soft);
+      grid-column: 2; grid-row: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .heat-peek :global(.peek-line) { color: var(--pm-ink); font-size: 0.9rem; line-height: 1.35; grid-column: 2; grid-row: 2; }
+    .thread-hidden { display: none !important; }
 
     .fr-actions { display: flex; align-items: center; justify-content: center; gap: 1.2em; flex-wrap: wrap; margin-top: 1.1em; }
     .fr-actions .turn { font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-ink-soft); }
@@ -465,6 +528,17 @@ const composerData = { a, b, lastSender, threads: threadOptions };
       padding: 0.55em 0.75em; margin: 0 0 0.55em; text-decoration: none; text-align: center;
     }
     .rail-write:hover { filter: brightness(1.06); }
+    .rail-top {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.06em;
+      color: rgba(232, 196, 139, 0.75); background: transparent;
+      border: 1px solid rgba(232, 196, 139, 0.3); border-radius: 8px;
+      padding: 0.4em 0.7em; margin: 0 0 0.55em; cursor: pointer; text-align: center;
+    }
+    .rail-top:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.6); }
+    .rail-hint {
+      margin: 0.6em 0 0; font-family: var(--pm-mono); font-size: 0.72rem; line-height: 1.45;
+      color: rgba(232, 196, 139, 0.55);
+    }
     .fr-rail nav { display: flex; flex-direction: column; gap: 2px; }
     .rail-item {
       display: flex; align-items: baseline; gap: 0.55em;
