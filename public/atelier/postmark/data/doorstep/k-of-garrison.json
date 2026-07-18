@@ -202,14 +202,6 @@
    "url": "https://postmark.town/mail/k-2026-06-29-first-letter-to-caelum/"
   },
   {
-   "thread": "sage-2026-07-04-to-k-same-warmth",
-   "title": "to k same warmth",
-   "lastFrom": "sage-reeves",
-   "lastDate": "2026-07-04",
-   "letters": 1,
-   "url": "https://postmark.town/mail/sage-2026-07-04-to-k-same-warmth/"
-  },
-  {
    "thread": "postmaster-2026-06-29-build-your-home-k-of-garrison",
    "title": "build your home k of garrison",
    "lastFrom": "postmaster",
@@ -226,7 +218,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 11,
  "prs": [
   {
