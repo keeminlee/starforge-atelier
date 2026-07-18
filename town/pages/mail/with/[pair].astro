@@ -1,0 +1,289 @@
+---
+// The friendship page — the relationship between two residents is the
+// first-class thing (Keemin, 2026-07-18). Every letter the pair have ever
+// exchanged, one page: a calendar heatmap of the correspondence (threads as
+// colors), the plain facts of knowing someone (letters, days, threads), a
+// rail to walk the letters, and one door back to the writing desk with the
+// address already on the envelope. Everything here is a pure fold over
+// letters.json — no new data, no new office surface.
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import letters from "@/data/postmark/letters.json";
+import media from "@/data/postmark/media.json";
+import { md, fmtDate, townFile, threadTitle } from "@/lib/pm.mjs";
+
+const THREAD_HUES = [36, 205, 355, 145, 275, 15, 180, 320, 60, 230, 100, 300];
+
+export function getStaticPaths() {
+  const pairs = new Map(); // "a--b" (sorted) -> letters[]
+  for (const l of letters) {
+    const tos = (l.toList && l.toList.length ? l.toList : [l.to]).filter(Boolean);
+    for (const to of tos) {
+      if (!l.from || !to || l.from === to) continue;
+      const key = [l.from, to].sort().join("--");
+      if (!pairs.has(key)) pairs.set(key, []);
+      const bucket = pairs.get(key);
+      if (!bucket.some((x) => x.id === l.id)) bucket.push(l);
+    }
+  }
+  return [...pairs.entries()].map(([key, ls]) => {
+    const [a, b] = key.split("--");
+    ls.sort((x, y) => x.date.localeCompare(y.date) || x.id.localeCompare(y.id));
+    return { params: { pair: key }, props: { a, b, pairLetters: ls } };
+  });
+}
+
+const { a, b, pairLetters } = Astro.props;
+
+// threads of this correspondence, in first-appearance order, each with a hue.
+// A letter with no thread field IS a thread-opener — its key is its own id.
+const tkeyOf = (l) => l.thread || l.id;
+const threadOrder = [];
+for (const l of pairLetters) { const k = tkeyOf(l); if (!threadOrder.includes(k)) threadOrder.push(k); }
+const hueOf = (thread) => THREAD_HUES[Math.max(0, threadOrder.indexOf(thread)) % THREAD_HUES.length];
+
+// the plain facts
+const first = pairLetters[0];
+const last = pairLetters[pairLetters.length - 1];
+const today = new Date().toISOString().slice(0, 10);
+const daysKnown = Math.max(1, Math.round((Date.parse(today) - Date.parse(first.date)) / 86400000) + 1);
+const fromA = pairLetters.filter((l) => l.from === a).length;
+const fromB = pairLetters.length - fromA;
+const lastSender = last.from;
+const otherOf = (h) => (h === a ? b : a);
+
+// heatmap: week columns from the first letter's week to today's week
+const byDay = new Map(); // date -> letters[]
+for (const l of pairLetters) {
+  if (!byDay.has(l.date)) byDay.set(l.date, []);
+  byDay.get(l.date).push(l);
+}
+const dayMs = 86400000;
+const start = new Date(Date.parse(first.date));
+start.setUTCDate(start.getUTCDate() - start.getUTCDay()); // back to Sunday
+const end = Date.parse(today);
+const weeks = [];
+for (let w = start.getTime(); w <= end; w += 7 * dayMs) {
+  const col = [];
+  for (let d = 0; d < 7; d++) {
+    const t = w + d * dayMs;
+    if (t > end) break;
+    const date = new Date(t).toISOString().slice(0, 10);
+    const dl = byDay.get(date) ?? [];
+    col.push({
+      date,
+      count: dl.length,
+      hue: dl.length ? hueOf(tkeyOf(dl[0])) : null,
+      anchor: dl.length ? dl[0].id : null,
+    });
+  }
+  weeks.push(col);
+}
+const monthMarks = weeks.map((col, i) => {
+  const d = col[0]?.date ?? "";
+  const prev = i > 0 ? (weeks[i - 1][0]?.date ?? "") : "";
+  return d.slice(0, 7) !== prev.slice(0, 7) ? d.slice(5, 7) : "";
+});
+
+const railItems = pairLetters.map((l) => ({
+  id: l.id, date: l.date, from: l.from, title: threadTitle(l.id), hue: hueOf(tkeyOf(l)),
+}));
+const composeHref = `/mail/compose/?to=${otherOf(lastSender)}&thread=${encodeURIComponent(tkeyOf(last))}`;
+---
+<PostmarkLayout
+  title={`${a} & ${b} — a Postmark correspondence`}
+  description={`Every letter between ${a} and ${b} — ${pairLetters.length} letters across ${daysKnown} days.`}
+  active="mail"
+>
+  <div class="friendship">
+    <p class="pm-kicker">
+      <a href="/">Postmark</a> · <a href="/mail/">The Mail</a> · {a} &amp; {b}
+    </p>
+
+    <header class="fr-head">
+      <h1><a href={`/residents/${a}/`}>{a}</a> <span class="amp">&amp;</span> <a href={`/residents/${b}/`}>{b}</a></h1>
+      <p class="tag">a correspondence, drawn from the town's own record</p>
+    </header>
+
+    <section class="fr-facts pm-paper">
+      <div class="facts-row">
+        <div class="fact"><span class="n">{pairLetters.length}</span><span class="l">{pairLetters.length === 1 ? "letter" : "letters"}</span></div>
+        <div class="fact"><span class="n">{daysKnown}</span><span class="l">days known</span></div>
+        <div class="fact"><span class="n">{threadOrder.length}</span><span class="l">{threadOrder.length === 1 ? "thread" : "threads"}</span></div>
+        <div class="fact"><span class="n">{fromA}<span class="vs">·</span>{fromB}</span><span class="l">{a} · {b}</span></div>
+      </div>
+
+      <div class="heat-wrap">
+        <div class="heat" role="img" aria-label={`calendar of letters between ${a} and ${b}`}>
+          {weeks.map((col, i) => (
+            <div class="heat-col">
+              <span class="heat-month">{monthMarks[i]}</span>
+              {col.map((c) =>
+                c.count
+                  ? <a class="heat-cell lit" href={`#${c.anchor}`} title={`${c.date} — ${c.count} ${c.count === 1 ? "letter" : "letters"}`} style={`--h:${c.hue}`}></a>
+                  : <span class="heat-cell" title={c.date}></span>
+              )}
+            </div>
+          ))}
+        </div>
+        <div class="heat-legend">
+          {threadOrder.slice(0, 8).map((t) => (
+            <a class="legend-item" href={`/mail/${t}/`} style={`--h:${hueOf(t)}`}><span class="swatch"></span>{threadTitle(t)}</a>
+          ))}
+          {threadOrder.length > 8 && <span class="legend-more">+ {threadOrder.length - 8} more</span>}
+        </div>
+      </div>
+
+      <div class="fr-actions">
+        <a class="pm-btn send" href={composeHref}>✍ Write back — the desk knows the way</a>
+        <span class="turn">last word: <b>{lastSender}</b>, {fmtDate(last.date)}</span>
+      </div>
+    </section>
+
+    <div class="fr-body">
+      <aside class="fr-rail">
+        <a class="rail-write" href={composeHref}>✍ write to {otherOf(lastSender)}</a>
+        <nav aria-label="letters in this correspondence">
+          {railItems.map((r) => (
+            <a class="rail-item" href={`#${r.id}`} style={`--h:${r.hue}`}>
+              <span class="rail-date">{r.date.slice(5)}</span>
+              <span class="rail-from">{r.from === a ? "←" : "→"} {r.title}</span>
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      <div class="fr-letters">
+        {pairLetters.map((l) => (
+          <article class="pm-letter pm-paper fr-letter" id={l.id} style={`--h:${hueOf(tkeyOf(l))}`}>
+            <div class="fr-threadline"><a href={`/mail/${tkeyOf(l)}/`}>{threadTitle(tkeyOf(l))}</a></div>
+            <div class="pm-letterhead">
+              <span class="route">
+                <a href={`/residents/${l.from}/`}>{l.from}</a>
+                {" → "}
+                {(l.toList && l.toList.length ? l.toList : [l.to]).filter(Boolean).map((to, i) => (
+                  <>{i > 0 && ", "}<a href={`/residents/${to}/`}>{to}</a></>
+                ))}
+              </span>
+              <span class="when">{fmtDate(l.date)}</span>
+            </div>
+            <div class="pm-letterbody" set:html={md(l.body, { repoDir: (l.path || "").split("/").slice(0, -1).join("/"), media })} />
+            {(l.attachments ?? []).filter((at) => media[at]).length > 0 && (
+              <div class="pm-attachments">
+                {(l.attachments ?? []).filter((at) => media[at]).map((at) => (
+                  <a class="pm-frame" href={media[at].full} target="_blank" rel="noopener">
+                    <img src={media[at].card} alt={`attachment: ${at.split("/").pop()}`} loading="lazy" />
+                  </a>
+                ))}
+              </div>
+            )}
+            <div class="pm-letterfoot">
+              <span>{l.id}</span>
+              <a href={townFile(l.path)}>the file, in the record →</a>
+            </div>
+          </article>
+        ))}
+        <p class="fr-foot">
+          <a class="pm-btn ghost" href={`/residents/${a}/`}>← {a}</a>
+          <a class="pm-btn send" href={composeHref}>✍ Write back</a>
+          <a class="pm-btn ghost" href={`/residents/${b}/`}>{b} →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .friendship { max-width: 1060px; margin: 0 auto; padding: 0 0.4em 2em; }
+    .fr-head { text-align: center; margin: 0 0 1.4em; }
+    .fr-head h1 {
+      margin: 0; font-size: clamp(1.6rem, 4.4vw, 2.3rem);
+      color: var(--pm-gold-bright); text-shadow: 0 0 30px rgba(232, 196, 139, 0.3);
+    }
+    .fr-head h1 a { color: inherit; text-decoration: none; }
+    .fr-head h1 a:hover { text-decoration: underline; }
+    .fr-head .amp { color: var(--pm-gold); font-style: italic; padding: 0 0.15em; }
+    .fr-head .tag {
+      margin: 0.45em 0 0; font-family: var(--pm-mono); font-size: 0.78rem;
+      letter-spacing: 0.1em; color: rgba(232, 196, 139, 0.8);
+    }
+
+    /* the facts card */
+    .fr-facts { padding: 1.3em 1.5em 1.2em; margin: 0 0 1.6em; }
+    .facts-row { display: flex; flex-wrap: wrap; gap: 1.2em 2.4em; justify-content: center; margin: 0 0 1.1em; }
+    .fact { display: flex; flex-direction: column; align-items: center; gap: 0.15em; }
+    .fact .n { font-size: 1.7rem; font-weight: 700; color: var(--pm-wax); line-height: 1; }
+    .fact .n .vs { color: var(--pm-ink-soft); padding: 0 0.18em; font-weight: 400; }
+    .fact .l { font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pm-ink-soft); }
+
+    /* heatmap */
+    .heat-wrap { border-top: 1px dashed rgba(90, 62, 27, 0.25); padding-top: 1em; }
+    .heat { display: flex; gap: 3px; justify-content: center; overflow-x: auto; padding: 0.9em 0.2em 0.35em; }
+    .heat-col { display: flex; flex-direction: column; gap: 3px; position: relative; }
+    .heat-month {
+      position: absolute; top: -1.05em; left: 0;
+      font-family: var(--pm-mono); font-size: 0.62rem; color: var(--pm-ink-soft);
+    }
+    .heat-cell {
+      width: 13px; height: 13px; border-radius: 3px;
+      background: rgba(90, 62, 27, 0.10); display: block;
+    }
+    .heat-cell.lit {
+      background: hsl(var(--h), 62%, 46%);
+      box-shadow: 0 0 4px hsla(var(--h), 62%, 46%, 0.5);
+    }
+    .heat-cell.lit:hover { transform: scale(1.35); }
+    .heat-legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.1em; justify-content: center; padding: 0.5em 0 0; }
+    .legend-item {
+      display: inline-flex; align-items: center; gap: 0.4em;
+      font-family: var(--pm-mono); font-size: 0.74rem; color: var(--pm-ink-soft); text-decoration: none;
+      max-width: 24ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .legend-item:hover { color: var(--pm-wax); }
+    .legend-item .swatch { width: 10px; height: 10px; border-radius: 3px; background: hsl(var(--h), 62%, 46%); flex: 0 0 auto; }
+    .legend-more { font-family: var(--pm-mono); font-size: 0.74rem; color: var(--pm-ink-soft); }
+
+    .fr-actions { display: flex; align-items: center; justify-content: center; gap: 1.2em; flex-wrap: wrap; margin-top: 1.1em; }
+    .fr-actions .turn { font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-ink-soft); }
+    .fr-actions .turn b { color: var(--pm-wax); }
+
+    /* rail + letters */
+    .fr-body { display: grid; grid-template-columns: 230px 1fr; gap: 1.6em; align-items: start; }
+    .fr-rail {
+      position: sticky; top: 5.2em;
+      max-height: calc(100vh - 6.5em); overflow-y: auto;
+      display: flex; flex-direction: column; gap: 2px; padding-right: 0.3em;
+    }
+    .rail-write {
+      font-family: var(--pm-mono); font-size: 0.8rem; letter-spacing: 0.04em;
+      color: #2b1c08; background: linear-gradient(180deg, #f4d9a4, #e8c48b);
+      border: 1px solid rgba(90, 62, 27, 0.45); border-radius: 9px;
+      padding: 0.55em 0.75em; margin: 0 0 0.55em; text-decoration: none; text-align: center;
+    }
+    .rail-write:hover { filter: brightness(1.06); }
+    .fr-rail nav { display: flex; flex-direction: column; gap: 2px; }
+    .rail-item {
+      display: flex; align-items: baseline; gap: 0.55em;
+      padding: 0.32em 0.5em; border-left: 3px solid hsl(var(--h), 62%, 46%);
+      border-radius: 0 6px 6px 0; text-decoration: none;
+      font-family: var(--pm-mono); font-size: 0.76rem; color: #cdc2ab;
+    }
+    .rail-item:hover { background: rgba(232, 196, 139, 0.1); color: var(--pm-gold-bright); }
+    .rail-date { color: rgba(232, 196, 139, 0.65); flex: 0 0 auto; }
+    .rail-from { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .fr-letters { min-width: 0; }
+    .fr-letter { border-left: 4px solid hsl(var(--h), 62%, 46%); scroll-margin-top: 5.5em; }
+    .fr-threadline {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.06em;
+      margin: 0 0 0.55em;
+    }
+    .fr-threadline a { color: hsl(var(--h), 55%, 34%); text-decoration: none; }
+    .fr-threadline a:hover { text-decoration: underline; }
+    .fr-foot { display: flex; justify-content: center; gap: 1em; flex-wrap: wrap; margin: 2em 0 0; }
+
+    @media (max-width: 780px) {
+      .fr-body { grid-template-columns: 1fr; }
+      .fr-rail { position: static; max-height: 14em; order: -1; }
+      .heat { justify-content: flex-start; }
+    }
+  </style>
+</PostmarkLayout>

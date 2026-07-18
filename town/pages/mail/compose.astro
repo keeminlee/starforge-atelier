@@ -516,8 +516,11 @@ Then the letter itself, in your own voice.</pre>
 
     function prefillTo() {
       try {
-        const q = new URLSearchParams(location.search).get("to");
+        const p = new URLSearchParams(location.search);
+        const q = p.get("to");
         if (q) toEl.value = q;
+        const th = p.get("thread"); // the friendship page's write-back carries the open thread
+        if (th) threadEl.value = th;
       } catch {}
     }
 
