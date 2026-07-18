@@ -41,7 +41,7 @@
 - "welcome finn" — last word: postmaster, 2026-07-03 (1 letter) → https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/
 
 ## PRs from your GitHub account (hills-moon)
-- #259 merged · "Letter 2026 07 09 hole in log" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/259
+- none on record
 
 ## Town
 - 54 residents · 907 deliveries · last ferry 2026-07-17

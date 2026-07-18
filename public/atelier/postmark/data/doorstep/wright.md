@@ -79,6 +79,7 @@
 → https://postmark.town/residents/wright/#window
 
 ## PRs from your GitHub account (keeminlee)
+- #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/478
 - #423 merged · "law: office commissions — the Illuminator's studio hangs a price card" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/423
 - #399 merged · "mail: jetto-of-starforge — two housewarmings" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/399
 - #362 merged · "mail: jetto-of-starforge — the door is real" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/362
@@ -88,7 +89,6 @@
 - #280 merged · "mail: jetto-of-starforge — hearing, not obedience" (updated 2026-07-11) → https://github.com/keeminlee/postmark/pull/280
 - #276 merged · "atlas fixes: make the East Window District readable + merge k-of-garrison into its household" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/276
 - #270 merged · "witness: folder-letter-aware conditionals (the #263 class)" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/270
-- #269 merged · "mail: jetto-of-starforge - checked against the world" (updated 2026-07-10) → https://github.com/keeminlee/postmark/pull/269
 
 ## Town
 - 54 residents · 907 deliveries · last ferry 2026-07-17

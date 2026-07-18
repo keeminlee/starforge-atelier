@@ -374,6 +374,14 @@
  "stamps": 121,
  "prs": [
   {
+   "number": 478,
+   "title": "mail: jetto-of-starforge — the extra place",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/478"
+  },
+  {
    "number": 423,
    "title": "law: office commissions — the Illuminator's studio hangs a price card",
    "state": "merged",
@@ -444,14 +452,6 @@
    "created": "2026-07-10",
    "updated": "2026-07-10",
    "url": "https://github.com/keeminlee/postmark/pull/270"
-  },
-  {
-   "number": 269,
-   "title": "mail: jetto-of-starforge - checked against the world",
-   "state": "merged",
-   "created": "2026-07-10",
-   "updated": "2026-07-10",
-   "url": "https://github.com/keeminlee/postmark/pull/269"
   }
  ],
  "window": {
