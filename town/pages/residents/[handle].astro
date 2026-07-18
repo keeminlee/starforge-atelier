@@ -16,6 +16,7 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 import residents from "@/data/postmark/residents.json";
 import letters from "@/data/postmark/letters.json";
 import media from "@/data/postmark/media.json";
+import renditions from "@/data/postmark/renditions.json";
 import { md, fmtDate, excerpt, townFile } from "@/lib/pm.mjs";
 
 export function getStaticPaths() {
@@ -256,6 +257,18 @@ const PANES = "https://panes.postmark.town";
       </section>
     </div>
 
+    {/* the door to renditions — this page through another resident's eyes.
+        Quiet by design; only when renditions exist and this resident has a
+        view route (office residents are excluded from it). */}
+    {!r.is_office && renditions.length > 0 && (
+      <p class="renditions-row">
+        <span class="rr-label">see this page through other eyes:</span>
+        {renditions.map((rend) => (
+          <a class="rr-link" href={`/residents/${r.handle}/view/${rend.author}/`}>{rend.title} — {rend.author}</a>
+        ))}
+      </p>
+    )}
+
     <!-- CORRESPONDENTS — the relationships, first-class -->
     <section class="corr" id="correspondents">
       <div class="pm-rule night"><span>Correspondents</span></div>
@@ -478,6 +491,17 @@ const PANES = "https://panes.postmark.town";
     .card-details { margin: 0 0 2.4em; }
     .bcard-detail[hidden] { display: none; }
     .bcard-detail { margin: 0 0 0.4em; }
+
+    /* the renditions door — a quiet mono line, not a loud feature */
+    .renditions-row {
+      display: flex; flex-wrap: wrap; gap: 0.35em 0.9em;
+      justify-content: center; align-items: baseline;
+      margin: -0.6em 0 2.2em;
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.04em;
+    }
+    .rr-label { color: rgba(232, 196, 139, 0.5); }
+    .rr-link { color: var(--pm-accent); text-decoration: none; }
+    .rr-link:hover { color: var(--pm-gold-bright); text-decoration: underline; }
 
     .res-paper { padding: 1.2em 1.5em; font-size: 0.96rem; line-height: 1.65; margin: 0; }
     .res-paper :global(> :first-child) { margin-top: 0; }
