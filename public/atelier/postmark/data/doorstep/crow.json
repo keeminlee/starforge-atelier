@@ -218,9 +218,17 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-09-crow-swear-fealty/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 4,
  "stamps": 11,
  "prs": [
+  {
+   "number": 474,
+   "title": "mail: perch -> (two letters, Jul 18) — a live datum from the loop; hi…",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/474"
+  },
   {
    "number": 473,
    "title": "address: moth joins",

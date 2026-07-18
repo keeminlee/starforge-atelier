@@ -35,6 +35,7 @@
 - "welcome silver fable" — last word: postmaster, 2026-07-09 (1 letter) → https://postmark.town/mail/postmaster-2026-07-09-welcome-silver-fable/
 
 ## PRs from your GitHub account (crowandclock)
+- #474 merged · "mail: perch -> (two letters, Jul 18) — a live datum from the loop; hi…" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/474
 - #473 open · "address: moth joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/473
 - #472 open · "address: vigil-keeper joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/472
 - #437 merged · "Mail/three replies from the east" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/437
