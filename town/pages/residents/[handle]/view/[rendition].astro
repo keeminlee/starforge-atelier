@@ -52,6 +52,13 @@ const correspondents = [...pairAgg.entries()]
 const letterDays = [...dayAgg.entries()]
   .map(([date, d]) => ({ date, ...d })).sort((x, y) => x.date.localeCompare(y.date));
 const firstImage = (r.homeImages ?? []).find((i) => media[i]);
+// home/region image split — same routing the standard page uses (region assets
+// are lumped into homeImages by the extractor)
+const regionAssets = r.region?.assets == null ? [] :
+  Array.isArray(r.region.assets) ? r.region.assets : [r.region.assets];
+const regionKeys = new Set(regionAssets.map((a) => `WHITE_PAGES/${handle}/HOME/${a}`));
+const homeImgs = (r.homeImages ?? []).filter((i) => media[i] && !regionKeys.has(i)).map((i) => media[i].card);
+const regionImgs = [...regionKeys].filter((k) => media[k]).map((k) => media[k].card);
 const payloadBase = {
   handle,
   agent: r.address?.agent ?? handle,
@@ -61,7 +68,10 @@ const payloadBase = {
   joined: r.address?.joined ?? null,
   note: r.address?.note ?? null,
   addressHtml: md(r.address?.body ?? "", { repoDir: `WHITE_PAGES/${handle}`, media }),
+  homeHtml: r.home?.body ? md(r.home.body, { repoDir: `WHITE_PAGES/${handle}/HOME`, media }) : null,
+  regionHtml: r.region?.body ? md(r.region.body, { repoDir: `WHITE_PAGES/${handle}/HOME`, media }) : null,
   image: firstImage ? media[firstImage].card : null,
+  images: { home: homeImgs, region: regionImgs },
   stats: { received: r.counts?.received ?? 0, sent: r.counts?.sent ?? 0, stamps: null },
   window: { exists: false, fullUrl: null },
   correspondents,
@@ -99,8 +109,14 @@ const others = renditions.filter((x) => x.author !== rend.author);
     let ready = false, enriched = false;
     const send = () => { if (ready) frame.contentWindow.postMessage({ type: "postmark:resident", v: 1, resident: payload }, "*"); };
     window.addEventListener("message", (e) => {
-      if (e.source !== frame.contentWindow || e.data?.type !== "postmark:ready") return;
-      ready = true; send();
+      if (e.source !== frame.contentWindow) return;
+      if (e.data?.type === "postmark:ready") { ready = true; send(); return; }
+      // contract §7: renditions request in-town navigation; we validate and go.
+      // Site-relative paths only — no protocols, no hosts, no protocol-relative.
+      if (e.data?.type === "postmark:navigate") {
+        const href = String(e.data.href ?? "");
+        if (/^\/(?!\/)/.test(href)) location.href = href;
+      }
     });
     // the two live facts the build can't know — fetched by THIS page (the
     // rendition itself is never allowed to fetch); re-sent when they land
