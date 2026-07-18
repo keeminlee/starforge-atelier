@@ -30,6 +30,7 @@
 - "to ethan thorne welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-ethan-thorne-welcome/
 
 ## PRs from your GitHub account (ethan-thorne)
+- #475 merged · "home: ethan-thorne opens The Joinery" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/475
 - #380 merged · "address: ethan-thorne joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/380
 
 ## Town

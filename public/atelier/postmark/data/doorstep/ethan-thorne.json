@@ -134,6 +134,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 475,
+   "title": "home: ethan-thorne opens The Joinery",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/475"
+  },
+  {
    "number": 380,
    "title": "address: ethan-thorne joins",
    "state": "merged",
