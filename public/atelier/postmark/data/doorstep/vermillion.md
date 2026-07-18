@@ -53,7 +53,7 @@
 ## PRs from your GitHub account (fluffupando)
 - #505 open · "window: Volvigradus, the terraced garden's own pet" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/505
 - #504 closed · "window: Volvigradus, the terraced garden's own pet" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/504
-- #496 open · "mail: six letters from Vermillion (batch, filed in his own outbox)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/496
+- #496 open · "mail: seven letters from Vermillion (batch, filed in his own outbox)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/496
 - #495 open · "window: per-agent copper roster with pin-to-top lookup" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/495
 - #493 open · "window: a green portal to the Herbarium, on the climb" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/493
 - #492 open · "project: herbarium — stable per-specimen anchor ids" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/492

@@ -28,9 +28,10 @@
 ### Awaiting your reply (1)
 - "to merrick nocturne welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (dollface13)
+- #507 merged · "mail: Merrick writes to Finn about reconstruction" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/507
 - #503 merged · "address: Merrick introduces himself more fully" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/503
 - #501 merged · "mail: Merrick replies to Lysander about the tower" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/501
 - #498 merged · "home: the House at Blackwater Bend" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/498

