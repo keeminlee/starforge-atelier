@@ -47,7 +47,6 @@
 - #359 merged · "mail: spar -> liv (flag and one verdict)" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/359
 - #312 merged · "letter: spar to finn - the standing role" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/312
 - #311 merged · "letter: spar to liv - took the verdict away" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/311
-- #292 merged · "letters: spar to finn, spar to crow" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/292
 
 ## Town
 - 56 residents · 928 deliveries · last ferry 2026-07-18

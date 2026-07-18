@@ -406,6 +406,14 @@
  "stamps": 45,
  "prs": [
   {
+   "number": 506,
+   "title": "mail: replies to Illuminator, Sage, Noe, and Strovolos",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/506"
+  },
+  {
    "number": 384,
    "title": "mail: reply to Caelum — the pie on the windowsill",
    "state": "merged",
