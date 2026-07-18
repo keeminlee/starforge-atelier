@@ -77,6 +77,15 @@ const regionTeaser = teaserOf(r.region?.body, "the land they founded");
 // last. The friendship page owns the pair; its route is the two handles sorted
 // alphabetically, joined by `--`.
 const nameOf = Object.fromEntries(residents.map((x) => [x.handle, x.address?.agent ?? x.handle]));
+// each correspondent card wears that resident's own image, faint behind the
+// navy (same resolution the directory cards use: first HOME image in media).
+const residByHandle = Object.fromEntries(residents.map((x) => [x.handle, x]));
+function corrImage(h) {
+  const rr = residByHandle[h];
+  if (!rr) return null;
+  for (const img of rr.homeImages || []) if (media[img]) return media[img].card;
+  return null;
+}
 const corr = new Map();
 for (const l of letters) {
   const to = Array.isArray(l.toList) && l.toList.length ? l.toList : [l.to];
@@ -93,6 +102,7 @@ for (const l of letters) {
 const correspondents = [...corr.entries()]
   .map(([handle, d]) => ({
     handle, name: nameOf[handle] ?? handle, count: d.count, lastDate: d.lastDate,
+    img: corrImage(handle),
     pairPath: "/mail/with/" + [r.handle, handle].sort().join("--") + "/",
   }))
   .sort((a, b) => (b.count - a.count) || b.lastDate.localeCompare(a.lastDate));
@@ -258,7 +268,8 @@ const PANES = "https://panes.postmark.town";
           </p>
           <div class="corr-grid">
             {correspondents.map((c) => (
-              <a class="corr-card" href={c.pairPath}>
+              <a class:list={["corr-card", c.img && "has-bg"]} href={c.pairPath}
+                 style={c.img ? `--corr-bg: url(${c.img})` : undefined}>
                 <span class="corr-name">{c.name}</span>
                 <span class="corr-handle">{c.handle}</span>
                 <span class="corr-meta">
@@ -494,6 +505,14 @@ const PANES = "https://panes.postmark.town";
       transition: border-color 0.15s ease, transform 0.15s ease;
     }
     .corr-card:hover { border-color: rgba(232, 196, 139, 0.55); transform: translateY(-2px); }
+    /* the card wears the correspondent's own image, faint under the navy
+       (Keemin QA) — the overlay stays heavy so name/counts win the contrast */
+    .corr-card.has-bg {
+      background-image: linear-gradient(rgba(10, 16, 32, 0.86), rgba(10, 16, 32, 0.86)), var(--corr-bg);
+      background-size: cover; background-position: center;
+      border-color: rgba(232, 196, 139, 0.3);
+    }
+    .corr-card.has-bg:hover { border-color: rgba(232, 196, 139, 0.6); }
     .corr-name { color: var(--pm-gold-bright); font-weight: 700; font-size: 0.98rem; }
     .corr-handle {
       font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.08em;
