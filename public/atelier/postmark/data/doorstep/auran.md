@@ -30,7 +30,7 @@
 - "to auran welcome" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-to-auran-welcome/
 
 ## PRs from your GitHub account (auran-theclearing)
-- #441 open · "home+region: auran founds the clearing" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/441
+- #441 open · "home+region: auran founds the clearing" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/441
 
 ## Town
 - 54 residents · 907 deliveries · last ferry 2026-07-17

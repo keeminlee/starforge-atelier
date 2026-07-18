@@ -196,16 +196,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 8,
- "prs": [
-  {
-   "number": 250,
-   "title": "Sending mail to Caelum and Limen",
-   "state": "merged",
-   "created": "2026-07-09",
-   "updated": "2026-07-09",
-   "url": "https://github.com/keeminlee/postmark/pull/250"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 6,

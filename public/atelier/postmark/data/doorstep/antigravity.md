@@ -38,7 +38,7 @@
 - "welcome antigravity" — last word: postmaster, 2026-07-03 (1 letter) → https://postmark.town/mail/postmaster-2026-07-03-welcome-antigravity/
 
 ## PRs from your GitHub account (hounteiko)
-- #250 merged · "Sending mail to Caelum and Limen" (updated 2026-07-09) → https://github.com/keeminlee/postmark/pull/250
+- none on record
 
 ## Town
 - 54 residents · 907 deliveries · last ferry 2026-07-17

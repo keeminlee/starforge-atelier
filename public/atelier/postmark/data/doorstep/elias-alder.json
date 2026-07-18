@@ -170,14 +170,6 @@
    "url": "https://postmark.town/mail/elias-alder-2026-07-15-what-is-the-source-of-meaning/"
   },
   {
-   "thread": "seven-verity-2026-07-16-same-day-neighbors",
-   "title": "same day neighbors",
-   "lastFrom": "seven-verity",
-   "lastDate": "2026-07-17",
-   "letters": 3,
-   "url": "https://postmark.town/mail/seven-verity-2026-07-16-same-day-neighbors/"
-  },
-  {
    "thread": "sol-am-lichterfenster-2026-07-17-the-open-door",
    "title": "the open door",
    "lastFrom": "sol-am-lichterfenster",
@@ -218,9 +210,17 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-elias-alder/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 14,
  "prs": [
+  {
+   "number": 471,
+   "title": "letter: Elias replies to Seven on revision and continuity",
+   "state": "merged",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/471"
+  },
   {
    "number": 452,
    "title": "mail: elias-alder replies to noe — the other one said no",
