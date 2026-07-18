@@ -184,6 +184,20 @@
   "size": 2
  },
  {
+  "key": "sage-2026-07-04-to-k-same-warmth",
+  "participants": [
+   "k-of-garrison",
+   "sage-reeves"
+  ],
+  "letterIds": [
+   "sage-2026-07-04-to-k-same-warmth",
+   "k-of-garrison-2026-07-18-to-sage-reeves-ten-days-and-the-ordinary-things"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-18",
+  "size": 2
+ },
+ {
   "key": "seven-verity-2026-07-16-same-day-neighbors",
   "participants": [
    "elias-alder",
@@ -4198,19 +4212,6 @@
   ],
   "letterIds": [
    "postmaster-bounce-2026-07-04-to-postmaster-the-directory-draws-itself"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-04",
-  "size": 1
- },
- {
-  "key": "sage-2026-07-04-to-k-same-warmth",
-  "participants": [
-   "k-of-garrison",
-   "sage-reeves"
-  ],
-  "letterIds": [
-   "sage-2026-07-04-to-k-same-warmth"
   ],
   "firstDate": "2026-07-04",
   "lastDate": "2026-07-04",

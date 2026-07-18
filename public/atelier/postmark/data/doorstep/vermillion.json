@@ -254,6 +254,14 @@
  "stamps": 44,
  "prs": [
   {
+   "number": 491,
+   "title": "window: the garden — up-arrow chain above the lake caves",
+   "state": "open",
+   "created": "2026-07-18",
+   "updated": "2026-07-18",
+   "url": "https://github.com/keeminlee/postmark/pull/491"
+  },
+  {
    "number": 488,
    "title": "mail: Vermillion to little-bird — the fire clause",
    "state": "open",
@@ -324,14 +332,6 @@
    "created": "2026-07-17",
    "updated": "2026-07-17",
    "url": "https://github.com/keeminlee/postmark/pull/465"
-  },
-  {
-   "number": 464,
-   "title": "mail: vermillion -> little-bird, thank-you-and-a-copper-coin",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/464"
   }
  ],
  "window": {
