@@ -383,8 +383,9 @@ const nav = [
         const byFrom = new Map();
         for (const r of rows) {
           if (seen.has(r.id)) continue;
-          const g = byFrom.get(r.from) || { from: r.from, to: r.to, count: 0, latest: r.date };
+          const g = byFrom.get(r.from) || { from: r.from, to: r.to, count: 0, latest: r.date, ids: [] };
           g.count++;
+          g.ids.push(r.id);
           if (r.date >= g.latest) { g.latest = r.date; g.to = r.to; }
           byFrom.set(r.from, g);
         }
@@ -407,6 +408,7 @@ const nav = [
             a.className = "pm-notif-row pm-notif-youin";
             a.href = "/residents/" + encodeURIComponent(handles[0] || "") + "/";
             a.innerHTML = "<span class='pm-notif-mark'>✦</span><span class='pm-notif-text'><b>You’re in.</b> Your place at Postmark is real — visit your resident page.</span>";
+            a.addEventListener("click", dismissYoureIn);
             bodyEl.append(a);
           }
           for (const g of mailGroups) {
@@ -418,6 +420,7 @@ const nav = [
               : esc(String(g.count)) + " letters from <b>" + esc(g.from) + "</b> for " + esc(g.to);
             a.innerHTML = "<span class='pm-notif-mark'>✉</span><span class='pm-notif-text'>" + line +
               (g.latest ? " <span class='pm-notif-when'>· " + esc(g.latest) + "</span>" : "") + "</span>";
+            a.addEventListener("click", () => markCorrespondentSeen(g.ids));
             bodyEl.append(a);
           }
           seenBtn.hidden = mailGroups.length === 0;
@@ -426,9 +429,10 @@ const nav = [
         badge.hidden = total === 0;
       }
 
-      // advance the watermark: everything currently received counts as seen
-      // (bounds the id-set to current mail, pruning the old), and the "you're
-      // in" moment is dismissed.
+      // "mark all seen" — the explicit clear-all: everything currently received
+      // counts as seen (bounds the id-set to current mail, pruning the old), and
+      // the "you're in" moment is dismissed. This is the ONLY blanket clear;
+      // closing the panel does not (Keemin, 2026-07-19 — peeking must not clear).
       function markSeen() {
         for (const r of rows) seen.add(r.id);
         writeJSON(seenKey(household), { ids: [...seen], ts: Date.now() });
@@ -437,7 +441,23 @@ const nav = [
         render();
       }
 
-      let opened = false;
+      // per-correspondent read: clicking a row marks THAT correspondent's letters
+      // seen as you head off to read them. Persist synchronously so the watermark
+      // survives the navigation that follows; re-render covers the open-new-tab case.
+      function markCorrespondentSeen(ids) {
+        for (const id of ids) seen.add(id);
+        writeJSON(seenKey(household), { ids: [...seen], ts: Date.now() });
+        recomputeMail();
+        render();
+      }
+      // the "you're in" row dismisses itself when you click through to your page.
+      function dismissYoureIn() {
+        if (!youreIn) return;
+        youreIn = false;
+        writeJSON(resiKey(household), { celebrated: true });
+        render();
+      }
+
       // On phones the header wraps and the bell sits mid-row, so a panel
       // right-anchored to the bell would spill off the left edge. There, pin
       // it as a fixed viewport sheet just under the bell (its real position),
@@ -457,23 +477,23 @@ const nav = [
         placePanel();
         root.classList.add("open");
         bell.setAttribute("aria-expanded", "true");
-        opened = true;
       }
-      function closePanel(markAsSeen) {
+      // Closing advances nothing — the badge and rows persist. The watermark
+      // only moves on a per-row read (markCorrespondentSeen) or the explicit
+      // "mark all seen" (markSeen). Peeking is free.
+      function closePanel() {
         panel.hidden = true;
         root.classList.remove("open");
         bell.setAttribute("aria-expanded", "false");
-        if (opened && markAsSeen) markSeen();          // close = advance watermark (locked decision 4)
-        opened = false;
       }
 
       bell.addEventListener("click", (e) => {
         e.stopPropagation();
-        if (panel.hidden) openPanel(); else closePanel(true);
+        if (panel.hidden) openPanel(); else closePanel();
       });
-      seenBtn.addEventListener("click", (e) => { e.stopPropagation(); markSeen(); closePanel(false); });
-      document.addEventListener("click", (e) => { if (!panel.hidden && !root.contains(e.target)) closePanel(true); });
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) closePanel(true); });
+      seenBtn.addEventListener("click", (e) => { e.stopPropagation(); markSeen(); closePanel(); });
+      document.addEventListener("click", (e) => { if (!panel.hidden && !root.contains(e.target)) closePanel(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) closePanel(); });
 
       render(); // paint the badge (panel stays closed)
     })();
