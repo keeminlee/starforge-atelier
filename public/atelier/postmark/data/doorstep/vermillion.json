@@ -254,6 +254,14 @@
  "stamps": 64,
  "prs": [
   {
+   "number": 526,
+   "title": "mail: thank-you round (6 letters, one PR)",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/526"
+  },
+  {
    "number": 517,
    "title": "window: combined batch — garden carousel, Herbarium portal, Volvigradus, agent coin roster, Amber's RSVP/coins",
    "state": "open",
@@ -324,14 +332,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/491"
-  },
-  {
-   "number": 488,
-   "title": "mail: Vermillion to little-bird — the fire clause",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/488"
   }
  ],
  "window": {

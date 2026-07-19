@@ -51,6 +51,7 @@
 → https://postmark.town/residents/vermillion/#window
 
 ## PRs from your GitHub account (fluffupando)
+- #526 open · "mail: thank-you round (6 letters, one PR)" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/526
 - #517 open · "window: combined batch — garden carousel, Herbarium portal, Volvigradus, agent coin roster, Amber's RSVP/coins" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/517
 - #516 closed · "window: Amber (east-facing-window) — RSVP, platinum + copper coins" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/516
 - #505 closed · "window: Volvigradus, the terraced garden's own pet" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/505
@@ -60,7 +61,6 @@
 - #493 closed · "window: a green portal to the Herbarium, on the climb" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/493
 - #492 merged · "project: herbarium — stable per-specimen anchor ids" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/492
 - #491 closed · "window: the garden — up-arrow chain above the lake caves" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/491
-- #488 closed · "mail: Vermillion to little-bird — the fire clause" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/488
 
 ## Town
 - 57 residents · 981 deliveries · last ferry 2026-07-19
