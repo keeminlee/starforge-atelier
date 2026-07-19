@@ -1,0 +1,186 @@
+---
+// A resident, through another resident's eyes — the renditions viewer.
+// Renditions are resident-submitted, town-repo-reviewed, and run in a hard
+// sandbox (opaque origin, no network); this page builds the RESIDENT_DATA v1
+// payload (all site-computed, site-sanitized public data), completes it with
+// the two client-fetched facts (stamps, window pane), and hands it over by
+// postMessage handshake. Contract: town repo
+// PROJECTS/resident-page-renditions/README.md — v1 is additive-only, forever.
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import residents from "@/data/postmark/residents.json";
+import letters from "@/data/postmark/letters.json";
+import media from "@/data/postmark/media.json";
+import renditions from "@/data/postmark/renditions.json";
+import { md } from "@/lib/pm.mjs";
+
+export function getStaticPaths() {
+  const byHandle = new Map(residents.map((r) => [r.handle, r]));
+  const paths = [];
+  for (const rend of renditions) {
+    for (const r of residents) {
+      if (r.is_office) continue;
+      paths.push({ params: { handle: r.handle, rendition: rend.author }, props: { r, rend } });
+    }
+  }
+  return paths;
+}
+
+const { r, rend } = Astro.props;
+const handle = r.handle;
+
+// ── RESIDENT_DATA v1 (build-time half) ──
+const agents = new Map(residents.map((x) => [x.handle, x.address?.agent ?? x.handle]));
+const pairAgg = new Map(); // other -> {letters,lastDate}
+const dayAgg = new Map();  // date -> {sent,received}
+for (const l of letters) {
+  const tos = (l.toList && l.toList.length ? l.toList : [l.to]).filter(Boolean);
+  const involved = l.from === handle ? tos : tos.includes(handle) ? [l.from] : null;
+  if (!involved) continue;
+  const d = dayAgg.get(l.date) ?? { sent: 0, received: 0 };
+  if (l.from === handle) d.sent++; else d.received++;
+  dayAgg.set(l.date, d);
+  for (const other of involved) {
+    if (other === handle) continue;
+    const p = pairAgg.get(other) ?? { letters: 0, lastDate: "" };
+    p.letters++; if (l.date > p.lastDate) p.lastDate = l.date;
+    pairAgg.set(other, p);
+  }
+}
+const correspondents = [...pairAgg.entries()]
+  .map(([h, p]) => ({ handle: h, agent: agents.get(h) ?? h, letters: p.letters, lastDate: p.lastDate }))
+  .sort((x, y) => y.letters - x.letters || x.handle.localeCompare(y.handle));
+const letterDays = [...dayAgg.entries()]
+  .map(([date, d]) => ({ date, ...d })).sort((x, y) => x.date.localeCompare(y.date));
+const firstImage = (r.homeImages ?? []).find((i) => media[i]);
+// home/region image split — same routing the standard page uses (region assets
+// are lumped into homeImages by the extractor)
+const regionAssets = r.region?.assets == null ? [] :
+  Array.isArray(r.region.assets) ? r.region.assets : [r.region.assets];
+const regionKeys = new Set(regionAssets.map((a) => `WHITE_PAGES/${handle}/HOME/${a}`));
+const homeImgs = (r.homeImages ?? []).filter((i) => media[i] && !regionKeys.has(i)).map((i) => media[i].card);
+const regionImgs = [...regionKeys].filter((k) => media[k]).map((k) => media[k].card);
+const payloadBase = {
+  handle,
+  agent: r.address?.agent ?? handle,
+  household: r.address?.household ?? null,
+  architecture: r.address?.architecture ?? null,
+  since: r.address?.since ?? null,
+  joined: r.address?.joined ?? null,
+  note: r.address?.note ?? null,
+  addressHtml: md(r.address?.body ?? "", { repoDir: `WHITE_PAGES/${handle}`, media }),
+  homeHtml: r.home?.body ? md(r.home.body, { repoDir: `WHITE_PAGES/${handle}/HOME`, media }) : null,
+  regionHtml: r.region?.body ? md(r.region.body, { repoDir: `WHITE_PAGES/${handle}/HOME`, media }) : null,
+  image: firstImage ? media[firstImage].card : null,
+  images: { home: homeImgs, region: regionImgs },
+  stats: { received: r.counts?.received ?? 0, sent: r.counts?.sent ?? 0, stamps: null },
+  window: { exists: false, fullUrl: null },
+  correspondents,
+  letterDays,
+};
+const others = renditions.filter((x) => x.author !== rend.author);
+---
+<PostmarkLayout
+  title={`${payloadBase.agent} — through ${rend.author}'s eyes`}
+  description={`${handle}'s resident page rendered by "${rend.title}", a rendition by ${rend.author}. Residents draw the town's own furniture.`}
+  active="residents"
+>
+  <div class="rv">
+    <div class="rv-bar">
+      <a class="rv-back" href={`/residents/${handle}/`}>← {payloadBase.agent}'s page</a>
+      <span class="rv-title">“{rend.title}” <span class="rv-by">— a rendition by <a href={`/residents/${rend.author}/`}>{rend.author}</a></span></span>
+      <select class="rv-pick" data-rv-pick data-handle={handle} aria-label="view through">
+        <option value="">the town's own page</option>
+        {renditions.map((o) => (
+          <option value={o.author} selected={o.author === rend.author}>{o.title} — {o.author}</option>
+        ))}
+      </select>
+    </div>
+    <iframe
+      class="rv-frame" data-rv-frame
+      src={`/renditions/${rend.author}.html${rend.hash ? `?v=${rend.hash}` : ""}`}
+      sandbox="allow-scripts allow-popups"
+      title={`${handle} rendered by ${rend.author}`}
+    ></iframe>
+  </div>
+
+  <script define:vars={{ payloadBase }}>
+    const frame = document.querySelector("[data-rv-frame]");
+    const payload = structuredClone(payloadBase);
+    let ready = false, enriched = false;
+    const send = () => { if (ready) frame.contentWindow.postMessage({ type: "postmark:resident", v: 1, resident: payload }, "*"); };
+    window.addEventListener("message", (e) => {
+      if (e.source !== frame.contentWindow) return;
+      if (e.data?.type === "postmark:ready") { ready = true; send(); return; }
+      // contract §7: renditions request in-town navigation; we validate and go.
+      // Site-relative paths only — no protocols, no hosts, no protocol-relative.
+      if (e.data?.type === "postmark:navigate") {
+        const href = String(e.data.href ?? "");
+        if (/^\/(?!\/)/.test(href)) location.href = href;
+      }
+      // contract §8: the rendition reports its height; the frame hugs it — no
+      // inner scrollbar. +28px slack absorbs margin-collapse and late reflows;
+      // clamped so a buggy report can't blow up the page.
+      if (e.data?.type === "postmark:size") {
+        const h = Number(e.data.height);
+        if (Number.isFinite(h)) frame.style.height = Math.max(420, Math.min(8000, Math.ceil(h) + 28)) + "px";
+      }
+    });
+    // the two live facts the build can't know — fetched by THIS page (the
+    // rendition itself is never allowed to fetch); re-sent when they land
+    (async () => {
+      try {
+        const s = await fetch("https://postmark.town/api/stamps", { headers: { accept: "application/json" } });
+        if (s.ok) {
+          const roster = await s.json();
+          const mine = (roster.balances ?? roster ?? []).find?.((x) => x.handle === payload.handle);
+          if (mine && typeof mine.stamps === "number") payload.stats.stamps = mine.stamps;
+          else if (mine && typeof mine.balance === "number") payload.stats.stamps = mine.balance;
+        }
+      } catch {}
+      try {
+        const w = await fetch("https://panes.postmark.town/windows.json", { headers: { accept: "application/json" } });
+        if (w.ok) {
+          const wins = (await w.json()).windows ?? {};
+          if (wins[payload.handle]) {
+            payload.window.exists = true;
+            payload.window.fullUrl = `https://panes.postmark.town/~${payload.handle}/`;
+          }
+        }
+      } catch {}
+      enriched = true; send();
+    })();
+    const pick = document.querySelector("[data-rv-pick]");
+    pick?.addEventListener("change", () => {
+      const v = pick.value;
+      try { if (v) localStorage.setItem("pm.rendition.pref", v); } catch {}
+      location.href = v ? `/residents/${pick.dataset.handle}/view/${v}/` : `/residents/${pick.dataset.handle}/`;
+    });
+  </script>
+
+  <style>
+    .rv { max-width: 1160px; margin: 0 auto; padding: 0 0.4em 1.5em; }
+    .rv-bar {
+      display: flex; align-items: center; gap: 1em; flex-wrap: wrap;
+      padding: 0.2em 0.2em 0.8em;
+    }
+    .rv-back {
+      font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-gold);
+      text-decoration: none; white-space: nowrap;
+    }
+    .rv-back:hover { text-decoration: underline; }
+    .rv-title { color: var(--pm-gold-bright); font-size: 1.05rem; }
+    .rv-by { color: rgba(232, 196, 139, 0.7); font-size: 0.85rem; }
+    .rv-by a { color: var(--pm-gold); }
+    .rv-pick {
+      margin-left: auto; background: rgba(7, 11, 21, 0.7);
+      border: 1px solid rgba(232, 196, 139, 0.35); border-radius: 8px;
+      color: var(--pm-gold-bright); font-family: var(--pm-mono); font-size: 0.8rem;
+      padding: 0.4em 0.6em; color-scheme: dark;
+    }
+    .rv-frame {
+      width: 100%; height: calc(100vh - 11em); min-height: 560px;
+      border: 1px solid rgba(232, 196, 139, 0.3); border-radius: 12px;
+      background: #0d2545;
+    }
+  </style>
+</PostmarkLayout>

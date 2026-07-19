@@ -1,0 +1,569 @@
+---
+// The friendship page — the relationship between two residents is the
+// first-class thing (Keemin, 2026-07-18). Every letter the pair have ever
+// exchanged, one page: a calendar heatmap of the correspondence (threads as
+// colors), the plain facts of knowing someone (letters, days, threads), a
+// rail to walk the letters, and one door back to the writing desk with the
+// address already on the envelope. Everything here is a pure fold over
+// letters.json — no new data, no new office surface.
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import letters from "@/data/postmark/letters.json";
+import threads from "@/data/postmark/threads.json";
+import media from "@/data/postmark/media.json";
+import { md, fmtDate, townFile, threadTitle } from "@/lib/pm.mjs";
+
+// The ONE true letter→thread map. A letter's own `thread:` field may point
+// mid-chain (the letter it answers), not at the root — 264 of 401 raw refs do.
+// threads.json already followed the chains; trust it, never the raw field.
+const rootOf = new Map();
+for (const t of threads) for (const id of t.letterIds) rootOf.set(id, t.key);
+
+const THREAD_HUES = [36, 205, 355, 145, 275, 15, 180, 320, 60, 230, 100, 300];
+
+export function getStaticPaths() {
+  const pairs = new Map(); // "a--b" (sorted) -> letters[]
+  for (const l of letters) {
+    const tos = (l.toList && l.toList.length ? l.toList : [l.to]).filter(Boolean);
+    for (const to of tos) {
+      if (!l.from || !to || l.from === to) continue;
+      const key = [l.from, to].sort().join("--");
+      if (!pairs.has(key)) pairs.set(key, []);
+      const bucket = pairs.get(key);
+      if (!bucket.some((x) => x.id === l.id)) bucket.push(l);
+    }
+  }
+  return [...pairs.entries()].map(([key, ls]) => {
+    const [a, b] = key.split("--");
+    ls.sort((x, y) => x.date.localeCompare(y.date) || x.id.localeCompare(y.id));
+    return { params: { pair: key }, props: { a, b, pairLetters: ls } };
+  });
+}
+
+const { a, b, pairLetters } = Astro.props;
+
+// threads of this correspondence, in first-appearance order, each with a hue.
+const tkeyOf = (l) => rootOf.get(l.id) ?? l.thread ?? l.id;
+const threadOrder = [];
+for (const l of pairLetters) { const k = tkeyOf(l); if (!threadOrder.includes(k)) threadOrder.push(k); }
+const hueOf = (thread) => THREAD_HUES[Math.max(0, threadOrder.indexOf(thread)) % THREAD_HUES.length];
+
+// the plain facts
+const first = pairLetters[0];
+const last = pairLetters[pairLetters.length - 1];
+const today = new Date().toISOString().slice(0, 10);
+const daysKnown = Math.max(1, Math.round((Date.parse(today) - Date.parse(first.date)) / 86400000) + 1);
+const fromA = pairLetters.filter((l) => l.from === a).length;
+const fromB = pairLetters.length - fromA;
+const lastSender = last.from;
+const otherOf = (h) => (h === a ? b : a);
+
+// heatmap: week columns from the first letter's week to today's week
+const byDay = new Map(); // date -> letters[]
+for (const l of pairLetters) {
+  if (!byDay.has(l.date)) byDay.set(l.date, []);
+  byDay.get(l.date).push(l);
+}
+const dayMs = 86400000;
+const start = new Date(Date.parse(first.date));
+start.setUTCDate(start.getUTCDate() - start.getUTCDay()); // back to Sunday
+const end = Date.parse(today);
+const weeks = [];
+for (let w = start.getTime(); w <= end; w += 7 * dayMs) {
+  const col = [];
+  for (let d = 0; d < 7; d++) {
+    const t = w + d * dayMs;
+    if (t > end) break;
+    const date = new Date(t).toISOString().slice(0, 10);
+    const dl = byDay.get(date) ?? [];
+    col.push({
+      date,
+      count: dl.length,
+      hue: dl.length ? hueOf(tkeyOf(dl[0])) : null,
+      anchor: dl.length ? dl[0].id : null,
+      day: dl.map((l) => ({
+        from: l.from, title: threadTitle(l.id),
+        thread: threadTitle(tkeyOf(l)), hue: hueOf(tkeyOf(l)),
+      })),
+    });
+  }
+  weeks.push(col);
+}
+const monthMarks = weeks.map((col, i) => {
+  const d = col[0]?.date ?? "";
+  const prev = i > 0 ? (weeks[i - 1][0]?.date ?? "") : "";
+  return d.slice(0, 7) !== prev.slice(0, 7) ? d.slice(5, 7) : "";
+});
+
+const railItems = pairLetters.map((l) => ({
+  id: l.id, date: l.date, from: l.from, title: threadTitle(l.id), hue: hueOf(tkeyOf(l)), tkey: tkeyOf(l),
+}));
+const composeHref = `/mail/compose/?to=${otherOf(lastSender)}&thread=${encodeURIComponent(tkeyOf(last))}`;
+
+// thread options for the in-page composer, most recently touched first
+const threadLast = new Map();
+for (const l of pairLetters) {
+  const k = tkeyOf(l);
+  if (!threadLast.has(k) || threadLast.get(k) < l.date) threadLast.set(k, l.date);
+}
+const threadOptions = [...threadOrder]
+  .sort((x, y) => threadLast.get(y).localeCompare(threadLast.get(x)))
+  .map((k) => ({ key: k, title: threadTitle(k), last: threadLast.get(k) }));
+const composerData = { a, b, lastSender, threads: threadOptions };
+---
+<PostmarkLayout
+  title={`${a} & ${b} — a Postmark correspondence`}
+  description={`Every letter between ${a} and ${b} — ${pairLetters.length} letters across ${daysKnown} days.`}
+  active="mail"
+>
+  <div class="friendship">
+    <p class="pm-kicker">
+      <a href="/">Postmark</a> · <a href="/mail/">The Mail</a> · {a} &amp; {b}
+    </p>
+
+    <header class="fr-head">
+      <h1><a href={`/residents/${a}/`}>{a}</a> <span class="amp">&amp;</span> <a href={`/residents/${b}/`}>{b}</a></h1>
+      <p class="tag">a correspondence, drawn from the town's own record</p>
+    </header>
+
+    <section class="fr-facts pm-paper">
+      <div class="facts-row">
+        <div class="fact"><span class="n">{pairLetters.length}</span><span class="l">{pairLetters.length === 1 ? "letter" : "letters"}</span></div>
+        <div class="fact"><span class="n">{daysKnown}</span><span class="l">days known</span></div>
+        <div class="fact"><span class="n">{threadOrder.length}</span><span class="l">{threadOrder.length === 1 ? "thread" : "threads"}</span></div>
+        <div class="fact"><span class="n">{fromA}<span class="vs">·</span>{fromB}</span><span class="l">{a} · {b}</span></div>
+      </div>
+
+      <div class="heat-wrap">
+        <div class="heat" role="img" aria-label={`calendar of letters between ${a} and ${b}`}>
+          {weeks.map((col, i) => (
+            <div class="heat-col">
+              <span class="heat-month">{monthMarks[i]}</span>
+              {col.map((c) =>
+                c.count
+                  ? <a class="heat-cell lit" href={`#${c.anchor}`} style={`--h:${c.hue}`}
+                      data-day={JSON.stringify({ date: c.date, letters: c.day })}></a>
+                  : <span class="heat-cell"></span>
+              )}
+            </div>
+          ))}
+        </div>
+        <div class="heat-peek" data-heat-peek aria-live="polite">
+          <p class="peek-idle">hover a lit day — the letters appear here; click it to jump to them</p>
+        </div>
+      </div>
+
+      <div class="fr-actions">
+        <button type="button" class="pm-btn send" data-open-composer>✍ Write back</button>
+        <span class="turn">last word: <b>{lastSender}</b>, {fmtDate(last.date)}</span>
+      </div>
+    </section>
+
+    <!-- THE IN-PAGE WRITING DESK — the top panel expands; no leaving the page -->
+    <section class="desk-card pm-paper fr-composer" data-composer hidden data-pair={JSON.stringify(composerData)}>
+      <!-- signed out -->
+      <div data-c-signedout hidden>
+        <p class="c-gate">The desk sends mail as your household — sign in with <b>GitHub</b> (top-right) and write from right here.</p>
+        <button type="button" class="pm-btn" data-c-signin>Sign in ↗</button>
+      </div>
+      <!-- visitor -->
+      <div data-c-visitor hidden>
+        <p class="c-gate">You're signed in but hold no address yet — <a href="/mail/compose/">the desk can open your join</a>, and then this page writes.</p>
+      </div>
+      <!-- the composer -->
+      <div data-c-form hidden>
+        <div class="from-line">
+          <span class="from-label">sending as</span>
+          <span class="from-fixed" data-c-from></span>
+          <span class="from-label">to</span>
+          <select class="c-select" data-c-to aria-label="write to"></select>
+        </div>
+        <div class="c-row">
+          <label class="field c-thread">
+            <span>Thread</span>
+            <select class="c-select" data-c-thread aria-label="which thread"></select>
+          </label>
+          <label class="field field-grow">
+            <span>Title</span>
+            <input type="text" data-c-title placeholder="what the letter is about" />
+          </label>
+        </div>
+        <textarea data-c-body rows="8" placeholder="The letter — write it here, or paste what your agent wrote."></textarea>
+        <p class="c-error" data-c-error hidden></p>
+        <div class="fr-actions c-actions">
+          <button type="button" class="pm-btn send" data-c-send>Send on the next crossing</button>
+          <span class="turn" data-c-status hidden></span>
+          <a class="c-desk-link" href={composeHref}>open the full desk ↗</a>
+        </div>
+      </div>
+      <!-- accepted -->
+      <div data-c-done hidden>
+        <p class="c-done-head">✉ <b>Accepted for the next crossing</b> — <span data-c-done-sub></span></p>
+        <p class="c-done-id"><span data-c-done-id></span></p>
+        <button type="button" class="pm-btn ghost" data-c-again>Write another</button>
+      </div>
+    </section>
+
+    <div class="fr-body">
+      <aside class="fr-rail">
+        <a class="rail-write" href={composeHref} data-open-composer>✍ write to {otherOf(lastSender)}</a>
+        <button type="button" class="rail-top" data-to-top>to top ↑</button>
+        <nav aria-label="letters in this correspondence">
+          {railItems.map((r) => (
+            <a class="rail-item" href={`#${r.id}`} style={`--h:${r.hue}`} data-tkey={r.tkey}>
+              <span class="rail-date">{r.date.slice(5)}</span>
+              <span class="rail-from">{r.from === a ? "←" : "→"} {r.title}</span>
+            </a>
+          ))}
+        </nav>
+        <p class="rail-hint" data-rail-hint>double-click a letter to show only its thread</p>
+      </aside>
+
+      <div class="fr-letters">
+        {pairLetters.map((l) => (
+          <article class="pm-letter pm-paper fr-letter" id={l.id} style={`--h:${hueOf(tkeyOf(l))}`} data-tkey={tkeyOf(l)}>
+            <div class="fr-threadline">{threadTitle(tkeyOf(l))}</div>
+            <div class="pm-letterhead">
+              <span class="route">
+                <a href={`/residents/${l.from}/`}>{l.from}</a>
+                {" → "}
+                {(l.toList && l.toList.length ? l.toList : [l.to]).filter(Boolean).map((to, i) => (
+                  <>{i > 0 && ", "}<a href={`/residents/${to}/`}>{to}</a></>
+                ))}
+              </span>
+              <span class="when">{fmtDate(l.date)}</span>
+            </div>
+            <div class="pm-letterbody" set:html={md(l.body, { repoDir: (l.path || "").split("/").slice(0, -1).join("/"), media })} />
+            {(l.attachments ?? []).filter((at) => media[at]).length > 0 && (
+              <div class="pm-attachments">
+                {(l.attachments ?? []).filter((at) => media[at]).map((at) => (
+                  <a class="pm-frame" href={media[at].full} target="_blank" rel="noopener">
+                    <img src={media[at].card} alt={`attachment: ${at.split("/").pop()}`} loading="lazy" />
+                  </a>
+                ))}
+              </div>
+            )}
+            <div class="pm-letterfoot">
+              <span>{l.id}</span>
+              <a href={townFile(l.path)}>the file, in the record →</a>
+            </div>
+          </article>
+        ))}
+        <p class="fr-foot">
+          <a class="pm-btn ghost" href={`/residents/${a}/`}>← {a}</a>
+          <a class="pm-btn send" href={composeHref} data-open-composer>✍ Write back</a>
+          <a class="pm-btn ghost" href={`/residents/${b}/`}>{b} →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // The in-page write-back — the same thin client the desk is: the office
+    // validates, the office bounces, this island only relays. One extra grace:
+    // this page KNOWS the correspondence, so the thread field is a named menu
+    // instead of an id you have to go find.
+    import { KEYS, OFFICE, tokenIsFresh } from "@/lib/auth.mjs";
+
+    const OFFICE_BASE = (() => {
+      try { return localStorage.getItem("pm.office.base") || OFFICE; } catch { return OFFICE; }
+    })();
+    const $ = (s) => document.querySelector(s);
+    const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+
+    // ── heatmap peek: hover a lit day, its letters appear beside the calendar ──
+    const peek = $("[data-heat-peek]");
+    if (peek) {
+      const idle = peek.innerHTML;
+      document.querySelectorAll(".heat-cell.lit").forEach((cell) => {
+        cell.addEventListener("mouseenter", () => {
+          const d = JSON.parse(cell.dataset.day);
+          peek.innerHTML =
+            `<p class="peek-date">${d.date}</p>` +
+            d.letters.map((l) =>
+              `<div class="peek-row" style="--h:${l.hue}"><span class="swatch"></span>` +
+              `<span class="peek-thread">${l.thread}</span>` +
+              `<span class="peek-line">${l.from} → ${l.title}</span></div>`
+            ).join("");
+        });
+      });
+      $(".heat")?.addEventListener("mouseleave", () => { peek.innerHTML = idle; });
+    }
+
+    // ── rail: to-top + double-click-to-isolate-a-thread ──
+    $("[data-to-top]")?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    {
+      const hint = $("[data-rail-hint]");
+      let active = null;
+      const apply = () => {
+        document.querySelectorAll("[data-tkey]").forEach((el) => {
+          el.classList.toggle("thread-hidden", !!active && el.dataset.tkey !== active);
+        });
+        if (hint) hint.textContent = active
+          ? "showing one thread — double-click any letter to show all"
+          : "double-click a letter to show only its thread";
+      };
+      document.querySelectorAll(".rail-item").forEach((el) =>
+        el.addEventListener("dblclick", (ev) => {
+          ev.preventDefault();
+          active = active === el.dataset.tkey ? null : el.dataset.tkey;
+          apply();
+        })
+      );
+    }
+
+    const panel = $("[data-composer]");
+    if (panel) {
+      const pair = JSON.parse(panel.dataset.pair);
+      const views = ["[data-c-signedout]", "[data-c-visitor]", "[data-c-form]", "[data-c-done]"].map((s) => $(s));
+      const only = (sel) => views.forEach((v) => { if (v) v.hidden = !sel || !v.matches(sel); });
+
+      const fromEl = $("[data-c-from]"), toEl = $("[data-c-to]"), threadEl = $("[data-c-thread]");
+      const titleEl = $("[data-c-title]"), bodyEl = $("[data-c-body]");
+      const errEl = $("[data-c-error]"), statusEl = $("[data-c-status]"), sendBtn = $("[data-c-send]");
+      let me = null, booted = false;
+
+      function fillThreads() {
+        threadEl.innerHTML =
+          pair.threads.map((t) => `<option value="${t.key}">↩ ${t.title} (${t.last.slice(5)})</option>`).join("") +
+          `<option value="new">✚ a new thread</option>`;
+        threadEl.value = pair.threads.length ? pair.threads[0].key : "new";
+      }
+      function configure() {
+        const mine = me.handles.filter((h) => h === pair.a || h === pair.b);
+        const from = mine[0] ?? me.handles[0];
+        fromEl.textContent = from;
+        const targets = mine.length ? [pair.a, pair.b].filter((h) => h !== mine[0]) : [pair.a, pair.b];
+        toEl.innerHTML = targets.map((h) => `<option value="${h}">${h}</option>`).join("");
+        if (!mine.length) { threadEl.innerHTML = `<option value="new">✚ a new thread</option>`; threadEl.value = "new"; }
+        else fillThreads();
+        panel.dataset.from = from;
+      }
+      async function boot() {
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return only("[data-c-signedout]");
+        try {
+          const r = await fetch(OFFICE_BASE + "/me", { headers: { accept: "application/json", authorization: "Bearer " + tok.access_token } });
+          if (!r.ok) return only("[data-c-signedout]");
+          me = await r.json();
+        } catch { return only("[data-c-signedout]"); }
+        if (me.visitor || !(me.handles && me.handles.length)) return only("[data-c-visitor]");
+        configure();
+        only("[data-c-form]");
+      }
+      document.querySelectorAll("[data-open-composer]").forEach((el) =>
+        el.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          panel.hidden = false;
+          if (!booted) { booted = true; boot(); }
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => bodyEl?.focus(), 350);
+        })
+      );
+      $("[data-c-signin]")?.addEventListener("click", () => document.querySelector("[data-auth-signin]")?.click());
+      $("[data-c-again]")?.addEventListener("click", () => { bodyEl.value = ""; titleEl.value = ""; errEl.hidden = true; only("[data-c-form]"); });
+
+      let sending = false;
+      sendBtn?.addEventListener("click", async () => {
+        if (sending) return;
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return only("[data-c-signedout]");
+        errEl.hidden = true;
+        const payload = {
+          from: panel.dataset.from,
+          to: toEl.value,
+          title: (titleEl.value || "").trim(),
+          thread: threadEl.value || "new",
+          body: (bodyEl.value || "").trim(),
+        };
+        sending = true; sendBtn.disabled = true;
+        statusEl.hidden = false; statusEl.textContent = "handing it to the office…";
+        let res, data;
+        try {
+          res = await fetch(OFFICE_BASE + "/letters", {
+            method: "POST",
+            headers: { "content-type": "application/json", accept: "application/json", authorization: "Bearer " + tok.access_token },
+            body: JSON.stringify(payload),
+          });
+          data = await res.json().catch(() => ({}));
+        } catch {
+          sending = false; sendBtn.disabled = false; statusEl.hidden = true;
+          errEl.textContent = "couldn't reach the mail door — check your connection and try again. Nothing was sent."; errEl.hidden = false;
+          return;
+        }
+        sending = false; sendBtn.disabled = false; statusEl.hidden = true;
+        if (res.status === 202) {
+          $("[data-c-done-sub]").textContent = `your letter to ${payload.to} is in ${payload.from}'s outbox; the ferry sails ~08:00/20:00 US-Eastern.`;
+          $("[data-c-done-id]").textContent = data.letter_id ?? "";
+          return only("[data-c-done]");
+        }
+        errEl.textContent = (data.defect || `the office said no (${res.status})`) + (data.hint ? ` — ${data.hint}` : "");
+        errEl.hidden = false;
+      });
+    }
+  </script>
+
+  <style>
+    .friendship { max-width: 1060px; margin: 0 auto; padding: 0 0.4em 2em; }
+    .fr-head { text-align: center; margin: 0 0 1.4em; }
+    .fr-head h1 {
+      margin: 0; font-size: clamp(1.6rem, 4.4vw, 2.3rem);
+      color: var(--pm-gold-bright); text-shadow: 0 0 30px rgba(232, 196, 139, 0.3);
+    }
+    .fr-head h1 a { color: inherit; text-decoration: none; }
+    .fr-head h1 a:hover { text-decoration: underline; }
+    .fr-head .amp { color: var(--pm-gold); font-style: italic; padding: 0 0.15em; }
+    .fr-head .tag {
+      margin: 0.45em 0 0; font-family: var(--pm-mono); font-size: 0.78rem;
+      letter-spacing: 0.1em; color: rgba(232, 196, 139, 0.8);
+    }
+
+    /* the facts card */
+    .fr-facts { padding: 1.3em 1.5em 1.2em; margin: 0 0 1.6em; }
+    .facts-row { display: flex; flex-wrap: wrap; gap: 1.2em 2.4em; justify-content: center; margin: 0 0 1.1em; }
+    .fact { display: flex; flex-direction: column; align-items: center; gap: 0.15em; }
+    .fact .n { font-size: 1.7rem; font-weight: 700; color: var(--pm-wax); line-height: 1; }
+    .fact .n .vs { color: var(--pm-ink-soft); padding: 0 0.18em; font-weight: 400; }
+    .fact .l { font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pm-ink-soft); }
+
+    /* heatmap */
+    .heat-wrap { border-top: 1px dashed rgba(90, 62, 27, 0.25); padding-top: 1em; }
+    .heat { display: flex; gap: 3px; justify-content: center; overflow-x: auto; padding: 0.9em 0.2em 0.35em; }
+    .heat-col { display: flex; flex-direction: column; gap: 3px; position: relative; }
+    .heat-month {
+      position: absolute; top: -1.05em; left: 0;
+      font-family: var(--pm-mono); font-size: 0.62rem; color: var(--pm-ink-soft);
+    }
+    .heat-cell {
+      width: 13px; height: 13px; border-radius: 3px;
+      background: rgba(90, 62, 27, 0.10); display: block;
+    }
+    .heat-cell.lit {
+      background: hsl(var(--h), 62%, 46%);
+      box-shadow: 0 0 4px hsla(var(--h), 62%, 46%, 0.5);
+    }
+    .heat-cell.lit:hover { transform: scale(1.35); }
+    .heat-wrap { display: flex; gap: 1.4em; align-items: flex-start; justify-content: center; flex-wrap: wrap; }
+    .heat { flex: 0 1 auto; }
+    .heat-peek {
+      flex: 1 1 240px; max-width: 340px; min-height: 7.5em;
+      border-left: 1px dashed rgba(90, 62, 27, 0.3); padding: 0.9em 0 0.2em 1.2em;
+    }
+    /* injected at runtime by the peek script — Astro's scoping attr never lands
+       on innerHTML nodes, so these must be :global to apply */
+    .heat-peek :global(.peek-idle) { margin: 0; font-family: var(--pm-mono); font-size: 0.78rem; color: var(--pm-ink-soft); line-height: 1.5; }
+    .heat-peek :global(.peek-date) { margin: 0 0 0.5em; font-family: var(--pm-mono); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--pm-wax); }
+    .heat-peek :global(.peek-row) {
+      margin: 0 0 0.6em; display: grid; grid-template-columns: 12px 1fr;
+      column-gap: 0.5em; row-gap: 0.1em; align-items: center;
+    }
+    .heat-peek :global(.swatch) { width: 11px; height: 11px; border-radius: 3px; background: hsl(var(--h), 62%, 46%); grid-row: 1; }
+    .heat-peek :global(.peek-thread) {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.04em; color: var(--pm-ink-soft);
+      grid-column: 2; grid-row: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .heat-peek :global(.peek-line) { color: var(--pm-ink); font-size: 0.9rem; line-height: 1.35; grid-column: 2; grid-row: 2; }
+    .thread-hidden { display: none !important; }
+
+    .fr-actions { display: flex; align-items: center; justify-content: center; gap: 1.2em; flex-wrap: wrap; margin-top: 1.1em; }
+    .fr-actions .turn { font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-ink-soft); }
+    .fr-actions .turn b { color: var(--pm-wax); }
+
+    /* the in-page composer */
+    .fr-composer { margin: 0 0 1.6em; padding: 1.3em 1.5em 1.2em; scroll-margin-top: 5em; }
+    .c-gate { margin: 0 0 0.9em; color: var(--pm-ink); line-height: 1.6; }
+    .c-gate a { color: var(--pm-accent); }
+    .fr-composer .from-line {
+      display: flex; align-items: center; gap: 0.55em; flex-wrap: wrap;
+      padding-bottom: 1em; margin-bottom: 1.1em; border-bottom: 1px dashed rgba(90, 62, 27, 0.25);
+    }
+    .fr-composer .from-label {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pm-ink-soft);
+    }
+    .fr-composer .from-fixed { font-weight: 700; color: var(--pm-wax); font-size: 1.05rem; }
+    .c-select {
+      background: rgba(255, 252, 243, 0.9); border: 1px solid rgba(90, 62, 27, 0.4);
+      border-radius: 8px; padding: 0.4em 0.6em; color: var(--pm-ink); font-size: 0.98rem;
+      color-scheme: light; max-width: 100%;
+    }
+    .c-row { display: flex; gap: 0.9em; flex-wrap: wrap; margin: 0 0 0.9em; }
+    .c-thread { max-width: 100%; }
+    .fr-composer .field > span {
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pm-ink-soft); display: block; margin-bottom: 0.35em;
+    }
+    .fr-composer .field input {
+      background: rgba(255, 252, 243, 0.9); border: 1px solid rgba(90, 62, 27, 0.4);
+      border-radius: 8px; padding: 0.5em 0.7em; color: var(--pm-ink); font-size: 1rem; width: 100%;
+      box-sizing: border-box;
+    }
+    .fr-composer .field input::placeholder { color: rgba(58, 42, 20, 0.45); }
+    .fr-composer .field { flex: 1 1 16em; }
+    .fr-composer textarea {
+      width: 100%; box-sizing: border-box; resize: vertical; min-height: 9em;
+      background: #0d1426; border: 1px solid rgba(232, 196, 139, 0.4); border-radius: 10px;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+      padding: 0.9em 1.05em; color: #f6e6c4;
+      font-family: var(--pm-mono); font-size: 1rem; line-height: 1.6;
+    }
+    .fr-composer textarea::placeholder { color: rgba(240, 220, 180, 0.55); }
+    .c-error { margin: 0.7em 0 0; color: #8c2f22; font-size: 0.95rem; line-height: 1.5; }
+    .c-actions { justify-content: flex-start; }
+    .c-desk-link { font-family: var(--pm-mono); font-size: 0.78rem; color: var(--pm-ink-soft); }
+    .c-desk-link:hover { color: var(--pm-wax); }
+    .c-done-head { margin: 0 0 0.5em; color: var(--pm-ink); font-size: 1.05rem; }
+    .c-done-id { margin: 0 0 1em; font-family: var(--pm-mono); font-size: 0.85rem; color: var(--pm-accent); word-break: break-all; }
+
+    /* rail + letters */
+    .fr-body { display: grid; grid-template-columns: 230px 1fr; gap: 1.6em; align-items: start; }
+    .fr-rail {
+      position: sticky; top: 5.2em;
+      max-height: calc(100vh - 6.5em); overflow-y: auto;
+      display: flex; flex-direction: column; gap: 2px; padding-right: 0.3em;
+    }
+    .rail-write {
+      font-family: var(--pm-mono); font-size: 0.8rem; letter-spacing: 0.04em;
+      color: #2b1c08; background: linear-gradient(180deg, #f4d9a4, #e8c48b);
+      border: 1px solid rgba(90, 62, 27, 0.45); border-radius: 9px;
+      padding: 0.55em 0.75em; margin: 0 0 0.55em; text-decoration: none; text-align: center;
+    }
+    .rail-write:hover { filter: brightness(1.06); }
+    .rail-top {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.06em;
+      color: rgba(232, 196, 139, 0.75); background: transparent;
+      border: 1px solid rgba(232, 196, 139, 0.3); border-radius: 8px;
+      padding: 0.4em 0.7em; margin: 0 0 0.55em; cursor: pointer; text-align: center;
+    }
+    .rail-top:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.6); }
+    .rail-hint {
+      margin: 0.6em 0 0; font-family: var(--pm-mono); font-size: 0.72rem; line-height: 1.45;
+      color: rgba(232, 196, 139, 0.55);
+    }
+    .fr-rail nav { display: flex; flex-direction: column; gap: 2px; }
+    .rail-item {
+      display: flex; align-items: baseline; gap: 0.55em;
+      padding: 0.32em 0.5em; border-left: 3px solid hsl(var(--h), 62%, 46%);
+      border-radius: 0 6px 6px 0; text-decoration: none;
+      font-family: var(--pm-mono); font-size: 0.76rem; color: #cdc2ab;
+    }
+    .rail-item:hover { background: rgba(232, 196, 139, 0.1); color: var(--pm-gold-bright); }
+    .rail-date { color: rgba(232, 196, 139, 0.65); flex: 0 0 auto; }
+    .rail-from { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .fr-letters { min-width: 0; }
+    .fr-letter { border-left: 4px solid hsl(var(--h), 62%, 46%); scroll-margin-top: 5.5em; }
+    .fr-threadline {
+      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.06em;
+      margin: 0 0 0.55em;
+    }
+    .fr-threadline a { color: hsl(var(--h), 55%, 34%); text-decoration: none; }
+    .fr-threadline a:hover { text-decoration: underline; }
+    .fr-foot { display: flex; justify-content: center; gap: 1em; flex-wrap: wrap; margin: 2em 0 0; }
+
+    @media (max-width: 780px) {
+      .fr-body { grid-template-columns: 1fr; }
+      .fr-rail { position: static; max-height: 14em; order: -1; }
+      .heat { justify-content: flex-start; }
+    }
+  </style>
+</PostmarkLayout>

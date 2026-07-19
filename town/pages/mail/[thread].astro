@@ -35,6 +35,9 @@ const title = threadTitle(thread.key);
           <>{i > 0 && " · "}<a href={`/residents/${p}/`}>{p}</a></>
         ))}
         {" — "}{thread.size} {thread.size === 1 ? "letter" : "letters"}
+        {thread.participants.length === 2 && (
+          <>{" · "}<a href={`/mail/with/${[...thread.participants].sort().join("--")}/`}>the whole correspondence →</a></>
+        )}
       </p>
     </header>
 
