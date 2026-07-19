@@ -153,13 +153,14 @@ const composerData = { a, b, lastSender, threads: threadOptions };
       </div>
 
       <div class="fr-actions">
-        <button type="button" class="pm-btn send" data-open-composer>✍ Write back</button>
+        <button type="button" class="pm-btn send wb-off" data-open-composer>✍ Write back</button>
         <span class="turn">last word: <b>{lastSender}</b>, {fmtDate(last.date)}</span>
       </div>
     </section>
 
     <!-- THE IN-PAGE WRITING DESK — the top panel expands; no leaving the page -->
     <section class="desk-card pm-paper fr-composer" data-composer hidden data-pair={JSON.stringify(composerData)}>
+      <button type="button" class="c-close" data-c-close aria-label="close the composer">✕</button>
       <!-- signed out -->
       <div data-c-signedout hidden>
         <p class="c-gate">The desk sends mail as your household — sign in with <b>GitHub</b> (top-right) and write from right here.</p>
@@ -205,7 +206,7 @@ const composerData = { a, b, lastSender, threads: threadOptions };
 
     <div class="fr-body">
       <aside class="fr-rail">
-        <a class="rail-write" href={composeHref} data-open-composer>✍ write to {otherOf(lastSender)}</a>
+        <a class="rail-write wb-off" href={composeHref} data-open-composer>✍ write to {otherOf(lastSender)}</a>
         <button type="button" class="rail-top" data-to-top>to top ↑</button>
         <nav aria-label="letters in this correspondence">
           {railItems.map((r) => (
@@ -250,7 +251,7 @@ const composerData = { a, b, lastSender, threads: threadOptions };
         ))}
         <p class="fr-foot">
           <a class="pm-btn ghost" href={`/residents/${a}/`}>← {a}</a>
-          <a class="pm-btn send" href={composeHref} data-open-composer>✍ Write back</a>
+          <a class="pm-btn send wb-off" href={composeHref} data-open-composer>✍ Write back</a>
           <a class="pm-btn ghost" href={`/residents/${b}/`}>{b} →</a>
         </p>
       </div>
@@ -350,9 +351,28 @@ const composerData = { a, b, lastSender, threads: threadOptions };
         configure();
         only("[data-c-form]");
       }
-      document.querySelectorAll("[data-open-composer]").forEach((el) =>
+      // write-back is the PAIR'S pen: buttons stay grayed unless the signed-in
+      // household holds a or b (Keemin, pre-release). Enabled from the cached
+      // identity instantly, confirmed against /me.
+      const wbs = document.querySelectorAll("[data-open-composer]");
+      const isPairViewer = (hs) => (hs ?? []).some((h) => h === pair.a || h === pair.b);
+      const setWb = (on) => wbs.forEach((el) => el.classList.toggle("wb-off", !on));
+      (async () => {
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return; // signed out: stays grayed
+        try { if (isPairViewer(JSON.parse(localStorage.getItem("pm.oauth.handles.cache") || "[]"))) setWb(true); } catch {}
+        try {
+          const r = await fetch(OFFICE_BASE + "/me", { headers: { accept: "application/json", authorization: "Bearer " + tok.access_token } });
+          if (r.ok) setWb(isPairViewer((await r.json()).handles));
+        } catch {}
+      })();
+      const closePanel = () => { panel.hidden = true; };
+      $("[data-c-close]")?.addEventListener("click", closePanel);
+      wbs.forEach((el) =>
         el.addEventListener("click", (ev) => {
           ev.preventDefault();
+          if (el.classList.contains("wb-off")) return;
+          if (!panel.hidden) { closePanel(); return; }  // change your mind: same button unclicks
           panel.hidden = false;
           if (!booted) { booted = true; boot(); }
           panel.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -468,8 +488,19 @@ const composerData = { a, b, lastSender, threads: threadOptions };
     .fr-actions .turn { font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-ink-soft); }
     .fr-actions .turn b { color: var(--pm-wax); }
 
+    /* write-back gating: grayed unless you are one of the pair */
+    .wb-off { opacity: 0.35; filter: saturate(0.25); cursor: default !important; }
+    .wb-off:hover { transform: none !important; box-shadow: none !important; filter: saturate(0.25) !important; }
+
     /* the in-page composer */
-    .fr-composer { margin: 0 0 1.6em; padding: 1.3em 1.5em 1.2em; scroll-margin-top: 5em; }
+    .fr-composer { margin: 0 0 1.6em; padding: 1.3em 1.5em 1.2em; scroll-margin-top: 5em; position: relative; }
+    .c-close {
+      position: absolute; top: 10px; right: 12px;
+      font-family: var(--pm-mono); font-size: 0.85rem; line-height: 1;
+      color: var(--pm-ink-soft); background: none; border: 1px solid rgba(90, 62, 27, 0.35);
+      border-radius: 7px; padding: 4px 8px; cursor: pointer;
+    }
+    .c-close:hover { color: var(--pm-ink); border-color: rgba(90, 62, 27, 0.7); }
     .c-gate { margin: 0 0 0.9em; color: var(--pm-ink); line-height: 1.6; }
     .c-gate a { color: var(--pm-accent); }
     .fr-composer .from-line {
