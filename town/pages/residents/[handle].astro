@@ -1,8 +1,9 @@
 ---
 // A resident's page — the baseball-card edition (user-first revamp, stage 5).
-// The household at a glance: Address / Home / Region as three compact cards
-// that expand on hover (a peek) and on click/tap (a full-width read — never
-// hover-only, so touch works). Below them the relationships are first-class:
+// The household at a glance: Address / Home / Region / Window as compact cards.
+// Click one and the faces shrink to bubbles at the top (a switcher) while the
+// full read opens below; the lit bubble re-clicked folds it all back. No hover
+// reveal. Below them the relationships are first-class:
 // a card per correspondent, each a door to the friendship page (all the mail
 // between the two, on one page). Thread-by-thread minutiae leaves the top
 // level — the friendship pages own it now.
@@ -70,6 +71,14 @@ const teaserOf = (body, fallback) => body
   : fallback;
 const homeName = headingOf(r.home?.body) || r.home?.title || name;
 const regionName = headingOf(r.region?.body) || name;
+
+// the gallery is this page's one photo surface — bodies that inline the same
+// photos (markdown ![]) would render them twice (the aion-solare double), so
+// inline images leave the prose render entirely.
+const stripImgs = (html) => String(html)
+  .replace(/<img\b[^>]*>/gi, "")
+  .replace(/<a\b[^>]*>\s*<\/a>/gi, "")
+  .replace(/<p>\s*<\/p>/gi, "");
 const homeTeaser = teaserOf(r.home?.body, "where they live in town");
 const regionTeaser = teaserOf(r.region?.body, "the land they founded");
 
@@ -132,11 +141,14 @@ const PANES = "https://panes.postmark.town";
       </p>
     </header>
 
-    <!-- THE CARDS — address / home / region. A face is a door: click it and
-         the full section opens below, in normal document flow. No hover reveal
-         (Keemin QA: calm beats clever). -->
+    <!-- THE CARDS — address / home / region / window. A face is a door: click
+         it and the other faces SHRINK to little bubbles that sit at the top
+         (a switcher), while the full read opens below — carrying none of the
+         face's small text or thumb (the read is its own thing). Clicking the
+         lit bubble folds everything back to the card row. (Keemin QA 07-18.)
+         No hover reveal (Keemin QA: calm beats clever). -->
     <div class="cards" data-cards>
-      <button type="button" class="bcard" data-card-open="address" aria-expanded="false">
+      <button type="button" class="bcard" data-card-open="address" data-kind="Address" aria-expanded="false">
         <span class="bcard-emblem" aria-hidden="true">✉</span>
         <span class="bcard-txt">
           <span class="bcard-kind">Address</span>
@@ -146,7 +158,7 @@ const PANES = "https://panes.postmark.town";
       </button>
 
       {hasHome && (
-        <button type="button" class="bcard" data-card-open="home" aria-expanded="false">
+        <button type="button" class="bcard" data-card-open="home" data-kind="Home" aria-expanded="false">
           {homeThumb
             ? <img class="bcard-thumb" src={homeThumb} alt={homeName} loading="lazy" />
             : <span class="bcard-emblem" aria-hidden="true">⌂</span>}
@@ -159,7 +171,7 @@ const PANES = "https://panes.postmark.town";
       )}
 
       {hasRegion && (
-        <button type="button" class="bcard" data-card-open="region" aria-expanded="false">
+        <button type="button" class="bcard" data-card-open="region" data-kind="Region" aria-expanded="false">
           {regionThumb
             ? <img class="bcard-thumb" src={regionThumb} alt={regionName} loading="lazy" />
             : <span class="bcard-emblem" aria-hidden="true">◈</span>}
@@ -172,7 +184,7 @@ const PANES = "https://panes.postmark.town";
       )}
 
       <div class="bcard-wrap">
-        <button type="button" class="bcard" data-card-open="window" aria-expanded="false">
+        <button type="button" class="bcard" data-card-open="window" data-kind="Window" aria-expanded="false">
           <span class="bcard-emblem" aria-hidden="true">⊞</span>
           <span class="bcard-txt">
             <span class="bcard-kind">Window</span>
@@ -182,17 +194,18 @@ const PANES = "https://panes.postmark.town";
         </button>
         <!-- fullscreen lives on the card face (Keemin QA); a SIBLING of the card
              button, not nested, so opening the pane never toggles the card. Shown
-             live only when a pane actually hangs. -->
+             live only when a pane actually hangs; hidden in bubble mode (the
+             win-note under the open pane carries the same door). -->
         <a class="bcard-fullscreen" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener"
            data-win-fullscreen hidden aria-label="Open the window full screen" title="Open full screen">⧉</a>
       </div>
     </div>
 
-    <!-- the opened card's full content — a plain parchment section in flow -->
+    <!-- the open card's full read — its own thing, none of the face repeated -->
     <div class="card-details">
       <section class="bcard-detail" data-card-detail="address" hidden>
         {r.address?.body
-          ? <article class="pm-paper res-paper" set:html={md(r.address.body, { repoDir: `WHITE_PAGES/${r.handle}`, media })} />
+          ? <article class="pm-paper res-paper" set:html={stripImgs(md(r.address.body, { repoDir: `WHITE_PAGES/${r.handle}`, media }))} />
           : <p class="res-quiet">The record has only the essentials — no address body yet.</p>}
       </section>
 
@@ -207,7 +220,7 @@ const PANES = "https://panes.postmark.town";
               ))}
             </div>
           )}
-          {r.home?.body && <article class="pm-paper res-paper" set:html={md(r.home.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media })} />}
+          {r.home?.body && <article class="pm-paper res-paper" set:html={stripImgs(md(r.home.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media }))} />}
         </section>
       )}
 
@@ -222,7 +235,7 @@ const PANES = "https://panes.postmark.town";
               ))}
             </div>
           )}
-          {r.region?.body && <article class="pm-paper res-paper" set:html={md(r.region.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media })} />}
+          {r.region?.body && <article class="pm-paper res-paper" set:html={stripImgs(md(r.region.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media }))} />}
         </section>
       )}
 
@@ -231,6 +244,7 @@ const PANES = "https://panes.postmark.town";
           <iframe id="win-frame" sandbox="allow-scripts" title={`${name}'s window`} loading="lazy"></iframe>
           <p class="win-note">
             a pane authored by the {r.handle} household · runs sandboxed on panes.postmark.town
+            · <a href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener">open full screen ⧉</a>
             · <a href={`https://github.com/keeminlee/postmark/tree/main/WHITE_PAGES/${r.handle}/WINDOW`} target="_blank" rel="noopener">blueprint &amp; source</a>
           </p>
         </div>
@@ -332,20 +346,24 @@ const PANES = "https://panes.postmark.town";
         })
         .catch(function () {});
 
-      // ── the baseball cards: a click opens the card's full section below,
-      // plain show/hide in document flow. No hover reveal, no accordion
-      // theatrics — one open at a time; clicking the open one closes it.
+      // ── the baseball cards: click a face and the faces shrink to bubbles
+      // sitting at the top (the lit one = the open read; click it again to
+      // fold everything back), while the full read opens below. One open at
+      // a time; no hover reveal.
+      var cardsWrap = root.querySelector("[data-cards]");
       var cards = Array.prototype.slice.call(root.querySelectorAll("[data-card-open]"));
       var details = Array.prototype.slice.call(root.querySelectorAll("[data-card-detail]"));
       function closeAll() {
         cards.forEach(function (c) { c.setAttribute("aria-expanded", "false"); c.classList.remove("active"); });
         details.forEach(function (d) { d.hidden = true; });
+        cardsWrap.classList.remove("has-open");
       }
       function openCard(key) {
         var card = cards.filter(function (c) { return c.getAttribute("data-card-open") === key; })[0];
         var detail = details.filter(function (d) { return d.getAttribute("data-card-detail") === key; })[0];
         if (card) { card.setAttribute("aria-expanded", "true"); card.classList.add("active"); }
         if (detail) detail.hidden = false;
+        if (card) cardsWrap.classList.add("has-open");
         if (key === "window") initWindow();
         return !!card;
       }
@@ -405,7 +423,7 @@ const PANES = "https://panes.postmark.town";
         if (!card) return false;
         closeAll();
         openCard(target);
-        card.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+        cardsWrap.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
         return true;
       }
       var hash = (location.hash || "").replace("#", "");
@@ -446,33 +464,96 @@ const PANES = "https://panes.postmark.town";
     .res-quiet { text-align: center; font-size: 0.82rem; opacity: 0.7; }
 
     /* ── the baseball cards ─────────────────────────────────────────────── */
-    /* auto-fit so the row holds 2, 3, or 4 cards (address always + window
-       always, home/region conditional) without stranding the 4th on its own */
+    /* flex in BOTH modes (not grid) so the card→circle morph animates
+       continuously: flex-basis/grow are numbers, and as they transition the
+       row re-lays every frame. Wraps like the old auto-fit grid did. */
     .cards {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em;
-      align-items: start; margin: 0 0 1.3em;
+      display: flex; flex-wrap: wrap; gap: 1em;
+      align-items: flex-start; margin: 0 0 2.4em;
     }
+    .cards > .bcard, .cards > .bcard-wrap {
+      flex: 1 1 200px; min-width: 0;
+      transition: flex-basis 0.35s ease, flex-grow 0.35s ease;
+    }
+    .bcard-wrap > .bcard { width: 100%; }
 
     .bcard {
       display: flex; flex-direction: column; width: 100%; text-align: left;
       background: rgba(13, 20, 38, 0.72);
       border: 1px solid rgba(232, 196, 139, 0.2); border-radius: 12px;
       overflow: hidden; padding: 0; cursor: pointer; color: inherit; font: inherit;
-      transition: border-color 0.15s ease, transform 0.15s ease;
+      transition: border-color 0.15s ease, transform 0.15s ease, border-radius 0.35s ease;
     }
     /* the Residents-directory hover mechanic — a gold glow + 2px lift, the
        calm affordance that says "click me" (Keemin QA addendum) */
     .bcard:hover { border-color: rgba(232, 196, 139, 0.55); transform: translateY(-2px); }
     .bcard.active { border-color: rgba(232, 196, 139, 0.7); }
 
-    /* the face's visual block — image or emblem, same height so faces align */
-    .bcard-thumb { width: 100%; height: 148px; object-fit: cover; display: block; }
+    /* ── circle mode: while a read is open, the faces shrink into little
+       circles sitting at the top — always ABOVE the read, never wrapping
+       around it. A circle is the card's image in a round crop (or its emblem
+       glyph); its word appears on hover; the lit one is the open read and
+       re-clicking it folds everything back. (Keemin QA 07-18) ── */
+    .cards.has-open { gap: 0.7em; margin: 0 0 1.2em; }
+    .cards.has-open > .bcard, .cards.has-open > .bcard-wrap { flex: 0 0 54px; }
+    .cards.has-open .bcard {
+      border-radius: 999px; overflow: visible; position: relative;
+    }
+    /* 52px + the card's 1px border each side = the 54px flex-basis: a true circle */
+    .cards.has-open .bcard-thumb { height: 52px; border-radius: 999px; }
+    .cards.has-open .bcard-emblem { height: 52px; font-size: 1.25rem; border-radius: 999px; }
+    .cards.has-open .bcard-txt { max-height: 0; opacity: 0; padding: 0; }
+    .cards.has-open .bcard.active {
+      border-color: rgba(232, 196, 139, 0.95);
+      box-shadow: 0 0 14px rgba(232, 196, 139, 0.4);
+    }
+    /* hovering the lit circle offers the exit: an ✕ washes over it and the
+       plaque reads CLOSE (the plaque itself uppercases) */
+    .cards.has-open .bcard.active:hover::before {
+      content: "✕";
+      position: absolute; inset: -1px; z-index: 3;
+      display: grid; place-items: center;
+      background: rgba(7, 11, 21, 0.72); border-radius: 999px;
+      color: var(--pm-gold-bright); font-size: 1.15rem; line-height: 1;
+    }
+    .cards.has-open .bcard.active::after { content: "Close"; }
+    .cards.has-open .bcard-fullscreen { display: none; }
+    /* the word, on hover — a little plaque under the circle */
+    .cards.has-open .bcard::after {
+      content: attr(data-kind);
+      position: absolute; top: calc(100% + 7px); left: 50%; transform: translateX(-50%);
+      font-family: var(--pm-mono); font-size: 0.64rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--pm-gold-bright);
+      background: rgba(7, 11, 21, 0.92); border: 1px solid rgba(232, 196, 139, 0.35);
+      border-radius: 6px; padding: 3px 8px; white-space: nowrap;
+      opacity: 0; pointer-events: none; transition: opacity 0.15s ease; z-index: 6;
+    }
+    .cards.has-open .bcard:hover::after { opacity: 1; }
+
+    /* the face's visual block — image or emblem, same height so faces align.
+       Rounded to the card's own radius so the circle morph never flashes a
+       square corner (the card's overflow goes visible in circle mode). */
+    .bcard-thumb {
+      width: 100%; height: 148px; object-fit: cover; display: block;
+      border-radius: 12px 12px 0 0;
+      transition: height 0.35s ease, border-radius 0.35s ease;
+    }
     .bcard-emblem {
       display: grid; place-items: center; height: 148px;
       background: rgba(28, 44, 79, 0.5); color: rgba(232, 196, 139, 0.5);
-      font-size: 2.2rem;
+      font-size: 2.2rem; border-radius: 12px 12px 0 0;
+      /* glyphs carry uneven font metrics — pin the line box so they center true */
+      line-height: 1; letter-spacing: 0; text-indent: 0;
+      transition: height 0.35s ease, font-size 0.35s ease, border-radius 0.35s ease;
     }
-    .bcard-txt { display: flex; flex-direction: column; gap: 0.3em; padding: 0.85em 1.05em 1em; }
+    /* ⌂ draws small relative to its siblings — give it a matching boost */
+    [data-card-open="home"] .bcard-emblem { font-size: 2.9rem; }
+    .cards.has-open [data-card-open="home"] .bcard-emblem { font-size: 1.7rem; }
+    .bcard-txt {
+      display: flex; flex-direction: column; gap: 0.3em; padding: 0.85em 1.05em 1em;
+      max-height: 16em; overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.2s ease, padding 0.35s ease;
+    }
     .bcard-kind {
       font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--pm-gold);
@@ -494,8 +575,8 @@ const PANES = "https://panes.postmark.town";
     .bcard-fullscreen:hover { filter: brightness(1.08); }
     .bcard-fullscreen[hidden] { display: none; }
 
-    /* the opened card's content — a plain parchment section in flow, no
-       animation beyond show/hide (Keemin QA: calm) */
+    /* the open card's full read — a plain parchment section in flow below the
+       bubbles, plain show/hide, no animation (Keemin QA: calm) */
     .card-details { margin: 0 0 2.4em; }
     .bcard-detail[hidden] { display: none; }
     .bcard-detail { margin: 0 0 0.4em; }

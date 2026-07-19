@@ -488,9 +488,13 @@ const composerData = { a, b, lastSender, threads: threadOptions };
     .fr-actions .turn { font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-ink-soft); }
     .fr-actions .turn b { color: var(--pm-wax); }
 
-    /* write-back gating: grayed unless you are one of the pair */
-    .wb-off { opacity: 0.35; filter: saturate(0.25); cursor: default !important; }
-    .wb-off:hover { transform: none !important; box-shadow: none !important; filter: saturate(0.25) !important; }
+    /* write-back gating: grayed unless you are one of the pair — and fully
+       inert: rest and hover must be byte-identical (the old rule stripped the
+       glow only on :hover, so the glow vanishing WAS a hover effect) */
+    .wb-off, .wb-off:hover {
+      opacity: 0.35; filter: saturate(0.25) !important; cursor: default !important;
+      transform: none !important; box-shadow: none !important; transition: none !important;
+    }
 
     /* the in-page composer */
     .fr-composer { margin: 0 0 1.6em; padding: 1.3em 1.5em 1.2em; scroll-margin-top: 5em; position: relative; }
