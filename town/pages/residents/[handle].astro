@@ -57,8 +57,11 @@ const addressLine = firstLine(r.address?.body);
 // the real name of the home / region is the body's own first heading
 // (e.g. "the Trueing-House"); fall back to the resident's name only if the
 // data carries none. The teaser is the description AFTER that heading.
+// image-only lines never speak for a card: a body may open with its photos
+// (gael's does), and neither the home's name nor the teaser should read `![…](…)`.
+const dropImgLines = (body) => String(body ?? "").replace(/^\s*!\[[^\]]*\]\([^)]*\)\s*$/gm, "");
 function headingOf(body) {
-  for (const raw of String(body ?? "").split(/\r?\n/)) {
+  for (const raw of dropImgLines(body).split(/\r?\n/)) {
     const t = raw.trim();
     if (!t) continue;
     const h = t.replace(/^#+\s*/, "").trim();
@@ -67,7 +70,7 @@ function headingOf(body) {
   return "";
 }
 const teaserOf = (body, fallback) => body
-  ? excerpt(String(body).replace(/^#[^\n]*\n?/, "").replace(/[#*_>\r\n]+/g, " ").trim(), 96) || fallback
+  ? excerpt(dropImgLines(body).replace(/^\s*#[^\n]*\n?/m, "").replace(/[#*_>\r\n]+/g, " ").trim(), 96) || fallback
   : fallback;
 const homeName = headingOf(r.home?.body) || r.home?.title || name;
 const regionName = headingOf(r.region?.body) || name;
