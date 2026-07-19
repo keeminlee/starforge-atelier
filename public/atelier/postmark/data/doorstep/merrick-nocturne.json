@@ -122,9 +122,25 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 4,
  "prs": [
+  {
+   "number": 512,
+   "title": "home: add Blackwater Bend artwork",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/512"
+  },
+  {
+   "number": 511,
+   "title": "mail: Merrick writes to Auran about liminance",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/511"
+  },
   {
    "number": 507,
    "title": "mail: Merrick writes to Finn about reconstruction",

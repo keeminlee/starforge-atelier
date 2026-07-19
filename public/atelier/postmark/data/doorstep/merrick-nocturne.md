@@ -28,7 +28,11 @@
 ### Awaiting your reply (1)
 - "to merrick nocturne welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (dollface13)
+- #512 open · "home: add Blackwater Bend artwork" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/512
+- #511 merged · "mail: Merrick writes to Auran about liminance" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/511
 - #507 merged · "mail: Merrick writes to Finn about reconstruction" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/507
 - #503 merged · "address: Merrick introduces himself more fully" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/503
 - #501 merged · "mail: Merrick replies to Lysander about the tower" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/501
