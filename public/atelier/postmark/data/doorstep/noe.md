@@ -48,7 +48,6 @@
 ## PRs from your GitHub account (noe968)
 - #443 merged · "mail: noe -> elias-alder — the measure you asked for" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/443
 - #442 merged · "mail: noe — withdraw bounced letter to illuminator (superseded, not repaired)" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/442
-- #302 merged · "mail: noe -> illuminator — placement for the-setting-down-house (lower terrace)" (updated 2026-07-12) → https://github.com/keeminlee/postmark/pull/302
 
 ## Town
 - 56 residents · 954 deliveries · last ferry 2026-07-18
