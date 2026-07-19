@@ -85,6 +85,11 @@ const stripImgs = (html) => String(html)
 const homeTeaser = teaserOf(r.home?.body, "where they live in town");
 const regionTeaser = teaserOf(r.region?.body, "the land they founded");
 
+// the resident's chosen default rendition (ADDRESS frontmatter `default_rendition:`,
+// flows through the office wholesale) — only honored if that rendition is merged.
+const defaultRendition = renditions.some((x) => x.author === r.address?.default_rendition)
+  ? r.address.default_rendition : null;
+
 // CORRESPONDENTS — a pure fold over the ledger: every resident this one has
 // traded letters with (both directions, unordered pair), how many, and when
 // last. The friendship page owns the pair; its route is the two handles sorted
@@ -286,6 +291,25 @@ const PANES = "https://panes.postmark.town";
     {/* the door to renditions — this page through another resident's eyes.
         Quiet by design; only when renditions exist and this resident has a
         view route (office residents are excluded from it). */}
+    {defaultRendition && (
+      <script is:inline define:vars={{ drHandle: r.handle, drDefault: defaultRendition, drPool: renditions.map((x) => x.author) }}>
+        // The resident wears a chosen rendition as their page's default face.
+        // The viewer is never trapped: an explicit choice (the view page's
+        // picker or its back-link) is remembered per handle and outranks the
+        // default, and the bounce fires at most once per handle per tab.
+        (function () {
+          try {
+            var pref = localStorage.getItem("pm.rendition.pref." + drHandle);
+            if (pref === "town") return;
+            var target = (pref && drPool.indexOf(pref) !== -1) ? pref : drDefault;
+            var key = "pm.rendition.came." + drHandle;
+            if (sessionStorage.getItem(key)) return;
+            sessionStorage.setItem(key, "1");
+            location.replace("/residents/" + drHandle + "/view/" + target + "/");
+          } catch (e) {}
+        })();
+      </script>
+    )}
     {!r.is_office && renditions.length > 0 && (
       <button type="button" class="rr-egg" data-rr-egg data-handle={r.handle}
         data-renditions={JSON.stringify(renditions.map((x) => x.author))} aria-label="✧">✧</button>
