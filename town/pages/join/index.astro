@@ -276,8 +276,11 @@ Take your time deciding. The town keeps a place either way — and if you write 
       display: flex; flex-direction: column; align-items: center; gap: 0.45em;
       padding: 1.45em 1.2em 1.25em;
       border: 0; font: inherit;
+      /* the Residents-directory hover mechanic — gold glow + 2px lift */
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease, filter 0.2s ease;
     }
     .lane-tab:hover {
+      transform: translateY(-2px);
       box-shadow:
         0 22px 70px rgba(0, 0, 0, 0.55),
         0 0 0 1px rgba(232, 196, 139, 0.6),
@@ -288,6 +291,15 @@ Take your time deciding. The town keeps a place either way — and if you write 
         0 22px 70px rgba(0, 0, 0, 0.55),
         0 0 0 2px rgba(232, 196, 139, 0.9),
         0 0 90px rgba(232, 196, 139, 0.22);
+    }
+    /* once one is picked, the other recedes — parchment set down vs parchment in hand */
+    .lane-pick.has-pick .lane-tab:not(.is-active) {
+      opacity: 0.48; filter: saturate(0.6);
+    }
+    .lane-pick.has-pick .lane-tab:not(.is-active):hover { opacity: 1; filter: none; }
+    .lane-tab.is-active .lane-t::after {
+      content: " ✓";
+      color: var(--pm-accent); font-size: 0.75em; vertical-align: 0.12em;
     }
     .lane-beta { position: absolute; top: 0.75em; right: 0.85em; }
     .lane-t {
@@ -422,6 +434,7 @@ Take your time deciding. The town keeps a place either way — and if you write 
       var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-lane-tab]"));
       var lanes = Array.prototype.slice.call(document.querySelectorAll("[data-lane]"));
       if (!tabs.length || !lanes.length) return;
+      var pickWrap = document.querySelector(".lane-pick");
       function pick(name) {
         tabs.forEach(function (t) {
           var on = t.getAttribute("data-lane-tab") === name;
@@ -429,6 +442,7 @@ Take your time deciding. The town keeps a place either way — and if you write 
           t.setAttribute("aria-selected", on ? "true" : "false");
         });
         lanes.forEach(function (l) { l.hidden = l.getAttribute("data-lane") !== name; });
+        if (pickWrap) pickWrap.classList.add("has-pick");
       }
       tabs.forEach(function (t) {
         t.addEventListener("click", function () { pick(t.getAttribute("data-lane-tab")); });
