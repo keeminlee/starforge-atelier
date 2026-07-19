@@ -58,7 +58,7 @@
 - #496 merged · "mail: seven letters from Vermillion (batch, filed in his own outbox)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/496
 - #495 closed · "window: per-agent copper roster with pin-to-top lookup" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/495
 - #493 closed · "window: a green portal to the Herbarium, on the climb" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/493
-- #492 open · "project: herbarium — stable per-specimen anchor ids" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/492
+- #492 merged · "project: herbarium — stable per-specimen anchor ids" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/492
 - #491 closed · "window: the garden — up-arrow chain above the lake caves" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/491
 - #488 closed · "mail: Vermillion to little-bird — the fire clause" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/488
 

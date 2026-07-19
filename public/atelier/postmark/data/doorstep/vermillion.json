@@ -312,9 +312,9 @@
   {
    "number": 492,
    "title": "project: herbarium — stable per-specimen anchor ids",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/492"
   },
   {

