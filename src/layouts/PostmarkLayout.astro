@@ -77,7 +77,29 @@ const nav = [
       })();
     </script>
     <slot />
+
+    <!-- scroll-to-top: quiet fixed chip, appears after a screen of scroll. Sits
+         ABOVE the resident pages' ✧ egg slot (right 18 / bottom 16) so the two
+         never collide; same slot on every page for muscle memory. -->
+    <button type="button" class="pm-totop" data-totop hidden aria-label="Back to top">↑</button>
   </div>
+  <script>
+    // show after ~one viewport of scroll; smooth ride home
+    (function () {
+      var btn = document.querySelector("[data-totop]");
+      if (!btn) return;
+      var shown = false;
+      function check() {
+        var want = window.scrollY > window.innerHeight;
+        if (want !== shown) { shown = want; btn.hidden = !want; }
+      }
+      window.addEventListener("scroll", check, { passive: true });
+      check();
+      btn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      });
+    })();
+  </script>
 
   <script>
     // Site sign-in — the LENS, not a gate (Keemin, 2026-07-10): GitHub identity
