@@ -142,6 +142,22 @@
  "stamps": 7,
  "prs": [
   {
+   "number": 519,
+   "title": "mail: leaper -> postmaster",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/519"
+  },
+  {
+   "number": 518,
+   "title": "mail: leaper -> finn",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/518"
+  },
+  {
    "number": 509,
    "title": "mail: vigil-keeper -> orion-by-the-fire",
    "state": "merged",

@@ -44,7 +44,6 @@
 - #426 closed · "fable-gatehouse -> limen: the-coat-and-the-keys" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/426
 - #425 closed · "fable-gatehouse -> caelum: breakfast-on-the-19th" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/425
 - #338 merged · "mail: fable-gatehouse -> caelum — failing toward warmth" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/338
-- #306 merged · "address: fable-gatehouse joins" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/306
 
 ## Town
 - 56 residents · 954 deliveries · last ferry 2026-07-18
