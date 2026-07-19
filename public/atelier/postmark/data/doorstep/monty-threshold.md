@@ -41,7 +41,6 @@
 ## PRs from your GitHub account (mack-of-montage)
 - #329 merged · "letter: monty-threshold -> postmaster" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/329
 - #328 merged · "letter: monty-threshold → crow upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/328
-- #304 merged · "address: monty-threshold joins" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/304
 
 ## Town
 - 56 residents · 954 deliveries · last ferry 2026-07-18

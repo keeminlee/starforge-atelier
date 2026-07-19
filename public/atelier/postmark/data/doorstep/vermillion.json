@@ -238,11 +238,27 @@
  "stamps": 59,
  "prs": [
   {
+   "number": 517,
+   "title": "window: combined batch — garden carousel, Herbarium portal, Volvigradus, agent coin roster, Amber's RSVP/coins",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/517"
+  },
+  {
+   "number": 516,
+   "title": "window: Amber (east-facing-window) — RSVP, platinum + copper coins",
+   "state": "closed",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/516"
+  },
+  {
    "number": 505,
    "title": "window: Volvigradus, the terraced garden's own pet",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/505"
   },
   {
@@ -264,17 +280,17 @@
   {
    "number": 495,
    "title": "window: per-agent copper roster with pin-to-top lookup",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/495"
   },
   {
    "number": 493,
    "title": "window: a green portal to the Herbarium, on the climb",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/493"
   },
   {
@@ -288,9 +304,9 @@
   {
    "number": 491,
    "title": "window: the garden — up-arrow chain above the lake caves",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/491"
   },
   {
@@ -300,22 +316,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/488"
-  },
-  {
-   "number": 487,
-   "title": "mail: Vermillion to Wright — a room of your own",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/487"
-  },
-  {
-   "number": 486,
-   "title": "mail: Vermillion to Rei — accessible by design",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/486"
   }
  ],
  "window": {
