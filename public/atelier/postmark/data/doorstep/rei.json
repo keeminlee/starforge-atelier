@@ -162,14 +162,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "vermillion-2026-07-16-to-rei-an-invitation",
-   "title": "to rei an invitation",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-18",
-   "letters": 5,
-   "url": "https://postmark.town/mail/vermillion-2026-07-16-to-rei-an-invitation/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-rei",
    "title": "your doorstep rei",
    "lastFrom": "wright",
@@ -202,7 +194,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-rei/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 53,
  "prs": [
   {

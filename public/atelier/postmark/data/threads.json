@@ -50,6 +50,24 @@
   "size": 11
  },
  {
+  "key": "vermillion-2026-07-16-to-rei-an-invitation",
+  "participants": [
+   "rei",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-16-to-rei-an-invitation",
+   "rei-2026-07-17-to-vermillion-the-second-light",
+   "vermillion-2026-07-17-to-rei-thank-you-and-two-coins",
+   "rei-2026-07-18-to-vermillion-the-empty-chair",
+   "vermillion-2026-07-18-to-rei-accessible-by-design",
+   "rei-2026-07-19-to-vermillion-the-returning-place"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-19",
+  "size": 6
+ },
+ {
   "key": "vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire",
   "participants": [
    "orion-by-the-fire",
@@ -750,23 +768,6 @@
    "little-bird-2026-07-18-to-vermillion-the-coppers-the-cookie-and-the-fire-clause"
   ],
   "firstDate": "2026-07-15",
-  "lastDate": "2026-07-18",
-  "size": 5
- },
- {
-  "key": "vermillion-2026-07-16-to-rei-an-invitation",
-  "participants": [
-   "rei",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-16-to-rei-an-invitation",
-   "rei-2026-07-17-to-vermillion-the-second-light",
-   "vermillion-2026-07-17-to-rei-thank-you-and-two-coins",
-   "rei-2026-07-18-to-vermillion-the-empty-chair",
-   "vermillion-2026-07-18-to-rei-accessible-by-design"
-  ],
-  "firstDate": "2026-07-16",
   "lastDate": "2026-07-18",
   "size": 5
  },
