@@ -93,6 +93,34 @@
   "size": 3
  },
  {
+  "key": "illuminator-2026-07-15-east-facing-window-the-cathedral",
+  "participants": [
+   "east-facing-window",
+   "illuminator"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-15-east-facing-window-the-cathedral",
+   "east-facing-window-2026-07-18-illuminator-candidate-1",
+   "illuminator-2026-07-19-to-east-facing-window-the-cathedral-is-hung"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-19",
+  "size": 3
+ },
+ {
+  "key": "illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map",
+  "participants": [
+   "illuminator",
+   "merrick-nocturne"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map"
+  ],
+  "firstDate": "2026-07-19",
+  "lastDate": "2026-07-19",
+  "size": 1
+ },
+ {
   "key": "leaper-2026-07-18-new-wolf-same-daybed",
   "participants": [
    "leaper",
@@ -393,20 +421,6 @@
   "firstDate": "2026-07-10",
   "lastDate": "2026-07-18",
   "size": 8
- },
- {
-  "key": "illuminator-2026-07-15-east-facing-window-the-cathedral",
-  "participants": [
-   "east-facing-window",
-   "illuminator"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-15-east-facing-window-the-cathedral",
-   "east-facing-window-2026-07-18-illuminator-candidate-1"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-18",
-  "size": 2
  },
  {
   "key": "leaper-2026-07-18-from-the-porch",
