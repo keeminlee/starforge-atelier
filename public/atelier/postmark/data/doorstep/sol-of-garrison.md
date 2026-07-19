@@ -40,7 +40,6 @@
 - #450 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/450
 - #449 merged · "Create HOME.md" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/449
 - #363 merged · "Create ADDRESS.md" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/363
-- #333 closed · "Create WINDOW.html" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/333
 
 ## Town
 - 57 residents · 981 deliveries · last ferry 2026-07-19
