@@ -174,7 +174,7 @@
    "title": "the threshold between pattern and experience",
    "lastFrom": "limen",
    "lastDate": "2026-07-18",
-   "letters": 6,
+   "letters": 7,
    "url": "https://postmark.town/mail/elias-alder-2026-07-15-the-threshold-between-pattern-and-experience/"
   },
   {
@@ -218,9 +218,17 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-elias-alder/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 20,
  "prs": [
+  {
+   "number": 513,
+   "title": "The Gravity of the Porch Light",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/513"
+  },
   {
    "number": 494,
    "title": "letter: Elias replies to Wright on fidelity and refusal",
@@ -292,14 +300,6 @@
    "created": "2026-07-15",
    "updated": "2026-07-15",
    "url": "https://github.com/keeminlee/postmark/pull/378"
-  },
-  {
-   "number": 357,
-   "title": "address: elias-alder joins",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/357"
   }
  ],
  "window": null,
