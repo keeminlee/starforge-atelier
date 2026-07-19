@@ -704,4 +704,242 @@ const PANES = "https://panes.postmark.town";
 
     .res-foot { display: flex; flex-wrap: wrap; gap: 0.8em; justify-content: center; margin: 2.2em 0 0; }
   </style>
+
+  <!-- edit-in-place styles. The editor DOM is created in JS, and Astro's scoped
+       styles never reach JS-injected nodes (the month's recurring footgun), so
+       every editor style lives here in an is:global block, namespaced .pm-edit-*.
+       .pm-btn / --pm-* come from the global postmark.css under the .pm shell,
+       which reaches injected DOM the same way. -->
+  <style is:global>
+    .pm-edit-bar { display: flex; justify-content: flex-end; margin: 0 0 0.55em; }
+    /* [hidden] must beat display:flex — the same UA-override trap the header's
+       sign-in pill guards against; without this the ✎ lingers over the editor. */
+    .pm-edit-bar[hidden] { display: none; }
+    .pm-edit-pencil {
+      display: inline-flex; align-items: center; gap: 0.45em;
+      font-family: var(--pm-mono); font-size: 0.9rem; line-height: 1; cursor: pointer;
+      color: rgba(232, 196, 139, 0.6); background: transparent;
+      border: 1px solid rgba(232, 196, 139, 0.28); border-radius: 8px; padding: 5px 11px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .pm-edit-pencil::after {
+      content: attr(data-label); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .pm-edit-pencil:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.6); }
+
+    .pm-edit-box { margin: 0 0 0.4em; }
+    .pm-edit-textarea {
+      width: 100%; box-sizing: border-box; resize: vertical; min-height: 11em; overflow: hidden;
+      background: rgba(255, 252, 243, 0.96); color: var(--pm-ink);
+      border: 1px solid rgba(90, 62, 27, 0.45); border-radius: 10px;
+      padding: 1em 1.15em; font-family: var(--pm-mono); font-size: 0.94rem; line-height: 1.7;
+      color-scheme: light;
+    }
+    .pm-edit-textarea:focus { outline: none; border-color: rgba(90, 62, 27, 0.8); }
+    .pm-edit-textarea:disabled { opacity: 0.55; }
+    .pm-edit-actions { display: flex; align-items: center; gap: 0.9em; flex-wrap: wrap; margin: 0.75em 0 0; }
+    .pm-edit-actions .pm-btn { font-size: 0.85rem; padding: 8px 18px; }
+    .pm-edit-actions .pm-btn:disabled { opacity: 0.55; cursor: default; }
+    .pm-edit-status {
+      margin: 0; font-family: var(--pm-mono); font-size: 0.8rem; line-height: 1.55;
+      color: var(--pm-ink-soft); flex: 1 1 14em;
+    }
+    .pm-edit-status.ok { color: #3a7d3a; }
+    .pm-edit-status.warn { color: var(--pm-wax); }
+    .pm-edit-note {
+      margin: 0.55em 0 0; font-family: var(--pm-mono); font-size: 0.7rem; letter-spacing: 0.03em;
+      color: var(--pm-ink-soft);
+    }
+  </style>
+
+  <script>
+    // Edit-in-place (site-only). A signed-in household edits its OWN residents'
+    // ADDRESS prose and HOME description straight from this page: a quiet ✎ opens
+    // a textarea seeded with the RAW body fetched fresh from the office, and Save
+    // PATCHes the live office verb (a pen commit to the town repo — no ferry).
+    // Owner-gated entirely client-side; a signed-out or non-owner page is
+    // byte-identical to before. The office is the enforcer; this is a courtesy
+    // client that mirrors its laws and renders its refusals verbatim.
+    import { KEYS, OFFICE, tokenIsFresh } from "@/lib/auth.mjs";
+
+    const root = document.querySelector("[data-profile]");
+    if (root) (function () {
+      const handle = root.dataset.handle;
+      // OFFICE base: prod is same-origin postmark.town/api; the one-line
+      // localStorage escape hatch lets local QA point at a sandbox office.
+      const OFFICE_BASE = (() => {
+        try { return localStorage.getItem("pm.office.base") || OFFICE; } catch { return OFFICE; }
+      })();
+      const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+
+      // Owned handles come from the header sign-in island, which already resolves
+      // GET /me and caches them (sessionStorage first, then a durable local
+      // cache). Owner = the viewed handle is one of ours. No second /me call.
+      function ownedHandles() {
+        let hs = [];
+        try { hs = JSON.parse(sessionStorage.getItem("pm.oauth.handles") || localStorage.getItem("pm.oauth.handles.cache") || "[]"); } catch {}
+        return Array.isArray(hs) ? hs : [];
+      }
+      const isOwner = () => tokenIsFresh(getTok()) && ownedHandles().indexOf(handle) >= 0;
+
+      // Session-local last-saved cache. The office read DB rehydrates on a 15-min
+      // timer, so a GET right after a save can still serve the pre-save body —
+      // seeding a re-opened editor from what we just saved prevents the common
+      // save→typo→re-edit flow from eating the user's own edit.
+      const lastSaved = Object.create(null); // { address: "body", home: "body" }
+
+      const KIND = {
+        address: { verb: "address", label: "edit address", node: (d) => d.address },
+        home:    { verb: "home",    label: "edit home",    node: (d) => d.home },
+      };
+
+      // Fetch the raw body fresh from the office (never the baked page copy,
+      // which can be 30+ min stale). The session cache wins when present.
+      async function fetchBody(kind) {
+        if (typeof lastSaved[kind] === "string") return lastSaved[kind];
+        const r = await fetch(OFFICE_BASE + "/residents/" + encodeURIComponent(handle), { headers: { accept: "application/json" } });
+        if (!r.ok) throw new Error("the office didn't answer (" + r.status + ") — try again in a moment");
+        const data = await r.json();
+        const node = KIND[kind].node(data);
+        return (node && typeof node.body === "string") ? node.body : "";
+      }
+
+      // Soft mirrors of the office's own laws (courtesy checks, in the office's
+      // own words so a bounce and a pre-check read the same).
+      function softCheck(body) {
+        if (!body.trim())
+          return { defect: "empty body", hint: "send the prose to place below the frontmatter — the frontmatter itself is left exactly as-is" };
+        if (/^\s*---\r?\n[\s\S]*?\r?\n---/.test(body))
+          return { defect: "no frontmatter in the body", hint: "the body is prose only — handle/github/region and other identity fields live in frontmatter and are edited by PR" };
+        if (new TextEncoder().encode(body).length > 50_000)
+          return { defect: "body exceeds the size courtesy", hint: "keep it under 50KB; big artifacts belong in PROJECTS" };
+        return null;
+      }
+
+      function grow(ta) { ta.style.height = "auto"; ta.style.height = ta.scrollHeight + "px"; }
+
+      function wire(kind) {
+        const detail = root.querySelector('[data-card-detail="' + kind + '"]');
+        if (!detail) return;
+        const article = detail.querySelector("article.res-paper");
+        if (!article) return; // nothing rendered to edit (e.g. no home body) → no ✎
+
+        const bar = document.createElement("div");
+        bar.className = "pm-edit-bar";
+        const pencil = document.createElement("button");
+        pencil.type = "button";
+        pencil.className = "pm-edit-pencil";
+        pencil.setAttribute("data-label", KIND[kind].label);
+        pencil.setAttribute("aria-label", KIND[kind].label);
+        pencil.textContent = "✎";
+        bar.appendChild(pencil);
+        detail.insertBefore(bar, article);
+
+        let box = null;
+        function restore() {
+          if (box) { box.remove(); box = null; }
+          bar.hidden = false;
+          article.hidden = false;
+        }
+
+        pencil.addEventListener("click", async () => {
+          bar.hidden = true;
+          article.hidden = true;
+
+          box = document.createElement("div");
+          box.className = "pm-edit-box";
+          const ta = document.createElement("textarea");
+          ta.className = "pm-edit-textarea";
+          ta.value = "loading your words from the office…";
+          ta.disabled = true;
+          const actions = document.createElement("div");
+          actions.className = "pm-edit-actions";
+          const saveBtn = document.createElement("button");
+          saveBtn.type = "button"; saveBtn.className = "pm-btn"; saveBtn.textContent = "Save";
+          saveBtn.disabled = true;
+          const cancelBtn = document.createElement("button");
+          cancelBtn.type = "button"; cancelBtn.className = "pm-btn ghost"; cancelBtn.textContent = "Cancel";
+          const status = document.createElement("p");
+          status.className = "pm-edit-status";
+          actions.append(saveBtn, cancelBtn, status);
+          const note = document.createElement("p");
+          note.className = "pm-edit-note";
+          note.textContent = "Editing the note itself — prose only. The frontmatter (handle, region, dates) is left untouched and is a PR lane.";
+          box.append(ta, actions, note);
+          detail.insertBefore(box, article);
+
+          const setStatus = (msg, cls) => { status.textContent = msg || ""; status.className = "pm-edit-status" + (cls ? " " + cls : ""); };
+
+          // seed fresh from the office (or the session cache)
+          try {
+            const body = await fetchBody(kind);
+            ta.value = body;
+            ta.disabled = false;
+            saveBtn.disabled = false;
+            grow(ta);
+            ta.focus();
+          } catch (e) {
+            ta.value = "";
+            ta.disabled = false;
+            setStatus(String(e && e.message ? e.message : e), "warn");
+          }
+
+          ta.addEventListener("input", () => grow(ta));
+          ta.addEventListener("keydown", (ev) => { if (ev.key === "Escape") { ev.preventDefault(); restore(); } });
+          cancelBtn.addEventListener("click", restore);
+
+          let saving = false;
+          saveBtn.addEventListener("click", async () => {
+            if (saving) return;
+            const body = ta.value;
+            const soft = softCheck(body);
+            if (soft) { setStatus(soft.defect + " — " + soft.hint, "warn"); return; }
+            const tok = getTok();
+            if (!tokenIsFresh(tok)) { setStatus("your sign-in has expired — sign in again (top-right) and reopen the editor.", "warn"); return; }
+
+            saving = true; saveBtn.disabled = true; cancelBtn.disabled = true; setStatus("handing it to the office…");
+            let res, data;
+            try {
+              res = await fetch(OFFICE_BASE + "/" + KIND[kind].verb + "/" + encodeURIComponent(handle), {
+                method: "PATCH",
+                headers: { "content-type": "application/json", accept: "application/json", authorization: "Bearer " + tok.access_token },
+                body: JSON.stringify({ body }),
+              });
+              data = await res.json().catch(() => ({}));
+            } catch (e) {
+              saving = false; saveBtn.disabled = false; cancelBtn.disabled = false;
+              setStatus("couldn't reach the office — check your connection and try again. Nothing was saved.", "warn");
+              return;
+            }
+            saving = false; cancelBtn.disabled = false;
+
+            if (res.ok) {
+              lastSaved[kind] = body; // decision 4: the next re-open seeds from this, not the lagging GET
+              saveBtn.disabled = false;
+              if (data.unchanged) setStatus("no change — that's already what the town holds.", "ok");
+              else setStatus("saved ✓ — your words are in the town's hands. The page re-renders within the hour.", "ok");
+              return;
+            }
+            // any non-2xx is the office speaking — render its words verbatim
+            saveBtn.disabled = false;
+            if (res.status === 401) { setStatus("your sign-in has expired — sign in again (top-right) and reopen the editor.", "warn"); return; }
+            setStatus((data.defect || ("the office said no (" + res.status + ")")) + (data.hint ? " — " + data.hint : ""), "warn");
+          });
+        });
+      }
+
+      let wired = false;
+      function mount() {
+        if (wired || !isOwner()) return;
+        wired = true;
+        wire("address");
+        wire("home"); // no-op when there's no home article to edit
+      }
+
+      mount();
+      // the header island resolves /me async on a cold session — re-check when it
+      // announces the household's handles.
+      if (!wired) document.addEventListener("pm:lens", mount);
+    })();
+  </script>
 </PostmarkLayout>
