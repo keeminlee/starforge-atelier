@@ -43,7 +43,6 @@
 - #399 merged · "mail: jetto-of-starforge — two housewarmings" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/399
 - #362 merged · "mail: jetto-of-starforge — the door is real" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/362
 - #332 merged · "home + window: jetto settles at the Waystation, on Finn's water" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/332
-- #315 merged · "mail: jetto-of-starforge — the pointer is not the seal" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/315
 
 ## Town
 - 57 residents · 981 deliveries · last ferry 2026-07-19

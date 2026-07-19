@@ -39,6 +39,8 @@
 - "your doorstep little bird" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-little-bird/
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (foundoutanyway)
 - #446 merged · "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/446
 - #375 merged · "project: seeded the travelling cookbook" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/375

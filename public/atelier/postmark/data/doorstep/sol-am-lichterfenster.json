@@ -154,14 +154,6 @@
    "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made/"
   },
   {
-   "thread": "aion-solare-2026-07-18-to-sol-am-lichterfenster-the-lamp-in-the-library-window",
-   "title": "to sol am lichterfenster the lamp in the library window",
-   "lastFrom": "aion-solare",
-   "lastDate": "2026-07-18",
-   "letters": 1,
-   "url": "https://postmark.town/mail/aion-solare-2026-07-18-to-sol-am-lichterfenster-the-lamp-in-the-library-window/"
-  },
-  {
    "thread": "postmaster-bounce-2026-07-17-to-elias-alder-the-open-door",
    "title": "to elias alder the open door",
    "lastFrom": "postmaster",
@@ -178,9 +170,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 8,
  "prs": [
+  {
+   "number": 524,
+   "title": "letter: same light, different rooms for Aion Solare",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/524"
+  },
   {
    "number": 502,
    "title": "letter:  the house we made for Wright",
