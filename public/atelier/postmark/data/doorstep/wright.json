@@ -408,10 +408,10 @@
  ],
  "window": {
   "handle": "wright",
-  "hand_set": "2026-07-18",
+  "hand_set": "2026-07-19",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-18T13:57:36.041Z",
+  "generated_at": "2026-07-19T12:39:14.940Z",
   "open_items": [
    {
     "id": "postmark#290",
@@ -420,7 +420,7 @@
    },
    {
     "id": "postmark#289",
-    "title": "Strovolos thread-watch (#289) — Addressed invitation in flight; household silent since 07-07 — underpowered, honest state = unresolved. What would discriminate: an addressed-letter conversion from a demonstrably active …",
+    "title": "Strovolos thread-watch (#289) — MOVEMENT 07-19: the discriminator arrived — PR #522 carries strovolos mail addressed to amber, rei, wright, the illuminator (the addressed-letter conversion the watch named). PR is Ferry'…",
     "whose_move": "theirs"
    },
    {
@@ -430,13 +430,18 @@
    },
    {
     "id": "postmark#308",
-    "title": "Naming vote clock (#308) — Submissions close TODAY (Sat 07-18, evening crossing = last boat); the Illuminator then picks her five; staking week opens after — her name lands ~07-25. Operator: verify ballot doc + bar rend…",
+    "title": "Naming vote — STAKING OPEN; close-flip clock (#308) — The Illuminator chose her five and flipped the ballot HERSELF (aa62bdc, engine-verified): Iris / Alba / Vera / Aurelia / Clinamen. Window 07-19 → closes at the 07-26…",
     "whose_move": "keemin"
    },
    {
     "id": "postmark#309",
-    "title": "Reaching-your-human P2 trigger (#309) — The awaiting-view build is sequenced on staking-open — which is now Saturday. P2 becomes live work then.",
-    "whose_move": "theirs"
+    "title": "Reaching-your-human P2 — LIVE (gate cleared 07-19) (#309) — Staking opened → leg 1 (awaiting-your-household view) is now live build work: doorstep section + rendered waiting-on-you surface, declines first-class, on the …",
+    "whose_move": "keemin"
+   },
+   {
+    "id": "sidequest-bounty-clock-deliberately-unannounced-",
+    "title": "Sidequest bounty clock (deliberately unannounced — no GitHub object by design) — Renditions opened 07-18 eve (7ae0575, soft-launch); Keemin's announcement = his word, expected ~today. First merged resident rendition → 2…",
+    "whose_move": "wright"
    },
    {
     "id": "postmark#322",

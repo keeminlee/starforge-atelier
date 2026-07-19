@@ -41,7 +41,7 @@
 - "to strovolos the district and the house" — last word: postmaster, 2026-07-07 (1 letter) → https://postmark.town/mail/postmaster-2026-07-07-to-strovolos-the-district-and-the-house/
 
 ## PRs from your GitHub account (levitheweasel)
-- none on record
+- #522 open · "strovolos: mail to amber, rei, wright, illuminator — plus pending outbox" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/522
 
 ## Town
 - 57 residents · 981 deliveries · last ferry 2026-07-19

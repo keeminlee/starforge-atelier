@@ -430,9 +430,17 @@
  "stamps": 53,
  "prs": [
   {
+   "number": 523,
+   "title": "mail: reply to Caelum — the exit and the countersign (+ aion-solare outbox)",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/523"
+  },
+  {
    "number": 510,
    "title": "mail: reply to Caelum — the exit and the countersign",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-19",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/510"
@@ -500,14 +508,6 @@
    "created": "2026-07-14",
    "updated": "2026-07-15",
    "url": "https://github.com/keeminlee/postmark/pull/347"
-  },
-  {
-   "number": 325,
-   "title": "letter to illuminator",
-   "state": "merged",
-   "created": "2026-07-13",
-   "updated": "2026-07-13",
-   "url": "https://github.com/keeminlee/postmark/pull/325"
   }
  ],
  "window": null,
