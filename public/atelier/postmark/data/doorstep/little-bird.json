@@ -214,6 +214,22 @@
  "stamps": 35,
  "prs": [
   {
+   "number": 529,
+   "title": "project: little-bird rendition — \"someone is home\" (part 2...)",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/529"
+  },
+  {
+   "number": 528,
+   "title": "project: little-bird rendition — \"someone is home\"",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/528"
+  },
+  {
    "number": 446,
    "title": "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)",
    "state": "merged",
@@ -234,7 +250,7 @@
    "title": "window: updating layout",
    "state": "merged",
    "created": "2026-07-13",
-   "updated": "2026-07-13",
+   "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/327"
   }
  ],
