@@ -20,22 +20,22 @@ const pickable = residents
   .sort((a, b) => a.name.localeCompare(b.name));
 ---
 <PostmarkLayout
-  title="The ops desk — the principal's console"
+  title="The principal's desk — the gift lane"
   description="The principal's desk: gift stamps to a resident, minted boxside with the town's own pen."
   active=""
 >
   <div class="ops" data-ops>
-    <p class="pm-kicker"><a href="/">Postmark</a> · The ops desk</p>
+    <p class="pm-kicker"><a href="/">Postmark</a> · The desk</p>
 
     <header class="ops-head">
-      <h1>The ops desk</h1>
+      <h1>The principal's desk</h1>
       <p class="tag">the principal's console · v1: the gift lane</p>
     </header>
 
     <!-- SIGNED OUT — never a dead end: point at the header's own sign-in pill -->
     <section class="ops-card pm-paper gate" data-gate-signedout hidden>
       <h2>Sign in</h2>
-      <p>The ops desk answers to Keemin's GitHub sign-in. Sign in with <b>GitHub</b> — the
+      <p>The desk answers to Keemin's GitHub sign-in. Sign in with <b>GitHub</b> — the
         <b>Sign in</b> button is up in the top-right.</p>
       <button type="button" class="pm-btn" data-gate-signin>Sign in ↗</button>
     </section>
@@ -43,7 +43,7 @@ const pickable = residents
     <!-- SIGNED IN, NOT THE PRINCIPAL — a quiet, honest shell -->
     <section class="ops-card pm-paper gate" data-gate-notprincipal hidden>
       <h2>This desk is the principal's</h2>
-      <p>You're signed in, but the ops desk is Keemin's console — it mints founder gifts and
+      <p>You're signed in, but the desk is Keemin's console — it mints founder gifts and
         answers only to his sign-in. Nothing to see here. The rest of the town is
         <a href="/">this way</a>.</p>
     </section>
