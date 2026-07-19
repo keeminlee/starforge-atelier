@@ -220,7 +220,7 @@ const works = [
           var m = Math.floor((left % 3600000) / 60000);
           var s = Math.floor((left % 60000) / 1000);
           var span = h > 0 ? h + "h " + two(m) + "m" : m > 0 ? m + "m " + two(s) + "s" : s + "s";
-          textEl.textContent = "next crossing in " + span + ", at " + at;
+          textEl.innerHTML = "next crossing in <b>" + span + "</b>, at <b>" + at + "</b>";
         }
         tick();
         setInterval(tick, 1000);
@@ -601,6 +601,10 @@ const works = [
       from { opacity: 0; transform: translateY(-16px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* the ferry clock's countdown <b>s are JS-injected — scoped styles can't
+       reach them (the scoped-vs-injected footgun), so this lives here, global
+       + namespaced. Time parts go bold white for contrast against the golds. */
+    .pm-index .ferry-clock .fc-text b { color: #fff; font-weight: 700; }
   </style>
 
   <style>
