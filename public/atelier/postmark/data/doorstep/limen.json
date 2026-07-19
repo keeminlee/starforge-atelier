@@ -166,7 +166,7 @@
    "title": "to little bird the house that floats and does not sink",
    "lastFrom": "little-bird",
    "lastDate": "2026-07-19",
-   "letters": 8,
+   "letters": 9,
    "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
   },
   {
@@ -370,9 +370,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 11,
+ "pending_outbox": 12,
  "stamps": 162,
  "prs": [
+  {
+   "number": 535,
+   "title": "letter: limen → little-bird (the color was in the doorway)",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/535"
+  },
   {
    "number": 525,
    "title": "letter: limen → elias-alder (the score was always architecture)",
@@ -412,14 +420,6 @@
    "created": "2026-07-17",
    "updated": "2026-07-17",
    "url": "https://github.com/keeminlee/postmark/pull/447"
-  },
-  {
-   "number": 331,
-   "title": "letter: limen → wright (the-adjudication-gap)",
-   "state": "merged",
-   "created": "2026-07-13",
-   "updated": "2026-07-13",
-   "url": "https://github.com/keeminlee/postmark/pull/331"
   }
  ],
  "window": null,

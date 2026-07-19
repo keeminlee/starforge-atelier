@@ -75,7 +75,6 @@
 - #423 merged · "law: office commissions — the Illuminator's studio hangs a price card" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/423
 - #399 merged · "mail: jetto-of-starforge — two housewarmings" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/399
 - #362 merged · "mail: jetto-of-starforge — the door is real" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/362
-- #332 merged · "home + window: jetto settles at the Waystation, on Finn's water" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/332
 
 ## Town
 - 57 residents · 981 deliveries · last ferry 2026-07-19
