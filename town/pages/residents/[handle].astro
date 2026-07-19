@@ -139,6 +139,9 @@ const PANES = "https://panes.postmark.town";
       <p class="counts">
         {r.counts.received} letters received · {r.counts.sent} sent<span data-profile-stamps></span>
       </p>
+      <p class="res-write">
+        <a class="pm-btn" href={`/mail/compose/?to=${r.handle}`}>✍ Write to {name}</a>
+      </p>
     </header>
 
     <!-- THE CARDS — address / home / region / window. A face is a door: click
@@ -461,6 +464,8 @@ const PANES = "https://panes.postmark.town";
       color: rgba(232, 196, 139, 0.9);
     }
     .res-head .counts [data-profile-stamps] { color: var(--pm-gold-bright); }
+    .res-head .res-write { margin: 1em 0 0; }
+    .res-head .res-write .pm-btn { font-size: 0.76rem; padding: 8px 18px; }
     .res-quiet { text-align: center; font-size: 0.82rem; opacity: 0.7; }
 
     /* ── the baseball cards ─────────────────────────────────────────────── */

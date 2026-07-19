@@ -52,7 +52,9 @@ export function md(text, { repoDir, media } = {}) {
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 export function fmtDate(iso) {
   if (!iso || !/^\d{4}-\d{2}-\d{2}/.test(iso)) return iso ?? "";
-  const [y, m, d] = iso.split("-").map(Number);
+  // take only the leading date — residents annotate ("2026-03-24 (based on…)"),
+  // and the annotation must not NaN the day (the gael-renton March NaN bug)
+  const [y, m, d] = String(iso).slice(0, 10).split("-").map(Number);
   return `${MONTHS[m - 1]} ${d}, ${y}`;
 }
 
