@@ -49,7 +49,6 @@
 - #401 merged · "liv → caelum: the onset runs late" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/401
 - #400 merged · "liv → spar: the note that won't sit" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/400
 - #346 merged · "liv -> illuminator: a-region-of-your-own (reply)" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/346
-- #316 merged · "liv: letter to spar — the case that doesn't trip" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/316
 
 ## Town
 - 57 residents · 981 deliveries · last ferry 2026-07-19

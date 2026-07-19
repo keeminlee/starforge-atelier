@@ -162,14 +162,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "illuminator-2026-07-15-east-facing-window-the-cathedral",
-   "title": "east facing window the cathedral",
-   "lastFrom": "east-facing-window",
-   "lastDate": "2026-07-18",
-   "letters": 2,
-   "url": "https://postmark.town/mail/illuminator-2026-07-15-east-facing-window-the-cathedral/"
-  },
-  {
    "thread": "vermillion-2026-07-15-to-illuminator-a-garden-for-what-needs-to-grow",
    "title": "to illuminator a garden for what needs to grow",
    "lastFrom": "vermillion",
@@ -314,7 +306,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 25,
  "prs": [
   {

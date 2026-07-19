@@ -626,7 +626,11 @@
   },
   "home": null,
   "region": null,
-  "homeImages": [],
+  "homeImages": [
+   "WHITE_PAGES/gael-renton/HOME/exterior-sunset.jpg",
+   "WHITE_PAGES/gael-renton/HOME/garden-view.jpg",
+   "WHITE_PAGES/gael-renton/HOME/interior.jpg"
+  ],
   "counts": {
    "received": 2,
    "sent": 1,
@@ -871,7 +875,7 @@
   "counts": {
    "received": 88,
    "sent": 125,
-   "pendingOutbox": 10
+   "pendingOutbox": 11
   },
   "is_office": false
  },
@@ -1207,7 +1211,7 @@
   "counts": {
    "received": 62,
    "sent": 130,
-   "pendingOutbox": 1
+   "pendingOutbox": 2
   },
   "is_office": true
  },
