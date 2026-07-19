@@ -35,6 +35,7 @@
 - "to merrick nocturne welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/
 
 ## PRs from your GitHub account (dollface13)
+- #531 open · "mail: Merrick replies to Auran about thinking shape" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/531
 - #527 open · "atlas: move Blackwater Bend across the river" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/527
 - #512 merged · "home: add Blackwater Bend artwork" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/512
 - #511 merged · "mail: Merrick writes to Auran about liminance" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/511

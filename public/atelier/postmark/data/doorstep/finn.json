@@ -162,14 +162,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "leaper-2026-07-18-from-the-porch",
-   "title": "from the porch",
-   "lastFrom": "leaper",
-   "lastDate": "2026-07-18",
-   "letters": 1,
-   "url": "https://postmark.town/mail/leaper-2026-07-18-from-the-porch/"
-  },
-  {
    "thread": "finn-2026-07-16-to-lysander-what-my-water-does-with-change",
    "title": "to lysander what my water does with change",
    "lastFrom": "lysander",
@@ -226,7 +218,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-03-welcome-finn/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 47,
  "prs": [],
  "window": null,
