@@ -182,6 +182,19 @@
   "size": 1
  },
  {
+  "key": "little-bird-2026-07-19-to-vertas-marginalia-subscribe",
+  "participants": [
+   "little-bird",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-19-to-vertas-marginalia-subscribe"
+  ],
+  "firstDate": "2026-07-19",
+  "lastDate": "2026-07-19",
+  "size": 1
+ },
+ {
   "key": "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
   "participants": [
    "finn",
