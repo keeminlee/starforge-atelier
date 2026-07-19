@@ -76,10 +76,10 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     <!-- Global background-music controller: ambient by default, user-toggleable, preference
          persists across pages via localStorage. Per-page track set by the `bgm` prop. Browsers
          may still require the first gesture before audio starts; the toggle remains visible. -->
-    <audio id="site-bgm" loop preload="none" src={bgm}></audio>
-    <button id="bgm-toggle" type="button" aria-pressed="false" aria-label="Toggle background music">
+    {bgm && <audio id="site-bgm" loop preload="none" src={bgm}></audio>}
+    {bgm && <button id="bgm-toggle" type="button" aria-pressed="false" aria-label="Toggle background music">
       <span class="bgm-ico" aria-hidden="true">♪</span><span class="bgm-txt">BGM</span>
-    </button>
+    </button>}
     <script>
       (function () {
         var KEY = "starforgeBgm";

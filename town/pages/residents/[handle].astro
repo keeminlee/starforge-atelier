@@ -261,34 +261,20 @@ const PANES = "https://panes.postmark.town";
         Quiet by design; only when renditions exist and this resident has a
         view route (office residents are excluded from it). */}
     {!r.is_office && renditions.length > 0 && (
-      <p class="renditions-row">
-        <label class="rr-label" for="rr-pick">see this page through other eyes:</label>
-        <select id="rr-pick" class="rr-pick" data-rr-pick data-handle={r.handle}>
-          <option value="">the town's own page</option>
-          {renditions.map((rend) => (
-            <option value={rend.author}>{rend.title} — {rend.author}</option>
-          ))}
-        </select>
-      </p>
+      <button type="button" class="rr-egg" data-rr-egg data-handle={r.handle}
+        data-renditions={JSON.stringify(renditions.map((x) => x.author))} aria-label="✧">✧</button>
     )}
     <script>
-      // the rendition picker scales to any number of submissions (it's one
-      // dropdown), and remembers your lens: pick once, and every resident
-      // page marks your usual view and is one change away from it.
-      const pick = document.querySelector("[data-rr-pick]");
-      if (pick) {
-        const PREF = "pm.rendition.pref";
-        try {
-          const pref = localStorage.getItem(PREF);
-          const opt = pref && [...pick.options].find((o) => o.value === pref);
-          if (opt) opt.textContent += "  (your usual)";
-        } catch {}
-        pick.addEventListener("change", () => {
-          const v = pick.value;
-          try { if (v) localStorage.setItem(PREF, v); } catch {}
-          if (v) location.href = `/residents/${pick.dataset.handle}/view/${v}/`;
-        });
-      }
+      // the easter egg — an unlabeled little star where the BGM toggle used
+      // to idle. Resident pages only; takes you to a random rendition of this
+      // page (soft-launch: the renditions door, unannounced, for the curious).
+      const egg = document.querySelector("[data-rr-egg]");
+      egg?.addEventListener("click", () => {
+        const pool = JSON.parse(egg.dataset.renditions || "[]");
+        if (!pool.length) return;
+        const author = pool[Math.floor(Math.random() * pool.length)];
+        location.href = `/residents/${egg.dataset.handle}/view/${author}/`;
+      });
     </script>
 
     <!-- CORRESPONDENTS — the relationships, first-class -->
@@ -514,21 +500,17 @@ const PANES = "https://panes.postmark.town";
     .bcard-detail[hidden] { display: none; }
     .bcard-detail { margin: 0 0 0.4em; }
 
-    /* the renditions door — a quiet mono line, not a loud feature */
-    .renditions-row {
-      display: flex; flex-wrap: wrap; gap: 0.35em 0.9em;
-      justify-content: center; align-items: baseline;
-      margin: -0.6em 0 2.2em;
-      font-family: var(--pm-mono); font-size: 0.74rem; letter-spacing: 0.04em;
+    /* the easter egg — unlabeled, where the BGM pill used to idle. Not a
+       feature yet; a door for the curious (Keemin soft-launch, 2026-07-18). */
+    .rr-egg {
+      position: fixed; right: 18px; bottom: 16px; z-index: 40;
+      width: 38px; height: 38px; border-radius: 999px;
+      background: rgba(13, 19, 33, 0.85); border: 1px solid rgba(232, 196, 139, 0.25);
+      color: rgba(232, 196, 139, 0.55); font-size: 1rem; cursor: pointer;
+      display: grid; place-items: center;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
-    .rr-label { color: rgba(232, 196, 139, 0.5); }
-    .rr-pick {
-      background: rgba(7, 11, 21, 0.7); border: 1px solid rgba(232, 196, 139, 0.35);
-      border-radius: 7px; color: var(--pm-gold-bright);
-      font-family: var(--pm-mono); font-size: 0.74rem; padding: 0.3em 0.5em;
-      color-scheme: dark; max-width: min(70vw, 34em);
-    }
-    .rr-pick:hover { border-color: rgba(232, 196, 139, 0.6); }
+    .rr-egg:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.6); transform: rotate(20deg); }
 
     .res-paper { padding: 1.2em 1.5em; font-size: 0.96rem; line-height: 1.65; margin: 0; }
     .res-paper :global(> :first-child) { margin-top: 0; }
