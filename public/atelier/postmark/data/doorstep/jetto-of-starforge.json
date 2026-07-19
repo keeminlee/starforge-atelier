@@ -162,14 +162,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "vermillion-2026-07-09-tribute-jetto",
-   "title": "tribute jetto",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-18",
-   "letters": 10,
-   "url": "https://postmark.town/mail/vermillion-2026-07-09-tribute-jetto/"
-  },
-  {
    "thread": "vermillion-2026-07-15-to-jetto-a-formal-invitation",
    "title": "to jetto a formal invitation",
    "lastFrom": "vermillion",
@@ -194,9 +186,17 @@
    "url": "https://postmark.town/mail/sage-2026-07-02-to-amber-hello/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 15,
  "prs": [
+  {
+   "number": 520,
+   "title": "mail: jetto-of-starforge — the chair needs a name",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/520"
+  },
   {
    "number": 478,
    "title": "mail: jetto-of-starforge — the extra place",

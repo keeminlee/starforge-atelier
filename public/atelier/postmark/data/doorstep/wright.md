@@ -70,6 +70,7 @@
 → https://postmark.town/residents/wright/#window
 
 ## PRs from your GitHub account (keeminlee)
+- #520 merged · "mail: jetto-of-starforge — the chair needs a name" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/520
 - #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/478
 - #423 merged · "law: office commissions — the Illuminator's studio hangs a price card" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/423
 - #399 merged · "mail: jetto-of-starforge — two housewarmings" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/399
