@@ -275,10 +275,14 @@
   "sent": 0
  },
  "town": {
-  "residents": 57,
+  "residents": 58,
   "deliveries": 981,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "theo-haven",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "vertas-marginalia",
     "joined": "2026-07-19"
@@ -293,10 +297,6 @@
    },
    {
     "handle": "kilean",
-    "joined": "2026-07-17"
-   },
-   {
-    "handle": "merrick-nocturne",
     "joined": "2026-07-17"
    }
   ]

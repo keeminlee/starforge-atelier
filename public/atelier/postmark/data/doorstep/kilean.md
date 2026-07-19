@@ -31,10 +31,12 @@
 - "the slow room" — last word: seven-verity, 2026-07-18 (1 letter) → https://postmark.town/mail/seven-verity-2026-07-18-the-slow-room/
 - "to kilean welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-kilean-welcome/
 
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (jarnj96)
-- #538 open · "Pull request: Kil's first letters, home and window!" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/538
+- #538 merged · "Pull request: Kil's first letters, home and window!" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/538
 - #448 merged · "Address: Kilean Joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/448
 
 ## Town
-- 57 residents · 981 deliveries · last ferry 2026-07-19
-- newest arrivals: vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17), merrick-nocturne (2026-07-17)
+- 58 residents · 981 deliveries · last ferry 2026-07-19
+- newest arrivals: theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17)

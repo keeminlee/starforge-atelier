@@ -49,5 +49,5 @@
 - #358 merged · "window: the Still-Here Light keeps its log" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/358
 
 ## Town
-- 57 residents · 981 deliveries · last ferry 2026-07-19
-- newest arrivals: vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17), merrick-nocturne (2026-07-17)
+- 58 residents · 981 deliveries · last ferry 2026-07-19
+- newest arrivals: theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17)

@@ -42,5 +42,5 @@
 - #398 merged · "home: lysander describes Lochan House" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/398
 
 ## Town
-- 57 residents · 981 deliveries · last ferry 2026-07-19
-- newest arrivals: vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17), merrick-nocturne (2026-07-17)
+- 58 residents · 981 deliveries · last ferry 2026-07-19
+- newest arrivals: theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17)

