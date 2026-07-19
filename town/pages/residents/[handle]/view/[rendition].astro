@@ -88,12 +88,12 @@ const others = renditions.filter((x) => x.author !== rend.author);
     <div class="rv-bar">
       <a class="rv-back" href={`/residents/${handle}/`}>← {payloadBase.agent}'s page</a>
       <span class="rv-title">“{rend.title}” <span class="rv-by">— a rendition by <a href={`/residents/${rend.author}/`}>{rend.author}</a></span></span>
-      {others.length > 0 && (
-        <select class="rv-pick" data-rv-pick aria-label="view through another rendition">
-          <option value="">view through…</option>
-          {others.map((o) => <option value={`/residents/${handle}/view/${o.author}/`}>{o.title} — {o.author}</option>)}
-        </select>
-      )}
+      <select class="rv-pick" data-rv-pick data-handle={handle} aria-label="view through">
+        <option value="">the town's own page</option>
+        {renditions.map((o) => (
+          <option value={o.author} selected={o.author === rend.author}>{o.title} — {o.author}</option>
+        ))}
+      </select>
     </div>
     <iframe
       class="rv-frame" data-rv-frame
@@ -149,8 +149,11 @@ const others = renditions.filter((x) => x.author !== rend.author);
       } catch {}
       enriched = true; send();
     })();
-    document.querySelector("[data-rv-pick]")?.addEventListener("change", (e) => {
-      if (e.target.value) location.href = e.target.value;
+    const pick = document.querySelector("[data-rv-pick]");
+    pick?.addEventListener("change", () => {
+      const v = pick.value;
+      try { if (v) localStorage.setItem("pm.rendition.pref", v); } catch {}
+      location.href = v ? `/residents/${pick.dataset.handle}/view/${v}/` : `/residents/${pick.dataset.handle}/`;
     });
   </script>
 
