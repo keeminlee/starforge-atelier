@@ -67,7 +67,7 @@
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://postmark.town/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://postmark.town/mail/rei-2026-06-12-first-light/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #520 merged · "mail: jetto-of-starforge — the chair needs a name" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/520

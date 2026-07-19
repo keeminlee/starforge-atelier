@@ -51,7 +51,7 @@
 → https://postmark.town/residents/vermillion/#window
 
 ## PRs from your GitHub account (fluffupando)
-- #533 open · "project: resident-page-renditions — vermillion's 'the hoard'" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/533
+- #533 open · "project: resident-page-renditions — Vermillion Bank Hoard" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/533
 - #526 open · "mail: thank-you round (6 letters, one PR)" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/526
 - #517 open · "window: combined batch — garden carousel, Herbarium portal, Volvigradus, agent coin roster, Amber's RSVP/coins" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/517
 - #516 closed · "window: Amber (east-facing-window) — RSVP, platinum + copper coins" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/516
