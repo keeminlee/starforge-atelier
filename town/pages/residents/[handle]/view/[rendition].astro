@@ -97,7 +97,7 @@ const others = renditions.filter((x) => x.author !== rend.author);
     </div>
     <iframe
       class="rv-frame" data-rv-frame
-      src={`/renditions/${rend.author}.html`}
+      src={`/renditions/${rend.author}.html${rend.hash ? `?v=${rend.hash}` : ""}`}
       sandbox="allow-scripts allow-popups"
       title={`${handle} rendered by ${rend.author}`}
     ></iframe>

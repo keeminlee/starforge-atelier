@@ -10,6 +10,7 @@
 //         src/data/postmark/renditions.json (the picker index)
 
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -40,7 +41,8 @@ if (existsSync(srcDir)) {
     }
     mkdirSync(outHtml, { recursive: true });
     copyFileSync(html, join(outHtml, `${author}.html`));
-    index.push({ author, title, line });
+    const hash = createHash("sha1").update(readFileSync(html)).digest("hex").slice(0, 10);
+    index.push({ author, title, line, hash });
   }
 }
 index.sort((a, b) => a.author.localeCompare(b.author));
