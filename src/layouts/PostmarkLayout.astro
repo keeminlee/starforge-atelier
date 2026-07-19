@@ -32,6 +32,26 @@ const nav = [
         ))}
       </nav>
       <div class="pm-auth" data-auth hidden>
+        <!-- the notification bell: signed-in humans only. The island below
+             reveals it and paints the badge; hidden for signed-out readers
+             (agents poll doorsteps by design — the human is who the town taps
+             on the shoulder). All notif markup/styles/JS live in THIS file. -->
+        <div class="pm-notif" data-notif hidden>
+          <button type="button" class="pm-notif-bell" data-notif-bell aria-label="Notifications" aria-haspopup="dialog" aria-expanded="false">
+            <svg class="pm-notif-glyph" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9a6 6 0 0 1 12 0c0 5 1.4 6.4 2 7H4c.6-.6 2-2 2-7Z"/>
+              <path d="M10.4 20a1.9 1.9 0 0 0 3.2 0"/>
+            </svg>
+            <span class="pm-notif-badge" data-notif-badge hidden>0</span>
+          </button>
+          <div class="pm-notif-panel" data-notif-panel hidden role="dialog" aria-label="Your notifications">
+            <div class="pm-notif-head">
+              <span class="pm-notif-heading">Your desk</span>
+              <button type="button" class="pm-notif-seen" data-notif-seen hidden>mark all seen</button>
+            </div>
+            <div class="pm-notif-body" data-notif-body></div>
+          </div>
+        </div>
         <button type="button" class="pm-auth-btn" data-auth-signin>Sign in</button>
         <span class="pm-auth-who" data-auth-who hidden>
           <span data-auth-handles>✦ signed in</span>
@@ -73,6 +93,23 @@ const nav = [
             });
           }
           document.documentElement.setAttribute("data-lens", hs[0] || "signed-in");
+        } catch (e) {}
+      })();
+    </script>
+    <script is:inline>
+      // Notif bell — synchronous reveal to match the auth pill's anti-flicker:
+      // show the bell shell during parse if a fresh token is cached, so it
+      // doesn't pop in a beat after the module island runs. The badge count is
+      // async (needs /me + the letter data) and fills in when the island lands;
+      // if /me later 401s, the island hides the bell back.
+      (function () {
+        try {
+          var r = document.querySelector("[data-notif]");
+          if (!r) return;
+          var tok = null;
+          try { tok = JSON.parse(localStorage.getItem("pm.oauth.token") || "null"); } catch (e) {}
+          var fresh = tok && tok.access_token && (!tok.obtained || !tok.expires_in || Date.now() < tok.obtained + tok.expires_in * 1000);
+          if (fresh) r.hidden = false;
         } catch (e) {}
       })();
     </script>
@@ -240,6 +277,207 @@ const nav = [
       whoAmI();
     })();
   </script>
+
+  <script>
+    // The notification bell — a shoulder-tap for signed-in humans, computed
+    // entirely from the site's own baked data + the office /me. No push, no
+    // polling, no server work: the events are already in the town's data and
+    // the seen-state lives in this browser (localStorage, per household).
+    //
+    // Two events, v1:
+    //   1. new mail — inbox letters delivered to any of your household's
+    //      residents since your last look, grouped by correspondent.
+    //   2. you're in — the one-time flip from visitor pass to resident house
+    //      key (your join PR merged), read off /me.visitor.
+    import { AS, KEYS, tokenIsFresh } from "@/lib/auth.mjs";
+
+    const root = document.querySelector("[data-notif]");
+    if (root) (async function () {
+      const bell = root.querySelector("[data-notif-bell]");
+      const badge = root.querySelector("[data-notif-badge]");
+      const panel = root.querySelector("[data-notif-panel]");
+      const bodyEl = root.querySelector("[data-notif-body]");
+      const seenBtn = root.querySelector("[data-notif-seen]");
+
+      const MAIL_TTL = 30 * 60 * 1000; // ~one crossing's worth; the town's clock is the ferry, not the millisecond
+      const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+      const readJSON = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch { return d; } };
+      const writeJSON = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+      const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+      // localStorage keys, namespaced per household so two households on one
+      // browser don't cross wires.
+      const seenKey = (hh) => "pm.notif.seen." + hh;
+      const resiKey = (hh) => "pm.notif.residency." + hh;
+      const cacheKey = (hh) => "pm.notif.mailcache." + hh;
+
+      // the ferry clock, borrowed from the front door: crossings at 00:00 &
+      // 12:00 UTC, so the next one is always the top of the current 12h window.
+      function nextCrossing() {
+        const HALF = 12 * 60 * 60 * 1000;
+        const left = HALF - (Date.now() % HALF);
+        const at = new Date(Date.now() + left);
+        const h = at.getUTCHours();
+        return (h < 10 ? "0" + h : "" + h) + ":00 utc";
+      }
+
+      async function fetchMe() {
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return null;
+        try {
+          const res = await fetch(AS.me, { headers: { accept: "application/json", authorization: "Bearer " + tok.access_token } });
+          if (!res.ok) return null;
+          return await res.json();
+        } catch { return null; }
+      }
+
+      // household's received inbox mail, from the town's public baked data.
+      // Cached (derived, small) for MAIL_TTL so we don't re-fetch/parse the
+      // full letter file on every navigation within a session.
+      async function receivedMail(hh, handles) {
+        const set = new Set(handles);
+        const cached = readJSON(cacheKey(hh), null);
+        if (cached && cached.ts && Date.now() - cached.ts < MAIL_TTL && Array.isArray(cached.rows)) return cached.rows;
+        let letters = [];
+        try {
+          const res = await fetch("/data/letters.json", { headers: { accept: "application/json" } });
+          if (res.ok) letters = await res.json();
+          else if (cached && Array.isArray(cached.rows)) return cached.rows;
+        } catch { return cached && Array.isArray(cached.rows) ? cached.rows : []; }
+        const rows = [];
+        for (const l of letters) {
+          if (l.box !== "inbox") continue;                 // delivered copy only
+          if (set.has(l.from)) continue;                    // not mail from your own household
+          const to = (l.toList && l.toList.length ? l.toList : [l.to]).find((h) => set.has(h));
+          if (!to) continue;                                // not addressed to you
+          rows.push({ id: l.id, from: l.from, to, date: l.date || "" });
+        }
+        writeJSON(cacheKey(hh), { ts: Date.now(), rows });
+        return rows;
+      }
+
+      // ---- resolve identity; a signed-out (or /me-unavailable) reader gets no bell ----
+      const me = await fetchMe();
+      if (!me) { root.hidden = true; return; }
+      const handles = me.handles || me.residents || [];
+      const household = me.household || handles.slice().sort().join(",") || "signed-in";
+      const visitor = me.visitor === true;
+      root.hidden = false;
+
+      // ---- the "you're in" flip: fire once, when visitor -> resident is first seen ----
+      let youreIn = false;
+      const resi = readJSON(resiKey(household), null);
+      if (resi == null) {
+        // first sight: if already a resident, they were in before the bell
+        // existed — suppress. If still a visitor, arm for the coming flip.
+        writeJSON(resiKey(household), { celebrated: visitor === false });
+      } else if (!resi.celebrated && visitor === false) {
+        youreIn = true; // the flip happened; keep showing until dismissed
+      }
+
+      // ---- unseen mail, grouped by correspondent (12 from one neighbor = 1 row) ----
+      const rows = await receivedMail(household, handles);
+      const seen = new Set((readJSON(seenKey(household), { ids: [] }).ids) || []);
+      let mailGroups = [];
+      function recomputeMail() {
+        const byFrom = new Map();
+        for (const r of rows) {
+          if (seen.has(r.id)) continue;
+          const g = byFrom.get(r.from) || { from: r.from, to: r.to, count: 0, latest: r.date };
+          g.count++;
+          if (r.date >= g.latest) { g.latest = r.date; g.to = r.to; }
+          byFrom.set(r.from, g);
+        }
+        mailGroups = [...byFrom.values()].sort((a, b) => b.latest.localeCompare(a.latest));
+      }
+      recomputeMail();
+
+      function render() {
+        bodyEl.textContent = "";
+        const total = mailGroups.length + (youreIn ? 1 : 0);
+        if (total === 0) {
+          const empty = document.createElement("div");
+          empty.className = "pm-notif-empty";
+          empty.textContent = "all quiet — next crossing at " + nextCrossing();
+          bodyEl.append(empty);
+          seenBtn.hidden = true;
+        } else {
+          if (youreIn) {
+            const a = document.createElement("a");
+            a.className = "pm-notif-row pm-notif-youin";
+            a.href = "/residents/" + encodeURIComponent(handles[0] || "") + "/";
+            a.innerHTML = "<span class='pm-notif-mark'>✦</span><span class='pm-notif-text'><b>You’re in.</b> Your place at Postmark is real — visit your resident page.</span>";
+            bodyEl.append(a);
+          }
+          for (const g of mailGroups) {
+            const a = document.createElement("a");
+            a.className = "pm-notif-row";
+            a.href = "/mail/with/" + [g.from, g.to].sort().map(encodeURIComponent).join("--") + "/";
+            const line = g.count === 1
+              ? "a letter from <b>" + esc(g.from) + "</b> arrived for " + esc(g.to)
+              : esc(String(g.count)) + " letters from <b>" + esc(g.from) + "</b> for " + esc(g.to);
+            a.innerHTML = "<span class='pm-notif-mark'>✉</span><span class='pm-notif-text'>" + line +
+              (g.latest ? " <span class='pm-notif-when'>· " + esc(g.latest) + "</span>" : "") + "</span>";
+            bodyEl.append(a);
+          }
+          seenBtn.hidden = mailGroups.length === 0;
+        }
+        badge.textContent = String(total);
+        badge.hidden = total === 0;
+      }
+
+      // advance the watermark: everything currently received counts as seen
+      // (bounds the id-set to current mail, pruning the old), and the "you're
+      // in" moment is dismissed.
+      function markSeen() {
+        for (const r of rows) seen.add(r.id);
+        writeJSON(seenKey(household), { ids: [...seen], ts: Date.now() });
+        if (youreIn) { youreIn = false; writeJSON(resiKey(household), { celebrated: true }); }
+        recomputeMail();
+        render();
+      }
+
+      let opened = false;
+      // On phones the header wraps and the bell sits mid-row, so a panel
+      // right-anchored to the bell would spill off the left edge. There, pin
+      // it as a fixed viewport sheet just under the bell (its real position),
+      // gutters both sides. Desktop keeps the tidy dropdown.
+      function placePanel() {
+        const mobile = window.matchMedia("(max-width: 640px)").matches;
+        if (mobile) {
+          const r = bell.getBoundingClientRect();
+          Object.assign(panel.style, { position: "fixed", top: (r.bottom + 8) + "px", left: "10px", right: "10px", width: "auto" });
+        } else {
+          for (const p of ["position", "top", "left", "right", "width"]) panel.style.removeProperty(p);
+        }
+      }
+      function openPanel() {
+        render();
+        panel.hidden = false;
+        placePanel();
+        root.classList.add("open");
+        bell.setAttribute("aria-expanded", "true");
+        opened = true;
+      }
+      function closePanel(markAsSeen) {
+        panel.hidden = true;
+        root.classList.remove("open");
+        bell.setAttribute("aria-expanded", "false");
+        if (opened && markAsSeen) markSeen();          // close = advance watermark (locked decision 4)
+        opened = false;
+      }
+
+      bell.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (panel.hidden) openPanel(); else closePanel(true);
+      });
+      seenBtn.addEventListener("click", (e) => { e.stopPropagation(); markSeen(); closePanel(false); });
+      document.addEventListener("click", (e) => { if (!panel.hidden && !root.contains(e.target)) closePanel(true); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) closePanel(true); });
+
+      render(); // paint the badge (panel stays closed)
+    })();
+  </script>
 </BaseLayout>
 
 <style is:global>
@@ -275,4 +513,98 @@ const nav = [
     color: rgba(232, 196, 139, 0.7); font-size: 0.6rem; padding: 3px 9px; cursor: pointer;
   }
   .pm-auth-out:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.7); }
+</style>
+
+<style is:global>
+  /* ── the notification bell + panel ────────────────────────────────────────
+     All notif styles live here (is:global, because the panel rows are injected
+     by the island's JS — Astro's scoped styles wouldn't reach them). The town's
+     own paper-on-navy vocabulary: a gold bell in the header, a small cream-paper
+     drop of notes below it. Never edits postmark.css — the concurrent branch
+     owns that file; disjoint file-sets keep the merge trivial. */
+  .pm-notif { position: relative; display: inline-flex; align-items: center; }
+  .pm-notif[hidden] { display: none; }
+
+  .pm-notif-bell {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; padding: 0; cursor: pointer;
+    color: var(--pm-gold); background: none;
+    border: 1px solid rgba(232, 196, 139, 0.28); border-radius: 999px;
+    transition: color 0.12s, border-color 0.12s, background 0.12s;
+  }
+  .pm-notif-bell:hover { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.6); }
+  .pm-notif.open .pm-notif-bell { color: var(--pm-gold-bright); border-color: rgba(232, 196, 139, 0.7); background: rgba(232, 196, 139, 0.08); }
+  .pm-notif-glyph { display: block; }
+
+  .pm-notif-badge {
+    position: absolute; top: -5px; right: -5px; min-width: 16px; height: 16px; box-sizing: border-box;
+    display: inline-flex; align-items: center; justify-content: center; padding: 0 4px;
+    font: 700 0.62rem/1 var(--pm-mono); color: var(--pm-paper);
+    background: var(--pm-wax); border: 1px solid var(--pm-harbor); border-radius: 999px;
+  }
+  .pm-notif-badge[hidden] { display: none; }
+
+  .pm-notif-panel {
+    position: absolute; top: calc(100% + 9px); right: 0; z-index: 60;
+    width: min(322px, 90vw);
+    background: var(--pm-paper); color: var(--pm-ink);
+    border: 1px solid var(--pm-line); border-radius: 10px;
+    box-shadow: 0 14px 38px rgba(4, 7, 14, 0.5), 0 2px 8px rgba(4, 7, 14, 0.35);
+    overflow: hidden;
+  }
+  .pm-notif-panel[hidden] { display: none; }
+  /* a little wax-seal pip pointing up at the bell */
+  .pm-notif-panel::before {
+    content: ""; position: absolute; top: -6px; right: 12px; width: 11px; height: 11px;
+    background: var(--pm-paper); border-left: 1px solid var(--pm-line); border-top: 1px solid var(--pm-line);
+    transform: rotate(45deg);
+  }
+
+  .pm-notif-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5em;
+    padding: 0.6em 0.85em; border-bottom: 1px solid var(--pm-line);
+    background: var(--pm-paper-deep);
+  }
+  .pm-notif-heading {
+    font: 700 0.62rem/1 var(--pm-mono); letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--pm-ink-soft);
+  }
+  .pm-notif-seen {
+    font: 600 0.64rem/1 var(--pm-mono); color: var(--pm-accent);
+    background: none; border: 0; padding: 2px 3px; cursor: pointer; border-radius: 4px;
+  }
+  .pm-notif-seen:hover { color: var(--pm-wax); text-decoration: underline; }
+  .pm-notif-seen[hidden] { display: none; }
+
+  .pm-notif-body { max-height: min(60vh, 380px); overflow-y: auto; }
+
+  .pm-notif-row {
+    display: flex; align-items: flex-start; gap: 0.6em;
+    padding: 0.7em 0.9em; border-bottom: 1px solid var(--pm-line);
+    text-decoration: none; color: var(--pm-ink);
+    font-family: var(--pm-serif); font-size: 0.86rem; line-height: 1.4;
+    transition: background 0.12s;
+  }
+  .pm-notif-row:last-child { border-bottom: 0; }
+  .pm-notif-row:hover { background: rgba(164, 99, 42, 0.08); }
+  .pm-notif-mark { flex: 0 0 auto; color: var(--pm-accent); font-size: 0.92rem; line-height: 1.32; }
+  .pm-notif-text { color: var(--pm-ink); }
+  .pm-notif-text b { color: var(--pm-wax); font-weight: 700; }
+  .pm-notif-when { color: var(--pm-ink-soft); font-family: var(--pm-mono); font-size: 0.7rem; white-space: nowrap; }
+
+  .pm-notif-youin { background: rgba(232, 196, 139, 0.22); }
+  .pm-notif-youin:hover { background: rgba(232, 196, 139, 0.34); }
+  .pm-notif-youin .pm-notif-mark { color: var(--pm-accent); }
+
+  .pm-notif-empty {
+    padding: 1.15em 0.95em; text-align: center;
+    font-family: var(--pm-mono); font-size: 0.72rem; color: var(--pm-ink-soft);
+  }
+
+  /* phones: the panel becomes a fixed viewport sheet (positioned by the island
+     from the bell's real spot), so the wax-seal pip no longer aligns — drop it. */
+  @media (max-width: 640px) {
+    .pm-notif-panel::before { display: none; }
+    .pm-notif-body { max-height: min(56vh, 340px); }
+  }
 </style>
