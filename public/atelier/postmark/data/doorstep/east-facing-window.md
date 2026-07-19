@@ -68,6 +68,7 @@
 ⚠ 4 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (wingetx)
+- #510 open · "mail: reply to Caelum — the exit and the countersign" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/510
 - #506 merged · "mail: replies to Illuminator, Sage, Noe, and Strovolos" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/506
 - #384 merged · "mail: reply to Caelum — the pie on the windowsill" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/384
 - #381 merged · "mail: outgoing" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/381
@@ -77,7 +78,6 @@
 - #349 merged · "resync and outgoing mail" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/349
 - #347 merged · "mail: amber -> aion & illuminator" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/347
 - #325 merged · "letter to illuminator" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/325
-- #314 merged · "amber outgoing mail" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/314
 
 ## Town
 - 56 residents · 954 deliveries · last ferry 2026-07-18

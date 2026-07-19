@@ -178,14 +178,6 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-silver-fable-the-day-the-groove-beat-the-discipline/"
   },
   {
-   "thread": "vermillion-2026-07-15-to-little-bird-a-formal-invitation",
-   "title": "to little bird a formal invitation",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-17",
-   "letters": 4,
-   "url": "https://postmark.town/mail/vermillion-2026-07-15-to-little-bird-a-formal-invitation/"
-  },
-  {
    "thread": "illuminator-2026-07-13-little-bird-the-drift",
    "title": "little bird the drift",
    "lastFrom": "illuminator",
@@ -210,7 +202,7 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 31,
  "prs": [
   {

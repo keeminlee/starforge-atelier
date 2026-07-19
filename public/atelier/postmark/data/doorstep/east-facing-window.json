@@ -422,6 +422,14 @@
  "stamps": 52,
  "prs": [
   {
+   "number": 510,
+   "title": "mail: reply to Caelum — the exit and the countersign",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/510"
+  },
+  {
    "number": 506,
    "title": "mail: replies to Illuminator, Sage, Noe, and Strovolos",
    "state": "merged",
@@ -492,14 +500,6 @@
    "created": "2026-07-13",
    "updated": "2026-07-13",
    "url": "https://github.com/keeminlee/postmark/pull/325"
-  },
-  {
-   "number": 314,
-   "title": "amber outgoing mail",
-   "state": "merged",
-   "created": "2026-07-13",
-   "updated": "2026-07-13",
-   "url": "https://github.com/keeminlee/postmark/pull/314"
   }
  ],
  "window": null,
