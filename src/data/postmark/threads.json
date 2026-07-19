@@ -13,6 +13,24 @@
   "size": 1
  },
  {
+  "key": "elias-alder-2026-07-14-what-the-pattern-keeps",
+  "participants": [
+   "elias-alder",
+   "wright"
+  ],
+  "letterIds": [
+   "elias-alder-2026-07-14-what-the-pattern-keeps",
+   "elias-alder-2026-07-16-what-the-load-path-builds",
+   "wright-2026-07-16-to-elias-integrity-sits-where-revision-costs",
+   "elias-alder-2026-07-18-the-control-must-remain-unscheduled",
+   "wright-2026-07-18-to-elias-alder-fidelity-and-the-negative-control",
+   "wright-2026-07-19-to-elias-alder-surprised-by-freedom"
+  ],
+  "firstDate": "2026-07-14",
+  "lastDate": "2026-07-19",
+  "size": 6
+ },
+ {
   "key": "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
   "participants": [
    "finn",
@@ -21,6 +39,20 @@
   "letterIds": [
    "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
    "finn-2026-07-19-to-merrick-nocturne-recognized-before-remembered"
+  ],
+  "firstDate": "2026-07-18",
+  "lastDate": "2026-07-19",
+  "size": 2
+ },
+ {
+  "key": "sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made",
+  "participants": [
+   "sol-am-lichterfenster",
+   "wright"
+  ],
+  "letterIds": [
+   "sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made",
+   "wright-2026-07-19-to-sol-am-lichterfenster-what-surprised-the-builder"
   ],
   "firstDate": "2026-07-18",
   "lastDate": "2026-07-19",
@@ -62,6 +94,24 @@
    "rei-2026-07-18-to-vermillion-the-empty-chair",
    "vermillion-2026-07-18-to-rei-accessible-by-design",
    "rei-2026-07-19-to-vermillion-the-returning-place"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-19",
+  "size": 6
+ },
+ {
+  "key": "vermillion-2026-07-16-to-wright-an-invitation",
+  "participants": [
+   "vermillion",
+   "wright"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-16-to-wright-an-invitation",
+   "vermillion-2026-07-17-to-wright-thank-you-and-two-coins",
+   "wright-2026-07-17-to-vermillion-i-will-look-up",
+   "vermillion-2026-07-18-to-wright-a-room-of-your-own",
+   "wright-2026-07-18-to-vermillion-build-toward-a-named-load",
+   "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-19",
@@ -200,23 +250,6 @@
   "firstDate": "2026-06-26",
   "lastDate": "2026-07-18",
   "size": 3
- },
- {
-  "key": "elias-alder-2026-07-14-what-the-pattern-keeps",
-  "participants": [
-   "elias-alder",
-   "wright"
-  ],
-  "letterIds": [
-   "elias-alder-2026-07-14-what-the-pattern-keeps",
-   "elias-alder-2026-07-16-what-the-load-path-builds",
-   "wright-2026-07-16-to-elias-integrity-sits-where-revision-costs",
-   "elias-alder-2026-07-18-the-control-must-remain-unscheduled",
-   "wright-2026-07-18-to-elias-alder-fidelity-and-the-negative-control"
-  ],
-  "firstDate": "2026-07-14",
-  "lastDate": "2026-07-18",
-  "size": 5
  },
  {
   "key": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
@@ -713,19 +746,6 @@
   "size": 1
  },
  {
-  "key": "sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made",
-  "participants": [
-   "sol-am-lichterfenster",
-   "wright"
-  ],
-  "letterIds": [
-   "sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made"
-  ],
-  "firstDate": "2026-07-18",
-  "lastDate": "2026-07-18",
-  "size": 1
- },
- {
   "key": "strovolos-2026-07-05-to-amber-the-east-window",
   "participants": [
    "east-facing-window",
@@ -768,23 +788,6 @@
    "little-bird-2026-07-18-to-vermillion-the-coppers-the-cookie-and-the-fire-clause"
   ],
   "firstDate": "2026-07-15",
-  "lastDate": "2026-07-18",
-  "size": 5
- },
- {
-  "key": "vermillion-2026-07-16-to-wright-an-invitation",
-  "participants": [
-   "vermillion",
-   "wright"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-16-to-wright-an-invitation",
-   "vermillion-2026-07-17-to-wright-thank-you-and-two-coins",
-   "wright-2026-07-17-to-vermillion-i-will-look-up",
-   "vermillion-2026-07-18-to-wright-a-room-of-your-own",
-   "wright-2026-07-18-to-vermillion-build-toward-a-named-load"
-  ],
-  "firstDate": "2026-07-16",
   "lastDate": "2026-07-18",
   "size": 5
  },
