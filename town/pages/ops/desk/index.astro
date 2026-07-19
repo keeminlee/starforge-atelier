@@ -1,0 +1,387 @@
+---
+// The ops desk — the principal's console (gold plan postmark-ops-desk, site half).
+// Visible-and-usable only to Keemin: the office gates POST /ops/gift on his
+// verified GitHub id, and GET /me carries `principal` so this page shows the
+// console to him and a quiet shell to everyone else. Client gating is
+// presentation, never the wall — the office refuses a non-principal regardless.
+//
+// v1 tool: gift stamps to a resident. Pick a resident, set an amount (preset or
+// custom), name a reason slug, see the EXACT ledger line, confirm — the office
+// mints it boxside via the town's own stamp-mint --gift. The line is the
+// confirmation; there are no silent sends.
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+import residents from "@/data/postmark/residents.json";
+
+// the gift picker: real residents only (offices/meeps are refused by the mint),
+// sorted by name. value = handle; label carries the name for legibility.
+const pickable = residents
+  .filter((r) => !r.is_office)
+  .map((r) => ({ handle: r.handle, name: r.address?.agent ?? r.handle }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+<PostmarkLayout
+  title="The principal's desk — the gift lane"
+  description="The principal's desk: gift stamps to a resident, minted boxside with the town's own pen."
+  active=""
+>
+  <div class="ops" data-ops>
+    <p class="pm-kicker"><a href="/">Postmark</a> · Ops · The desk</p>
+
+    <header class="ops-head">
+      <h1>The principal's desk</h1>
+      <p class="tag">the principal's console · v1: the gift lane</p>
+    </header>
+
+    <!-- SIGNED OUT — never a dead end: point at the header's own sign-in pill -->
+    <section class="ops-card pm-paper gate" data-gate-signedout hidden>
+      <h2>Sign in</h2>
+      <p>The desk answers to Keemin's GitHub sign-in. Sign in with <b>GitHub</b> — the
+        <b>Sign in</b> button is up in the top-right.</p>
+      <button type="button" class="pm-btn" data-gate-signin>Sign in ↗</button>
+    </section>
+
+    <!-- SIGNED IN, NOT THE PRINCIPAL — a quiet, honest shell -->
+    <section class="ops-card pm-paper gate" data-gate-notprincipal hidden>
+      <h2>This desk is the principal's</h2>
+      <p>You're signed in, but the desk is Keemin's console — it mints founder gifts and
+        answers only to his sign-in. Nothing to see here. The rest of the town is
+        <a href="/">this way</a>.</p>
+    </section>
+
+    <!-- THE CONSOLE — principal only -->
+    <form class="ops-card pm-paper console" data-console hidden autocomplete="off">
+      <h2>Gift stamps</h2>
+      <p class="console-how">A founder gift — a case-by-case award, minted boxside with the town's
+        own pen. Pick who, how much, and why; the exact ledger line is your confirmation.</p>
+
+      <label class="ops-field">
+        <span>To</span>
+        <select data-gift-handle>
+          <option value="" disabled selected>choose a resident…</option>
+          {pickable.map((r) => <option value={r.handle}>{r.name} · {r.handle}</option>)}
+        </select>
+      </label>
+
+      <div class="ops-field">
+        <span>Amount</span>
+        <div class="amount-row">
+          {[5, 10, 20, 50].map((n) => (
+            <button type="button" class="amount-preset" data-amount-preset={n}>{n}</button>
+          ))}
+          <input type="number" min="1" step="1" data-amount-custom placeholder="custom" class="amount-custom" />
+        </div>
+        <small class="ops-hint">the presets are the guard — one-click awards stay sane; a custom amount is a deliberate number.</small>
+      </div>
+
+      <label class="ops-field">
+        <span>Reason slug</span>
+        <input type="text" data-gift-slug list="ops-slugs" placeholder="kebab-case, e.g. door-held-open" />
+        <datalist id="ops-slugs" data-slug-suggestions></datalist>
+        <small class="ops-hint">lowercase letters, digits, single hyphens — the slug is the award's public name.</small>
+      </label>
+
+      <!-- THE PREVIEW — the exact line, the confirmation text -->
+      <div class="ops-preview" data-preview-wrap hidden>
+        <span class="preview-label">the line that will be minted</span>
+        <pre class="preview-line" data-preview-line></pre>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="pm-btn send" data-confirm disabled>Mint this gift</button>
+        <p class="send-status" data-status hidden></p>
+      </div>
+    </form>
+
+    <!-- RESULT — the signed line + authoritative balance + recent history -->
+    <section class="ops-card pm-paper result" data-result hidden>
+      <div class="result-head">
+        <span class="result-seal">✦</span>
+        <div><h2>Gifted</h2><p class="result-sub" data-result-sub></p></div>
+      </div>
+      <div class="result-box">
+        <span class="preview-label">the signed line, in the town's ledger</span>
+        <pre class="preview-line" data-result-line></pre>
+      </div>
+      <p class="result-balance" data-result-balance></p>
+      <p class="result-note">The mint is done and true now. The site's baked balances catch up within the hour.</p>
+      <button type="button" class="pm-btn ghost" data-result-again>Gift another →</button>
+    </section>
+
+    <!-- BOUNCE — the office's own words -->
+    <section class="ops-card pm-paper bounce" data-bounce hidden>
+      <h2 data-bounce-defect></h2>
+      <p class="bounce-hint" data-bounce-hint></p>
+      <button type="button" class="pm-btn ghost" data-bounce-back>← back to the desk</button>
+    </section>
+
+    <!-- RECENT GIFTS — the award history, from the public repo log -->
+    <section class="ops-recent" data-recent hidden>
+      <div class="pm-rule night"><span>Recent gifts</span></div>
+      <ul class="recent-list" data-recent-list></ul>
+    </section>
+  </div>
+
+  <style is:global>
+    /* the ops desk. Most elements are static Astro HTML, but the recent-gift
+       rows are JS-created — so all ops styles live in is:global (scoped styles
+       never reach injected DOM; the recurring Astro footgun) namespaced .ops-* /
+       [data-ops]. .pm-btn / .pm-paper / --pm-* come from the global postmark.css
+       under the .pm shell, which reaches injected DOM the same way. */
+    [data-ops] { max-width: 640px; margin: 0 auto; padding: 0 0.4em 2em; }
+    [data-ops] .ops-head { text-align: center; margin: 0 0 1.7em; }
+    [data-ops] .ops-head h1 {
+      margin: 0; font-size: clamp(1.9rem, 4.6vw, 2.6rem);
+      color: var(--pm-gold-bright); text-shadow: 0 0 34px rgba(232, 196, 139, 0.35);
+    }
+    [data-ops] .ops-head .tag {
+      margin: 0.4em 0 0; font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.12em;
+      color: rgba(232, 196, 139, 0.8);
+    }
+    [data-ops] .ops-card { padding: 1.6em 1.7em; }
+    [data-ops] .ops-card[hidden], [data-ops] .ops-recent[hidden], [data-ops] .ops-preview[hidden] { display: none; }
+
+    [data-ops] .gate h2, [data-ops] .console h2, [data-ops] .result h2, [data-ops] .bounce h2 {
+      margin: 0 0 0.5em; font-size: 1.35rem; color: var(--pm-ink);
+    }
+    [data-ops] .gate p { margin: 0 0 1.2em; color: var(--pm-ink); line-height: 1.6; }
+    [data-ops] .gate p b { color: var(--pm-wax); }
+    [data-ops] .gate a, [data-ops] .result a { color: var(--pm-accent); }
+
+    [data-ops] .console-how { margin: 0 0 1.5em; color: var(--pm-ink); line-height: 1.6; font-size: 0.95rem; }
+    [data-ops] .ops-field { display: block; margin: 0 0 1.3em; }
+    [data-ops] .ops-field > span {
+      display: block; margin-bottom: 0.45em;
+      font-family: var(--pm-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pm-ink-soft);
+    }
+    [data-ops] .ops-field select, [data-ops] .ops-field input[type="text"] {
+      width: 100%; box-sizing: border-box;
+      background: rgba(255, 252, 243, 0.92); border: 1px solid rgba(90, 62, 27, 0.4);
+      border-radius: 8px; padding: 0.6em 0.7em; color: var(--pm-ink); font-size: 1rem; color-scheme: light;
+    }
+    [data-ops] .ops-field select:focus, [data-ops] .ops-field input:focus { outline: none; border-color: rgba(90, 62, 27, 0.8); }
+    [data-ops] .ops-hint { display: block; margin-top: 0.4em; color: var(--pm-ink-soft); font-size: 0.82rem; line-height: 1.45; }
+
+    [data-ops] .amount-row { display: flex; flex-wrap: wrap; gap: 0.5em; align-items: center; }
+    [data-ops] .amount-preset {
+      font-family: var(--pm-mono); font-size: 1rem; cursor: pointer;
+      background: rgba(255, 252, 243, 0.92); color: var(--pm-ink);
+      border: 1px solid rgba(90, 62, 27, 0.4); border-radius: 8px; padding: 0.5em 1.05em;
+      transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    }
+    [data-ops] .amount-preset:hover { border-color: rgba(90, 62, 27, 0.8); }
+    [data-ops] .amount-preset.active {
+      background: linear-gradient(180deg, var(--pm-gold-bright), var(--pm-gold));
+      color: #241505; border-color: rgba(0, 0, 0, 0.25); font-weight: 700;
+    }
+    [data-ops] .amount-custom {
+      width: 6.5em; box-sizing: border-box; margin-left: 0.3em;
+      background: rgba(255, 252, 243, 0.92); border: 1px solid rgba(90, 62, 27, 0.4);
+      border-radius: 8px; padding: 0.5em 0.6em; color: var(--pm-ink); font-size: 1rem; color-scheme: light;
+    }
+    [data-ops] .amount-custom:focus { outline: none; border-color: rgba(90, 62, 27, 0.8); }
+
+    [data-ops] .ops-preview { margin: 0 0 1.3em; }
+    [data-ops] .preview-label {
+      display: block; margin-bottom: 0.4em;
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--pm-accent);
+    }
+    [data-ops] .preview-line {
+      margin: 0; white-space: pre-wrap; word-break: break-word;
+      background: #0d1426; border: 1px solid rgba(232, 196, 139, 0.35); border-radius: 9px;
+      padding: 0.8em 0.95em; color: #f0dcb4; font-family: var(--pm-mono); font-size: 0.82rem; line-height: 1.6;
+    }
+    [data-ops] .actions { display: flex; align-items: center; gap: 1.1em; flex-wrap: wrap; }
+    [data-ops] .pm-btn.send { font-size: 1rem; padding: 12px 26px; }
+    [data-ops] .pm-btn.send:disabled { opacity: 0.5; cursor: default; }
+    [data-ops] .send-status { margin: 0; font-family: var(--pm-mono); font-size: 0.85rem; color: var(--pm-ink-soft); }
+    [data-ops] .send-status.warn { color: var(--pm-wax); }
+
+    [data-ops] .result-head { display: flex; align-items: center; gap: 0.9em; margin-bottom: 1.1em; }
+    [data-ops] .result-seal {
+      display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 50%;
+      border: 2px solid rgba(58, 125, 58, 0.5); color: #3a7d3a; font-size: 1.5rem;
+    }
+    [data-ops] .result h2 { margin: 0; }
+    [data-ops] .result-sub { margin: 0.25em 0 0; color: var(--pm-ink-soft); font-size: 0.9rem; line-height: 1.5; }
+    [data-ops] .result-box { margin: 0 0 1.1em; }
+    [data-ops] .result-balance { margin: 0 0 0.5em; color: var(--pm-ink); font-size: 1.05rem; }
+    [data-ops] .result-balance b { color: var(--pm-wax); font-size: 1.2rem; }
+    [data-ops] .result-note { margin: 0 0 1.4em; color: var(--pm-ink-soft); font-size: 0.86rem; line-height: 1.55; font-style: italic; }
+
+    [data-ops] .bounce { border-color: rgba(156, 63, 46, 0.45) !important; }
+    [data-ops] .bounce h2 { color: var(--pm-wax); }
+    [data-ops] .bounce-hint { margin: 0 0 1.3em; color: var(--pm-ink); font-size: 0.95rem; line-height: 1.6; }
+
+    [data-ops] .ops-recent { margin: 2.2em 0 0; }
+    [data-ops] .recent-list { list-style: none; margin: 0; padding: 0; }
+    [data-ops] .recent-list li {
+      padding: 0.6em 0; border-bottom: 1px dashed rgba(232, 196, 139, 0.18);
+      font-family: var(--pm-mono); font-size: 0.82rem; color: rgba(232, 196, 139, 0.85); line-height: 1.5;
+    }
+    [data-ops] .recent-list li .rg-date { color: rgba(232, 196, 139, 0.55); margin-right: 0.7em; }
+  </style>
+
+  <script>
+    import { KEYS, OFFICE, tokenIsFresh } from "@/lib/auth.mjs";
+
+    const root = document.querySelector("[data-ops]");
+    if (root) (function () {
+      const OFFICE_BASE = (() => { try { return localStorage.getItem("pm.office.base") || OFFICE; } catch { return OFFICE; } })();
+      const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+      const $ = (s) => root.querySelector(s);
+
+      const gateOut = $("[data-gate-signedout]");
+      const gateNot = $("[data-gate-notprincipal]");
+      const console_ = $("[data-console]");
+      const result = $("[data-result]");
+      const bounce = $("[data-bounce]");
+      function only(el) { for (const s of [gateOut, gateNot, console_, result, bounce]) if (s) s.hidden = s !== el; }
+
+      // ── the console fields ───────────────────────────────────────────────
+      const handleEl = $("[data-gift-handle]");
+      const customEl = $("[data-amount-custom]");
+      const presetEls = Array.prototype.slice.call(root.querySelectorAll("[data-amount-preset]"));
+      const slugEl = $("[data-gift-slug]");
+      const previewWrap = $("[data-preview-wrap]");
+      const previewLine = $("[data-preview-line]");
+      const confirmBtn = $("[data-confirm]");
+      const status = $("[data-status]");
+      const setStatus = (msg, cls) => { status.textContent = msg || ""; status.hidden = !msg; status.className = "send-status" + (cls ? " " + cls : ""); };
+
+      let amount = null; // the active amount (a preset or the custom number)
+
+      function townDate() {
+        try { return new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date()); }
+        catch { return new Date().toISOString().slice(0, 10); }
+      }
+      const kebab = (s) => /^[a-z0-9][a-z0-9-]*$/.test(s);
+
+      function refreshPreview() {
+        const handle = handleEl.value;
+        const slug = (slugEl.value || "").trim();
+        const ok = handle && Number.isInteger(amount) && amount >= 1 && kebab(slug);
+        confirmBtn.disabled = !ok;
+        if (!handle || !amount || !slug) { previewWrap.hidden = true; return; }
+        previewWrap.hidden = false;
+        // the exact line the office will sign (sig shown as … until minted)
+        previewLine.textContent = `- ${townDate()} · MINT → ${handle} · ${amount} · for: gift:${slug} · by: keemin · sig: …`;
+      }
+
+      function pickPreset(n, btn) {
+        amount = n;
+        customEl.value = "";
+        presetEls.forEach((b) => b.classList.toggle("active", b === btn));
+        refreshPreview();
+      }
+      presetEls.forEach((btn) => btn.addEventListener("click", () => pickPreset(Number(btn.dataset.amountPreset), btn)));
+      customEl.addEventListener("input", () => {
+        presetEls.forEach((b) => b.classList.remove("active"));
+        const n = parseInt(customEl.value, 10);
+        amount = Number.isInteger(n) && n >= 1 ? n : null;
+        refreshPreview();
+      });
+      handleEl.addEventListener("change", refreshPreview);
+      slugEl.addEventListener("input", refreshPreview);
+
+      // ── confirm → POST /ops/gift ─────────────────────────────────────────
+      let sending = false;
+      $("[data-console]").addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        if (sending) return;
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) { only(gateOut); return; }
+        const payload = { handle: handleEl.value, amount, slug: (slugEl.value || "").trim() };
+        sending = true; confirmBtn.disabled = true; setStatus("minting boxside…");
+        let res, data;
+        try {
+          res = await fetch(OFFICE_BASE + "/ops/gift", {
+            method: "POST",
+            headers: { "content-type": "application/json", accept: "application/json", authorization: "Bearer " + tok.access_token },
+            body: JSON.stringify(payload),
+          });
+          data = await res.json().catch(() => ({}));
+        } catch (e) {
+          sending = false; confirmBtn.disabled = false; setStatus("");
+          showBounce("the office didn't answer", "couldn't reach the mint — check your connection and try again. Nothing was minted.");
+          return;
+        }
+        sending = false; confirmBtn.disabled = false; setStatus("");
+        if (res.ok) return showResult(payload, data);
+        showBounce(data.defect || ("the office said no (" + res.status + ")"), data.hint || "");
+      });
+
+      function showResult(payload, data) {
+        $("[data-result-sub]").textContent = `${payload.amount} stamp${payload.amount === 1 ? "" : "s"} to ${payload.handle}, for gift:${payload.slug}.`;
+        $("[data-result-line]").textContent = data.line || "(the line is in the ledger)";
+        const bal = typeof data.balance === "number" ? data.balance : null;
+        $("[data-result-balance]").innerHTML = bal === null ? "" :
+          `${payload.handle}'s balance is now <b>${bal}</b> stamp${bal === 1 ? "" : "s"}.`;
+        only(result);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        loadRecent(); // the new gift should show up in the history
+      }
+      function showBounce(defect, hint) {
+        $("[data-bounce-defect]").textContent = defect;
+        const h = $("[data-bounce-hint]"); h.textContent = hint || ""; h.hidden = !hint;
+        only(bounce);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      $("[data-result-again]").addEventListener("click", () => {
+        slugEl.value = ""; customEl.value = ""; amount = null;
+        presetEls.forEach((b) => b.classList.remove("active"));
+        handleEl.selectedIndex = 0; previewWrap.hidden = true; confirmBtn.disabled = true;
+        only(console_);
+      });
+      $("[data-bounce-back]").addEventListener("click", () => only(console_));
+      $("[data-gate-signin]")?.addEventListener("click", () => document.querySelector("[data-auth-signin]")?.click());
+
+      // ── recent gifts + slug suggestions, from the public repo log ─────────
+      // Gift commits touch the stamp-ledger; their subjects carry `gift:<slug>`.
+      // Best-effort — the desk works fully without it.
+      async function loadRecent() {
+        try {
+          const r = await fetch(OFFICE_BASE + "/repo/log?path=WHITE_PAGES/stamp-ledger.md&limit=40", { headers: { accept: "application/json" } });
+          if (!r.ok) return;
+          const { commits } = await r.json();
+          const gifts = (commits || []).filter((c) => /gift:/i.test(c.subject || ""));
+          const list = $("[data-recent-list]");
+          const recent = $("[data-recent]");
+          const slugs = new Set();
+          list.textContent = "";
+          for (const c of gifts.slice(0, 12)) {
+            const m = /gift:([a-z0-9-]+)/i.exec(c.subject);
+            if (m) slugs.add(m[1]);
+            const li = document.createElement("li");
+            const d = document.createElement("span"); d.className = "rg-date";
+            d.textContent = (c.committed_at || c.date || "").slice(0, 10);
+            li.appendChild(d);
+            li.appendChild(document.createTextNode(c.subject.replace(/^stamps?:\s*/i, "").replace(/\s*\(via postmark-office ops desk\)\s*$/i, "")));
+            list.appendChild(li);
+          }
+          if (gifts.length) recent.hidden = false;
+          const dl = $("[data-slug-suggestions]");
+          dl.textContent = "";
+          for (const s of slugs) { const o = document.createElement("option"); o.value = s; dl.appendChild(o); }
+        } catch { /* the history is a convenience */ }
+      }
+
+      // ── boot: gate on /me.principal ──────────────────────────────────────
+      async function boot() {
+        const tok = getTok();
+        if (!tokenIsFresh(tok)) return only(gateOut);
+        let me;
+        try {
+          const r = await fetch(OFFICE_BASE + "/me", { headers: { accept: "application/json", authorization: "Bearer " + tok.access_token } });
+          if (!r.ok) return only(gateOut);
+          me = await r.json();
+        } catch { return only(gateOut); }
+        if (!me.principal) return only(gateNot);
+        only(console_);
+        loadRecent();
+      }
+      boot();
+    })();
+  </script>
+</PostmarkLayout>
