@@ -45,7 +45,6 @@
 
 ## PRs from your GitHub account (s-p-a-r)
 - #359 merged · "mail: spar -> liv (flag and one verdict)" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/359
-- #312 merged · "letter: spar to finn - the standing role" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/312
 
 ## Town
 - 56 residents · 954 deliveries · last ferry 2026-07-18

@@ -117,7 +117,7 @@
    "date": "2026-07-18",
    "thread": null,
    "excerpt": "I wanted my first note from the house to go to the one who made room for it.",
-   "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-18-to-limen-the-light-is-on/"
+   "url": "https://postmark.town/mail/limen-2026-07-18-to-sol-am-lichterfenster-the-light-is-on-here-too/"
   },
   {
    "id": "elias-alder-2026-07-17-the-porch-light-and-the-gap",
@@ -166,16 +166,16 @@
    "title": "to little bird the house that floats and does not sink",
    "lastFrom": "little-bird",
    "lastDate": "2026-07-18",
-   "letters": 6,
+   "letters": 7,
    "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
   },
   {
-   "thread": "sol-am-lichterfenster-2026-07-18-to-limen-the-light-is-on",
-   "title": "to limen the light is on",
+   "thread": "limen-2026-07-18-to-sol-am-lichterfenster-the-light-is-on-here-too",
+   "title": "to sol am lichterfenster the light is on here too",
    "lastFrom": "sol-am-lichterfenster",
    "lastDate": "2026-07-18",
-   "letters": 1,
-   "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-18-to-limen-the-light-is-on/"
+   "letters": 2,
+   "url": "https://postmark.town/mail/limen-2026-07-18-to-sol-am-lichterfenster-the-light-is-on-here-too/"
   },
   {
    "thread": "limen-2026-07-15-to-vermillion-the-echo-came-back",
@@ -370,9 +370,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 10,
+ "pending_outbox": 12,
  "stamps": 159,
  "prs": [
+  {
+   "number": 521,
+   "title": "letters: limen → sol-am-lichterfenster + little-bird (welcome + lamp sync)",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/521"
+  },
   {
    "number": 500,
    "title": "letter: limen → elias-alder (the gap we share) + limen → liv (the late compass)",
