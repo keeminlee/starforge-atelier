@@ -205,6 +205,12 @@ const PANES = "https://panes.postmark.town";
         <a class="bcard-fullscreen" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener"
            data-win-fullscreen hidden aria-label="Open the window full screen" title="Open full screen">⧉</a>
       </div>
+
+      <!-- circle-mode fullscreen: rides the switcher row itself, right-aligned.
+           Visible only while the WINDOW read is the open one and a pane hangs
+           (the face's ⧉ chip covers full-card mode; this covers bubble mode). -->
+      <a class="pm-btn win-fs-btn" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener"
+         data-win-fs-row hidden>Open full screen ⧉</a>
     </div>
 
     <!-- the open card's full read — its own thing, none of the face repeated -->
@@ -247,14 +253,6 @@ const PANES = "https://panes.postmark.town";
 
       <section class="bcard-detail" data-card-detail="window" hidden>
         <div id="win-frame-wrap" hidden>
-          <!-- the big fullscreen door, back above the viewer: the face's ⧉ chip
-               hides in bubble mode (circle-switcher), so this is the visible
-               door while the pane is open (Keemin, 2026-07-19) -->
-          <p class="win-fs-row">
-            <a class="pm-btn win-fs-btn" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener">
-              Open full screen ⧉
-            </a>
-          </p>
           <iframe id="win-frame" sandbox="allow-scripts" title={`${name}'s window`} loading="lazy"></iframe>
           <p class="win-note">
             a pane authored by the {r.handle} household · runs sandboxed on panes.postmark.town
@@ -367,10 +365,21 @@ const PANES = "https://panes.postmark.town";
       var cardsWrap = root.querySelector("[data-cards]");
       var cards = Array.prototype.slice.call(root.querySelectorAll("[data-card-open]"));
       var details = Array.prototype.slice.call(root.querySelectorAll("[data-card-detail]"));
+      // the switcher-row fullscreen button: shown only while the WINDOW read
+      // is the open one AND a pane actually hangs (hasWindow answers async)
+      var winFsRow = root.querySelector("[data-win-fs-row]");
+      function syncFsRow() {
+        if (!winFsRow) return;
+        var winOpen = cards.filter(function (c) {
+          return c.getAttribute("data-card-open") === "window" && c.classList.contains("active");
+        }).length > 0;
+        winFsRow.hidden = !(winOpen && hasWindow);
+      }
       function closeAll() {
         cards.forEach(function (c) { c.setAttribute("aria-expanded", "false"); c.classList.remove("active"); });
         details.forEach(function (d) { d.hidden = true; });
         cardsWrap.classList.remove("has-open");
+        syncFsRow();
       }
       function openCard(key) {
         var card = cards.filter(function (c) { return c.getAttribute("data-card-open") === key; })[0];
@@ -379,6 +388,7 @@ const PANES = "https://panes.postmark.town";
         if (detail) detail.hidden = false;
         if (card) cardsWrap.classList.add("has-open");
         if (key === "window") initWindow();
+        syncFsRow();
         return !!card;
       }
       cards.forEach(function (card) {
@@ -410,6 +420,7 @@ const PANES = "https://panes.postmark.town";
       fetch(PANES + "/windows.json").then(function (r) { return r.json(); }).then(function (m) {
         hasWindow = !!(m.windows && m.windows[handle]);
         if (winFs && hasWindow) winFs.hidden = false;
+        syncFsRow(); // the window read may already be open (deep-link/lens)
         var det = details.filter(function (d) { return d.getAttribute("data-card-detail") === "window"; })[0];
         if (det && !det.hidden) initWindow(); // already open (deep-link/lens) → render now
       }).catch(function () {
@@ -663,8 +674,9 @@ const PANES = "https://panes.postmark.town";
       border-radius: 8px; background: #16120c;
     }
     .win-note { font-size: 0.82rem; opacity: 0.7; margin-top: 0.5rem; }
-    .win-fs-row { display: flex; justify-content: flex-end; margin: 0 0 0.6rem; }
-    .win-fs-btn { font-size: 0.85rem; padding: 9px 20px; }
+    /* the switcher-row fullscreen door: same line as the circles, pushed right */
+    .win-fs-btn { margin-left: auto; align-self: center; font-size: 0.85rem; padding: 9px 20px; }
+    .win-fs-btn[hidden] { display: none; }
 
     .res-foot { display: flex; flex-wrap: wrap; gap: 0.8em; justify-content: center; margin: 2.2em 0 0; }
   </style>
