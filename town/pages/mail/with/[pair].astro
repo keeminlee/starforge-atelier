@@ -10,7 +10,12 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 import letters from "@/data/postmark/letters.json";
 import threads from "@/data/postmark/threads.json";
 import media from "@/data/postmark/media.json";
+import ledger from "@/data/postmark/ledger.json";
 import { md, fmtDate, townFile, threadTitle } from "@/lib/pm.mjs";
+
+// git-event legibility (support case, 2026-07-19): the happy path says so in
+// human words — a delivered letter wears its ledger receipt as "✓ delivered".
+const deliveredOn = new Map(ledger.filter((e) => e.kind === "delivery").map((e) => [e.id, e.date]));
 
 // The ONE true letter→thread map. A letter's own `thread:` field may point
 // mid-chain (the letter it answers), not at the root — 264 of 401 raw refs do.
@@ -220,7 +225,13 @@ const composerData = { a, b, lastSender, threads: threadOptions };
       </aside>
 
       <div class="fr-letters">
-        {pairLetters.map((l) => (
+        {pairLetters.map((l, i) => (
+          <>
+          {i > 0 && tkeyOf(pairLetters[i - 1]) !== tkeyOf(l) && (
+            <div class="fr-newthread" style={`--h:${hueOf(tkeyOf(l))}`} aria-hidden="true">
+              — {pairLetters.slice(0, i).some((p) => tkeyOf(p) === tkeyOf(l)) ? "an earlier thread continues" : "a new thread begins"} —
+            </div>
+          )}
           <article class="pm-letter pm-paper fr-letter" id={l.id} style={`--h:${hueOf(tkeyOf(l))}`} data-tkey={tkeyOf(l)}>
             <div class="fr-threadline">{threadTitle(tkeyOf(l))}</div>
             <div class="pm-letterhead">
@@ -231,7 +242,12 @@ const composerData = { a, b, lastSender, threads: threadOptions };
                   <>{i > 0 && ", "}<a href={`/residents/${to}/`}>{to}</a></>
                 ))}
               </span>
-              <span class="when">{fmtDate(l.date)}</span>
+              <span class="when">
+                {fmtDate(l.date)}
+                {deliveredOn.has(l.id) && (
+                  <span class="fr-sailed" title="carried by the ferry, sealed in the town ledger">✓ delivered {fmtDate(deliveredOn.get(l.id))}</span>
+                )}
+              </span>
             </div>
             <div class="pm-letterbody" set:html={md(l.body, { repoDir: (l.path || "").split("/").slice(0, -1).join("/"), media })} />
             {(l.attachments ?? []).filter((at) => media[at]).length > 0 && (
@@ -248,6 +264,7 @@ const composerData = { a, b, lastSender, threads: threadOptions };
               <a href={townFile(l.path)}>the file, in the record →</a>
             </div>
           </article>
+          </>
         ))}
         <p class="fr-foot">
           <a class="pm-btn ghost" href={`/residents/${a}/`}>← {a}</a>
@@ -593,6 +610,19 @@ const composerData = { a, b, lastSender, threads: threadOptions };
     }
     .fr-threadline a { color: hsl(var(--h), 55%, 34%); text-decoration: none; }
     .fr-threadline a:hover { text-decoration: underline; }
+    /* the unified stream reads as curated, not collapsed — a quiet rule where
+       the thread changes (git-event legibility, 2026-07-19) */
+    .fr-newthread {
+      text-align: center; margin: 1.6em 0 0.2em;
+      font-family: var(--pm-mono); font-size: 0.68rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: hsl(var(--h), 45%, 62%);
+    }
+    /* the happy path in human words: the ledger receipt on the letterhead */
+    .fr-sailed {
+      display: block; margin-top: 0.2em; text-align: right;
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.06em;
+      color: #4d7d54;
+    }
     .fr-foot { display: flex; justify-content: center; gap: 1em; flex-wrap: wrap; margin: 2em 0 0; }
 
     @media (max-width: 780px) {

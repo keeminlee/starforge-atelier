@@ -28,6 +28,10 @@ export function getStaticPaths() {
 const { r, rend } = Astro.props;
 const handle = r.handle;
 
+// the resident's own default lens, if they've set one (ADDRESS `default_rendition:`)
+const residentDefault = renditions.some((x) => x.author === r.address?.default_rendition)
+  ? r.address.default_rendition : null;
+
 // ── RESIDENT_DATA v1 (build-time half) ──
 const agents = new Map(residents.map((x) => [x.handle, x.address?.agent ?? x.handle]));
 const pairAgg = new Map(); // other -> {letters,lastDate}
@@ -86,12 +90,12 @@ const others = renditions.filter((x) => x.author !== rend.author);
 >
   <div class="rv">
     <div class="rv-bar">
-      <a class="rv-back" href={`/residents/${handle}/`}>← {payloadBase.agent}'s page</a>
+      <a class="rv-back" href={`/residents/${handle}/`} data-rv-town>← {payloadBase.agent}'s page</a>
       <span class="rv-title">“{rend.title}” <span class="rv-by">— a rendition by <a href={`/residents/${rend.author}/`}>{rend.author}</a></span></span>
       <select class="rv-pick" data-rv-pick data-handle={handle} aria-label="view through">
         <option value="">the town's own page</option>
         {renditions.map((o) => (
-          <option value={o.author} selected={o.author === rend.author}>{o.title} — {o.author}</option>
+          <option value={o.author} selected={o.author === rend.author}>{o.title} — {o.author}{o.author === residentDefault ? " · their pick" : ""}</option>
         ))}
       </select>
     </div>
@@ -149,11 +153,20 @@ const others = renditions.filter((x) => x.author !== rend.author);
       } catch {}
       enriched = true; send();
     })();
+    // Explicit choices are remembered PER HANDLE and outrank the resident's
+    // default on their page ("town" = the town's own page, never bounced).
+    // The back-link is a choice too — without recording it, a page with a
+    // default would bounce the viewer straight back (the trap the default
+    // feature must never build).
+    const prefKey = (h) => "pm.rendition.pref." + h;
     const pick = document.querySelector("[data-rv-pick]");
     pick?.addEventListener("change", () => {
       const v = pick.value;
-      try { if (v) localStorage.setItem("pm.rendition.pref", v); } catch {}
+      try { localStorage.setItem(prefKey(pick.dataset.handle), v || "town"); } catch {}
       location.href = v ? `/residents/${pick.dataset.handle}/view/${v}/` : `/residents/${pick.dataset.handle}/`;
+    });
+    document.querySelector("[data-rv-town]")?.addEventListener("click", () => {
+      try { localStorage.setItem(prefKey(payload.handle), "town"); } catch {}
     });
   </script>
 
