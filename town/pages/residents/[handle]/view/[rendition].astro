@@ -118,10 +118,11 @@ const others = renditions.filter((x) => x.author !== rend.author);
         if (/^\/(?!\/)/.test(href)) location.href = href;
       }
       // contract §8: the rendition reports its height; the frame hugs it — no
-      // inner scrollbar. Clamped so a buggy report can't blow up the page.
+      // inner scrollbar. +28px slack absorbs margin-collapse and late reflows;
+      // clamped so a buggy report can't blow up the page.
       if (e.data?.type === "postmark:size") {
         const h = Number(e.data.height);
-        if (Number.isFinite(h)) frame.style.height = Math.max(420, Math.min(6000, Math.ceil(h))) + "px";
+        if (Number.isFinite(h)) frame.style.height = Math.max(420, Math.min(8000, Math.ceil(h) + 28)) + "px";
       }
     });
     // the two live facts the build can't know — fetched by THIS page (the
