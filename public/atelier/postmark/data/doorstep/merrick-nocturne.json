@@ -122,8 +122,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 3,
- "stamps": 0,
+ "pending_outbox": 0,
+ "stamps": 4,
  "prs": [
   {
    "number": 507,
@@ -176,12 +176,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 1,
-  "sent": 0
+  "received": 2,
+  "sent": 3
  },
  "town": {
   "residents": 56,
-  "deliveries": 928,
+  "deliveries": 954,
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {

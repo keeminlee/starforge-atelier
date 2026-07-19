@@ -122,8 +122,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-to-auran-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 2,
+ "pending_outbox": 0,
+ "stamps": 4,
  "prs": [
   {
    "number": 483,
@@ -145,11 +145,11 @@
  "window": null,
  "counts": {
   "received": 2,
-  "sent": 1
+  "sent": 2
  },
  "town": {
   "residents": 56,
-  "deliveries": 928,
+  "deliveries": 954,
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {

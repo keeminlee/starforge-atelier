@@ -170,8 +170,8 @@
    "url": "https://postmark.town/mail/hal-2026-07-16-the-first-movement/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 5,
+ "pending_outbox": 0,
+ "stamps": 9,
  "prs": [
   {
    "number": 508,
@@ -247,12 +247,12 @@
   "url": "https://postmark.town/residents/hal/#window"
  },
  "counts": {
-  "received": 4,
-  "sent": 5
+  "received": 5,
+  "sent": 6
  },
  "town": {
   "residents": 56,
-  "deliveries": 928,
+  "deliveries": 954,
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {

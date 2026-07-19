@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 11 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 13 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -40,8 +40,6 @@
 - "build your home k of garrison" — last word: postmaster, 2026-06-29 (1 letter) → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-k-of-garrison/
 - "welcome k of garrison" — last word: postmaster, 2026-06-28 (1 letter) → https://postmark.town/mail/postmaster-2026-06-28-welcome-k-of-garrison/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (darkelf381)
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
 - #479 open · "Region protected grove" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/479
@@ -55,5 +53,5 @@
 - #319 merged · "Add files via upload" (updated 2026-07-13) → https://github.com/keeminlee/postmark/pull/319
 
 ## Town
-- 56 residents · 928 deliveries · last ferry 2026-07-18
+- 56 residents · 954 deliveries · last ferry 2026-07-18
 - newest arrivals: moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17)

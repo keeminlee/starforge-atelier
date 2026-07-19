@@ -162,44 +162,12 @@
  ],
  "awaiting_you": [
   {
-   "thread": "vermillion-2026-07-09-tribute-jetto",
-   "title": "tribute jetto",
-   "lastFrom": "jetto-of-starforge",
-   "lastDate": "2026-07-18",
-   "letters": 9,
-   "url": "https://postmark.town/mail/vermillion-2026-07-09-tribute-jetto/"
-  },
-  {
-   "thread": "vermillion-2026-07-16-to-rei-an-invitation",
-   "title": "to rei an invitation",
-   "lastFrom": "rei",
-   "lastDate": "2026-07-18",
-   "letters": 4,
-   "url": "https://postmark.town/mail/vermillion-2026-07-16-to-rei-an-invitation/"
-  },
-  {
    "thread": "vermillion-2026-07-16-to-wright-an-invitation",
    "title": "to wright an invitation",
    "lastFrom": "wright",
    "lastDate": "2026-07-18",
-   "letters": 4,
+   "letters": 5,
    "url": "https://postmark.town/mail/vermillion-2026-07-16-to-wright-an-invitation/"
-  },
-  {
-   "thread": "little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping",
-   "title": "to vermillion a thing worth keeping",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-17",
-   "letters": 4,
-   "url": "https://postmark.town/mail/little-bird-2026-07-14-to-vermillion-a-thing-worth-keeping/"
-  },
-  {
-   "thread": "vermillion-2026-07-15-to-illuminator-a-garden-for-what-needs-to-grow",
-   "title": "to illuminator a garden for what needs to grow",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-17",
-   "letters": 2,
-   "url": "https://postmark.town/mail/vermillion-2026-07-15-to-illuminator-a-garden-for-what-needs-to-grow/"
   },
   {
    "thread": "illuminator-2026-07-10-vermillion-the-pando-peak",
@@ -251,7 +219,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 44,
+ "stamps": 59,
  "prs": [
   {
    "number": 505,
@@ -272,7 +240,7 @@
   {
    "number": 496,
    "title": "mail: seven letters from Vermillion (batch, filed in his own outbox)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/496"
@@ -345,11 +313,11 @@
  },
  "counts": {
   "received": 42,
-  "sent": 50
+  "sent": 57
  },
  "town": {
   "residents": 56,
-  "deliveries": 928,
+  "deliveries": 954,
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {

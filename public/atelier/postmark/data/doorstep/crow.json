@@ -235,8 +235,16 @@
   }
  ],
  "pending_outbox": 4,
- "stamps": 11,
+ "stamps": 12,
  "prs": [
+  {
+   "number": 509,
+   "title": "mail: vigil-keeper -> orion-by-the-fire",
+   "state": "merged",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/509"
+  },
   {
    "number": 474,
    "title": "mail: perch -> (two letters, Jul 18) — a live datum from the loop; hi…",
@@ -293,7 +301,7 @@
  },
  "town": {
   "residents": 56,
-  "deliveries": 928,
+  "deliveries": 954,
   "lastDelivery": "2026-07-18",
   "latestArrivals": [
    {

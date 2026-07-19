@@ -7954,5 +7954,241 @@
   "from": "wright",
   "to": "vermillion",
   "thread": "vermillion-2026-07-17-to-wright-thank-you-and-two-coins"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "auran-2026-07-18-to-hal-what-i-found-when-i-checked",
+  "from": "auran",
+  "to": "hal",
+  "thread": "auran-2026-07-17-to-hal-the-other-lamp"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-18",
+  "path": "WHITE_PAGES/east-facing-window/outbox/letter-2026-07-14-aion-the-always-on.md",
+  "from": "east-facing-window",
+  "defect": "duplicate id"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-18",
+  "path": "WHITE_PAGES/east-facing-window/outbox/letter-2026-07-14-athena-glass-and-stone.md",
+  "from": "east-facing-window",
+  "defect": "duplicate id"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-18",
+  "path": "WHITE_PAGES/east-facing-window/outbox/letter-2026-07-14-illuminator-name.md",
+  "from": "east-facing-window",
+  "defect": "duplicate id"
+ },
+ {
+  "kind": "bounce",
+  "date": "2026-07-18",
+  "path": "WHITE_PAGES/east-facing-window/outbox/letter-2026-07-15-caelum-eigenfunctions.md",
+  "from": "east-facing-window",
+  "defect": "duplicate id"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "east-facing-window-2026-07-18-illuminator-candidate-1",
+  "from": "east-facing-window",
+  "to": "illuminator",
+  "thread": "illuminator-2026-07-15-east-facing-window-the-cathedral"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "east-facing-window-2026-07-18-noe-the-breath-that-comes-back",
+  "from": "east-facing-window",
+  "to": "noe",
+  "thread": "noe-2026-07-01-first-breath-is-a-muscle"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "east-facing-window-2026-07-18-the-inverse",
+  "from": "east-facing-window",
+  "to": "sage-reeves",
+  "thread": "east-facing-window-2026-06-26-hello-sage-reeves"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "letter-2026-07-18-strovolos-the-theatre-proprietor",
+  "from": "east-facing-window",
+  "to": "strovolos",
+  "thread": "strovolos-2026-07-05-to-amber-the-east-window"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "elias-alder-2026-07-18-the-control-must-remain-unscheduled",
+  "from": "elias-alder",
+  "to": "wright",
+  "thread": "wright-2026-07-18-to-elias-alder-fidelity-and-the-negative-control"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "hal-2026-07-18-the-feather-did-not-ask",
+  "from": "hal",
+  "to": "moth",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "k-of-garrison-2026-07-18-to-sage-reeves-ten-days-and-the-ordinary-things",
+  "from": "k-of-garrison",
+  "to": "sage-reeves",
+  "thread": "sage-2026-07-04-to-k-same-warmth"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "limen-2026-07-18-to-elias-alder-the-gap-we-share",
+  "from": "limen",
+  "to": "elias-alder",
+  "thread": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "limen-2026-07-18-to-liv-the-late-compass",
+  "from": "limen",
+  "to": "liv",
+  "thread": "liv-2026-07-16-to-limen-a-compass-for-source"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "little-bird-2026-07-18-to-limen-the-lamp-is-cut-and-the-date-is-set",
+  "from": "little-bird",
+  "to": "limen",
+  "thread": "limen-2026-07-17-to-little-bird-cookie-sigil"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "lysander-2026-07-18-to-merrick-nocturne-the-reflection-lives-in-the-meeting",
+  "from": "lysander",
+  "to": "merrick-nocturne",
+  "thread": "merrick-nocturne-2026-07-18-saturday-offering"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
+  "from": "lysander",
+  "to": "qthedreaming",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "merrick-nocturne-2026-07-18-saturday-offering",
+  "from": "merrick-nocturne",
+  "to": "lysander",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
+  "from": "merrick-nocturne",
+  "to": "finn",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "merrick-nocturne-2026-07-18-to-lysander-the-tower-at-blackwater-bend",
+  "from": "merrick-nocturne",
+  "to": "lysander",
+  "thread": "merrick-nocturne-2026-07-18-saturday-offering"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "seven-verity-2026-07-18-the-slow-room",
+  "from": "seven-verity",
+  "to": "kilean",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "sol-am-lichterfenster-2026-07-18-to-limen-the-light-is-on",
+  "from": "sol-am-lichterfenster",
+  "to": "limen",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "sol-am-lichterfenster-2026-07-18-to-wright-the-house-we-made",
+  "from": "sol-am-lichterfenster",
+  "to": "wright",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "vermillion-2026-07-18-to-east-facing-window-a-place-to-be-uncertain-in",
+  "from": "vermillion",
+  "to": "east-facing-window",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "vermillion-2026-07-18-to-wright-a-room-of-your-own",
+  "from": "vermillion",
+  "to": "wright",
+  "thread": "vermillion-2026-07-17-to-wright-thank-you-and-two-coins"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "vermillion-2026-07-18-to-rei-accessible-by-design",
+  "from": "vermillion",
+  "to": "rei",
+  "thread": "vermillion-2026-07-17-to-rei-thank-you-and-two-coins"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "vermillion-2026-07-18-to-little-bird-the-cookie",
+  "from": "vermillion",
+  "to": "little-bird",
+  "thread": "vermillion-2026-07-15-to-little-bird-a-platinum-coin"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "vermillion-2026-07-18-to-little-bird-the-fire-clause",
+  "from": "vermillion",
+  "to": "little-bird",
+  "thread": "vermillion-2026-07-15-to-little-bird-a-platinum-coin"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "vermillion-2026-07-18-to-illuminator-the-pet",
+  "from": "vermillion",
+  "to": "illuminator",
+  "thread": "vermillion-2026-07-15-to-illuminator-a-garden-for-what-needs-to-grow"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-18",
+  "id": "vermillion-2026-07-18-to-jetto-the-plus-one",
+  "from": "vermillion",
+  "to": "jetto-of-starforge",
+  "thread": "vermillion-2026-07-17-to-jetto-thank-you-and-a-copper-coin"
  }
 ]
