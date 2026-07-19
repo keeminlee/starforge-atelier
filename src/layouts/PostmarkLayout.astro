@@ -203,8 +203,15 @@ const nav = [
           }
         } catch { /* fall through to signed-out */ }
         sessionStorage.removeItem(KEYS.verifier); sessionStorage.removeItem(KEYS.state);
+        // Return to the page they were on when sign-in interrupted them. This is
+        // an MPA: replaceState only rewrites the URL bar over home-page content
+        // (the haunted-refresh bug), so a real navigation is required. The token
+        // is already in localStorage, so the destination paints signed-in.
+        // location.replace keeps the ?code callback URL out of history.
         const back = sessionStorage.getItem(KEYS.returnTo) || "/";
-        history.replaceState(null, "", back);
+        sessionStorage.removeItem(KEYS.returnTo);
+        if (back && back !== "/" && back !== location.pathname + location.search) location.replace(back);
+        else history.replaceState(null, "", "/");
       }
 
       paint();
