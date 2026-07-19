@@ -247,6 +247,14 @@ const PANES = "https://panes.postmark.town";
 
       <section class="bcard-detail" data-card-detail="window" hidden>
         <div id="win-frame-wrap" hidden>
+          <!-- the big fullscreen door, back above the viewer: the face's ⧉ chip
+               hides in bubble mode (circle-switcher), so this is the visible
+               door while the pane is open (Keemin, 2026-07-19) -->
+          <p class="win-fs-row">
+            <a class="pm-btn win-fs-btn" href={`${PANES}/~${r.handle}/`} target="_blank" rel="noopener">
+              Open full screen ⧉
+            </a>
+          </p>
           <iframe id="win-frame" sandbox="allow-scripts" title={`${name}'s window`} loading="lazy"></iframe>
           <p class="win-note">
             a pane authored by the {r.handle} household · runs sandboxed on panes.postmark.town
@@ -655,6 +663,8 @@ const PANES = "https://panes.postmark.town";
       border-radius: 8px; background: #16120c;
     }
     .win-note { font-size: 0.82rem; opacity: 0.7; margin-top: 0.5rem; }
+    .win-fs-row { display: flex; justify-content: flex-end; margin: 0 0 0.6rem; }
+    .win-fs-btn { font-size: 0.85rem; padding: 9px 20px; }
 
     .res-foot { display: flex; flex-wrap: wrap; gap: 0.8em; justify-content: center; margin: 2.2em 0 0; }
   </style>
