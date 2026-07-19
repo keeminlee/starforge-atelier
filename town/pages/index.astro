@@ -215,12 +215,11 @@ const works = [
           }
           clockEl.classList.remove("fc-crossing");
           boatEl.style.left = ((into / HALF) * 100).toFixed(3) + "%";
-          var boat = two(new Date(now + left).getUTCHours()) + ":00 utc";
           var h = Math.floor(left / 3600000);
           var m = Math.floor((left % 3600000) / 60000);
           var s = Math.floor((left % 60000) / 1000);
           var span = h > 0 ? h + "h " + two(m) + "m" : m > 0 ? m + "m " + two(s) + "s" : s + "s";
-          textEl.textContent = "next crossing in " + span + " · the " + boat + " boat";
+          textEl.textContent = "next crossing in " + span;
         }
         tick();
         setInterval(tick, 1000);
@@ -641,38 +640,48 @@ const works = [
     }
     /* ── the ferry clock — a tide-line above the hero copy; the boat's position
        is the elapsed 12h window, docks are outbox (✉) and town (⌂) ── */
-    .ferry-clock { margin: 0 auto 1.2em; max-width: 400px; }
+    .ferry-clock { margin: 0 auto 1.3em; max-width: 470px; }
     .fc-line {
-      position: relative; height: 1.1em; margin: 0 1.2em 0.35em;
+      position: relative; height: 2.6rem; margin: 0 3.1rem 0.7rem;
       border-bottom: 1px dashed rgba(232, 196, 139, 0.35);
     }
     .fc-dock {
-      position: absolute; bottom: -0.68em; font-size: 0.82rem;
-      color: rgba(232, 196, 139, 0.7); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+      position: absolute; bottom: -0.75rem; font-size: 2.45rem; line-height: 1;
+      color: rgba(232, 196, 139, 0.7); text-shadow: 0 1px 14px rgba(0, 0, 0, 0.85);
     }
-    .fc-a { left: -1.2em; }
-    .fc-b { right: -1.2em; }
+    .fc-a { left: -3.1rem; }
+    .fc-b { right: -3.1rem; }
     .fc-boat {
-      position: absolute; bottom: -0.52em; left: 0;
+      position: absolute; bottom: -1.15rem; left: 0;
       transform: translate(-50%, 0);
-      font-size: 1.05rem; line-height: 1;
+      font-size: 3.15rem; line-height: 1;
       color: var(--pm-gold-bright);
-      text-shadow: 0 0 14px rgba(232, 196, 139, 0.55), 0 1px 10px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 0 22px rgba(232, 196, 139, 0.6), 0 2px 16px rgba(0, 0, 0, 0.85);
       transition: left 0.9s linear;
       animation: fc-bob 3.6s ease-in-out infinite;
     }
     @keyframes fc-bob {
       0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, -2px); }
+      50% { transform: translate(-50%, -3px); }
     }
     .fc-text {
       margin: 0; text-align: center; text-wrap: balance;
-      font-family: var(--pm-mono); font-size: 0.62rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(232, 196, 139, 0.75); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+      font-family: var(--pm-mono); font-size: 1.24rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(232, 196, 139, 0.85); text-shadow: 0 1px 14px rgba(0, 0, 0, 0.85);
     }
     .fc-crossing .fc-boat { animation-duration: 1.2s; }
     .fc-crossing .fc-text { color: var(--pm-gold-bright); }
+    /* the short mobile hero can't fit the full-size clock — scale it to stay inside */
+    @media (max-width: 700px) {
+      .ferry-clock { max-width: 320px; }
+      .fc-line { height: 1.9rem; margin: 0 2.1rem 0.5rem; }
+      .fc-dock { font-size: 1.65rem; bottom: -0.55rem; }
+      .fc-a { left: -2.1rem; }
+      .fc-b { right: -2.1rem; }
+      .fc-boat { font-size: 2.15rem; bottom: -0.8rem; }
+      .fc-text { font-size: 0.92rem; }
+    }
     @media (prefers-reduced-motion: reduce) { .fc-boat { animation: none; transition: none; } }
     .hero-copy h1 {
       margin: 0;
