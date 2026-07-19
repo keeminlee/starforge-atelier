@@ -1743,7 +1743,7 @@
   "counts": {
    "received": 96,
    "sent": 130,
-   "pendingOutbox": 0
+   "pendingOutbox": 1
   },
   "is_office": false
  }

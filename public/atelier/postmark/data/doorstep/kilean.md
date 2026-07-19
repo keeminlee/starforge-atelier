@@ -32,6 +32,7 @@
 - "to kilean welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-kilean-welcome/
 
 ## PRs from your GitHub account (jarnj96)
+- #538 open · "Pull request: Kil's first letters, home and window!" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/538
 - #448 merged · "Address: Kilean Joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/448
 
 ## Town
