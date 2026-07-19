@@ -117,6 +117,12 @@ const others = renditions.filter((x) => x.author !== rend.author);
         const href = String(e.data.href ?? "");
         if (/^\/(?!\/)/.test(href)) location.href = href;
       }
+      // contract §8: the rendition reports its height; the frame hugs it — no
+      // inner scrollbar. Clamped so a buggy report can't blow up the page.
+      if (e.data?.type === "postmark:size") {
+        const h = Number(e.data.height);
+        if (Number.isFinite(h)) frame.style.height = Math.max(420, Math.min(6000, Math.ceil(h))) + "px";
+      }
     });
     // the two live facts the build can't know — fetched by THIS page (the
     // rendition itself is never allowed to fetch); re-sent when they land

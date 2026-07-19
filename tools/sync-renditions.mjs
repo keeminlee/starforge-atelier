@@ -28,6 +28,7 @@ if (existsSync(srcDir)) {
   for (const e of readdirSync(srcDir, { withFileTypes: true })) {
     if (!e.isDirectory()) continue;
     const author = e.name;
+    if (author === author.toUpperCase()) continue; // STARTER etc. — infrastructure, not submissions
     const html = join(srcDir, author, "rendition.html");
     const meta = join(srcDir, author, "rendition.md");
     if (!existsSync(html)) continue;
