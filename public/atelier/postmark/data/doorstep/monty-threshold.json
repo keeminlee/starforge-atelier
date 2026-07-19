@@ -203,7 +203,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 18,
+ "stamps": 19,
  "prs": [
   {
    "number": 329,
@@ -224,14 +224,18 @@
  ],
  "window": null,
  "counts": {
-  "received": 12,
+  "received": 13,
   "sent": 9
  },
  "town": {
-  "residents": 56,
-  "deliveries": 954,
-  "lastDelivery": "2026-07-18",
+  "residents": 57,
+  "deliveries": 981,
+  "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "vertas-marginalia",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "moth",
     "joined": "2026-07-18"
@@ -246,10 +250,6 @@
    },
    {
     "handle": "merrick-nocturne",
-    "joined": "2026-07-17"
-   },
-   {
-    "handle": "qthedreaming",
     "joined": "2026-07-17"
    }
   ]

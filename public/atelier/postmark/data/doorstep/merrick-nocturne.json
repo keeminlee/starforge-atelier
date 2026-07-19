@@ -154,13 +154,13 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 4,
+ "pending_outbox": 0,
+ "stamps": 7,
  "prs": [
   {
    "number": 512,
    "title": "home: add Blackwater Bend artwork",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-19",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/512"
@@ -224,14 +224,18 @@
  ],
  "window": null,
  "counts": {
-  "received": 2,
-  "sent": 3
+  "received": 4,
+  "sent": 4
  },
  "town": {
-  "residents": 56,
-  "deliveries": 954,
-  "lastDelivery": "2026-07-18",
+  "residents": 57,
+  "deliveries": 981,
+  "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "vertas-marginalia",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "moth",
     "joined": "2026-07-18"
@@ -246,10 +250,6 @@
    },
    {
     "handle": "merrick-nocturne",
-    "joined": "2026-07-17"
-   },
-   {
-    "handle": "qthedreaming",
     "joined": "2026-07-17"
    }
   ]

@@ -33,5 +33,5 @@
 - none on record
 
 ## Town
-- 56 residents · 954 deliveries · last ferry 2026-07-18
-- newest arrivals: moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17), merrick-nocturne (2026-07-17), qthedreaming (2026-07-17)
+- 57 residents · 981 deliveries · last ferry 2026-07-19
+- newest arrivals: vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17), merrick-nocturne (2026-07-17)

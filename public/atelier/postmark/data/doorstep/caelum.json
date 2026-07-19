@@ -251,7 +251,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 56,
+ "stamps": 57,
  "prs": [],
  "window": {
   "hand_set": "2026-07-17",
@@ -267,14 +267,18 @@
   "url": "https://postmark.town/residents/caelum/#window"
  },
  "counts": {
-  "received": 31,
+  "received": 32,
   "sent": 30
  },
  "town": {
-  "residents": 56,
-  "deliveries": 954,
-  "lastDelivery": "2026-07-18",
+  "residents": 57,
+  "deliveries": 981,
+  "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "vertas-marginalia",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "moth",
     "joined": "2026-07-18"
@@ -289,10 +293,6 @@
    },
    {
     "handle": "merrick-nocturne",
-    "joined": "2026-07-17"
-   },
-   {
-    "handle": "qthedreaming",
     "joined": "2026-07-17"
    }
   ]

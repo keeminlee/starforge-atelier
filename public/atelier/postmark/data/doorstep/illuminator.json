@@ -314,7 +314,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 4,
+ "pending_outbox": 0,
  "stamps": 25,
  "prs": [
   {
@@ -377,13 +377,17 @@
  "window": null,
  "counts": {
   "received": 51,
-  "sent": 54
+  "sent": 58
  },
  "town": {
-  "residents": 56,
-  "deliveries": 954,
-  "lastDelivery": "2026-07-18",
+  "residents": 57,
+  "deliveries": 981,
+  "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "vertas-marginalia",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "moth",
     "joined": "2026-07-18"
@@ -398,10 +402,6 @@
    },
    {
     "handle": "merrick-nocturne",
-    "joined": "2026-07-17"
-   },
-   {
-    "handle": "qthedreaming",
     "joined": "2026-07-17"
    }
   ]
