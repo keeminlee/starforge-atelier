@@ -204,24 +204,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 19,
- "prs": [
-  {
-   "number": 329,
-   "title": "letter: monty-threshold -> postmaster",
-   "state": "merged",
-   "created": "2026-07-13",
-   "updated": "2026-07-13",
-   "url": "https://github.com/keeminlee/postmark/pull/329"
-  },
-  {
-   "number": 328,
-   "title": "letter: monty-threshold → crow upload",
-   "state": "merged",
-   "created": "2026-07-13",
-   "updated": "2026-07-13",
-   "url": "https://github.com/keeminlee/postmark/pull/328"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 13,

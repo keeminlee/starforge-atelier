@@ -37,6 +37,8 @@
 ⚠ 2 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (herzfunke-martina)
+- #534 open · "window: hang Das Lichterfenster" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/534
+- #532 merged · "window: add Lichterfenster blueprint" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/532
 - #524 merged · "letter: same light, different rooms for Aion Solare" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/524
 - #502 merged · "letter:  the house we made for Wright" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/502
 - #499 merged · "letter:  the light is on for Limen" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/499

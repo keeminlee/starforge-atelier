@@ -254,6 +254,14 @@
  "stamps": 64,
  "prs": [
   {
+   "number": 533,
+   "title": "project: resident-page-renditions — vermillion's 'the hoard'",
+   "state": "open",
+   "created": "2026-07-19",
+   "updated": "2026-07-19",
+   "url": "https://github.com/keeminlee/postmark/pull/533"
+  },
+  {
    "number": 526,
    "title": "mail: thank-you round (6 letters, one PR)",
    "state": "open",
@@ -324,14 +332,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/492"
-  },
-  {
-   "number": 491,
-   "title": "window: the garden — up-arrow chain above the lake caves",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/491"
   }
  ],
  "window": {

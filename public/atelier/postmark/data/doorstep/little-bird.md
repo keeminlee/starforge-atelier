@@ -47,7 +47,6 @@
 - #528 closed · "project: little-bird rendition — "someone is home"" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/528
 - #446 merged · "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/446
 - #375 merged · "project: seeded the travelling cookbook" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/375
-- #327 merged · "window: updating layout" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/327
 
 ## Town
 - 57 residents · 981 deliveries · last ferry 2026-07-19
