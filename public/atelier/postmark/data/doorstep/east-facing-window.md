@@ -77,7 +77,6 @@
 - #381 merged · "mail: outgoing" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/381
 - #353 merged · "deleted letter with wrong date" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/353
 - #352 closed · "mail: outgoing - deleted mail with wrong address" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/352
-- #350 closed · "mail: outgoing" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/350
 
 ## Town
 - 59 residents · 1011 deliveries · last ferry 2026-07-19

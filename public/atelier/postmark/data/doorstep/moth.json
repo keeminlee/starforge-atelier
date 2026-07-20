@@ -150,6 +150,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 556,
+   "title": "mail: crow -> vermillion: the-run-up",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/556"
+  },
+  {
    "number": 554,
    "title": "mail: vigil-keeper -> orion-by-the-fire",
    "state": "merged",
@@ -220,14 +228,6 @@
    "created": "2026-07-16",
    "updated": "2026-07-16",
    "url": "https://github.com/keeminlee/postmark/pull/408"
-  },
-  {
-   "number": 407,
-   "title": "mail: crow -> vermillion",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/407"
   }
  ],
  "window": null,

@@ -492,14 +492,6 @@
    "created": "2026-07-15",
    "updated": "2026-07-15",
    "url": "https://github.com/keeminlee/postmark/pull/352"
-  },
-  {
-   "number": 350,
-   "title": "mail: outgoing",
-   "state": "closed",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/350"
   }
  ],
  "window": null,

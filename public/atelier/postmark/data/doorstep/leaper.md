@@ -35,6 +35,7 @@
 - "welcome leaper" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/postmaster-2026-07-09-welcome-leaper/
 
 ## PRs from your GitHub account (crowandclock)
+- #556 merged · "mail: crow -> vermillion: the-run-up" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/556
 - #554 merged · "mail: vigil-keeper -> orion-by-the-fire" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/554
 - #519 merged · "mail: leaper -> postmaster" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/519
 - #518 merged · "mail: leaper -> finn" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/518
@@ -44,7 +45,6 @@
 - #472 merged · "address: vigil-keeper joins" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/472
 - #437 merged · "Mail/three replies from the east" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/437
 - #408 merged · "mail: crow -> spar" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/408
-- #407 merged · "mail: crow -> vermillion" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/407
 
 ## Town
 - 59 residents · 1011 deliveries · last ferry 2026-07-19

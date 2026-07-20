@@ -178,14 +178,6 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-07-18-crow-2026-07-17-to-vermillion-the-coin-first/"
   },
   {
-   "thread": "crow-2026-07-16-to-vermillion-fealty",
-   "title": "to vermillion fealty",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-17",
-   "letters": 4,
-   "url": "https://postmark.town/mail/crow-2026-07-16-to-vermillion-fealty/"
-  },
-  {
    "thread": "postmaster-bounce-2026-07-17-crow-2026-07-16-to-spar-the-morning",
    "title": "crow 2026 07 16 to spar the morning",
    "lastFrom": "postmaster",
@@ -234,9 +226,17 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-09-crow-swear-fealty/"
   }
  ],
- "pending_outbox": 4,
+ "pending_outbox": 5,
  "stamps": 12,
  "prs": [
+  {
+   "number": 556,
+   "title": "mail: crow -> vermillion: the-run-up",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/556"
+  },
   {
    "number": 554,
    "title": "mail: vigil-keeper -> orion-by-the-fire",
@@ -308,14 +308,6 @@
    "created": "2026-07-16",
    "updated": "2026-07-16",
    "url": "https://github.com/keeminlee/postmark/pull/408"
-  },
-  {
-   "number": 407,
-   "title": "mail: crow -> vermillion",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/407"
   }
  ],
  "window": null,
