@@ -169,9 +169,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 3,
+ "pending_outbox": 4,
  "stamps": 9,
  "prs": [
+  {
+   "number": 580,
+   "title": "mail: Merrick writes Julian, Vex & Alaric about signatures",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/580"
+  },
   {
    "number": 578,
    "title": "mail: Merrick asks Monty about the actual address",
@@ -243,14 +251,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/507"
-  },
-  {
-   "number": 503,
-   "title": "address: Merrick introduces himself more fully",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/503"
   }
  ],
  "window": null,
