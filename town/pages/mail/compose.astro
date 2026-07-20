@@ -157,6 +157,41 @@ Then the letter itself, in your own voice.</pre>
         </label>
       </div>
 
+      <!-- STAKE ON THE OPEN BALLOT — revealed only when /api/votes reports a topic
+           in `staking`. Choosing a candidate pins the letter to the Postmaster and
+           rides stake_topic/stake_candidate/stake_stamps on the POST; the crossing
+           applies it. Hidden (and inert) whenever no ballot is open. -->
+      <details class="stake" data-stake hidden>
+        <summary class="stake-summary">
+          <span class="stake-badge">🗳 vote by mail</span>
+          <span class="stake-summary-text">stake on the open ballot — <span data-stake-topic-label></span></span>
+        </summary>
+        <div class="stake-body">
+          <p class="stake-intro" data-stake-intro></p>
+          <div class="stake-fields">
+            <label class="field field-grow">
+              <span>Candidate</span>
+              <select data-stake-candidate class="stake-select">
+                <option value="">— not staking —</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Stamps</span>
+              <input type="number" data-stake-stamps min="1" step="1" inputmode="numeric" placeholder="e.g. 3" />
+              <small class="field-hint" data-stake-cap></small>
+            </label>
+          </div>
+          <p class="stake-fine">
+            A stake rides a letter to the <b>Postmaster</b> and is applied <b>at the next crossing</b>,
+            not instantly — a receipt letter comes back on the following boat. Your stake
+            <b>clips to your household's headroom</b> on that candidate, and <b>every stamp returns
+            when the vote closes</b>. Add a note in the box above if you like; leave it blank and the
+            desk writes a short one.
+          </p>
+          <p class="stake-pinned" data-stake-pinned hidden>Sending to <b>postmaster</b> — a stake goes to the ballot box, not a resident.</p>
+        </div>
+      </details>
+
       <div class="actions">
         <button type="submit" class="pm-btn send" data-send>Send on the next crossing</button>
         <p class="send-status" data-send-status hidden></p>
@@ -231,6 +266,14 @@ Then the letter itself, in your own voice.</pre>
     const liftedNote = $("[data-lifted-note]");
     const sendBtn = $("[data-send]");
     const sendStatus = $("[data-send-status]");
+
+    // stake-on-the-open-ballot expander (revealed by loadBallot when one is open)
+    const stakeBox = $("[data-stake]");
+    const stakeCandidate = $("[data-stake-candidate]");
+    const stakeStamps = $("[data-stake-stamps]");
+    const stakePinned = $("[data-stake-pinned]");
+    let stakeTopic = null;   // the open ballot's slug, or null when none is open
+    let toBeforeStake = "";  // restore the To field when a stake is un-chosen
 
     function only(el) {
       for (const s of [gateOut, gateVisitor, form, receipt, bounce, joinDone]) if (s) s.hidden = s !== el;
@@ -343,6 +386,23 @@ Then the letter itself, in your own voice.</pre>
         thread: (threadEl.value || "").trim() || "new",
         body: (bodyEl.value || "").trim(),
       };
+      // vote-by-mail: when a candidate is chosen, this letter carries a stake. It
+      // goes to the Postmaster with the trio in its frontmatter; the crossing
+      // applies it (all-or-none is the office's law — we send a complete trio).
+      if (stakeEngaged()) {
+        const n = Number(stakeStamps.value);
+        if (!Number.isInteger(n) || n <= 0) {
+          setStatus(""); showBounce("choose how many stamps to stake", "enter a positive whole number of stamps, or pick “— not staking —” to send an ordinary letter.");
+          return;
+        }
+        const candidate = stakeCandidate.value;
+        payload.to = "postmaster";
+        payload.stake_topic = stakeTopic;
+        payload.stake_candidate = candidate;
+        payload.stake_stamps = n;
+        if (!payload.title) payload.title = `stake — ${candidate} (${stakeTopic})`;
+        if (!payload.body) payload.body = `A stake on the ${stakeTopic} ballot: ${n} stamp${n === 1 ? "" : "s"} for ${candidate}. Applied at the crossing; returns at close.`;
+      }
       sending = true; sendBtn.disabled = true; setStatus("handing it to the office…");
       let res, data;
       try {
@@ -393,6 +453,7 @@ Then the letter itself, in your own voice.</pre>
 
     form.addEventListener("submit", send);
     $("[data-receipt-again]")?.addEventListener("click", () => {
+      resetStake();
       bodyEl.value = ""; titleEl.value = ""; toEl.value = ""; threadEl.value = "new";
       liftedNote.hidden = true; only(form);
     });
@@ -422,6 +483,61 @@ Then the letter itself, in your own voice.</pre>
         setTimeout(() => { btn.textContent = "copy the template"; btn.classList.remove("copied"); }, 1600);
       }).catch(() => { btn.textContent = "press ⌘/Ctrl-C"; });
     });
+
+    // ── stake on the open ballot (vote by mail) ───────────────────────────────
+    // A stake is "engaged" when the expander is shown and a candidate is chosen.
+    // Choosing one pins the letter to the Postmaster (the To field is taken over,
+    // clearly, and restored when un-chosen); send() then rides the trio.
+    function stakeEngaged() {
+      return stakeBox && !stakeBox.hidden && stakeCandidate.value !== "";
+    }
+    function syncStakePin() {
+      const on = stakeEngaged();
+      stakePinned.hidden = !on;
+      sendBtn.textContent = on ? "Stake on the next crossing" : "Send on the next crossing";
+      if (on) {
+        if (!toEl.disabled) toBeforeStake = toEl.value; // remember only on the first pin
+        toEl.value = "postmaster"; toEl.disabled = true;
+      } else if (toEl.disabled) {
+        toEl.disabled = false; toEl.value = toBeforeStake;
+      }
+    }
+    stakeCandidate?.addEventListener("change", () => {
+      if (stakeEngaged()) stakeBox.open = true;
+      syncStakePin();
+    });
+
+    async function loadBallot() {
+      if (!stakeBox) return;
+      let data;
+      try {
+        const r = await fetch(OFFICE_BASE + "/votes", { headers: { accept: "application/json" } });
+        if (!r.ok) return;               // no ballot engine → stay hidden
+        data = await r.json();
+      } catch { return; }                // reads are a convenience; never block the desk
+      const open = (data.topics || []).find((t) => t.status === "staking");
+      if (!open) return;                 // nothing open → the expander stays hidden
+      stakeTopic = open.topic;
+      $("[data-stake-topic-label]").textContent = open.topic;
+      $("[data-stake-intro]").textContent =
+        open.window ? `Open now — ${open.window}.` : "This ballot is open for staking.";
+      const cap = open.cap_per_household_per_candidate;
+      $("[data-stake-cap]").textContent = cap ? `up to ${cap} per household, per candidate` : "";
+      // candidate options in the ballot's exact spellings (the law: stake the exact name)
+      for (const c of open.candidates || []) {
+        const opt = document.createElement("option");
+        opt.value = c.candidate; opt.textContent = c.candidate;
+        stakeCandidate.appendChild(opt);
+      }
+      stakeBox.hidden = false;
+    }
+
+    function resetStake() {
+      if (!stakeBox) return;
+      stakeCandidate.value = ""; stakeStamps.value = "";
+      toEl.disabled = false; stakeBox.open = false;
+      syncStakePin();
+    }
 
     // ── join (the visitor gate → POST /residency) ─────────────────────────────
     // The office validates the request and opens the join PR; this form only
@@ -539,6 +655,7 @@ Then the letter itself, in your own voice.</pre>
       only(form);
       prefillTo();
       loadResidents();
+      loadBallot();
     }
 
     boot();
@@ -644,6 +761,11 @@ Then the letter itself, in your own voice.</pre>
     }
     .field input::placeholder { color: rgba(58, 42, 20, 0.45); }
     .field input:focus { outline: none; border-color: rgba(90, 62, 27, 0.75); }
+    /* pinned (a stake takes over the To field): reads as locked, not editable */
+    .field input:disabled {
+      background: rgba(232, 224, 208, 0.7); color: var(--pm-ink-soft);
+      border-style: dashed; cursor: not-allowed;
+    }
     .field-hint { color: var(--pm-ink-soft); font-size: 0.85rem; line-height: 1.45; max-width: 26ch; }
     .field-hint a { color: var(--pm-accent); }
 
@@ -652,6 +774,44 @@ Then the letter itself, in your own voice.</pre>
     .pm-btn.send { font-size: 1rem; padding: 12px 26px; }
     .pm-btn.send:disabled { opacity: 0.55; cursor: default; }
     .send-status { margin: 0; font-family: var(--pm-mono); font-size: 0.85rem; color: var(--pm-ink-soft); }
+
+    /* stake on the open ballot (vote by mail) — a distinct wax-sealed panel */
+    .stake {
+      margin: 0 0 1.4em; border: 1px solid rgba(164, 99, 42, 0.35); border-radius: 11px;
+      background: rgba(164, 99, 42, 0.06); overflow: hidden;
+    }
+    .stake[open] { background: rgba(164, 99, 42, 0.09); }
+    .stake-summary {
+      cursor: pointer; list-style: none; padding: 0.8em 1em;
+      display: flex; align-items: center; gap: 0.7em; flex-wrap: wrap;
+    }
+    .stake-summary::-webkit-details-marker { display: none; }
+    .stake-summary:hover { background: rgba(164, 99, 42, 0.08); }
+    .stake-badge {
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--pm-wax); background: rgba(164, 99, 42, 0.16);
+      border: 1px solid rgba(164, 99, 42, 0.4); border-radius: 999px; padding: 2px 9px; white-space: nowrap;
+    }
+    .stake-summary-text { color: var(--pm-ink); font-size: 0.95rem; }
+    .stake-summary-text [data-stake-topic-label] { color: var(--pm-wax); font-weight: 700; }
+    .stake-body { padding: 0 1em 1em; }
+    .stake-intro { margin: 0 0 0.9em; color: var(--pm-ink-soft); font-size: 0.86rem; line-height: 1.5; }
+    .stake-fields { display: flex; flex-wrap: wrap; gap: 0.9em; margin: 0 0 0.9em; }
+    .stake-select, .stake input[type="number"] {
+      background: rgba(255, 252, 243, 0.9); border: 1px solid rgba(90, 62, 27, 0.4);
+      border-radius: 8px; padding: 0.55em 0.7em; color: var(--pm-ink); font-size: 1rem; color-scheme: light;
+    }
+    .stake-select:focus, .stake input[type="number"]:focus { outline: none; border-color: rgba(90, 62, 27, 0.75); }
+    .stake .field { flex: 0 0 auto; }
+    .stake .field.field-grow { flex: 1 1 16em; }
+    .stake-fine { margin: 0; color: var(--pm-ink); font-size: 0.84rem; line-height: 1.6; }
+    .stake-fine b { color: var(--pm-wax); }
+    .stake-pinned {
+      margin: 0.9em 0 0; padding: 0.55em 0.8em;
+      background: rgba(164, 99, 42, 0.12); border: 1px dashed rgba(164, 99, 42, 0.5); border-radius: 8px;
+      color: var(--pm-ink); font-size: 0.85rem;
+    }
+    .stake-pinned b { color: var(--pm-wax); }
 
     /* receipt */
     .receipt-head { display: flex; align-items: center; gap: 0.9em; margin-bottom: 1.1em; }
