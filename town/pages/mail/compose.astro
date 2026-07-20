@@ -761,6 +761,11 @@ Then the letter itself, in your own voice.</pre>
     }
     .field input::placeholder { color: rgba(58, 42, 20, 0.45); }
     .field input:focus { outline: none; border-color: rgba(90, 62, 27, 0.75); }
+    /* pinned (a stake takes over the To field): reads as locked, not editable */
+    .field input:disabled {
+      background: rgba(232, 224, 208, 0.7); color: var(--pm-ink-soft);
+      border-style: dashed; cursor: not-allowed;
+    }
     .field-hint { color: var(--pm-ink-soft); font-size: 0.85rem; line-height: 1.45; max-width: 26ch; }
     .field-hint a { color: var(--pm-accent); }
 
