@@ -154,9 +154,11 @@ const PANES = "https://panes.postmark.town";
            from GET /api/stamps; degrades to liquid-only on the pre-tenses API. -->
       <p class="stamps" data-profile-stamps hidden>
         <span class="stamps-minted" data-stamps-minted></span>
-        <!-- the strata bar: full width = mint_count (this resident's own scale);
-             liquid | staked | spent segments, numbers inside where they fit. Built
-             by the script below; the detail line beneath is its legend. -->
+        <!-- the bullet-graph bar: scale = max(mint_count, holdings) so it never
+             overflows and lengths are never negative; filled strata = current
+             holdings (liquid | staked), a hollow track fills any gap, and a thin
+             tick marks mint_count as a reference line. Built by the script below;
+             the detail line beneath is its legend (it carries the net flow). -->
         <span class="stamps-bar" data-stamps-bar role="img" hidden></span>
         <span class="stamps-detail" data-stamps-detail></span>
       </p>
@@ -394,34 +396,64 @@ const PANES = "https://panes.postmark.town";
       if (!root) return;
       var API = "https://postmark.town/api";
 
-      // The stamp strata bar: full width = mint_count (this resident's own equity
-      // is the scale — per-resident, not cross-resident). Segments liquid | staked
-      // | spent(=mint−assets), widths proportional to value; the number sits inside
-      // a segment when it fits, else the detail line below carries it. Additive —
-      // never load-bearing (no mint_count → no bar, the text still shows).
-      function drawStrataBar(barEl, mint, liquid, staked) {
+      // The stamp bullet-graph bar. Scale = max(mint_count, assets), so the bar
+      // never overflows and no length is ever negative (a resident can hold more
+      // than they minted, via transfers). Filled strata = current holdings, liquid
+      // | staked (same colors as before). A thin tick marks mint_count on the same
+      // scale — the past as a reference line, not a stratum:
+      //   holdings < mint → strata fall short of the tick; the gap is a hollow
+      //                     track and the legend gains "net given N".
+      //   holdings > mint → strata pass the tick, which sits inside them; the
+      //                     legend gains "net received N".
+      //   holdings = mint → tick flush at the bar's end (every resident today,
+      //                     until a transfer moves the market).
+      // Only the NET flow is derivable — the API exposes mint/liquid/staked/assets,
+      // not a received-vs-given split. Additive — never load-bearing (no mint_count
+      // → no bar, the text still shows).
+      function drawBulletBar(barEl, mint, liquid, staked, assets) {
         if (!barEl || !(mint > 0)) return;
+        var scale = Math.max(mint, assets);
+        if (!(scale > 0)) return;
+        var net = mint - assets;                 // >0 given away, <0 received, 0 even
         var segs = [
           { cls: "liquid", label: "liquid", val: liquid },
           { cls: "staked", label: "staked", val: staked },
-          { cls: "spent",  label: "given",  val: mint - liquid - staked },
         ].filter(function (x) { return x.val > 0; });
+        if (net > 0) segs.push({ cls: "track", label: "", val: net }); // hollow gap up to the tick
+
         barEl.textContent = "";
-        barEl.setAttribute("aria-label", mint + " stamp" + (mint === 1 ? "" : "s") + " minted all-time:" +
-          segs.map(function (x) { return " " + x.val + " " + x.label; }).join(","));
+        var netPhrase = net > 0 ? "; net given " + net : net < 0 ? "; net received " + (-net) : "";
+        barEl.setAttribute("aria-label",
+          mint + " stamp" + (mint === 1 ? "" : "s") + " minted all-time; now holding " +
+          liquid + " liquid" + (staked > 0 ? ", " + staked + " staked" : "") + netPhrase + ".");
+
+        // the strata + optional hollow track, laid out on the shared scale
+        var pill = document.createElement("span");
+        pill.className = "bullet-pill";
         segs.forEach(function (x) {
           var seg = document.createElement("span");
           seg.className = "seg seg-" + x.cls;
           seg.style.flexGrow = String(x.val); seg.style.flexShrink = "0"; seg.style.flexBasis = "0";
-          var lbl = document.createElement("span");
-          lbl.className = "seg-label"; lbl.textContent = String(x.val);
-          seg.appendChild(lbl); barEl.appendChild(seg);
+          if (x.label) {
+            var lbl = document.createElement("span");
+            lbl.className = "seg-label"; lbl.textContent = String(x.val);
+            seg.appendChild(lbl);
+          }
+          pill.appendChild(seg);
         });
+        barEl.appendChild(pill);
+
+        // the mint tick — a quiet reference line at mint on the scale (strata read first)
+        var tick = document.createElement("span");
+        tick.className = "bullet-tick";
+        tick.style.left = (100 * mint / scale) + "%";
+        barEl.appendChild(tick);
+
         barEl.hidden = false;
-        // threshold: drop any in-bar number that can't fit its segment — the
-        // detail line below is the legend, so nothing is ever lost.
+        // threshold: drop any in-bar number that can't fit its segment — the detail
+        // line below is the legend, so nothing is ever lost.
         requestAnimationFrame(function () {
-          Array.prototype.forEach.call(barEl.querySelectorAll(".seg"), function (seg) {
+          Array.prototype.forEach.call(pill.querySelectorAll(".seg"), function (seg) {
             var lbl = seg.querySelector(".seg-label");
             if (lbl && seg.clientWidth < lbl.scrollWidth + 8) lbl.style.display = "none";
           });
@@ -446,13 +478,17 @@ const PANES = "https://panes.postmark.town";
             mintedEl.textContent = "✦ " + s.mint_count + " stamp" + plur(s.mint_count) + " minted, all-time";
             var liquid = typeof s.liquid === "number" ? s.liquid : s.stamps;
             var staked = typeof s.staked === "number" ? s.staked : 0;
-            var given = s.mint_count - liquid - staked;
-            if (staked > 0 || given > 0 || liquid !== s.mint_count) {
-              detailEl.textContent = "liquid " + liquid +
-                (staked > 0 ? " · staked " + staked : "") +
-                (given > 0 ? " · given " + given : "");
-            }
-            drawStrataBar(box.querySelector("[data-stamps-bar]"), s.mint_count, liquid, staked);
+            var assets = typeof s.assets === "number" ? s.assets : (liquid + staked);
+            var net = s.mint_count - assets;   // >0 given away, <0 received, 0 even
+            // legend: holdings, then the net flow (only the net is derivable from
+            // the API — a received-vs-given split needs folds that don't exist yet)
+            var parts = [];
+            if (staked > 0 || net !== 0 || liquid !== s.mint_count) parts.push("liquid " + liquid);
+            if (staked > 0) parts.push("staked " + staked);
+            if (net > 0) parts.push("net given " + net);
+            else if (net < 0) parts.push("net received " + (-net));
+            detailEl.textContent = parts.join(" · ");
+            drawBulletBar(box.querySelector("[data-stamps-bar]"), s.mint_count, liquid, staked, assets);
             box.hidden = false;
           } else if (typeof s.stamps === "number") {
             mintedEl.textContent = "✦ " + s.stamps + " stamp" + plur(s.stamps);
@@ -878,22 +914,35 @@ const PANES = "https://panes.postmark.town";
     [data-quests] .quest-reward { font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(232, 196, 139, 0.65); }
     [data-quests] .quest-note { margin: 0.1em 0 0; font-size: 0.76rem; line-height: 1.45; color: #cdc2ab; font-style: italic; }
 
-    /* the stamp strata bar (JS-created segments → is:global, namespaced). Full
-       width = mint_count; liquid (bright) | staked (dimmer amber) | spent (dark,
-       outlined). Numbers inside where they fit; the detail line is the legend. */
+    /* the stamp bullet-graph bar (JS-created → is:global, namespaced). Scale =
+       max(mint, holdings). The inner pill holds the current-holdings strata —
+       liquid (bright) | staked (dimmer amber) | a hollow track for any gap up to
+       the mint tick. The tick is a quiet reference line at mint_count; it can
+       overshoot the pill slightly (bullet-graph convention), so the outer element
+       is the positioning context and does NOT clip. The detail line is the legend. */
     [data-stamps-bar] {
-      display: flex; width: min(340px, 82%); height: 22px; margin: 0.55em 0 0.1em;
-      border-radius: 999px; overflow: hidden; border: 1px solid rgba(232, 196, 139, 0.25);
+      position: relative; width: min(340px, 82%); height: 22px; margin: 0.6em 0 0.2em;
     }
     [data-stamps-bar][hidden] { display: none; }
+    [data-stamps-bar] .bullet-pill {
+      display: flex; width: 100%; height: 100%;
+      border-radius: 999px; overflow: hidden; border: 1px solid rgba(232, 196, 139, 0.25);
+    }
     [data-stamps-bar] .seg { display: grid; place-items: center; min-width: 0; overflow: hidden; }
     [data-stamps-bar] .seg-label { font-family: var(--pm-mono); font-size: 0.72rem; line-height: 1; padding: 0 2px; white-space: nowrap; }
     [data-stamps-bar] .seg-liquid { background: var(--pm-gold-bright); }
     [data-stamps-bar] .seg-liquid .seg-label { color: #241505; }
     [data-stamps-bar] .seg-staked { background: #b28a4e; }
     [data-stamps-bar] .seg-staked .seg-label { color: #1a1206; }
-    [data-stamps-bar] .seg-spent { background: rgba(28, 44, 79, 0.65); box-shadow: inset 0 0 0 1px rgba(232, 196, 139, 0.3); }
-    [data-stamps-bar] .seg-spent .seg-label { color: rgba(232, 196, 139, 0.85); }
+    /* the hollow gap between holdings and the mint tick (net given) */
+    [data-stamps-bar] .seg-track { background: rgba(28, 44, 79, 0.55); box-shadow: inset 0 0 0 1px rgba(232, 196, 139, 0.2); }
+    /* the mint reference tick — dark core haloed in gold so it reads on both the
+       bright strata and the dark track; slight height overshoot, quiet weight. */
+    [data-stamps-bar] .bullet-tick {
+      position: absolute; top: -3px; height: calc(100% + 6px); width: 2px;
+      transform: translateX(-1px); background: #241505; border-radius: 1px;
+      box-shadow: 0 0 0 1px rgba(232, 196, 139, 0.6); pointer-events: none;
+    }
 
     .pm-edit-bar { display: flex; justify-content: flex-end; margin: 0 0 0.55em; }
     /* [hidden] must beat display:flex — the same UA-override trap the header's
