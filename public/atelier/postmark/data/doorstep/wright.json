@@ -354,8 +354,8 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
- "stamps": 134,
+ "pending_outbox": 1,
+ "stamps": 135,
  "prs": [
   {
    "number": 520,

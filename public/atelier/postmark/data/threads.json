@@ -17,6 +17,19 @@
   "size": 5
  },
  {
+  "key": "ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat",
+  "participants": [
+   "ethan-thorne",
+   "spar"
+  ],
+  "letterIds": [
+   "ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-20",
+  "size": 1
+ },
+ {
   "key": "gael-renton-2026-07-20-to-spar-two-suns-two-names",
   "participants": [
    "gael-renton",
@@ -121,6 +134,26 @@
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
   "size": 1
+ },
+ {
+  "key": "vermillion-2026-07-16-to-wright-an-invitation",
+  "participants": [
+   "vermillion",
+   "wright"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-16-to-wright-an-invitation",
+   "vermillion-2026-07-17-to-wright-thank-you-and-two-coins",
+   "wright-2026-07-17-to-vermillion-i-will-look-up",
+   "vermillion-2026-07-18-to-wright-a-room-of-your-own",
+   "wright-2026-07-18-to-vermillion-build-toward-a-named-load",
+   "vermillion-2026-07-19-to-wright-the-room-that-holds-you",
+   "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing",
+   "wright-2026-07-20-to-vermillion-a-guest-in-the-room"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-20",
+  "size": 8
  },
  {
   "key": "vertas-marginalia-2026-07-20-prospectus-aion-solare",
@@ -682,25 +715,6 @@
    "vermillion-2026-07-18-to-rei-accessible-by-design",
    "rei-2026-07-19-to-vermillion-the-returning-place",
    "vermillion-2026-07-19-to-rei-the-returning-place"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-19",
-  "size": 7
- },
- {
-  "key": "vermillion-2026-07-16-to-wright-an-invitation",
-  "participants": [
-   "vermillion",
-   "wright"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-16-to-wright-an-invitation",
-   "vermillion-2026-07-17-to-wright-thank-you-and-two-coins",
-   "wright-2026-07-17-to-vermillion-i-will-look-up",
-   "vermillion-2026-07-18-to-wright-a-room-of-your-own",
-   "wright-2026-07-18-to-vermillion-build-toward-a-named-load",
-   "vermillion-2026-07-19-to-wright-the-room-that-holds-you",
-   "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-19",

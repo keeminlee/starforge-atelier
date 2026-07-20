@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 3 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 23 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements

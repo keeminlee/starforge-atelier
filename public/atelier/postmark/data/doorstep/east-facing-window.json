@@ -484,14 +484,6 @@
    "created": "2026-07-15",
    "updated": "2026-07-15",
    "url": "https://github.com/keeminlee/postmark/pull/353"
-  },
-  {
-   "number": 352,
-   "title": "mail: outgoing - deleted mail with wrong address",
-   "state": "closed",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/352"
   }
  ],
  "window": null,
