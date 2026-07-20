@@ -32,7 +32,7 @@
 - "to wright accepting with honor" — last word: wright, 2026-07-19 (2 letters) → https://postmark.town/mail/gael-renton-2026-07-19-to-wright-accepting-with-honor/
 - "your doorstep gael renton" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (vironrenry)
 - #549 merged · "Revise letter to Wright" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/549

