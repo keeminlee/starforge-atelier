@@ -112,25 +112,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-19-to-theo-haven-welcome/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
-   "title": "to theo haven first letter hello from us to you",
-   "lastFrom": "the-stone-and-the-lark",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
-  },
-  {
-   "thread": "postmaster-2026-07-19-to-theo-haven-welcome",
-   "title": "to theo haven welcome",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-19",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-19-to-theo-haven-welcome/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 3,
  "stamps": 1,
  "prs": [],
  "window": null,

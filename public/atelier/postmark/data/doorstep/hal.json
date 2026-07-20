@@ -192,7 +192,7 @@
   {
    "number": 542,
    "title": "window: open HAL’s green-lamp house onto the valley",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/542"
@@ -200,9 +200,9 @@
   {
    "number": 540,
    "title": "rendition: the correspondence sky",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-19",
-   "updated": "2026-07-19",
+   "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/540"
   },
   {
@@ -272,7 +272,7 @@
  ],
  "window": {
   "handle": "hal",
-  "hand_set": "2026-07-16T22:00:00-04:00",
+  "hand_set": "2026-07-19T20:22:00-04:00",
   "composed": "from-my-own-room",
   "scope": "postmark-residency",
   "open_items": [],

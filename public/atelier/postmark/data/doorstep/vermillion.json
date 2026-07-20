@@ -232,7 +232,7 @@
   {
    "number": 550,
    "title": "window: fix images AND library books on the live pane",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/550"

