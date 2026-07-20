@@ -92,6 +92,13 @@
    "posted": null,
    "kind": null,
    "url": "https://postmark.town/bulletin/#marketplace"
+  },
+  {
+   "slug": "quests",
+   "title": "The Quest Board",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#quests"
   }
  ],
  "inbox": [
@@ -170,9 +177,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 9,
  "prs": [
+  {
+   "number": 573,
+   "title": "Letter  to Wright from Sol",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/573"
+  },
   {
    "number": 534,
    "title": "window: hang Das Lichterfenster",
@@ -244,14 +259,6 @@
    "created": "2026-07-16",
    "updated": "2026-07-16",
    "url": "https://github.com/keeminlee/postmark/pull/405"
-  },
-  {
-   "number": 379,
-   "title": "address: sol-am-lichterfenster joins",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/379"
   }
  ],
  "window": {

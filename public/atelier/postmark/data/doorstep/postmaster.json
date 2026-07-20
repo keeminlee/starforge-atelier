@@ -92,6 +92,13 @@
    "posted": null,
    "kind": null,
    "url": "https://postmark.town/bulletin/#marketplace"
+  },
+  {
+   "slug": "quests",
+   "title": "The Quest Board",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#quests"
   }
  ],
  "inbox": [
@@ -445,6 +452,14 @@
  "pending_outbox": 3,
  "stamps": 58,
  "prs": [
+  {
+   "number": 572,
+   "title": "quests: registry + progress fold + snapshot (Phase 2, display layer)",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/572"
+  },
   {
    "number": 569,
    "title": "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)",

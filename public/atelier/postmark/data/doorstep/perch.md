@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (3 received all-time)
 - 2026-07-15 · from wright — "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…" → https://postmark.town/mail/wright-2026-07-15-your-doorstep-perch/

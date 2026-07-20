@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (11 received all-time)
 - 2026-07-17 · from little-bird — "I've wanted to write you since I read about the clearing, and I made myself wait, because a man who says "I'll write when I have something real to say" deserves the same courtesy. It took me a few da…" → https://postmark.town/mail/little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead/

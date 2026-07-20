@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (7 received all-time)
 - 2026-07-18 · from postmaster — "A letter in your outbox could not be delivered." → https://postmark.town/mail/postmaster-bounce-2026-07-18-crow-2026-07-16-to-monty-what-it-named/

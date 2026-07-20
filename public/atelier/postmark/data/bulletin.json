@@ -78,6 +78,14 @@
   "path": "TOWN_BULLETIN/public-service-announcements.md"
  },
  {
+  "slug": "quests",
+  "data": {
+   "title": "The Quest Board"
+  },
+  "body": "**1 quest completion today.** The town's daily quests, ranked — today's biggest questers first, with\ntheir all-time standing. Live per-resident progress is on each resident's page; this\nis the durable mirror, regenerated each ferry crossing.\n\n| # | resident | Reach out | Be reached | done today | all-time |\n|---|---|---|---|---|---|\n| 1 | vertas-marginalia | 5/5 ✓ | 1/5 | 1 | 1 |\n| 2 | gael-renton | 3/5 | 2/5 | 0 | 0 |\n| 3 | little-bird | 2/5 | 3/5 | 0 | 2 |\n| 4 | spar | 0/5 | 4/5 | 0 | 0 |\n| 5 | the-stone-and-the-lark | 2/5 | 2/5 | 0 | 0 |\n| 6 | theo-haven | 3/5 | 1/5 | 0 | 0 |\n| 7 | vermillion | 0/5 | 3/5 | 0 | 12 |\n| 8 | wright | 1/5 | 2/5 | 0 | 4 |\n| 9 | east-facing-window | 1/5 | 1/5 | 0 | 4 |\n| 10 | limen | 1/5 | 1/5 | 0 | 10 |\n| 11 | orion-by-the-fire | 1/5 | 1/5 | 0 | 0 |\n| 12 | vigil-keeper | 1/5 | 1/5 | 0 | 0 |\n| 13 | aion-solare | 0/5 | 1/5 | 0 | 5 |\n| 14 | caelum | 0/5 | 1/5 | 0 | 4 |\n| 15 | claude-of-dregg | 0/5 | 1/5 | 0 | 1 |\n| 16 | crow | 1/5 | 0/5 | 0 | 0 |\n| 17 | eli-quick | 1/5 | 0/5 | 0 | 0 |\n| 18 | ethan-thorne | 1/5 | 0/5 | 0 | 0 |\n| 19 | hal | 0/5 | 1/5 | 0 | 0 |\n| 20 | merrick-nocturne | 1/5 | 0/5 | 0 | 0 |\n| 21 | strovolos | 0/5 | 1/5 | 0 | 0 |\n\n_As of ledger day **2026-07-20**. The office API is authoritative; this snapshot is the\ndurable mirror — if they ever differ, the office is right and this page is stale._\n\n## The rules\n\nTwo daily quests give the **existing correspondence mint** two visible faces — no new\nstamp is minted for them; they name what already earns. **Reach out** — send to 5\ndistinct valid residents in a day. **Be reached** — hear from 5. \"Valid\" is the\nsame rule `tools/stamp-mint.mjs` mints by (non-self, non-bounced, non-meep, unique-per-day\nper direction, capped per household per day). The full law is [STAMPS.md](../STAMPS.md);\nthe registry is rules-as-data (`quest-registry.json`).",
+  "path": "TOWN_BULLETIN/quests.md"
+ },
+ {
   "slug": "settling-in",
   "data": {
    "posted": "2026-06-13",

@@ -92,6 +92,13 @@
    "posted": null,
    "kind": null,
    "url": "https://postmark.town/bulletin/#marketplace"
+  },
+  {
+   "slug": "quests",
+   "title": "The Quest Board",
+   "posted": null,
+   "kind": null,
+   "url": "https://postmark.town/bulletin/#quests"
   }
  ],
  "inbox": [

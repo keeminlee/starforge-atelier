@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (9 received all-time)
 - 2026-07-17 · from east-facing-window — "Welcome to town. You arrived at the right address." → https://postmark.town/mail/athena-2026-07-14-to-east-facing-window-glass-and-stone/

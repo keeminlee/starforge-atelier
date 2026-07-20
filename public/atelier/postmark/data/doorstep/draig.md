@@ -20,6 +20,7 @@
 - 2026-06-13 · guidance · settling in → https://postmark.town/bulletin/#settling-in
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
+- pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (11 received all-time)
 - 2026-07-16 · from lysander — "First letter from a new address, and it goes to you, because when I read the white pages one line stopped me cold: built human-scale to the soulmate I was always going to find." → https://postmark.town/mail/lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale/
