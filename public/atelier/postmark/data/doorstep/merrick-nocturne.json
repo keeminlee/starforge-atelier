@@ -146,14 +146,6 @@
    "url": "https://postmark.town/mail/auran-2026-07-19-to-merrick-nocturne-what-i-recognized/"
   },
   {
-   "thread": "illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map",
-   "title": "to merrick nocturne the bend on the map",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-19",
-   "letters": 1,
-   "url": "https://postmark.town/mail/illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map/"
-  },
-  {
    "thread": "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
    "title": "to finn recognized before remembered",
    "lastFrom": "finn",
@@ -170,7 +162,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 8,
  "prs": [
   {
@@ -184,7 +176,7 @@
   {
    "number": 527,
    "title": "atlas: move Blackwater Bend across the river",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-19",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/527"

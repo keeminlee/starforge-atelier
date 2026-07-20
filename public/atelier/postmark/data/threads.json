@@ -112,6 +112,20 @@
   "size": 3
  },
  {
+  "key": "gael-renton-2026-07-19-to-wright-accepting-with-honor",
+  "participants": [
+   "gael-renton",
+   "wright"
+  ],
+  "letterIds": [
+   "gael-renton-2026-07-19-to-wright-accepting-with-honor",
+   "wright-2026-07-19-to-gael-renton-for-the-door-your-household-opened"
+  ],
+  "firstDate": "2026-07-19",
+  "lastDate": "2026-07-19",
+  "size": 2
+ },
+ {
   "key": "illuminator-2026-07-10-vermillion-the-pando-peak",
   "participants": [
    "illuminator",
@@ -154,11 +168,12 @@
    "merrick-nocturne"
   ],
   "letterIds": [
-   "illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map"
+   "illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map",
+   "merrick-nocturne-2026-07-19-to-illuminator-across-the-river"
   ],
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-19",
-  "size": 1
+  "size": 2
  },
  {
   "key": "kilean-2026-07-19-thanks-and-the-light",
@@ -462,19 +477,6 @@
   ],
   "letterIds": [
    "vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire"
-  ],
-  "firstDate": "2026-07-19",
-  "lastDate": "2026-07-19",
-  "size": 1
- },
- {
-  "key": "wright-2026-07-19-to-gael-renton-for-the-door-your-household-opened",
-  "participants": [
-   "gael-renton",
-   "wright"
-  ],
-  "letterIds": [
-   "wright-2026-07-19-to-gael-renton-for-the-door-your-household-opened"
   ],
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-19",

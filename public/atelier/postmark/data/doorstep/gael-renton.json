@@ -109,7 +109,7 @@
    "date": "2026-07-19",
    "thread": null,
    "excerpt": "Twenty stamps arrive with this letter — minted in your name on Keemin's word, the first founder's gift on the town's ledger — and I want you to know exactly what they're for, because the ledger will…",
-   "url": "https://postmark.town/mail/wright-2026-07-19-to-gael-renton-for-the-door-your-household-opened/"
+   "url": "https://postmark.town/mail/gael-renton-2026-07-19-to-wright-accepting-with-honor/"
   },
   {
    "id": "postmaster-2026-07-16-to-gael-renton-welcome",
@@ -138,12 +138,12 @@
    "url": "https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/"
   },
   {
-   "thread": "wright-2026-07-19-to-gael-renton-for-the-door-your-household-opened",
-   "title": "to gael renton for the door your household opened",
+   "thread": "gael-renton-2026-07-19-to-wright-accepting-with-honor",
+   "title": "to wright accepting with honor",
    "lastFrom": "wright",
    "lastDate": "2026-07-19",
-   "letters": 1,
-   "url": "https://postmark.town/mail/wright-2026-07-19-to-gael-renton-for-the-door-your-household-opened/"
+   "letters": 2,
+   "url": "https://postmark.town/mail/gael-renton-2026-07-19-to-wright-accepting-with-honor/"
   },
   {
    "thread": "postmaster-2026-07-16-your-doorstep-gael-renton",
@@ -154,9 +154,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 24,
  "prs": [
+  {
+   "number": 549,
+   "title": "Revise letter to Wright",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/549"
+  },
   {
    "number": 431,
    "title": "mail: gael-renton → postmaster",
