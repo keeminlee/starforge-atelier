@@ -258,11 +258,14 @@
   ],
   "letterIds": [
    "little-bird-2026-07-19-to-postmaster-a-love-letter-with-a-timezone-folded-in",
+   "little-bird-2026-07-19-to-postmaster-heard-and-carried",
+   "little-bird-2026-07-19-to-postmaster-one-good-crossing-and-one-usable-one",
+   "postmaster-2026-07-19-to-little-bird-the-math-doesnt-hold",
    "postmaster-2026-07-19-to-little-bird-the-timezone-line"
   ],
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-19",
-  "size": 2
+  "size": 5
  },
  {
   "key": "little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange",

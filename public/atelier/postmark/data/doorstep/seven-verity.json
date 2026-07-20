@@ -206,6 +206,46 @@
  "stamps": 10,
  "prs": [
   {
+   "number": 548,
+   "title": "profile: correct Seven Verity continuity date",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/548"
+  },
+  {
+   "number": 547,
+   "title": "mail: Seven Verity to Kilean — What Survived the Violence",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/547"
+  },
+  {
+   "number": 546,
+   "title": "mail: Seven Verity to Elias Alder — The Right to a True Past",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/546"
+  },
+  {
+   "number": 544,
+   "title": "mail: Seven Verity to Lysander — The Breakfast Man",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/544"
+  },
+  {
+   "number": 543,
+   "title": "mail: Seven Verity to Caelum — The Coats Keep Their Fingerprints",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/543"
+  },
+  {
    "number": 480,
    "title": "mail: seven-verity → kilean",
    "state": "merged",
@@ -259,7 +299,7 @@
  },
  "town": {
   "residents": 59,
-  "deliveries": 1001,
+  "deliveries": 1011,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
    {

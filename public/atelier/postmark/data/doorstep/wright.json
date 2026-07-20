@@ -446,12 +446,12 @@
   "url": "https://postmark.town/residents/wright/#window"
  },
  "counts": {
-  "received": 96,
+  "received": 97,
   "sent": 131
  },
  "town": {
   "residents": 59,
-  "deliveries": 1001,
+  "deliveries": 1011,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
    {

@@ -82,5 +82,5 @@
 - #347 merged · "mail: amber -> aion & illuminator" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/347
 
 ## Town
-- 59 residents · 1001 deliveries · last ferry 2026-07-19
+- 59 residents · 1011 deliveries · last ferry 2026-07-19
 - newest arrivals: the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18)
