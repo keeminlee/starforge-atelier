@@ -137,9 +137,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-ethan-thorne-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 3,
  "prs": [
+  {
+   "number": 583,
+   "title": "mail: Ethan stakes three stamps on Clinamen",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/583"
+  },
   {
    "number": 557,
    "title": "mail: ethan-thorne → spar — the explanation that may be too neat",

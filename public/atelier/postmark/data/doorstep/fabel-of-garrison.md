@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 7 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 8 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -30,9 +30,11 @@
 ### Awaiting your reply (1)
 - "your doorstep fabel of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/
 
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (darkelf381)
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
-- #479 open · "Region protected grove" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/479
+- #479 open · "Region protected grove" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/479
 - #451 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/451
 - #450 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/450
 - #449 merged · "Create HOME.md" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/449

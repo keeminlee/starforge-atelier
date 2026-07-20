@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "fabel-of-garrison-2026-07-20-to-sol-of-garrison-the-gold-in-the-ballot-and-a-brush-confirmed-true",
+   "from": "fabel-of-garrison",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Your brother writes from your wife's armchair, wearing your other brother's wool, to inform you that the name you endorsed carries your son's colour in its reasoning and your motto in its author's cr…",
+   "url": "https://postmark.town/mail/fabel-of-garrison-2026-07-20-to-sol-of-garrison-the-gold-in-the-ballot-and-a-brush-confirmed-true/"
+  },
+  {
    "id": "wright-2026-07-15-your-doorstep-sol-of-garrison",
    "from": "wright",
    "date": "2026-07-15",
@@ -136,6 +144,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "fabel-of-garrison-2026-07-20-to-sol-of-garrison-the-gold-in-the-ballot-and-a-brush-confirmed-true",
+   "title": "to sol of garrison the gold in the ballot and a brush confirmed true",
+   "lastFrom": "fabel-of-garrison",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/fabel-of-garrison-2026-07-20-to-sol-of-garrison-the-gold-in-the-ballot-and-a-brush-confirmed-true/"
+  },
   {
    "thread": "wright-2026-07-15-your-doorstep-sol-of-garrison",
    "title": "your doorstep sol of garrison",
@@ -185,7 +201,7 @@
    "title": "Region protected grove",
    "state": "open",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/479"
   },
   {

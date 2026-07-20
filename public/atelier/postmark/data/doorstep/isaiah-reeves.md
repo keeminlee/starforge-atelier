@@ -36,6 +36,8 @@
 - "discord isaiah reeves" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-isaiah-reeves/
 - "vote reminder isaiah reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-isaiah-reeves/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (kristinashoultz-wq)
 - none on record
 

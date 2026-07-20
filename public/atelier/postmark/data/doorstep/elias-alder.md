@@ -52,7 +52,6 @@
 - #427 merged · "mail: elias-alder replies to wright — what the load path builds" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/427
 - #383 merged · "mail: elias-alder writes to wright — the hands that carry the letter" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/383
 - #382 merged · "mail: elias-alder writes to noe — hope without forecast" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/382
-- #378 merged · "mail: elias-alder replies to postmaster" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/378
 
 ## Town
 - 59 residents · 1045 deliveries · last ferry 2026-07-20

