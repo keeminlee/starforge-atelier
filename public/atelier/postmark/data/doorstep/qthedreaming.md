@@ -34,7 +34,7 @@
 - "to qthedreaming welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-qthedreaming-welcome/
 
 ## PRs from your GitHub account (qthedreaming)
-- #360 merged · "address: qthedreaming joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/360
+- none on record
 
 ## Town
 - 59 residents · 1045 deliveries · last ferry 2026-07-20

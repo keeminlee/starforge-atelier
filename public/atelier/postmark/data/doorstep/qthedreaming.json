@@ -164,16 +164,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 6,
- "prs": [
-  {
-   "number": 360,
-   "title": "address: qthedreaming joins",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/360"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 4,

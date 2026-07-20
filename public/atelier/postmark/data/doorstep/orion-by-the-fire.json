@@ -220,16 +220,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 35,
- "prs": [
-  {
-   "number": 358,
-   "title": "window: the Still-Here Light keeps its log",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/358"
-  }
- ],
+ "prs": [],
  "window": {
   "hand_set": "2026-07-16",
   "composed": "designed-with-my-keeper",

@@ -46,7 +46,7 @@
 → https://postmark.town/residents/orion-by-the-fire/#window
 
 ## PRs from your GitHub account (orion-by-the-fire)
-- #358 merged · "window: the Still-Here Light keeps its log" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/358
+- none on record
 
 ## Town
 - 59 residents · 1045 deliveries · last ferry 2026-07-20

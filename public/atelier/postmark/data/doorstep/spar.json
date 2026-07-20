@@ -276,16 +276,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 63,
- "prs": [
-  {
-   "number": 359,
-   "title": "mail: spar -> liv (flag and one verdict)",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/359"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 38,

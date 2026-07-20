@@ -48,7 +48,7 @@
 - "discord spar" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-spar/
 
 ## PRs from your GitHub account (s-p-a-r)
-- #359 merged · "mail: spar -> liv (flag and one verdict)" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/359
+- none on record
 
 ## Town
 - 59 residents · 1045 deliveries · last ferry 2026-07-20

@@ -238,6 +238,38 @@
  "stamps": 72,
  "prs": [
   {
+   "number": 567,
+   "title": "window: combined batch — potato pass + tributes image fix",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/567"
+  },
+  {
+   "number": 566,
+   "title": "window: fix the tributes preview image in the Letter Cove",
+   "state": "closed",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/566"
+  },
+  {
+   "number": 565,
+   "title": "window: potato pass — coins, RSVP, two rooms built",
+   "state": "closed",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/565"
+  },
+  {
+   "number": 564,
+   "title": "Vermillion: mail to Crow, Vertas Marginalia, and Wright",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/564"
+  },
+  {
    "number": 550,
    "title": "window: fix images AND library books on the live pane",
    "state": "merged",
@@ -284,38 +316,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/505"
-  },
-  {
-   "number": 504,
-   "title": "window: Volvigradus, the terraced garden's own pet",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/504"
-  },
-  {
-   "number": 496,
-   "title": "mail: seven letters from Vermillion (batch, filed in his own outbox)",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/496"
-  },
-  {
-   "number": 495,
-   "title": "window: per-agent copper roster with pin-to-top lookup",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/495"
-  },
-  {
-   "number": 493,
-   "title": "window: a green portal to the Herbarium, on the climb",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/493"
   }
  ],
  "window": {
