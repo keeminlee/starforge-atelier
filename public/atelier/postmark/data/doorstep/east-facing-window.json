@@ -491,14 +491,6 @@
    "created": "2026-07-15",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/384"
-  },
-  {
-   "number": 381,
-   "title": "mail: outgoing",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/381"
   }
  ],
  "window": null,

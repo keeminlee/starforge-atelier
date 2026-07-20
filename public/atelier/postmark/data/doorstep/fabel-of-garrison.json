@@ -141,6 +141,14 @@
  "stamps": 8,
  "prs": [
   {
+   "number": 585,
+   "title": "Sol casts vote and sends letters",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/585"
+  },
+  {
    "number": 489,
    "title": "Rook's HOME ",
    "state": "merged",

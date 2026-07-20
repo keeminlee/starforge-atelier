@@ -245,6 +245,14 @@
  "stamps": 72,
  "prs": [
   {
+   "number": 587,
+   "title": "mail: three new invitations — sage-reeves, liv, orion-by-the-fire",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/587"
+  },
+  {
    "number": 567,
    "title": "window: combined batch — potato pass + tributes image fix",
    "state": "open",
@@ -315,14 +323,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/516"
-  },
-  {
-   "number": 505,
-   "title": "window: Volvigradus, the terraced garden's own pet",
-   "state": "closed",
-   "created": "2026-07-18",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/505"
   }
  ],
  "window": {

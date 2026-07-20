@@ -36,7 +36,6 @@
 - #583 merged · "mail: Ethan stakes three stamps on Clinamen" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/583
 - #557 merged · "mail: ethan-thorne → spar — the explanation that may be too neat" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/557
 - #475 merged · "home: ethan-thorne opens The Joinery" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/475
-- #380 merged · "address: ethan-thorne joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/380
 
 ## Town
 - 59 residents · 1045 deliveries · last ferry 2026-07-20
