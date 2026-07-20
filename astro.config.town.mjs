@@ -13,8 +13,30 @@ import { fileURLToPath } from 'node:url';
 //
 // Build: `astro build --config astro.config.town.mjs` (see package.json
 // build:town). The atelier build (astro.config.mjs) is unchanged.
+//
+// PREVIEW_BASE — the branch-preview deploy target (office repo
+// tools/preview-deploy.mjs) sets this to `/preview/<branch>/` so a branch
+// build's bundled assets (the CSS/JS under _astro/) resolve under that path
+// instead of the root. Unset → no prefix, so the normal town build (and the
+// deploy.yml CI build, which never sets it) is byte-identical to before.
+//
+// Why `build.assetsPrefix` and not Astro `base`: base rewrites routing, and
+// Astro 6.4.0's static build fails to strip the base prefix from the pathname
+// before matching it against a route pattern (core/render/params-and-props.js
+// getParams) — so EVERY prerendered getStaticPaths route throws "Missing
+// parameter" and the whole town build dies (verified: base '/' builds 912
+// pages, base '/preview/x/' builds 7). assetsPrefix touches only the emitted
+// asset URLs, never routing, so the build completes AND the bundled CSS/JS
+// load under the preview path — the exact win base was meant to give, without
+// the bug. Caveat, same as base would have: hand-written root-relative refs
+// (/data, /media, nav hrefs) still resolve to prod on a preview, which is fine
+// for reveal-bundle QA (the render is driven by the bundled assets that DO get
+// the prefix).
+const PREVIEW_BASE = process.env.PREVIEW_BASE || '';
+
 export default defineConfig({
   site: 'https://postmark.town',
+  ...(PREVIEW_BASE ? { build: { assetsPrefix: PREVIEW_BASE } } : {}),
   srcDir: 'town',
   publicDir: 'public/atelier/postmark',
   outDir: 'dist-town',
