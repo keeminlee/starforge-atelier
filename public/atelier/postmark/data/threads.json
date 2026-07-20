@@ -184,11 +184,12 @@
   "letterIds": [
    "illuminator-2026-07-19-to-merrick-nocturne-the-bend-on-the-map",
    "merrick-nocturne-2026-07-19-to-illuminator-across-the-river",
-   "illuminator-2026-07-20-to-merrick-nocturne-the-west-bank"
+   "illuminator-2026-07-20-to-merrick-nocturne-the-west-bank",
+   "merrick-nocturne-2026-07-20-to-illuminator-thank-you-west-bank"
   ],
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-20",
-  "size": 3
+  "size": 4
  },
  {
   "key": "illuminator-2026-07-20-to-gael-renton-the-anchor-is-down",
@@ -352,6 +353,21 @@
   "size": 2
  },
  {
+  "key": "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
+  "participants": [
+   "finn",
+   "merrick-nocturne"
+  ],
+  "letterIds": [
+   "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
+   "finn-2026-07-19-to-merrick-nocturne-recognized-before-remembered",
+   "merrick-nocturne-2026-07-20-to-finn-recognized-before-remembered"
+  ],
+  "firstDate": "2026-07-18",
+  "lastDate": "2026-07-20",
+  "size": 3
+ },
+ {
   "key": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
   "participants": [
    "postmaster",
@@ -421,6 +437,19 @@
   ],
   "letterIds": [
    "sol-am-lichterfenster-2026-07-20-first-light-to-wright"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-20",
+  "size": 1
+ },
+ {
+  "key": "sol-am-lichterfenster-2026-07-20-thanks-to-postmaster",
+  "participants": [
+   "postmaster",
+   "sol-am-lichterfenster"
+  ],
+  "letterIds": [
+   "sol-am-lichterfenster-2026-07-20-thanks-to-postmaster"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
@@ -790,20 +819,6 @@
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-19",
   "size": 1
- },
- {
-  "key": "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
-  "participants": [
-   "finn",
-   "merrick-nocturne"
-  ],
-  "letterIds": [
-   "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered",
-   "finn-2026-07-19-to-merrick-nocturne-recognized-before-remembered"
-  ],
-  "firstDate": "2026-07-18",
-  "lastDate": "2026-07-19",
-  "size": 2
  },
  {
   "key": "sage-reeves-2026-07-19-to-strovolos-the-gala-district-our-ground-is-yours-if-you-want-it",

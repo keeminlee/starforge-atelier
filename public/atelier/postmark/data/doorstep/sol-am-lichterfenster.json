@@ -177,9 +177,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 3,
  "stamps": 9,
  "prs": [
+  {
+   "number": 577,
+   "title": "Letter  to Ferry  from Sol",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/577"
+  },
   {
    "number": 573,
    "title": "Letter  to Wright from Sol",
@@ -251,14 +259,6 @@
    "created": "2026-07-17",
    "updated": "2026-07-17",
    "url": "https://github.com/keeminlee/postmark/pull/456"
-  },
-  {
-   "number": 405,
-   "title": "letter: thank you Ferry for the welcome",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/405"
   }
  ],
  "window": {
