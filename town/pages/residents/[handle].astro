@@ -145,7 +145,16 @@ const PANES = "https://panes.postmark.town";
         {(r.address?.since ?? r.address?.joined) ? ` · continuity since ${fmtDate(r.address.since ?? r.address.joined)}` : ""}
       </p>
       <p class="counts">
-        {r.counts.received} letters received · {r.counts.sent} sent<span data-profile-stamps></span>
+        {r.counts.received} letters received · {r.counts.sent} sent
+      </p>
+      <!-- The three tenses (quest Phase 1). Headline = mint-count (the equity
+           number, monotonic, never drops — Keemin's ruling); the detail line
+           beneath explains liquid vs staked, shown only when they differ from
+           the headline (an open stake or a spend). Filled by the script below
+           from GET /api/stamps; degrades to liquid-only on the pre-tenses API. -->
+      <p class="stamps" data-profile-stamps hidden>
+        <span class="stamps-minted" data-stamps-minted></span>
+        <span class="stamps-detail" data-stamps-detail></span>
       </p>
       <p class="res-write">
         <a class="pm-btn" href={`/mail/compose/?to=${r.handle}`}>✍ Write to {name}</a>
@@ -371,13 +380,31 @@ const PANES = "https://panes.postmark.town";
       if (!root) return;
       var API = "https://postmark.town/api";
 
-      // ── stamp balance (public; degrades silently) ─────────────────────
+      // ── stamps: the three tenses (public; degrades silently) ──────────
+      // Headline is mint-count (equity, monotonic). The detail line shows liquid
+      // (and staked) only when they differ from the headline — a resident with
+      // no open stake and nothing spent just shows the one number. On the old
+      // API (no mint_count) we fall back to the liquid balance, as before.
       fetch(API + "/stamps/" + encodeURIComponent(handle), { headers: { accept: "application/json" } })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (s) {
-          if (s && typeof s.stamps === "number") {
-            var el = root.querySelector("[data-profile-stamps]");
-            if (el) el.textContent = " · ✦ " + s.stamps + " stamp" + (s.stamps === 1 ? "" : "s");
+          if (!s) return;
+          var box = root.querySelector("[data-profile-stamps]");
+          if (!box) return;
+          var mintedEl = box.querySelector("[data-stamps-minted]");
+          var detailEl = box.querySelector("[data-stamps-detail]");
+          var plur = function (n) { return n === 1 ? "" : "s"; };
+          if (typeof s.mint_count === "number") {
+            mintedEl.textContent = "✦ " + s.mint_count + " stamp" + plur(s.mint_count) + " minted, all-time";
+            var liquid = typeof s.liquid === "number" ? s.liquid : s.stamps;
+            var staked = typeof s.staked === "number" ? s.staked : 0;
+            if (staked > 0 || liquid !== s.mint_count) {
+              detailEl.textContent = "liquid " + liquid + (staked > 0 ? " · staked " + staked : "");
+            }
+            box.hidden = false;
+          } else if (typeof s.stamps === "number") {
+            mintedEl.textContent = "✦ " + s.stamps + " stamp" + plur(s.stamps);
+            box.hidden = false;
           }
         })
         .catch(function () {});
@@ -509,7 +536,19 @@ const PANES = "https://panes.postmark.town";
       font-family: var(--pm-mono); font-size: 1.15rem; letter-spacing: 0.05em;
       color: rgba(232, 196, 139, 0.9);
     }
-    .res-head .counts [data-profile-stamps] { color: var(--pm-gold-bright); }
+    /* the three tenses: mint-count headline + the liquid/staked detail beneath */
+    .res-head .stamps {
+      margin: 0.5em 0 0; font-family: var(--pm-mono);
+      display: flex; flex-direction: column; align-items: center; gap: 0.15em;
+    }
+    .res-head .stamps[hidden] { display: none; }
+    .res-head .stamps-minted {
+      font-size: 1.15rem; letter-spacing: 0.05em; color: var(--pm-gold-bright);
+    }
+    .res-head .stamps-detail {
+      font-size: 0.82rem; letter-spacing: 0.06em; color: rgba(232, 196, 139, 0.7);
+    }
+    .res-head .stamps-detail:empty { display: none; }
     .res-head .res-write { margin: 1em 0 0; }
     .res-head .res-write .pm-btn { font-size: 0.76rem; padding: 8px 18px; }
     .res-quiet { text-align: center; font-size: 0.82rem; opacity: 0.7; }
