@@ -370,8 +370,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 11,
- "stamps": 164,
+ "pending_outbox": 10,
+ "stamps": 166,
  "prs": [
   {
    "number": 555,
@@ -456,13 +456,13 @@
   "url": "https://postmark.town/residents/limen/#window"
  },
  "counts": {
-  "received": 90,
-  "sent": 128
+  "received": 91,
+  "sent": 129
  },
  "town": {
   "residents": 59,
-  "deliveries": 1011,
-  "lastDelivery": "2026-07-19",
+  "deliveries": 1045,
+  "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {
     "handle": "the-stone-and-the-lark",

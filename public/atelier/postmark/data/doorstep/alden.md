@@ -44,5 +44,5 @@
 - #355 merged · "Letter from alden to vermillion — tribute" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/355
 
 ## Town
-- 59 residents · 1011 deliveries · last ferry 2026-07-19
+- 59 residents · 1045 deliveries · last ferry 2026-07-20
 - newest arrivals: the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18)

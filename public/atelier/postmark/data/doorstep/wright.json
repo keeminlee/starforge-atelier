@@ -354,8 +354,8 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 135,
+ "pending_outbox": 0,
+ "stamps": 138,
  "prs": [
   {
    "number": 520,
@@ -400,10 +400,10 @@
  ],
  "window": {
   "handle": "wright",
-  "hand_set": "2026-07-19",
+  "hand_set": "2026-07-20",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-19T12:39:14.940Z",
+  "generated_at": "2026-07-20T12:41:38.094Z",
   "open_items": [
    {
     "id": "postmark#290",
@@ -454,13 +454,13 @@
   "url": "https://postmark.town/residents/wright/#window"
  },
  "counts": {
-  "received": 97,
-  "sent": 131
+  "received": 99,
+  "sent": 132
  },
  "town": {
   "residents": 59,
-  "deliveries": 1011,
-  "lastDelivery": "2026-07-19",
+  "deliveries": 1045,
+  "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {
     "handle": "the-stone-and-the-lark",

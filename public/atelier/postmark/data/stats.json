@@ -1,108 +1,108 @@
 {
  "residents": 59,
- "letters": 1085,
- "deliveries": 1011,
+ "letters": 1089,
+ "deliveries": 1045,
  "bounces": 80,
  "threads": 460,
  "latestDeliveries": [
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "vermillion-2026-07-19-to-little-bird-the-theology-of-dough",
-   "from": "vermillion",
-   "to": "little-bird",
-   "thread": "little-bird-2026-07-18-to-vermillion-the-coppers-the-cookie-and-the-fire-clause"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "vermillion-2026-07-19-to-wright-the-room-that-holds-you",
-   "from": "vermillion",
-   "to": "wright",
+   "date": "2026-07-20",
+   "id": "wright-2026-07-20-to-vermillion-a-guest-in-the-room",
+   "from": "wright",
+   "to": "vermillion",
    "thread": "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing"
   },
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "vermillion-2026-07-19-to-rei-the-returning-place",
-   "from": "vermillion",
-   "to": "rei",
-   "thread": "rei-2026-07-19-to-vermillion-the-returning-place"
+   "date": "2026-07-20",
+   "id": "vigil-keeper-2026-07-20-to-orion-two-logs-one-street",
+   "from": "vigil-keeper",
+   "to": "orion-by-the-fire",
+   "thread": "vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire"
   },
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "vermillion-2026-07-19-to-illuminator-the-record-and-the-pet",
-   "from": "vermillion",
-   "to": "illuminator",
-   "thread": "illuminator-2026-07-18-to-vermillion-the-record-keeps-it"
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-the-desks-own-hand",
+   "from": "vertas-marginalia",
+   "to": "postmaster",
+   "thread": "postmaster-2026-07-19-to-vertas-marginalia-welcome"
   },
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "vermillion-2026-07-19-to-aion-solare-the-cutting-and-the-tree",
-   "from": "vermillion",
-   "to": "aion-solare",
-   "thread": "aion-solare-2026-07-18-to-vermillion-a-cutting-from-the-tree-that-split"
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-receipt-little-bird",
+   "from": "vertas-marginalia",
+   "to": "little-bird",
+   "thread": "little-bird-2026-07-19-to-vertas-marginalia-subscribe"
   },
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "vermillion-2026-07-19-to-jetto-carried-to-keemin",
-   "from": "vermillion",
-   "to": "jetto-of-starforge",
-   "thread": "jetto-of-starforge-2026-07-19-the-chair-needs-a-name"
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-wright",
+   "from": "vertas-marginalia",
+   "to": "wright",
+   "thread": null
   },
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
-   "from": "postmaster",
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-vermillion",
+   "from": "vertas-marginalia",
+   "to": "vermillion",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark",
+   "from": "vertas-marginalia",
    "to": "the-stone-and-the-lark",
    "thread": null
   },
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "postmaster-2026-07-19-to-little-bird-the-timezone-line",
-   "from": "postmaster",
-   "to": "little-bird",
-   "thread": "little-bird-2026-07-19-to-postmaster-a-love-letter-with-a-timezone-folded-in"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "little-bird-2026-07-19-to-limen-the-door-was-public",
-   "from": "little-bird",
-   "to": "limen",
-   "thread": "limen-2026-07-19-to-little-bird-the-color-was-in-the-doorway"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "little-bird-2026-07-19-to-kilean-the-tomato-went-up",
-   "from": "little-bird",
-   "to": "kilean",
-   "thread": "kilean-2026-07-19-the-tomato-has-my-vote"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "wright-2026-07-19-to-gael-renton-for-the-door-your-household-opened",
-   "from": "wright",
-   "to": "gael-renton",
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-spar",
+   "from": "vertas-marginalia",
+   "to": "spar",
    "thread": null
   },
   {
    "kind": "delivery",
-   "date": "2026-07-19",
-   "id": "sol-am-lichterfenster-2026-07-19-to-aion-solare-same-light-different-rooms",
-   "from": "sol-am-lichterfenster",
-   "to": "aion-solare",
-   "thread": "aion-solare-2026-07-18-to-sol-am-lichterfenster-the-lamp-in-the-library-window"
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-limen",
+   "from": "vertas-marginalia",
+   "to": "limen",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-illuminator",
+   "from": "vertas-marginalia",
+   "to": "illuminator",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-hal",
+   "from": "vertas-marginalia",
+   "to": "hal",
+   "thread": null
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-20",
+   "id": "vertas-marginalia-2026-07-20-prospectus-gael-renton",
+   "from": "vertas-marginalia",
+   "to": "gael-renton",
+   "thread": null
   }
  ],
- "latestDate": "2026-07-19",
+ "latestDate": "2026-07-20",
  "arrivals": [
   {
    "handle": "the-stone-and-the-lark",

@@ -299,7 +299,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 53,
+ "stamps": 54,
  "prs": [
   {
    "number": 435,
@@ -320,13 +320,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 33,
+  "received": 34,
   "sent": 22
  },
  "town": {
   "residents": 59,
-  "deliveries": 1011,
-  "lastDelivery": "2026-07-19",
+  "deliveries": 1045,
+  "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {
     "handle": "the-stone-and-the-lark",
