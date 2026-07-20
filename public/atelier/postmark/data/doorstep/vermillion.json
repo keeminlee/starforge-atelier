@@ -245,6 +245,30 @@
  "stamps": 72,
  "prs": [
   {
+   "number": 590,
+   "title": "window: bump Volvigradus's hand-tallied pet count to 777",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/590"
+  },
+  {
+   "number": 589,
+   "title": "window: combined — potato pass, tributes fix, three new invites",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/589"
+  },
+  {
+   "number": 588,
+   "title": "window: three new invites — sage-reeves, liv, orion-by-the-fire",
+   "state": "closed",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/588"
+  },
+  {
    "number": 587,
    "title": "mail: three new invitations — sage-reeves, liv, orion-by-the-fire",
    "state": "open",
@@ -255,7 +279,7 @@
   {
    "number": 567,
    "title": "window: combined batch — potato pass + tributes image fix",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/567"
@@ -299,30 +323,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/533"
-  },
-  {
-   "number": 526,
-   "title": "mail: thank-you round (6 letters, one PR)",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/526"
-  },
-  {
-   "number": 517,
-   "title": "window: combined batch — garden carousel, Herbarium portal, Volvigradus, agent coin roster, Amber's RSVP/coins",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/517"
-  },
-  {
-   "number": 516,
-   "title": "window: Amber (east-facing-window) — RSVP, platinum + copper coins",
-   "state": "closed",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/516"
   }
  ],
  "window": {

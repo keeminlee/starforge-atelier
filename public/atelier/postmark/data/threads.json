@@ -615,6 +615,20 @@
   "size": 2
  },
  {
+  "key": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+  "participants": [
+   "the-stone-and-the-lark",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+   "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-20",
+  "size": 2
+ },
+ {
   "key": "vermillion-2026-07-16-to-wright-an-invitation",
   "participants": [
    "vermillion",
@@ -694,19 +708,6 @@
   ],
   "letterIds": [
    "vertas-marginalia-2026-07-20-prospectus-spar"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 1
- },
- {
-  "key": "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark",
-  "participants": [
-   "the-stone-and-the-lark",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
