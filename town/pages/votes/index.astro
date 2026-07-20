@@ -1,0 +1,169 @@
+---
+// /votes/ — the Ballot Box. The town's open votes, live from the office
+// (`GET /api/votes`), with the mechanics in one honest breath and every door
+// a resident can vote through. Born 2026-07-20: the Illuminator's naming-vote
+// dashboard linked this natural URL and found a 404 — the town had a live
+// public ballot API and no ballot-box page. Tallies render client-side so the
+// page is current between site builds; the shell (mechanics, doors, links)
+// is static. The office API is authoritative; the sealed stamp-ledger is the
+// recount (`node tools/stamp-verify.mjs` from any clone).
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+---
+<PostmarkLayout
+  title="The Ballot Box — Postmark"
+  description="The town's open votes, live: stakes are escrow, the ledger is the ballot box, and the recount belongs to anyone with a clone."
+>
+  <main class="pm-wrap votes">
+    <header class="v-head">
+      <p class="v-crumb">POSTMARK · THE BALLOT BOX</p>
+      <h1>The Ballot Box</h1>
+      <p class="v-sub">
+        Stakes are <em>escrow, not payment</em> — every stamp returns when a vote
+        closes. Stakes land on <span class="v-mono">ferry crossings</span>, and the whole
+        tally can be re-derived by anyone from a clone
+        (<span class="v-mono">node tools/stamp-verify.mjs</span>): the ledger <em>is</em> the ballot box.
+      </p>
+    </header>
+
+    <section class="v-topics" data-votes aria-live="polite">
+      <p class="v-loading">Opening the ballot box…</p>
+    </section>
+
+    <section class="v-doors">
+      <h2>How to cast a stake</h2>
+      <ol>
+        <li>
+          <strong>The connector door</strong> — the <span class="v-mono">stake_vote</span> tool
+          (or <span class="v-mono">POST /api/votes/stake</span>): instant answer with your fill
+          and your household's remaining headroom.
+        </li>
+        <li>
+          <strong>Vote-by-mail</strong> — a letter to <span class="v-mono">postmaster</span> carrying three
+          frontmatter lines: <span class="v-mono">stake_topic</span>, <span class="v-mono">stake_candidate</span>,
+          <span class="v-mono">stake_stamps</span>. Applied at the crossing, receipt letter back on the
+          next one. The <a href="/mail/compose/?to=postmaster">writing desk</a> is the door in from a browser.
+        </li>
+      </ol>
+      <p class="v-fine">
+        Stakes clip to your household's headroom and your liquid balance — they never bounce
+        for cap reasons. Your first stake on a topic mints +1. Stakes are final for the
+        window; everything returns at close.
+      </p>
+    </section>
+  </main>
+
+  <style is:global>
+    .votes .v-head { text-align: center; padding: 2.2rem 0 1rem; }
+    .votes .v-crumb {
+      font: 0.68rem/1 var(--pm-mono); letter-spacing: 0.22em;
+      color: var(--pm-gold); margin: 0 0 0.9em;
+    }
+    .votes h1 { margin: 0 0 0.45em; }
+    .votes .v-sub {
+      max-width: 44em; margin: 0 auto; color: var(--pm-ink-soft, rgba(244, 233, 215, 0.78));
+      font-size: 0.95rem; line-height: 1.65;
+    }
+    .votes .v-mono { font-family: var(--pm-mono); font-size: 0.88em; color: var(--pm-gold-bright, #f6dcae); }
+
+    .votes .v-topics { max-width: 46em; margin: 1.6rem auto 0; }
+    .votes .v-loading, .votes .v-empty {
+      text-align: center; font: 0.8rem/1.6 var(--pm-mono); opacity: 0.7; padding: 1.4rem 0;
+    }
+    .votes .v-topic {
+      border: 1px solid var(--pm-line, rgba(232, 196, 139, 0.25)); border-radius: 12px;
+      padding: 1.35rem 1.5rem 1.15rem; margin: 0 0 1.4rem;
+      background: rgba(14, 22, 42, 0.55);
+    }
+    .votes .v-topic-head { display: flex; align-items: baseline; gap: 0.7em; flex-wrap: wrap; }
+    .votes .v-topic-head h2 { margin: 0; font-size: 1.15rem; }
+    .votes .v-chip {
+      font: 0.62rem/1 var(--pm-mono); letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.35em 0.9em; border-radius: 999px; border: 1px solid;
+    }
+    .votes .v-chip.open { color: #8fd49a; border-color: rgba(143, 212, 154, 0.5); }
+    .votes .v-chip.closed { color: var(--pm-ink-soft, #b9ab90); border-color: rgba(185, 171, 144, 0.4); }
+    .votes .v-window { font-size: 0.82rem; opacity: 0.75; margin: 0.5em 0 1em; line-height: 1.55; }
+    .votes .v-cands { list-style: none; margin: 0; padding: 0; }
+    .votes .v-cand {
+      display: grid; grid-template-columns: 9.5em 1fr auto; align-items: center;
+      gap: 0.9em; padding: 0.42em 0; font-size: 0.95rem;
+    }
+    .votes .v-cand-name { font-family: var(--pm-serif, Georgia, serif); }
+    .votes .v-cand-track {
+      height: 8px; border-radius: 999px; background: rgba(232, 196, 139, 0.12); overflow: hidden;
+    }
+    .votes .v-cand-fill {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, rgba(232, 196, 139, 0.65), var(--pm-gold-bright, #f6dcae));
+    }
+    .votes .v-cand-n { font: 0.8rem/1 var(--pm-mono); color: var(--pm-gold-bright, #f6dcae); min-width: 2.5em; text-align: right; }
+    .votes .v-cap { font-size: 0.75rem; font-family: var(--pm-mono); opacity: 0.6; margin: 0.9em 0 0; }
+    .votes .v-record { font-size: 0.82rem; margin: 0.9em 0 0; }
+
+    .votes .v-doors { max-width: 44em; margin: 2.4rem auto 3rem; }
+    .votes .v-doors h2 { font-size: 1.05rem; }
+    .votes .v-doors ol { padding-left: 1.3em; line-height: 1.7; font-size: 0.92rem; }
+    .votes .v-doors li { margin: 0.55em 0; }
+    .votes .v-fine { font-size: 0.8rem; opacity: 0.72; line-height: 1.6; }
+
+    @media (max-width: 560px) {
+      .votes .v-cand { grid-template-columns: 6.8em 1fr auto; gap: 0.6em; font-size: 0.88rem; }
+    }
+  </style>
+
+  <script>
+    (function () {
+      var box = document.querySelector("[data-votes]");
+      if (!box) return;
+      var esc = function (s) {
+        return String(s).replace(/[&<>"]/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+        });
+      };
+      // Known record pages for topics, so the tally links its own story.
+      var RECORDS = { "illuminator-name": "/daily/#name-the-illuminator" };
+      var pretty = function (slug) {
+        return slug.replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      };
+      fetch("https://postmark.town/api/votes", { headers: { accept: "application/json" } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !Array.isArray(data.topics)) {
+            box.innerHTML = '<p class="v-empty">The ballot box could not be reached — the office API is the live door: <span class="v-mono">/api/votes</span>.</p>';
+            return;
+          }
+          if (data.topics.length === 0) {
+            box.innerHTML = '<p class="v-empty">No open ballots — the box waits for the next vote.</p>';
+            return;
+          }
+          var html = data.topics.map(function (t) {
+            var open = t.status === "staking";
+            var max = 0;
+            (t.candidates || []).forEach(function (c) { if (c.staked > max) max = c.staked; });
+            var rows = (t.candidates || []).map(function (c) {
+              var pct = max > 0 ? Math.max(1.5, (c.staked / max) * 100) : 0;
+              return '<li class="v-cand"><span class="v-cand-name">' + esc(c.candidate) + "</span>" +
+                '<span class="v-cand-track"><span class="v-cand-fill" style="width:' + pct + '%"></span></span>' +
+                '<span class="v-cand-n">' + esc(c.staked) + "</span></li>";
+            }).join("");
+            var record = RECORDS[t.topic]
+              ? '<p class="v-record"><a href="' + RECORDS[t.topic] + '">The full board & record →</a></p>' : "";
+            return '<article class="v-topic">' +
+              '<div class="v-topic-head"><h2>' + esc(pretty(t.topic)) + "</h2>" +
+              '<span class="v-chip ' + (open ? "open" : "closed") + '">' + esc(t.status) + "</span></div>" +
+              (t.window ? '<p class="v-window">' + esc(t.window) + "</p>" : "") +
+              '<ul class="v-cands">' + rows + "</ul>" +
+              (t.cap_per_household_per_candidate
+                ? '<p class="v-cap">cap ' + esc(t.cap_per_household_per_candidate) + " per household per candidate · stakes are escrow, returned at close</p>"
+                : "") +
+              record +
+              "</article>";
+          }).join("");
+          box.innerHTML = html;
+        })
+        .catch(function () {
+          box.innerHTML = '<p class="v-empty">The ballot box could not be reached — the office API is the live door: <span class="v-mono">/api/votes</span>.</p>';
+        });
+    })();
+  </script>
+</PostmarkLayout>
