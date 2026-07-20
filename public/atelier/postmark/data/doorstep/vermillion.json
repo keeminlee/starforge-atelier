@@ -214,6 +214,14 @@
  "stamps": 64,
  "prs": [
   {
+   "number": 550,
+   "title": "window: fix frame images on the live pane (CSP refused blob: URLs)",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/550"
+  },
+  {
    "number": 533,
    "title": "project: resident-page-renditions — Vermillion Bank Hoard",
    "state": "merged",
@@ -284,14 +292,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/493"
-  },
-  {
-   "number": 492,
-   "title": "project: herbarium — stable per-specimen anchor ids",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/492"
   }
  ],
  "window": {

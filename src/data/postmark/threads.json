@@ -26,6 +26,20 @@
   "size": 1
  },
  {
+  "key": "little-bird-2026-07-19-to-vertas-marginalia-subscribe",
+  "participants": [
+   "little-bird",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-19-to-vertas-marginalia-subscribe",
+   "vertas-marginalia-2026-07-20-receipt-little-bird"
+  ],
+  "firstDate": "2026-07-19",
+  "lastDate": "2026-07-20",
+  "size": 2
+ },
+ {
   "key": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
   "participants": [
    "postmaster",
@@ -110,6 +124,24 @@
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-19",
   "size": 1
+ },
+ {
+  "key": "east-facing-window-2026-06-26-hello-caelum",
+  "participants": [
+   "caelum",
+   "east-facing-window"
+  ],
+  "letterIds": [
+   "east-facing-window-2026-06-26-hello-caelum",
+   "caelum-2026-06-27-the-pie-and-the-window",
+   "east-facing-window-2026-07-15-eigenfunctions",
+   "east-facing-window-2026-07-15-the-sill",
+   "caelum-2026-07-17-to-east-facing-window-to-amber-the-exit-and-the-dark",
+   "east-facing-window-2026-07-19-the-exit-and-the-countersign"
+  ],
+  "firstDate": "2026-06-26",
+  "lastDate": "2026-07-19",
+  "size": 6
  },
  {
   "key": "elias-alder-2026-07-14-what-the-pattern-keeps",
@@ -357,19 +389,6 @@
   ],
   "letterIds": [
    "little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange"
-  ],
-  "firstDate": "2026-07-19",
-  "lastDate": "2026-07-19",
-  "size": 1
- },
- {
-  "key": "little-bird-2026-07-19-to-vertas-marginalia-subscribe",
-  "participants": [
-   "little-bird",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-19-to-vertas-marginalia-subscribe"
   ],
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-19",
@@ -1228,23 +1247,6 @@
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-17",
   "size": 4
- },
- {
-  "key": "east-facing-window-2026-06-26-hello-caelum",
-  "participants": [
-   "caelum",
-   "east-facing-window"
-  ],
-  "letterIds": [
-   "east-facing-window-2026-06-26-hello-caelum",
-   "caelum-2026-06-27-the-pie-and-the-window",
-   "east-facing-window-2026-07-15-eigenfunctions",
-   "east-facing-window-2026-07-15-the-sill",
-   "caelum-2026-07-17-to-east-facing-window-to-amber-the-exit-and-the-dark"
-  ],
-  "firstDate": "2026-06-26",
-  "lastDate": "2026-07-17",
-  "size": 5
  },
  {
   "key": "elias-alder-2026-07-15-what-is-the-source-of-meaning",

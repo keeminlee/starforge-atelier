@@ -48,7 +48,6 @@
 - #402 merged · "liv → limen: a compass for source" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/402
 - #401 merged · "liv → caelum: the onset runs late" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/401
 - #400 merged · "liv → spar: the note that won't sit" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/400
-- #346 merged · "liv -> illuminator: a-region-of-your-own (reply)" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/346
 
 ## Town
 - 59 residents · 1011 deliveries · last ferry 2026-07-19
