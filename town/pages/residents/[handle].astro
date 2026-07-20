@@ -161,6 +161,16 @@ const PANES = "https://panes.postmark.town";
       </p>
     </header>
 
+    <!-- QUESTS (quest gold Phase 2) — today's daily quests as small cards with
+         progress bars, in the house baseball-card language. Filled by the script
+         below from GET /api/quests; hidden until it answers, so it degrades to
+         nothing on the pre-quests API (safe to ship before the office deploys).
+         The household-cap footnote shows only when a shared ceiling bites. -->
+    <section class="quests" data-quests hidden>
+      <div class="pm-rule night"><span data-quests-day>Today</span></div>
+      <div class="quest-cards" data-quest-cards></div>
+    </section>
+
     <!-- THE CARDS — address / home / region / window. A face is a door: click
          it and the other faces SHRINK to little bubbles that sit at the top
          (a switcher), while the full read opens below — carrying none of the
@@ -406,6 +416,52 @@ const PANES = "https://panes.postmark.town";
             mintedEl.textContent = "✦ " + s.stamps + " stamp" + plur(s.stamps);
             box.hidden = false;
           }
+        })
+        .catch(function () {});
+
+      // ── quests: today's daily quests as cards with progress bars (quest gold
+      // Phase 2). Degrades silently — the section stays hidden if the office has
+      // no quest board yet (pre-deploy) or the fetch fails.
+      fetch(API + "/quests/" + encodeURIComponent(handle), { headers: { accept: "application/json" } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (b) {
+          if (!b || !Array.isArray(b.quests) || !b.quests.length) return;
+          var sec = root.querySelector("[data-quests]");
+          var wrap = root.querySelector("[data-quest-cards]");
+          var dayEl = root.querySelector("[data-quests-day]");
+          if (!sec || !wrap) return;
+          if (dayEl && b.today) dayEl.textContent = "Today · " + b.today;
+          wrap.textContent = "";
+          b.quests.forEach(function (q) {
+            var target = q.target || 1;
+            var pct = Math.max(0, Math.min(100, Math.round((q.progress / target) * 100)));
+            var card = document.createElement("div");
+            card.className = "quest-card" + (q.complete ? " done" : "");
+            var top = document.createElement("div"); top.className = "quest-top";
+            var kind = document.createElement("span"); kind.className = "quest-kind";
+            kind.textContent = (q.cadence || "daily") + " quest";
+            var title = document.createElement("span"); title.className = "quest-title";
+            title.textContent = q.title + (q.complete ? " ✓" : "");
+            top.appendChild(kind); top.appendChild(title);
+            var bar = document.createElement("div"); bar.className = "quest-bar";
+            var fill = document.createElement("span"); fill.className = "quest-bar-fill";
+            fill.style.width = pct + "%"; bar.appendChild(fill);
+            var foot = document.createElement("div"); foot.className = "quest-foot";
+            var count = document.createElement("span"); count.className = "quest-count";
+            count.textContent = q.progress + " / " + target + " today";
+            var reward = document.createElement("span"); reward.className = "quest-reward";
+            reward.textContent = "1 stamp each";
+            foot.appendChild(count); foot.appendChild(reward);
+            card.appendChild(top); card.appendChild(bar); card.appendChild(foot);
+            // the household-cap footnote — only when a shared ceiling actually bites
+            if (q.household && q.household.cap_shared) {
+              var note = document.createElement("p"); note.className = "quest-note";
+              note.textContent = "Today's 5 is shared across your household (" + q.household.size + " residents).";
+              card.appendChild(note);
+            }
+            wrap.appendChild(card);
+          });
+          sec.hidden = false;
         })
         .catch(function () {});
 
@@ -750,6 +806,36 @@ const PANES = "https://panes.postmark.town";
        .pm-btn / --pm-* come from the global postmark.css under the .pm shell,
        which reaches injected DOM the same way. -->
   <style is:global>
+    /* quest cards (Phase 2). The cards are JS-created, so scoped styles never
+       reach them (the recurring Astro footgun) — every quest style lives here in
+       is:global, namespaced under [data-quests]. --pm-* come from postmark.css. */
+    [data-quests][hidden] { display: none; }
+    [data-quests] .quest-cards { display: flex; flex-wrap: wrap; gap: 1em; margin: 0 0 2.4em; }
+    [data-quests] .quest-cards > .quest-card { flex: 1 1 240px; min-width: 0; }
+    [data-quests] .quest-card {
+      display: flex; flex-direction: column; gap: 0.7em;
+      background: rgba(13, 20, 38, 0.72);
+      border: 1px solid rgba(232, 196, 139, 0.2); border-radius: 12px;
+      padding: 1em 1.15em 1.1em;
+    }
+    [data-quests] .quest-card.done { border-color: rgba(232, 196, 139, 0.5); }
+    [data-quests] .quest-top { display: flex; flex-direction: column; gap: 0.2em; }
+    [data-quests] .quest-kind {
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--pm-gold);
+    }
+    [data-quests] .quest-title { font-size: 1.08rem; font-weight: 700; color: var(--pm-gold-bright); line-height: 1.2; }
+    [data-quests] .quest-bar { height: 8px; border-radius: 999px; background: rgba(28, 44, 79, 0.6); overflow: hidden; }
+    [data-quests] .quest-bar-fill {
+      display: block; height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--pm-gold), var(--pm-gold-bright));
+      transition: width 0.4s ease;
+    }
+    [data-quests] .quest-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6em; font-family: var(--pm-mono); }
+    [data-quests] .quest-count { font-size: 0.9rem; color: var(--pm-gold-bright); }
+    [data-quests] .quest-reward { font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(232, 196, 139, 0.65); }
+    [data-quests] .quest-note { margin: 0.1em 0 0; font-size: 0.76rem; line-height: 1.45; color: #cdc2ab; font-style: italic; }
+
     .pm-edit-bar { display: flex; justify-content: flex-end; margin: 0 0 0.55em; }
     /* [hidden] must beat display:flex — the same UA-override trap the header's
        sign-in pill guards against; without this the ✎ lingers over the editor. */
