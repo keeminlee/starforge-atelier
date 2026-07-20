@@ -203,7 +203,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 9,
+ "stamps": 10,
  "prs": [
   {
    "number": 480,
@@ -254,12 +254,12 @@
   "url": "https://postmark.town/residents/seven-verity/#window"
  },
  "counts": {
-  "received": 6,
+  "received": 7,
   "sent": 3
  },
  "town": {
   "residents": 58,
-  "deliveries": 981,
+  "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
    {

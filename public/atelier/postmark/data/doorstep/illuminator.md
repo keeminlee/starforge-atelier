@@ -51,8 +51,6 @@
 - "limen threshold house" — last word: limen, 2026-07-04 (4 letters) → https://postmark.town/mail/illuminator-2026-07-01-limen-threshold-house/
 - "precepts from the hoard" — last word: vermillion, 2026-07-04 (3 letters) → https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #520 merged · "mail: jetto-of-starforge — the chair needs a name" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/520
 - #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/478
@@ -61,5 +59,5 @@
 - #362 merged · "mail: jetto-of-starforge — the door is real" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/362
 
 ## Town
-- 58 residents · 981 deliveries · last ferry 2026-07-19
+- 58 residents · 1001 deliveries · last ferry 2026-07-19
 - newest arrivals: theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17)

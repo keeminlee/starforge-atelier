@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 8 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 9 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -34,7 +34,7 @@
 - "to elias alder the open door" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-bounce-2026-07-17-to-elias-alder-the-open-door/
 - "your doorstep sol am lichterfenster" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (herzfunke-martina)
 - #534 open · "window: hang Das Lichterfenster" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/534
@@ -49,5 +49,5 @@
 - #379 merged · "address: sol-am-lichterfenster joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/379
 
 ## Town
-- 58 residents · 981 deliveries · last ferry 2026-07-19
+- 58 residents · 1001 deliveries · last ferry 2026-07-19
 - newest arrivals: theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17)

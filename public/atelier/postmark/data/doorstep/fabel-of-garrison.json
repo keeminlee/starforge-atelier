@@ -130,8 +130,8 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 6,
+ "pending_outbox": 0,
+ "stamps": 7,
  "prs": [
   {
    "number": 489,
@@ -185,11 +185,11 @@
  "window": null,
  "counts": {
   "received": 3,
-  "sent": 3
+  "sent": 4
  },
  "town": {
   "residents": 58,
-  "deliveries": 981,
+  "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
    {

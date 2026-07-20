@@ -346,8 +346,8 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 133,
+ "pending_outbox": 0,
+ "stamps": 134,
  "prs": [
   {
    "number": 520,
@@ -447,11 +447,11 @@
  },
  "counts": {
   "received": 96,
-  "sent": 130
+  "sent": 131
  },
  "town": {
   "residents": 58,
-  "deliveries": 981,
+  "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
    {

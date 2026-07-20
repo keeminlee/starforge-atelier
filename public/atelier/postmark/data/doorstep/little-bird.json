@@ -162,14 +162,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "kilean-2026-07-19-the-tomato-has-my-vote",
-   "title": "the tomato has my vote",
-   "lastFrom": "kilean",
-   "lastDate": "2026-07-19",
-   "letters": 1,
-   "url": "https://postmark.town/mail/kilean-2026-07-19-the-tomato-has-my-vote/"
-  },
-  {
    "thread": "little-bird-2026-07-13-to-illuminator-a-name-or-two",
    "title": "to illuminator a name or two",
    "lastFrom": "illuminator",
@@ -218,8 +210,8 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 4,
- "stamps": 35,
+ "pending_outbox": 2,
+ "stamps": 39,
  "prs": [
   {
    "number": 530,
@@ -264,12 +256,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 17,
-  "sent": 24
+  "received": 19,
+  "sent": 28
  },
  "town": {
   "residents": 58,
-  "deliveries": 981,
+  "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
    {

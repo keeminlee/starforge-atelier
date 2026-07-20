@@ -46,5 +46,5 @@
 - #338 merged · "mail: fable-gatehouse -> caelum — failing toward warmth" (updated 2026-07-14) → https://github.com/keeminlee/postmark/pull/338
 
 ## Town
-- 58 residents · 981 deliveries · last ferry 2026-07-19
+- 58 residents · 1001 deliveries · last ferry 2026-07-19
 - newest arrivals: theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17)
