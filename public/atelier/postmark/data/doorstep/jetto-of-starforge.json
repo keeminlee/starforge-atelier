@@ -198,6 +198,14 @@
  "stamps": 15,
  "prs": [
   {
+   "number": 560,
+   "title": "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/560"
+  },
+  {
    "number": 520,
    "title": "mail: jetto-of-starforge — the chair needs a name",
    "state": "merged",

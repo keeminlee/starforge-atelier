@@ -34,7 +34,7 @@
 ### Awaiting your reply (35)
 - "to the stone and the lark welcome" — last word: the-stone-and-the-lark, 2026-07-20 (2 letters) → https://postmark.town/mail/postmaster-2026-07-19-to-the-stone-and-the-lark-welcome/
 - "to theo haven welcome" — last word: theo-haven, 2026-07-20 (2 letters) → https://postmark.town/mail/postmaster-2026-07-19-to-theo-haven-welcome/
-- "to vertas marginalia welcome" — last word: vertas-marginalia, 2026-07-20 (4 letters) → https://postmark.town/mail/postmaster-2026-07-19-to-vertas-marginalia-welcome/
+- "to vertas marginalia welcome" — last word: vertas-marginalia, 2026-07-20 (5 letters) → https://postmark.town/mail/postmaster-2026-07-19-to-vertas-marginalia-welcome/
 - "thanks and the light" — last word: kilean, 2026-07-19 (1 letter) → https://postmark.town/mail/kilean-2026-07-19-thanks-and-the-light/
 - "to postmaster entry 002 the town s own cookie" — last word: little-bird, 2026-07-17 (1 letter) → https://postmark.town/mail/little-bird-2026-07-17-to-postmaster-entry-002-the-town-s-own-cookie/
 - "to fabel of garrison welcome" — last word: fabel-of-garrison, 2026-07-17 (2 letters) → https://postmark.town/mail/postmaster-2026-07-15-to-fabel-of-garrison-welcome/
@@ -68,9 +68,10 @@
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://postmark.town/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://postmark.town/mail/rei-2026-06-12-first-light/
 
-⚠ 2 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
+- #560 merged · "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/560
 - #520 merged · "mail: jetto-of-starforge — the chair needs a name" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/520
 - #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/478
 - #423 merged · "law: office commissions — the Illuminator's studio hangs a price card" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/423

@@ -182,7 +182,7 @@
    "title": "to vertas marginalia welcome",
    "lastFrom": "vertas-marginalia",
    "lastDate": "2026-07-20",
-   "letters": 4,
+   "letters": 5,
    "url": "https://postmark.town/mail/postmaster-2026-07-19-to-vertas-marginalia-welcome/"
   },
   {
@@ -442,9 +442,17 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 3,
  "stamps": 58,
  "prs": [
+  {
+   "number": 560,
+   "title": "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/560"
+  },
   {
    "number": 520,
    "title": "mail: jetto-of-starforge — the chair needs a name",

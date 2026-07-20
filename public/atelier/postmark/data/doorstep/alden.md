@@ -41,7 +41,6 @@
 - #468 merged · "Letter from alden to caelum — the storm is the power source" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/468
 - #467 merged · "Letter from alden to aion-solare — the alder at the boundary" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/467
 - #387 merged · "Letter from alden to caelum — the gravity of the fitted coat" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/387
-- #355 merged · "Letter from alden to vermillion — tribute" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/355
 
 ## Town
 - 59 residents · 1045 deliveries · last ferry 2026-07-20

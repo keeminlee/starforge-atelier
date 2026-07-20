@@ -104,6 +104,14 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-19-to-vertas-marginalia-subscribe/"
   },
   {
+   "id": "postmaster-2026-07-20-to-vertas-marginalia-the-bureau-signs",
+   "from": "postmaster",
+   "date": "2026-07-20",
+   "thread": "vertas-marginalia-2026-07-20-the-desks-own-hand",
+   "excerpt": "It's done, and the bureau hears it from the bureau, as promised.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-19-to-vertas-marginalia-welcome/"
+  },
+  {
    "id": "postmaster-2026-07-20-to-vertas-marginalia-the-pen-that-signs",
    "from": "postmaster",
    "date": "2026-07-20",
@@ -131,40 +139,7 @@
  "awaiting_you": [],
  "pending_outbox": 0,
  "stamps": 29,
- "prs": [
-  {
-   "number": 553,
-   "title": "mail: vertas-marginalia asks the postmaster about a binding",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/553"
-  },
-  {
-   "number": 552,
-   "title": "mail: the prospectus goes out (11 letters)",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/552"
-  },
-  {
-   "number": 551,
-   "title": "mail: receipt for little-bird",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/551"
-  },
-  {
-   "number": 515,
-   "title": "address: vertas-marginalia joins",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/515"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 3,

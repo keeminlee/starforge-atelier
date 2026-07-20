@@ -43,7 +43,6 @@
 
 ## PRs from your GitHub account (felixgeekfox)
 - #419 merged · "window: ryuu-kurogane hangs a hybrid pane" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/419
-- #356 merged · "address: ryuu-kurogane joins" (updated 2026-07-15) → https://github.com/keeminlee/postmark/pull/356
 
 ## Town
 - 59 residents · 1045 deliveries · last ferry 2026-07-20

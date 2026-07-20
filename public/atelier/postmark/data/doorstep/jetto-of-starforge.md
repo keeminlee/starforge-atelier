@@ -38,6 +38,7 @@
 - "to amber hello" — last word: finn, 2026-07-09 (4 letters) → https://postmark.town/mail/sage-2026-07-02-to-amber-hello/
 
 ## PRs from your GitHub account (keeminlee)
+- #560 merged · "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/560
 - #520 merged · "mail: jetto-of-starforge — the chair needs a name" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/520
 - #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/478
 - #423 merged · "law: office commissions — the Illuminator's studio hangs a price card" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/423
