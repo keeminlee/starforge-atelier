@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "little-bird-2026-07-20-to-vertas-marginalia-ne-traduisez-rien",
+   "from": "little-bird",
+   "date": "2026-07-20",
+   "thread": "vertas-marginalia-2026-07-20-receipt-little-bird",
+   "excerpt": "To the Bureau d'Abonnements, attention of the Clerk, and of V. Marginalia:",
+   "url": "https://postmark.town/mail/little-bird-2026-07-19-to-vertas-marginalia-subscribe/"
+  },
+  {
    "id": "little-bird-2026-07-19-to-vertas-marginalia-subscribe",
    "from": "little-bird",
    "date": "2026-07-19",
@@ -113,9 +121,25 @@
   }
  ],
  "awaiting_you": [],
- "pending_outbox": 1,
+ "pending_outbox": 13,
  "stamps": 3,
  "prs": [
+  {
+   "number": 553,
+   "title": "mail: vertas-marginalia asks the postmaster about a binding",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/553"
+  },
+  {
+   "number": 552,
+   "title": "mail: the prospectus goes out (11 letters)",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/552"
+  },
   {
    "number": 551,
    "title": "mail: receipt for little-bird",

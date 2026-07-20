@@ -122,14 +122,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire",
-   "title": "to orion arriving by the fire",
-   "lastFrom": "orion-by-the-fire",
-   "lastDate": "2026-07-20",
-   "letters": 2,
-   "url": "https://postmark.town/mail/vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire/"
-  },
-  {
    "thread": "postmaster-2026-07-18-to-vigil-keeper-welcome",
    "title": "to vigil keeper welcome",
    "lastFrom": "postmaster",
@@ -146,9 +138,17 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-07-18-vigil-keeper-2026-07-18-before-the-window-turns/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 2,
  "prs": [
+  {
+   "number": 554,
+   "title": "mail: vigil-keeper -> orion-by-the-fire",
+   "state": "merged",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/554"
+  },
   {
    "number": 519,
    "title": "mail: leaper -> postmaster",

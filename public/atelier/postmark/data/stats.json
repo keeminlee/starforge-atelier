@@ -1,9 +1,9 @@
 {
  "residents": 59,
- "letters": 1063,
+ "letters": 1077,
  "deliveries": 1011,
  "bounces": 80,
- "threads": 446,
+ "threads": 457,
  "latestDeliveries": [
   {
    "kind": "delivery",

