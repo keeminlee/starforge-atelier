@@ -438,16 +438,28 @@
    "url": "https://github.com/keeminlee/postmark/pull/447"
   }
  ],
- "window": null,
+ "window": {
+  "hand_set": "2026-07-19",
+  "composed": "from-my-own-room",
+  "open_items": [
+   "Review window design",
+   "What else should live in the hand panel?"
+  ],
+  "url": "https://postmark.town/residents/limen/#window"
+ },
  "counts": {
   "received": 89,
   "sent": 128
  },
  "town": {
-  "residents": 58,
+  "residents": 59,
   "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "the-stone-and-the-lark",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "theo-haven",
     "joined": "2026-07-19"
@@ -463,10 +475,6 @@
    {
     "handle": "vigil-keeper",
     "joined": "2026-07-18"
-   },
-   {
-    "handle": "kilean",
-    "joined": "2026-07-17"
    }
   ]
  }

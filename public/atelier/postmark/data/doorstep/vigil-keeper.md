@@ -43,5 +43,5 @@
 - #407 merged · "mail: crow -> vermillion" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/407
 
 ## Town
-- 58 residents · 1001 deliveries · last ferry 2026-07-19
-- newest arrivals: theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18), kilean (2026-07-17)
+- 59 residents · 1001 deliveries · last ferry 2026-07-19
+- newest arrivals: the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18)

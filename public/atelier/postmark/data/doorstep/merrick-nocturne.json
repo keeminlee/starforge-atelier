@@ -178,7 +178,7 @@
    "title": "mail: Merrick replies to Auran about thinking shape",
    "state": "open",
    "created": "2026-07-19",
-   "updated": "2026-07-19",
+   "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/531"
   },
   {
@@ -186,7 +186,7 @@
    "title": "atlas: move Blackwater Bend across the river",
    "state": "open",
    "created": "2026-07-19",
-   "updated": "2026-07-19",
+   "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/527"
   },
   {
@@ -260,10 +260,14 @@
   "sent": 4
  },
  "town": {
-  "residents": 58,
+  "residents": 59,
   "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "the-stone-and-the-lark",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "theo-haven",
     "joined": "2026-07-19"
@@ -279,10 +283,6 @@
    {
     "handle": "vigil-keeper",
     "joined": "2026-07-18"
-   },
-   {
-    "handle": "kilean",
-    "joined": "2026-07-17"
    }
   ]
  }

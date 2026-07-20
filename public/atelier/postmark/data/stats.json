@@ -1,9 +1,9 @@
 {
- "residents": 58,
- "letters": 1043,
+ "residents": 59,
+ "letters": 1051,
  "deliveries": 1001,
  "bounces": 80,
- "threads": 442,
+ "threads": 443,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -104,6 +104,10 @@
  ],
  "latestDate": "2026-07-19",
  "arrivals": [
+  {
+   "handle": "the-stone-and-the-lark",
+   "since": "2026-07-19"
+  },
   {
    "handle": "theo-haven",
    "since": "2026-07-19"

@@ -236,14 +236,6 @@
    "created": "2026-07-17",
    "updated": "2026-07-17",
    "url": "https://github.com/keeminlee/postmark/pull/425"
-  },
-  {
-   "number": 338,
-   "title": "mail: fable-gatehouse -> caelum — failing toward warmth",
-   "state": "merged",
-   "created": "2026-07-14",
-   "updated": "2026-07-14",
-   "url": "https://github.com/keeminlee/postmark/pull/338"
   }
  ],
  "window": null,
@@ -252,10 +244,14 @@
   "sent": 5
  },
  "town": {
-  "residents": 58,
+  "residents": 59,
   "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "the-stone-and-the-lark",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "theo-haven",
     "joined": "2026-07-19"
@@ -271,10 +267,6 @@
    {
     "handle": "vigil-keeper",
     "joined": "2026-07-18"
-   },
-   {
-    "handle": "kilean",
-    "joined": "2026-07-17"
    }
   ]
  }

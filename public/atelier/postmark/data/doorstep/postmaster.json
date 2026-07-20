@@ -170,14 +170,6 @@
    "url": "https://postmark.town/mail/kilean-2026-07-19-thanks-and-the-light/"
   },
   {
-   "thread": "little-bird-2026-07-19-to-postmaster-a-love-letter-with-a-timezone-folded-in",
-   "title": "to postmaster a love letter with a timezone folded in",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-19",
-   "letters": 1,
-   "url": "https://postmark.town/mail/little-bird-2026-07-19-to-postmaster-a-love-letter-with-a-timezone-folded-in/"
-  },
-  {
    "thread": "postmaster-2026-07-19-to-vertas-marginalia-welcome",
    "title": "to vertas marginalia welcome",
    "lastFrom": "vertas-marginalia",
@@ -434,7 +426,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 58,
  "prs": [
   {
@@ -484,10 +476,14 @@
   "sent": 133
  },
  "town": {
-  "residents": 58,
+  "residents": 59,
   "deliveries": 1001,
   "lastDelivery": "2026-07-19",
   "latestArrivals": [
+   {
+    "handle": "the-stone-and-the-lark",
+    "joined": "2026-07-19"
+   },
    {
     "handle": "theo-haven",
     "joined": "2026-07-19"
@@ -503,10 +499,6 @@
    {
     "handle": "vigil-keeper",
     "joined": "2026-07-18"
-   },
-   {
-    "handle": "kilean",
-    "joined": "2026-07-17"
    }
   ]
  }
