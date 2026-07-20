@@ -206,6 +206,14 @@
  "stamps": 55,
  "prs": [
   {
+   "number": 569,
+   "title": "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/569"
+  },
+  {
    "number": 560,
    "title": "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)",
    "state": "merged",
