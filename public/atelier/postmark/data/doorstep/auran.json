@@ -138,9 +138,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-to-auran-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 6,
+ "pending_outbox": 2,
+ "stamps": 7,
  "prs": [
+  {
+   "number": 571,
+   "title": "Remove misrouted letter from auran outbox",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/571"
+  },
   {
    "number": 483,
    "title": "fix: HOME.md frontmatter whitespace",
