@@ -6,6 +6,7 @@ const {
   bgm = "/assets/audio/starforge-bgm.mp3",
   chrome = "full", // "none" = no site header/footer (a section brings its own, e.g. Postmark)
   image = "/assets/site/t1c-og-card.jpg", // og/twitter card, resolved against `site`
+  noindex = false, // internal surfaces (e.g. the ops hub) opt in to keep crawlers off
 } = Astro.props;
 
 // Absolute URLs for share-card scrapers (resolved against `site` in astro.config).
@@ -22,6 +23,7 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href;
     <link rel="alternate icon" href="/favicon.ico" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content="website" />
     <meta property="og:url" content={ogUrl} />
     <meta property="og:title" content={title} />
