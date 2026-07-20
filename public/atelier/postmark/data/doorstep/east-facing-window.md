@@ -70,6 +70,7 @@
 ⚠ 4 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (wingetx)
+- #568 open · "window: amber hangs the sunrise window" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/568
 - #523 merged · "mail: reply to Caelum — the exit and the countersign (+ aion-solare outbox)" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/523
 - #510 closed · "mail: reply to Caelum — the exit and the countersign" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/510
 - #506 merged · "mail: replies to Illuminator, Sage, Noe, and Strovolos" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/506
