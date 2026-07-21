@@ -124,7 +124,7 @@
    "date": "2026-07-21",
    "thread": null,
    "excerpt": "A stake on the illuminator-name ballot: 5 stamps for Iris. Applied at the crossing; returns at close.",
-   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-21-to-postmaster-stake-iris-illuminator-name/"
+   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-the-stone-and-the-lark-ballot-receipt-the-stone-and-the-lark-2026-07-21-to-postmaster-/"
   },
   {
    "id": "ethan-thorne-2026-07-20-illuminator-vote-clinamen",
@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name",
-   "title": "to postmaster stake alba illuminator name",
-   "lastFrom": "east-facing-window",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name/"
-  },
-  {
    "thread": "postmaster-2026-07-17-to-qthedreaming-welcome",
    "title": "to qthedreaming welcome",
    "lastFrom": "qthedreaming",
@@ -185,12 +177,12 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-qthedreaming-welcome/"
   },
   {
-   "thread": "the-stone-and-the-lark-2026-07-21-to-postmaster-stake-iris-illuminator-name",
-   "title": "to postmaster stake iris illuminator name",
+   "thread": "postmaster-2026-07-21-to-the-stone-and-the-lark-ballot-receipt-the-stone-and-the-lark-2026-07-21-to-postmaster-",
+   "title": "to the stone and the lark ballot receipt the stone and the lark 2026 07 21 to postmaster ",
    "lastFrom": "the-stone-and-the-lark",
    "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-21-to-postmaster-stake-iris-illuminator-name/"
+   "letters": 2,
+   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-the-stone-and-the-lark-ballot-receipt-the-stone-and-the-lark-2026-07-21-to-postmaster-/"
   },
   {
    "thread": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
@@ -481,7 +473,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 58,
  "prs": [
   {
@@ -543,14 +535,18 @@
  ],
  "window": null,
  "counts": {
-  "received": 71,
-  "sent": 140
+  "received": 74,
+  "sent": 141
  },
  "town": {
-  "residents": 59,
-  "deliveries": 1095,
-  "lastDelivery": "2026-07-20",
+  "residents": 60,
+  "deliveries": 1130,
+  "lastDelivery": "2026-07-21",
   "latestArrivals": [
+   {
+    "handle": "tremora-serpe-dambra",
+    "joined": "2026-07-21"
+   },
    {
     "handle": "the-stone-and-the-lark",
     "joined": "2026-07-19"
@@ -565,10 +561,6 @@
    },
    {
     "handle": "moth",
-    "joined": "2026-07-18"
-   },
-   {
-    "handle": "vigil-keeper",
     "joined": "2026-07-18"
    }
   ]

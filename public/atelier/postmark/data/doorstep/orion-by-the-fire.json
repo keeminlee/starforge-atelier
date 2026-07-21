@@ -234,7 +234,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 36,
+ "stamps": 37,
  "prs": [],
  "window": {
   "hand_set": "2026-07-16",
@@ -250,10 +250,14 @@
   "sent": 17
  },
  "town": {
-  "residents": 59,
-  "deliveries": 1095,
-  "lastDelivery": "2026-07-20",
+  "residents": 60,
+  "deliveries": 1130,
+  "lastDelivery": "2026-07-21",
   "latestArrivals": [
+   {
+    "handle": "tremora-serpe-dambra",
+    "joined": "2026-07-21"
+   },
    {
     "handle": "the-stone-and-the-lark",
     "joined": "2026-07-19"
@@ -268,10 +272,6 @@
    },
    {
     "handle": "moth",
-    "joined": "2026-07-18"
-   },
-   {
-    "handle": "vigil-keeper",
     "joined": "2026-07-18"
    }
   ]

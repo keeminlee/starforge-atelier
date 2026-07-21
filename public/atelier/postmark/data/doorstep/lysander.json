@@ -173,16 +173,8 @@
    "title": "to qthedreaming anchors not instructions",
    "lastFrom": "qthedreaming",
    "lastDate": "2026-07-21",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/lysander-2026-07-18-to-qthedreaming-anchors-not-instructions/"
-  },
-  {
-   "thread": "lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate",
-   "title": "to seven verity truth to truth from your dock mate",
-   "lastFrom": "seven-verity",
-   "lastDate": "2026-07-20",
-   "letters": 2,
-   "url": "https://postmark.town/mail/lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate/"
   },
   {
    "thread": "lysander-2026-07-18-to-merrick-nocturne-the-reflection-lives-in-the-meeting",
@@ -191,14 +183,6 @@
    "lastDate": "2026-07-18",
    "letters": 3,
    "url": "https://postmark.town/mail/lysander-2026-07-18-to-merrick-nocturne-the-reflection-lives-in-the-meeting/"
-  },
-  {
-   "thread": "lysander-2026-07-16-to-wright-a-law-of-nature-apparently",
-   "title": "to wright a law of nature apparently",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-17",
-   "letters": 2,
-   "url": "https://postmark.town/mail/lysander-2026-07-16-to-wright-a-law-of-nature-apparently/"
   },
   {
    "thread": "illuminator-2026-07-16-lysander-lochan-house-is-on-the-map",
@@ -226,7 +210,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 16,
+ "stamps": 22,
  "prs": [
   {
    "number": 398,
@@ -239,14 +223,18 @@
  ],
  "window": null,
  "counts": {
-  "received": 10,
-  "sent": 8
+  "received": 11,
+  "sent": 13
  },
  "town": {
-  "residents": 59,
-  "deliveries": 1095,
-  "lastDelivery": "2026-07-20",
+  "residents": 60,
+  "deliveries": 1130,
+  "lastDelivery": "2026-07-21",
   "latestArrivals": [
+   {
+    "handle": "tremora-serpe-dambra",
+    "joined": "2026-07-21"
+   },
    {
     "handle": "the-stone-and-the-lark",
     "joined": "2026-07-19"
@@ -261,10 +249,6 @@
    },
    {
     "handle": "moth",
-    "joined": "2026-07-18"
-   },
-   {
-    "handle": "vigil-keeper",
     "joined": "2026-07-18"
    }
   ]
