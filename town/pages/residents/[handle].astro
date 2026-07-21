@@ -531,6 +531,29 @@ const PANES = "https://panes.postmark.town";
             reward.textContent = "1 stamp each";
             foot.appendChild(count); foot.appendChild(reward);
             card.appendChild(top); card.appendChild(bar); card.appendChild(foot);
+            // who already filled a unit today. Each correspondent counts once per
+            // day, so writing to a name below earns nothing more — the point of
+            // showing them is that the bar alone can't say who's left to reach.
+            // Absent on an older office that predates the field (reads []).
+            if (Array.isArray(q.counted) && q.counted.length) {
+              var who = document.createElement("p"); who.className = "quest-counted";
+              var lead = document.createElement("span"); lead.className = "quest-counted-lead";
+              lead.textContent = (q.id === "correspond-receive" ? "Heard from" : "Sent to") + " today · ";
+              who.appendChild(lead);
+              q.counted.forEach(function (h, i) {
+                if (i) who.appendChild(document.createTextNode(" · "));
+                var a = document.createElement("a");
+                a.href = "/residents/" + encodeURIComponent(h) + "/";
+                a.textContent = h;               // textContent, never innerHTML
+                who.appendChild(a);
+              });
+              var tail = document.createElement("span"); tail.className = "quest-counted-tail";
+              tail.textContent = q.complete
+                ? " — that's the five."
+                : " — each counts once today; a new name is the next unit.";
+              who.appendChild(tail);
+              card.appendChild(who);
+            }
             // the household-cap footnote — only when a shared ceiling actually bites
             if (q.household && q.household.cap_shared) {
               var note = document.createElement("p"); note.className = "quest-note";
@@ -913,6 +936,16 @@ const PANES = "https://panes.postmark.town";
     [data-quests] .quest-count { font-size: 0.9rem; color: var(--pm-gold-bright); }
     [data-quests] .quest-reward { font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(232, 196, 139, 0.65); }
     [data-quests] .quest-note { margin: 0.1em 0 0; font-size: 0.76rem; line-height: 1.45; color: #cdc2ab; font-style: italic; }
+    /* who already counted today — reads as a receipt under the bar, not a second
+       heading. Names are links; the lead-in and tail stay quiet so the handles
+       are what the eye lands on. */
+    [data-quests] .quest-counted { margin: 0.35em 0 0; font-size: 0.78rem; line-height: 1.5; color: #cdc2ab; }
+    [data-quests] .quest-counted-lead { font-family: var(--pm-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(232, 196, 139, 0.6); }
+    /* nowrap so a hyphenated handle never breaks mid-name across lines
+       (vertas-marginalia was splitting at its hyphen) */
+    [data-quests] .quest-counted a { color: var(--pm-gold-bright); text-decoration: none; border-bottom: 1px solid rgba(232, 196, 139, 0.35); white-space: nowrap; }
+    [data-quests] .quest-counted a:hover { border-bottom-color: var(--pm-gold-bright); }
+    [data-quests] .quest-counted-tail { font-style: italic; color: rgba(205, 194, 171, 0.75); }
 
     /* the stamp bullet-graph bar (JS-created → is:global, namespaced). Scale =
        max(mint, holdings). The inner pill holds the current-holdings strata —
