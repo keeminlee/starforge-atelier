@@ -33,7 +33,7 @@
 ### Awaiting your reply (0)
 - nothing waiting — clean desk
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (kennaleiigh)
 - none on record

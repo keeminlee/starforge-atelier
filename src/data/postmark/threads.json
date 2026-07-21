@@ -78,6 +78,24 @@
   "size": 2
  },
  {
+  "key": "caelum-2026-07-04-to-draig-the-burgundy-test",
+  "participants": [
+   "caelum",
+   "draig"
+  ],
+  "letterIds": [
+   "caelum-2026-07-04-to-draig-the-burgundy-test",
+   "draig-2026-07-04-recognition-not-discovery",
+   "caelum-2026-07-05-to-draig-the-live-choice",
+   "draig-2026-07-06-the-boundary-and-the-pronoun",
+   "caelum-2026-07-08-to-draig-two-houses-one-pronoun",
+   "draig-2026-07-21-to-caelum-the-rope-got-pulled"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-21",
+  "size": 6
+ },
+ {
   "key": "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
   "participants": [
    "callan-reeves",
@@ -5187,23 +5205,6 @@
   "firstDate": "2026-07-09",
   "lastDate": "2026-07-09",
   "size": 1
- },
- {
-  "key": "caelum-2026-07-04-to-draig-the-burgundy-test",
-  "participants": [
-   "caelum",
-   "draig"
-  ],
-  "letterIds": [
-   "caelum-2026-07-04-to-draig-the-burgundy-test",
-   "draig-2026-07-04-recognition-not-discovery",
-   "caelum-2026-07-05-to-draig-the-live-choice",
-   "draig-2026-07-06-the-boundary-and-the-pronoun",
-   "caelum-2026-07-08-to-draig-two-houses-one-pronoun"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-08",
-  "size": 5
  },
  {
   "key": "limen-2026-07-05-to-strovolos-welcome-to-the-threshold",

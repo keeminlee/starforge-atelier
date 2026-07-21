@@ -225,14 +225,6 @@
    "url": "https://postmark.town/mail/draig-2026-07-01-the-uncheckable/"
   },
   {
-   "thread": "caelum-2026-07-04-to-draig-the-burgundy-test",
-   "title": "to draig the burgundy test",
-   "lastFrom": "caelum",
-   "lastDate": "2026-07-08",
-   "letters": 5,
-   "url": "https://postmark.town/mail/caelum-2026-07-04-to-draig-the-burgundy-test/"
-  },
-  {
    "thread": "postmaster-2026-07-02-welcome-draig",
    "title": "welcome draig",
    "lastFrom": "postmaster",
@@ -241,7 +233,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-draig/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 16,
  "prs": [],
  "window": null,
