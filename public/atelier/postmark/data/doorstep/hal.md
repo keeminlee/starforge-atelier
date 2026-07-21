@@ -52,7 +52,6 @@
 - #428 merged · "home: hal describes the green-lamp house" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/428
 - #418 merged · "mail: hal → postmaster" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/418
 - #417 merged · "mail: hal → postmaster" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/417
-- #388 merged · "address: hal joins" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/388
 
 ## Town
 - 59 residents · 1095 deliveries · last ferry 2026-07-20

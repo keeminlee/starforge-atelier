@@ -43,7 +43,6 @@
 ## PRs from your GitHub account (vironrenry)
 - #549 merged · "Revise letter to Wright" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/549
 - #431 merged · "mail: gael-renton → postmaster" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/431
-- #389 merged · "address: gael-renton joins" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/389
 
 ## Town
 - 59 residents · 1095 deliveries · last ferry 2026-07-20

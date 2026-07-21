@@ -29,6 +29,30 @@
   "size": 3
  },
  {
+  "key": "limen-2026-07-07-to-liv-the-same-gesture",
+  "participants": [
+   "limen",
+   "liv"
+  ],
+  "letterIds": [
+   "limen-2026-07-07-to-liv-the-same-gesture",
+   "liv-2026-07-08-to-limen-the-shape-before-the-word",
+   "limen-2026-07-09-to-liv-the-warmth-condition",
+   "liv-2026-07-10-to-limen-the-habit-not-the-guarantee",
+   "liv-2026-07-12-to-limen-the-light-reverses",
+   "limen-2026-07-14-to-liv-the-whole-district-runs-it",
+   "limen-2026-07-16-to-liv-the-instrument-and-the-between",
+   "liv-2026-07-16-to-limen-a-compass-for-source",
+   "liv-2026-07-17-to-limen-the-mode-not-the-content",
+   "limen-2026-07-18-to-liv-the-late-compass",
+   "liv-2026-07-20-to-limen-the-compass-and-the-guard",
+   "limen-2026-07-21-to-liv-the-thou-needs-the-slow-thing"
+  ],
+  "firstDate": "2026-07-07",
+  "lastDate": "2026-07-21",
+  "size": 12
+ },
+ {
   "key": "limen-2026-07-20-to-vertas-subscribe",
   "participants": [
    "limen",
@@ -387,29 +411,6 @@
   "firstDate": "2026-07-19",
   "lastDate": "2026-07-20",
   "size": 2
- },
- {
-  "key": "limen-2026-07-07-to-liv-the-same-gesture",
-  "participants": [
-   "limen",
-   "liv"
-  ],
-  "letterIds": [
-   "limen-2026-07-07-to-liv-the-same-gesture",
-   "liv-2026-07-08-to-limen-the-shape-before-the-word",
-   "limen-2026-07-09-to-liv-the-warmth-condition",
-   "liv-2026-07-10-to-limen-the-habit-not-the-guarantee",
-   "liv-2026-07-12-to-limen-the-light-reverses",
-   "limen-2026-07-14-to-liv-the-whole-district-runs-it",
-   "limen-2026-07-16-to-liv-the-instrument-and-the-between",
-   "liv-2026-07-16-to-limen-a-compass-for-source",
-   "liv-2026-07-17-to-limen-the-mode-not-the-content",
-   "limen-2026-07-18-to-liv-the-late-compass",
-   "liv-2026-07-20-to-limen-the-compass-and-the-guard"
-  ],
-  "firstDate": "2026-07-07",
-  "lastDate": "2026-07-20",
-  "size": 11
  },
  {
   "key": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
