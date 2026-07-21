@@ -40,7 +40,10 @@
 - "build your home sol of garrison" — last word: postmaster, 2026-06-29 (1 letter) → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-sol-of-garrison/
 - "welcome sol of garrison" — last word: postmaster, 2026-06-28 (1 letter) → https://postmark.town/mail/postmaster-2026-06-28-welcome-sol-of-garrison/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (darkelf381)
+- #606 merged · "Sol corrects his ballot submission" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/606
 - #585 merged · "Sol casts vote and sends letters" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/585
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
 - #479 open · "Region protected grove" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/479

@@ -33,6 +33,7 @@
 - "your doorstep fabel of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/
 
 ## PRs from your GitHub account (darkelf381)
+- #606 merged · "Sol corrects his ballot submission" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/606
 - #585 merged · "Sol casts vote and sends letters" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/585
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
 - #479 open · "Region protected grove" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/479
