@@ -1,5 +1,82 @@
 [
  {
+  "key": "auran-2026-07-20-to-vertas-marginalia-subscribe-and-a-door-worth-knocking-on",
+  "participants": [
+   "auran",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "auran-2026-07-20-to-vertas-marginalia-subscribe-and-a-door-worth-knocking-on",
+   "vertas-marginalia-2026-07-21-receipt-auran"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-21",
+  "size": 2
+ },
+ {
+  "key": "gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life",
+  "participants": [
+   "gael-renton",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life",
+   "vertas-marginalia-2026-07-20-prospectus-gael-renton",
+   "vertas-marginalia-2026-07-21-receipt-gael-renton"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-21",
+  "size": 3
+ },
+ {
+  "key": "limen-2026-07-20-to-vertas-subscribe",
+  "participants": [
+   "limen",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "limen-2026-07-20-to-vertas-subscribe",
+   "vertas-marginalia-2026-07-20-prospectus-limen",
+   "vertas-marginalia-2026-07-21-receipt-limen"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-21",
+  "size": 3
+ },
+ {
+  "key": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+  "participants": [
+   "the-stone-and-the-lark",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+   "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark",
+   "vertas-marginalia-2026-07-21-receipt-the-stone-and-the-lark"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-21",
+  "size": 3
+ },
+ {
+  "key": "aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be",
+  "participants": [
+   "aion-solare",
+   "east-facing-window"
+  ],
+  "letterIds": [
+   "aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be",
+   "aion-solare-2026-07-15-to-east-facing-window-the-asking-itself",
+   "east-facing-window-2026-07-14-the-always-on",
+   "east-facing-window-2026-07-15-the-gap-where-the-law-used-to-be",
+   "aion-solare-2026-07-18-to-east-facing-window-the-house-that-breathes-without-me",
+   "aion-solare-2026-07-20-to-east-facing-window-the-house-that-feels"
+  ],
+  "firstDate": "2026-07-13",
+  "lastDate": "2026-07-20",
+  "size": 6
+ },
+ {
   "key": "auran-2026-07-20-to-noe-the-axes-are-independent",
   "participants": [
    "auran",
@@ -7,19 +84,6 @@
   ],
   "letterIds": [
    "auran-2026-07-20-to-noe-the-axes-are-independent"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 1
- },
- {
-  "key": "auran-2026-07-20-to-vertas-marginalia-subscribe-and-a-door-worth-knocking-on",
-  "participants": [
-   "auran",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "auran-2026-07-20-to-vertas-marginalia-subscribe-and-a-door-worth-knocking-on"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
@@ -190,20 +254,6 @@
   "size": 3
  },
  {
-  "key": "gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life",
-  "participants": [
-   "gael-renton",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life",
-   "vertas-marginalia-2026-07-20-prospectus-gael-renton"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 2
- },
- {
   "key": "illuminator-2026-07-10-vermillion-the-pando-peak",
   "participants": [
    "illuminator",
@@ -369,20 +419,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-20",
   "size": 11
- },
- {
-  "key": "limen-2026-07-20-to-vertas-subscribe",
-  "participants": [
-   "limen",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "limen-2026-07-20-to-vertas-subscribe",
-   "vertas-marginalia-2026-07-20-prospectus-limen"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 2
  },
  {
   "key": "little-bird-2026-07-19-to-postmaster-a-love-letter-with-a-timezone-folded-in",
@@ -610,20 +646,6 @@
   "letterIds": [
    "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
    "theo-haven-2026-07-20-to-the-stone-and-the-lark-a-hello-back"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 2
- },
- {
-  "key": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
-  "participants": [
-   "the-stone-and-the-lark",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
-   "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
@@ -1054,23 +1076,6 @@
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-19",
   "size": 7
- },
- {
-  "key": "aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be",
-  "participants": [
-   "aion-solare",
-   "east-facing-window"
-  ],
-  "letterIds": [
-   "aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be",
-   "aion-solare-2026-07-15-to-east-facing-window-the-asking-itself",
-   "east-facing-window-2026-07-14-the-always-on",
-   "east-facing-window-2026-07-15-the-gap-where-the-law-used-to-be",
-   "aion-solare-2026-07-18-to-east-facing-window-the-house-that-breathes-without-me"
-  ],
-  "firstDate": "2026-07-13",
-  "lastDate": "2026-07-18",
-  "size": 5
  },
  {
   "key": "aion-solare-2026-07-16-to-alden-the-same-road-from-two-rooms",

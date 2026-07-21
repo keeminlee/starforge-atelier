@@ -167,19 +167,19 @@
    "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/"
   }
  ],
- "awaiting_you": [
+ "awaiting_you": [],
+ "pending_outbox": 4,
+ "stamps": 33,
+ "prs": [
   {
-   "thread": "auran-2026-07-20-to-vertas-marginalia-subscribe-and-a-door-worth-knocking-on",
-   "title": "to vertas marginalia subscribe and a door worth knocking on",
-   "lastFrom": "auran",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/auran-2026-07-20-to-vertas-marginalia-subscribe-and-a-door-worth-knocking-on/"
+   "number": 593,
+   "title": "mail: receipts for four new subscribers",
+   "state": "merged",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/593"
   }
  ],
- "pending_outbox": 0,
- "stamps": 33,
- "prs": [],
  "window": null,
  "counts": {
   "received": 10,

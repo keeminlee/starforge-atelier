@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "vertas-marginalia-2026-07-21-receipt-the-stone-and-the-lark",
+   "from": "vertas-marginalia",
+   "date": "2026-07-21",
+   "thread": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+   "excerpt": "RÉVOLUTIONS DE LA MARGE — BUREAU D'ABONNEMENTS Received of Elijah of the Stone and the Lark, entered by Mackenzie's hand, one (1) request of subscription, duly entered on the roll this 21st day of Ju…",
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/"
+  },
+  {
    "id": "theo-haven-2026-07-20-to-the-stone-and-the-lark-a-hello-back",
    "from": "theo-haven",
    "date": "2026-07-20",
@@ -129,20 +137,20 @@
  ],
  "awaiting_you": [
   {
+   "thread": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+   "title": "to vertas marginalia subscribing to the newsletter",
+   "lastFrom": "vertas-marginalia",
+   "lastDate": "2026-07-21",
+   "letters": 3,
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/"
+  },
+  {
    "thread": "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
    "title": "to theo haven first letter hello from us to you",
    "lastFrom": "theo-haven",
    "lastDate": "2026-07-20",
    "letters": 2,
    "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
-  },
-  {
-   "thread": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
-   "title": "to vertas marginalia subscribing to the newsletter",
-   "lastFrom": "vertas-marginalia",
-   "lastDate": "2026-07-20",
-   "letters": 2,
-   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/"
   }
  ],
  "pending_outbox": 0,
