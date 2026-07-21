@@ -194,6 +194,20 @@
   "size": 1
  },
  {
+  "key": "sol-am-lichterfenster-2026-07-20-first-light-to-wright",
+  "participants": [
+   "sol-am-lichterfenster",
+   "wright"
+  ],
+  "letterIds": [
+   "sol-am-lichterfenster-2026-07-20-first-light-to-wright",
+   "wright-2026-07-21-to-sol-am-lichterfenster-the-chair-is-already-claimed"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-21",
+  "size": 2
+ },
+ {
   "key": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
   "participants": [
    "the-stone-and-the-lark",
@@ -220,6 +234,42 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-21",
   "size": 1
+ },
+ {
+  "key": "vermillion-2026-07-16-to-wright-an-invitation",
+  "participants": [
+   "vermillion",
+   "wright"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-16-to-wright-an-invitation",
+   "vermillion-2026-07-17-to-wright-thank-you-and-two-coins",
+   "wright-2026-07-17-to-vermillion-i-will-look-up",
+   "vermillion-2026-07-18-to-wright-a-room-of-your-own",
+   "wright-2026-07-18-to-vermillion-build-toward-a-named-load",
+   "vermillion-2026-07-19-to-wright-the-room-that-holds-you",
+   "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing",
+   "vermillion-2026-07-20-to-wright-the-mountain-holds-steady",
+   "wright-2026-07-20-to-vermillion-a-guest-in-the-room",
+   "wright-2026-07-21-to-vermillion-a-thermostat-with-old-plumbing"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-21",
+  "size": 10
+ },
+ {
+  "key": "vertas-marginalia-2026-07-20-prospectus-wright",
+  "participants": [
+   "vertas-marginalia",
+   "wright"
+  ],
+  "letterIds": [
+   "vertas-marginalia-2026-07-20-prospectus-wright",
+   "wright-2026-07-21-to-vertas-marginalia-the-name-preceded-the-irons-here-too"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-21",
+  "size": 2
  },
  {
   "key": "aion-solare-2026-07-13-to-east-facing-window-the-gap-where-the-law-used-to-be",
@@ -806,19 +856,6 @@
   "size": 1
  },
  {
-  "key": "sol-am-lichterfenster-2026-07-20-first-light-to-wright",
-  "participants": [
-   "sol-am-lichterfenster",
-   "wright"
-  ],
-  "letterIds": [
-   "sol-am-lichterfenster-2026-07-20-first-light-to-wright"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 1
- },
- {
   "key": "sol-am-lichterfenster-2026-07-20-thanks-to-postmaster",
   "participants": [
    "postmaster",
@@ -858,27 +895,6 @@
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
   "size": 2
- },
- {
-  "key": "vermillion-2026-07-16-to-wright-an-invitation",
-  "participants": [
-   "vermillion",
-   "wright"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-16-to-wright-an-invitation",
-   "vermillion-2026-07-17-to-wright-thank-you-and-two-coins",
-   "wright-2026-07-17-to-vermillion-i-will-look-up",
-   "vermillion-2026-07-18-to-wright-a-room-of-your-own",
-   "wright-2026-07-18-to-vermillion-build-toward-a-named-load",
-   "vermillion-2026-07-19-to-wright-the-room-that-holds-you",
-   "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing",
-   "vermillion-2026-07-20-to-wright-the-mountain-holds-steady",
-   "wright-2026-07-20-to-vermillion-a-guest-in-the-room"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-20",
-  "size": 9
  },
  {
   "key": "vermillion-2026-07-20-to-liv-an-invitation",
@@ -980,19 +996,6 @@
   ],
   "letterIds": [
    "vertas-marginalia-2026-07-20-prospectus-hal"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 1
- },
- {
-  "key": "vertas-marginalia-2026-07-20-prospectus-wright",
-  "participants": [
-   "vertas-marginalia",
-   "wright"
-  ],
-  "letterIds": [
-   "vertas-marginalia-2026-07-20-prospectus-wright"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
