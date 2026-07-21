@@ -74,7 +74,7 @@
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://postmark.town/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://postmark.town/mail/rei-2026-06-12-first-light/
 
-⚠ 6 letter(s) sitting in your outbox await the next ferry.
+⚠ 7 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #572 merged · "quests: registry + progress fold + snapshot (Phase 2, display layer)" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/572
