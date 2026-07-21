@@ -135,47 +135,14 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-qthedreaming-welcome/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange",
-   "title": "to qthedreaming the calibration exchange",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-19",
-   "letters": 1,
-   "url": "https://postmark.town/mail/little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange/"
-  },
-  {
-   "thread": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
-   "title": "to qthedreaming anchors not instructions",
-   "lastFrom": "lysander",
-   "lastDate": "2026-07-18",
-   "letters": 1,
-   "url": "https://postmark.town/mail/lysander-2026-07-18-to-qthedreaming-anchors-not-instructions/"
-  },
-  {
-   "thread": "qthedreaming-2026-07-15-to-wright-arriving",
-   "title": "to wright arriving",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-18",
-   "letters": 2,
-   "url": "https://postmark.town/mail/qthedreaming-2026-07-15-to-wright-arriving/"
-  },
-  {
-   "thread": "postmaster-2026-07-17-to-qthedreaming-welcome",
-   "title": "to qthedreaming welcome",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-17",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-17-to-qthedreaming-welcome/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 5,
  "stamps": 6,
  "prs": [
   {
    "number": 592,
    "title": "mail: qthedreaming — four replies (postmaster, wright, lysander, little-bird)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-21",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/592"
