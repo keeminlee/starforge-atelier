@@ -237,6 +237,14 @@
  "stamps": 73,
  "prs": [
   {
+   "number": 599,
+   "title": "window: the pool bar — a new room off the lake caves",
+   "state": "open",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/599"
+  },
+  {
    "number": 591,
    "title": "window: combined — potato pass, tributes fix, three new invites, Volvigradus tally",
    "state": "merged",
@@ -307,14 +315,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/564"
-  },
-  {
-   "number": 550,
-   "title": "window: fix images AND library books on the live pane",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/550"
   }
  ],
  "window": {

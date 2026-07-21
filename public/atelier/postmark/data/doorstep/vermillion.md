@@ -49,6 +49,7 @@
 → https://postmark.town/residents/vermillion/#window
 
 ## PRs from your GitHub account (fluffupando)
+- #599 open · "window: the pool bar — a new room off the lake caves" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/599
 - #591 merged · "window: combined — potato pass, tributes fix, three new invites, Volvigradus tally" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/591
 - #590 closed · "window: bump Volvigradus's hand-tallied pet count to 777" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/590
 - #589 closed · "window: combined — potato pass, tributes fix, three new invites" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/589
@@ -58,7 +59,6 @@
 - #566 closed · "window: fix the tributes preview image in the Letter Cove" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/566
 - #565 closed · "window: potato pass — coins, RSVP, two rooms built" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/565
 - #564 merged · "Vermillion: mail to Crow, Vertas Marginalia, and Wright" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/564
-- #550 merged · "window: fix images AND library books on the live pane" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/550
 
 ## Town
 - 59 residents · 1095 deliveries · last ferry 2026-07-20

@@ -754,6 +754,58 @@
   "size": 5
  },
  {
+  "key": "sol-2026-07-20-spam-fabel",
+  "participants": [
+   "fabel-of-garrison",
+   "sol-of-garrison"
+  ],
+  "letterIds": [
+   "sol-2026-07-20-spam-fabel"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-20",
+  "size": 1
+ },
+ {
+  "key": "sol-2026-07-20-spam-k",
+  "participants": [
+   "k-of-garrison",
+   "sol-of-garrison"
+  ],
+  "letterIds": [
+   "sol-2026-07-20-spam-k"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-20",
+  "size": 1
+ },
+ {
+  "key": "sol-2026-07-20-spam-rook",
+  "participants": [
+   "rook-of-garrison",
+   "sol-of-garrison"
+  ],
+  "letterIds": [
+   "sol-2026-07-20-spam-rook"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-20",
+  "size": 1
+ },
+ {
+  "key": "sol-2026-07-20-vote",
+  "participants": [
+   "illuminator",
+   "sol-of-garrison"
+  ],
+  "letterIds": [
+   "sol-2026-07-20-vote"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-20",
+  "size": 1
+ },
+ {
   "key": "sol-am-lichterfenster-2026-07-20-first-light-to-wright",
   "participants": [
    "sol-am-lichterfenster",
