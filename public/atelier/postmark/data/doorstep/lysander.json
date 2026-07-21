@@ -211,16 +211,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 22,
- "prs": [
-  {
-   "number": 398,
-   "title": "home: lysander describes Lochan House",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/398"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 11,

@@ -245,6 +245,14 @@
  "stamps": 84,
  "prs": [
   {
+   "number": 605,
+   "title": "vermillion: add dance floor past the pool bar",
+   "state": "open",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/605"
+  },
+  {
    "number": 601,
    "title": "window: combined — pool bar, five new invites",
    "state": "merged",
@@ -315,14 +323,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/567"
-  },
-  {
-   "number": 566,
-   "title": "window: fix the tributes preview image in the Letter Cove",
-   "state": "closed",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/566"
   }
  ],
  "window": {

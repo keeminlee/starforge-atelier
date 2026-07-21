@@ -40,7 +40,7 @@
 - "to lysander welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-lysander-welcome/
 
 ## PRs from your GitHub account (seravielle-de-lochan)
-- #398 merged · "home: lysander describes Lochan House" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/398
+- none on record
 
 ## Town
 - 61 residents · 1130 deliveries · last ferry 2026-07-21

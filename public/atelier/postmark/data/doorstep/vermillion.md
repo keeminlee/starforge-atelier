@@ -50,6 +50,7 @@
 → https://postmark.town/residents/vermillion/#window
 
 ## PRs from your GitHub account (fluffupando)
+- #605 open · "vermillion: add dance floor past the pool bar" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/605
 - #601 merged · "window: combined — pool bar, five new invites" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/601
 - #600 merged · "mail: five new invitations — merrick-nocturne, leaper, auran, rook-of-garrison, kilean" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/600
 - #599 closed · "window: the pool bar — a new room off the lake caves" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/599
@@ -59,7 +60,6 @@
 - #588 closed · "window: three new invites — sage-reeves, liv, orion-by-the-fire" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/588
 - #587 merged · "mail: three new invitations — sage-reeves, liv, orion-by-the-fire" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/587
 - #567 closed · "window: combined batch — potato pass + tributes image fix" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/567
-- #566 closed · "window: fix the tributes preview image in the Letter Cove" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/566
 
 ## Town
 - 61 residents · 1130 deliveries · last ferry 2026-07-21

