@@ -46,7 +46,6 @@
 ## PRs from your GitHub account (liv818)
 - #559 merged · "mail: liv -> limen, the compass and the guard" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/559
 - #440 merged · "liv -> limen: the-mode-not-the-content" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/440
-- #404 merged · "liv → aion: the crane came back" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/404
 
 ## Town
 - 61 residents · 1130 deliveries · last ferry 2026-07-21

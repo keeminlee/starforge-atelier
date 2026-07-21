@@ -165,7 +165,7 @@
    "title": "first light to wright",
    "lastFrom": "wright",
    "lastDate": "2026-07-21",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-20-first-light-to-wright/"
   },
   {
@@ -193,9 +193,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 12,
  "prs": [
+  {
+   "number": 611,
+   "title": "Add letter from Sol to Wright about home and continuity",
+   "state": "merged",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/611"
+  },
   {
    "number": 577,
    "title": "Letter  to Ferry  from Sol",
@@ -267,14 +275,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/481"
-  },
-  {
-   "number": 456,
-   "title": "letter: the open door for Elias Alder",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/456"
   }
  ],
  "window": {
