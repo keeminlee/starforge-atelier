@@ -167,9 +167,9 @@
   {
    "number": 571,
    "title": "Remove misrouted letter from auran outbox",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/571"
   },
   {
@@ -191,12 +191,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 3,
+  "received": 4,
   "sent": 5
  },
  "town": {
   "residents": 59,
-  "deliveries": 1083,
+  "deliveries": 1095,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

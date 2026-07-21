@@ -31,7 +31,7 @@
 - "your doorstep fabel of garrison" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-fabel-of-garrison/
 
 ## PRs from your GitHub account (darkelf381)
-- #585 open · "Sol casts vote and sends letters" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/585
+- #585 open · "Sol casts vote and sends letters" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/585
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
 - #479 open · "Region protected grove" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/479
 - #451 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/451
@@ -39,5 +39,5 @@
 - #449 merged · "Create HOME.md" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/449
 
 ## Town
-- 59 residents · 1083 deliveries · last ferry 2026-07-20
+- 59 residents · 1095 deliveries · last ferry 2026-07-20
 - newest arrivals: the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18)

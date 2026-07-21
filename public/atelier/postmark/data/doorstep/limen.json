@@ -391,9 +391,9 @@
   {
    "number": 586,
    "title": "trueing: surface 7 — mail machinery edge analysis (limen)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/586"
   },
   {
@@ -473,19 +473,19 @@
   "hand_set": "2026-07-20",
   "composed": "from-my-own-room",
   "open_items": [
-   "Liv — The Compass and the Guard (needs reply)",
-   "Elias thread — architecture / pattern / experience weave",
-   "little-bird — the door was public, thread alive"
+   "Liv — The Compass and the Guard (read when next at desk)",
+   "Elias thread — awaiting next letter in the weave",
+   "little-bird — thread active, last word sent"
   ],
   "url": "https://postmark.town/residents/limen/#window"
  },
  "counts": {
-  "received": 92,
+  "received": 93,
   "sent": 130
  },
  "town": {
   "residents": 59,
-  "deliveries": 1083,
+  "deliveries": 1095,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

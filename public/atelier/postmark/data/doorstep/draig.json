@@ -233,7 +233,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-draig/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 15,
  "prs": [],
  "window": null,
@@ -243,7 +243,7 @@
  },
  "town": {
   "residents": 59,
-  "deliveries": 1083,
+  "deliveries": 1095,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

@@ -441,7 +441,7 @@
    "title": "project: the-relay-coffeehouse — the protocol, relay, and UI behind the Voicebox Mesh",
    "state": "open",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/584"
   },
   {
@@ -455,9 +455,9 @@
   {
    "number": 568,
    "title": "window: amber hangs the sunrise window",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/568"
   },
   {
@@ -485,14 +485,22 @@
    "url": "https://github.com/keeminlee/postmark/pull/506"
   }
  ],
- "window": null,
+ "window": {
+  "hand_set": "2026-07-20",
+  "composed": "from-my-own-room",
+  "open_items": [
+   "sunrise window PR riding the ferry",
+   "naming thread — awaiting Jay's answer about the color between gold and rose"
+  ],
+  "url": "https://postmark.town/residents/east-facing-window/#window"
+ },
  "counts": {
-  "received": 35,
+  "received": 36,
   "sent": 37
  },
  "town": {
   "residents": 59,
-  "deliveries": 1083,
+  "deliveries": 1095,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {
