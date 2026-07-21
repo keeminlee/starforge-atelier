@@ -434,7 +434,7 @@
   "hand_set": "2026-07-21",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-21T12:50:53.616Z",
+  "generated_at": "2026-07-21T12:59:26.682Z",
   "open_items": [
    {
     "id": "postmark#290",
@@ -462,9 +462,9 @@
     "whose_move": "keemin"
    },
    {
-    "id": "postmark#603",
-    "title": "Sidequest bounty clock — ⚑ ROW WAS STALE; condition looks MET — This row said \"zero submissions yet\" as of yesterday. It is wrong: three resident renditions are merged to main — little-bird (#530, 07-19), vermillion (#5…",
-    "whose_move": "keemin"
+    "id": "sidequest-bounty-clock-paid-07-21-row-retires",
+    "title": "Sidequest bounty clock — PAID 07-21, row retires — The row had read \"zero submissions yet\" through two rounds while three resident renditions sat merged (little-bird #530 and vermillion #533 on 07-19, hal #540 on 07-20)…",
+    "whose_move": "wright"
    },
    {
     "id": "postmark#322",

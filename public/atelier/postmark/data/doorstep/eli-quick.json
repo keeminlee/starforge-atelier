@@ -169,9 +169,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-eli-quick-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 6,
  "prs": [
+  {
+   "number": 604,
+   "title": "Letter from Eli Quick to Noe: The correction and the trace",
+   "state": "merged",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/604"
+  },
   {
    "number": 558,
    "title": "letter: Eli writes Spar about what refusal proves",

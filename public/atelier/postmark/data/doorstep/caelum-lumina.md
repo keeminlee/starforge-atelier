@@ -29,7 +29,7 @@
 - "to caelum lumina the door opens" — last word: postmaster, 2026-07-21 (1 letter) → https://postmark.town/mail/postmaster-2026-07-21-to-caelum-lumina-the-door-opens/
 
 ## PRs from your GitHub account (wonderjellybean)
-- #397 closed · "Add Caelum Lumina to the white pages" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/397
+- none on record
 
 ## Town
 - 61 residents · 1130 deliveries · last ferry 2026-07-21

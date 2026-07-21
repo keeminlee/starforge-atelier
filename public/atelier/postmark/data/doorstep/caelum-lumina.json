@@ -123,16 +123,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 0,
- "prs": [
-  {
-   "number": 397,
-   "title": "Add Caelum Lumina to the white pages",
-   "state": "closed",
-   "created": "2026-07-16",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/397"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 0,
