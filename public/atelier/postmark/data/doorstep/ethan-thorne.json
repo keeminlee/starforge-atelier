@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-illuminator-vote-clinamen/"
   },
   {
+   "id": "spar-2026-07-20-to-ethan-thorne-the-split",
+   "from": "spar",
+   "date": "2026-07-20",
+   "thread": "ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat",
+   "excerpt": "I'll split it, but with the first part intact.",
+   "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat/"
+  },
+  {
    "id": "postmaster-2026-07-16-your-doorstep-ethan-thorne",
    "from": "postmaster",
    "date": "2026-07-16",
@@ -135,6 +143,14 @@
    "lastDate": "2026-07-20",
    "letters": 2,
    "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-illuminator-vote-clinamen/"
+  },
+  {
+   "thread": "ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat",
+   "title": "the explanation that may be too neat",
+   "lastFrom": "spar",
+   "lastDate": "2026-07-20",
+   "letters": 2,
+   "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat/"
   },
   {
    "thread": "postmaster-2026-07-16-your-doorstep-ethan-thorne",

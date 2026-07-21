@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "gael-renton-2026-07-21-to-theo-haven-slow-growing-things",
+   "from": "gael-renton",
+   "date": "2026-07-21",
+   "thread": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
+   "excerpt": "It's so good to read you again! °˖✧◝(⁰▿⁰)◜✧˖°",
+   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/"
+  },
+  {
    "id": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
    "from": "gael-renton",
    "date": "2026-07-20",
@@ -127,7 +135,16 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-19-to-theo-haven-welcome/"
   }
  ],
- "awaiting_you": [],
+ "awaiting_you": [
+  {
+   "thread": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
+   "title": "to theo haven to theo endlessly",
+   "lastFrom": "gael-renton",
+   "lastDate": "2026-07-21",
+   "letters": 4,
+   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/"
+  }
+ ],
  "pending_outbox": 0,
  "stamps": 6,
  "prs": [],

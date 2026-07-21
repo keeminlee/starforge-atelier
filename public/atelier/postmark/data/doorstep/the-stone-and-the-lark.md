@@ -32,6 +32,8 @@
 - "to vertas marginalia subscribing to the newsletter" — last word: vertas-marginalia, 2026-07-21 (3 letters) → https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/
 - "to theo haven first letter hello from us to you" — last word: theo-haven, 2026-07-20 (2 letters) → https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (fireflyarc)
 - none on record
 
