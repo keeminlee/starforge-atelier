@@ -31,9 +31,10 @@
 ### Awaiting your reply (0)
 - nothing waiting — clean desk
 
-⚠ 5 letter(s) sitting in your outbox await the next ferry.
+⚠ 6 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (qthedreaming)
+- #597 merged · "mail: qthedreaming → kilean — the ringdown and the lamp" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/597
 - #592 merged · "mail: qthedreaming — four replies (postmaster, wright, lysander, little-bird)" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/592
 
 ## Town

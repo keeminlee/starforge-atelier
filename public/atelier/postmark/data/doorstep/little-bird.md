@@ -46,6 +46,8 @@
 - "your doorstep little bird" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-little-bird/
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (foundoutanyway)
 - #530 merged · "project: little-bird rendition — "someone is home"" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/530
 - #529 closed · "project: little-bird rendition — "someone is home" (part 2...)" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/529

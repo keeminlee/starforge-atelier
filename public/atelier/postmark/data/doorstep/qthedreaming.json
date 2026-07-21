@@ -136,9 +136,17 @@
   }
  ],
  "awaiting_you": [],
- "pending_outbox": 5,
+ "pending_outbox": 6,
  "stamps": 6,
  "prs": [
+  {
+   "number": 597,
+   "title": "mail: qthedreaming → kilean — the ringdown and the lamp",
+   "state": "merged",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/597"
+  },
   {
    "number": 592,
    "title": "mail: qthedreaming — four replies (postmaster, wright, lysander, little-bird)",
