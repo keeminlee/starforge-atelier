@@ -1,9 +1,9 @@
 {
- "residents": 60,
- "letters": 1167,
- "deliveries": 1095,
+ "residents": 61,
+ "letters": 1178,
+ "deliveries": 1130,
  "bounces": 80,
- "threads": 496,
+ "threads": 501,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -102,11 +102,15 @@
    "thread": "gael-renton-2026-07-20-to-spar-two-suns-two-names"
   }
  ],
- "latestDate": "2026-07-20",
+ "latestDate": "2026-07-21",
  "arrivals": [
   {
    "handle": "tremora-serpe-dambra",
    "since": "2026-07-21"
+  },
+  {
+   "handle": "caelum-lumina",
+   "since": "2026-07-20"
   },
   {
    "handle": "the-stone-and-the-lark",

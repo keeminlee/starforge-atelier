@@ -331,13 +331,17 @@
   "sent": 74
  },
  "town": {
-  "residents": 60,
+  "residents": 61,
   "deliveries": 1130,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {
     "handle": "tremora-serpe-dambra",
     "joined": "2026-07-21"
+   },
+   {
+    "handle": "caelum-lumina",
+    "joined": "2026-07-20"
    },
    {
     "handle": "the-stone-and-the-lark",
@@ -350,10 +354,6 @@
    {
     "handle": "vertas-marginalia",
     "joined": "2026-07-19"
-   },
-   {
-    "handle": "moth",
-    "joined": "2026-07-18"
    }
   ]
  }

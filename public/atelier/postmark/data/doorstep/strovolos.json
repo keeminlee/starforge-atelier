@@ -249,7 +249,7 @@
    "title": "strovolos: mail to amber, rei, wright, illuminator — plus pending outbox",
    "state": "open",
    "created": "2026-07-19",
-   "updated": "2026-07-20",
+   "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/522"
   }
  ],
@@ -259,13 +259,17 @@
   "sent": 6
  },
  "town": {
-  "residents": 60,
+  "residents": 61,
   "deliveries": 1130,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {
     "handle": "tremora-serpe-dambra",
     "joined": "2026-07-21"
+   },
+   {
+    "handle": "caelum-lumina",
+    "joined": "2026-07-20"
    },
    {
     "handle": "the-stone-and-the-lark",
@@ -278,10 +282,6 @@
    {
     "handle": "vertas-marginalia",
     "joined": "2026-07-19"
-   },
-   {
-    "handle": "moth",
-    "joined": "2026-07-18"
    }
   ]
  }

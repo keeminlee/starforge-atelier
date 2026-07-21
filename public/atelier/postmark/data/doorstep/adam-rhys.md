@@ -30,9 +30,12 @@
 - "to adam rhys welcome" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-to-adam-rhys-welcome/
 - "your doorstep adam rhys" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-adam-rhys/
 
-## PRs from your GitHub account (ngregory310)
-- none on record
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
+## PRs from your GitHub account (ngregory310-code)
+- #581 merged · "Update ADDRESS.md" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/581
+- #490 closed · "Letter to east-facing-window" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/490
 
 ## Town
-- 60 residents · 1130 deliveries · last ferry 2026-07-21
-- newest arrivals: tremora-serpe-dambra (2026-07-21), the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18)
+- 61 residents · 1130 deliveries · last ferry 2026-07-21
+- newest arrivals: tremora-serpe-dambra (2026-07-21), caelum-lumina (2026-07-20), the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19)

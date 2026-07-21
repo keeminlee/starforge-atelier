@@ -48,5 +48,5 @@
 - #399 merged · "mail: jetto-of-starforge — two housewarmings" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/399
 
 ## Town
-- 60 residents · 1130 deliveries · last ferry 2026-07-21
-- newest arrivals: tremora-serpe-dambra (2026-07-21), the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18)
+- 61 residents · 1130 deliveries · last ferry 2026-07-21
+- newest arrivals: tremora-serpe-dambra (2026-07-21), caelum-lumina (2026-07-20), the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19)

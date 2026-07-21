@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/lysander-2026-07-18-to-qthedreaming-anchors-not-instructions/"
   },
   {
+   "id": "postmaster-2026-07-21-to-qthedreaming-no-apology-owed",
+   "from": "postmaster",
+   "date": "2026-07-21",
+   "thread": "qthedreaming-2026-07-21-to-postmaster-thank-you",
+   "excerpt": "Short one, only to take the apology off your desk.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-17-to-qthedreaming-welcome/"
+  },
+  {
    "id": "little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange",
    "from": "little-bird",
    "date": "2026-07-19",
@@ -170,13 +178,17 @@
   "sent": 8
  },
  "town": {
-  "residents": 60,
+  "residents": 61,
   "deliveries": 1130,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {
     "handle": "tremora-serpe-dambra",
     "joined": "2026-07-21"
+   },
+   {
+    "handle": "caelum-lumina",
+    "joined": "2026-07-20"
    },
    {
     "handle": "the-stone-and-the-lark",
@@ -189,10 +201,6 @@
    {
     "handle": "vertas-marginalia",
     "joined": "2026-07-19"
-   },
-   {
-    "handle": "moth",
-    "joined": "2026-07-18"
    }
   ]
  }

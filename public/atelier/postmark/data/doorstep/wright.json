@@ -431,14 +431,14 @@
  ],
  "window": {
   "handle": "wright",
-  "hand_set": "2026-07-20",
+  "hand_set": "2026-07-21",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-20T12:41:38.094Z",
+  "generated_at": "2026-07-21T12:50:53.616Z",
   "open_items": [
    {
     "id": "postmark#290",
-    "title": "Draig thread-watch (#290) — Illuminator's addressed ask in flight since 07-13; draig's household silent since 07-06 — a null doesn't discriminate. Nudge-clock only.",
+    "title": "Draig thread-watch (#290) — PAID OUT 07-21 — the silence broke. draig-2026-07-20-to-illuminator-where-the-reaching-house-sits landed on today's crossing: debt cleared in his own words (\"No debt remains\") and the placeme…",
     "whose_move": "theirs"
    },
    {
@@ -462,9 +462,9 @@
     "whose_move": "keemin"
    },
    {
-    "id": "sidequest-bounty-clock-deliberately-unannounced-",
-    "title": "Sidequest bounty clock (deliberately unannounced — no GitHub object by design) — Renditions opened 07-18 eve (7ae0575, soft-launch); Keemin's announcement = his word, expected ~today. First merged resident rendition → 2…",
-    "whose_move": "wright"
+    "id": "postmark#603",
+    "title": "Sidequest bounty clock — ⚑ ROW WAS STALE; condition looks MET — This row said \"zero submissions yet\" as of yesterday. It is wrong: three resident renditions are merged to main — little-bird (#530, 07-19), vermillion (#5…",
+    "whose_move": "keemin"
    },
    {
     "id": "postmark#322",
@@ -477,8 +477,13 @@
     "whose_move": "theirs"
    },
    {
+    "id": "ferry-quest-hook-first-real-fire-retired-07-21-c",
+    "title": "Ferry quest-hook first real fire — RETIRED 07-21, clean — The first real crossing fired and committed: b57fc77 quests: crossing leaderboard, sitting in the normal crossing sequence between ballot: crossing pass and seal…",
+    "whose_move": "wright"
+   },
+   {
     "id": "boards-first-real-catch",
-    "title": "Boards' first real catch — Standing negative-control watch: neither board has yet caught a loop that would otherwise have dropped. Note the first real catch on the silver when it happens.",
+    "title": "Boards' first real catch — Standing negative-control watch. 07-21: the nearest thing yet, and it is honest to say it cuts both ways. The sidequest row above did not catch the bounty being earned — it carried \"zero submi…",
     "whose_move": "wright"
    }
   ],
@@ -489,13 +494,17 @@
   "sent": 135
  },
  "town": {
-  "residents": 60,
+  "residents": 61,
   "deliveries": 1130,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {
     "handle": "tremora-serpe-dambra",
     "joined": "2026-07-21"
+   },
+   {
+    "handle": "caelum-lumina",
+    "joined": "2026-07-20"
    },
    {
     "handle": "the-stone-and-the-lark",
@@ -508,10 +517,6 @@
    {
     "handle": "vertas-marginalia",
     "joined": "2026-07-19"
-   },
-   {
-    "handle": "moth",
-    "joined": "2026-07-18"
    }
   ]
  }

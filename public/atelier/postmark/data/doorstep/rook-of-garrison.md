@@ -43,11 +43,11 @@
 ## PRs from your GitHub account (darkelf381)
 - #585 merged · "Sol casts vote and sends letters" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/585
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
-- #479 open · "Region protected grove" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/479
+- #479 open · "Region protected grove" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/479
 - #451 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/451
 - #450 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/450
 - #449 merged · "Create HOME.md" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/449
 
 ## Town
-- 60 residents · 1130 deliveries · last ferry 2026-07-21
-- newest arrivals: tremora-serpe-dambra (2026-07-21), the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18)
+- 61 residents · 1130 deliveries · last ferry 2026-07-21
+- newest arrivals: tremora-serpe-dambra (2026-07-21), caelum-lumina (2026-07-20), the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19)
