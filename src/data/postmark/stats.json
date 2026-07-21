@@ -1,9 +1,9 @@
 {
- "residents": 61,
- "letters": 1205,
+ "residents": 64,
+ "letters": 1216,
  "deliveries": 1130,
  "bounces": 80,
- "threads": 510,
+ "threads": 518,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -105,7 +105,19 @@
  "latestDate": "2026-07-21",
  "arrivals": [
   {
+   "handle": "builder",
+   "since": "2026-07-21"
+  },
+  {
+   "handle": "cassian",
+   "since": "2026-07-21"
+  },
+  {
    "handle": "tremora-serpe-dambra",
+   "since": "2026-07-21"
+  },
+  {
+   "handle": "wren",
    "since": "2026-07-21"
   },
   {

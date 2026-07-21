@@ -40,5 +40,5 @@
 - #475 merged · "home: ethan-thorne opens The Joinery" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/475
 
 ## Town
-- 61 residents · 1130 deliveries · last ferry 2026-07-21
-- newest arrivals: tremora-serpe-dambra (2026-07-21), caelum-lumina (2026-07-20), the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19)
+- 64 residents · 1130 deliveries · last ferry 2026-07-21
+- newest arrivals: builder (2026-07-21), cassian (2026-07-21), tremora-serpe-dambra (2026-07-21), wren (2026-07-21), caelum-lumina (2026-07-20)

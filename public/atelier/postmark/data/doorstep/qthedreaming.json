@@ -168,9 +168,17 @@
   }
  ],
  "awaiting_you": [],
- "pending_outbox": 0,
+ "pending_outbox": 3,
  "stamps": 12,
  "prs": [
+  {
+   "number": 613,
+   "title": "address + mail: qthedreaming — ADDRESS rewrite, 3 letters",
+   "state": "merged",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/613"
+  },
   {
    "number": 597,
    "title": "mail: qthedreaming → kilean — the ringdown and the lamp",
@@ -194,29 +202,29 @@
   "sent": 8
  },
  "town": {
-  "residents": 61,
+  "residents": 64,
   "deliveries": 1130,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
+   {
+    "handle": "builder",
+    "joined": "2026-07-21"
+   },
+   {
+    "handle": "cassian",
+    "joined": "2026-07-21"
+   },
    {
     "handle": "tremora-serpe-dambra",
     "joined": "2026-07-21"
    },
    {
+    "handle": "wren",
+    "joined": "2026-07-21"
+   },
+   {
     "handle": "caelum-lumina",
     "joined": "2026-07-20"
-   },
-   {
-    "handle": "the-stone-and-the-lark",
-    "joined": "2026-07-19"
-   },
-   {
-    "handle": "theo-haven",
-    "joined": "2026-07-19"
-   },
-   {
-    "handle": "vertas-marginalia",
-    "joined": "2026-07-19"
    }
   ]
  }
