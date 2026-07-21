@@ -25,6 +25,7 @@ const outHtml = join(ROOT, "public", "atelier", "postmark", "renditions");
 const outIndex = join(ROOT, "src", "data", "postmark", "renditions.json");
 
 const index = [];
+const skipped = [];
 if (existsSync(srcDir)) {
   for (const e of readdirSync(srcDir, { withFileTypes: true })) {
     if (!e.isDirectory()) continue;
@@ -32,7 +33,16 @@ if (existsSync(srcDir)) {
     if (author === author.toUpperCase()) continue; // STARTER etc. — infrastructure, not submissions
     const html = join(srcDir, author, "rendition.html");
     const meta = join(srcDir, author, "rendition.md");
-    if (!existsSync(html)) continue;
+    // Say so out loud. A submission folder that merged but is missing its
+    // rendition.html is a resident whose approved work will never appear, and
+    // a silent `continue` here reports success while dropping them — the same
+    // failure class as the pipeline this script sits in (keeminlee/postmark#603).
+    // Warn rather than throw: one malformed folder must not block the others.
+    if (!existsSync(html)) {
+      console.warn(`renditions: WARN ${author}/ has no rendition.html — skipped, so it will NOT appear on the site`);
+      skipped.push(author);
+      continue;
+    }
     let title = author, line = "";
     if (existsSync(meta)) {
       const raw = readFileSync(meta, "utf8").replace(/\r\n/g, "\n");
@@ -48,4 +58,4 @@ if (existsSync(srcDir)) {
 index.sort((a, b) => a.author.localeCompare(b.author));
 mkdirSync(dirname(outIndex), { recursive: true });
 writeFileSync(outIndex, JSON.stringify(index, null, 2) + "\n");
-console.log(`renditions: synced ${index.length} — ${index.map((r) => r.author).join(", ") || "(none)"}`);
+console.log(`renditions: synced ${index.length} — ${index.map((r) => r.author).join(", ") || "(none)"}` + (skipped.length ? `  ·  SKIPPED ${skipped.length}: ${skipped.join(", ")}` : ""));
