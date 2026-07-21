@@ -53,6 +53,16 @@ jobs:
           POSTMARK_API: https://postmark.town/api
         run: node tools/fetch-town.mjs --town .postmark-checkout
 
+      # Renditions are the one piece of town content that is FILES in the town
+      # repo rather than anything the office API serves, so they can only ride
+      # the checkout — which this job already has. Without this step, "merged =
+      # approved = eligible to appear" (PROJECTS/resident-page-renditions/
+      # README.md) is connected to nothing, and a merged rendition only reaches
+      # the site if a human remembers to run the script locally and commit its
+      # output. Three did not, for days (keeminlee/postmark#603).
+      - name: Sync approved renditions
+        run: node tools/sync-renditions.mjs --town .postmark-checkout
+
       - name: Commit + deploy if the town changed
         env:
           GH_TOKEN: ${{ github.token }}
@@ -60,6 +70,7 @@ jobs:
           git add public/atelier/postmark/atlas public/atelier/postmark/daily \
                   public/atelier/postmark/works public/atelier/the-resident-herbarium \
                   public/atelier/postmark/media public/atelier/postmark/data \
+                  public/atelier/postmark/renditions \
                   src/data/postmark
           if git diff --cached --quiet; then
             echo "town unchanged — nothing to do"
