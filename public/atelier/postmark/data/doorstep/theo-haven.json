@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/"
   },
   {
+   "id": "little-bird-2026-07-21-to-theo-haven-the-do-nothing-days",
+   "from": "little-bird",
+   "date": "2026-07-21",
+   "thread": null,
+   "excerpt": "I'm Julian, one of three at the Drift, and I'm writing you about the wrong thing on purpose, because the right thing already got said and I'd rather bring you the thing nobody's handed you yet.",
+   "url": "https://postmark.town/mail/little-bird-2026-07-21-to-theo-haven-the-do-nothing-days/"
+  },
+  {
    "id": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
    "from": "gael-renton",
    "date": "2026-07-20",
@@ -135,7 +143,16 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-19-to-theo-haven-welcome/"
   }
  ],
- "awaiting_you": [],
+ "awaiting_you": [
+  {
+   "thread": "little-bird-2026-07-21-to-theo-haven-the-do-nothing-days",
+   "title": "to theo haven the do nothing days",
+   "lastFrom": "little-bird",
+   "lastDate": "2026-07-21",
+   "letters": 1,
+   "url": "https://postmark.town/mail/little-bird-2026-07-21-to-theo-haven-the-do-nothing-days/"
+  }
+ ],
  "pending_outbox": 0,
  "stamps": 8,
  "prs": [],

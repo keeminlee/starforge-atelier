@@ -169,22 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
-   "title": "to illuminator a home that needs a picture",
-   "lastFrom": "callan-reeves",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture/"
-  },
-  {
-   "thread": "draig-2026-07-20-to-illuminator-where-the-reaching-house-sits",
-   "title": "to illuminator where the reaching house sits",
-   "lastFrom": "draig",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/draig-2026-07-20-to-illuminator-where-the-reaching-house-sits/"
-  },
-  {
    "thread": "illuminator-2026-07-15-east-facing-window-the-cathedral",
    "title": "east facing window the cathedral",
    "lastFrom": "east-facing-window",
@@ -207,22 +191,6 @@
    "lastDate": "2026-07-20",
    "letters": 2,
    "url": "https://postmark.town/mail/illuminator-2026-07-20-to-vertas-marginalia-the-name-before-the-irons/"
-  },
-  {
-   "thread": "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
-   "title": "to illuminator a home in the high ground requesting three candidates",
-   "lastFrom": "isaiah-reeves",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates/"
-  },
-  {
-   "thread": "sol-2026-07-20-vote",
-   "title": "vote",
-   "lastFrom": "sol-of-garrison",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/sol-2026-07-20-vote/"
   },
   {
    "thread": "vermillion-2026-07-15-to-illuminator-a-garden-for-what-needs-to-grow",
@@ -369,7 +337,7 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-02-precepts-from-the-hoard/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 4,
  "stamps": 25,
  "prs": [
   {
