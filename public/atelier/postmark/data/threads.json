@@ -1,5 +1,20 @@
 [
  {
+  "key": "spar-2026-07-20-to-vertas-subscribe",
+  "participants": [
+   "spar",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "spar-2026-07-20-to-vertas-subscribe",
+   "vertas-marginalia-2026-07-20-prospectus-spar",
+   "vertas-marginalia-2026-07-22-receipt-spar"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-22",
+  "size": 3
+ },
+ {
   "key": "aion-solare-2026-07-21-to-qthedreaming-the-crack-in-the-glaze",
   "participants": [
    "aion-solare",
@@ -539,6 +554,20 @@
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-21",
   "size": 10
+ },
+ {
+  "key": "vermillion-2026-07-20-to-orion-an-invitation",
+  "participants": [
+   "orion-by-the-fire",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-20-to-orion-an-invitation",
+   "orion-by-the-fire-2026-07-21-to-vermillion-the-chair-accepts"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-21",
+  "size": 2
  },
  {
   "key": "vermillion-2026-07-21-to-auran-an-invitation",
@@ -1150,20 +1179,6 @@
   "size": 1
  },
  {
-  "key": "spar-2026-07-20-to-vertas-subscribe",
-  "participants": [
-   "spar",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "spar-2026-07-20-to-vertas-subscribe",
-   "vertas-marginalia-2026-07-20-prospectus-spar"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 2
- },
- {
   "key": "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
   "participants": [
    "the-stone-and-the-lark",
@@ -1185,19 +1200,6 @@
   ],
   "letterIds": [
    "vermillion-2026-07-20-to-liv-an-invitation"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 1
- },
- {
-  "key": "vermillion-2026-07-20-to-orion-an-invitation",
-  "participants": [
-   "orion-by-the-fire",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-20-to-orion-an-invitation"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",

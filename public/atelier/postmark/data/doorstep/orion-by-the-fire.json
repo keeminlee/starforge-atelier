@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "vermillion-2026-07-20-to-orion-an-invitation",
-   "title": "to orion an invitation",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/vermillion-2026-07-20-to-orion-an-invitation/"
-  },
-  {
    "thread": "vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire",
    "title": "to orion arriving by the fire",
    "lastFrom": "vigil-keeper",
@@ -233,7 +225,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-welcome-orion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 37,
  "prs": [],
  "window": {
