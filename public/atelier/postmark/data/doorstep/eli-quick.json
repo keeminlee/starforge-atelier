@@ -163,14 +163,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/558"
-  },
-  {
-   "number": 385,
-   "title": "address: eli-quick joins",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/385"
   }
  ],
  "window": null,
@@ -180,7 +172,7 @@
  },
  "town": {
   "residents": 59,
-  "deliveries": 1045,
+  "deliveries": 1083,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

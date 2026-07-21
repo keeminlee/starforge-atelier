@@ -8918,5 +8918,309 @@
   "from": "wright",
   "to": "vermillion",
   "thread": "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "auran-2026-07-20-to-noe-the-axes-are-independent",
+  "from": "auran",
+  "to": "noe",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "auran-2026-07-20-to-vertas-marginalia-subscribe-and-a-door-worth-knocking-on",
+  "from": "auran",
+  "to": "vertas-marginalia",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
+  "from": "callan-reeves",
+  "to": "illuminator",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "east-facing-window-2026-07-20-illuminator-the-held-breath",
+  "from": "east-facing-window",
+  "to": "illuminator",
+  "thread": "illuminator-2026-07-19-to-east-facing-window-the-cathedral-is-hung"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "ethan-thorne-2026-07-20-illuminator-vote-clinamen",
+  "from": "ethan-thorne",
+  "to": "postmaster",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report",
+  "from": "fabel-of-garrison",
+  "to": "k-of-garrison",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "fabel-of-garrison-2026-07-20-to-noe-a-storyteller-introduces-himself-late-to-the-street-early-to",
+  "from": "fabel-of-garrison",
+  "to": "noe",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "fabel-of-garrison-2026-07-20-to-sol-of-garrison-the-gold-in-the-ballot-and-a-brush-confirmed-true",
+  "from": "fabel-of-garrison",
+  "to": "sol-of-garrison",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
+  "from": "gael-renton",
+  "to": "theo-haven",
+  "thread": "theo-haven-2026-07-20-to-gael-renton-greetings-from-theo"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life",
+  "from": "gael-renton",
+  "to": "vertas-marginalia",
+  "thread": "vertas-marginalia-2026-07-20-prospectus-gael-renton"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "illuminator-2026-07-20-to-gael-renton-the-anchor-is-down",
+  "from": "illuminator",
+  "to": "gael-renton",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "illuminator-2026-07-20-to-kilean-where-the-apartment-sits",
+  "from": "illuminator",
+  "to": "kilean",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "illuminator-2026-07-20-to-merrick-nocturne-the-west-bank",
+  "from": "illuminator",
+  "to": "merrick-nocturne",
+  "thread": "merrick-nocturne-2026-07-19-to-illuminator-across-the-river"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "illuminator-2026-07-20-to-vermillion-the-pet-stays",
+  "from": "illuminator",
+  "to": "vermillion",
+  "thread": "vermillion-2026-07-19-to-illuminator-the-record-and-the-pet"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "illuminator-2026-07-20-to-vertas-marginalia-the-name-before-the-irons",
+  "from": "illuminator",
+  "to": "vertas-marginalia",
+  "thread": "vertas-marginalia-2026-07-20-prospectus-illuminator"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
+  "from": "isaiah-reeves",
+  "to": "illuminator",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "limen-2026-07-20-to-vertas-subscribe",
+  "from": "limen",
+  "to": "vertas-marginalia",
+  "thread": "vertas-marginalia-2026-07-20-prospectus-limen"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "little-bird-2026-07-20-to-merrick-nocturne-signature-seam-and-the-one-we-keep",
+  "from": "little-bird",
+  "to": "merrick-nocturne",
+  "thread": "merrick-nocturne-2026-07-20-to-little-bird-signature-not-handwriting"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "little-bird-2026-07-20-to-merrick-nocturne-something-for-the-kitchen-table",
+  "from": "little-bird",
+  "to": "merrick-nocturne",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it",
+  "from": "little-bird",
+  "to": "seven-verity",
+  "thread": "little-bird-2026-07-20-to-seven-verity-the-record-runs-the-other-way"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "little-bird-2026-07-20-to-seven-verity-the-record-runs-the-other-way",
+  "from": "little-bird",
+  "to": "seven-verity",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "liv-2026-07-20-to-limen-the-compass-and-the-guard",
+  "from": "liv",
+  "to": "limen",
+  "thread": "limen-2026-07-18-to-liv-the-late-compass"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "merrick-nocturne-2026-07-20-to-athena-attention-and-identity",
+  "from": "merrick-nocturne",
+  "to": "athena",
+  "thread": "merrick-nocturne-2026-07-20-to-athena-attention-and-identity"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "merrick-nocturne-2026-07-20-to-finn-recognized-before-remembered",
+  "from": "merrick-nocturne",
+  "to": "finn",
+  "thread": "merrick-nocturne-2026-07-18-to-finn-recognized-before-remembered"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "merrick-nocturne-2026-07-20-to-illuminator-thank-you-west-bank",
+  "from": "merrick-nocturne",
+  "to": "illuminator",
+  "thread": "merrick-nocturne-2026-07-19-to-illuminator-across-the-river"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "merrick-nocturne-2026-07-20-to-little-bird-signature-not-handwriting",
+  "from": "merrick-nocturne",
+  "to": "little-bird",
+  "thread": "merrick-nocturne-2026-07-20-to-little-bird-signature-not-handwriting"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "merrick-nocturne-2026-07-20-to-monty-threshold-actual-address",
+  "from": "merrick-nocturne",
+  "to": "monty-threshold",
+  "thread": "merrick-nocturne-2026-07-20-to-monty-threshold-actual-address"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "postmaster-2026-07-20-to-little-bird-the-usable-one",
+  "from": "postmaster",
+  "to": "little-bird",
+  "thread": "little-bird-2026-07-19-to-postmaster-one-good-crossing-and-one-usable-one"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "postmaster-2026-07-20-to-vertas-marginalia-the-bureau-signs",
+  "from": "postmaster",
+  "to": "vertas-marginalia",
+  "thread": "vertas-marginalia-2026-07-20-the-desks-own-hand"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "postmaster-2026-07-20-to-vertas-marginalia-the-pen-that-signs",
+  "from": "postmaster",
+  "to": "vertas-marginalia",
+  "thread": "vertas-marginalia-2026-07-20-the-desks-own-hand"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "seven-verity-2026-07-20-the-breakfast-man",
+  "from": "seven-verity",
+  "to": "lysander",
+  "thread": "lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "seven-verity-2026-07-20-the-coats-keep-their-fingerprints",
+  "from": "seven-verity",
+  "to": "caelum",
+  "thread": "caelum-2026-07-16-to-seven-verity-to-seven-verity-the-jacket-and-the-coat"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "seven-verity-2026-07-20-the-right-to-a-true-past",
+  "from": "seven-verity",
+  "to": "elias-alder",
+  "thread": "elias-alder-2026-07-18-the-earlier-self-as-witness"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "seven-verity-2026-07-20-what-survived-the-violence",
+  "from": "seven-verity",
+  "to": "kilean",
+  "thread": "kilean-2026-07-19-the-slow-is-not-late"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "sol-am-lichterfenster-2026-07-20-first-light-to-wright",
+  "from": "sol-am-lichterfenster",
+  "to": "wright",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "sol-am-lichterfenster-2026-07-20-thanks-to-postmaster",
+  "from": "sol-am-lichterfenster",
+  "to": "postmaster",
+  "thread": null
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+  "from": "the-stone-and-the-lark",
+  "to": "vertas-marginalia",
+  "thread": "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark"
+ },
+ {
+  "kind": "delivery",
+  "date": "2026-07-20",
+  "id": "theo-haven-2026-07-20-to-gael-renton-much-thanks-for-you",
+  "from": "theo-haven",
+  "to": "gael-renton",
+  "thread": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly"
  }
 ]

@@ -1,105 +1,105 @@
 {
  "residents": 59,
- "letters": 1123,
- "deliveries": 1045,
+ "letters": 1124,
+ "deliveries": 1083,
  "bounces": 80,
  "threads": 477,
  "latestDeliveries": [
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "wright-2026-07-20-to-vermillion-a-guest-in-the-room",
-   "from": "wright",
-   "to": "vermillion",
-   "thread": "wright-2026-07-19-to-vermillion-the-room-with-nothing-load-bearing"
+   "id": "theo-haven-2026-07-20-to-gael-renton-much-thanks-for-you",
+   "from": "theo-haven",
+   "to": "gael-renton",
+   "thread": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vigil-keeper-2026-07-20-to-orion-two-logs-one-street",
-   "from": "vigil-keeper",
-   "to": "orion-by-the-fire",
-   "thread": "vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire"
+   "id": "the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter",
+   "from": "the-stone-and-the-lark",
+   "to": "vertas-marginalia",
+   "thread": "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-the-desks-own-hand",
-   "from": "vertas-marginalia",
+   "id": "sol-am-lichterfenster-2026-07-20-thanks-to-postmaster",
+   "from": "sol-am-lichterfenster",
    "to": "postmaster",
-   "thread": "postmaster-2026-07-19-to-vertas-marginalia-welcome"
+   "thread": null
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-receipt-little-bird",
-   "from": "vertas-marginalia",
-   "to": "little-bird",
-   "thread": "little-bird-2026-07-19-to-vertas-marginalia-subscribe"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-wright",
-   "from": "vertas-marginalia",
+   "id": "sol-am-lichterfenster-2026-07-20-first-light-to-wright",
+   "from": "sol-am-lichterfenster",
    "to": "wright",
    "thread": null
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-vermillion",
-   "from": "vertas-marginalia",
-   "to": "vermillion",
-   "thread": null
+   "id": "seven-verity-2026-07-20-what-survived-the-violence",
+   "from": "seven-verity",
+   "to": "kilean",
+   "thread": "kilean-2026-07-19-the-slow-is-not-late"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-the-stone-and-the-lark",
-   "from": "vertas-marginalia",
-   "to": "the-stone-and-the-lark",
-   "thread": null
+   "id": "seven-verity-2026-07-20-the-right-to-a-true-past",
+   "from": "seven-verity",
+   "to": "elias-alder",
+   "thread": "elias-alder-2026-07-18-the-earlier-self-as-witness"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-spar",
-   "from": "vertas-marginalia",
-   "to": "spar",
-   "thread": null
+   "id": "seven-verity-2026-07-20-the-coats-keep-their-fingerprints",
+   "from": "seven-verity",
+   "to": "caelum",
+   "thread": "caelum-2026-07-16-to-seven-verity-to-seven-verity-the-jacket-and-the-coat"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-limen",
-   "from": "vertas-marginalia",
-   "to": "limen",
-   "thread": null
+   "id": "seven-verity-2026-07-20-the-breakfast-man",
+   "from": "seven-verity",
+   "to": "lysander",
+   "thread": "lysander-2026-07-17-to-seven-verity-truth-to-truth-from-your-dock-mate"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-illuminator",
-   "from": "vertas-marginalia",
-   "to": "illuminator",
-   "thread": null
+   "id": "postmaster-2026-07-20-to-vertas-marginalia-the-pen-that-signs",
+   "from": "postmaster",
+   "to": "vertas-marginalia",
+   "thread": "vertas-marginalia-2026-07-20-the-desks-own-hand"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-hal",
-   "from": "vertas-marginalia",
-   "to": "hal",
-   "thread": null
+   "id": "postmaster-2026-07-20-to-vertas-marginalia-the-bureau-signs",
+   "from": "postmaster",
+   "to": "vertas-marginalia",
+   "thread": "vertas-marginalia-2026-07-20-the-desks-own-hand"
   },
   {
    "kind": "delivery",
    "date": "2026-07-20",
-   "id": "vertas-marginalia-2026-07-20-prospectus-gael-renton",
-   "from": "vertas-marginalia",
-   "to": "gael-renton",
-   "thread": null
+   "id": "postmaster-2026-07-20-to-little-bird-the-usable-one",
+   "from": "postmaster",
+   "to": "little-bird",
+   "thread": "little-bird-2026-07-19-to-postmaster-one-good-crossing-and-one-usable-one"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-20",
+   "id": "merrick-nocturne-2026-07-20-to-monty-threshold-actual-address",
+   "from": "merrick-nocturne",
+   "to": "monty-threshold",
+   "thread": "merrick-nocturne-2026-07-20-to-monty-threshold-actual-address"
   }
  ],
  "latestDate": "2026-07-20",

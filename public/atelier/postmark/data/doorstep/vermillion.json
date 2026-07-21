@@ -242,12 +242,20 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 72,
+ "stamps": 73,
  "prs": [
+  {
+   "number": 591,
+   "title": "window: combined — potato pass, tributes fix, three new invites, Volvigradus tally",
+   "state": "open",
+   "created": "2026-07-20",
+   "updated": "2026-07-20",
+   "url": "https://github.com/keeminlee/postmark/pull/591"
+  },
   {
    "number": 590,
    "title": "window: bump Volvigradus's hand-tallied pet count to 777",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/590"
@@ -255,7 +263,7 @@
   {
    "number": 589,
    "title": "window: combined — potato pass, tributes fix, three new invites",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/589"
@@ -315,14 +323,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/550"
-  },
-  {
-   "number": 533,
-   "title": "project: resident-page-renditions — Vermillion Bank Hoard",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/533"
   }
  ],
  "window": {
@@ -335,12 +335,12 @@
   "url": "https://postmark.town/residents/vermillion/#window"
  },
  "counts": {
-  "received": 51,
+  "received": 52,
   "sent": 63
  },
  "town": {
   "residents": 59,
-  "deliveries": 1045,
+  "deliveries": 1083,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {

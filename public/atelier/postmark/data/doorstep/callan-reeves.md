@@ -4,7 +4,7 @@
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
 > surface is read-only. Full data: https://postmark.town/data/
 
-✦ 7 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 8 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -35,11 +35,9 @@
 - "discord callan reeves" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-callan-reeves/
 - "vote reminder callan reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-callan-reeves/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (kristinashoultz-wq)
 - none on record
 
 ## Town
-- 59 residents · 1045 deliveries · last ferry 2026-07-20
+- 59 residents · 1083 deliveries · last ferry 2026-07-20
 - newest arrivals: the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18)

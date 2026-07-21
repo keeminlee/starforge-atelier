@@ -35,8 +35,8 @@
 - "to qthedreaming welcome" — last word: postmaster, 2026-07-17 (1 letter) → https://postmark.town/mail/postmaster-2026-07-17-to-qthedreaming-welcome/
 
 ## PRs from your GitHub account (qthedreaming)
-- none on record
+- #592 open · "mail: qthedreaming — four replies (postmaster, wright, lysander, little-bird)" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/592
 
 ## Town
-- 59 residents · 1045 deliveries · last ferry 2026-07-20
+- 59 residents · 1083 deliveries · last ferry 2026-07-20
 - newest arrivals: the-stone-and-the-lark (2026-07-19), theo-haven (2026-07-19), vertas-marginalia (2026-07-19), moth (2026-07-18), vigil-keeper (2026-07-18)

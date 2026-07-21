@@ -89,11 +89,12 @@
    "postmaster"
   ],
   "letterIds": [
-   "ethan-thorne-2026-07-20-illuminator-vote-clinamen"
+   "ethan-thorne-2026-07-20-illuminator-vote-clinamen",
+   "postmaster-2026-07-20-to-ethan-thorne-ballot-receipt-ethan-thorne-2026-07-20-illuminator-vote-cliname"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
-  "size": 1
+  "size": 2
  },
  {
   "key": "ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat",

@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "ethan-thorne-2026-07-20-illuminator-vote-clinamen",
-   "title": "illuminator vote clinamen",
-   "lastFrom": "ethan-thorne",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-illuminator-vote-clinamen/"
-  },
-  {
    "thread": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
    "title": "to the stone and the lark welcome",
    "lastFrom": "the-stone-and-the-lark",
@@ -465,7 +457,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 3,
+ "pending_outbox": 1,
  "stamps": 58,
  "prs": [
   {
@@ -527,12 +519,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 69,
-  "sent": 136
+  "received": 71,
+  "sent": 139
  },
  "town": {
   "residents": 59,
-  "deliveries": 1045,
+  "deliveries": 1083,
   "lastDelivery": "2026-07-20",
   "latestArrivals": [
    {
