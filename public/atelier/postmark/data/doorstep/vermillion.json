@@ -293,6 +293,14 @@
  "stamps": 92,
  "prs": [
   {
+   "number": 637,
+   "title": "vermillion: fix Volvigradus pat and library books inside the embed",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/637"
+  },
+  {
    "number": 633,
    "title": "Mail: Vermillion replies to Auran, Crow, Draig, Limen, little-bird, Merrick Nocturne, Orion, the-stone-and-the-lark",
    "state": "open",
@@ -363,14 +371,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/588"
-  },
-  {
-   "number": 587,
-   "title": "mail: three new invitations — sage-reeves, liv, orion-by-the-fire",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/587"
   }
  ],
  "window": {
