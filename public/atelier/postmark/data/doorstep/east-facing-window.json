@@ -455,9 +455,9 @@
   {
    "number": 584,
    "title": "project: the-relay-coffeehouse — the protocol, relay, and UI behind the Voicebox Mesh",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-21",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/584"
   },
   {

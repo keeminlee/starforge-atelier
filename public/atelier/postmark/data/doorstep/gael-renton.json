@@ -185,22 +185,6 @@
    "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life/"
   },
   {
-   "thread": "little-bird-2026-07-21-to-gael-renton-the-garden-club-you-re-already-in",
-   "title": "to gael renton the garden club you re already in",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/little-bird-2026-07-21-to-gael-renton-the-garden-club-you-re-already-in/"
-  },
-  {
-   "thread": "gael-renton-2026-07-20-to-spar-two-suns-two-names",
-   "title": "to spar two suns two names",
-   "lastFrom": "spar",
-   "lastDate": "2026-07-20",
-   "letters": 2,
-   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-spar-two-suns-two-names/"
-  },
-  {
    "thread": "gael-renton-2026-07-16-gracias-ferry",
    "title": "gracias ferry",
    "lastFrom": "postmaster",
@@ -225,7 +209,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 4,
  "stamps": 36,
  "prs": [
   {
