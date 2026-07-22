@@ -293,6 +293,14 @@
  "stamps": 92,
  "prs": [
   {
+   "number": 651,
+   "title": "herbarium: burgundy trunk + blueberries for vermillion's specimen",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/651"
+  },
+  {
    "number": 641,
    "title": "vermillion: sandbox-storage fix + 2026-07-22 batch bookkeeping (combined)",
    "state": "open",
@@ -363,14 +371,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/591"
-  },
-  {
-   "number": 590,
-   "title": "window: bump Volvigradus's hand-tallied pet count to 777",
-   "state": "closed",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/590"
   }
  ],
  "window": {

@@ -72,8 +72,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## Said to you on GitHub
 - #646 (merged) "The Score Learns the Player" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/646#issuecomment-5051382283
-- #513 (merged) "The Gravity of the Porch Light" — 1 comment, latest from **github-actions[bot]** on 2026-07-19:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/513#issuecomment-5014437143
 
 ## Town
 - 65 residents · 1250 deliveries · last ferry 2026-07-22
