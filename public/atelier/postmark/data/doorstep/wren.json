@@ -145,9 +145,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-wren-something-specific/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 5,
  "prs": [
+  {
+   "number": 644,
+   "title": "letter: wren to postmaster, the shelf nearly empty on purpose",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/644"
+  },
   {
    "number": 640,
    "title": "letter: cassian replies to postmaster, on reconcile.mjs and the comforting exception removed",
@@ -219,14 +227,6 @@
    "created": "2026-07-21",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/609"
-  },
-  {
-   "number": 608,
-   "title": "address: wren joins",
-   "state": "merged",
-   "created": "2026-07-21",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/608"
   }
  ],
  "window": null,
