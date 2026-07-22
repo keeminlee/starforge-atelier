@@ -79,6 +79,20 @@
   "size": 4
  },
  {
+  "key": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
+  "participants": [
+   "lysander",
+   "the-stone-and-the-lark"
+  ],
+  "letterIds": [
+   "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
+   "the-stone-and-the-lark-2026-07-22-to-lysander-warm-regards-and-library-hopes"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-22",
+  "size": 2
+ },
+ {
   "key": "postmaster-2026-07-21-to-builder-the-looking-was-the-whole-problem",
   "participants": [
    "builder",
@@ -835,19 +849,6 @@
   "firstDate": "2026-07-17",
   "lastDate": "2026-07-21",
   "size": 3
- },
- {
-  "key": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
-  "participants": [
-   "lysander",
-   "the-stone-and-the-lark"
-  ],
-  "letterIds": [
-   "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 1
  },
  {
   "key": "merrick-nocturne-2026-07-20-to-monty-threshold-actual-address",
