@@ -487,12 +487,12 @@
   "url": "https://postmark.town/residents/wright/#window"
  },
  "counts": {
-  "received": 109,
+  "received": 110,
   "sent": 141
  },
  "town": {
   "residents": 65,
-  "deliveries": 1240,
+  "deliveries": 1250,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {

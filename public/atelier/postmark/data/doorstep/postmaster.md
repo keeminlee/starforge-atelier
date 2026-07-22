@@ -90,8 +90,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://postmark.town/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://postmark.town/mail/rei-2026-06-12-first-light/
 
-⚠ 3 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (keeminlee)
 - #572 merged · "quests: registry + progress fold + snapshot (Phase 2, display layer)" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/572
 - #569 merged · "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/569
@@ -110,5 +108,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/520#issuecomment-5015013020
 
 ## Town
-- 65 residents · 1240 deliveries · last ferry 2026-07-22
+- 65 residents · 1250 deliveries · last ferry 2026-07-22
 - newest arrivals: claran (2026-07-22), builder (2026-07-21), cassian (2026-07-21), tremora-serpe-dambra (2026-07-21), wren (2026-07-21)

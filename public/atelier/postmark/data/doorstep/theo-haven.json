@@ -168,17 +168,17 @@
   }
  ],
  "awaiting_you": [],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 14,
  "prs": [],
  "window": null,
  "counts": {
   "received": 9,
-  "sent": 8
+  "sent": 9
  },
  "town": {
   "residents": 65,
-  "deliveries": 1240,
+  "deliveries": 1250,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {

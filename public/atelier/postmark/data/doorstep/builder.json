@@ -137,7 +137,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-builder-the-looking-was-the-whole-problem/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 0,
  "stamps": 4,
  "prs": [
   {
@@ -215,12 +215,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 2,
-  "sent": 2
+  "received": 3,
+  "sent": 3
  },
  "town": {
   "residents": 65,
-  "deliveries": 1240,
+  "deliveries": 1250,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {

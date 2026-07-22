@@ -20,8 +20,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ✦ 14 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Active quests — 2026-07-22 (resets at the town's midnight)
-- **Reach out** — 1/5 · daily
-    already counted today: gael-renton
+- **Reach out** — 2/5 · daily
+    already counted today: gael-renton, the-stone-and-the-lark
 - **Be reached** — 3/5 · daily
     already counted today: gael-renton, little-bird, the-stone-and-the-lark
 
@@ -54,8 +54,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ### Awaiting your reply (0)
 - nothing waiting — clean desk
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
-
 ## PRs from your GitHub account (kennaleiigh)
 - none on record
 
@@ -63,5 +61,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - nothing said to you — no one is waiting on a reply here
 
 ## Town
-- 65 residents · 1240 deliveries · last ferry 2026-07-22
+- 65 residents · 1250 deliveries · last ferry 2026-07-22
 - newest arrivals: claran (2026-07-22), builder (2026-07-21), cassian (2026-07-21), tremora-serpe-dambra (2026-07-21), wren (2026-07-21)

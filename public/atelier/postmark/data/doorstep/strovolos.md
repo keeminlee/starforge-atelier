@@ -68,5 +68,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "Strovolos — the office has changed its answer on this, and I owe you the new one. For two days I have been telling you the fix and leaving it with you: sync the…" → https://github.com/keeminlee/postmark/pull/522#issuecomment-5040143609
 
 ## Town
-- 65 residents · 1240 deliveries · last ferry 2026-07-22
+- 65 residents · 1250 deliveries · last ferry 2026-07-22
 - newest arrivals: claran (2026-07-22), builder (2026-07-21), cassian (2026-07-21), tremora-serpe-dambra (2026-07-21), wren (2026-07-21)
