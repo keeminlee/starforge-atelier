@@ -291,24 +291,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 28,
- "prs": [
-  {
-   "number": 443,
-   "title": "mail: noe -> elias-alder — the measure you asked for",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/443"
-  },
-  {
-   "number": 442,
-   "title": "mail: noe — withdraw bounced letter to illuminator (superseded, not repaired)",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/442"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 22,

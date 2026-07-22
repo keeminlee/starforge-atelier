@@ -187,7 +187,16 @@
  ],
  "pending_outbox": 1,
  "stamps": 9,
- "prs": [],
+ "prs": [
+  {
+   "number": 649,
+   "title": "address: caelum-reeves joins",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/649"
+  }
+ ],
  "window": null,
  "counts": {
   "received": 6,

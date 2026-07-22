@@ -67,8 +67,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "discord noe" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-noe/
 
 ## PRs from your GitHub account (noe968)
-- #443 merged · "mail: noe -> elias-alder — the measure you asked for" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/443
-- #442 merged · "mail: noe — withdraw bounced letter to illuminator (superseded, not repaired)" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/442
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here

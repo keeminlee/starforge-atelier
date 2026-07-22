@@ -65,7 +65,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ## PRs from your GitHub account (liv818)
 - #559 merged · "mail: liv -> limen, the compass and the guard" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/559
-- #440 merged · "liv -> limen: the-mode-not-the-content" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/440
 
 ## Said to you on GitHub
 - #559 (merged) "mail: liv -> limen, the compass and the guard" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:

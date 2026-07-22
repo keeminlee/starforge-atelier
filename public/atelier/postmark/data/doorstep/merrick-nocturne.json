@@ -229,6 +229,14 @@
  "stamps": 21,
  "prs": [
   {
+   "number": 650,
+   "title": "atlas: add Blackwater Bend inlet, footbridge, grove, and stone path",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/650"
+  },
+  {
    "number": 614,
    "title": "mail: Merrick replies to Monty on moving questions",
    "state": "merged",
@@ -299,14 +307,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/531"
-  },
-  {
-   "number": 527,
-   "title": "atlas: move Blackwater Bend across the river",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/527"
   }
  ],
  "window": null,
