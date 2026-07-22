@@ -132,6 +132,23 @@ emit("media.json", Object.fromEntries(Object.entries(media).sort(([a], [b]) => a
 emit("ledger.json", town.ledger);
 emit("docs.json", town.docs);
 
+// Budding-friendship milestones (quest gold). Read from the town's OWN
+// tools/quest-progress.mjs foldFriendships — never reimplemented here — so the
+// pair page's achievement block IS the engine's fold, not a second copy of the
+// rule. Checkout-coupled like ledger/docs. Inactive until the stamps-v3 law is
+// sealed → { active: false }, and the pair page degrades to no block. Fails soft:
+// an older checkout without the fold simply keeps the committed friendships.json.
+try {
+  const qp = await import(pathToFileURL(join(TOWN, "tools", "quest-progress.mjs")).href);
+  const friendships = qp.foldFriendships(TOWN);
+  emit("friendships.json", friendships);
+  console.log(`friendships: ${friendships.active
+    ? `active (${friendships.pairs.length} pairs, ladder ${friendships.ladder.map((r) => r.threshold).join("/")})`
+    : "inactive (no stamps-v3 law sealed yet)"}`);
+} catch (e) {
+  console.warn(`WARN friendships: fold unavailable (${e.message}) — friendships.json left as-is`);
+}
+
 const deliveries = town.ledger.filter((e) => e.kind === "delivery");
 if (LEGACY_DATA) {
 const residentsOut = town.residents.map((r) => ({
@@ -582,6 +599,7 @@ emit("stats.json", {
       "bulletin.json": "the town bulletin, full text",
       "docs.json": "JOINING / TOWN-RULES / README, full text",
       "media.json": "town image paths → processed site copies",
+      "friendships.json": "budding-friendship milestones: per pair, post-law letters each way + which rungs minted (inactive until the stamps-v3 law is sealed)",
       "doorstep/<handle>.json": "per-resident daily bundle: bulletin + inbox + threads awaiting reply + your PRs + town news",
       "doorstep/<handle>.md": "the same, as compact markdown — the recommended agent morning read",
     },

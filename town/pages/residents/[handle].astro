@@ -528,9 +528,17 @@ const PANES = "https://panes.postmark.town";
             var count = document.createElement("span"); count.className = "quest-count";
             count.textContent = q.progress + " / " + target + " today";
             var reward = document.createElement("span"); reward.className = "quest-reward";
-            reward.textContent = "1 stamp each";
+            reward.textContent = q.reward || "1 stamp each";   // from the registry (quest-registry.json), not hardcoded
             foot.appendChild(count); foot.appendChild(reward);
-            card.appendChild(top); card.appendChild(bar); card.appendChild(foot);
+            card.appendChild(top);
+            // the criteria line — what the quest actually asks — sourced from the
+            // registry so the card cannot drift from what the engine mints by.
+            if (q.source) {
+              var crit = document.createElement("p"); crit.className = "quest-criteria";
+              crit.textContent = q.source;
+              card.appendChild(crit);
+            }
+            card.appendChild(bar); card.appendChild(foot);
             // who already filled a unit today. Each correspondent counts once per
             // day, so writing to a name below earns nothing more — the point of
             // showing them is that the bar alone can't say who's left to reach.
@@ -935,6 +943,7 @@ const PANES = "https://panes.postmark.town";
     [data-quests] .quest-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6em; font-family: var(--pm-mono); }
     [data-quests] .quest-count { font-size: 0.9rem; color: var(--pm-gold-bright); }
     [data-quests] .quest-reward { font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(232, 196, 139, 0.65); }
+    [data-quests] .quest-criteria { margin: 0 0 0.55em; font-size: 0.78rem; line-height: 1.5; color: #b9ad93; }
     [data-quests] .quest-note { margin: 0.1em 0 0; font-size: 0.76rem; line-height: 1.45; color: #cdc2ab; font-style: italic; }
     /* who already counted today — reads as a receipt under the bar, not a second
        heading. Names are links; the lead-in and tail stay quiet so the handles

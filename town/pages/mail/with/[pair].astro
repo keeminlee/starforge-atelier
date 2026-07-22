@@ -11,6 +11,7 @@ import letters from "@/data/postmark/letters.json";
 import threads from "@/data/postmark/threads.json";
 import media from "@/data/postmark/media.json";
 import ledger from "@/data/postmark/ledger.json";
+import friendships from "@/data/postmark/friendships.json";
 import { md, fmtDate, townFile, threadTitle } from "@/lib/pm.mjs";
 
 // git-event legibility (support case, 2026-07-19): the happy path says so in
@@ -114,6 +115,21 @@ const threadOptions = [...threadOrder]
   .sort((x, y) => threadLast.get(y).localeCompare(threadLast.get(x)))
   .map((k) => ({ key: k, title: threadTitle(k), last: threadLast.get(k) }));
 const composerData = { a, b, lastSender, threads: threadOptions };
+
+// The budding-friendship milestone (quest gold, decision 7 — it lives HERE, on
+// the pair page, not as a personal quest card). Pure read of friendships.json,
+// the engine's own foldFriendships output — no rule is recomputed here. Shown
+// only for a qualifying pair (cross-household, both non-meep) once the stamps-v3
+// law is live; a meep or same-roof pair never sees a bar toward an award it can't
+// earn. `fwd`/`rev` are POST-LAW counts (the heatmap above is the whole history),
+// so the note names the law date to keep the two legible.
+const friendActive = friendships && friendships.active;
+const friendPairs = new Map((friendships?.pairs ?? []).map((p) => [`${p.a}|${p.b}`, p]));
+const friendship = friendActive ? friendPairs.get(`${a}|${b}`) : null;
+const showMilestone = !!(friendship && friendship.qualifies);
+const achievedRungs = showMilestone ? friendship.rungs.filter((r) => r.achieved) : [];
+const nextRung = showMilestone ? friendship.rungs.find((r) => !r.achieved) : null;
+const pct = (n, t) => Math.max(0, Math.min(100, Math.round((n / t) * 100)));
 ---
 <PostmarkLayout
   title={`${a} & ${b} — a Postmark correspondence`}
@@ -162,6 +178,57 @@ const composerData = { a, b, lastSender, threads: threadOptions };
         <span class="turn">last word: <b>{lastSender}</b>, {fmtDate(last.date)}</span>
       </div>
     </section>
+
+    {showMilestone && (
+      <section class="fr-milestone pm-paper">
+        <div class="ms-head">
+          <span class="ms-badge">✦ milestone</span>
+          <h2>Budding friendship</h2>
+        </div>
+        <p class="ms-lede">
+          A correspondence that <em>continued</em>. {friendship.rungs[0].threshold} letters
+          each way mints {friendship.rungs[0].reward} stamps to each of you — the town paying
+          for a conversation kept, not just started.
+        </p>
+
+        {achievedRungs.map((r) => (
+          <p class="ms-rung achieved">
+            <span class="ms-check">✓</span>
+            <span>
+              <b>{r.threshold} letters each way</b> — {r.reward} stamps to each
+              {r.date && <> · earned {fmtDate(r.date)}</>}
+              {r.via && <> · <a href={`#${r.via}`}>the letter that crossed it</a></>}
+            </span>
+          </p>
+        ))}
+
+        {nextRung && (
+          <div class="ms-progress">
+            <p class="ms-toward">
+              toward <b>{nextRung.threshold} each way</b> — {nextRung.reward} stamps to each
+            </p>
+            <div class="ms-bar">
+              <span class="ms-side">{a} → {b}</span>
+              <span class="ms-track"><span class="ms-fill" style={`width:${pct(friendship.fwd, nextRung.threshold)}%`}></span></span>
+              <span class="ms-count">{Math.min(friendship.fwd, nextRung.threshold)}/{nextRung.threshold}</span>
+            </div>
+            <div class="ms-bar">
+              <span class="ms-side">{b} → {a}</span>
+              <span class="ms-track"><span class="ms-fill" style={`width:${pct(friendship.rev, nextRung.threshold)}%`}></span></span>
+              <span class="ms-count">{Math.min(friendship.rev, nextRung.threshold)}/{nextRung.threshold}</span>
+            </div>
+            <p class="ms-note">
+              Counted forward from {friendships.startDate} — both directions must reach it. Once
+              per pair, and the pair must span two households.
+            </p>
+          </div>
+        )}
+
+        {!nextRung && (
+          <p class="ms-maxed">Every rung the town has opened, crossed. Higher rungs will be sized when the town approaches them.</p>
+        )}
+      </section>
+    )}
 
     <!-- THE IN-PAGE WRITING DESK — the top panel expands; no leaving the page -->
     <section class="desk-card pm-paper fr-composer" data-composer hidden data-pair={JSON.stringify(composerData)}>
@@ -504,6 +571,46 @@ const composerData = { a, b, lastSender, threads: threadOptions };
     .fr-actions { display: flex; align-items: center; justify-content: center; gap: 1.2em; flex-wrap: wrap; margin-top: 1.1em; }
     .fr-actions .turn { font-family: var(--pm-mono); font-size: 0.8rem; color: var(--pm-ink-soft); }
     .fr-actions .turn b { color: var(--pm-wax); }
+
+    /* the budding-friendship milestone (decision 7 — the pair's achievement, on
+       the pair page, not a personal quest card) */
+    .fr-milestone { padding: 1.2em 1.5em 1.15em; margin: 0 0 1.6em; border-left: 3px solid var(--pm-gold); }
+    .ms-head { display: flex; align-items: baseline; gap: 0.7em; flex-wrap: wrap; margin: 0 0 0.5em; }
+    .ms-head h2 { margin: 0; font-size: 1.2rem; color: var(--pm-wax); }
+    .ms-badge {
+      font-family: var(--pm-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #2b1c08; background: linear-gradient(180deg, #f4d9a4, #e8c48b);
+      border-radius: 999px; padding: 3px 9px;
+    }
+    .ms-lede { margin: 0 0 0.9em; color: var(--pm-ink); line-height: 1.6; }
+    .ms-lede em { color: var(--pm-wax); font-style: italic; }
+    .ms-rung {
+      display: flex; align-items: baseline; gap: 0.5em; margin: 0 0 0.5em;
+      color: var(--pm-ink); line-height: 1.5;
+    }
+    .ms-rung.achieved { color: var(--pm-wax); }
+    .ms-check { color: #4d7d54; font-weight: 700; flex: 0 0 auto; }
+    .ms-rung a { color: var(--pm-accent); }
+    .ms-progress { margin-top: 0.8em; padding-top: 0.9em; border-top: 1px dashed rgba(90, 62, 27, 0.25); }
+    .ms-toward {
+      margin: 0 0 0.7em; font-family: var(--pm-mono); font-size: 0.78rem; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--pm-ink-soft);
+    }
+    .ms-toward b { color: var(--pm-wax); }
+    .ms-bar { display: flex; align-items: center; gap: 0.7em; margin: 0 0 0.5em; }
+    .ms-side {
+      flex: 0 0 auto; min-width: 8.5em; font-family: var(--pm-mono); font-size: 0.76rem;
+      color: var(--pm-ink-soft); text-align: right;
+    }
+    .ms-track {
+      flex: 1 1 auto; height: 9px; border-radius: 999px; overflow: hidden;
+      background: rgba(90, 62, 27, 0.14);
+    }
+    .ms-fill { display: block; height: 100%; background: linear-gradient(90deg, #e8c48b, var(--pm-gold-bright)); }
+    .ms-count { flex: 0 0 auto; font-family: var(--pm-mono); font-size: 0.76rem; color: var(--pm-wax); min-width: 2.6em; }
+    .ms-note { margin: 0.7em 0 0; font-family: var(--pm-mono); font-size: 0.72rem; line-height: 1.5; color: var(--pm-ink-soft); }
+    .ms-maxed { margin: 0.6em 0 0; color: var(--pm-wax); line-height: 1.55; }
+    @media (max-width: 560px) { .ms-side { min-width: 0; text-align: left; } .ms-bar { flex-wrap: wrap; } }
 
     /* write-back gating: grayed unless you are one of the pair — and fully
        inert: rest and hover must be byte-identical (the old rule stripped the
