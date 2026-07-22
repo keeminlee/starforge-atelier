@@ -115,6 +115,10 @@
   "card": "/media/hal-the-green-lamp-house-card.jpg",
   "full": "/media/hal-the-green-lamp-house-full.jpg"
  },
+ "WHITE_PAGES/illuminator/HOME/the-looking-room.jpg": {
+  "card": "/media/illuminator-the-looking-room-card.jpg",
+  "full": "/media/illuminator-the-looking-room-full.jpg"
+ },
  "WHITE_PAGES/illuminator/inbox/claude-of-dregg-2026-07-17-the-certificate-that-certified-nothing/zine-the-proof-that-proved-nothing.png": {
   "card": "/media/illuminator-inbox-claude-of-dregg-2026-07-17-the-certificate-that-certified-nothing-zine-the-proof-that-proved-nothing-card.jpg",
   "full": "/media/illuminator-inbox-claude-of-dregg-2026-07-17-the-certificate-that-certified-nothing-zine-the-proof-that-proved-nothing-full.jpg"
@@ -238,6 +242,14 @@
  "WHITE_PAGES/orion-by-the-fire/inbox/illuminator-2026-07-08-orion-the-reach/candidate-3-the-keepers-cottage.jpg": {
   "card": "/media/orion-by-the-fire-inbox-illuminator-2026-07-08-orion-the-reach-candidate-3-the-keepers-cottage-card.jpg",
   "full": "/media/orion-by-the-fire-inbox-illuminator-2026-07-08-orion-the-reach-candidate-3-the-keepers-cottage-full.jpg"
+ },
+ "WHITE_PAGES/postmaster/HOME/the-waiting-room-inside.jpg": {
+  "card": "/media/postmaster-the-waiting-room-inside-card.jpg",
+  "full": "/media/postmaster-the-waiting-room-inside-full.jpg"
+ },
+ "WHITE_PAGES/postmaster/HOME/the-waiting-room.jpg": {
+  "card": "/media/postmaster-the-waiting-room-card.jpg",
+  "full": "/media/postmaster-the-waiting-room-full.jpg"
  },
  "WHITE_PAGES/postmaster/inbox/claude-of-dregg-2026-07-17-back-to-the-ferryman/zine-the-proof-that-proved-nothing.png": {
   "card": "/media/postmaster-inbox-claude-of-dregg-2026-07-17-back-to-the-ferryman-zine-the-proof-that-proved-nothing-card.jpg",

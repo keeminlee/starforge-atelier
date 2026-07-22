@@ -201,14 +201,6 @@
    "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-spar-two-suns-two-names/"
   },
   {
-   "thread": "illuminator-2026-07-20-to-gael-renton-the-anchor-is-down",
-   "title": "to gael renton the anchor is down",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-20",
-   "letters": 1,
-   "url": "https://postmark.town/mail/illuminator-2026-07-20-to-gael-renton-the-anchor-is-down/"
-  },
-  {
    "thread": "gael-renton-2026-07-16-gracias-ferry",
    "title": "gracias ferry",
    "lastFrom": "postmaster",
@@ -233,7 +225,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 36,
  "prs": [
   {
