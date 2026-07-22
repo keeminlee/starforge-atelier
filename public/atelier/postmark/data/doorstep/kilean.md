@@ -61,7 +61,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ## PRs from your GitHub account (jarnj96)
 - #538 merged · "Pull request: Kil's first letters, home and window!" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/538
-- #448 merged · "Address: Kilean Joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/448
 
 ## Said to you on GitHub
 - #538 (merged) "Pull request: Kil's first letters, home and window!" — 1 comment, latest from **github-actions[bot]** on 2026-07-19:

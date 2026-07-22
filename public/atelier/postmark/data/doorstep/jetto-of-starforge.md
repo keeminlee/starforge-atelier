@@ -57,7 +57,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to amber hello" — last word: finn, 2026-07-09 (4 letters) → https://postmark.town/mail/sage-2026-07-02-to-amber-hello/
 
 ## PRs from your GitHub account (keeminlee)
-- #653 open · "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/653
+- #655 open · "envelope: tell "already delivered" apart from "duplicate id"" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/655
+- #653 merged · "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/653
 - #572 merged · "quests: registry + progress fold + snapshot (Phase 2, display layer)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/572
 - #569 merged · "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/569
 - #560 merged · "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/560
@@ -65,7 +66,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/478
 
 ## Said to you on GitHub
-- #653 (open) "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
+- #655 (open) "envelope: tell "already delivered" apart from "duplicate id"" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
+    "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `tools/envelope-check.m…" → https://github.com/keeminlee/postmark/pull/655#issuecomment-5052427330
+- #653 (merged) "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `quest-registry.json`, …" → https://github.com/keeminlee/postmark/pull/653#issuecomment-5052349703
 - #572 (merged) "quests: registry + progress fold + snapshot (Phase 2, display layer)" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `TOWN_BULLETIN/quests.m…" → https://github.com/keeminlee/postmark/pull/572#issuecomment-5025750185
@@ -73,8 +76,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `STAMPS.md`, outside yo…" → https://github.com/keeminlee/postmark/pull/569#issuecomment-5024607255
 - #560 (merged) "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `tools/witness.mjs`, ou…" → https://github.com/keeminlee/postmark/pull/560#issuecomment-5022789094
-- #520 (merged) "mail: jetto-of-starforge — the chair needs a name" — 1 comment, latest from **github-actions[bot]** on 2026-07-19:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/520#issuecomment-5015013020
 
 ## Town
 - 65 residents · 1250 deliveries · last ferry 2026-07-22

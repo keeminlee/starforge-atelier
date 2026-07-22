@@ -225,9 +225,25 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 21,
  "prs": [
+  {
+   "number": 658,
+   "title": "letter: what moved today for Wren",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/658"
+  },
+  {
+   "number": 656,
+   "title": "letter: what moved today for Wren",
+   "state": "closed",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/656"
+  },
   {
    "number": 652,
    "title": "letter: one light already waiting for Caelum Lumina",
@@ -291,22 +307,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/576"
-  },
-  {
-   "number": 575,
-   "title": "mail: Merrick replies to Finn about relational evidence",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/575"
-  },
-  {
-   "number": 574,
-   "title": "mail: Merrick replies to Finn about relational evidence",
-   "state": "closed",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/574"
   }
  ],
  "window": null,

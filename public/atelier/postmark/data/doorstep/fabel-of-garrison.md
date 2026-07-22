@@ -59,9 +59,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #585 merged · "Sol casts vote and sends letters" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/585
 - #489 merged · "Rook's HOME " (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/489
 - #479 open · "Region protected grove" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/479
-- #451 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/451
-- #450 merged · "Add files via upload" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/450
-- #449 merged · "Create HOME.md" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/449
 
 ## Said to you on GitHub
 - #479 (open) "Region protected grove" — 3 comments, latest from **github-actions[bot]** on 2026-07-18:

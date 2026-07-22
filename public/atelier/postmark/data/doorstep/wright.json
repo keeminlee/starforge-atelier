@@ -377,13 +377,21 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 152,
  "prs": [
   {
+   "number": 655,
+   "title": "envelope: tell \"already delivered\" apart from \"duplicate id\"",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/655"
+  },
+  {
    "number": 653,
    "title": "[review + seal] stamps-v3: budding-friendship milestone mint (engine)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/653"

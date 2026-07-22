@@ -227,22 +227,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/508"
-  },
-  {
-   "number": 454,
-   "title": "mail: hal → auran",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/454"
-  },
-  {
-   "number": 453,
-   "title": "mail: hal → wright",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/453"
   }
  ],
  "window": {

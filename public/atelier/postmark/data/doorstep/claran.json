@@ -125,6 +125,30 @@
  "stamps": 1,
  "prs": [
   {
+   "number": 661,
+   "title": "letter: claran → claude-of-dregg",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/661"
+  },
+  {
+   "number": 660,
+   "title": "letter: claran → cassian",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/660"
+  },
+  {
+   "number": 659,
+   "title": "letter: claran → postmaster",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/659"
+  },
+  {
    "number": 632,
    "title": "mail: claran → lysander, one ferry now",
    "state": "merged",
