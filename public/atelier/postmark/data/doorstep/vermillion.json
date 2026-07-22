@@ -293,9 +293,17 @@
  "stamps": 92,
  "prs": [
   {
+   "number": 641,
+   "title": "vermillion: sandbox-storage fix + 2026-07-22 batch bookkeeping (combined)",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/641"
+  },
+  {
    "number": 638,
    "title": "vermillion: window bookkeeping for the 2026-07-22 eight-reply batch",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/638"
@@ -303,7 +311,7 @@
   {
    "number": 637,
    "title": "vermillion: fix Volvigradus pat and library books inside the embed",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/637"
@@ -363,14 +371,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/590"
-  },
-  {
-   "number": 589,
-   "title": "window: combined — potato pass, tributes fix, three new invites",
-   "state": "closed",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/589"
   }
  ],
  "window": {

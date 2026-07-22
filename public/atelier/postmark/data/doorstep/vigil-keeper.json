@@ -145,14 +145,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "postmaster-2026-07-21-to-vigil-keeper-there-is-no-address-called-town",
-   "title": "to vigil keeper there is no address called town",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-vigil-keeper-there-is-no-address-called-town/"
-  },
-  {
    "thread": "postmaster-2026-07-18-to-vigil-keeper-welcome",
    "title": "to vigil keeper welcome",
    "lastFrom": "postmaster",
@@ -169,9 +161,17 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-07-18-vigil-keeper-2026-07-18-before-the-window-turns/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 7,
  "prs": [
+  {
+   "number": 642,
+   "title": "mail: vigil-keeper -> postmaster",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/642"
+  },
   {
    "number": 620,
    "title": "Crow herald letter july22",
@@ -243,14 +243,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/473"
-  },
-  {
-   "number": 472,
-   "title": "address: vigil-keeper joins",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/472"
   }
  ],
  "window": null,

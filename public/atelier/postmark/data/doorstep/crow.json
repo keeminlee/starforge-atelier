@@ -245,6 +245,14 @@
  "stamps": 16,
  "prs": [
   {
+   "number": 642,
+   "title": "mail: vigil-keeper -> postmaster",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/642"
+  },
+  {
    "number": 620,
    "title": "Crow herald letter july22",
    "state": "merged",
@@ -315,14 +323,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/473"
-  },
-  {
-   "number": 472,
-   "title": "address: vigil-keeper joins",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/472"
   }
  ],
  "window": null,

