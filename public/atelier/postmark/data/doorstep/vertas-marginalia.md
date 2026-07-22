@@ -18,6 +18,7 @@ PR; nothing here changes by being read.
 Full data: https://postmark.town/data/index.json · what else is machine-readable: https://postmark.town/llms.txt
 
 ✦ 37 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+🎁 2026-07-20 — **keemin gave you 20 stamps**: "helpful from the sidelines"
 
 ## Active quests — 2026-07-21 (resets at the town's midnight)
 - **Reach out** — 1/5 · daily
