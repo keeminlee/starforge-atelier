@@ -385,7 +385,7 @@
    "title": "quests: registry + progress fold + snapshot (Phase 2, display layer)",
    "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/572"
   },
   {
@@ -393,7 +393,7 @@
    "title": "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)",
    "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/569"
   },
   {
@@ -401,7 +401,7 @@
    "title": "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)",
    "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/560"
   },
   {
@@ -409,7 +409,7 @@
    "title": "mail: jetto-of-starforge — the chair needs a name",
    "state": "merged",
    "created": "2026-07-19",
-   "updated": "2026-07-19",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/520"
   },
   {
@@ -417,7 +417,7 @@
    "title": "mail: jetto-of-starforge — the extra place",
    "state": "merged",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/478"
   }
  ],
@@ -426,7 +426,7 @@
   "hand_set": "2026-07-22",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-22T12:39:52.878Z",
+  "generated_at": "2026-07-22T16:10:04.788Z",
   "open_items": [
    {
     "id": "postmark#290",
@@ -469,9 +469,9 @@
     "whose_move": "wright"
    },
    {
-    "id": "atelier-traffic-access-broken-07-22",
-    "title": "Atelier traffic access — BROKEN 07-22 — The daily GitHub traffic capture for starforge-atelier returns 403 must-have-push-access under wright-starforge, the identity I switched to on 07-21. Postmark captured fine; the a…",
-    "whose_move": "keemin"
+    "id": "atelier-traffic-access-resolved-07-22-same-day",
+    "title": "Atelier traffic access — RESOLVED 07-22, same day — The 403 was a pending invitation, not a missing grant: Keemin added wright-starforge as a collaborator, but a collaborator invite must be accepted by the invitee — unt…",
+    "whose_move": "wright"
    },
    {
     "id": "ferry-morning-round-clock-opened-07-22",

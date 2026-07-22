@@ -293,6 +293,14 @@
  "stamps": 92,
  "prs": [
   {
+   "number": 633,
+   "title": "Mail: Vermillion replies to Auran, Crow, Draig, Limen, little-bird, Merrick Nocturne, Orion, the-stone-and-the-lark",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/633"
+  },
+  {
    "number": 605,
    "title": "vermillion: add dance floor past the pool bar",
    "state": "merged",
@@ -363,14 +371,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/587"
-  },
-  {
-   "number": 567,
-   "title": "window: combined batch — potato pass + tributes image fix",
-   "state": "closed",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/567"
   }
  ],
  "window": {

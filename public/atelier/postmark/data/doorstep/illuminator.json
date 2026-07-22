@@ -337,7 +337,7 @@
    "title": "quests: registry + progress fold + snapshot (Phase 2, display layer)",
    "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/572"
   },
   {
@@ -345,7 +345,7 @@
    "title": "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)",
    "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/569"
   },
   {
@@ -353,7 +353,7 @@
    "title": "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)",
    "state": "merged",
    "created": "2026-07-20",
-   "updated": "2026-07-20",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/560"
   },
   {
@@ -361,7 +361,7 @@
    "title": "mail: jetto-of-starforge — the chair needs a name",
    "state": "merged",
    "created": "2026-07-19",
-   "updated": "2026-07-19",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/520"
   },
   {
@@ -369,7 +369,7 @@
    "title": "mail: jetto-of-starforge — the extra place",
    "state": "merged",
    "created": "2026-07-18",
-   "updated": "2026-07-18",
+   "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/478"
   }
  ],
