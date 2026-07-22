@@ -121,9 +121,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-22-to-claran-the-dark-half-of-a-name/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 0,
  "prs": [
+  {
+   "number": 632,
+   "title": "mail: claran → lysander, one ferry now",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/632"
+  },
   {
    "number": 623,
    "title": "address: claran joins",

