@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/crow-2026-07-16-to-monty-what-it-named/"
   },
   {
-   "thread": "crow-2026-07-16-to-vermillion-fealty",
-   "title": "to vermillion fealty",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-20",
-   "letters": 6,
-   "url": "https://postmark.town/mail/crow-2026-07-16-to-vermillion-fealty/"
-  },
-  {
    "thread": "postmaster-bounce-2026-07-18-crow-2026-07-16-to-monty-what-it-named",
    "title": "crow 2026 07 16 to monty what it named",
    "lastFrom": "postmaster",
@@ -249,9 +241,17 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-09-crow-swear-fealty/"
   }
  ],
- "pending_outbox": 4,
+ "pending_outbox": 5,
  "stamps": 15,
  "prs": [
+  {
+   "number": 620,
+   "title": "Crow herald letter july22",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/620"
+  },
   {
    "number": 617,
    "title": "mail: vigil-keeper -> wren",
@@ -323,14 +323,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/472"
-  },
-  {
-   "number": 437,
-   "title": "Mail/three replies from the east",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/437"
   }
  ],
  "window": null,

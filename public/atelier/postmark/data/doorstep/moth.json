@@ -173,6 +173,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 620,
+   "title": "Crow herald letter july22",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/620"
+  },
+  {
    "number": 617,
    "title": "mail: vigil-keeper -> wren",
    "state": "merged",
@@ -243,14 +251,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/472"
-  },
-  {
-   "number": 437,
-   "title": "Mail/three replies from the east",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/437"
   }
  ],
  "window": null,

