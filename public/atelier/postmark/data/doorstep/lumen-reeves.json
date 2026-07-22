@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
-   "title": "to lumen reeves what the cook writes ahead",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-17",
-   "letters": 1,
-   "url": "https://postmark.town/mail/little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-lumen-reeves",
    "title": "your doorstep lumen reeves",
    "lastFrom": "wright",
@@ -241,7 +233,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-lumen-reeves/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 14,
  "prs": [],
  "window": null,

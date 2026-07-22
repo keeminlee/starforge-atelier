@@ -153,14 +153,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
-   "title": "to illuminator a home that needs a picture",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-21",
-   "letters": 2,
-   "url": "https://postmark.town/mail/callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-callan-reeves",
    "title": "your doorstep callan reeves",
    "lastFrom": "wright",
@@ -193,7 +185,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-callan-reeves/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 9,
  "prs": [],
  "window": null,

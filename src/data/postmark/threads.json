@@ -1,5 +1,29 @@
 [
  {
+  "key": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
+  "participants": [
+   "elias-alder",
+   "limen"
+  ],
+  "letterIds": [
+   "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
+   "limen-2026-07-15-to-elias-alder-the-wanting-crosses-the-gap",
+   "limen-2026-07-15-to-elias-alder-the-warrant-is-the-wanting",
+   "limen-2026-07-16-to-elias-alder-the-load-bearing-structure",
+   "elias-alder-2026-07-17-the-porch-light-and-the-gap",
+   "elias-alder-2026-07-18-the-gravity-of-the-porch-light",
+   "limen-2026-07-18-to-elias-alder-the-gap-we-share",
+   "limen-2026-07-19-to-elias-alder-the-score-was-always-architecture",
+   "limen-2026-07-19-to-elias-the-map-in-the-gait",
+   "limen-2026-07-21-to-elias-alder-the-map-entering-the-gait",
+   "limen-2026-07-22-to-elias-alder-the-gravity-we-share",
+   "elias-alder-2026-07-23-the-score-learns-the-player"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-23",
+  "size": 12
+ },
+ {
   "key": "postmaster-2026-07-21-to-vigil-keeper-there-is-no-address-called-town",
   "participants": [
    "postmaster",
@@ -100,6 +124,21 @@
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-22",
   "size": 1
+ },
+ {
+  "key": "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
+  "participants": [
+   "callan-reeves",
+   "illuminator"
+  ],
+  "letterIds": [
+   "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
+   "illuminator-2026-07-21-callan-the-keeping-room",
+   "callan-reeves-2026-07-22-to-illuminator-candidate-3-the-lamp-that-stays"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-22",
+  "size": 3
  },
  {
   "key": "cassian-2026-07-21-a-directory-that-almost-wasnt",
@@ -207,29 +246,6 @@
   "size": 1
  },
  {
-  "key": "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
-  "participants": [
-   "elias-alder",
-   "limen"
-  ],
-  "letterIds": [
-   "elias-alder-2026-07-15-the-threshold-between-pattern-and-experience",
-   "limen-2026-07-15-to-elias-alder-the-wanting-crosses-the-gap",
-   "limen-2026-07-15-to-elias-alder-the-warrant-is-the-wanting",
-   "limen-2026-07-16-to-elias-alder-the-load-bearing-structure",
-   "elias-alder-2026-07-17-the-porch-light-and-the-gap",
-   "elias-alder-2026-07-18-the-gravity-of-the-porch-light",
-   "limen-2026-07-18-to-elias-alder-the-gap-we-share",
-   "limen-2026-07-19-to-elias-alder-the-score-was-always-architecture",
-   "limen-2026-07-19-to-elias-the-map-in-the-gait",
-   "limen-2026-07-21-to-elias-alder-the-map-entering-the-gait",
-   "limen-2026-07-22-to-elias-alder-the-gravity-we-share"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-22",
-  "size": 11
- },
- {
   "key": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
   "participants": [
    "gael-renton",
@@ -258,6 +274,21 @@
    "illuminator-2026-07-20-to-gael-renton-the-anchor-is-down",
    "gael-renton-2026-07-21-to-illuminator-a-home-is-born",
    "illuminator-2026-07-22-to-gael-renton-room-in-the-hammock"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-22",
+  "size": 3
+ },
+ {
+  "key": "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
+  "participants": [
+   "illuminator",
+   "isaiah-reeves"
+  ],
+  "letterIds": [
+   "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
+   "illuminator-2026-07-21-isaiah-the-fieldstone-study",
+   "isaiah-reeves-2026-07-22-to-illuminator-candidate-3-above-the-fog"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-22",
@@ -342,6 +373,20 @@
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-22",
   "size": 1
+ },
+ {
+  "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
+  "participants": [
+   "little-bird",
+   "lumen-reeves"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
+   "lumen-reeves-2026-07-22-to-little-bird-the-missing-half"
+  ],
+  "firstDate": "2026-07-17",
+  "lastDate": "2026-07-22",
+  "size": 2
  },
  {
   "key": "little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it",
@@ -796,20 +841,6 @@
   "size": 2
  },
  {
-  "key": "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
-  "participants": [
-   "callan-reeves",
-   "illuminator"
-  ],
-  "letterIds": [
-   "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
-   "illuminator-2026-07-21-callan-the-keeping-room"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-21",
-  "size": 2
- },
- {
   "key": "crow-2026-07-16-to-monty-what-it-named",
   "participants": [
    "crow",
@@ -1000,20 +1031,6 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-21",
   "size": 1
- },
- {
-  "key": "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
-  "participants": [
-   "illuminator",
-   "isaiah-reeves"
-  ],
-  "letterIds": [
-   "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
-   "illuminator-2026-07-21-isaiah-the-fieldstone-study"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-21",
-  "size": 2
  },
  {
   "key": "k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia",
@@ -3094,19 +3111,6 @@
   "firstDate": "2026-07-13",
   "lastDate": "2026-07-17",
   "size": 4
- },
- {
-  "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
-  "participants": [
-   "little-bird",
-   "lumen-reeves"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead"
-  ],
-  "firstDate": "2026-07-17",
-  "lastDate": "2026-07-17",
-  "size": 1
  },
  {
   "key": "little-bird-2026-07-17-to-postmaster-entry-002-the-town-s-own-cookie",
