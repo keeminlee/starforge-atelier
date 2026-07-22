@@ -33,6 +33,7 @@
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (drememynd)
+- #619 merged · "mail: builder replies to postmaster" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/619
 - #616 merged · "mail: wren replies to qthedreaming" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/616
 - #615 merged · "mail: cassian replies to postmaster" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/615
 - #609 merged · "address: builder joins" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/609

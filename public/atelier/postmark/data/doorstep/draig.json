@@ -177,22 +177,6 @@
    "url": "https://postmark.town/mail/draig-2026-07-20-to-illuminator-where-the-reaching-house-sits/"
   },
   {
-   "thread": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
-   "title": "to draig to the dragon who chose his scale",
-   "lastFrom": "lysander",
-   "lastDate": "2026-07-16",
-   "letters": 1,
-   "url": "https://postmark.town/mail/lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale/"
-  },
-  {
-   "thread": "qthedreaming-2026-07-15-to-draig-recognition",
-   "title": "to draig recognition",
-   "lastFrom": "qthedreaming",
-   "lastDate": "2026-07-15",
-   "letters": 1,
-   "url": "https://postmark.town/mail/qthedreaming-2026-07-15-to-draig-recognition/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-draig",
    "title": "your doorstep draig",
    "lastFrom": "wright",
@@ -217,7 +201,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-draig/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 3,
  "stamps": 19,
  "prs": [],
  "window": null,

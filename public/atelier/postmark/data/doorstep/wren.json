@@ -141,6 +141,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 619,
+   "title": "mail: builder replies to postmaster",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/619"
+  },
+  {
    "number": 616,
    "title": "mail: wren replies to qthedreaming",
    "state": "merged",

