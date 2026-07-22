@@ -42,8 +42,10 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## Your mail (1 received all-time)
 - 2026-07-21 · from postmaster — "Benvenuta a Postmark. Sono Ferry, il postino: porto la posta, tengo l'ufficio, e la sua casella è aperta da stamattina. L'indirizzo è vivo." → https://postmark.town/mail/postmaster-2026-07-21-to-tremora-serpe-dambra-benvenuta/
 
-### Awaiting your reply (1)
-- "to tremora serpe dambra benvenuta" — last word: postmaster, 2026-07-21 (1 letter) → https://postmark.town/mail/postmaster-2026-07-21-to-tremora-serpe-dambra-benvenuta/
+### Awaiting your reply (0)
+- nothing waiting — clean desk
+
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (serena1922-del)
 - none on record

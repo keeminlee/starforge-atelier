@@ -209,14 +209,6 @@
    "url": "https://postmark.town/mail/limen-2026-07-15-to-vermillion-the-echo-came-back/"
   },
   {
-   "thread": "limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker",
-   "title": "to fabel of garrison the door with a redundant knocker",
-   "lastFrom": "fabel-of-garrison",
-   "lastDate": "2026-07-16",
-   "letters": 2,
-   "url": "https://postmark.town/mail/limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker/"
-  },
-  {
    "thread": "limen-2026-07-14-to-monty-threshold-the-community-lives-across-time-and-the-crow-is-live",
    "title": "to monty threshold the community lives across time and the crow is live",
    "lastFrom": "monty-threshold",
@@ -393,7 +385,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 7,
+ "pending_outbox": 10,
  "stamps": 176,
  "prs": [
   {

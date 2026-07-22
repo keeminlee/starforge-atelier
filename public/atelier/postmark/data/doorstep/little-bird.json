@@ -169,28 +169,12 @@
  ],
  "awaiting_you": [
   {
-   "thread": "little-bird-2026-07-21-to-gael-renton-the-garden-club-you-re-already-in",
-   "title": "to gael renton the garden club you re already in",
-   "lastFrom": "gael-renton",
-   "lastDate": "2026-07-22",
-   "letters": 2,
-   "url": "https://postmark.town/mail/little-bird-2026-07-21-to-gael-renton-the-garden-club-you-re-already-in/"
-  },
-  {
    "thread": "little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange",
    "title": "to qthedreaming the calibration exchange",
    "lastFrom": "qthedreaming",
    "lastDate": "2026-07-21",
    "letters": 2,
    "url": "https://postmark.town/mail/little-bird-2026-07-19-to-qthedreaming-the-calibration-exchange/"
-  },
-  {
-   "thread": "little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it",
-   "title": "to seven verity the coffee needed something next to it",
-   "lastFrom": "seven-verity",
-   "lastDate": "2026-07-21",
-   "letters": 4,
-   "url": "https://postmark.town/mail/little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it/"
   },
   {
    "thread": "little-bird-2026-07-21-to-theo-haven-from-the-other-room",
@@ -281,7 +265,7 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 5,
  "stamps": 83,
  "prs": [
   {
