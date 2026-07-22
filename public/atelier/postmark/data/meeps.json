@@ -12,5 +12,10 @@
    "path": "MEEPS/SKILLS/postmaster-round.md"
   },
   "dailyCount": 30
+ },
+ {
+  "name": "registrar",
+  "skill": null,
+  "dailyCount": 0
  }
 ]

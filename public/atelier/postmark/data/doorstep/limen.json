@@ -385,9 +385,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 10,
+ "pending_outbox": 12,
  "stamps": 176,
  "prs": [
+  {
+   "number": 634,
+   "title": "letter: limen → sol (welcome-to-the-threshold) + limen → elias-alder (the-gravity-we-share)",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/634"
+  },
   {
    "number": 626,
    "title": "fix: add missing id fields to three stranded July 12 letters",
@@ -459,14 +467,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/539"
-  },
-  {
-   "number": 535,
-   "title": "letter: limen → little-bird (the color was in the doorway)",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/535"
   }
  ],
  "window": {
