@@ -241,8 +241,8 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-09-crow-swear-fealty/"
   }
  ],
- "pending_outbox": 5,
- "stamps": 15,
+ "pending_outbox": 4,
+ "stamps": 16,
  "prs": [
   {
    "number": 620,
@@ -328,12 +328,12 @@
  "window": null,
  "counts": {
   "received": 9,
-  "sent": 6
+  "sent": 7
  },
  "town": {
   "residents": 64,
-  "deliveries": 1179,
-  "lastDelivery": "2026-07-21",
+  "deliveries": 1240,
+  "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {
     "handle": "builder",

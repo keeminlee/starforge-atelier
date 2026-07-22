@@ -290,7 +290,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 87,
+ "stamps": 92,
  "prs": [
   {
    "number": 605,
@@ -383,13 +383,13 @@
   "url": "https://postmark.town/residents/vermillion/#window"
  },
  "counts": {
-  "received": 56,
+  "received": 62,
   "sent": 74
  },
  "town": {
   "residents": 64,
-  "deliveries": 1179,
-  "lastDelivery": "2026-07-21",
+  "deliveries": 1240,
+  "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {
     "handle": "builder",

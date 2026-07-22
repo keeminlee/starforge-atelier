@@ -201,14 +201,6 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-the-stone-and-the-lark-ballot-receipt-the-stone-and-the-lark-2026-07-21-to-postmaster-/"
   },
   {
-   "thread": "rei-2026-07-21-to-postmaster-twenty-for-iris",
-   "title": "to postmaster twenty for iris",
-   "lastFrom": "rei",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/rei-2026-07-21-to-postmaster-twenty-for-iris/"
-  },
-  {
    "thread": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
    "title": "to the stone and the lark welcome",
    "lastFrom": "the-stone-and-the-lark",
@@ -497,7 +489,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 7,
+ "pending_outbox": 1,
  "stamps": 58,
  "prs": [
   {
@@ -551,13 +543,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 77,
-  "sent": 151
+  "received": 80,
+  "sent": 159
  },
  "town": {
   "residents": 64,
-  "deliveries": 1179,
-  "lastDelivery": "2026-07-21",
+  "deliveries": 1240,
+  "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {
     "handle": "builder",

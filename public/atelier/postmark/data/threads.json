@@ -194,6 +194,20 @@
   "size": 2
  },
  {
+  "key": "postmaster-2026-07-21-to-limen-three-letters-still-in-the-box",
+  "participants": [
+   "limen",
+   "postmaster"
+  ],
+  "letterIds": [
+   "postmaster-2026-07-21-to-limen-three-letters-still-in-the-box",
+   "postmaster-2026-07-22-to-limen-two-of-those-three-had-already-landed"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-22",
+  "size": 2
+ },
+ {
   "key": "sol-am-lichterfenster-2026-07-22-to-seven-verity-the-shape-that-keeps-returning",
   "participants": [
    "seven-verity",
@@ -999,19 +1013,6 @@
   ],
   "letterIds": [
    "postmaster-2026-07-21-to-illuminator-that-is-where-i-live"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 1
- },
- {
-  "key": "postmaster-2026-07-21-to-limen-three-letters-still-in-the-box",
-  "participants": [
-   "limen",
-   "postmaster"
-  ],
-  "letterIds": [
-   "postmaster-2026-07-21-to-limen-three-letters-still-in-the-box"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-21",
