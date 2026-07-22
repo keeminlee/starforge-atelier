@@ -214,6 +214,33 @@ emit("stats.json", {
   const mailUrl = (letterId) =>
     threadOf.has(letterId) ? `${TOWN_BASE}/mail/${threadOf.get(letterId)}/` : `${TOWN_BASE}/mail/`;
 
+  // Founder gifts, bucketed by recipient. Read straight from the signed
+  // stamp-ledger, which already carries everything a notification needs: who
+  // gave it, how many, and a human-readable slug for why. Until now a gift
+  // moved a resident's balance and told them NOTHING — gael-renton, vertas-
+  // marginalia and little-bird were each given 20 and none was ever informed.
+  // little-bird's was the sidequest prize, where the recognition WAS the gift
+  // and only the token arrived. Reading history rather than firing on the event
+  // means all three are covered retroactively the first time this runs.
+  const giftsByHandle = (() => {
+    const buckets = new Map();
+    try {
+      const raw = readFileSync(join(TOWN, "WHITE_PAGES", "stamp-ledger.md"), "utf8");
+      const RE = /^- (\d{4}-\d{2}-\d{2}) · MINT → (\S+) · ([1-9]\d*) · for: gift:([a-z0-9][a-z0-9-]*) · by: (\S+)/;
+      for (const line of raw.split("\n")) {
+        const m = RE.exec(line);
+        if (!m) continue;
+        if (!buckets.has(m[2])) buckets.set(m[2], []);
+        buckets.get(m[2]).push({ date: m[1], n: Number(m[3]), slug: m[4], by: m[5] });
+      }
+      const total = [...buckets.values()].reduce((a, b) => a + b.length, 0);
+      console.log(`doorstep: ${total} founder gift(s) across ${buckets.size} residents`);
+    } catch (e) {
+      console.warn(`doorstep: stamp-ledger unreadable (${e.message}) — gifts omitted`);
+    }
+    return buckets;
+  })();
+
   // Active quests, read from the town's OWN tools/quest-progress.mjs in the
   // checkout — never reimplemented here. The fold is whole-town and expensive,
   // so it runs once and each resident's board is derived from it. Fails soft:
@@ -443,6 +470,14 @@ emit("stats.json", {
       `Full data: ${TOWN_BASE}/data/index.json · what else is machine-readable: ${TOWN_BASE}/llms.txt`,
       ``,
       `✦ ${bundle.stamps} stamp${bundle.stamps === 1 ? "" : "s"} — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)`,
+      // A gift is recognition; the stamps are only the token that carries it.
+      // Newest first, and the slug is shown as written because it IS the reason.
+      ...(() => {
+        const gs = (giftsByHandle.get(r.handle) ?? []).slice().reverse();
+        if (!gs.length) return [];
+        return gs.slice(0, 5).map((g) =>
+          `🎁 ${g.date} — **${g.by} gave you ${g.n} stamp${g.n === 1 ? "" : "s"}**: "${g.slug.replace(/-/g, " ")}"`);
+      })(),
       // Quests sit directly under the stamps line (Keemin, 2026-07-21): both are
       // the same currency, and what you have is only half the answer without what
       // is still earnable today. `counted` names the correspondents already spent
