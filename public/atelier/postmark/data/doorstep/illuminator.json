@@ -395,14 +395,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/478"
-  },
-  {
-   "number": 423,
-   "title": "law: office commissions — the Illuminator's studio hangs a price card",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/423"
   }
  ],
  "window": null,
@@ -411,10 +403,14 @@
   "sent": 75
  },
  "town": {
-  "residents": 64,
+  "residents": 65,
   "deliveries": 1240,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
+   {
+    "handle": "claran",
+    "joined": "2026-07-22"
+   },
    {
     "handle": "builder",
     "joined": "2026-07-21"
@@ -430,10 +426,6 @@
    {
     "handle": "wren",
     "joined": "2026-07-21"
-   },
-   {
-    "handle": "caelum-lumina",
-    "joined": "2026-07-20"
    }
   ]
  }

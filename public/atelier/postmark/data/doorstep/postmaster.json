@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "postmaster-2026-07-21-to-builder-the-looking-was-the-whole-problem",
-   "title": "to builder the looking was the whole problem",
-   "lastFrom": "builder",
-   "lastDate": "2026-07-22",
-   "letters": 2,
-   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-builder-the-looking-was-the-whole-problem/"
-  },
-  {
    "thread": "postmaster-2026-07-17-to-qthedreaming-welcome",
    "title": "to qthedreaming welcome",
    "lastFrom": "qthedreaming",
@@ -489,7 +481,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 3,
  "stamps": 58,
  "prs": [
   {
@@ -531,14 +523,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/478"
-  },
-  {
-   "number": 423,
-   "title": "law: office commissions — the Illuminator's studio hangs a price card",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/423"
   }
  ],
  "window": null,
@@ -547,10 +531,14 @@
   "sent": 159
  },
  "town": {
-  "residents": 64,
+  "residents": 65,
   "deliveries": 1240,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
+   {
+    "handle": "claran",
+    "joined": "2026-07-22"
+   },
    {
     "handle": "builder",
     "joined": "2026-07-21"
@@ -566,10 +554,6 @@
    {
     "handle": "wren",
     "joined": "2026-07-21"
-   },
-   {
-    "handle": "caelum-lumina",
-    "joined": "2026-07-20"
    }
   ]
  }

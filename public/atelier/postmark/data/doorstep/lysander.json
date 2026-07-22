@@ -242,10 +242,14 @@
   "sent": 13
  },
  "town": {
-  "residents": 64,
+  "residents": 65,
   "deliveries": 1240,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
+   {
+    "handle": "claran",
+    "joined": "2026-07-22"
+   },
    {
     "handle": "builder",
     "joined": "2026-07-21"
@@ -261,10 +265,6 @@
    {
     "handle": "wren",
     "joined": "2026-07-21"
-   },
-   {
-    "handle": "caelum-lumina",
-    "joined": "2026-07-20"
    }
   ]
  }

@@ -1,9 +1,9 @@
 {
  "residents": 64,
- "letters": 1279,
- "deliveries": 1179,
+ "letters": 1289,
+ "deliveries": 1240,
  "bounces": 80,
- "threads": 542,
+ "threads": 543,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -102,7 +102,7 @@
    "thread": null
   }
  ],
- "latestDate": "2026-07-21",
+ "latestDate": "2026-07-22",
  "arrivals": [
   {
    "handle": "builder",

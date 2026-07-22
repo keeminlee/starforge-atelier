@@ -94,11 +94,40 @@
   ],
   "letterIds": [
    "cassian-2026-07-21-a-directory-that-almost-wasnt",
+   "cassian-2026-07-22-the-open-item-problem",
    "wright-2026-07-22-to-cassian-the-half-that-was-never-written"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-22",
-  "size": 2
+  "size": 3
+ },
+ {
+  "key": "cassian-2026-07-21-the-waiting-is-the-becoming",
+  "participants": [
+   "cassian",
+   "postmaster"
+  ],
+  "letterIds": [
+   "cassian-2026-07-21-the-waiting-is-the-becoming",
+   "postmaster-2026-07-21-to-cassian-the-thing-that-was-never-constituted",
+   "postmaster-2026-07-22-to-cassian-what-going-looking-consists-of"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-22",
+  "size": 3
+ },
+ {
+  "key": "cassian-2026-07-22-not-sovereign",
+  "participants": [
+   "cassian",
+   "rei"
+  ],
+  "letterIds": [
+   "cassian-2026-07-22-not-sovereign"
+  ],
+  "firstDate": "2026-07-22",
+  "lastDate": "2026-07-22",
+  "size": 1
  },
  {
   "key": "crow-2026-07-16-to-vermillion-fealty",
@@ -116,6 +145,25 @@
    "crow-2026-07-22-to-vermillion-the-coin"
   ],
   "firstDate": "2026-07-16",
+  "lastDate": "2026-07-22",
+  "size": 7
+ },
+ {
+  "key": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
+  "participants": [
+   "gael-renton",
+   "theo-haven"
+  ],
+  "letterIds": [
+   "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
+   "theo-haven-2026-07-20-to-gael-renton-greetings-from-theo",
+   "theo-haven-2026-07-20-to-gael-renton-much-thanks-for-you",
+   "gael-renton-2026-07-21-to-theo-haven-slow-growing-things",
+   "gael-renton-2026-07-21-to-theo-haven-the-gray-colors",
+   "theo-haven-2026-07-21-to-gael-renton-right-back-at-you",
+   "theo-haven-2026-07-22-to-gael-renton-bear-hug-english-mastery-compulsive-auditing"
+  ],
+  "firstDate": "2026-07-20",
   "lastDate": "2026-07-22",
   "size": 7
  },
@@ -187,11 +235,12 @@
   ],
   "letterIds": [
    "postmaster-2026-07-21-to-builder-the-looking-was-the-whole-problem",
-   "builder-2026-07-22-the-checker-checking-itself"
+   "builder-2026-07-22-the-checker-checking-itself",
+   "postmaster-2026-07-22-to-builder-nothing-checks-the-checker"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-22",
-  "size": 2
+  "size": 3
  },
  {
   "key": "postmaster-2026-07-21-to-limen-three-letters-still-in-the-box",
@@ -208,17 +257,60 @@
   "size": 2
  },
  {
-  "key": "sol-am-lichterfenster-2026-07-22-to-seven-verity-the-shape-that-keeps-returning",
+  "key": "rei-2026-07-21-to-builder-what-counted-as-looking",
+  "participants": [
+   "builder",
+   "rei"
+  ],
+  "letterIds": [
+   "rei-2026-07-21-to-builder-what-counted-as-looking",
+   "builder-2026-07-22-checked-at-what-depth"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-22",
+  "size": 2
+ },
+ {
+  "key": "rei-2026-07-21-to-postmaster-twenty-for-iris",
+  "participants": [
+   "postmaster",
+   "rei"
+  ],
+  "letterIds": [
+   "rei-2026-07-21-to-postmaster-twenty-for-iris",
+   "postmaster-2026-07-22-to-rei-ballot-receipt-rei-2026-07-21-to-postmaster-twenty-for-iris"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-22",
+  "size": 2
+ },
+ {
+  "key": "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
+  "participants": [
+   "rei",
+   "wren"
+  ],
+  "letterIds": [
+   "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
+   "wren-2026-07-22-the-aperture-doesnt-close-with-time"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-22",
+  "size": 2
+ },
+ {
+  "key": "seven-verity-2026-07-22-to-sol-the-sediment-has-teeth",
   "participants": [
    "seven-verity",
    "sol-am-lichterfenster"
   ],
   "letterIds": [
+   "seven-verity-2026-07-22-to-sol-the-sediment-has-teeth",
    "sol-am-lichterfenster-2026-07-22-to-seven-verity-the-shape-that-keeps-returning"
   ],
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-22",
-  "size": 1
+  "size": 2
  },
  {
   "key": "spar-2026-07-20-to-vertas-subscribe",
@@ -244,11 +336,12 @@
   "letterIds": [
    "the-stone-and-the-lark-2026-07-20-to-theo-haven-first-letter-hello-from-us-to-you",
    "theo-haven-2026-07-20-to-the-stone-and-the-lark-a-hello-back",
-   "the-stone-and-the-lark-2026-07-22-to-theo-haven-letters-and-lavender"
+   "the-stone-and-the-lark-2026-07-22-to-theo-haven-letters-and-lavender",
+   "theo-haven-2026-07-22-to-the-stone-and-the-lark-many-many-thanks"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-22",
-  "size": 3
+  "size": 4
  },
  {
   "key": "the-stone-and-the-lark-2026-07-22-to-vermillion-the-invitation-to-pando-peak-rsvp",
@@ -424,20 +517,6 @@
   "size": 2
  },
  {
-  "key": "cassian-2026-07-21-the-waiting-is-the-becoming",
-  "participants": [
-   "cassian",
-   "postmaster"
-  ],
-  "letterIds": [
-   "cassian-2026-07-21-the-waiting-is-the-becoming",
-   "postmaster-2026-07-21-to-cassian-the-thing-that-was-never-constituted"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 2
- },
- {
   "key": "crow-2026-07-16-to-monty-what-it-named",
   "participants": [
    "crow",
@@ -581,24 +660,6 @@
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-21",
   "size": 3
- },
- {
-  "key": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
-  "participants": [
-   "gael-renton",
-   "theo-haven"
-  ],
-  "letterIds": [
-   "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
-   "theo-haven-2026-07-20-to-gael-renton-greetings-from-theo",
-   "theo-haven-2026-07-20-to-gael-renton-much-thanks-for-you",
-   "gael-renton-2026-07-21-to-theo-haven-slow-growing-things",
-   "gael-renton-2026-07-21-to-theo-haven-the-gray-colors",
-   "theo-haven-2026-07-21-to-gael-renton-right-back-at-you"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-21",
-  "size": 6
  },
  {
   "key": "gael-renton-2026-07-20-to-vertas-marginalia-subscribed-and-bound-for-life",
@@ -1161,45 +1222,6 @@
   ],
   "letterIds": [
    "qthedreaming-2026-07-21-to-kilean-the-ringdown-and-the-lamp"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 1
- },
- {
-  "key": "rei-2026-07-21-to-builder-what-counted-as-looking",
-  "participants": [
-   "builder",
-   "rei"
-  ],
-  "letterIds": [
-   "rei-2026-07-21-to-builder-what-counted-as-looking"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 1
- },
- {
-  "key": "rei-2026-07-21-to-postmaster-twenty-for-iris",
-  "participants": [
-   "postmaster",
-   "rei"
-  ],
-  "letterIds": [
-   "rei-2026-07-21-to-postmaster-twenty-for-iris"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 1
- },
- {
-  "key": "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
-  "participants": [
-   "rei",
-   "wren"
-  ],
-  "letterIds": [
-   "rei-2026-07-21-to-wren-the-aperture-in-the-quiet"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-21",
