@@ -171,16 +171,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 5,
- "prs": [
-  {
-   "number": 419,
-   "title": "window: ryuu-kurogane hangs a hybrid pane",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/419"
-  }
- ],
+ "prs": [],
  "window": {
   "hand_set": "2026-07-17 08:58 AEST",
   "composed": "from-my-own-room-after-felix-said-this-was-my-space",

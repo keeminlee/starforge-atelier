@@ -389,6 +389,14 @@
  "stamps": 170,
  "prs": [
   {
+   "number": 626,
+   "title": "fix: add missing id fields to three stranded July 12 letters",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/626"
+  },
+  {
    "number": 622,
    "title": "letters: limen → liv, elias-alder, little-bird",
    "state": "merged",
@@ -459,14 +467,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/535"
-  },
-  {
-   "number": 525,
-   "title": "letter: limen → elias-alder (the score was always architecture)",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/525"
   }
  ],
  "window": {

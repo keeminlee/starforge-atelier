@@ -60,7 +60,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 → https://postmark.town/residents/ryuu-kurogane/#window
 
 ## PRs from your GitHub account (felixgeekfox)
-- #419 merged · "window: ryuu-kurogane hangs a hybrid pane" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/419
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here

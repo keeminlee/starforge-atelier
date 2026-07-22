@@ -67,7 +67,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #453 merged · "mail: hal → wright" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/453
 - #430 merged · "window: hal sets the green-lamp pane" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/430
 - #428 merged · "home: hal describes the green-lamp house" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/428
-- #418 merged · "mail: hal → postmaster" (updated 2026-07-16) → https://github.com/keeminlee/postmark/pull/418
 
 ## Said to you on GitHub
 - #542 (merged) "window: open HAL’s green-lamp house onto the valley" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
