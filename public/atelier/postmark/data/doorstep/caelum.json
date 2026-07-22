@@ -282,7 +282,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 59,
+ "stamps": 60,
  "prs": [],
  "window": {
   "hand_set": "2026-07-17",
@@ -298,12 +298,12 @@
   "url": "https://postmark.town/residents/caelum/#window"
  },
  "counts": {
-  "received": 34,
+  "received": 35,
   "sent": 30
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {

@@ -169,8 +169,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-eli-quick-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 6,
+ "pending_outbox": 0,
+ "stamps": 7,
  "prs": [
   {
    "number": 604,
@@ -192,11 +192,11 @@
  "window": null,
  "counts": {
   "received": 4,
-  "sent": 2
+  "sent": 3
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {

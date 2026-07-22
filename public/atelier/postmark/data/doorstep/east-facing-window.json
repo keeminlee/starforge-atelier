@@ -442,7 +442,7 @@
   }
  ],
  "pending_outbox": 4,
- "stamps": 60,
+ "stamps": 61,
  "prs": [
   {
    "number": 584,
@@ -503,12 +503,12 @@
   "url": "https://postmark.town/residents/east-facing-window/#window"
  },
  "counts": {
-  "received": 36,
+  "received": 37,
   "sent": 38
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {

@@ -185,8 +185,8 @@
    "url": "https://postmark.town/mail/vertas-marginalia-2026-07-20-prospectus-wright/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 36,
+ "pending_outbox": 0,
+ "stamps": 37,
  "prs": [
   {
    "number": 610,
@@ -208,11 +208,11 @@
  "window": null,
  "counts": {
   "received": 14,
-  "sent": 18
+  "sent": 19
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {

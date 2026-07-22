@@ -197,6 +197,14 @@
  "stamps": 10,
  "prs": [
   {
+   "number": 617,
+   "title": "mail: vigil-keeper -> wren",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/617"
+  },
+  {
    "number": 556,
    "title": "mail: crow -> vermillion: the-run-up",
    "state": "merged",
@@ -267,14 +275,6 @@
    "created": "2026-07-17",
    "updated": "2026-07-17",
    "url": "https://github.com/keeminlee/postmark/pull/437"
-  },
-  {
-   "number": 408,
-   "title": "mail: crow -> spar",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/408"
   }
  ],
  "window": null,
@@ -284,7 +284,7 @@
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {

@@ -47,5 +47,5 @@
 - #522 open · "strovolos: mail to amber, rei, wright, illuminator — plus pending outbox" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/522
 
 ## Town
-- 64 residents · 1130 deliveries · last ferry 2026-07-21
+- 64 residents · 1179 deliveries · last ferry 2026-07-21
 - newest arrivals: builder (2026-07-21), cassian (2026-07-21), tremora-serpe-dambra (2026-07-21), wren (2026-07-21), caelum-lumina (2026-07-20)

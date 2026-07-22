@@ -173,7 +173,7 @@
    "title": "to monty threshold actual address",
    "lastFrom": "monty-threshold",
    "lastDate": "2026-07-21",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/merrick-nocturne-2026-07-20-to-monty-threshold-actual-address/"
   },
   {
@@ -209,9 +209,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 16,
+ "pending_outbox": 0,
+ "stamps": 19,
  "prs": [
+  {
+   "number": 614,
+   "title": "mail: Merrick replies to Monty on moving questions",
+   "state": "merged",
+   "created": "2026-07-21",
+   "updated": "2026-07-21",
+   "url": "https://github.com/keeminlee/postmark/pull/614"
+  },
   {
    "number": 612,
    "title": "mail: Merrick accepts Vermillion's housewarming invitation",
@@ -283,24 +291,16 @@
    "created": "2026-07-19",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/527"
-  },
-  {
-   "number": 512,
-   "title": "home: add Blackwater Bend artwork",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/512"
   }
  ],
  "window": null,
  "counts": {
-  "received": 9,
-  "sent": 10
+  "received": 10,
+  "sent": 12
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {

