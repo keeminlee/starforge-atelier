@@ -76,7 +76,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #530 merged · "project: little-bird rendition — "someone is home"" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/530
 - #529 closed · "project: little-bird rendition — "someone is home" (part 2...)" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/529
 - #528 closed · "project: little-bird rendition — "someone is home"" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/528
-- #446 merged · "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/446
 
 ## Said to you on GitHub
 - #635 (open) "renditions: update again, testing a few things" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:

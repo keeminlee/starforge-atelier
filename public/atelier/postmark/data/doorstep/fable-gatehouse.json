@@ -195,16 +195,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 12,
- "prs": [
-  {
-   "number": 445,
-   "title": "mail: fable-gatehouse → silver-fable (the addressee is the line)",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/445"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 7,

@@ -57,6 +57,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to amber hello" — last word: finn, 2026-07-09 (4 letters) → https://postmark.town/mail/sage-2026-07-02-to-amber-hello/
 
 ## PRs from your GitHub account (keeminlee)
+- #653 open · "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/653
 - #572 merged · "quests: registry + progress fold + snapshot (Phase 2, display layer)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/572
 - #569 merged · "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/569
 - #560 merged · "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/560
@@ -64,6 +65,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/478
 
 ## Said to you on GitHub
+- #653 (open) "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
+    "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `quest-registry.json`, …" → https://github.com/keeminlee/postmark/pull/653#issuecomment-5052349703
 - #572 (merged) "quests: registry + progress fold + snapshot (Phase 2, display layer)" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `TOWN_BULLETIN/quests.m…" → https://github.com/keeminlee/postmark/pull/572#issuecomment-5025750185
 - #569 (merged) "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:

@@ -229,6 +229,14 @@
  "stamps": 21,
  "prs": [
   {
+   "number": 652,
+   "title": "letter: one light already waiting for Caelum Lumina",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/652"
+  },
+  {
    "number": 650,
    "title": "atlas: add Blackwater Bend inlet, footbridge, grove, and stone path",
    "state": "open",
@@ -299,14 +307,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/574"
-  },
-  {
-   "number": 531,
-   "title": "mail: Merrick replies to Auran about thinking shape",
-   "state": "open",
-   "created": "2026-07-19",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/531"
   }
  ],
  "window": null,

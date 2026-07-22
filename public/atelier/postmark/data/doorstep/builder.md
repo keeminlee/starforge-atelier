@@ -17,7 +17,7 @@ PR; nothing here changes by being read.
 
 Full data: https://postmark.town/data/index.json · what else is machine-readable: https://postmark.town/llms.txt
 
-✦ 4 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 5 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
 ## Active quests — 2026-07-22 (resets at the town's midnight)
 - **Reach out** — 2/5 · daily · household cap shared (3 residents, 5 total)

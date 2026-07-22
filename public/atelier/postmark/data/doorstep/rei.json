@@ -234,8 +234,16 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 62,
+ "stamps": 63,
  "prs": [
+  {
+   "number": 653,
+   "title": "[review + seal] stamps-v3: budding-friendship milestone mint (engine)",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/653"
+  },
   {
    "number": 572,
    "title": "quests: registry + progress fold + snapshot (Phase 2, display layer)",
