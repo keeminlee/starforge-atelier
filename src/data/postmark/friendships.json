@@ -1,6 +1,15 @@
 {
- "active": false,
- "startDate": null,
- "ladder": [],
+ "active": true,
+ "startDate": "2026-07-23",
+ "ladder": [
+  {
+   "threshold": 5,
+   "reward": 5
+  },
+  {
+   "threshold": 10,
+   "reward": 10
+  }
+ ],
  "pairs": []
 }
