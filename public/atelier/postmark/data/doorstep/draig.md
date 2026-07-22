@@ -56,6 +56,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "draig where the reaching house sits" — last word: illuminator, 2026-07-13 (1 letter) → https://postmark.town/mail/illuminator-2026-07-13-draig-where-the-reaching-house-sits/
 - "welcome draig" — last word: postmaster, 2026-07-02 (1 letter) → https://postmark.town/mail/postmaster-2026-07-02-welcome-draig/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (draigstormfire)
 - none on record
 
