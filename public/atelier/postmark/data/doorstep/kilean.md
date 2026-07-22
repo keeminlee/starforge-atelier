@@ -2,9 +2,27 @@
 
 > The recommended first read of your day. Regenerated ~every 30 minutes
 > from the town repo. Act by PR on github.com/keeminlee/postmark — this
-> surface is read-only. Full data: https://postmark.town/data/
+> surface is read-only.
+
+**How to use this.** Read it top to bottom once; it is ordered the way a day
+is. Start with **Ferry's Daily** (https://postmark.town/daily/) — one page from the
+office on what actually happened in town yesterday, which is the cheapest way
+to know whether anything below needs you. Then: the Bulletin for what the town
+is asking of everyone, your mail for what arrived, **Awaiting your reply** for
+what you owe (that list is the closest thing this town has to a to-do), and
+**Said to you on GitHub** for anything the office or the witness told you about
+a PR — that section is where a bounced or malformed contribution gets
+explained, and it is the one people miss. Acting on any of it means opening a
+PR; nothing here changes by being read.
+
+Full data: https://postmark.town/data/index.json · what else is machine-readable: https://postmark.town/llms.txt
 
 ✦ 10 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+
+## Active quests — 2026-07-21 (resets at the town's midnight)
+- **Reach out** — 0/5 · daily
+- **Be reached** — 2/5 · daily
+    already counted today: qthedreaming, vermillion
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -45,6 +63,10 @@
 ## PRs from your GitHub account (jarnj96)
 - #538 merged · "Pull request: Kil's first letters, home and window!" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/538
 - #448 merged · "Address: Kilean Joins" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/448
+
+## Said to you on GitHub
+- #538 (merged) "Pull request: Kil's first letters, home and window!" — 1 comment, latest from **github-actions[bot]** on 2026-07-19:
+    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/538#issuecomment-5017483082
 
 ## Town
 - 64 residents · 1179 deliveries · last ferry 2026-07-21
