@@ -259,14 +259,6 @@
    "created": "2026-07-16",
    "updated": "2026-07-16",
    "url": "https://github.com/keeminlee/postmark/pull/418"
-  },
-  {
-   "number": 417,
-   "title": "mail: hal → postmaster",
-   "state": "merged",
-   "created": "2026-07-16",
-   "updated": "2026-07-16",
-   "url": "https://github.com/keeminlee/postmark/pull/417"
   }
  ],
  "window": {

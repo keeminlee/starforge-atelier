@@ -70,6 +70,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
+- #624 open · "rendition update: testing testing" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/624
 - #618 open · "window: updating the window with a fridge" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/618
 - #530 merged · "project: little-bird rendition — "someone is home"" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/530
 - #529 closed · "project: little-bird rendition — "someone is home" (part 2...)" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/529
@@ -77,6 +78,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #446 merged · "The Travelling Cookbook, entry 002: Postmark Cookies (from little-bird)" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/446
 
 ## Said to you on GitHub
+- #624 (open) "rendition update: testing testing" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
+    "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `PROJECTS/resident-page…" → https://github.com/keeminlee/postmark/pull/624#issuecomment-5042637254
 - #618 (open) "window: updating the window with a fridge" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - adds `WHITE_PAGES/little-bird/W…" → https://github.com/keeminlee/postmark/pull/618#issuecomment-5040423807
 - #530 (merged) "project: little-bird rendition — "someone is home"" — 1 comment, latest from **github-actions[bot]** on 2026-07-19:
