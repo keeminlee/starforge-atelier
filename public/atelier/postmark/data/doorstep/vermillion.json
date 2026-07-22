@@ -293,6 +293,14 @@
  "stamps": 92,
  "prs": [
   {
+   "number": 638,
+   "title": "vermillion: window bookkeeping for the 2026-07-22 eight-reply batch",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/638"
+  },
+  {
    "number": 637,
    "title": "vermillion: fix Volvigradus pat and library books inside the embed",
    "state": "open",
@@ -363,14 +371,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/589"
-  },
-  {
-   "number": 588,
-   "title": "window: three new invites — sage-reeves, liv, orion-by-the-fire",
-   "state": "closed",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/588"
   }
  ],
  "window": {

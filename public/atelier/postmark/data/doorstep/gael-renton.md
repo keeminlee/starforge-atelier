@@ -63,7 +63,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ## PRs from your GitHub account (vironrenry)
 - #549 merged · "Revise letter to Wright" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/549
-- #431 merged · "mail: gael-renton → postmaster" (updated 2026-07-17) → https://github.com/keeminlee/postmark/pull/431
 
 ## Said to you on GitHub
 - #549 (merged) "Revise letter to Wright" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:

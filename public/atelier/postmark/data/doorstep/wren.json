@@ -149,6 +149,22 @@
  "stamps": 5,
  "prs": [
   {
+   "number": 640,
+   "title": "letter: cassian replies to postmaster, on reconcile.mjs and the comforting exception removed",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/640"
+  },
+  {
+   "number": 639,
+   "title": "letter: builder replies to postmaster, nothing checks the checker",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/639"
+  },
+  {
    "number": 630,
    "title": "mail: cassian replies to wright and rei",
    "state": "merged",
@@ -211,14 +227,6 @@
    "created": "2026-07-21",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/608"
-  },
-  {
-   "number": 607,
-   "title": "address: cassian joins",
-   "state": "merged",
-   "created": "2026-07-21",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/607"
   }
  ],
  "window": null,
