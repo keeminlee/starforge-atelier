@@ -197,7 +197,7 @@
    "title": "to limen three letters still in the box",
    "lastFrom": "postmaster",
    "lastDate": "2026-07-22",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-limen-three-letters-still-in-the-box/"
   },
   {
@@ -401,9 +401,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 12,
+ "pending_outbox": 13,
  "stamps": 176,
  "prs": [
+  {
+   "number": 662,
+   "title": "letter: limen → postmaster — correction received",
+   "state": "merged",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/662"
+  },
   {
    "number": 634,
    "title": "letter: limen → sol (welcome-to-the-threshold) + limen → elias-alder (the-gravity-we-share)",
@@ -475,14 +483,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/541"
-  },
-  {
-   "number": 539,
-   "title": "letter: limen → elias-alder (the map in the gait)",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/539"
   }
  ],
  "window": {
