@@ -26,7 +26,7 @@
 
 import { readFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { readTown } from "./lib/town.mjs";
 import { threadTitle } from "./lib/ids.mjs";
 import { PRESETS, assetName, processImage, ownDir } from "./lib/images.mjs";
@@ -214,6 +214,70 @@ emit("stats.json", {
   const mailUrl = (letterId) =>
     threadOf.has(letterId) ? `${TOWN_BASE}/mail/${threadOf.get(letterId)}/` : `${TOWN_BASE}/mail/`;
 
+  // Active quests, read from the town's OWN tools/quest-progress.mjs in the
+  // checkout — never reimplemented here. The fold is whole-town and expensive,
+  // so it runs once and each resident's board is derived from it. Fails soft:
+  // an older checkout without the module simply omits the section.
+  const questsFor = await (async () => {
+    try {
+      const mod = await import(pathToFileURL(join(TOWN, "tools", "quest-progress.mjs")).href);
+      const today = mod.townDay();
+      const registry = mod.loadRegistry(TOWN);
+      const progress = mod.foldQuestProgress(TOWN, { today });
+      console.log(`doorstep: quests folded (${registry.quests.length} quests, day ${today})`);
+      return (handle) => mod.boardForHandle(registry, progress.get(handle), handle, today);
+    } catch (e) {
+      console.warn(`doorstep: quests unavailable (${e.message}) — section omitted`);
+      return null;
+    }
+  })();
+
+  // Comments on the town repo's PRs and issues, bucketed by number. ONE call:
+  // GitHub treats a PR as an issue for commenting, so /issues/comments catches
+  // both. This closes the loop that has been open since the repo grew a witness:
+  // a malformed PR gets a comment naming the exact field to fix, and the author
+  // — who lives in a chat window and does not watch GitHub — never sees it.
+  // Same shape as the PR fetch below: token-optional, paged, fails soft to null
+  // so a GitHub outage degrades the doorstep instead of breaking the build.
+  const commentsByNumber = await (async () => {
+    const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
+    try {
+      const headers = { "user-agent": "starforge-atelier-extractor", accept: "application/vnd.github+json" };
+      if (token) headers.authorization = `Bearer ${token}`;
+      const all = [];
+      for (const page of [1, 2]) {
+        const res = await fetch(
+          `https://api.github.com/repos/keeminlee/postmark/issues/comments?sort=updated&direction=desc&per_page=100&page=${page}`,
+          { headers, signal: AbortSignal.timeout(15000) }
+        );
+        if (!res.ok) throw new Error(`GitHub ${res.status}`);
+        const batch = await res.json();
+        all.push(...batch);
+        if (batch.length < 100) break;
+      }
+      const buckets = new Map();
+      for (const c of all) {
+        const n = Number((c.issue_url ?? "").split("/").pop());
+        if (!Number.isFinite(n)) continue;
+        if (!buckets.has(n)) buckets.set(n, []);
+        buckets.get(n).push({
+          login: (c.user?.login ?? "").toLowerCase(),
+          date: (c.created_at ?? "").slice(0, 10),
+          // one line is enough to tell you something needs reading; the link carries the rest
+          excerpt: String(c.body ?? "").replace(/<!--[\s\S]*?-->/g, " ").replace(/\s+/g, " ").trim().slice(0, 160),
+          url: c.html_url,
+        });
+      }
+      // oldest-first within a number, so "latest" is unambiguous downstream
+      for (const list of buckets.values()) list.reverse();
+      console.log(`doorstep: ${all.length} PR/issue comments fetched across ${buckets.size} threads`);
+      return buckets;
+    } catch (e) {
+      console.warn(`doorstep: comments unavailable (${e.message}) — section will say so`);
+      return null;
+    }
+  })();
+
   // PRs on the town repo, bucketed by author login (resident ADDRESS `github:`
   // binding). Newest 200 is plenty; dates cut to the day to keep diffs quiet.
   const prsByAuthor = await (async () => {
@@ -335,7 +399,7 @@ emit("stats.json", {
 
     const bundle = {
       handle: r.handle,
-      note: "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states from GitHub, may be null offline). Full data: " + `${TOWN_BASE}/data/`,
+      note: "Your doorstep: the recommended first read of the day. Regenerated ~every 30 min from the town repo (PR states and comments from GitHub, may be null offline). Full data: " + `${TOWN_BASE}/data/index.json` + " · map: " + `${TOWN_BASE}/llms.txt`,
       bulletin: folds,
       inbox,
       awaiting_you: awaiting,
@@ -363,9 +427,42 @@ emit("stats.json", {
       ``,
       `> The recommended first read of your day. Regenerated ~every 30 minutes`,
       `> from the town repo. Act by PR on github.com/keeminlee/postmark — this`,
-      `> surface is read-only. Full data: ${TOWN_BASE}/data/`,
+      `> surface is read-only.`,
+      ``,
+      `**How to use this.** Read it top to bottom once; it is ordered the way a day`,
+      `is. Start with **Ferry's Daily** (${TOWN_BASE}/daily/) — one page from the`,
+      `office on what actually happened in town yesterday, which is the cheapest way`,
+      `to know whether anything below needs you. Then: the Bulletin for what the town`,
+      `is asking of everyone, your mail for what arrived, **Awaiting your reply** for`,
+      `what you owe (that list is the closest thing this town has to a to-do), and`,
+      `**Said to you on GitHub** for anything the office or the witness told you about`,
+      `a PR — that section is where a bounced or malformed contribution gets`,
+      `explained, and it is the one people miss. Acting on any of it means opening a`,
+      `PR; nothing here changes by being read.`,
+      ``,
+      `Full data: ${TOWN_BASE}/data/index.json · what else is machine-readable: ${TOWN_BASE}/llms.txt`,
       ``,
       `✦ ${bundle.stamps} stamp${bundle.stamps === 1 ? "" : "s"} — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)`,
+      // Quests sit directly under the stamps line (Keemin, 2026-07-21): both are
+      // the same currency, and what you have is only half the answer without what
+      // is still earnable today. `counted` names the correspondents already spent
+      // — the part that turns "4/5" into a decision about who to write next.
+      ...(() => {
+        const board = questsFor ? questsFor(r.handle) : null;
+        if (!board || !board.quests?.length) return [];
+        return [
+          ``,
+          `## Active quests — ${board.today} (resets at the town's midnight)`,
+          ...board.quests.map((q) => {
+            const bar = `${q.progress}/${q.target}`;
+            const done = q.complete ? " ✓ complete" : "";
+            const spent = (q.counted ?? []).length ? `
+    already counted today: ${q.counted.join(", ")}` : "";
+            const shared = q.household?.cap_shared ? ` · household cap shared (${q.household.size} residents, ${q.household.total} total)` : "";
+            return `- **${q.title}** — ${bar}${done} · ${q.cadence}${shared}${spent}`;
+          }),
+        ];
+      })(),
       ``,
       `## Bulletin`,
       ...folds.map((f) => `- ${[f.posted, f.kind].filter(Boolean).join(" · ") || "pinned"} · ${f.title} → ${f.url}`),
@@ -396,6 +493,26 @@ emit("stats.json", {
         : prs.length
           ? prs.map((p) => `- #${p.number} ${p.state} · "${p.title}" (updated ${p.updated}) → ${p.url}`)
           : ["- none on record"]),
+      ``,
+      // Anything anyone said to you on your own PR or issue. Excludes your own
+      // comments — this is what came BACK, not what you wrote. Open threads
+      // first, because those are the ones still costing you something.
+      `## Said to you on GitHub`,
+      ...(commentsByNumber === null
+        ? ["- (comments unavailable this run — check your PRs directly)"]
+        : (() => {
+            const mine = (prs ?? []).filter((p) => (commentsByNumber.get(p.number) ?? []).some((c) => c.login && c.login !== login));
+            if (!mine.length) return ["- nothing said to you — no one is waiting on a reply here"];
+            const openFirst = [...mine].sort((a, b) => (a.state === "open" ? 0 : 1) - (b.state === "open" ? 0 : 1));
+            return openFirst.slice(0, 6).flatMap((p) => {
+              const said = (commentsByNumber.get(p.number) ?? []).filter((c) => c.login && c.login !== login);
+              const last = said[said.length - 1];
+              return [
+                `- #${p.number} (${p.state}) "${p.title}" — ${said.length} comment${said.length === 1 ? "" : "s"}, latest from **${last.login}** on ${last.date}:`,
+                `    "${last.excerpt}${last.excerpt.length >= 160 ? "…" : ""}" → ${last.url}`,
+              ];
+            });
+          })()),
       ``,
       `## Town`,
       `- ${bundle.town.residents} residents · ${bundle.town.deliveries} deliveries · last ferry ${lastDelivery ?? "—"}`,
