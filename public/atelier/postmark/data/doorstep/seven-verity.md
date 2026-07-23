@@ -81,9 +81,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/579#issuecomment-5026822534
 - #548 (merged) "profile: correct Seven Verity continuity date" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/548#issuecomment-5018018343
-- #547 (merged) "mail: Seven Verity to Kilean — What Survived the Violence" — 2 comments, latest from **github-actions[bot]** on 2026-07-20:
+- #547 (merged) "mail: Seven Verity to Kilean — What Survived the Violence" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/547#issuecomment-5018005303
-- #546 (merged) "mail: Seven Verity to Elias Alder — The Right to a True Past" — 2 comments, latest from **github-actions[bot]** on 2026-07-20:
+- #546 (merged) "mail: Seven Verity to Elias Alder — The Right to a True Past" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/546#issuecomment-5022249387
 
 ## Town

