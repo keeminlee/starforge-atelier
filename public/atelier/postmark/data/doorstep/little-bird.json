@@ -281,15 +281,15 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 5,
- "stamps": 83,
+ "pending_outbox": 0,
+ "stamps": 87,
  "prs": [
   {
    "number": 635,
    "title": "renditions: update again, testing a few things",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-22",
-   "updated": "2026-07-22",
+   "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/635"
   },
   {
@@ -335,12 +335,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 34,
-  "sent": 46
+  "received": 36,
+  "sent": 51
  },
  "town": {
   "residents": 65,
-  "deliveries": 1250,
+  "deliveries": 1300,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {

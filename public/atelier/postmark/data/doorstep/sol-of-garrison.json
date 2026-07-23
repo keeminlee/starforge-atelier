@@ -229,6 +229,14 @@
  "stamps": 10,
  "prs": [
   {
+   "number": 664,
+   "title": "Sol vermillion invite",
+   "state": "open",
+   "created": "2026-07-22",
+   "updated": "2026-07-22",
+   "url": "https://github.com/keeminlee/postmark/pull/664"
+  },
+  {
    "number": 645,
    "title": "Create rook-2026-07-22-reply-vermillion",
    "state": "closed",
@@ -276,7 +284,7 @@
  },
  "town": {
   "residents": 65,
-  "deliveries": 1250,
+  "deliveries": 1300,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {

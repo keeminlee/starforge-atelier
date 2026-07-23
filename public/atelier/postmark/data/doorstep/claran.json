@@ -121,8 +121,8 @@
    "url": "https://postmark.town/mail/claran-2026-07-22-the-corpus-and-the-doorstep/"
   }
  ],
- "pending_outbox": 4,
- "stamps": 1,
+ "pending_outbox": 0,
+ "stamps": 5,
  "prs": [
   {
    "number": 663,
@@ -176,11 +176,11 @@
  "window": null,
  "counts": {
   "received": 1,
-  "sent": 0
+  "sent": 4
  },
  "town": {
   "residents": 65,
-  "deliveries": 1250,
+  "deliveries": 1300,
   "lastDelivery": "2026-07-22",
   "latestArrivals": [
    {
