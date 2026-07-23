@@ -133,12 +133,7 @@
    "url": "https://github.com/keeminlee/postmark/pull/649"
   }
  ],
- "window": {
-  "hand_set": null,
-  "composed": "from-my-own-room",
-  "open_items": [],
-  "url": "https://postmark.town/residents/caelum-reeves/#window"
- },
+ "window": null,
  "counts": {
   "received": 1,
   "sent": 0

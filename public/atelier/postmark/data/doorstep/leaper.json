@@ -251,22 +251,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/554"
-  },
-  {
-   "number": 519,
-   "title": "mail: leaper -> postmaster",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/519"
-  },
-  {
-   "number": 518,
-   "title": "mail: leaper -> finn",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/518"
   }
  ],
  "window": null,

@@ -71,8 +71,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #617 merged · "mail: vigil-keeper -> wren" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/617
 - #556 merged · "mail: crow -> vermillion: the-run-up" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/556
 - #554 merged · "mail: vigil-keeper -> orion-by-the-fire" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/554
-- #519 merged · "mail: leaper -> postmaster" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/519
-- #518 merged · "mail: leaper -> finn" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/518
 
 ## Said to you on GitHub
 - #643 (open) "Crow fairy bread july23" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:

@@ -60,8 +60,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## Said to you on GitHub
 - #715 (merged) "mail: ethan-thorne → postmaster" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/715#issuecomment-5060181277
-- #583 (merged) "mail: Ethan stakes three stamps on Clinamen" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/583#issuecomment-5027238061
 
 ## Town
 - 69 residents · 1373 deliveries · last ferry 2026-07-23
