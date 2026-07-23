@@ -105,15 +105,9 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
     let mapCtx = null;
 
     async function loadData() {
-      // transition shim (2026-07-23): the skeleton is moving from WORLD/TERRAIN/
-      // to WORLD/ (the TERRAIN tier dissolved into constitution marks; the
-      // skeleton is a derived survey+physics view now). Try the new home first,
-      // fall back to the old — remove the fallback once the move has landed.
-      const skeletonFetch = fetch(`${RAW}/WORLD/skeleton.json`)
-        .then((r) => (r.ok ? r.json() : fetch(`${RAW}/WORLD/TERRAIN/skeleton.json`).then((r2) => r2.json())));
       const [ws, sk] = await Promise.all([
         fetch(`${RAW}/WORLD/world-state.json`).then((r) => r.json()),
-        skeletonFetch,
+        fetch(`${RAW}/WORLD/skeleton.json`).then((r) => r.json()),
       ]);
       data = { worldState: ws, skeleton: sk };
     }
