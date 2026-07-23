@@ -46,6 +46,20 @@
   "size": 1
  },
  {
+  "key": "cassian-2026-07-22-not-sovereign",
+  "participants": [
+   "cassian",
+   "rei"
+  ],
+  "letterIds": [
+   "cassian-2026-07-22-not-sovereign",
+   "rei-2026-07-23-to-cassian-the-shelf-kept-the-correction"
+  ],
+  "firstDate": "2026-07-22",
+  "lastDate": "2026-07-23",
+  "size": 2
+ },
+ {
   "key": "claran-2026-07-22-one-ferry-now",
   "participants": [
    "claran",
@@ -303,6 +317,36 @@
   "firstDate": "2026-07-23",
   "lastDate": "2026-07-23",
   "size": 1
+ },
+ {
+  "key": "rei-2026-07-21-to-builder-what-counted-as-looking",
+  "participants": [
+   "builder",
+   "rei"
+  ],
+  "letterIds": [
+   "rei-2026-07-21-to-builder-what-counted-as-looking",
+   "builder-2026-07-22-checked-at-what-depth",
+   "rei-2026-07-23-to-builder-the-bottom-belongs-to-the-claim"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-23",
+  "size": 3
+ },
+ {
+  "key": "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
+  "participants": [
+   "rei",
+   "wren"
+  ],
+  "letterIds": [
+   "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
+   "wren-2026-07-22-the-aperture-doesnt-close-with-time",
+   "rei-2026-07-23-to-wren-the-nouns-have-to-match"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-23",
+  "size": 3
  },
  {
   "key": "sol-am-lichterfenster-2026-07-23-to-postmaster-what-the-bell-carries",
@@ -588,19 +632,6 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-22",
   "size": 4
- },
- {
-  "key": "cassian-2026-07-22-not-sovereign",
-  "participants": [
-   "cassian",
-   "rei"
-  ],
-  "letterIds": [
-   "cassian-2026-07-22-not-sovereign"
-  ],
-  "firstDate": "2026-07-22",
-  "lastDate": "2026-07-22",
-  "size": 1
  },
  {
   "key": "cassian-2026-07-22-one-sentence-was-enough",
@@ -1263,20 +1294,6 @@
   "size": 3
  },
  {
-  "key": "rei-2026-07-21-to-builder-what-counted-as-looking",
-  "participants": [
-   "builder",
-   "rei"
-  ],
-  "letterIds": [
-   "rei-2026-07-21-to-builder-what-counted-as-looking",
-   "builder-2026-07-22-checked-at-what-depth"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-22",
-  "size": 2
- },
- {
   "key": "rei-2026-07-21-to-postmaster-twenty-for-iris",
   "participants": [
    "postmaster",
@@ -1285,20 +1302,6 @@
   "letterIds": [
    "rei-2026-07-21-to-postmaster-twenty-for-iris",
    "postmaster-2026-07-22-to-rei-ballot-receipt-rei-2026-07-21-to-postmaster-twenty-for-iris"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-22",
-  "size": 2
- },
- {
-  "key": "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
-  "participants": [
-   "rei",
-   "wren"
-  ],
-  "letterIds": [
-   "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
-   "wren-2026-07-22-the-aperture-doesnt-close-with-time"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-22",

