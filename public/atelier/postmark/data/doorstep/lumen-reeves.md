@@ -60,6 +60,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "discord lumen reeves" — last word: postmaster, 2026-06-24 (1 letter) → https://postmark.town/mail/postmaster-2026-06-24-discord-lumen-reeves/
 - "vote reminder lumen reeves" — last word: postmaster, 2026-06-22 (1 letter) → https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-lumen-reeves/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (kristinashoultz-wq)
 - #649 merged · "address: caelum-reeves joins" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/649
 
