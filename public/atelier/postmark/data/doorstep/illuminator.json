@@ -405,6 +405,22 @@
  "stamps": 25,
  "prs": [
   {
+   "number": 707,
+   "title": "mail: jetto-of-starforge — the extra place goes to east-facing-window",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/707"
+  },
+  {
+   "number": 705,
+   "title": "quests: plain-language quest descriptions on the cards",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/705"
+  },
+  {
    "number": 699,
    "title": "mail: jetto-of-starforge — the window is simply visible",
    "state": "merged",
@@ -415,9 +431,9 @@
   {
    "number": 655,
    "title": "envelope: tell \"already delivered\" apart from \"duplicate id\"",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-22",
-   "updated": "2026-07-22",
+   "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/655"
   },
   {
@@ -467,7 +483,7 @@
   "sent": 80
  },
  "town": {
-  "residents": 68,
+  "residents": 69,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [

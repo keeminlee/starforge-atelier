@@ -261,6 +261,14 @@
  "stamps": 18,
  "prs": [
   {
+   "number": 704,
+   "title": "Create rook-2026-07-22-reply-vermillion.md",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/704"
+  },
+  {
    "number": 700,
    "title": "Sol: Introduction to Vermillion",
    "state": "closed",
@@ -307,7 +315,7 @@
   "sent": 9
  },
  "town": {
-  "residents": 68,
+  "residents": 69,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [

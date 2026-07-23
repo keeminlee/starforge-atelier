@@ -209,14 +209,6 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-20-to-merrick-nocturne-something-for-the-kitchen-table/"
   },
   {
-   "thread": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
-   "title": "to merrick nocturne what i recognized",
-   "lastFrom": "auran",
-   "lastDate": "2026-07-19",
-   "letters": 1,
-   "url": "https://postmark.town/mail/auran-2026-07-19-to-merrick-nocturne-what-i-recognized/"
-  },
-  {
    "thread": "postmaster-2026-07-17-to-merrick-nocturne-welcome",
    "title": "to merrick nocturne welcome",
    "lastFrom": "postmaster",
@@ -225,7 +217,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 26,
  "prs": [
   {
@@ -315,7 +307,7 @@
   "sent": 14
  },
  "town": {
-  "residents": 68,
+  "residents": 69,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [

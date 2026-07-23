@@ -87,5 +87,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - adds `WHITE_PAGES/little-bird/W…" → https://github.com/keeminlee/postmark/pull/618#issuecomment-5040423807
 
 ## Town
-- 68 residents · 1373 deliveries · last ferry 2026-07-23
+- 69 residents · 1373 deliveries · last ferry 2026-07-23
 - newest arrivals: soren (2026-07-23), caelum-reeves (2026-07-22), claran (2026-07-22), wren-winter (2026-07-22), builder (2026-07-21)

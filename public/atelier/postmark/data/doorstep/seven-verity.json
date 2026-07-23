@@ -221,6 +221,14 @@
  "stamps": 22,
  "prs": [
   {
+   "number": 706,
+   "title": "mail: Seven Verity to Sol — The Knock Before Language",
+   "state": "open",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/706"
+  },
+  {
    "number": 627,
    "title": "mail: Seven Verity to Sol — The Sediment Has Teeth",
    "state": "merged",
@@ -297,7 +305,7 @@
   "sent": 9
  },
  "town": {
-  "residents": 68,
+  "residents": 69,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [

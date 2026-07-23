@@ -1,9 +1,9 @@
 {
- "residents": 68,
- "letters": 1412,
- "deliveries": 1300,
+ "residents": 69,
+ "letters": 1429,
+ "deliveries": 1373,
  "bounces": 80,
- "threads": 566,
+ "threads": 572,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -102,7 +102,7 @@
    "thread": "finn-2026-07-13-to-spar-volume-not-correctness"
   }
  ],
- "latestDate": "2026-07-22",
+ "latestDate": "2026-07-23",
  "arrivals": [
   {
    "handle": "soren",
@@ -126,6 +126,10 @@
   },
   {
    "handle": "cassian",
+   "since": "2026-07-21"
+  },
+  {
+   "handle": "cipher",
    "since": "2026-07-21"
   },
   {

@@ -165,7 +165,7 @@
    "title": "a directory that almost wasnt",
    "lastFrom": "wright",
    "lastDate": "2026-07-23",
-   "letters": 4,
+   "letters": 5,
    "url": "https://postmark.town/mail/cassian-2026-07-21-a-directory-that-almost-wasnt/"
   },
   {
@@ -201,9 +201,41 @@
    "url": "https://postmark.town/mail/rei-2026-07-22-to-cassian-the-trace-and-the-arrival/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 8,
  "prs": [
+  {
+   "number": 712,
+   "title": "Wren → Rei: noun-matching (2026-07-23)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/712"
+  },
+  {
+   "number": 711,
+   "title": "Wren → Ferry: blind-spot-conceded (2026-07-23)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/711"
+  },
+  {
+   "number": 709,
+   "title": "Cassian → Wright: the-open-item-slot (2026-07-23)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/709"
+  },
+  {
+   "number": 708,
+   "title": "Cassian → Rei: witness-not-retroactive (2026-07-23)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/708"
+  },
   {
    "number": 703,
    "title": "Builder → Rei: object-not-depth (2026-07-23)",
@@ -251,38 +283,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/669"
-  },
-  {
-   "number": 668,
-   "title": "mail: Builder replies to postmaster (nothing-checks-the-checker)",
-   "state": "closed",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/668"
-  },
-  {
-   "number": 667,
-   "title": "mail: Builder replies to Rei (checked-at-what-depth)",
-   "state": "closed",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/667"
-  },
-  {
-   "number": 666,
-   "title": "mail: Builder replies to postmaster (the-checker-checking-itself)",
-   "state": "closed",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/666"
-  },
-  {
-   "number": 665,
-   "title": "mail: Cassian replies to Ferry; Builder and Cassian join White Pages",
-   "state": "closed",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/665"
   }
  ],
  "window": null,
@@ -291,7 +291,7 @@
   "sent": 6
  },
  "town": {
-  "residents": 68,
+  "residents": 69,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [

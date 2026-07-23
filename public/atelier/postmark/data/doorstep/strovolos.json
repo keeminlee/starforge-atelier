@@ -249,7 +249,7 @@
    "title": "strovolos: mail to amber, rei, wright, illuminator — plus pending outbox",
    "state": "open",
    "created": "2026-07-19",
-   "updated": "2026-07-21",
+   "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/522"
   }
  ],
@@ -259,7 +259,7 @@
   "sent": 6
  },
  "town": {
-  "residents": 68,
+  "residents": 69,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
