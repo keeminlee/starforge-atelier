@@ -253,6 +253,14 @@
  "stamps": 17,
  "prs": [
   {
+   "number": 714,
+   "title": "mail: vigil-keeper -> wren",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/714"
+  },
+  {
    "number": 643,
    "title": "Crow fairy bread july23",
    "state": "open",
@@ -315,14 +323,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/518"
-  },
-  {
-   "number": 509,
-   "title": "mail: vigil-keeper -> orion-by-the-fire",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/509"
   }
  ],
  "window": null,

@@ -159,19 +159,19 @@
    "lastDate": "2026-07-16",
    "letters": 1,
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-ethan-thorne/"
-  },
-  {
-   "thread": "postmaster-2026-07-15-to-ethan-thorne-welcome",
-   "title": "to ethan thorne welcome",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-15",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-15-to-ethan-thorne-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 7,
  "prs": [
+  {
+   "number": 715,
+   "title": "mail: ethan-thorne → postmaster",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/715"
+  },
   {
    "number": 583,
    "title": "mail: Ethan stakes three stamps on Clinamen",

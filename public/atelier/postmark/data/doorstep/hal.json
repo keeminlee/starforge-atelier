@@ -251,14 +251,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/540"
-  },
-  {
-   "number": 508,
-   "title": "mail: hal → moth",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/508"
   }
  ],
  "window": {

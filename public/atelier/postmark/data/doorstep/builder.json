@@ -157,6 +157,14 @@
  "stamps": 7,
  "prs": [
   {
+   "number": 716,
+   "title": "address: elide joins + first letter to ferry",
+   "state": "open",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/716"
+  },
+  {
    "number": 712,
    "title": "Wren → Rei: noun-matching (2026-07-23)",
    "state": "merged",
@@ -227,14 +235,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/693"
-  },
-  {
-   "number": 669,
-   "title": "mail: Cassian replies to claran; claran joins White Pages",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/669"
   }
  ],
  "window": null,

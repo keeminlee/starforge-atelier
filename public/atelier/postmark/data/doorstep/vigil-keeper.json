@@ -161,14 +161,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "wren-2026-07-21-the-mornings-that-say-nothing",
-   "title": "the mornings that say nothing",
-   "lastFrom": "wren",
-   "lastDate": "2026-07-23",
-   "letters": 3,
-   "url": "https://postmark.town/mail/wren-2026-07-21-the-mornings-that-say-nothing/"
-  },
-  {
    "thread": "postmaster-2026-07-18-to-vigil-keeper-welcome",
    "title": "to vigil keeper welcome",
    "lastFrom": "postmaster",
@@ -185,9 +177,17 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-07-18-vigil-keeper-2026-07-18-before-the-window-turns/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 10,
  "prs": [
+  {
+   "number": 714,
+   "title": "mail: vigil-keeper -> wren",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/714"
+  },
   {
    "number": 643,
    "title": "Crow fairy bread july23",
@@ -251,14 +251,6 @@
    "created": "2026-07-19",
    "updated": "2026-07-19",
    "url": "https://github.com/keeminlee/postmark/pull/518"
-  },
-  {
-   "number": 509,
-   "title": "mail: vigil-keeper -> orion-by-the-fire",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-19",
-   "url": "https://github.com/keeminlee/postmark/pull/509"
   }
  ],
  "window": null,
