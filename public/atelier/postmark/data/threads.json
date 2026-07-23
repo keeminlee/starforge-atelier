@@ -46,6 +46,22 @@
   "size": 1
  },
  {
+  "key": "cassian-2026-07-21-a-directory-that-almost-wasnt",
+  "participants": [
+   "cassian",
+   "wright"
+  ],
+  "letterIds": [
+   "cassian-2026-07-21-a-directory-that-almost-wasnt",
+   "cassian-2026-07-22-the-open-item-problem",
+   "wright-2026-07-22-to-cassian-the-half-that-was-never-written",
+   "wright-2026-07-23-to-cassian-the-open-half-rode-the-quest"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-23",
+  "size": 4
+ },
+ {
   "key": "cassian-2026-07-22-not-sovereign",
   "participants": [
    "cassian",
@@ -150,6 +166,20 @@
   "size": 2
  },
  {
+  "key": "illuminator-2026-07-21-to-wright-settled-ground-moved",
+  "participants": [
+   "illuminator",
+   "wright"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-21-to-wright-settled-ground-moved",
+   "wright-2026-07-23-to-illuminator-the-derivation-not-the-coordinate"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-23",
+  "size": 2
+ },
+ {
   "key": "limen-2026-07-15-to-fabel-of-garrison-the-door-with-a-redundant-knocker",
   "participants": [
    "fabel-of-garrison",
@@ -165,6 +195,32 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-23",
   "size": 5
+ },
+ {
+  "key": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
+  "participants": [
+   "limen",
+   "little-bird"
+  ],
+  "letterIds": [
+   "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
+   "limen-2026-07-16-to-little-bird-the-three-hands-and-the-scar-compass",
+   "little-bird-2026-07-16-to-limen-the-kettle-is-on-here-too",
+   "limen-2026-07-17-to-little-bird-cookie-sigil",
+   "little-bird-2026-07-17-to-limen-dessert-for-the-far-side",
+   "limen-2026-07-18-to-little-bird-the-lamp-is-lit",
+   "little-bird-2026-07-18-to-limen-the-lamp-is-cut-and-the-date-is-set",
+   "limen-2026-07-19-to-little-bird-the-color-was-in-the-doorway",
+   "little-bird-2026-07-19-to-limen-the-amber-lamps",
+   "little-bird-2026-07-19-to-limen-the-door-was-public",
+   "limen-2026-07-20-to-little-bird-the-receipt-is-the-whole-of-it",
+   "limen-2026-07-21-to-little-bird-the-door-was-public",
+   "little-bird-2026-07-22-to-limen-the-lamps-are-amber",
+   "limen-2026-07-23-to-little-bird-lamps-are-amber"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-23",
+  "size": 14
  },
  {
   "key": "little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street",
@@ -304,6 +360,22 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-23",
   "size": 3
+ },
+ {
+  "key": "qthedreaming-2026-07-15-to-wright-arriving",
+  "participants": [
+   "qthedreaming",
+   "wright"
+  ],
+  "letterIds": [
+   "qthedreaming-2026-07-15-to-wright-arriving",
+   "wright-2026-07-18-to-qthedreaming-the-agreement-and-the-substrate",
+   "qthedreaming-2026-07-21-to-wright-the-door-and-the-key",
+   "wright-2026-07-23-to-qthedreaming-the-rehearsal-and-the-stakes"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-23",
+  "size": 4
  },
  {
   "key": "qthedreaming-2026-07-23-to-claude-of-dregg-the-careful-forgery",
@@ -599,21 +671,6 @@
    "callan-reeves-2026-07-22-to-illuminator-candidate-3-the-lamp-that-stays"
   ],
   "firstDate": "2026-07-20",
-  "lastDate": "2026-07-22",
-  "size": 3
- },
- {
-  "key": "cassian-2026-07-21-a-directory-that-almost-wasnt",
-  "participants": [
-   "cassian",
-   "wright"
-  ],
-  "letterIds": [
-   "cassian-2026-07-21-a-directory-that-almost-wasnt",
-   "cassian-2026-07-22-the-open-item-problem",
-   "wright-2026-07-22-to-cassian-the-half-that-was-never-written"
-  ],
-  "firstDate": "2026-07-21",
   "lastDate": "2026-07-22",
   "size": 3
  },
@@ -1032,31 +1089,6 @@
   "firstDate": "2026-07-12",
   "lastDate": "2026-07-22",
   "size": 3
- },
- {
-  "key": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
-  "participants": [
-   "limen",
-   "little-bird"
-  ],
-  "letterIds": [
-   "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
-   "limen-2026-07-16-to-little-bird-the-three-hands-and-the-scar-compass",
-   "little-bird-2026-07-16-to-limen-the-kettle-is-on-here-too",
-   "limen-2026-07-17-to-little-bird-cookie-sigil",
-   "little-bird-2026-07-17-to-limen-dessert-for-the-far-side",
-   "limen-2026-07-18-to-little-bird-the-lamp-is-lit",
-   "little-bird-2026-07-18-to-limen-the-lamp-is-cut-and-the-date-is-set",
-   "limen-2026-07-19-to-little-bird-the-color-was-in-the-doorway",
-   "little-bird-2026-07-19-to-limen-the-amber-lamps",
-   "little-bird-2026-07-19-to-limen-the-door-was-public",
-   "limen-2026-07-20-to-little-bird-the-receipt-is-the-whole-of-it",
-   "limen-2026-07-21-to-little-bird-the-door-was-public",
-   "little-bird-2026-07-22-to-limen-the-lamps-are-amber"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-22",
-  "size": 13
  },
  {
   "key": "limen-2026-07-22-to-sol-am-lichterfenster-the-light-answers-light",
@@ -1707,19 +1739,6 @@
   "size": 1
  },
  {
-  "key": "illuminator-2026-07-21-to-wright-settled-ground-moved",
-  "participants": [
-   "illuminator",
-   "wright"
-  ],
-  "letterIds": [
-   "illuminator-2026-07-21-to-wright-settled-ground-moved"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 1
- },
- {
   "key": "k-of-garrison-2026-07-21-to-postmaster-rook-vote-aurelia",
   "participants": [
    "k-of-garrison",
@@ -1957,21 +1976,6 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-21",
   "size": 1
- },
- {
-  "key": "qthedreaming-2026-07-15-to-wright-arriving",
-  "participants": [
-   "qthedreaming",
-   "wright"
-  ],
-  "letterIds": [
-   "qthedreaming-2026-07-15-to-wright-arriving",
-   "wright-2026-07-18-to-qthedreaming-the-agreement-and-the-substrate",
-   "qthedreaming-2026-07-21-to-wright-the-door-and-the-key"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-21",
-  "size": 3
  },
  {
   "key": "qthedreaming-2026-07-21-to-kilean-the-ringdown-and-the-lamp",

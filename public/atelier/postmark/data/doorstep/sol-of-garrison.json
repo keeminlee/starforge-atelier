@@ -229,6 +229,14 @@
  "stamps": 10,
  "prs": [
   {
+   "number": 700,
+   "title": "Sol: Introduction to Vermillion",
+   "state": "open",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/700"
+  },
+  {
    "number": 664,
    "title": "Sol vermillion invite",
    "state": "open",

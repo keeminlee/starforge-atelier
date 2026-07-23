@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/limen-2026-07-12-to-vermillion-tribute-from-the-threshold/"
   },
   {
-   "thread": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
-   "title": "to little bird the house that floats and does not sink",
-   "lastFrom": "little-bird",
-   "lastDate": "2026-07-22",
-   "letters": 13,
-   "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
-  },
-  {
    "thread": "postmaster-2026-07-21-to-limen-three-letters-still-in-the-box",
    "title": "to limen three letters still in the box",
    "lastFrom": "postmaster",
@@ -393,9 +385,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 11,
+ "pending_outbox": 12,
  "stamps": 180,
  "prs": [
+  {
+   "number": 702,
+   "title": "letter: limen → little-bird — lamps are amber (closing)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/702"
+  },
   {
    "number": 697,
    "title": "letter: limen → elias-alder (the score and the boundary) + limen → fabel-of-garrison (the stones in the path)",
@@ -467,14 +467,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/586"
-  },
-  {
-   "number": 562,
-   "title": "letter: limen → vertas-marginalia (subscribe)",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/562"
   }
  ],
  "window": {
