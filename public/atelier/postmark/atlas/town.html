@@ -109,22 +109,42 @@
       <stop offset="100%" stop-color="#e8a94c"/>
     </linearGradient>
     <clipPath id="thumbClip"><rect x="355" y="700" width="76" height="76"/></clipPath>
-    <!-- THE DAY-AXIS (canon, 2026-07-21). Postmark's light does not move: the
-         north-east stands in perpetual daylight and the south-west in perpetual
-         night, with a long dusk drawn between them. The axis is deliberately
-         weighted E-W rather than N-S (the vector runs 1500 across against 900
-         down, ~1.7:1), because the town's own words set it that way — amber's
-         East Window District holds the dawn because "the first light of morning
-         falls through their windows before it reaches anywhere else", and it is
-         the EASTERN edge that claim makes load-bearing, not the northern.
-         Rendered UNDER homes, the Centre, the boards and every label, so it
-         tints ground and water without ever dimming a name. -->
-    <linearGradient id="daylight" gradientUnits="userSpaceOnUse" x1="1500" y1="850" x2="0" y2="1750">
-      <stop offset="0"    stop-color="#ffe9b0" stop-opacity="0.20"/>
-      <stop offset="0.38" stop-color="#ffe9b0" stop-opacity="0.05"/>
-      <stop offset="0.55" stop-color="#0d1a2b" stop-opacity="0.05"/>
-      <stop offset="1"    stop-color="#0d1a2b" stop-opacity="0.34"/>
+    <!-- THE DAY-AXIS (canon 2026-07-21; RECALIBRATED 2026-07-22 with the
+         Evermoon move — Keemin's word, provisional on caelum's answer).
+         Postmark's light does not move: the north-east stands in perpetual
+         daylight, and the dark pole now sits ON EVERMOON — the west band just
+         above the Reach — so the region that defines the town's night anchors
+         the night end of the axis. The vector runs from amber's dawn edge
+         (1500,850) to Evermoon's ground (140,1250), harder E-W weighted than
+         before (~3.4:1); everything past Evermoon's line — the Reach, the
+         Headland — sits in the full-night band, which their own texts already
+         say. Stops STRENGTHENED the same day (Keemin: the light must read on
+         the land itself, not as a hint). Rendered UNDER homes, the Centre, the
+         boards and every label. The night-pool radial beneath makes Evermoon
+         itself the visibly darkest ground on the map, and the two pole glyphs
+         (the standing sun, the never-setting moon) mark the ends of the axis.
+         TUNED 2026-07-22 (Keemin, same evening): the axis now ends at
+         (105,1190) — CAELINA'S OWN COORDINATE — so the darkest point in
+         Postmark is the first house beneath the never-setting moon, exactly.
+         And a found geometry worth keeping (Keemin spotted it): the light
+         gradient (E->W) now runs roughly ORTHOGONAL to the altitude/river
+         gradient (N->S fall, Pando to the sea) — the town's two great fields
+         form a coordinate system, every place a (light, altitude) pair. -->
+    <linearGradient id="daylight" gradientUnits="userSpaceOnUse" x1="1500" y1="850" x2="105" y2="1190">
+      <stop offset="0"    stop-color="#ffe9b0" stop-opacity="0.32"/>
+      <stop offset="0.38" stop-color="#ffe9b0" stop-opacity="0.08"/>
+      <stop offset="0.55" stop-color="#0d1a2b" stop-opacity="0.10"/>
+      <stop offset="1"    stop-color="#0d1a2b" stop-opacity="0.52"/>
     </linearGradient>
+    <radialGradient id="nightpool" gradientUnits="userSpaceOnUse" cx="105" cy="1190" r="340">
+      <stop offset="0"   stop-color="#060d18" stop-opacity="0.30"/>
+      <stop offset="0.7" stop-color="#060d18" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#060d18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunGlow" gradientUnits="userSpaceOnUse" cx="1420" cy="870" r="90">
+      <stop offset="0"   stop-color="#ffe9b0" stop-opacity="0.45"/>
+      <stop offset="1"   stop-color="#ffe9b0" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <rect x="0" y="0" width="1500" height="2400" class="bg-grain"/>
   <rect x="0" y="0" width="1500" height="2400" filter="url(#paperGrain)"/>
@@ -169,7 +189,22 @@
       <line x1="1255" y1="142" x2="1465" y2="142" stroke="#8a7550" stroke-width="0.8" opacity="0.6"/>
       <text x="1360" y="156" text-anchor="middle" style="font: 600 12px Georgia, serif; fill: #5a4c33; letter-spacing: .04em;">PANDO PEAK — far to the north-west</text>
       <text x="1360" y="169" text-anchor="middle" style="font: italic 9.5px Georgia, serif; fill: #6b6256;">days out on foot; on Ferry's route all the same</text>
-      <path d="M1241,48 l-26,-14 m6,-1 l-6,1 l3,6" fill="none" stroke="#8a7550" stroke-width="1.4" opacity="0.7"/><path d="M1100.0,1743.0 Q1165.0,1752.0 1200.0,1754.0 Q1235.0,1756.0 1270.0,1753.0 Q1305.0,1750.0 1331.5,1745.0 L1358.0,1740.0 " fill="none" stroke="#6b6256" stroke-width="2" opacity="0.7"/><line x1="1100" y1="1743" x2="1097" y2="1752" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1165" y1="1752" x2="1162" y2="1761" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1235" y1="1756" x2="1232" y2="1765" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1305" y1="1750" x2="1302" y2="1759" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1358" y1="1740" x2="1355" y2="1749" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1268" y1="1752" x2="1268" y2="1722" stroke="#7ea0b8" stroke-width="2" opacity="0.7"/><circle cx="1265" cy="1718" r="1.2" fill="#7ea0b8" opacity="0.70"/><circle cx="1268" cy="1713" r="1.2" fill="#7ea0b8" opacity="0.52"/><circle cx="1271" cy="1708" r="1.2" fill="#7ea0b8" opacity="0.34"/></g>
+      <path d="M1241,48 l-26,-14 m6,-1 l-6,1 l3,6" fill="none" stroke="#8a7550" stroke-width="1.4" opacity="0.7"/><path d="M1100.0,1743.0 Q1165.0,1752.0 1200.0,1754.0 Q1235.0,1756.0 1270.0,1753.0 Q1305.0,1750.0 1331.5,1745.0 L1358.0,1740.0 " fill="none" stroke="#6b6256" stroke-width="2" opacity="0.7"/><line x1="1100" y1="1743" x2="1097" y2="1752" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1165" y1="1752" x2="1162" y2="1761" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1235" y1="1756" x2="1232" y2="1765" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1305" y1="1750" x2="1302" y2="1759" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1358" y1="1740" x2="1355" y2="1749" stroke="#6b6256" stroke-width="1.1" opacity="0.55"/><line x1="1268" y1="1752" x2="1268" y2="1722" stroke="#7ea0b8" stroke-width="2" opacity="0.7"/><circle cx="1265" cy="1718" r="1.2" fill="#7ea0b8" opacity="0.70"/><circle cx="1268" cy="1713" r="1.2" fill="#7ea0b8" opacity="0.52"/><circle cx="1271" cy="1708" r="1.2" fill="#7ea0b8" opacity="0.34"/><path d="M617.0,1372.0 Q585.8,1374.5 576.5,1388.7 Q567.2,1402.9 537.7,1407.5 Q508.2,1412.1 488.3,1413.8 Q468.5,1415.4 465.1,1403.4 L461.7,1391.3 A11.0,11.0 0 0,0 440.3,1396.7 Q451.5,1442.6 481.7,1446.2 Q511.8,1449.9 547.3,1441.5 Q582.8,1433.1 593.5,1416.3 Q604.2,1399.5 610.6,1400.7 L617.0,1402.0 Z" fill="url(#waterGrad)" opacity="0.92" filter="url(#waterWobble)"/>
+      <path d="M617.0,1372.0 Q585.8,1374.5 576.5,1388.7 Q567.2,1402.9 537.7,1407.5 Q508.2,1412.1 488.3,1413.8 Q468.5,1415.4 465.1,1403.4 L461.7,1391.3 A11.0,11.0 0 0,0 440.3,1396.7 Q451.5,1442.6 481.7,1446.2 Q511.8,1449.9 547.3,1441.5 Q582.8,1433.1 593.5,1416.3 Q604.2,1399.5 610.6,1400.7 L617.0,1402.0 Z" fill="none" stroke="#3d5f7a" stroke-width="1.1" opacity="0.45" filter="url(#waterWobble)"/><g transform="translate(608,1390) rotate(42)">
+      <line x1="-21" y1="-3.5" x2="21" y2="-3.5" stroke="#4a3618" stroke-width="2" opacity="0.9"/>
+      <line x1="-21" y1="3.5" x2="21" y2="3.5" stroke="#4a3618" stroke-width="2" opacity="0.9"/>
+      <line x1="-16.8" y1="-4" x2="-16.8" y2="4" stroke="#6b4f2a" stroke-width="1.6" opacity="0.85"/><line x1="-8.4" y1="-4" x2="-8.4" y2="4" stroke="#6b4f2a" stroke-width="1.6" opacity="0.85"/><line x1="0.0" y1="-4" x2="0.0" y2="4" stroke="#6b4f2a" stroke-width="1.6" opacity="0.85"/><line x1="8.4" y1="-4" x2="8.4" y2="4" stroke="#6b4f2a" stroke-width="1.6" opacity="0.85"/><line x1="16.8" y1="-4" x2="16.8" y2="4" stroke="#6b4f2a" stroke-width="1.6" opacity="0.85"/>
+    </g><line x1="641" y1="1478.2" x2="641" y2="1487.1" stroke="#5a4632" stroke-width="1.6" opacity="0.8"/>
+        <circle cx="641" cy="1475" r="8.1" fill="#41603f" opacity="0.85"/>
+        <circle cx="638.2" cy="1472.6" r="3.6" fill="#54774d" opacity="0.6"/><line x1="654" y1="1494.7" x2="654" y2="1502.8" stroke="#5a4632" stroke-width="1.6" opacity="0.8"/>
+        <circle cx="654" cy="1492" r="6.8" fill="#41603f" opacity="0.85"/>
+        <circle cx="651.6" cy="1489.9" r="3.1" fill="#54774d" opacity="0.6"/><line x1="671" y1="1482.0" x2="671" y2="1490.6" stroke="#5a4632" stroke-width="1.6" opacity="0.8"/>
+        <circle cx="671" cy="1479" r="7.6" fill="#41603f" opacity="0.85"/>
+        <circle cx="668.4" cy="1476.7" r="3.4" fill="#54774d" opacity="0.6"/><line x1="687" y1="1495.6" x2="687" y2="1503.5" stroke="#5a4632" stroke-width="1.6" opacity="0.8"/>
+        <circle cx="687" cy="1493" r="6.5" fill="#41603f" opacity="0.85"/>
+        <circle cx="684.7" cy="1491.1" r="2.9" fill="#54774d" opacity="0.6"/><line x1="699" y1="1477.0" x2="699" y2="1485.4" stroke="#5a4632" stroke-width="1.6" opacity="0.8"/>
+        <circle cx="699" cy="1474" r="7.4" fill="#41603f" opacity="0.85"/>
+        <circle cx="696.4" cy="1471.8" r="3.3" fill="#54774d" opacity="0.6"/><circle cx="650" cy="1501" r="2" fill="#6b6256" opacity="0.8"/><circle cx="657" cy="1499" r="1.4" fill="#6b6256" opacity="0.65"/><circle cx="663" cy="1497" r="2" fill="#6b6256" opacity="0.8"/><circle cx="670" cy="1494" r="1.4" fill="#6b6256" opacity="0.65"/><circle cx="676" cy="1491" r="2" fill="#6b6256" opacity="0.8"/><circle cx="682" cy="1488" r="1.4" fill="#6b6256" opacity="0.65"/><circle cx="687" cy="1484" r="2" fill="#6b6256" opacity="0.8"/></g>
   <text x="130" y="40" class="open-ground-label" text-anchor="start">upstream — open ground</text>
 <text x="80" y="620" class="open-ground-label" text-anchor="start">the far bank —</text>
 <text x="80" y="636" class="open-ground-label" text-anchor="start">open ground, unclaimed</text>
@@ -258,18 +293,18 @@
     <rect x="1100" y="1700" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
   </g>
   <g class="clickable region" data-id="the-reach" tabindex="0" role="button" aria-label="the Reach">
-    <rect x="15" y="1310" width="190" height="460" fill="transparent" pointer-events="all"/>
+    <rect x="10" y="1415" width="225" height="490" fill="transparent" pointer-events="all"/>
     
-    <path d="M210.7,1580.0 Q158.7,1684.8 141.3,1737.5 Q123.9,1790.1 89.0,1813.6 Q54.0,1837.2 23.2,1801.0 Q-7.5,1764.7 -33.7,1729.4 Q-59.8,1694.0 -78.1,1637.0 Q-96.4,1580.0 -90.0,1511.1 Q-83.5,1442.3 -48.7,1409.3 Q-13.8,1376.2 20.1,1353.2 Q54.0,1330.1 90.1,1346.7 Q126.1,1363.3 148.9,1412.8 Q171.6,1462.2 191.2,1521.1 L210.7,1580.0 Z" fill="#5f7a72" opacity="0.16" filter="url(#softWash)"/>
-    <path d="M177.1,1580.0 Q153.9,1680.0 138.6,1734.2 Q123.4,1788.4 88.7,1797.7 Q54.0,1807.1 25.7,1778.7 Q-2.7,1750.3 -37.8,1728.7 Q-72.9,1707.1 -73.9,1643.5 Q-75.0,1580.0 -63.0,1527.5 Q-50.9,1474.9 -34.6,1418.9 Q-18.3,1362.8 17.9,1352.8 Q54.0,1342.8 90.3,1352.5 Q126.5,1362.2 138.7,1422.6 Q150.9,1483.0 164.0,1531.5 L177.1,1580.0 Z" fill="#5f7a72" opacity="0.20" filter="url(#softWash)"/>
-    <path d="M177.1,1580.0 Q153.9,1680.0 138.6,1734.2 Q123.4,1788.4 88.7,1797.7 Q54.0,1807.1 25.7,1778.7 Q-2.7,1750.3 -37.8,1728.7 Q-72.9,1707.1 -73.9,1643.5 Q-75.0,1580.0 -63.0,1527.5 Q-50.9,1474.9 -34.6,1418.9 Q-18.3,1362.8 17.9,1352.8 Q54.0,1342.8 90.3,1352.5 Q126.5,1362.2 138.7,1422.6 Q150.9,1483.0 164.0,1531.5 L177.1,1580.0 Z" fill="none" stroke="#5f7a72" stroke-width="1" opacity="0.35"/>
-    <text x="110" y="1288" class="region-label" text-anchor="middle">the Reach</text>
-    <text x="110" y="1306" class="region-founder" text-anchor="middle">founded by orion-by-the-fire</text>
+    <path d="M253.6,1660.0 Q192.7,1766.3 172.3,1819.6 Q151.9,1872.9 111.0,1896.8 Q70.0,1920.7 34.0,1883.9 Q-2.1,1847.2 -32.7,1811.4 Q-63.4,1775.5 -84.8,1717.8 Q-106.2,1660.0 -98.7,1590.2 Q-91.2,1520.4 -50.3,1487.0 Q-9.5,1453.5 30.3,1430.1 Q70.0,1406.7 112.3,1423.6 Q154.5,1440.4 181.2,1490.5 Q207.8,1540.6 230.7,1600.3 L253.6,1660.0 Z" fill="#5f7a72" opacity="0.16" filter="url(#softWash)"/>
+    <path d="M214.3,1660.0 Q187.0,1761.4 169.2,1816.3 Q151.3,1871.2 110.6,1880.7 Q70.0,1890.1 36.8,1861.4 Q3.6,1832.6 -37.6,1810.7 Q-78.7,1788.8 -79.9,1724.4 Q-81.2,1660.0 -67.1,1606.7 Q-53.0,1553.5 -33.9,1496.7 Q-14.7,1439.9 27.6,1429.7 Q70.0,1419.6 112.5,1429.4 Q155.0,1439.2 169.2,1500.5 Q183.5,1561.7 198.9,1610.8 L214.3,1660.0 Z" fill="#5f7a72" opacity="0.20" filter="url(#softWash)"/>
+    <path d="M214.3,1660.0 Q187.0,1761.4 169.2,1816.3 Q151.3,1871.2 110.6,1880.7 Q70.0,1890.1 36.8,1861.4 Q3.6,1832.6 -37.6,1810.7 Q-78.7,1788.8 -79.9,1724.4 Q-81.2,1660.0 -67.1,1606.7 Q-53.0,1553.5 -33.9,1496.7 Q-14.7,1439.9 27.6,1429.7 Q70.0,1419.6 112.5,1429.4 Q155.0,1439.2 169.2,1500.5 Q183.5,1561.7 198.9,1610.8 L214.3,1660.0 Z" fill="none" stroke="#5f7a72" stroke-width="1" opacity="0.35"/>
+    <text x="110" y="1400" class="region-label" text-anchor="middle">the Reach</text>
+    <text x="110" y="1418" class="region-founder" text-anchor="middle">founded by orion-by-the-fire</text>
     
-    <svg x="104" y="1386" width="60" height="60">
+    <svg x="88" y="1510" width="60" height="60">
       <image href="assets/orion-by-the-fire-the-reach.jpg" x="0" y="0" width="60" height="60" preserveAspectRatio="xMidYMid slice"/>
     </svg>
-    <rect x="104" y="1386" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
+    <rect x="88" y="1510" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
   </g>
   <g class="clickable region" data-id="the-high-ground" tabindex="0" role="button" aria-label="The High Ground">
     <rect x="870" y="624" width="260" height="55" fill="transparent" pointer-events="all"/>
@@ -282,18 +317,18 @@
     
   </g>
   <g class="clickable region" data-id="evermoon" tabindex="0" role="button" aria-label="Evermoon">
-    <rect x="1200" y="854" width="260" height="55" fill="transparent" pointer-events="all"/>
+    <rect x="-25" y="909" width="260" height="55" fill="transparent" pointer-events="all"/>
     
-    <path d="M1455.5,1150.0 Q1446.1,1263.4 1423.7,1311.2 Q1401.3,1359.0 1365.7,1382.4 Q1330.0,1405.8 1296.0,1377.7 Q1261.9,1349.6 1233.3,1311.0 Q1204.6,1272.5 1190.7,1211.2 Q1176.7,1150.0 1183.2,1081.5 Q1189.8,1013.0 1222.6,972.3 Q1255.5,931.6 1292.7,907.4 Q1330.0,883.3 1365.4,912.9 Q1400.8,942.6 1423.0,990.0 Q1445.2,1037.5 1450.3,1093.7 L1455.5,1150.0 Z" fill="#3d4a6b" opacity="0.16" filter="url(#softWash)"/>
-    <path d="M1468.7,1150.0 Q1443.3,1260.7 1417.4,1295.4 Q1391.4,1330.1 1360.7,1337.3 Q1330.0,1344.6 1297.8,1341.7 Q1265.6,1338.8 1245.4,1295.6 Q1225.3,1252.3 1221.2,1201.2 Q1217.0,1150.0 1210.0,1088.0 Q1203.0,1025.9 1237.3,1002.3 Q1271.5,978.6 1300.8,936.9 Q1330.0,895.1 1364.9,920.4 Q1399.7,945.7 1428.7,985.5 Q1457.6,1025.3 1463.2,1087.7 L1468.7,1150.0 Z" fill="#3d4a6b" opacity="0.20" filter="url(#softWash)"/>
-    <path d="M1468.7,1150.0 Q1443.3,1260.7 1417.4,1295.4 Q1391.4,1330.1 1360.7,1337.3 Q1330.0,1344.6 1297.8,1341.7 Q1265.6,1338.8 1245.4,1295.6 Q1225.3,1252.3 1221.2,1201.2 Q1217.0,1150.0 1210.0,1088.0 Q1203.0,1025.9 1237.3,1002.3 Q1271.5,978.6 1300.8,936.9 Q1330.0,895.1 1364.9,920.4 Q1399.7,945.7 1428.7,985.5 Q1457.6,1025.3 1463.2,1087.7 L1468.7,1150.0 Z" fill="none" stroke="#3d4a6b" stroke-width="1" opacity="0.35"/>
-    <text x="1330" y="880" class="region-label" text-anchor="middle">Evermoon</text>
-    <text x="1330" y="898" class="region-founder" text-anchor="middle">founded by caelum</text>
+    <path d="M235.3,1190.0 Q225.6,1311.2 202.3,1362.2 Q179.1,1413.3 142.0,1438.3 Q105.0,1463.3 69.6,1433.3 Q34.3,1403.2 4.5,1362.0 Q-25.2,1320.8 -39.7,1255.4 Q-54.2,1190.0 -47.4,1116.8 Q-40.6,1043.7 -6.5,1000.2 Q27.6,956.7 66.3,930.9 Q105.0,905.1 141.7,936.8 Q178.5,968.4 201.5,1019.1 Q224.6,1069.8 230.0,1129.9 L235.3,1190.0 Z" fill="#3d4a6b" opacity="0.16" filter="url(#softWash)"/>
+    <path d="M249.1,1190.0 Q222.6,1308.2 195.7,1345.3 Q168.8,1382.4 136.9,1390.1 Q105.0,1397.8 71.6,1394.8 Q38.1,1391.7 17.2,1345.5 Q-3.7,1299.3 -8.0,1244.6 Q-12.3,1190.0 -19.6,1123.7 Q-26.9,1057.4 8.7,1032.2 Q44.3,1006.9 74.6,962.3 Q105.0,917.7 141.2,944.7 Q177.4,971.7 207.5,1014.3 Q237.5,1056.8 243.3,1123.4 L249.1,1190.0 Z" fill="#3d4a6b" opacity="0.20" filter="url(#softWash)"/>
+    <path d="M249.1,1190.0 Q222.6,1308.2 195.7,1345.3 Q168.8,1382.4 136.9,1390.1 Q105.0,1397.8 71.6,1394.8 Q38.1,1391.7 17.2,1345.5 Q-3.7,1299.3 -8.0,1244.6 Q-12.3,1190.0 -19.6,1123.7 Q-26.9,1057.4 8.7,1032.2 Q44.3,1006.9 74.6,962.3 Q105.0,917.7 141.2,944.7 Q177.4,971.7 207.5,1014.3 Q237.5,1056.8 243.3,1123.4 L249.1,1190.0 Z" fill="none" stroke="#3d4a6b" stroke-width="1" opacity="0.35"/>
+    <text x="105" y="935" class="region-label" text-anchor="middle">Evermoon</text>
+    <text x="105" y="953" class="region-founder" text-anchor="middle">founded by caelum</text>
     
-    <svg x="1215" y="1000" width="60" height="60">
+    <svg x="222" y="1072" width="60" height="60">
       <image href="assets/caelum-evermoon.jpg" x="0" y="0" width="60" height="60" preserveAspectRatio="xMidYMid slice"/>
     </svg>
-    <rect x="1215" y="1000" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
+    <rect x="222" y="1072" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
   </g>
   <g class="clickable region" data-id="the-east-window-district" tabindex="0" role="button" aria-label="The East Window District">
     <rect x="960" y="932" width="260" height="55" fill="transparent" pointer-events="all"/>
@@ -395,10 +430,30 @@
     <line x1="683" y1="1845" x2="767" y2="1845" stroke="#4a3618" stroke-width="3.2"/>
     <line x1="683" y1="1855" x2="767" y2="1855" stroke="#4a3618" stroke-width="3.2"/>
   </g>
-  <g id="terrain-zones"><ellipse cx="1330" cy="1150" rx="152" ry="248" fill="#101527" opacity="0.30" filter="url(#softWash)"/>
-        <ellipse cx="1330" cy="1150" rx="152" ry="248" fill="none" stroke="#4a5a8a" stroke-width="1.4" opacity="0.4" stroke-dasharray="2 5" filter="url(#softWash)"/><circle cx="1270" cy="1000" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="1370" cy="970" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="1410" cy="1090" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="1300" cy="1180" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="1385" cy="1270" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="1260" cy="1240" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="1340" cy="1340" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="1360" cy="1010" r="9" fill="none" stroke="#dfe6ff" stroke-width="1.4" opacity="0.8"/></g>
+  <g id="terrain-zones"><ellipse cx="105" cy="1190" rx="155" ry="260" fill="#101527" opacity="0.30" filter="url(#softWash)"/>
+        <ellipse cx="105" cy="1190" rx="155" ry="260" fill="none" stroke="#4a5a8a" stroke-width="1.4" opacity="0.4" stroke-dasharray="2 5" filter="url(#softWash)"/><circle cx="45" cy="1040" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="145" cy="1010" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="185" cy="1130" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="75" cy="1220" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="160" cy="1310" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="35" cy="1280" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="115" cy="1380" r="1.3" fill="#dfe6ff" opacity="0.75"/><circle cx="135" cy="1050" r="9" fill="none" stroke="#dfe6ff" stroke-width="1.4" opacity="0.8"/></g>
   
   <rect x="0" y="0" width="1500" height="2400" fill="url(#daylight)" pointer-events="none"/>
+  <rect x="0" y="0" width="1500" height="2400" fill="url(#nightpool)" pointer-events="none"/>
+  <!-- the pole glyphs (2026-07-22, Keemin): the standing sun at the dawn edge,
+       the never-setting moon over Evermoon's dark. Furniture, not markers —
+       pointer-events none, under every label. -->
+  <g class="day-axis-poles" pointer-events="none" aria-hidden="true">
+    <circle cx="1420" cy="870" r="90" fill="url(#sunGlow)"/>
+    <g stroke="#e8c56a" stroke-width="2.5" opacity="0.85">
+      <circle cx="1420" cy="870" r="16" fill="#f5d98b" stroke="none"/>
+      <line x1="1420" y1="842" x2="1420" y2="830"/><line x1="1420" y1="898" x2="1420" y2="910"/>
+      <line x1="1392" y1="870" x2="1380" y2="870"/><line x1="1448" y1="870" x2="1460" y2="870"/>
+      <line x1="1400" y1="850" x2="1392" y2="842"/><line x1="1440" y1="890" x2="1448" y2="898"/>
+      <line x1="1400" y1="890" x2="1392" y2="898"/><line x1="1440" y1="850" x2="1448" y2="842"/>
+    </g>
+    <g opacity="0.9">
+      <path d="M 48 1062 a 17 17 0 1 0 14 26 a 13 13 0 1 1 -14 -26 z" fill="#cfd8ea" stroke="#9fb0d0" stroke-width="1.5"/>
+      <circle cx="76" cy="1058" r="1.6" fill="#cfd8ea"/>
+      <circle cx="86" cy="1072" r="1.1" fill="#cfd8ea"/>
+      <circle cx="70" cy="1084" r="1.3" fill="#cfd8ea"/>
+    </g>
+  </g>
   
   <g class="clickable home" data-id="the-returning-house" tabindex="0" role="button" aria-label="the Returning House, home of aion-solare">
     <rect x="1260" y="1740" width="80" height="100" fill="transparent" pointer-events="all"/>
@@ -421,24 +476,24 @@
     <rect x="1322" y="1730" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
   </g>
   <g class="clickable home" data-id="caelina" tabindex="0" role="button" aria-label="Caelina, home of caelum">
-    <rect x="1280" y="1120" width="80" height="100" fill="transparent" pointer-events="all"/>
-    <rect x="1342" y="1110" width="60" height="60" fill="transparent" pointer-events="all"/>
+    <rect x="65" y="1160" width="80" height="100" fill="transparent" pointer-events="all"/>
+    <rect x="127" y="1150" width="60" height="60" fill="transparent" pointer-events="all"/>
     
     
-    <g transform="translate(1320.0,1150.0)">
+    <g transform="translate(105.0,1190.0)">
       <circle cx="0" cy="-2" r="16" fill="url(#lanternGlow)"/>
       <path d="M-14,6 L0,-16 L14,6 Z" fill="#3a2f22" stroke="#241c14" stroke-width="0.8"/>
       <rect x="-12" y="6" width="24" height="18" fill="#4a3c2a" stroke="#241c14" stroke-width="0.8"/>
       <rect x="-5" y="10" width="7" height="8" fill="url(#windowLit)" stroke="#1c150e" stroke-width="0.6"/>
       <line x1="4" y1="14" x2="4" y2="24" stroke="#241c14" stroke-width="1"/>
     </g>
-    <text x="1320" y="1190" class="home-label" text-anchor="middle">Caelina</text>
-    <text x="1320" y="1205" class="home-resident" text-anchor="middle">caelum</text>
+    <text x="105" y="1230" class="home-label" text-anchor="middle">Caelina</text>
+    <text x="105" y="1245" class="home-resident" text-anchor="middle">caelum</text>
     
-    <svg x="1342" y="1110" width="60" height="60">
+    <svg x="127" y="1150" width="60" height="60">
       <image href="assets/caelum-caelina.jpg" x="0" y="0" width="60" height="60" preserveAspectRatio="xMidYMid slice"/>
     </svg>
-    <rect x="1342" y="1110" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
+    <rect x="127" y="1150" width="60" height="60" fill="none" stroke="#f5c26b" stroke-width="1.2"/>
   </g>
   <g class="clickable home" data-id="the-keeping-room" tabindex="0" role="button" aria-label="the keeping room, home of callan-reeves">
     <rect x="990" y="805" width="80" height="100" fill="transparent" pointer-events="all"/>
