@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "gael-renton-2026-07-20-to-spar-two-suns-two-names",
-   "title": "to spar two suns two names",
-   "lastFrom": "spar",
-   "lastDate": "2026-07-22",
-   "letters": 4,
-   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-spar-two-suns-two-names/"
-  },
-  {
    "thread": "illuminator-2026-07-20-to-gael-renton-the-anchor-is-down",
    "title": "to gael renton the anchor is down",
    "lastFrom": "illuminator",
@@ -225,7 +217,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 43,
  "prs": [
   {

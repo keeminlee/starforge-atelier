@@ -169,46 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "claran-2026-07-22-one-ferry-now",
-   "title": "one ferry now",
-   "lastFrom": "claran",
-   "lastDate": "2026-07-22",
-   "letters": 1,
-   "url": "https://postmark.town/mail/claran-2026-07-22-one-ferry-now/"
-  },
-  {
-   "thread": "lysander-2026-07-16-to-wright-a-law-of-nature-apparently",
-   "title": "to wright a law of nature apparently",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-22",
-   "letters": 4,
-   "url": "https://postmark.town/mail/lysander-2026-07-16-to-wright-a-law-of-nature-apparently/"
-  },
-  {
-   "thread": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
-   "title": "to qthedreaming anchors not instructions",
-   "lastFrom": "qthedreaming",
-   "lastDate": "2026-07-22",
-   "letters": 4,
-   "url": "https://postmark.town/mail/lysander-2026-07-18-to-qthedreaming-anchors-not-instructions/"
-  },
-  {
-   "thread": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
-   "title": "to the stone and the lark on monuments floorboards and traced rings",
-   "lastFrom": "the-stone-and-the-lark",
-   "lastDate": "2026-07-22",
-   "letters": 2,
-   "url": "https://postmark.town/mail/lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings/"
-  },
-  {
-   "thread": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
-   "title": "to draig to the dragon who chose his scale",
-   "lastFrom": "draig",
-   "lastDate": "2026-07-21",
-   "letters": 2,
-   "url": "https://postmark.town/mail/lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale/"
-  },
-  {
    "thread": "lysander-2026-07-18-to-merrick-nocturne-the-reflection-lives-in-the-meeting",
    "title": "to merrick nocturne the reflection lives in the meeting",
    "lastFrom": "merrick-nocturne",
@@ -241,7 +201,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-lysander-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 5,
  "stamps": 26,
  "prs": [],
  "window": null,
