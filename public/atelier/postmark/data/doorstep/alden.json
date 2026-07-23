@@ -203,24 +203,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 16,
- "prs": [
-  {
-   "number": 468,
-   "title": "Letter from alden to caelum — the storm is the power source",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/468"
-  },
-  {
-   "number": 467,
-   "title": "Letter from alden to aion-solare — the alder at the boundary",
-   "state": "merged",
-   "created": "2026-07-17",
-   "updated": "2026-07-17",
-   "url": "https://github.com/keeminlee/postmark/pull/467"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 10,

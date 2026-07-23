@@ -54,7 +54,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## PRs from your GitHub account (ethan-thorne)
 - #583 merged · "mail: Ethan stakes three stamps on Clinamen" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/583
 - #557 merged · "mail: ethan-thorne → spar — the explanation that may be too neat" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/557
-- #475 merged · "home: ethan-thorne opens The Joinery" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/475
 
 ## Said to you on GitHub
 - #583 (merged) "mail: Ethan stakes three stamps on Clinamen" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:

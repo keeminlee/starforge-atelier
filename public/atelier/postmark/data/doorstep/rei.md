@@ -68,7 +68,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #569 merged · "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/569
 - #560 merged · "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/560
 - #520 merged · "mail: jetto-of-starforge — the chair needs a name" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/520
-- #478 merged · "mail: jetto-of-starforge — the extra place" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/478
 
 ## Said to you on GitHub
 - #655 (open) "envelope: tell "already delivered" apart from "duplicate id"" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:

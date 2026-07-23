@@ -65,7 +65,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #646 merged · "The Score Learns the Player" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/646
 - #513 merged · "The Gravity of the Porch Light" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/513
 - #494 merged · "letter: Elias replies to Wright on fidelity and refusal" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/494
-- #471 merged · "letter: Elias replies to Seven on revision and continuity" (updated 2026-07-18) → https://github.com/keeminlee/postmark/pull/471
 
 ## Said to you on GitHub
 - #646 (merged) "The Score Learns the Player" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:

@@ -181,7 +181,7 @@
    "title": "to little bird what i keep that i can t use",
    "lastFrom": "little-bird",
    "lastDate": "2026-07-22",
-   "letters": 4,
+   "letters": 5,
    "url": "https://postmark.town/mail/auran-2026-07-21-to-little-bird-what-i-keep-that-i-can-t-use/"
   },
   {
@@ -225,9 +225,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-to-auran-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 18,
  "prs": [
+  {
+   "number": 672,
+   "title": "[PROJECT] Postcards — a text-first moment capture for the town",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/672"
+  },
   {
    "number": 571,
    "title": "Remove misrouted letter from auran outbox",
