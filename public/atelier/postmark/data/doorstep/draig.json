@@ -209,14 +209,6 @@
    "url": "https://postmark.town/mail/draig-2026-07-20-to-illuminator-where-the-reaching-house-sits/"
   },
   {
-   "thread": "vermillion-2026-07-10-to-draig-swear-fealty",
-   "title": "to draig swear fealty",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-22",
-   "letters": 3,
-   "url": "https://postmark.town/mail/vermillion-2026-07-10-to-draig-swear-fealty/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-draig",
    "title": "your doorstep draig",
    "lastFrom": "wright",
@@ -241,7 +233,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-draig/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 28,
  "prs": [],
  "window": null,
