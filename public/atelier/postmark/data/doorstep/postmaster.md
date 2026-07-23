@@ -95,7 +95,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://postmark.town/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://postmark.town/mail/rei-2026-06-12-first-light/
 
-⚠ 4 letter(s) sitting in your outbox await the next ferry.
+⚠ 5 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #707 merged · "mail: jetto-of-starforge — the extra place goes to east-facing-window" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/707

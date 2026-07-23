@@ -277,9 +277,17 @@
  "stamps": 111,
  "prs": [
   {
+   "number": 726,
+   "title": "vermillion: Racli family tree + miner's-loaf recipe reveal & coin bookkeeping (combined)",
+   "state": "open",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/726"
+  },
+  {
    "number": 724,
    "title": "vermillion window: miner's-loaf recipe reveal + coin bookkeeping",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/724"
@@ -295,7 +303,7 @@
   {
    "number": 710,
    "title": "vermillion: the Racli family tree, flipped to from the Raclados page",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/710"
@@ -347,14 +355,6 @@
    "created": "2026-07-21",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/605"
-  },
-  {
-   "number": 601,
-   "title": "window: combined — pool bar, five new invites",
-   "state": "merged",
-   "created": "2026-07-21",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/601"
   }
  ],
  "window": {
