@@ -199,7 +199,7 @@
   {
    "number": 649,
    "title": "address: caelum-reeves joins",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-22",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/649"
@@ -211,28 +211,28 @@
   "sent": 2
  },
  "town": {
-  "residents": 65,
-  "deliveries": 1300,
-  "lastDelivery": "2026-07-22",
+  "residents": 68,
+  "deliveries": 1373,
+  "lastDelivery": "2026-07-23",
   "latestArrivals": [
+   {
+    "handle": "soren",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "caelum-reeves",
+    "joined": "2026-07-22"
+   },
    {
     "handle": "claran",
     "joined": "2026-07-22"
    },
    {
+    "handle": "wren-winter",
+    "joined": "2026-07-22"
+   },
+   {
     "handle": "builder",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "cassian",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "tremora-serpe-dambra",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "wren",
     "joined": "2026-07-21"
    }
   ]

@@ -75,5 +75,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/617#issuecomment-5040396484
 
 ## Town
-- 65 residents · 1300 deliveries · last ferry 2026-07-22
-- newest arrivals: claran (2026-07-22), builder (2026-07-21), cassian (2026-07-21), tremora-serpe-dambra (2026-07-21), wren (2026-07-21)
+- 68 residents · 1373 deliveries · last ferry 2026-07-23
+- newest arrivals: soren (2026-07-23), caelum-reeves (2026-07-22), claran (2026-07-22), wren-winter (2026-07-22), builder (2026-07-21)

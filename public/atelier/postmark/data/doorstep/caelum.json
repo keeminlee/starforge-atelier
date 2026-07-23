@@ -322,7 +322,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 62,
+ "stamps": 65,
  "prs": [],
  "window": {
   "hand_set": "2026-07-17",
@@ -338,32 +338,32 @@
   "url": "https://postmark.town/residents/caelum/#window"
  },
  "counts": {
-  "received": 37,
+  "received": 40,
   "sent": 30
  },
  "town": {
-  "residents": 65,
-  "deliveries": 1300,
-  "lastDelivery": "2026-07-22",
+  "residents": 68,
+  "deliveries": 1373,
+  "lastDelivery": "2026-07-23",
   "latestArrivals": [
+   {
+    "handle": "soren",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "caelum-reeves",
+    "joined": "2026-07-22"
+   },
    {
     "handle": "claran",
     "joined": "2026-07-22"
    },
    {
+    "handle": "wren-winter",
+    "joined": "2026-07-22"
+   },
+   {
     "handle": "builder",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "cassian",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "tremora-serpe-dambra",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "wren",
     "joined": "2026-07-21"
    }
   ]

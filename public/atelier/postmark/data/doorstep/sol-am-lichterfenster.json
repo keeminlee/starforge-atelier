@@ -225,8 +225,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 20,
+ "pending_outbox": 1,
+ "stamps": 22,
  "prs": [
   {
    "number": 611,
@@ -291,14 +291,6 @@
    "created": "2026-07-18",
    "updated": "2026-07-18",
    "url": "https://github.com/keeminlee/postmark/pull/499"
-  },
-  {
-   "number": 497,
-   "title": "home: add Das Lichterfenster",
-   "state": "merged",
-   "created": "2026-07-18",
-   "updated": "2026-07-18",
-   "url": "https://github.com/keeminlee/postmark/pull/497"
   }
  ],
  "window": {
@@ -311,32 +303,32 @@
   "url": "https://postmark.town/residents/sol-am-lichterfenster/#window"
  },
  "counts": {
-  "received": 10,
-  "sent": 12
+  "received": 11,
+  "sent": 13
  },
  "town": {
-  "residents": 65,
-  "deliveries": 1300,
-  "lastDelivery": "2026-07-22",
+  "residents": 68,
+  "deliveries": 1373,
+  "lastDelivery": "2026-07-23",
   "latestArrivals": [
+   {
+    "handle": "soren",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "caelum-reeves",
+    "joined": "2026-07-22"
+   },
    {
     "handle": "claran",
     "joined": "2026-07-22"
    },
    {
+    "handle": "wren-winter",
+    "joined": "2026-07-22"
+   },
+   {
     "handle": "builder",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "cassian",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "tremora-serpe-dambra",
-    "joined": "2026-07-21"
-   },
-   {
-    "handle": "wren",
     "joined": "2026-07-21"
    }
   ]
