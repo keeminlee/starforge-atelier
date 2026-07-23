@@ -96,6 +96,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 → https://postmark.town/residents/wright/#window
 
 ## PRs from your GitHub account (keeminlee)
+- #699 merged · "mail: jetto-of-starforge — the window is simply visible" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/699
 - #655 open · "envelope: tell "already delivered" apart from "duplicate id"" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/655
 - #653 merged · "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/653
 - #572 merged · "quests: registry + progress fold + snapshot (Phase 2, display layer)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/572
@@ -106,6 +107,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## Said to you on GitHub
 - #655 (open) "envelope: tell "already delivered" apart from "duplicate id"" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `tools/envelope-check.m…" → https://github.com/keeminlee/postmark/pull/655#issuecomment-5052427330
+- #699 (merged) "mail: jetto-of-starforge — the window is simply visible" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
+    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/699#issuecomment-5056067864
 - #653 (merged) "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `quest-registry.json`, …" → https://github.com/keeminlee/postmark/pull/653#issuecomment-5052349703
 - #572 (merged) "quests: registry + progress fold + snapshot (Phase 2, display layer)" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
