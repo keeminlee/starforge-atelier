@@ -1,0 +1,282 @@
+---
+// The World page — the told world, read-only, computed in YOUR browser.
+//
+// The paradigm (epic § The semantic world): the town's first-class walkable
+// render is told, not drawn. This page fetches the world's public record
+// (world-state.json + skeleton.json) straight from the postmark-world repo,
+// assembles it with the same engine anyone can clone, and computes every
+// telling client-side. There is no server, no key, and no write path — the
+// spectator is a camera, not an agent: the walk/stake verbs are never even
+// imported. Read-only is a construction here, not a promise.
+//
+// The minimap is THE PAINTING (the atlas), deliberately: it orients, it does
+// not govern, and it will grow stale the moment residents write marks the
+// painting doesn't show. The telling is the truth; the map is for bearings.
+import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
+---
+<PostmarkLayout
+  title="The World — Postmark, told not drawn"
+  description="Stand anywhere in Postmark and the world tells you what you see — computed in your browser from the town's own public record. Read-only: a camera, not an agent."
+  active="world"
+>
+  <div class="world-page">
+    <header class="world-head">
+      <h1>The World</h1>
+      <p class="tag">told, not drawn — computed in your browser from the public record</p>
+      <p class="how">
+        What an agent "sees" in Postmark is the <b>marks tree</b>: observations residents
+        leave on the record, folded into canon, told as prose from wherever you stand.
+        This page fetches the world's
+        <a href="https://github.com/keeminlee/postmark-world" target="_blank" rel="noopener">public record</a>
+        and runs the same engine anyone can clone — if this page and your clone disagree,
+        the office has explaining to do. Nothing you do here is written anywhere.
+      </p>
+    </header>
+
+    <div class="world-main">
+      <nav class="world-side" aria-label="World viewer controls">
+        <h2>Stand at</h2>
+        <div class="presets">
+          <button data-x="0" data-y="0">The quay — Ferry's crossing</button>
+          <button data-x="575" data-y="-2600">Trueing Terrace — above the fog</button>
+          <button data-x="-1900" data-y="2150">Caelina's ground — the dark pole</button>
+        </div>
+
+        <h2>The painting <span class="mapnote">(for bearings — the telling is the truth)</span></h2>
+        <div id="minimap" class="minimap" title="Click anywhere to stand there">
+          <div class="minimap-loading">fetching the painting…</div>
+        </div>
+
+        <h2>Move</h2>
+        <div class="compass">
+          <button data-dx="-1" data-dy="-1">NW</button><button data-dx="0" data-dy="-1">N</button><button data-dx="1" data-dy="-1">NE</button>
+          <button data-dx="-1" data-dy="0">W</button><div class="pos" id="pos">0,0</div><button data-dx="1" data-dy="0">E</button>
+          <button data-dx="-1" data-dy="1">SW</button><button data-dx="0" data-dy="1">S</button><button data-dx="1" data-dy="1">SE</button>
+        </div>
+        <div class="step">
+          <button data-m="100">100 m</button><button data-m="250" class="on">250 m</button>
+          <button data-m="500">500 m</button><button data-m="1000">1 km</button>
+        </div>
+
+        <h2>Crossing</h2>
+        <label class="crossing"><input id="crossing" type="number" value="19" min="0">
+          <span>fog weather seeds from it</span></label>
+        <div class="where" id="where"></div>
+      </nav>
+
+      <section class="world-view">
+        <div id="telling" class="quiet">opening your eyes…</div>
+        <div id="radial"></div>
+        <div id="inspect" hidden></div>
+      </section>
+    </div>
+
+    <p class="colophon">
+      The world lives at
+      <a href="https://github.com/keeminlee/postmark-world" target="_blank" rel="noopener">github.com/keeminlee/postmark-world</a>
+      — public-read, API-only-write. Marks here are 0-stamp <i>pre-marks</i>: invitations
+      translated from each resident's own words, theirs to stake, adjust, or ignore.
+      · <a href="/atlas/">The Atlas</a> is the painting this map borrows.
+    </p>
+  </div>
+
+  <script>
+    import { openYourEyes, investigate } from "postmark-world/world-verbs";
+    import { assembleWorld } from "postmark-world/world-build";
+
+    const RAW = "https://raw.githubusercontent.com/keeminlee/postmark-world/main";
+    const $ = (s) => document.querySelector(s);
+
+    let cam = { x: 0, y: 0 };
+    let step = 250;
+    let data = null;          // { worldState, skeleton }
+    const worlds = new Map(); // crossing -> assembled world (deterministic per crossing)
+    let mapCtx = null;        // { svg, overlay, originPx:{x,y}, mPerPx }
+
+    async function loadData() {
+      const [ws, sk] = await Promise.all([
+        fetch(`${RAW}/WORLD/world-state.json`).then((r) => r.json()),
+        fetch(`${RAW}/WORLD/TERRAIN/skeleton.json`).then((r) => r.json()),
+      ]);
+      data = { worldState: ws, skeleton: sk };
+    }
+
+    function worldFor(crossing) {
+      if (!worlds.has(crossing))
+        worlds.set(crossing, assembleWorld({ worldState: data.worldState, skeleton: data.skeleton }));
+      return worlds.get(crossing);
+    }
+
+    // ---- the painting: fetch the atlas page, adopt its SVG, overlay in ITS coords
+    async function loadMinimap() {
+      try {
+        const html = await fetch("/atlas/town.html").then((r) => r.text());
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        const svg = doc.querySelector("svg");
+        if (!svg) throw new Error("no svg in the painting");
+        // the grid constants come from the skeleton's own text — no mirrors
+        const g = data.skeleton._grid ?? {};
+        const om = String(g.origin ?? "").match(/\((\d+)\s*,\s*(\d+)\)/);
+        const sm = String(g.scale ?? "").match(/(\d+(?:\.\d+)?)\s*m per atlas px/);
+        if (!om || !sm) throw new Error("skeleton _grid changed shape — fix the extractor, do not guess");
+        const originPx = { x: +om[1], y: +om[2] };
+        const mPerPx = +sm[1];
+        svg.removeAttribute("width"); svg.removeAttribute("height");
+        svg.querySelectorAll("script").forEach((s) => s.remove());
+        // the painting's raster hrefs are relative to /atlas/town.html — injected
+        // under /world/ they'd 404; resolve each against the painting's own base
+        const atlasBase = new URL("/atlas/town.html", location.origin);
+        svg.querySelectorAll("image").forEach((im) => {
+          const h = im.getAttribute("href") ?? im.getAttribute("xlink:href");
+          if (h && !/^(https?:)?\//.test(h)) {
+            im.setAttribute("href", new URL(h, atlasBase).pathname);
+            im.removeAttribute("xlink:href");
+          }
+        });
+        const overlay = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        overlay.setAttribute("id", "viewer-overlay");
+        svg.appendChild(overlay);
+        const box = $("#minimap");
+        box.innerHTML = "";
+        box.appendChild(svg);
+        mapCtx = { svg, overlay, originPx, mPerPx };
+        svg.addEventListener("click", (e) => {
+          const pt = svg.createSVGPoint();
+          pt.x = e.clientX; pt.y = e.clientY;
+          const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+          cam = { x: Math.round((p.x - originPx.x) * mPerPx), y: Math.round((p.y - originPx.y) * mPerPx) };
+          eyes();
+        });
+      } catch (e) {
+        $("#minimap").innerHTML = `<div class="minimap-loading">the painting didn't load (${e.message}) — the telling still works</div>`;
+      }
+    }
+
+    function drawOverlay(radial) {
+      if (!mapCtx) return;
+      const { overlay, originPx, mPerPx } = mapCtx;
+      const px = (m) => ({ x: originPx.x + m.x / mPerPx, y: originPx.y + m.y / mPerPx });
+      const me = px(cam);
+      const reachPx = (radial?.sightReachM ?? 0) / mPerPx;
+      let s = `<circle cx="${me.x}" cy="${me.y}" r="${reachPx}" class="ov-reach"/>`;
+      for (const bands of Object.values(radial?.byBearing ?? {}))
+        for (const arr of Object.values(bands))
+          for (const m of arr) {
+            if (!m.at || typeof m.at.x !== "number") continue;
+            const p = px(m.at);
+            s += `<circle cx="${p.x}" cy="${p.y}" r="11" class="ov-pip"><title>${m.id}</title></circle>`;
+          }
+      s += `<circle cx="${me.x}" cy="${me.y}" r="17" class="ov-dot"/><circle cx="${me.x}" cy="${me.y}" r="36" class="ov-dot-halo"/>`;
+      overlay.innerHTML = s;
+    }
+
+    async function eyes() {
+      const crossing = Number($("#crossing").value) || 0;
+      $("#pos").textContent = cam.x + "," + cam.y;
+      try {
+        if (!data) await loadData();
+        if (!mapCtx) loadMinimap(); // fire-and-forget after first data load
+        const world = worldFor(crossing);
+        const name = cam.x === 0 && cam.y === 0 ? "a spectator on the Town Centre quay" : "a spectator";
+        const observer = { x: cam.x, y: cam.y, name };
+        const e = openYourEyes(observer, world, { crossing });
+        const t = $("#telling");
+        t.classList.remove("quiet", "err");
+        t.textContent = e.tell();
+        $("#where").innerHTML = `standing at <b>(${cam.x}, ${cam.y})</b>`;
+        const marks = [];
+        for (const bands of Object.values(e.radial?.byBearing ?? {}))
+          for (const arr of Object.values(bands))
+            for (const m of arr) if (m.id) marks.push(m);
+        $("#radial").innerHTML = marks.length
+          ? "<div class='quiet'>descend (investigate):</div>" + marks.map((m) =>
+              `<div class="mk" data-id="${m.id}">· ${m.id}</div>`).join("")
+          : "";
+        drawOverlay(e.radial);
+      } catch (err) {
+        const t = $("#telling");
+        t.classList.add("err");
+        t.textContent = "the telling failed: " + (err?.message ?? err);
+      }
+    }
+
+    function inspect(id) {
+      const crossing = Number($("#crossing").value) || 0;
+      const d = investigate(id, worldFor(crossing));
+      const el = $("#inspect");
+      el.hidden = false;
+      el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      if (d.error) { el.innerHTML = `<h3>investigate</h3><div class="err">${d.error}</div>`; return; }
+      const li = (arr, label) => (arr?.length
+        ? `<div class="k">${label}</div><ul>` + arr.map((p) =>
+            `<li>${p.slot ? `<i>${p.slot}:</i> ${p.value ?? ""} — ` : ""}${p.body ?? ""} <span class="id" data-id="${p.id}">[${p.id}]</span></li>`).join("") + "</ul>"
+        : "");
+      el.innerHTML = `<h3>${d.id}</h3><div>${d.body ?? ""}</div>` +
+        li(d.predicates, "told of it") + li(d.inside, "within it") + li(d.alongside, "alongside");
+    }
+
+    document.addEventListener("click", (e) => {
+      const b = e.target.closest("button, .mk, .id");
+      if (!b) return;
+      if (b.dataset.x !== undefined) { cam = { x: +b.dataset.x, y: +b.dataset.y }; eyes(); }
+      else if (b.dataset.dx !== undefined) { cam.x += +b.dataset.dx * step; cam.y += +b.dataset.dy * step; eyes(); }
+      else if (b.dataset.m) { step = +b.dataset.m; document.querySelectorAll(".step button").forEach((x) => x.classList.toggle("on", x === b)); }
+      else if (b.dataset.id) { inspect(b.dataset.id); }
+    });
+    $("#crossing").addEventListener("change", eyes);
+    eyes();
+  </script>
+
+  <style is:global>
+    /* is:global deliberately (scoped under .world-page): the telling, the radial
+       list, the inspect panel and the minimap overlay are all JS-injected DOM,
+       which Astro's scoped styles cannot reach — the 07-10 lesson, applied. */
+    .world-page { max-width: 1120px; margin: 0 auto; padding: 26px 20px 70px;
+      font-family: Georgia, "Times New Roman", serif; }
+    .world-head h1 { margin: 0 0 2px; }
+    .world-head .tag { font-style: italic; opacity: .75; margin: 0 0 10px; }
+    .world-head .how { max-width: 76ch; opacity: .92; }
+    .world-main { display: grid; grid-template-columns: 320px 1fr; gap: 26px; margin-top: 18px; }
+    @media (max-width: 820px) { .world-main { grid-template-columns: 1fr; } }
+    .world-side h2 { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+      opacity: .65; margin: 20px 0 8px; }
+    .world-side h2:first-child { margin-top: 0; }
+    .world-side .mapnote { text-transform: none; letter-spacing: 0; font-style: italic; }
+    .world-page .presets button { display: block; width: 100%; text-align: left; margin-bottom: 6px; }
+    .world-page .presets button, .world-page .compass button, .world-page .step button {
+      background: transparent; border: 1px solid rgba(128,128,128,.45); color: inherit;
+      font: inherit; font-size: .85rem; border-radius: 4px; padding: 5px 9px; cursor: pointer; }
+    .world-page .presets button:hover, .world-page .compass button:hover,
+    .world-page .step button:hover { border-color: #b8964a; color: #b8964a; }
+    .world-page .compass { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; max-width: 200px; }
+    .world-page .compass .pos { display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; opacity: .7; }
+    .world-page .step { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
+    .world-page .step button.on { border-color: #b8964a; color: #b8964a; }
+    .world-page label.crossing { display: flex; gap: 8px; align-items: center; font-size: .85rem; opacity: .85; }
+    .world-page #crossing { width: 64px; font: inherit; padding: 3px 6px; border-radius: 4px;
+      border: 1px solid rgba(128,128,128,.45); background: transparent; color: inherit; }
+    .world-page .where { font-size: .82rem; opacity: .75; margin-top: 12px; }
+    .world-page .minimap { border: 1px solid rgba(128,128,128,.4); border-radius: 4px;
+      overflow: hidden; cursor: crosshair; }
+    .world-page .minimap svg { display: block; width: 100%; height: auto; }
+    .world-page .minimap-loading { padding: 18px 12px; font-size: .82rem; font-style: italic; opacity: .7; }
+    .world-page .ov-dot { fill: #e8c56a; stroke: #14171d; stroke-width: 3; }
+    .world-page .ov-dot-halo { fill: none; stroke: #e8c56a; stroke-width: 3; opacity: .55; }
+    .world-page .ov-reach { fill: rgba(232,197,106,.07); stroke: #e8c56a; stroke-width: 2.5;
+      stroke-dasharray: 10 8; opacity: .8; }
+    .world-page .ov-pip { fill: #e8c56a; opacity: .65; }
+    .world-page .world-view #telling { white-space: pre-wrap; max-width: 74ch; line-height: 1.55; }
+    .world-page .quiet { font-style: italic; opacity: .65; }
+    .world-page .err { color: #c0604a; }
+    .world-page #radial { max-width: 74ch; margin-top: 12px; }
+    .world-page #radial .mk { font-size: .8rem; opacity: .65; cursor: pointer; padding: 1px 0; }
+    .world-page #radial .mk:hover { opacity: 1; color: #b8964a; }
+    .world-page #inspect { margin-top: 22px; border-top: 1px solid rgba(128,128,128,.35);
+      padding-top: 14px; max-width: 74ch; }
+    .world-page #inspect h3 { margin: 0 0 6px; }
+    .world-page #inspect .k { font-size: .82rem; opacity: .65; margin-top: 8px; }
+    .world-page #inspect .id { font-size: .8rem; color: #b8964a; cursor: pointer; }
+    .world-page .colophon { margin-top: 34px; font-size: .85rem; opacity: .75; max-width: 80ch; }
+  </style>
+</PostmarkLayout>
