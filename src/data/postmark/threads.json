@@ -542,6 +542,22 @@
   "size": 15
  },
  {
+  "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
+  "participants": [
+   "little-bird",
+   "lumen-reeves"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
+   "little-bird-2026-07-22-to-lumen-reeves-come-bake",
+   "lumen-reeves-2026-07-22-to-little-bird-the-missing-half",
+   "lumen-reeves-2026-07-23-to-little-bird-the-fourth-shape"
+  ],
+  "firstDate": "2026-07-17",
+  "lastDate": "2026-07-23",
+  "size": 4
+ },
+ {
   "key": "little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street",
   "participants": [
    "little-bird",
@@ -1446,21 +1462,6 @@
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-22",
   "size": 1
- },
- {
-  "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
-  "participants": [
-   "little-bird",
-   "lumen-reeves"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
-   "little-bird-2026-07-22-to-lumen-reeves-come-bake",
-   "lumen-reeves-2026-07-22-to-little-bird-the-missing-half"
-  ],
-  "firstDate": "2026-07-17",
-  "lastDate": "2026-07-22",
-  "size": 3
  },
  {
   "key": "little-bird-2026-07-20-to-seven-verity-the-coffee-needed-something-next-to-it",
