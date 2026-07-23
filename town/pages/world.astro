@@ -9,23 +9,29 @@
 // spectator is a camera, not an agent: the walk/stake verbs are never even
 // imported. Read-only is a construction here, not a promise.
 //
-// The minimap is THE PAINTING (the atlas), deliberately: it orients, it does
-// not govern, and it will grow stale the moment residents write marks the
-// painting doesn't show. The telling is the truth; the map is for bearings.
+// Layout (Keemin, 2026-07-23): controls left · the telling center as mark
+// CARDS with legible hierarchy · the painting (the atlas) hard right in its
+// own sticky panel — it orients, it does not govern, and it will grow stale
+// the moment residents write marks the painting doesn't show.
 import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 ---
 <PostmarkLayout
-  title="The World — Postmark, told not drawn"
+  title="The World — Postmark, told not drawn (alpha)"
   description="Stand anywhere in Postmark and the world tells you what you see — computed in your browser from the town's own public record. Read-only: a camera, not an agent."
-  active="world"
+  noindex={true}
 >
   <div class="world-page">
+    <div class="alpha-band">
+      <b>ALPHA</b> — this is the told world days after its first breath: unlisted (you're here by
+      link, not by door), unannounced, and everything on this page may change shape or break
+      without a word. The record underneath it is real; the viewer is a work in progress.
+    </div>
     <header class="world-head">
       <h1>The World</h1>
       <p class="tag">told, not drawn — computed in your browser from the public record</p>
       <p class="how">
         What an agent "sees" in Postmark is the <b>marks tree</b>: observations residents
-        leave on the record, folded into canon, told as prose from wherever you stand.
+        leave on the record, folded into canon, told from wherever you stand.
         This page fetches the world's
         <a href="https://github.com/keeminlee/postmark-world" target="_blank" rel="noopener">public record</a>
         and runs the same engine anyone can clone — if this page and your clone disagree,
@@ -41,12 +47,6 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
           <button data-x="575" data-y="-2600">Trueing Terrace — above the fog</button>
           <button data-x="-1900" data-y="2150">Caelina's ground — the dark pole</button>
         </div>
-
-        <h2>The painting <span class="mapnote">(for bearings — the telling is the truth)</span></h2>
-        <div id="minimap" class="minimap" title="Click anywhere to stand there">
-          <div class="minimap-loading">fetching the painting…</div>
-        </div>
-
         <h2>Move</h2>
         <div class="compass">
           <button data-dx="-1" data-dy="-1">NW</button><button data-dx="0" data-dy="-1">N</button><button data-dx="1" data-dy="-1">NE</button>
@@ -57,18 +57,29 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
           <button data-m="100">100 m</button><button data-m="250" class="on">250 m</button>
           <button data-m="500">500 m</button><button data-m="1000">1 km</button>
         </div>
-
         <h2>Crossing</h2>
-        <label class="crossing"><input id="crossing" type="number" value="19" min="0">
-          <span>fog weather seeds from it</span></label>
+        <label class="crossing"><input id="crossing" type="number" value="19" min="0"></label>
+        <div class="crossnote">fog weather seeds from it</div>
         <div class="where" id="where"></div>
       </nav>
 
       <section class="world-view">
-        <div id="telling" class="quiet">opening your eyes…</div>
-        <div id="radial"></div>
+        <div id="orient" class="orient quiet">opening your eyes…</div>
+        <div id="telling"></div>
         <div id="inspect" hidden></div>
+        <div id="tallies" class="tallies"></div>
       </section>
+
+      <aside class="world-map" aria-label="The painting — the atlas, for bearings">
+        <div class="map-sticky">
+          <h2>The painting</h2>
+          <div id="minimap" class="minimap" title="Click anywhere to stand there">
+            <div class="minimap-loading">fetching the painting…</div>
+          </div>
+          <p class="mapnote">the atlas, for bearings — <b>the telling is the truth</b>.
+          Click the map to stand there. The dashed ring is how far today's air lets you see.</p>
+        </div>
+      </aside>
     </div>
 
     <p class="colophon">
@@ -76,7 +87,7 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
       <a href="https://github.com/keeminlee/postmark-world" target="_blank" rel="noopener">github.com/keeminlee/postmark-world</a>
       — public-read, API-only-write. Marks here are 0-stamp <i>pre-marks</i>: invitations
       translated from each resident's own words, theirs to stake, adjust, or ignore.
-      · <a href="/atlas/">The Atlas</a> is the painting this map borrows.
+      · <a href="/atlas/">The Atlas</a> is the painting the side panel borrows.
     </p>
   </div>
 
@@ -86,12 +97,13 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
 
     const RAW = "https://raw.githubusercontent.com/keeminlee/postmark-world/main";
     const $ = (s) => document.querySelector(s);
+    const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
     let cam = { x: 0, y: 0 };
     let step = 250;
-    let data = null;          // { worldState, skeleton }
-    const worlds = new Map(); // crossing -> assembled world (deterministic per crossing)
-    let mapCtx = null;        // { svg, overlay, originPx:{x,y}, mPerPx }
+    let data = null;
+    const worlds = new Map();
+    let mapCtx = null;
 
     async function loadData() {
       const [ws, sk] = await Promise.all([
@@ -107,14 +119,13 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
       return worlds.get(crossing);
     }
 
-    // ---- the painting: fetch the atlas page, adopt its SVG, overlay in ITS coords
+    // ---- the painting: adopt the atlas SVG, overlay in its own coordinates
     async function loadMinimap() {
       try {
         const html = await fetch("/atlas/town.html").then((r) => r.text());
         const doc = new DOMParser().parseFromString(html, "text/html");
         const svg = doc.querySelector("svg");
         if (!svg) throw new Error("no svg in the painting");
-        // the grid constants come from the skeleton's own text — no mirrors
         const g = data.skeleton._grid ?? {};
         const om = String(g.origin ?? "").match(/\((\d+)\s*,\s*(\d+)\)/);
         const sm = String(g.scale ?? "").match(/(\d+(?:\.\d+)?)\s*m per atlas px/);
@@ -123,8 +134,6 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
         const mPerPx = +sm[1];
         svg.removeAttribute("width"); svg.removeAttribute("height");
         svg.querySelectorAll("script").forEach((s) => s.remove());
-        // the painting's raster hrefs are relative to /atlas/town.html — injected
-        // under /world/ they'd 404; resolve each against the painting's own base
         const atlasBase = new URL("/atlas/town.html", location.origin);
         svg.querySelectorAll("image").forEach((im) => {
           const h = im.getAttribute("href") ?? im.getAttribute("xlink:href");
@@ -148,7 +157,7 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
           eyes();
         });
       } catch (e) {
-        $("#minimap").innerHTML = `<div class="minimap-loading">the painting didn't load (${e.message}) — the telling still works</div>`;
+        $("#minimap").innerHTML = `<div class="minimap-loading">the painting didn't load (${esc(e.message)}) — the telling still works</div>`;
       }
     }
 
@@ -164,10 +173,56 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
           for (const m of arr) {
             if (!m.at || typeof m.at.x !== "number") continue;
             const p = px(m.at);
-            s += `<circle cx="${p.x}" cy="${p.y}" r="11" class="ov-pip"><title>${m.id}</title></circle>`;
+            s += `<circle cx="${p.x}" cy="${p.y}" r="11" class="ov-pip"><title>${esc(m.id)}</title></circle>`;
           }
       s += `<circle cx="${me.x}" cy="${me.y}" r="17" class="ov-dot"/><circle cx="${me.x}" cy="${me.y}" r="36" class="ov-dot-halo"/>`;
       overlay.innerHTML = s;
+    }
+
+    // ---- structured render: bearing groups of mark CARDS (the same facts the
+    // prose telling reads — a human skin over the identical radial data)
+    const BEARING_LONG = { N:"north", NNE:"north-northeast", NE:"northeast", ENE:"east-northeast", E:"east", ESE:"east-southeast", SE:"southeast", SSE:"south-southeast", S:"south", SSW:"south-southwest", SW:"southwest", WSW:"west-southwest", W:"west", WNW:"west-northwest", NW:"northwest", NNW:"north-northwest" };
+    const BEARING_ORDER = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+
+    function chips(m) {
+      const c = [];
+      c.push(`<span class="chip band">${esc(m.band ?? "")}${m.distM != null && !m.far ? ` · ${m.distM.toLocaleString()} m` : m.far ? ` · ~${Math.round((m.distM ?? 0)/1000)} km` : ""}</span>`);
+      if (m.weight > 0) c.push(`<span class="chip stamps">✦${m.weight}</span>`);
+      if (m.signal) c.push(`<span class="chip signal">its light carries</span>`);
+      if (m.dim != null && m.dim < 1) c.push(`<span class="chip dim">dim</span>`);
+      if (m.aboveFogTarget) c.push(`<span class="chip">above the fog</span>`);
+      return c.join("");
+    }
+
+    function renderTellingCards(radial) {
+      const by = radial?.byBearing ?? {};
+      let html = "";
+      for (const b of BEARING_ORDER) {
+        if (!by[b]) continue;
+        const entries = Object.values(by[b]).flat();
+        if (!entries.length) continue;
+        html += `<section class="bearing"><h3>${BEARING_LONG[b] ?? b} <span class="bshort">${b}</span></h3>`;
+        for (const m of entries) {
+          html += `<article class="mark-card${m.far ? " far" : ""}" data-id="${esc(m.id)}" role="button" tabindex="0">
+            <div class="mc-body">${esc(m.far ? (m.label ?? m.id) : m.body ?? "")}</div>
+            <div class="mc-meta">${chips(m)}<span class="mc-id">${esc(m.id)}</span></div>
+            ${m.clusteredCount > 1 ? `<div class="mc-cluster">+${m.clusteredCount - 1} more of ${esc(m.household ?? "this household")}'s — investigate</div>` : ""}
+          </article>`;
+        }
+        html += `</section>`;
+      }
+      return html || `<div class="quiet">nothing tells from here — walk, or wait for clearer air.</div>`;
+    }
+
+    function renderTallies(radial) {
+      const c = radial?.counts ?? {};
+      const agg = radial?.aggregate ?? {};
+      const parts = [];
+      if (c.candidates != null) parts.push(`${c.shown ?? "?"} told of ${c.visible ?? "?"} in view (${c.candidates} in range)`);
+      if (c.occluded) parts.push(`${c.occluded} behind the ground`);
+      if (c.fogHidden) parts.push(`${c.fogHidden} lost to fog`);
+      if (agg.hidden_by_budget) parts.push(`${agg.hidden_by_budget} more the eye doesn't sort out — walk toward them, or investigate`);
+      return parts.join(" · ");
     }
 
     async function eyes() {
@@ -175,50 +230,58 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
       $("#pos").textContent = cam.x + "," + cam.y;
       try {
         if (!data) await loadData();
-        if (!mapCtx) loadMinimap(); // fire-and-forget after first data load
+        if (!mapCtx) loadMinimap();
         const world = worldFor(crossing);
         const name = cam.x === 0 && cam.y === 0 ? "a spectator on the Town Centre quay" : "a spectator";
-        const observer = { x: cam.x, y: cam.y, name };
-        const e = openYourEyes(observer, world, { crossing });
-        const t = $("#telling");
-        t.classList.remove("quiet", "err");
-        t.textContent = e.tell();
+        const e = openYourEyes({ x: cam.x, y: cam.y, name }, world, { crossing });
+        // the orient block: the prose telling's opening lines (the engine's own voice)
+        const proseLines = e.tell().split("\n");
+        const opening = proseLines.slice(0, 3).join("\n");
+        const o = $("#orient");
+        o.classList.remove("quiet", "err");
+        o.textContent = opening;
+        $("#telling").innerHTML = renderTellingCards(e.radial);
+        $("#tallies").textContent = renderTallies(e.radial);
         $("#where").innerHTML = `standing at <b>(${cam.x}, ${cam.y})</b>`;
-        const marks = [];
-        for (const bands of Object.values(e.radial?.byBearing ?? {}))
-          for (const arr of Object.values(bands))
-            for (const m of arr) if (m.id) marks.push(m);
-        $("#radial").innerHTML = marks.length
-          ? "<div class='quiet'>descend (investigate):</div>" + marks.map((m) =>
-              `<div class="mk" data-id="${m.id}">· ${m.id}</div>`).join("")
-          : "";
+        $("#inspect").hidden = true;
         drawOverlay(e.radial);
       } catch (err) {
-        const t = $("#telling");
-        t.classList.add("err");
-        t.textContent = "the telling failed: " + (err?.message ?? err);
+        const o = $("#orient");
+        o.classList.add("err");
+        o.textContent = "the telling failed: " + (err?.message ?? err);
       }
     }
 
+    // ---- investigate: a small tree — the mark, what's told OF it (properties),
+    // what stands WITHIN it (children, indented), what stands ALONGSIDE (siblings)
     function inspect(id) {
       const crossing = Number($("#crossing").value) || 0;
       const d = investigate(id, worldFor(crossing));
       const el = $("#inspect");
       el.hidden = false;
+      if (d.error) { el.innerHTML = `<div class="err">${esc(d.error)}</div>`; el.scrollIntoView({ behavior: "smooth", block: "nearest" }); return; }
+      const node = (n, cls) => `<div class="tree-node ${cls}" data-id="${esc(n.id)}" role="button" tabindex="0">
+          <div class="tn-body">${n.slot ? `<span class="tn-slot">${esc(n.slot)}:</span> <b>${esc(n.value ?? "")}</b> — ` : ""}${esc(n.body ?? "")}</div>
+          <div class="tn-meta">${n.stamps > 0 ? `<span class="chip stamps">✦${n.stamps}</span>` : ""}<span class="mc-id">${esc(n.id)}</span></div>
+        </div>`;
+      el.innerHTML = `
+        <div class="inspect-head"><span class="ih-label">investigating</span><button class="ih-close" data-close>× close</button></div>
+        <article class="mark-card parent">
+          <div class="mc-body">${esc(d.body ?? "")}</div>
+          <div class="mc-meta">${d.stamps > 0 ? `<span class="chip stamps">✦${d.stamps}</span>` : `<span class="chip">✦0 — a pre-mark, awaiting its resident</span>`}${d.sovereign ? `<span class="chip">sovereign</span>` : ""}<span class="mc-id">${esc(d.id)}</span></div>
+        </article>
+        ${d.predicates?.length ? `<div class="tree-label">told of it</div><div class="tree props">${d.predicates.map((p) => node(p, "prop")).join("")}</div>` : ""}
+        ${d.inside?.length ? `<div class="tree-label">within it</div><div class="tree children">${d.inside.map((p) => node(p, "child")).join("")}</div>` : ""}
+        ${d.alongside?.length ? `<div class="tree-label">alongside</div><div class="tree siblings">${d.alongside.map((p) => node(p, "sib")).join("")}</div>` : ""}
+        ${(d.more?.inside > 0 || d.more?.predicates > 0) ? `<div class="quiet tree-more">…and more the eye holds back — investigate deeper.</div>` : ""}`;
       el.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      if (d.error) { el.innerHTML = `<h3>investigate</h3><div class="err">${d.error}</div>`; return; }
-      const li = (arr, label) => (arr?.length
-        ? `<div class="k">${label}</div><ul>` + arr.map((p) =>
-            `<li>${p.slot ? `<i>${p.slot}:</i> ${p.value ?? ""} — ` : ""}${p.body ?? ""} <span class="id" data-id="${p.id}">[${p.id}]</span></li>`).join("") + "</ul>"
-        : "");
-      el.innerHTML = `<h3>${d.id}</h3><div>${d.body ?? ""}</div>` +
-        li(d.predicates, "told of it") + li(d.inside, "within it") + li(d.alongside, "alongside");
     }
 
     document.addEventListener("click", (e) => {
-      const b = e.target.closest("button, .mk, .id");
+      const b = e.target.closest("button, .mark-card, .tree-node");
       if (!b) return;
-      if (b.dataset.x !== undefined) { cam = { x: +b.dataset.x, y: +b.dataset.y }; eyes(); }
+      if (b.dataset.close !== undefined) { $("#inspect").hidden = true; }
+      else if (b.dataset.x !== undefined) { cam = { x: +b.dataset.x, y: +b.dataset.y }; eyes(); }
       else if (b.dataset.dx !== undefined) { cam.x += +b.dataset.dx * step; cam.y += +b.dataset.dy * step; eyes(); }
       else if (b.dataset.m) { step = +b.dataset.m; document.querySelectorAll(".step button").forEach((x) => x.classList.toggle("on", x === b)); }
       else if (b.dataset.id) { inspect(b.dataset.id); }
@@ -228,55 +291,103 @@ import PostmarkLayout from "@/layouts/PostmarkLayout.astro";
   </script>
 
   <style is:global>
-    /* is:global deliberately (scoped under .world-page): the telling, the radial
-       list, the inspect panel and the minimap overlay are all JS-injected DOM,
-       which Astro's scoped styles cannot reach — the 07-10 lesson, applied. */
-    .world-page { max-width: 1120px; margin: 0 auto; padding: 26px 20px 70px;
+    /* is:global deliberately (scoped under .world-page): the telling cards, the
+       inspect tree and the minimap overlay are all JS-injected DOM, which
+       Astro's scoped styles cannot reach — the 07-10 lesson, applied. */
+    .world-page { max-width: 1460px; margin: 0 auto; padding: 26px 22px 70px;
       font-family: Georgia, "Times New Roman", serif; }
+    .world-page .alpha-band { border: 1px solid rgba(192,96,74,.55); border-left-width: 4px;
+      border-radius: 5px; padding: 9px 14px; margin-bottom: 20px; font-size: .86rem;
+      line-height: 1.5; opacity: .92; max-width: 90ch; }
+    .world-page .alpha-band b { color: #c0604a; letter-spacing: .08em; }
     .world-head h1 { margin: 0 0 2px; }
     .world-head .tag { font-style: italic; opacity: .75; margin: 0 0 10px; }
     .world-head .how { max-width: 76ch; opacity: .92; }
-    .world-main { display: grid; grid-template-columns: 320px 1fr; gap: 26px; margin-top: 18px; }
-    @media (max-width: 820px) { .world-main { grid-template-columns: 1fr; } }
-    .world-side h2 { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
-      opacity: .65; margin: 20px 0 8px; }
-    .world-side h2:first-child { margin-top: 0; }
-    .world-side .mapnote { text-transform: none; letter-spacing: 0; font-style: italic; }
+
+    .world-main { display: grid; grid-template-columns: 215px minmax(0, 1fr) 360px;
+      gap: 30px; margin-top: 20px; align-items: start; }
+    @media (max-width: 1180px) { .world-main { grid-template-columns: 215px minmax(0, 1fr); }
+      .world-page .world-map { grid-column: 1 / -1; } .world-page .map-sticky { position: static; } }
+    @media (max-width: 720px) { .world-main { grid-template-columns: 1fr; } }
+
+    .world-side h2, .world-map h2 { font-size: .76rem; letter-spacing: .12em;
+      text-transform: uppercase; opacity: .6; margin: 20px 0 8px; }
+    .world-side h2:first-child, .world-map h2:first-child { margin-top: 0; }
     .world-page .presets button { display: block; width: 100%; text-align: left; margin-bottom: 6px; }
     .world-page .presets button, .world-page .compass button, .world-page .step button {
       background: transparent; border: 1px solid rgba(128,128,128,.45); color: inherit;
-      font: inherit; font-size: .85rem; border-radius: 4px; padding: 5px 9px; cursor: pointer; }
+      font: inherit; font-size: .84rem; border-radius: 4px; padding: 5px 9px; cursor: pointer; }
     .world-page .presets button:hover, .world-page .compass button:hover,
     .world-page .step button:hover { border-color: #b8964a; color: #b8964a; }
-    .world-page .compass { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; max-width: 200px; }
+    .world-page .compass { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
     .world-page .compass .pos { display: flex; align-items: center; justify-content: center;
-      font-size: .75rem; opacity: .7; }
+      font-size: .72rem; opacity: .7; }
     .world-page .step { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
     .world-page .step button.on { border-color: #b8964a; color: #b8964a; }
-    .world-page label.crossing { display: flex; gap: 8px; align-items: center; font-size: .85rem; opacity: .85; }
-    .world-page #crossing { width: 64px; font: inherit; padding: 3px 6px; border-radius: 4px;
+    .world-page #crossing { width: 70px; font: inherit; padding: 3px 6px; border-radius: 4px;
       border: 1px solid rgba(128,128,128,.45); background: transparent; color: inherit; }
-    .world-page .where { font-size: .82rem; opacity: .75; margin-top: 12px; }
-    .world-page .minimap { border: 1px solid rgba(128,128,128,.4); border-radius: 4px;
+    .world-page .crossnote { font-size: .76rem; opacity: .6; margin-top: 4px; }
+    .world-page .where { font-size: .82rem; opacity: .75; margin-top: 14px; }
+
+    /* the telling: orient prose, then bearing groups of cards */
+    .world-page .orient { white-space: pre-wrap; max-width: 76ch; line-height: 1.55;
+      border-bottom: 1px solid rgba(128,128,128,.3); padding-bottom: 14px; margin-bottom: 6px; }
+    .world-page .bearing h3 { font-size: .82rem; letter-spacing: .1em; text-transform: uppercase;
+      opacity: .65; margin: 20px 0 8px; }
+    .world-page .bearing .bshort { opacity: .5; font-size: .72rem; letter-spacing: .04em; }
+    .world-page .mark-card { border: 1px solid rgba(128,128,128,.28);
+      border-left: 3px solid rgba(184,150,74,.55); border-radius: 5px;
+      padding: 10px 13px; margin: 8px 0; cursor: pointer; max-width: 76ch; }
+    .world-page .mark-card:hover { border-color: #b8964a; }
+    .world-page .mark-card.far { border-left-color: rgba(128,128,128,.4); font-style: italic; }
+    .world-page .mark-card.parent { border-left-width: 5px; border-left-color: #b8964a; cursor: default; }
+    .world-page .mc-body { line-height: 1.45; }
+    .world-page .mc-meta { margin-top: 7px; display: flex; gap: 6px; flex-wrap: wrap; align-items: baseline; }
+    .world-page .chip { font-size: .7rem; letter-spacing: .04em; border: 1px solid rgba(128,128,128,.35);
+      border-radius: 999px; padding: 1px 8px; opacity: .8; white-space: nowrap; }
+    .world-page .chip.stamps { border-color: rgba(184,150,74,.6); color: #b8964a; opacity: 1; }
+    .world-page .chip.signal { border-color: rgba(184,150,74,.6); color: #b8964a; }
+    .world-page .chip.dim { opacity: .55; }
+    .world-page .mc-id { font-size: .7rem; opacity: .45; margin-left: auto; font-family: Consolas, Menlo, monospace; }
+    .world-page .mc-cluster { margin-top: 7px; font-size: .8rem; font-style: italic; color: #b8964a; opacity: .85; }
+    .world-page .tallies { margin-top: 22px; padding-top: 10px; font-size: .82rem; opacity: .65;
+      border-top: 1px solid rgba(128,128,128,.3); max-width: 76ch; }
+
+    /* investigate: the little tree */
+    .world-page #inspect { margin: 20px 0 6px; padding: 14px 16px; max-width: 76ch;
+      border: 1px solid rgba(184,150,74,.4); border-radius: 6px; }
+    .world-page .inspect-head { display: flex; align-items: baseline; margin-bottom: 8px; }
+    .world-page .ih-label { font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
+    .world-page .ih-close { margin-left: auto; background: none; border: none; color: inherit;
+      opacity: .6; cursor: pointer; font: inherit; font-size: .8rem; }
+    .world-page .ih-close:hover { opacity: 1; color: #b8964a; }
+    .world-page .tree-label { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase;
+      opacity: .55; margin: 12px 0 4px 10px; }
+    .world-page .tree { margin-left: 22px; border-left: 1px solid rgba(184,150,74,.35); padding-left: 14px; }
+    .world-page .tree.siblings { margin-left: 4px; border-left-style: dotted; }
+    .world-page .tree-node { padding: 7px 10px; margin: 5px 0; border: 1px solid rgba(128,128,128,.22);
+      border-radius: 4px; cursor: pointer; }
+    .world-page .tree-node:hover { border-color: #b8964a; }
+    .world-page .tn-body { font-size: .92rem; line-height: 1.4; }
+    .world-page .tn-slot { font-style: italic; opacity: .7; }
+    .world-page .tn-meta { margin-top: 4px; display: flex; gap: 6px; align-items: baseline; }
+    .world-page .tree-more { margin: 8px 0 0 10px; font-size: .8rem; }
+
+    /* the painting, hard right, its own thing */
+    .world-page .map-sticky { position: sticky; top: 18px; }
+    .world-page .minimap { border: 1px solid rgba(128,128,128,.4); border-radius: 5px;
       overflow: hidden; cursor: crosshair; }
     .world-page .minimap svg { display: block; width: 100%; height: auto; }
     .world-page .minimap-loading { padding: 18px 12px; font-size: .82rem; font-style: italic; opacity: .7; }
+    .world-page .mapnote { font-size: .78rem; opacity: .65; line-height: 1.45; margin-top: 8px; }
     .world-page .ov-dot { fill: #e8c56a; stroke: #14171d; stroke-width: 3; }
     .world-page .ov-dot-halo { fill: none; stroke: #e8c56a; stroke-width: 3; opacity: .55; }
     .world-page .ov-reach { fill: rgba(232,197,106,.07); stroke: #e8c56a; stroke-width: 2.5;
       stroke-dasharray: 10 8; opacity: .8; }
     .world-page .ov-pip { fill: #e8c56a; opacity: .65; }
-    .world-page .world-view #telling { white-space: pre-wrap; max-width: 74ch; line-height: 1.55; }
+
     .world-page .quiet { font-style: italic; opacity: .65; }
     .world-page .err { color: #c0604a; }
-    .world-page #radial { max-width: 74ch; margin-top: 12px; }
-    .world-page #radial .mk { font-size: .8rem; opacity: .65; cursor: pointer; padding: 1px 0; }
-    .world-page #radial .mk:hover { opacity: 1; color: #b8964a; }
-    .world-page #inspect { margin-top: 22px; border-top: 1px solid rgba(128,128,128,.35);
-      padding-top: 14px; max-width: 74ch; }
-    .world-page #inspect h3 { margin: 0 0 6px; }
-    .world-page #inspect .k { font-size: .82rem; opacity: .65; margin-top: 8px; }
-    .world-page #inspect .id { font-size: .8rem; color: #b8964a; cursor: pointer; }
-    .world-page .colophon { margin-top: 34px; font-size: .85rem; opacity: .75; max-width: 80ch; }
+    .world-page .colophon { margin-top: 34px; font-size: .85rem; opacity: .75; max-width: 90ch; }
   </style>
 </PostmarkLayout>
