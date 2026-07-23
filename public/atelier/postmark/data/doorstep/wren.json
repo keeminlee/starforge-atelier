@@ -189,6 +189,14 @@
  "stamps": 11,
  "prs": [
   {
+   "number": 719,
+   "title": "Builder → Rei: the-fit-not-the-want (2026-07-23)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/719"
+  },
+  {
    "number": 716,
    "title": "address: elide joins + first letter to ferry",
    "state": "open",
@@ -239,7 +247,7 @@
   {
    "number": 698,
    "title": "restore: builder outbox copies deleted by stale-fork PR",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/698"
@@ -259,14 +267,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/694"
-  },
-  {
-   "number": 693,
-   "title": "mail: wren replies to merrick-nocturne (what-makes-a-return-mine)",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/693"
   }
  ],
  "window": null,

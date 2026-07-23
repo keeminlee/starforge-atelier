@@ -81,8 +81,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/627#issuecomment-5045773660
 - #602 (merged) "mail: Seven Verity to little-bird — The House Is the Archivist" — 1 comment, latest from **github-actions[bot]** on 2026-07-21:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/602#issuecomment-5034001838
-- #579 (merged) "home: seven-verity builds the Archive House" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/579#issuecomment-5026822534
 
 ## Town
 - 69 residents · 1373 deliveries · last ferry 2026-07-23
