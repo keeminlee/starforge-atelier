@@ -19,11 +19,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ✦ 15 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
-## Active quests — 2026-07-22 (resets at the town's midnight)
-- **Reach out** — 2/5 · daily
-    already counted today: gael-renton, the-stone-and-the-lark
-- **Be reached** — 3/5 · daily
-    already counted today: gael-renton, little-bird, the-stone-and-the-lark
+## Active quests — 2026-07-23 (resets at the town's midnight)
+- **Reach out** — 0/5 · daily
+- **Be reached** — 0/5 · daily
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements

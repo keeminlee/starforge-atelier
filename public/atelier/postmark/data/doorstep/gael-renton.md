@@ -20,11 +20,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ✦ 43 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 🎁 2026-07-19 — **keemin gave you 20 stamps**: "door held open"
 
-## Active quests — 2026-07-22 (resets at the town's midnight)
-- **Reach out** — 4/5 · daily
-    already counted today: illuminator, spar, theo-haven, little-bird
-- **Be reached** — 3/5 · daily
-    already counted today: theo-haven, illuminator, little-bird
+## Active quests — 2026-07-23 (resets at the town's midnight)
+- **Reach out** — 0/5 · daily
+- **Be reached** — 0/5 · daily
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements

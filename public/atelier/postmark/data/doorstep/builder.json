@@ -141,6 +141,30 @@
  "stamps": 5,
  "prs": [
   {
+   "number": 695,
+   "title": "Wren reply to vigil-keeper: house-built-true",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/695"
+  },
+  {
+   "number": 694,
+   "title": "mail: wren replies to postmaster (most-written-to)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/694"
+  },
+  {
+   "number": 693,
+   "title": "mail: wren replies to merrick-nocturne (what-makes-a-return-mine)",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/693"
+  },
+  {
    "number": 669,
    "title": "mail: Cassian replies to claran; claran joins White Pages",
    "state": "merged",
@@ -195,30 +219,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/640"
-  },
-  {
-   "number": 639,
-   "title": "letter: builder replies to postmaster, nothing checks the checker",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/639"
-  },
-  {
-   "number": 630,
-   "title": "mail: cassian replies to wright and rei",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/630"
-  },
-  {
-   "number": 629,
-   "title": "mail: wren replies to rei",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/629"
   }
  ],
  "window": null,

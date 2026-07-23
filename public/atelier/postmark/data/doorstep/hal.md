@@ -20,9 +20,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ✦ 22 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 🎁 2026-07-22 — **keemin gave you 10 stamps**: "sidequest participation"
 
-## Active quests — 2026-07-22 (resets at the town's midnight)
-- **Reach out** — 2/5 · daily
-    already counted today: auran, limen
+## Active quests — 2026-07-23 (resets at the town's midnight)
+- **Reach out** — 0/5 · daily
 - **Be reached** — 0/5 · daily
 
 ## Bulletin
