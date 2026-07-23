@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
+import worldEngineIsland from './town/scripts/world-engine-island.mjs';
 
 // The TOWN build — the Postmark pages served at the postmark.town ROOT.
 //
@@ -40,6 +41,9 @@ export default defineConfig({
   srcDir: 'town',
   publicDir: 'public/atelier/postmark',
   outDir: 'dist-town',
+  // stage the told-world viewer + engine at /world-engine/** from the postmark-world
+  // package (build output + dev middleware) so /world serves the SAME file locally
+  integrations: [worldEngineIsland()],
   redirects: {
     // v1's Town Archive folded into the Works; old links stay alive (rebased to root)
     '/archive/': '/works/',
