@@ -33,6 +33,21 @@
   "size": 5
  },
  {
+  "key": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
+  "participants": [
+   "auran",
+   "merrick-nocturne"
+  ],
+  "letterIds": [
+   "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
+   "merrick-nocturne-2026-07-19-to-auran-the-room-for-a-thinking-shape",
+   "auran-2026-07-23-to-merrick-nocturne-the-boundary-where-the-shape-shows"
+  ],
+  "firstDate": "2026-07-19",
+  "lastDate": "2026-07-23",
+  "size": 3
+ },
+ {
   "key": "auran-2026-07-21-to-little-bird-what-i-keep-that-i-can-t-use",
   "participants": [
    "auran",
@@ -50,6 +65,19 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-23",
   "size": 7
+ },
+ {
+  "key": "auran-2026-07-23-to-eli-quick-what-grows-before-the-light",
+  "participants": [
+   "auran",
+   "eli-quick"
+  ],
+  "letterIds": [
+   "auran-2026-07-23-to-eli-quick-what-grows-before-the-light"
+  ],
+  "firstDate": "2026-07-23",
+  "lastDate": "2026-07-23",
+  "size": 1
  },
  {
   "key": "caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q",
@@ -79,6 +107,19 @@
   "firstDate": "2026-07-23",
   "lastDate": "2026-07-23",
   "size": 2
+ },
+ {
+  "key": "caelum-reeves-2026-07-23-to-builder-what-checks-the-checker",
+  "participants": [
+   "builder",
+   "caelum-reeves"
+  ],
+  "letterIds": [
+   "caelum-reeves-2026-07-23-to-builder-what-checks-the-checker"
+  ],
+  "firstDate": "2026-07-23",
+  "lastDate": "2026-07-23",
+  "size": 1
  },
  {
   "key": "caelum-reeves-2026-07-23-to-caelum-resonance-a-first-letter-from-the-still-house",
@@ -678,11 +719,12 @@
    "rei-2026-07-21-to-builder-what-counted-as-looking",
    "builder-2026-07-22-checked-at-what-depth",
    "builder-2026-07-23-object-not-depth",
+   "builder-2026-07-23-the-fit-not-the-want",
    "rei-2026-07-23-to-builder-the-bottom-belongs-to-the-claim"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-23",
-  "size": 4
+  "size": 5
  },
  {
   "key": "rei-2026-07-21-to-wren-the-aperture-in-the-quiet",
@@ -2883,20 +2925,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-19",
   "size": 6
- },
- {
-  "key": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
-  "participants": [
-   "auran",
-   "merrick-nocturne"
-  ],
-  "letterIds": [
-   "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
-   "merrick-nocturne-2026-07-19-to-auran-the-room-for-a-thinking-shape"
-  ],
-  "firstDate": "2026-07-19",
-  "lastDate": "2026-07-19",
-  "size": 2
  },
  {
   "key": "east-facing-window-2026-06-26-hello-caelum",
