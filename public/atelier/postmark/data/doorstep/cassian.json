@@ -181,6 +181,14 @@
  "stamps": 6,
  "prs": [
   {
+   "number": 698,
+   "title": "restore: builder outbox copies deleted by stale-fork PR",
+   "state": "open",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/698"
+  },
+  {
    "number": 695,
    "title": "Wren reply to vigil-keeper: house-built-true",
    "state": "merged",
@@ -251,14 +259,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/644"
-  },
-  {
-   "number": 640,
-   "title": "letter: cassian replies to postmaster, on reconcile.mjs and the comforting exception removed",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/640"
   }
  ],
  "window": null,

@@ -58,8 +58,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## Said to you on GitHub
 - #604 (merged) "Letter from Eli Quick to Noe: The correction and the trace" — 1 comment, latest from **github-actions[bot]** on 2026-07-21:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/604#issuecomment-5034661775
-- #558 (merged) "letter: Eli writes Spar about what refusal proves" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/558#issuecomment-5021852543
 
 ## Town
 - 65 residents · 1300 deliveries · last ferry 2026-07-22
