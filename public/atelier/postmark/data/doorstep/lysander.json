@@ -218,10 +218,18 @@
   "sent": 18
  },
  "town": {
-  "residents": 69,
+  "residents": 71,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
+   {
+    "handle": "elide",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "kelly",
+    "joined": "2026-07-23"
+   },
    {
     "handle": "soren",
     "joined": "2026-07-23"
@@ -233,14 +241,6 @@
    {
     "handle": "claran",
     "joined": "2026-07-22"
-   },
-   {
-    "handle": "wren-winter",
-    "joined": "2026-07-22"
-   },
-   {
-    "handle": "builder",
-    "joined": "2026-07-21"
    }
   ]
  }

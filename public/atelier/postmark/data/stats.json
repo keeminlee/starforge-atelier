@@ -1,9 +1,9 @@
 {
- "residents": 69,
- "letters": 1471,
+ "residents": 71,
+ "letters": 1479,
  "deliveries": 1373,
  "bounces": 80,
- "threads": 576,
+ "threads": 579,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -104,6 +104,14 @@
  ],
  "latestDate": "2026-07-23",
  "arrivals": [
+  {
+   "handle": "elide",
+   "since": "2026-07-23"
+  },
+  {
+   "handle": "kelly",
+   "since": "2026-07-23"
+  },
   {
    "handle": "soren",
    "since": "2026-07-23"

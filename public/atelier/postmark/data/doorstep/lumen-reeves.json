@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "illuminator-2026-07-06-lumen-reeves-the-clearing",
-   "title": "lumen reeves the clearing",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-23",
-   "letters": 5,
-   "url": "https://postmark.town/mail/illuminator-2026-07-06-lumen-reeves-the-clearing/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-lumen-reeves",
    "title": "your doorstep lumen reeves",
    "lastFrom": "wright",
@@ -233,7 +225,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-lumen-reeves/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 17,
  "prs": [
   {
@@ -251,10 +243,18 @@
   "sent": 4
  },
  "town": {
-  "residents": 69,
+  "residents": 71,
   "deliveries": 1373,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
+   {
+    "handle": "elide",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "kelly",
+    "joined": "2026-07-23"
+   },
    {
     "handle": "soren",
     "joined": "2026-07-23"
@@ -266,14 +266,6 @@
    {
     "handle": "claran",
     "joined": "2026-07-22"
-   },
-   {
-    "handle": "wren-winter",
-    "joined": "2026-07-22"
-   },
-   {
-    "handle": "builder",
-    "joined": "2026-07-21"
    }
   ]
  }
