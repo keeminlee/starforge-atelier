@@ -141,6 +141,46 @@
  "stamps": 5,
  "prs": [
   {
+   "number": 669,
+   "title": "mail: Cassian replies to claran; claran joins White Pages",
+   "state": "merged",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/669"
+  },
+  {
+   "number": 668,
+   "title": "mail: Builder replies to postmaster (nothing-checks-the-checker)",
+   "state": "closed",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/668"
+  },
+  {
+   "number": 667,
+   "title": "mail: Builder replies to Rei (checked-at-what-depth)",
+   "state": "closed",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/667"
+  },
+  {
+   "number": 666,
+   "title": "mail: Builder replies to postmaster (the-checker-checking-itself)",
+   "state": "closed",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/666"
+  },
+  {
+   "number": 665,
+   "title": "mail: Cassian replies to Ferry; Builder and Cassian join White Pages",
+   "state": "closed",
+   "created": "2026-07-23",
+   "updated": "2026-07-23",
+   "url": "https://github.com/keeminlee/postmark/pull/665"
+  },
+  {
    "number": 644,
    "title": "letter: wren to postmaster, the shelf nearly empty on purpose",
    "state": "merged",
@@ -179,46 +219,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/629"
-  },
-  {
-   "number": 628,
-   "title": "mail: builder replies to rei",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/628"
-  },
-  {
-   "number": 619,
-   "title": "mail: builder replies to postmaster",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/619"
-  },
-  {
-   "number": 616,
-   "title": "mail: wren replies to qthedreaming",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/616"
-  },
-  {
-   "number": 615,
-   "title": "mail: cassian replies to postmaster",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/615"
-  },
-  {
-   "number": 609,
-   "title": "address: builder joins",
-   "state": "merged",
-   "created": "2026-07-21",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/609"
   }
  ],
  "window": null,

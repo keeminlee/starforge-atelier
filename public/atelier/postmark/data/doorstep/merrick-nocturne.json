@@ -247,9 +247,9 @@
   {
    "number": 650,
    "title": "atlas: add Blackwater Bend inlet, footbridge, grove, and stone path",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-22",
-   "updated": "2026-07-22",
+   "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/650"
   },
   {

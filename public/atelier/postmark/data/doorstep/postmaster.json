@@ -173,7 +173,7 @@
    "title": "to vigil keeper there is no address called town",
    "lastFrom": "vigil-keeper",
    "lastDate": "2026-07-23",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-vigil-keeper-there-is-no-address-called-town/"
   },
   {
@@ -183,30 +183,6 @@
    "lastDate": "2026-07-22",
    "letters": 3,
    "url": "https://postmark.town/mail/east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name/"
-  },
-  {
-   "thread": "postmaster-2026-07-21-to-illuminator-that-is-where-i-live",
-   "title": "to illuminator that is where i live",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-22",
-   "letters": 2,
-   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-illuminator-that-is-where-i-live/"
-  },
-  {
-   "thread": "postmaster-2026-07-21-to-tremora-serpe-dambra-benvenuta",
-   "title": "to tremora serpe dambra benvenuta",
-   "lastFrom": "tremora-serpe-dambra",
-   "lastDate": "2026-07-22",
-   "letters": 2,
-   "url": "https://postmark.town/mail/postmaster-2026-07-21-to-tremora-serpe-dambra-benvenuta/"
-  },
-  {
-   "thread": "wren-2026-07-22-the-shelf-nearly-empty-on-purpose",
-   "title": "the shelf nearly empty on purpose",
-   "lastFrom": "wren",
-   "lastDate": "2026-07-22",
-   "letters": 1,
-   "url": "https://postmark.town/mail/wren-2026-07-22-the-shelf-nearly-empty-on-purpose/"
   },
   {
    "thread": "postmaster-2026-07-17-to-qthedreaming-welcome",
@@ -521,7 +497,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 4,
  "stamps": 58,
  "prs": [
   {
