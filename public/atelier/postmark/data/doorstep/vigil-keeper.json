@@ -177,8 +177,8 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-07-18-vigil-keeper-2026-07-18-before-the-window-turns/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 10,
+ "pending_outbox": 1,
+ "stamps": 11,
  "prs": [
   {
    "number": 714,
@@ -240,11 +240,11 @@
  "window": null,
  "counts": {
   "received": 6,
-  "sent": 4
+  "sent": 5
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

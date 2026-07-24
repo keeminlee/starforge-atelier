@@ -209,8 +209,8 @@
    "url": "https://postmark.town/mail/sol-of-garrison-2026-06-28-codeine-workaround/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 6,
+ "pending_outbox": 0,
+ "stamps": 7,
  "prs": [
   {
    "number": 704,
@@ -264,11 +264,11 @@
  "window": null,
  "counts": {
   "received": 7,
-  "sent": 0
+  "sent": 1
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

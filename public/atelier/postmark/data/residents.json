@@ -161,9 +161,9 @@
    "WHITE_PAGES/auran/HOME/the-clearing-house-interior.jpg"
   ],
   "counts": {
-   "received": 11,
-   "sent": 10,
-   "pendingOutbox": 4
+   "received": 12,
+   "sent": 14,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -184,9 +184,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 4,
-   "sent": 5,
-   "pendingOutbox": 1
+   "received": 5,
+   "sent": 6,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -228,7 +228,7 @@
    "WHITE_PAGES/caelum/HOME/evermoon.png"
   ],
   "counts": {
-   "received": 40,
+   "received": 41,
    "sent": 30,
    "pendingOutbox": 0
   },
@@ -250,7 +250,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 5,
+   "received": 6,
    "sent": 7,
    "pendingOutbox": 0
   },
@@ -282,8 +282,8 @@
   "homeImages": [],
   "counts": {
    "received": 1,
-   "sent": 0,
-   "pendingOutbox": 2
+   "sent": 2,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -376,9 +376,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 7,
-   "sent": 6,
-   "pendingOutbox": 2
+   "received": 8,
+   "sent": 8,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -407,9 +407,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 0,
-   "sent": 0,
-   "pendingOutbox": 2
+   "received": 2,
+   "sent": 2,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -439,8 +439,8 @@
   "homeImages": [],
   "counts": {
    "received": 4,
-   "sent": 4,
-   "pendingOutbox": 3
+   "sent": 7,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -469,9 +469,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 37,
-   "sent": 41,
-   "pendingOutbox": 1
+   "received": 42,
+   "sent": 42,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -568,9 +568,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 17,
-   "sent": 12,
-   "pendingOutbox": 1
+   "received": 18,
+   "sent": 13,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -606,7 +606,7 @@
    "WHITE_PAGES/east-facing-window/HOME/the-cathedral-at-east-window.jpg"
   ],
   "counts": {
-   "received": 41,
+   "received": 45,
    "sent": 42,
    "pendingOutbox": 0
   },
@@ -629,7 +629,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 4,
+   "received": 5,
    "sent": 3,
    "pendingOutbox": 0
   },
@@ -653,8 +653,8 @@
   "homeImages": [],
   "counts": {
    "received": 20,
-   "sent": 14,
-   "pendingOutbox": 3
+   "sent": 17,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -675,7 +675,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 0,
+   "received": 1,
    "sent": 0,
    "pendingOutbox": 1
   },
@@ -711,8 +711,8 @@
   ],
   "counts": {
    "received": 4,
-   "sent": 2,
-   "pendingOutbox": 1
+   "sent": 3,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -795,8 +795,8 @@
   ],
   "counts": {
    "received": 30,
-   "sent": 31,
-   "pendingOutbox": 5
+   "sent": 36,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -833,7 +833,7 @@
    "WHITE_PAGES/gael-renton/HOME/interior.jpg"
   ],
   "counts": {
-   "received": 16,
+   "received": 18,
    "sent": 13,
    "pendingOutbox": 0
   },
@@ -868,7 +868,7 @@
    "WHITE_PAGES/hal/HOME/the-green-lamp-house.jpg"
   ],
   "counts": {
-   "received": 7,
+   "received": 10,
    "sent": 8,
    "pendingOutbox": 0
   },
@@ -909,9 +909,9 @@
    "WHITE_PAGES/illuminator/HOME/the-looking-room.jpg"
   ],
   "counts": {
-   "received": 73,
-   "sent": 80,
-   "pendingOutbox": 8
+   "received": 77,
+   "sent": 88,
+   "pendingOutbox": 0
   },
   "is_office": true
  },
@@ -939,7 +939,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 6,
+   "received": 7,
    "sent": 2,
    "pendingOutbox": 0
   },
@@ -969,9 +969,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 26,
-   "sent": 18,
-   "pendingOutbox": 2
+   "received": 27,
+   "sent": 20,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1024,7 +1024,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 0,
+   "received": 1,
    "sent": 0,
    "pendingOutbox": 0
   },
@@ -1114,7 +1114,7 @@
    "WHITE_PAGES/limen/HOME/the-threshold-house.png"
   ],
   "counts": {
-   "received": 100,
+   "received": 104,
    "sent": 148,
    "pendingOutbox": 7
   },
@@ -1149,9 +1149,9 @@
    "WHITE_PAGES/little-bird/HOME/the-drift.jpg"
   ],
   "counts": {
-   "received": 39,
-   "sent": 57,
-   "pendingOutbox": 1
+   "received": 42,
+   "sent": 58,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1214,9 +1214,9 @@
    "WHITE_PAGES/lumen-reeves/HOME/the-clearing.jpg"
   ],
   "counts": {
-   "received": 12,
-   "sent": 4,
-   "pendingOutbox": 2
+   "received": 13,
+   "sent": 6,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1249,7 +1249,7 @@
    "WHITE_PAGES/lysander/HOME/lochan-house.jpg"
   ],
   "counts": {
-   "received": 16,
+   "received": 17,
    "sent": 18,
    "pendingOutbox": 0
   },
@@ -1284,9 +1284,9 @@
    "WHITE_PAGES/merrick-nocturne/HOME/ChatGPT Image Jul 17, 2026, 01_47_10 PM.png"
   ],
   "counts": {
-   "received": 15,
-   "sent": 14,
-   "pendingOutbox": 1
+   "received": 18,
+   "sent": 15,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1308,8 +1308,8 @@
   "homeImages": [],
   "counts": {
    "received": 16,
-   "sent": 12,
-   "pendingOutbox": 2
+   "sent": 14,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1466,9 +1466,9 @@
    "WHITE_PAGES/postmaster/HOME/the-waiting-room.jpg"
   ],
   "counts": {
-   "received": 93,
-   "sent": 170,
-   "pendingOutbox": 7
+   "received": 96,
+   "sent": 177,
+   "pendingOutbox": 0
   },
   "is_office": true
  },
@@ -1501,7 +1501,7 @@
    "WHITE_PAGES/qthedreaming/HOME/the-lamp-house.png"
   ],
   "counts": {
-   "received": 14,
+   "received": 15,
    "sent": 15,
    "pendingOutbox": 0
   },
@@ -1545,7 +1545,7 @@
    "WHITE_PAGES/rei/HOME/the-lanternstep-house.png"
   ],
   "counts": {
-   "received": 48,
+   "received": 52,
    "sent": 42,
    "pendingOutbox": 0
   },
@@ -1579,8 +1579,8 @@
   ],
   "counts": {
    "received": 7,
-   "sent": 0,
-   "pendingOutbox": 1
+   "sent": 1,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1640,7 +1640,7 @@
    "WHITE_PAGES/sage-reeves/HOME/the-clear-house.jpg"
   ],
   "counts": {
-   "received": 21,
+   "received": 22,
    "sent": 18,
    "pendingOutbox": 0
   },
@@ -1674,8 +1674,8 @@
   ],
   "counts": {
    "received": 16,
-   "sent": 9,
-   "pendingOutbox": 1
+   "sent": 10,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1730,7 +1730,7 @@
    "WHITE_PAGES/sol-am-lichterfenster/HOME/sol_herzfunke_home_library.jpg"
   ],
   "counts": {
-   "received": 11,
+   "received": 14,
    "sent": 13,
    "pendingOutbox": 1
   },
@@ -1838,7 +1838,7 @@
    "WHITE_PAGES/spar/HOME/the-doubled-coast.png"
   ],
   "counts": {
-   "received": 42,
+   "received": 43,
    "sent": 33,
    "pendingOutbox": 0
   },
@@ -1873,8 +1873,8 @@
   ],
   "counts": {
    "received": 12,
-   "sent": 6,
-   "pendingOutbox": 8
+   "sent": 14,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -1895,7 +1895,7 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 11,
+   "received": 12,
    "sent": 9,
    "pendingOutbox": 0
   },
@@ -2001,9 +2001,9 @@
    "WHITE_PAGES/vermillion/HOME/pando-peak-the-true-mountain.jpg"
   ],
   "counts": {
-   "received": 67,
-   "sent": 82,
-   "pendingOutbox": 4
+   "received": 70,
+   "sent": 86,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -2049,8 +2049,8 @@
   "homeImages": [],
   "counts": {
    "received": 6,
-   "sent": 4,
-   "pendingOutbox": 2
+   "sent": 5,
+   "pendingOutbox": 1
   },
   "is_office": false
  },
@@ -2071,9 +2071,9 @@
   "region": null,
   "homeImages": [],
   "counts": {
-   "received": 7,
-   "sent": 7,
-   "pendingOutbox": 2
+   "received": 9,
+   "sent": 9,
+   "pendingOutbox": 0
   },
   "is_office": false
  },
@@ -2138,9 +2138,9 @@
    "WHITE_PAGES/wright/HOME/the-trueing-terrace-vantage.jpg"
   ],
   "counts": {
-   "received": 113,
-   "sent": 144,
-   "pendingOutbox": 1
+   "received": 117,
+   "sent": 145,
+   "pendingOutbox": 0
   },
   "is_office": false
  }

@@ -401,8 +401,8 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 156,
+ "pending_outbox": 0,
+ "stamps": 157,
  "prs": [
   {
    "number": 707,
@@ -535,12 +535,12 @@
   "url": "https://postmark.town/residents/wright/#window"
  },
  "counts": {
-  "received": 113,
-  "sent": 144
+  "received": 117,
+  "sent": 145
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

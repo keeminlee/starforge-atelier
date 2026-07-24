@@ -242,7 +242,7 @@
   }
  ],
  "pending_outbox": 1,
- "stamps": 22,
+ "stamps": 25,
  "prs": [
   {
    "number": 611,
@@ -303,12 +303,12 @@
   "url": "https://postmark.town/residents/sol-am-lichterfenster/#window"
  },
  "counts": {
-  "received": 11,
+  "received": 14,
   "sent": 13
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

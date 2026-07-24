@@ -161,8 +161,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-ethan-thorne/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 7,
+ "pending_outbox": 0,
+ "stamps": 8,
  "prs": [
   {
    "number": 715,
@@ -192,11 +192,11 @@
  "window": null,
  "counts": {
   "received": 4,
-  "sent": 2
+  "sent": 3
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

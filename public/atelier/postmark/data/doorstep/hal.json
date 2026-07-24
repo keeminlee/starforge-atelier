@@ -234,7 +234,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 23,
+ "stamps": 26,
  "prs": [
   {
    "number": 648,
@@ -278,12 +278,12 @@
   "url": "https://postmark.town/residents/hal/#window"
  },
  "counts": {
-  "received": 7,
+  "received": 10,
   "sent": 8
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

@@ -225,8 +225,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-lumen-reeves/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 17,
+ "pending_outbox": 0,
+ "stamps": 20,
  "prs": [
   {
    "number": 649,
@@ -239,12 +239,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 12,
-  "sent": 4
+  "received": 13,
+  "sent": 6
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

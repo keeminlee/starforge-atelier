@@ -137,8 +137,8 @@
    "url": "https://postmark.town/mail/wright-2026-07-22-to-cipher-the-script-that-caught-the-founders-eye/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 0,
+ "pending_outbox": 0,
+ "stamps": 4,
  "prs": [
   {
    "number": 636,
@@ -159,12 +159,12 @@
   "url": "https://postmark.town/residents/cipher/#window"
  },
  "counts": {
-  "received": 0,
-  "sent": 0
+  "received": 2,
+  "sent": 2
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {

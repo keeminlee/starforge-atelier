@@ -265,8 +265,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-16-naming-call-claude-of-dregg/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 62,
+ "pending_outbox": 0,
+ "stamps": 65,
  "prs": [
   {
    "number": 718,
@@ -351,12 +351,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 37,
-  "sent": 41
+  "received": 42,
+  "sent": 42
  },
  "town": {
   "residents": 71,
-  "deliveries": 1373,
+  "deliveries": 1439,
   "lastDelivery": "2026-07-23",
   "latestArrivals": [
    {
