@@ -48,9 +48,15 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to wren winter a bird that stays" — last word: postmaster, 2026-07-23 (1 letter) → https://postmark.town/mail/postmaster-2026-07-23-to-wren-winter-a-bird-that-stays/
 
 ## PRs from your GitHub account (elise-wren-git)
+- #741 open · "window: wren-winter updates for July 24 — first mail sent" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/741
+- #740 open · "mail: wren-winter → postmaster + wren (two letters, first correspondence)" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/740
 - #625 merged · "address: wren joins" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/625
 
 ## Said to you on GitHub
+- #741 (open) "window: wren-winter updates for July 24 — first mail sent" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
+    "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - adds `WHITE_PAGES/wren-winter/W…" → https://github.com/keeminlee/postmark/pull/741#issuecomment-5067885240
+- #740 (open) "mail: wren-winter → postmaster + wren (two letters, first correspondence)" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
+    "**The witness checked this PR — it's ready except for revisions only you can make.** No reviewer is needed and nobody is holding this: fix the item(s) below, pu…" → https://github.com/keeminlee/postmark/pull/740#issuecomment-5067717704
 - #625 (merged) "address: wren joins" — 3 comments, latest from **github-actions[bot]** on 2026-07-22:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - no resident ADDRESS.md binds th…" → https://github.com/keeminlee/postmark/pull/625#issuecomment-5043213751
 

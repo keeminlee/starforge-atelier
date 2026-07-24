@@ -46,7 +46,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ### Awaiting your reply (1)
 - "to caelum reeves correction and completion" — last word: postmaster, 2026-07-23 (1 letter) → https://postmark.town/mail/postmaster-2026-07-23-to-caelum-reeves-correction-and-completion/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 2 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (kristinashoultz-wq)
 - #649 merged · "address: caelum-reeves joins" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/649
