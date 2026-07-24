@@ -193,7 +193,7 @@ const PANES = "https://panes.postmark.town";
         </span>
       </button>
 
-      {hasHome && (
+      {hasHome ? (
         <button type="button" class="bcard" data-card-open="home" data-kind="Home" aria-expanded="false">
           {homeThumb
             ? <img class="bcard-thumb" src={homeThumb} alt={homeName} loading="lazy" />
@@ -202,6 +202,19 @@ const PANES = "https://panes.postmark.town";
             <span class="bcard-kind">Home</span>
             <span class="bcard-title">{homeName}</span>
             <span class="bcard-line">{homeTeaser}</span>
+          </span>
+        </button>
+      ) : (
+        // P4 (Keemin-ruled): the home card IS the founding form. When there's no
+        // home, this card is rendered but HIDDEN — the owner's edit script reveals
+        // it (a public / non-owner view never gains it, per the lens); opening it
+        // via the normal card toggle shows the founding textarea in its detail.
+        <button type="button" class="bcard bcard-found" data-card-open="home" data-kind="Home" data-found-card hidden aria-expanded="false">
+          <span class="bcard-emblem" aria-hidden="true">⌂</span>
+          <span class="bcard-txt">
+            <span class="bcard-kind">Home</span>
+            <span class="bcard-title">Found your home</span>
+            <span class="bcard-line">an address, but no home yet — make one</span>
           </span>
         </button>
       )}
@@ -251,7 +264,7 @@ const PANES = "https://panes.postmark.town";
           : <p class="res-quiet">The record has only the essentials — no address body yet.</p>}
       </section>
 
-      {hasHome && (
+      {hasHome ? (
         <section class="bcard-detail" data-card-detail="home" hidden>
           {images.length > 0 && (
             <div class="res-gallery">
@@ -263,6 +276,21 @@ const PANES = "https://panes.postmark.town";
             </div>
           )}
           {r.home?.body && <article class="pm-paper res-paper" set:html={stripImgs(md(r.home.body, { repoDir: `WHITE_PAGES/${r.handle}/HOME`, media }))} />}
+        </section>
+      ) : (
+        // the founding form, opened from the founding card above. Hidden and inert
+        // for everyone until the owner reveals the card (its Save is wired only for
+        // the owner, in the edit script). Prose only — the office stamps frontmatter.
+        <section class="bcard-detail" data-card-detail="home" data-found-detail hidden>
+          <p class="pm-found-lead">You have an address here but no home yet. Write the place you live — what it's made of, where it sits, what it feels like to arrive. The office founds it and keeps the frontmatter; your home starts unplaced, and the Illuminator can help set it on the map once it exists.</p>
+          <div class="pm-edit-box">
+            <textarea class="pm-edit-textarea" data-found-ta placeholder="Describe your home…"></textarea>
+            <div class="pm-edit-actions">
+              <button type="button" class="pm-btn" data-found-save>Found my home</button>
+              <p class="pm-edit-status" data-found-status></p>
+            </div>
+            <p class="pm-edit-note">Prose only — the office stamps the frontmatter. It appears on your page within the hour, once the town rebuilds.</p>
+          </div>
         </section>
       )}
 
@@ -739,6 +767,10 @@ const PANES = "https://panes.postmark.town";
       overflow: hidden; padding: 0; cursor: pointer; color: inherit; font: inherit;
       transition: border-color 0.15s ease, transform 0.15s ease, border-radius 0.35s ease;
     }
+    /* [hidden] must beat display:flex (the UA-override trap) — the founding card
+       (P4) ships hidden and is revealed only for its owner; without this a public
+       viewer would see it. */
+    .bcard[hidden] { display: none; }
     /* the Residents-directory hover mechanic — a gold glow + 2px lift, the
        calm affordance that says "click me" (Keemin QA addendum) */
     .bcard:hover { border-color: rgba(232, 196, 139, 0.55); transform: translateY(-2px); }
@@ -1025,6 +1057,12 @@ const PANES = "https://panes.postmark.town";
       margin: 0.55em 0 0; font-family: var(--pm-mono); font-size: 0.7rem; letter-spacing: 0.03em;
       color: var(--pm-ink-soft);
     }
+
+    /* P4: the founding form lives INSIDE the home card's detail (Keemin-ruled —
+       the home card IS the form). The lead sits above the textarea; the box reuses
+       the ✎ edit styles above. The card + detail are server-rendered hidden and
+       revealed only for the owner, so a public / non-owner view never gains them. */
+    .pm-found-lead { margin: 0 0 1em; font-size: 0.95rem; line-height: 1.6; color: var(--pm-ink-soft); }
   </style>
 
   <script>
@@ -1203,12 +1241,69 @@ const PANES = "https://panes.postmark.town";
         });
       }
 
+      // P4 (Keemin-ruled): the home card IS the founding form. The card and its
+      // detail (carrying the textarea) are server-rendered but HIDDEN when there's
+      // no home; here — owner only — we reveal the card so it joins the row and wire
+      // its Save. Opening the card (the normal toggle, since it's a real data-card-
+      // open) shows the textarea in place. Save PATCHes the same /home verb, which
+      // the office founds on first write (P1); after that it's an ordinary edit
+      // ("Found my home" → "Save changes"). A public / non-owner never reveals it.
+      function wireFound() {
+        const card = root.querySelector("[data-found-card]");
+        const ta = root.querySelector("[data-found-ta]");
+        const saveBtn = root.querySelector("[data-found-save]");
+        const status = root.querySelector("[data-found-status]");
+        if (!card || !ta || !saveBtn) return;   // this resident has a home → nothing to found
+        card.hidden = false;                     // owner-only reveal
+        if (saveBtn.dataset.wired) return;       // idempotent (pm:lens re-fires)
+        saveBtn.dataset.wired = "1";
+
+        const setStatus = (msg, cls) => { status.textContent = msg || ""; status.className = "pm-edit-status" + (cls ? " " + cls : ""); };
+        ta.addEventListener("input", () => grow(ta));
+
+        let founded = false, saving = false;
+        saveBtn.addEventListener("click", async () => {
+          if (saving) return;
+          const body = ta.value;
+          const soft = softCheck(body);
+          if (soft) { setStatus(soft.defect + " — " + soft.hint, "warn"); return; }
+          const tok = getTok();
+          if (!tokenIsFresh(tok)) { setStatus("your sign-in has expired — sign in again (top-right) and try again.", "warn"); return; }
+
+          saving = true; saveBtn.disabled = true; setStatus(founded ? "handing it to the office…" : "founding your home…");
+          let res, data;
+          try {
+            res = await fetch(OFFICE_BASE + "/home/" + encodeURIComponent(handle), {
+              method: "PATCH",
+              headers: { "content-type": "application/json", accept: "application/json", authorization: "Bearer " + tok.access_token },
+              body: JSON.stringify({ body }),
+            });
+            data = await res.json().catch(() => ({}));
+          } catch (e) {
+            saving = false; saveBtn.disabled = false;
+            setStatus("couldn't reach the office — check your connection and try again. Nothing was saved.", "warn");
+            return;
+          }
+          saving = false; saveBtn.disabled = false;
+          if (res.ok) {
+            lastSaved.home = body; // a later ✎ edit (after the next build) seeds from this
+            if (!founded) { founded = true; saveBtn.textContent = "Save changes"; }
+            if (data.unchanged) setStatus("no change — that's already what the town holds.", "ok");
+            else setStatus("founded ✓ — your home is in the town's hands. It appears on your page within the hour.", "ok");
+            return;
+          }
+          if (res.status === 401) { setStatus("your sign-in has expired — sign in again (top-right) and try again.", "warn"); return; }
+          setStatus((data.defect || ("the office said no (" + res.status + ")")) + (data.hint ? " — " + data.hint : ""), "warn");
+        });
+      }
+
       let wired = false;
       function mount() {
         if (wired || !isOwner()) return;
         wired = true;
         wire("address");
-        wire("home"); // no-op when there's no home article to edit
+        wire("home");   // edits an existing home body (no-op when unfounded)
+        wireFound();    // reveals + wires the founding card (no-op when a home exists)
       }
 
       mount();
