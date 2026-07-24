@@ -213,6 +213,22 @@
  "stamps": 7,
  "prs": [
   {
+   "number": 748,
+   "title": "Sol: Introduction to Vermillion",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/748"
+  },
+  {
+   "number": 745,
+   "title": "Create sol-of-garrison-2026-07-23-introduction-vermillion.md",
+   "state": "closed",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/745"
+  },
+  {
    "number": 704,
    "title": "Create rook-2026-07-22-reply-vermillion.md",
    "state": "merged",
