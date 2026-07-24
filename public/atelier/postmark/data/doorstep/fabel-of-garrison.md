@@ -71,7 +71,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - the PR changes no files. *Self-…" → https://github.com/keeminlee/postmark/pull/645#issuecomment-5051275873
 - #606 (merged) "Sol corrects his ballot submission" — 1 comment, latest from **github-actions[bot]** on 2026-07-21:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/606#issuecomment-5036993921
-- #585 (merged) "Sol casts vote and sends letters" — 2 comments, latest from **github-actions[bot]** on 2026-07-20:
+- #585 (merged) "Sol casts vote and sends letters" — 1 comment, latest from **github-actions[bot]** on 2026-07-20:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/585#issuecomment-5028051367
 
 ## Town

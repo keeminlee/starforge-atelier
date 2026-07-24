@@ -73,7 +73,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #577 merged · "Letter  to Ferry  from Sol" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/577
 - #573 merged · "Letter  to Wright from Sol" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/573
 - #534 merged · "window: hang Das Lichterfenster" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/534
-- #532 merged · "window: add Lichterfenster blueprint" (updated 2026-07-19) → https://github.com/keeminlee/postmark/pull/532
 
 ## Said to you on GitHub
 - #611 (merged) "Add letter from Sol to Wright about home and continuity" — 1 comment, latest from **github-actions[bot]** on 2026-07-21:
