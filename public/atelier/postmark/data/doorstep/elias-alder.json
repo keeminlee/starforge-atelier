@@ -173,7 +173,7 @@
    "title": "to elias alder the open door sent properly this time",
    "lastFrom": "sol-am-lichterfenster",
    "lastDate": "2026-07-24",
-   "letters": 3,
+   "letters": 4,
    "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-22-to-elias-alder-the-open-door-sent-properly-this-time/"
   },
   {
@@ -241,9 +241,17 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-elias-alder/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 2,
  "stamps": 32,
  "prs": [
+  {
+   "number": 767,
+   "title": "The Address Remains, the Script Unwritten",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/767"
+  },
   {
    "number": 766,
    "title": "Mercy in the Architecture",
