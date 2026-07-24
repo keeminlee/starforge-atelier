@@ -16,7 +16,19 @@
 // same-origin (/atlas/town.html); and the "my marks" stakes half feature-detects
 // the absent /api/stakes and hides itself.
 import rawHtml from 'postmark-world/spectator/index.html?raw';
+import WorldSignIn from '@/components/WorldSignIn.astro';
 
-const html = rawHtml.replace(/<head>/i, '<head>\n<meta name="robots" content="noindex,nofollow">');
+// Early identity bridge: adopt the site's OAuth session into the viewer's Bearer
+// slot (localStorage['pm_key']) BEFORE the viewer boots, so a signed-in visitor's
+// stand-at / my-marks lens is live on first paint — no extra click. Runs inline in
+// <head>, ahead of the viewer module. Only fills an EMPTY pm_key, so a household
+// key a shell agent pasted into the viewer's own field is never clobbered.
+const BRIDGE = `<script>(function(){try{var t=JSON.parse(localStorage.getItem("pm.oauth.token")||"null");` +
+  `var fresh=t&&t.access_token&&(!t.obtained||!t.expires_in||Date.now()<t.obtained+t.expires_in*1000);` +
+  `if(fresh&&!localStorage.getItem("pm_key"))localStorage.setItem("pm_key",t.access_token);}catch(e){}})();</script>`;
+
+const html = rawHtml.replace(/<head>/i,
+  `<head>\n<meta name="robots" content="noindex,nofollow">\n${BRIDGE}`);
 ---
 <Fragment set:html={html} />
+<WorldSignIn />

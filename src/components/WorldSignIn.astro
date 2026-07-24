@@ -1,0 +1,119 @@
+---
+// WorldSignIn — the human sign-in affordance for the told-world page.
+//
+// The world page is a PASSTHROUGH of the postmark-world viewer (no site layout,
+// so none of the layout's top-right sign-in), and the viewer authenticates only
+// by a Bearer held in localStorage['pm_key']. A browser visitor has no way to
+// present one, so the stand-at / my-marks lens never activates for them — the
+// gap this closes.
+//
+// This island runs the site's GitHub OAuth flow — the SAME PKCE dance the layout
+// sign-in does, reusing the pure surface in @/lib/auth.mjs. The callback lands on
+// "/" (the client's one registered redirect), where the layout's island exchanges
+// the code and stores the token; we set returnTo=/world/ so the browser comes
+// back here. The early bridge in world.astro then mirrors that token into
+// localStorage['pm_key'] before the viewer boots, so the lens is live on load.
+//
+// Shell agents still paste a household key into the viewer's own key field — this
+// is only the human door (GitHub for humans, keys for machinery, as on /join).
+---
+<div id="pm-world-auth" class="wa" hidden>
+  <span class="wa-who" data-wa-who hidden></span>
+  <button type="button" class="wa-btn" data-wa-signin hidden>Sign in with GitHub</button>
+  <button type="button" class="wa-btn wa-out" data-wa-signout hidden>sign out</button>
+</div>
+
+<script>
+  // The crypto + fetch live here (auth.mjs stays the pure, testable surface); this
+  // mirrors the layout's login island — the kickoff half only, since the code
+  // exchange happens on "/" and we return here with the token already stored.
+  import { AS, KEYS, buildAuthorizeUrl, tokenIsFresh } from "@/lib/auth.mjs";
+
+  const root = document.getElementById("pm-world-auth");
+  if (root) (function () {
+    const signinBtn = root.querySelector("[data-wa-signin]");
+    const signoutBtn = root.querySelector("[data-wa-signout]");
+    const whoEl = root.querySelector("[data-wa-who]");
+    const redirectUri = location.origin + "/"; // the client's one registered callback
+
+    const getTok = () => { try { return JSON.parse(localStorage.getItem(KEYS.token) || "null"); } catch { return null; } };
+    const cachedHandles = () => { try { return JSON.parse(sessionStorage.getItem("pm.oauth.handles") || localStorage.getItem("pm.oauth.handles.cache") || "[]"); } catch { return []; } };
+
+    const b64url = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    const rand = () => { const a = new Uint8Array(32); crypto.getRandomValues(a); return b64url(a.buffer); };
+    const challenge = async (v) => b64url(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(v)));
+
+    async function clientId() {
+      let id = localStorage.getItem(KEYS.client);
+      if (id) return id;
+      const res = await fetch(AS.register, {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          client_name: "postmark.town", redirect_uris: [redirectUri],
+          token_endpoint_auth_method: "none", grant_types: ["authorization_code", "refresh_token"],
+          response_types: ["code"],
+        }),
+      });
+      if (!res.ok) throw new Error("register " + res.status);
+      id = (await res.json()).client_id;
+      localStorage.setItem(KEYS.client, id);
+      return id;
+    }
+
+    function paint() {
+      const signedIn = tokenIsFresh(getTok());
+      root.hidden = false;
+      signinBtn.hidden = signedIn;
+      signoutBtn.hidden = !signedIn;
+      const handles = signedIn ? cachedHandles() : [];
+      whoEl.hidden = !signedIn;
+      whoEl.textContent = signedIn ? (handles.length ? "✦ " + handles.join(" · ") : "✦ signed in") : "";
+    }
+
+    signinBtn.addEventListener("click", async () => {
+      try {
+        const id = await clientId();
+        const verifier = rand();
+        const state = rand();
+        sessionStorage.setItem(KEYS.verifier, verifier);
+        sessionStorage.setItem(KEYS.state, state);
+        sessionStorage.setItem(KEYS.returnTo, location.pathname + location.search); // come back to /world/
+        location.href = buildAuthorizeUrl({ clientId: id, redirectUri, codeChallenge: await challenge(verifier), state });
+      } catch (e) { signinBtn.textContent = "sign-in unavailable"; }
+    });
+
+    signoutBtn.addEventListener("click", () => {
+      // sign out of the site session AND drop the viewer's Bearer, then reload so
+      // the viewer re-boots keyless (the early bridge finds no token to re-adopt).
+      try { localStorage.removeItem(KEYS.token); } catch {}
+      try { localStorage.removeItem("pm_key"); } catch {}
+      sessionStorage.removeItem("pm.oauth.handles");
+      location.reload();
+    });
+
+    paint();
+  })();
+</script>
+
+<style>
+  .wa {
+    position: fixed; top: 10px; right: 12px; z-index: 9000;
+    display: flex; align-items: center; gap: 8px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .wa-who {
+    font-size: 0.72rem; letter-spacing: 0.03em; color: #e8c48b;
+    max-width: 42vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .wa-btn {
+    font: inherit; font-size: 0.72rem; letter-spacing: 0.05em;
+    color: #f6dcae; background: rgba(20, 23, 29, 0.86);
+    border: 1px solid rgba(232, 196, 139, 0.5); border-radius: 999px;
+    padding: 6px 14px; cursor: pointer;
+    backdrop-filter: blur(4px);
+  }
+  .wa-btn:hover { background: rgba(232, 196, 139, 0.14); }
+  .wa-out { color: #b9b19c; border-color: rgba(185, 177, 156, 0.4); }
+  .wa-out:hover { background: rgba(185, 177, 156, 0.12); }
+  @media (max-width: 640px) { .wa-who { display: none; } }
+</style>
