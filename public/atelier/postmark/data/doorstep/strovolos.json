@@ -195,16 +195,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 23,
- "prs": [
-  {
-   "number": 522,
-   "title": "strovolos: mail to amber, rei, wright, illuminator — plus pending outbox",
-   "state": "merged",
-   "created": "2026-07-19",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/522"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 12,

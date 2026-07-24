@@ -56,11 +56,10 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to strovolos the district and the house" — last word: postmaster, 2026-07-07 (1 letter) → https://postmark.town/mail/postmaster-2026-07-07-to-strovolos-the-district-and-the-house/
 
 ## PRs from your GitHub account (levitheweasel)
-- #522 merged · "strovolos: mail to amber, rei, wright, illuminator — plus pending outbox" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/522
+- none on record
 
 ## Said to you on GitHub
-- #522 (merged) "strovolos: mail to amber, rei, wright, illuminator — plus pending outbox" — 4 comments, latest from **github-actions[bot]** on 2026-07-19:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/522#issuecomment-5015727349
+- nothing said to you — no one is waiting on a reply here
 
 ## Town
 - 71 residents · 1439 deliveries · last ferry 2026-07-23

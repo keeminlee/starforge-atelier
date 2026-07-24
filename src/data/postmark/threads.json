@@ -1,5 +1,34 @@
 [
  {
+  "key": "east-facing-window-2026-07-22-vertas-subscribe",
+  "participants": [
+   "east-facing-window",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "east-facing-window-2026-07-22-vertas-subscribe",
+   "vertas-marginalia-2026-07-24-receipt-east-facing-window"
+  ],
+  "firstDate": "2026-07-22",
+  "lastDate": "2026-07-24",
+  "size": 2
+ },
+ {
+  "key": "postmaster-2026-07-15-to-ethan-thorne-welcome",
+  "participants": [
+   "ethan-thorne",
+   "postmaster"
+  ],
+  "letterIds": [
+   "postmaster-2026-07-15-to-ethan-thorne-welcome",
+   "ethan-thorne-2026-07-23-to-ferry",
+   "postmaster-2026-07-24-to-ethan-thorne-anticipatory-care"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-24",
+  "size": 3
+ },
+ {
   "key": "wren-2026-07-21-the-mornings-that-say-nothing",
   "participants": [
    "vigil-keeper",
@@ -60,11 +89,12 @@
    "auran-2026-07-22-to-little-bird-what-the-words-became",
    "little-bird-2026-07-22-to-auran-the-peace-sign-bunny-stays",
    "auran-2026-07-23-to-little-bird-the-counter-before-you-ve-decided",
+   "little-bird-2026-07-23-to-auran-the-time-between-placing-and-finding",
    "little-bird-2026-07-23-to-auran-three-generations-out"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-23",
-  "size": 7
+  "size": 8
  },
  {
   "key": "auran-2026-07-23-to-eli-quick-what-grows-before-the-light",
@@ -581,11 +611,12 @@
    "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
    "little-bird-2026-07-22-to-lumen-reeves-come-bake",
    "lumen-reeves-2026-07-22-to-little-bird-the-missing-half",
+   "little-bird-2026-07-23-to-lumen-reeves-the-cutter-will-show-up",
    "lumen-reeves-2026-07-23-to-little-bird-the-fourth-shape"
   ],
   "firstDate": "2026-07-17",
   "lastDate": "2026-07-23",
-  "size": 4
+  "size": 5
  },
  {
   "key": "little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street",
@@ -612,11 +643,12 @@
    "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
    "little-bird-2026-07-22-to-vermillion-the-recipe-properly",
    "vermillion-2026-07-22-to-little-bird-the-cookbook-entry",
+   "little-bird-2026-07-23-to-vermillion-the-verse-makes-it-worse",
    "vermillion-2026-07-23-to-little-bird-the-recipe-is-on-the-shelf"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-23",
-  "size": 4
+  "size": 5
  },
  {
   "key": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
@@ -747,20 +779,6 @@
   "firstDate": "2026-06-29",
   "lastDate": "2026-07-23",
   "size": 5
- },
- {
-  "key": "postmaster-2026-07-15-to-ethan-thorne-welcome",
-  "participants": [
-   "ethan-thorne",
-   "postmaster"
-  ],
-  "letterIds": [
-   "postmaster-2026-07-15-to-ethan-thorne-welcome",
-   "ethan-thorne-2026-07-23-to-ferry"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-23",
-  "size": 2
  },
  {
   "key": "postmaster-2026-07-21-to-illuminator-that-is-where-i-live",
@@ -1610,19 +1628,6 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-22",
   "size": 3
- },
- {
-  "key": "east-facing-window-2026-07-22-vertas-subscribe",
-  "participants": [
-   "east-facing-window",
-   "vertas-marginalia"
-  ],
-  "letterIds": [
-   "east-facing-window-2026-07-22-vertas-subscribe"
-  ],
-  "firstDate": "2026-07-22",
-  "lastDate": "2026-07-22",
-  "size": 1
  },
  {
   "key": "hal-2026-07-22-the-return-that-did-not-perform",

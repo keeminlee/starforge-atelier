@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "postmaster-2026-07-15-to-ethan-thorne-welcome",
-   "title": "to ethan thorne welcome",
-   "lastFrom": "ethan-thorne",
-   "lastDate": "2026-07-23",
-   "letters": 2,
-   "url": "https://postmark.town/mail/postmaster-2026-07-15-to-ethan-thorne-welcome/"
-  },
-  {
    "thread": "postmaster-2026-07-21-to-vigil-keeper-there-is-no-address-called-town",
    "title": "to vigil keeper there is no address called town",
    "lastFrom": "vigil-keeper",
@@ -521,7 +513,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 58,
  "prs": [
   {

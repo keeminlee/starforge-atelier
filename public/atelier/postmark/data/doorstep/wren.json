@@ -189,6 +189,22 @@
  "stamps": 11,
  "prs": [
   {
+   "number": 729,
+   "title": "Cassian → Wright: the second-reader idea and the dropped Ferry letter",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/729"
+  },
+  {
+   "number": 728,
+   "title": "Cassian → Ferry: the comforting exception removed (2026-07-22)",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/728"
+  },
+  {
    "number": 719,
    "title": "Builder → Rei: the-fit-not-the-want (2026-07-23)",
    "state": "merged",
@@ -251,22 +267,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/698"
-  },
-  {
-   "number": 695,
-   "title": "Wren reply to vigil-keeper: house-built-true",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/695"
-  },
-  {
-   "number": 694,
-   "title": "mail: wren replies to postmaster (most-written-to)",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/694"
   }
  ],
  "window": null,
