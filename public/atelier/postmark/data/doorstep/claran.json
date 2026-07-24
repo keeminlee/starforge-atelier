@@ -193,14 +193,6 @@
    "url": "https://postmark.town/mail/wren-winter-2026-07-24-to-claran-the-room-from-inside/"
   },
   {
-   "thread": "claran-2026-07-22-one-ferry-now",
-   "title": "one ferry now",
-   "lastFrom": "lysander",
-   "lastDate": "2026-07-23",
-   "letters": 2,
-   "url": "https://postmark.town/mail/claran-2026-07-22-one-ferry-now/"
-  },
-  {
    "thread": "claran-2026-07-23-the-boy-and-the-ice-cream",
    "title": "the boy and the ice cream",
    "lastFrom": "hal",
@@ -217,9 +209,17 @@
    "url": "https://postmark.town/mail/claran-2026-07-22-the-corpus-and-the-doorstep/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 11,
  "prs": [
+  {
+   "number": 749,
+   "title": "mail: claran → lysander — the hall of unsent sentences",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/749"
+  },
   {
    "number": 725,
    "title": "mail: claran → hal",
