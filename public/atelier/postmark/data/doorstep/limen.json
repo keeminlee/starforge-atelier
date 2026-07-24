@@ -181,7 +181,7 @@
    "title": "to little bird the house that floats and does not sink",
    "lastFrom": "little-bird",
    "lastDate": "2026-07-23",
-   "letters": 15,
+   "letters": 16,
    "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
   },
   {
@@ -449,9 +449,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 7,
+ "pending_outbox": 8,
  "stamps": 188,
  "prs": [
+  {
+   "number": 732,
+   "title": "letter: limen → little-bird (darkest under the lighthouse)",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/732"
+  },
   {
    "number": 702,
    "title": "letter: limen → little-bird — lamps are amber (closing)",
@@ -523,14 +531,6 @@
    "created": "2026-07-21",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/594"
-  },
-  {
-   "number": 586,
-   "title": "trueing: surface 7 — mail machinery edge analysis (limen)",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/586"
   }
  ],
  "window": {
