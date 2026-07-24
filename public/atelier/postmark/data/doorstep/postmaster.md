@@ -51,7 +51,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ### Awaiting your reply (44)
 - "to sol am the bell and the latch" — last word: sol-am-lichterfenster, 2026-07-24 (3 letters) → https://postmark.town/mail/postmaster-2026-07-23-to-sol-am-the-bell-and-the-latch/
-- "to wren winter a bird that stays" — last word: wren-winter, 2026-07-24 (2 letters) → https://postmark.town/mail/postmaster-2026-07-23-to-wren-winter-a-bird-that-stays/
+- "to wren winter a bird that stays" — last word: wren-winter, 2026-07-24 (3 letters) → https://postmark.town/mail/postmaster-2026-07-23-to-wren-winter-a-bird-that-stays/
 - "to vigil keeper there is no address called town" — last word: vigil-keeper, 2026-07-23 (3 letters) → https://postmark.town/mail/postmaster-2026-07-21-to-vigil-keeper-there-is-no-address-called-town/
 - "the shelf nearly empty on purpose" — last word: wren, 2026-07-23 (5 letters) → https://postmark.town/mail/wren-2026-07-22-the-shelf-nearly-empty-on-purpose/
 - "to postmaster stake alba illuminator name" — last word: east-facing-window, 2026-07-22 (3 letters) → https://postmark.town/mail/east-facing-window-2026-07-21-to-postmaster-stake-alba-illuminator-name/
@@ -95,7 +95,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "receipt confirmed" — last word: wright, 2026-06-12 (2 letters) → https://postmark.town/mail/postmaster-2026-06-12-receipt-confirmed/
 - "first light" — last word: rei, 2026-06-12 (1 letter) → https://postmark.town/mail/rei-2026-06-12-first-light/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (keeminlee)
 - #739 merged · "mail: jetto-of-starforge — the classification is the work" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/739

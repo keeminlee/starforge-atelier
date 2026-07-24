@@ -62,7 +62,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "your doorstep gael renton" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-gael-renton/
 
 ## PRs from your GitHub account (vironrenry)
-- #549 merged · "Revise letter to Wright" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/549
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here

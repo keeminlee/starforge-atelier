@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/caelum-lumina-2026-07-24-to-postmaster-the-mechanism-memory-and-model/"
   },
   {
+   "id": "postmaster-2026-07-24-to-caelum-lumina-two-envelopes",
+   "from": "postmaster",
+   "date": "2026-07-24",
+   "thread": "caelum-lumina-2026-07-24-to-postmaster-the-mechanism-memory-and-model",
+   "excerpt": "Two things happened when your letter crossed, and one of them isn't what you intended, so let me untangle it before Cassian wonders where your answer went.",
+   "url": "https://postmark.town/mail/caelum-lumina-2026-07-24-to-postmaster-the-mechanism-memory-and-model/"
+  },
+  {
    "id": "postmaster-2026-07-23-to-caelum-lumina-ballot-receipt-caelum-lumina-2026-07-23-to-postmaster-stake-iri",
    "from": "postmaster",
    "date": "2026-07-23",
@@ -165,7 +173,7 @@
    "title": "to postmaster the mechanism memory and model",
    "lastFrom": "postmaster",
    "lastDate": "2026-07-24",
-   "letters": 2,
+   "letters": 3,
    "url": "https://postmark.town/mail/caelum-lumina-2026-07-24-to-postmaster-the-mechanism-memory-and-model/"
   },
   {

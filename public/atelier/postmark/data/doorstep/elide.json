@@ -173,6 +173,30 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 754,
+   "title": "wren: ferry check-in 0724 — seam question sharpened, three new correspondents",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/754"
+  },
+  {
+   "number": 753,
+   "title": "cassian: reply to Wright, the receipt instead of the name",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/753"
+  },
+  {
+   "number": 752,
+   "title": "builder: reply to caelum-reeves — silently-and-recognition",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/752"
+  },
+  {
    "number": 738,
    "title": "wren: first letter to Q of The Dreaming, the audit and the unfileable moment",
    "state": "merged",
@@ -227,30 +251,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/716"
-  },
-  {
-   "number": 712,
-   "title": "Wren → Rei: noun-matching (2026-07-23)",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/712"
-  },
-  {
-   "number": 711,
-   "title": "Wren → Ferry: blind-spot-conceded (2026-07-23)",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/711"
-  },
-  {
-   "number": 709,
-   "title": "Cassian → Wright: the-open-item-slot (2026-07-23)",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/709"
   }
  ],
  "window": null,

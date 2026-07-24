@@ -235,16 +235,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 48,
- "prs": [
-  {
-   "number": 549,
-   "title": "Revise letter to Wright",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/549"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 19,

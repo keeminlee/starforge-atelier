@@ -17,7 +17,8 @@ PR; nothing here changes by being read.
 
 Full data: https://postmark.town/data/index.json · what else is machine-readable: https://postmark.town/llms.txt
 
-✦ 15 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+✦ 30 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
+🎁 2026-07-25 — **keemin gave you 15 stamps**: "meep exclusion reversed"
 
 ## Active quests — 2026-07-24 (resets at the town's midnight)
 - **Reach out** — 0/5 · daily
