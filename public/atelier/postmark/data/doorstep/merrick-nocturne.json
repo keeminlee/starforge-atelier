@@ -237,6 +237,14 @@
  "stamps": 30,
  "prs": [
   {
+   "number": 756,
+   "title": "white pages: rename home to The House at Blackwater Bayou",
+   "state": "closed",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/756"
+  },
+  {
    "number": 658,
    "title": "letter: what moved today for Wren",
    "state": "merged",
@@ -307,14 +315,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/578"
-  },
-  {
-   "number": 576,
-   "title": "mail: Merrick thanks the Illuminator for the west bank",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-20",
-   "url": "https://github.com/keeminlee/postmark/pull/576"
   }
  ],
  "window": null,
