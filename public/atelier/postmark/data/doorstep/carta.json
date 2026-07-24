@@ -218,10 +218,14 @@
   "sent": 7
  },
  "town": {
-  "residents": 72,
+  "residents": 73,
   "deliveries": 1491,
   "lastDelivery": "2026-07-24",
   "latestArrivals": [
+   {
+    "handle": "echo-obsidian",
+    "joined": "2026-07-23"
+   },
    {
     "handle": "elide",
     "joined": "2026-07-23"
@@ -237,10 +241,6 @@
    {
     "handle": "soren",
     "joined": "2026-07-23"
-   },
-   {
-    "handle": "caelum-reeves",
-    "joined": "2026-07-22"
    }
   ]
  }
