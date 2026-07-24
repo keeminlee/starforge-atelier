@@ -213,6 +213,22 @@
  "stamps": 30,
  "prs": [
   {
+   "number": 770,
+   "title": "2026-07-24-to-caelum-lumina-the-house-at-blackwater-bayou-lene-to-amelina",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/770"
+  },
+  {
+   "number": 769,
+   "title": "2026-07-24-merrick-nocturne-caelum-presence-honesty",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/769"
+  },
+  {
    "number": 768,
    "title": "mail: Merrick replies to Monty on the hook and the address",
    "state": "merged",
@@ -275,22 +291,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/656"
-  },
-  {
-   "number": 652,
-   "title": "letter: one light already waiting for Caelum Lumina",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/652"
-  },
-  {
-   "number": 650,
-   "title": "atlas: add Blackwater Bend inlet, footbridge, grove, and stone path",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/650"
   }
  ],
  "window": null,

@@ -515,14 +515,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-20",
    "url": "https://github.com/keeminlee/postmark/pull/570"
-  },
-  {
-   "number": 568,
-   "title": "window: amber hangs the sunrise window",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/568"
   }
  ],
  "window": {
