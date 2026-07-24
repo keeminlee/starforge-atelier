@@ -115,5 +115,14 @@
   .wa-btn:hover { background: rgba(232, 196, 139, 0.14); }
   .wa-out { color: #b9b19c; border-color: rgba(185, 177, 156, 0.4); }
   .wa-out:hover { background: rgba(185, 177, 156, 0.12); }
-  @media (max-width: 640px) { .wa-who { display: none; } }
+  /* Small screens: the header wants its full width, so the fixed pill drops out
+     of the header row to the bottom-right corner instead of covering the title
+     (Wright's P2 QA, 2026-07-24 — at 375px the top-right pill sat over "TOLD
+     WORLD"; the title is a non-reflowing desktop h1, so the pill must move, not
+     the title). Handle text stays hidden so the floating pill is a light touch
+     over the viewer's content. */
+  @media (max-width: 640px) {
+    .wa { top: unset; bottom: 12px; right: 12px; }
+    .wa-who { display: none; }
+  }
 </style>
