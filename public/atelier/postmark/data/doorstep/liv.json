@@ -265,9 +265,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-liv/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 55,
  "prs": [
+  {
+   "number": 743,
+   "title": "liv: letter to wright — the door and the clock you didn't start",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/743"
+  },
   {
    "number": 559,
    "title": "mail: liv -> limen, the compass and the guard",
