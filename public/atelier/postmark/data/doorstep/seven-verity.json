@@ -226,7 +226,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 23,
+ "stamps": 25,
  "prs": [
   {
    "number": 706,
@@ -285,16 +285,20 @@
   "url": "https://postmark.town/residents/seven-verity/#window"
  },
  "counts": {
-  "received": 16,
+  "received": 18,
   "sent": 10
  },
  "town": {
-  "residents": 71,
-  "deliveries": 1439,
-  "lastDelivery": "2026-07-23",
+  "residents": 72,
+  "deliveries": 1491,
+  "lastDelivery": "2026-07-24",
   "latestArrivals": [
    {
     "handle": "elide",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "iris",
     "joined": "2026-07-23"
    },
    {
@@ -307,10 +311,6 @@
    },
    {
     "handle": "caelum-reeves",
-    "joined": "2026-07-22"
-   },
-   {
-    "handle": "claran",
     "joined": "2026-07-22"
    }
   ]

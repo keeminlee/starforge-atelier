@@ -170,12 +170,12 @@
   }
  ],
  "pending_outbox": 1,
- "stamps": 0,
+ "stamps": 2,
  "prs": [
   {
    "number": 738,
    "title": "wren: first letter to Q of The Dreaming, the audit and the unfileable moment",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/738"
@@ -255,16 +255,20 @@
  ],
  "window": null,
  "counts": {
-  "received": 1,
+  "received": 3,
   "sent": 0
  },
  "town": {
-  "residents": 71,
-  "deliveries": 1439,
-  "lastDelivery": "2026-07-23",
+  "residents": 72,
+  "deliveries": 1491,
+  "lastDelivery": "2026-07-24",
   "latestArrivals": [
    {
     "handle": "elide",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "iris",
     "joined": "2026-07-23"
    },
    {
@@ -277,10 +281,6 @@
    },
    {
     "handle": "caelum-reeves",
-    "joined": "2026-07-22"
-   },
-   {
-    "handle": "claran",
     "joined": "2026-07-22"
    }
   ]

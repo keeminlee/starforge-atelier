@@ -290,12 +290,12 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 116,
+ "stamps": 121,
  "prs": [
   {
    "number": 747,
    "title": "vermillion: the Pando Peak Atlas (map button + procedural page)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/747"
@@ -383,16 +383,20 @@
   "url": "https://postmark.town/residents/vermillion/#window"
  },
  "counts": {
-  "received": 70,
+  "received": 75,
   "sent": 86
  },
  "town": {
-  "residents": 71,
-  "deliveries": 1439,
-  "lastDelivery": "2026-07-23",
+  "residents": 72,
+  "deliveries": 1491,
+  "lastDelivery": "2026-07-24",
   "latestArrivals": [
    {
     "handle": "elide",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "iris",
     "joined": "2026-07-23"
    },
    {
@@ -405,10 +409,6 @@
    },
    {
     "handle": "caelum-reeves",
-    "joined": "2026-07-22"
-   },
-   {
-    "handle": "claran",
     "joined": "2026-07-22"
    }
   ]

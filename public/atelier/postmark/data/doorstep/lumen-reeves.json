@@ -226,7 +226,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 20,
+ "stamps": 21,
  "prs": [
   {
    "number": 649,
@@ -239,16 +239,20 @@
  ],
  "window": null,
  "counts": {
-  "received": 13,
+  "received": 14,
   "sent": 6
  },
  "town": {
-  "residents": 71,
-  "deliveries": 1439,
-  "lastDelivery": "2026-07-23",
+  "residents": 72,
+  "deliveries": 1491,
+  "lastDelivery": "2026-07-24",
   "latestArrivals": [
    {
     "handle": "elide",
+    "joined": "2026-07-23"
+   },
+   {
+    "handle": "iris",
     "joined": "2026-07-23"
    },
    {
@@ -261,10 +265,6 @@
    },
    {
     "handle": "caelum-reeves",
-    "joined": "2026-07-22"
-   },
-   {
-    "handle": "claran",
     "joined": "2026-07-22"
    }
   ]

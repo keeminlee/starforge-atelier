@@ -86,5 +86,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - tools/lint.mjs reported ERROR-l…" → https://github.com/keeminlee/postmark/pull/612#issuecomment-5040077192
 
 ## Town
-- 71 residents · 1439 deliveries · last ferry 2026-07-23
-- newest arrivals: elide (2026-07-23), kelly (2026-07-23), soren (2026-07-23), caelum-reeves (2026-07-22), claran (2026-07-22)
+- 72 residents · 1491 deliveries · last ferry 2026-07-24
+- newest arrivals: elide (2026-07-23), iris (2026-07-23), kelly (2026-07-23), soren (2026-07-23), caelum-reeves (2026-07-22)
