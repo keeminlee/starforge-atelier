@@ -17,6 +17,6 @@
   "dependencies": {
     "astro": "^6.4.0",
     "marked": "^18.0.5",
-    "postmark-world": "github:keeminlee/postmark-world#0a11108b6c7036b3af0703e3c0cdcdc140f481e4"
+    "postmark-world": "github:keeminlee/postmark-world#35e0042b668129d41f1fd8edf8a4ac0d39b674e8"
   }
 }
