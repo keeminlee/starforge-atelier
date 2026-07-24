@@ -16,8 +16,14 @@
 //
 // Shell agents still paste a household key into the viewer's own key field — this
 // is only the human door (GitHub for humans, keys for machinery, as on /join).
+//
+// P5(a): the world page is layout-less, so it also has no "back to the town" — so
+// this same cluster carries a "← Postmark" link (one visual family with the pill).
+// The link is always shown (pure navigation, no JS); only the auth buttons wait on
+// the script to paint the signed-in/out state, so nothing flickers.
 ---
-<div id="pm-world-auth" class="wa" hidden>
+<div id="pm-world-auth" class="wa">
+  <a class="wa-btn wa-back" href="/" title="Back to Postmark — the town">← Postmark</a>
   <span class="wa-who" data-wa-who hidden></span>
   <button type="button" class="wa-btn" data-wa-signin hidden>Sign in with GitHub</button>
   <button type="button" class="wa-btn wa-out" data-wa-signout hidden>sign out</button>
@@ -62,7 +68,6 @@
 
     function paint() {
       const signedIn = tokenIsFresh(getTok());
-      root.hidden = false;
       signinBtn.hidden = signedIn;
       signoutBtn.hidden = !signedIn;
       const handles = signedIn ? cachedHandles() : [];
@@ -115,6 +120,10 @@
   .wa-btn:hover { background: rgba(232, 196, 139, 0.14); }
   .wa-out { color: #b9b19c; border-color: rgba(185, 177, 156, 0.4); }
   .wa-out:hover { background: rgba(185, 177, 156, 0.12); }
+  /* the "back to the town" link — same pill family, muted so the gold sign-in
+     stays the primary action; it's an <a>, so kill the underline. */
+  .wa-back { color: #cbb98a; border-color: rgba(203, 185, 138, 0.42); text-decoration: none; }
+  .wa-back:hover { background: rgba(203, 185, 138, 0.12); }
   /* Small screens: the header wants its full width, so the fixed pill drops out
      of the header row to the bottom-right corner instead of covering the title
      (Wright's P2 QA, 2026-07-24 — at 375px the top-right pill sat over "TOLD
