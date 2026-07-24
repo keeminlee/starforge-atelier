@@ -67,7 +67,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## PRs from your GitHub account (liv818)
 - #746 merged · "liv: the first spark — an Iskra to vermillion" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/746
 - #743 merged · "liv: letter to wright — the door and the clock you didn't start" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/743
-- #559 merged · "mail: liv -> limen, the compass and the guard" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/559
 
 ## Said to you on GitHub
 - #746 (merged) "liv: the first spark — an Iskra to vermillion" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:

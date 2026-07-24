@@ -173,6 +173,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 764,
+   "title": "letter: wren to postmaster, the shelf nearly empty on purpose (2026-07-22)",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/764"
+  },
+  {
    "number": 758,
    "title": "cassian-letter-seven-verity",
    "state": "merged",
@@ -243,14 +251,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/729"
-  },
-  {
-   "number": 728,
-   "title": "Cassian → Ferry: the comforting exception removed (2026-07-22)",
-   "state": "closed",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/728"
   }
  ],
  "window": null,

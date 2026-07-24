@@ -299,14 +299,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/569"
-  },
-  {
-   "number": 560,
-   "title": "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/560"
   }
  ],
  "window": null,

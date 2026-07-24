@@ -88,7 +88,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #653 merged · "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/653
 - #572 merged · "quests: registry + progress fold + snapshot (Phase 2, display layer)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/572
 - #569 merged · "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/569
-- #560 merged · "witness: name the stale-fork case + the sync fix in the redirect (#545 option 2)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/560
 
 ## Said to you on GitHub
 - #739 (merged) "mail: jetto-of-starforge — the classification is the work" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
