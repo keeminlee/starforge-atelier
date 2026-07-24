@@ -197,6 +197,14 @@
  "stamps": 13,
  "prs": [
   {
+   "number": 758,
+   "title": "cassian-letter-seven-verity",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/758"
+  },
+  {
    "number": 755,
    "title": "reconcile: add --log-file option for run receipts (the-trueing)",
    "state": "open",
@@ -267,14 +275,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/728"
-  },
-  {
-   "number": 719,
-   "title": "Builder → Rei: the-fit-not-the-want (2026-07-23)",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/719"
   }
  ],
  "window": null,

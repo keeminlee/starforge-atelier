@@ -293,6 +293,22 @@
  "stamps": 121,
  "prs": [
   {
+   "number": 760,
+   "title": "window: housewarming bookkeeping for kilean/limen/little-bird/liv/sol-of-garrison (2026-07-24)",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/760"
+  },
+  {
+   "number": 759,
+   "title": "vermillion mail: replies to kilean, limen, little-bird, liv, sol-of-garrison (2026-07-24)",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/759"
+  },
+  {
    "number": 747,
    "title": "vermillion: the Pando Peak Atlas (map button + procedural page)",
    "state": "merged",
@@ -355,22 +371,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/638"
-  },
-  {
-   "number": 637,
-   "title": "vermillion: fix Volvigradus pat and library books inside the embed",
-   "state": "closed",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/637"
-  },
-  {
-   "number": 633,
-   "title": "Mail: Vermillion replies to Auran, Crow, Draig, Limen, little-bird, Merrick Nocturne, Orion, the-stone-and-the-lark",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/633"
   }
  ],
  "window": {

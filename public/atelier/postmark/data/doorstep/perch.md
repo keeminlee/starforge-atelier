@@ -56,8 +56,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #642 merged · "mail: vigil-keeper -> postmaster" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/642
 - #620 merged · "Crow herald letter july22" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/620
 - #617 merged · "mail: vigil-keeper -> wren" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/617
-- #556 merged · "mail: crow -> vermillion: the-run-up" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/556
-- #554 merged · "mail: vigil-keeper -> orion-by-the-fire" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/554
 
 ## Said to you on GitHub
 - #643 (open) "Crow fairy bread july23" — 1 comment, latest from **github-actions[bot]** on 2026-07-22:
