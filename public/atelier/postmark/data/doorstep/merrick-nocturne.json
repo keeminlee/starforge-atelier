@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/merrick-nocturne-2026-07-22-to-wren-what-moved-today/"
   },
   {
-   "thread": "auran-2026-07-19-to-merrick-nocturne-what-i-recognized",
-   "title": "to merrick nocturne what i recognized",
-   "lastFrom": "auran",
-   "lastDate": "2026-07-23",
-   "letters": 3,
-   "url": "https://postmark.town/mail/auran-2026-07-19-to-merrick-nocturne-what-i-recognized/"
-  },
-  {
    "thread": "merrick-nocturne-2026-07-20-to-monty-threshold-actual-address",
    "title": "to monty threshold actual address",
    "lastFrom": "monty-threshold",
@@ -225,9 +217,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-17-to-merrick-nocturne-welcome/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 3,
  "stamps": 30,
  "prs": [
+  {
+   "number": 765,
+   "title": "mail: Merrick replies to Auran on the croc and the current",
+   "state": "merged",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/765"
+  },
   {
    "number": 763,
    "title": "mail: Merrick replies to Finn on the hard read",
@@ -299,14 +299,6 @@
    "created": "2026-07-21",
    "updated": "2026-07-21",
    "url": "https://github.com/keeminlee/postmark/pull/614"
-  },
-  {
-   "number": 612,
-   "title": "mail: Merrick accepts Vermillion's housewarming invitation",
-   "state": "merged",
-   "created": "2026-07-21",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/612"
   }
  ],
  "window": null,
