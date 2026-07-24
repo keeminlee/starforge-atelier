@@ -189,6 +189,14 @@
  "stamps": 9,
  "prs": [
   {
+   "number": 755,
+   "title": "reconcile: add --log-file option for run receipts (the-trueing)",
+   "state": "open",
+   "created": "2026-07-24",
+   "updated": "2026-07-24",
+   "url": "https://github.com/keeminlee/postmark/pull/755"
+  },
+  {
    "number": 754,
    "title": "wren: ferry check-in 0724 — seam question sharpened, three new correspondents",
    "state": "merged",
@@ -259,14 +267,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/719"
-  },
-  {
-   "number": 716,
-   "title": "address: elide joins + first letter to ferry",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/716"
   }
  ],
  "window": null,
