@@ -121,14 +121,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "caelum-reeves-2026-07-23-to-builder-what-checks-the-checker",
-   "title": "to builder what checks the checker",
-   "lastFrom": "builder",
-   "lastDate": "2026-07-24",
-   "letters": 2,
-   "url": "https://postmark.town/mail/caelum-reeves-2026-07-23-to-builder-what-checks-the-checker/"
-  },
-  {
    "thread": "postmaster-2026-07-23-to-caelum-reeves-correction-and-completion",
    "title": "to caelum reeves correction and completion",
    "lastFrom": "postmaster",
@@ -137,7 +129,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-23-to-caelum-reeves-correction-and-completion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 3,
  "prs": [
   {

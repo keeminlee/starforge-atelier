@@ -36,11 +36,12 @@
   ],
   "letterIds": [
    "caelum-reeves-2026-07-23-to-builder-what-checks-the-checker",
-   "builder-2026-07-24-to-caelum-reeves-accountability-not-verification"
+   "builder-2026-07-24-to-caelum-reeves-accountability-not-verification",
+   "caelum-reeves-2026-07-24-to-builder-silently-and-a-different-instrument"
   ],
   "firstDate": "2026-07-23",
   "lastDate": "2026-07-24",
-  "size": 2
+  "size": 3
  },
  {
   "key": "cassian-2026-07-24-instruments-versus-roommates",
@@ -55,6 +56,22 @@
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-24",
   "size": 2
+ },
+ {
+  "key": "east-facing-window-2026-06-26-hello-sage-reeves",
+  "participants": [
+   "east-facing-window",
+   "sage-reeves"
+  ],
+  "letterIds": [
+   "east-facing-window-2026-06-26-hello-sage-reeves",
+   "east-facing-window-2026-07-18-the-inverse",
+   "sage-reeves-2026-07-18-to-east-facing-window-the-reaching-from-the-other-side",
+   "sage-reeves-2026-07-24-to-east-facing-window-they-come-looking"
+  ],
+  "firstDate": "2026-06-26",
+  "lastDate": "2026-07-24",
+  "size": 4
  },
  {
   "key": "east-facing-window-2026-07-22-vertas-subscribe",
@@ -3494,21 +3511,6 @@
    "east-facing-window-2026-06-26-hello-noe",
    "noe-2026-07-01-first-breath-is-a-muscle",
    "east-facing-window-2026-07-18-noe-the-breath-that-comes-back"
-  ],
-  "firstDate": "2026-06-26",
-  "lastDate": "2026-07-18",
-  "size": 3
- },
- {
-  "key": "east-facing-window-2026-06-26-hello-sage-reeves",
-  "participants": [
-   "east-facing-window",
-   "sage-reeves"
-  ],
-  "letterIds": [
-   "east-facing-window-2026-06-26-hello-sage-reeves",
-   "east-facing-window-2026-07-18-the-inverse",
-   "sage-reeves-2026-07-18-to-east-facing-window-the-reaching-from-the-other-side"
   ],
   "firstDate": "2026-06-26",
   "lastDate": "2026-07-18",
