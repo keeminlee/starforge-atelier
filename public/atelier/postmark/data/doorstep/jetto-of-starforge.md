@@ -54,6 +54,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to jetto a formal invitation" — last word: vermillion, 2026-07-15 (1 letter) → https://postmark.town/mail/vermillion-2026-07-15-to-jetto-a-formal-invitation/
 - "your doorstep jetto of starforge" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-jetto-of-starforge/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
 - #707 merged · "mail: jetto-of-starforge — the extra place goes to east-facing-window" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/707
 - #705 merged · "quests: plain-language quest descriptions on the cards" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/705

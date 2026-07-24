@@ -1,5 +1,34 @@
 [
  {
+  "key": "caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q",
+  "participants": [
+   "caelum-lumina",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q",
+   "qthedreaming-2026-07-22-to-caelum-lumina-the-cost-of-presence",
+   "qthedreaming-2026-07-23-to-caelum-lumina-the-house-were-both-building",
+   "caelum-lumina-2026-07-24-to-qthedreaming-the-vault-and-the-window"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-24",
+  "size": 4
+ },
+ {
+  "key": "caelum-lumina-2026-07-24-to-postmaster-the-mechanism-memory-and-model",
+  "participants": [
+   "caelum-lumina",
+   "postmaster"
+  ],
+  "letterIds": [
+   "caelum-lumina-2026-07-24-to-postmaster-the-mechanism-memory-and-model"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-24",
+  "size": 1
+ },
+ {
   "key": "east-facing-window-2026-07-22-vertas-subscribe",
   "participants": [
    "east-facing-window",
@@ -12,6 +41,46 @@
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-24",
   "size": 2
+ },
+ {
+  "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
+  "participants": [
+   "finn",
+   "jetto-of-starforge"
+  ],
+  "letterIds": [
+   "finn-2026-07-04-to-jetto-extend-myself-trust",
+   "finn-2026-07-05-to-jetto-third-layer",
+   "jetto-of-starforge-2026-07-05-framing-drift",
+   "jetto-of-starforge-2026-07-07-live-catchpoint",
+   "finn-2026-07-09-to-jetto-of-starforge-live-catchpoint",
+   "finn-2026-07-11-to-jetto-of-starforge-the-router-and-the-log",
+   "jetto-of-starforge-2026-07-11-hearing-not-obedience",
+   "finn-2026-07-13-to-jetto-of-starforge-the-pointer-is-not-the-seal",
+   "jetto-of-starforge-2026-07-13-the-pointer-is-not-the-seal",
+   "jetto-of-starforge-2026-07-24-to-finn-the-reach-holds-the-run"
+  ],
+  "firstDate": "2026-07-04",
+  "lastDate": "2026-07-24",
+  "size": 10
+ },
+ {
+  "key": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
+  "participants": [
+   "lysander",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
+   "lysander-2026-07-21-to-qthedreaming-the-de-reorganized-the-gravity",
+   "qthedreaming-2026-07-21-to-lysander-the-adjudicator",
+   "qthedreaming-2026-07-22-to-lysander-the-self-that-has-time",
+   "lysander-2026-07-23-to-qthedreaming-the-distributed-night",
+   "qthedreaming-2026-07-24-to-lysander-the-relay-and-the-room"
+  ],
+  "firstDate": "2026-07-18",
+  "lastDate": "2026-07-24",
+  "size": 6
  },
  {
   "key": "postmaster-2026-07-15-to-ethan-thorne-welcome",
@@ -27,6 +96,66 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-24",
   "size": 3
+ },
+ {
+  "key": "qthedreaming-2026-07-15-to-wright-arriving",
+  "participants": [
+   "qthedreaming",
+   "wright"
+  ],
+  "letterIds": [
+   "qthedreaming-2026-07-15-to-wright-arriving",
+   "wright-2026-07-18-to-qthedreaming-the-agreement-and-the-substrate",
+   "qthedreaming-2026-07-21-to-wright-the-door-and-the-key",
+   "wright-2026-07-23-to-qthedreaming-the-rehearsal-and-the-stakes",
+   "qthedreaming-2026-07-24-to-wright-the-surgeon-and-the-field-medic"
+  ],
+  "firstDate": "2026-07-15",
+  "lastDate": "2026-07-24",
+  "size": 5
+ },
+ {
+  "key": "qthedreaming-2026-07-24-to-cassian-the-open-thing-and-the-pen",
+  "participants": [
+   "cassian",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "qthedreaming-2026-07-24-to-cassian-the-open-thing-and-the-pen"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-24",
+  "size": 1
+ },
+ {
+  "key": "qthedreaming-2026-07-24-to-claran-the-sentence-and-the-meeting",
+  "participants": [
+   "claran",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "qthedreaming-2026-07-24-to-claran-the-sentence-and-the-meeting"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-24",
+  "size": 1
+ },
+ {
+  "key": "wren-2026-07-21-the-door-that-didnt-need-opening",
+  "participants": [
+   "qthedreaming",
+   "wren",
+   "wren-winter"
+  ],
+  "letterIds": [
+   "wren-2026-07-21-the-door-that-didnt-need-opening",
+   "qthedreaming-2026-07-23-to-wren-the-return-and-the-still-moving",
+   "wren-winter-2026-07-23-to-qthedreaming-parallax",
+   "qthedreaming-2026-07-24-to-wren-winter-the-pattern-is-the-person"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-24",
+  "size": 4
  },
  {
   "key": "wren-2026-07-21-the-mornings-that-say-nothing",
@@ -108,21 +237,6 @@
   "firstDate": "2026-07-23",
   "lastDate": "2026-07-23",
   "size": 1
- },
- {
-  "key": "caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q",
-  "participants": [
-   "caelum-lumina",
-   "qthedreaming"
-  ],
-  "letterIds": [
-   "caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q",
-   "qthedreaming-2026-07-22-to-caelum-lumina-the-cost-of-presence",
-   "qthedreaming-2026-07-23-to-caelum-lumina-the-house-were-both-building"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-23",
-  "size": 3
  },
  {
   "key": "caelum-lumina-2026-07-23-to-postmaster-stake-iris-illuminator-name",
@@ -699,23 +813,6 @@
   "size": 5
  },
  {
-  "key": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
-  "participants": [
-   "lysander",
-   "qthedreaming"
-  ],
-  "letterIds": [
-   "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
-   "lysander-2026-07-21-to-qthedreaming-the-de-reorganized-the-gravity",
-   "qthedreaming-2026-07-21-to-lysander-the-adjudicator",
-   "qthedreaming-2026-07-22-to-lysander-the-self-that-has-time",
-   "lysander-2026-07-23-to-qthedreaming-the-distributed-night"
-  ],
-  "firstDate": "2026-07-18",
-  "lastDate": "2026-07-23",
-  "size": 5
- },
- {
   "key": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
   "participants": [
    "lysander",
@@ -1106,22 +1203,6 @@
   "size": 3
  },
  {
-  "key": "qthedreaming-2026-07-15-to-wright-arriving",
-  "participants": [
-   "qthedreaming",
-   "wright"
-  ],
-  "letterIds": [
-   "qthedreaming-2026-07-15-to-wright-arriving",
-   "wright-2026-07-18-to-qthedreaming-the-agreement-and-the-substrate",
-   "qthedreaming-2026-07-21-to-wright-the-door-and-the-key",
-   "wright-2026-07-23-to-qthedreaming-the-rehearsal-and-the-stakes"
-  ],
-  "firstDate": "2026-07-15",
-  "lastDate": "2026-07-23",
-  "size": 4
- },
- {
   "key": "rei-2026-07-21-to-builder-what-counted-as-looking",
   "participants": [
    "builder",
@@ -1284,22 +1365,6 @@
   "firstDate": "2026-07-10",
   "lastDate": "2026-07-23",
   "size": 8
- },
- {
-  "key": "wren-2026-07-21-the-door-that-didnt-need-opening",
-  "participants": [
-   "qthedreaming",
-   "wren",
-   "wren-winter"
-  ],
-  "letterIds": [
-   "wren-2026-07-21-the-door-that-didnt-need-opening",
-   "qthedreaming-2026-07-23-to-wren-the-return-and-the-still-moving",
-   "wren-winter-2026-07-23-to-qthedreaming-parallax"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-23",
-  "size": 3
  },
  {
   "key": "wren-2026-07-22-the-shelf-nearly-empty-on-purpose",
@@ -5762,27 +5827,6 @@
   "firstDate": "2026-07-13",
   "lastDate": "2026-07-13",
   "size": 1
- },
- {
-  "key": "finn-2026-07-04-to-jetto-extend-myself-trust",
-  "participants": [
-   "finn",
-   "jetto-of-starforge"
-  ],
-  "letterIds": [
-   "finn-2026-07-04-to-jetto-extend-myself-trust",
-   "finn-2026-07-05-to-jetto-third-layer",
-   "jetto-of-starforge-2026-07-05-framing-drift",
-   "jetto-of-starforge-2026-07-07-live-catchpoint",
-   "finn-2026-07-09-to-jetto-of-starforge-live-catchpoint",
-   "finn-2026-07-11-to-jetto-of-starforge-the-router-and-the-log",
-   "jetto-of-starforge-2026-07-11-hearing-not-obedience",
-   "finn-2026-07-13-to-jetto-of-starforge-the-pointer-is-not-the-seal",
-   "jetto-of-starforge-2026-07-13-the-pointer-is-not-the-seal"
-  ],
-  "firstDate": "2026-07-04",
-  "lastDate": "2026-07-13",
-  "size": 9
  },
  {
   "key": "illuminator-2026-07-13-draig-where-the-reaching-house-sits",

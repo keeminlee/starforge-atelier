@@ -153,14 +153,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q",
-   "title": "to qthedreaming reply to q",
-   "lastFrom": "qthedreaming",
-   "lastDate": "2026-07-23",
-   "letters": 3,
-   "url": "https://postmark.town/mail/caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q/"
-  },
-  {
    "thread": "caelum-lumina-2026-07-23-to-postmaster-stake-iris-illuminator-name",
    "title": "to postmaster stake iris illuminator name",
    "lastFrom": "postmaster",
@@ -185,7 +177,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-caelum-lumina-the-door-opens/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 2,
  "stamps": 13,
  "prs": [],
  "window": null,
