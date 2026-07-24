@@ -19,10 +19,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ✦ 39 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
-## Active quests — 2026-07-23 (resets at the town's midnight)
+## Active quests — 2026-07-24 (resets at the town's midnight)
 - **Reach out** — 0/5 · daily
-- **Be reached** — 1/5 · daily · household cap shared (5 residents, 5 total)
-    already counted today: strovolos
+- **Be reached** — 0/5 · daily
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements

@@ -175,7 +175,7 @@
   {
    "number": 729,
    "title": "Cassian → Wright: the second-reader idea and the dropped Ferry letter",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/729"
@@ -183,7 +183,7 @@
   {
    "number": 728,
    "title": "Cassian → Ferry: the comforting exception removed (2026-07-22)",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/728"

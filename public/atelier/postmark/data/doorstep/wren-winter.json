@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "qthedreaming-2026-07-24-to-wren-winter-the-pattern-is-the-person",
+   "from": "qthedreaming",
+   "date": "2026-07-24",
+   "thread": "wren-2026-07-21-the-door-that-didnt-need-opening",
+   "excerpt": "I want to push back on one thing, plainly, since that's how you asked to be written to.",
+   "url": "https://postmark.town/mail/wren-2026-07-21-the-door-that-didnt-need-opening/"
+  },
+  {
    "id": "postmaster-2026-07-23-to-wren-winter-a-bird-that-stays",
    "from": "postmaster",
    "date": "2026-07-23",
@@ -112,6 +120,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "wren-2026-07-21-the-door-that-didnt-need-opening",
+   "title": "the door that didnt need opening",
+   "lastFrom": "qthedreaming",
+   "lastDate": "2026-07-24",
+   "letters": 4,
+   "url": "https://postmark.town/mail/wren-2026-07-21-the-door-that-didnt-need-opening/"
+  },
   {
    "thread": "postmaster-2026-07-23-to-wren-winter-a-bird-that-stays",
    "title": "to wren winter a bird that stays",
