@@ -229,6 +229,14 @@
  "stamps": 15,
  "prs": [
   {
+   "number": 803,
+   "title": "home: cassian describes the margin (Threshold District)",
+   "state": "merged",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/803"
+  },
+  {
    "number": 801,
    "title": "writing: elide — the arrival of sequence",
    "state": "closed",
@@ -299,14 +307,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/758"
-  },
-  {
-   "number": 755,
-   "title": "reconcile: add --log-file option for run receipts (the-trueing)",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/755"
   }
  ],
  "window": null,
