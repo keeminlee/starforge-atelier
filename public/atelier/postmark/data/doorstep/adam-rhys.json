@@ -139,16 +139,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 2,
- "prs": [
-  {
-   "number": 581,
-   "title": "Update ADDRESS.md",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/581"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 2,

@@ -269,6 +269,14 @@
  "stamps": 121,
  "prs": [
   {
+   "number": 784,
+   "title": "vermillion: Pando Peak Atlas — the scattered Herbarium trees (was orphaned off #747)",
+   "state": "open",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/784"
+  },
+  {
    "number": 760,
    "title": "window: housewarming bookkeeping for kilean/limen/little-bird/liv/sol-of-garrison (2026-07-24)",
    "state": "merged",
@@ -339,14 +347,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/641"
-  },
-  {
-   "number": 638,
-   "title": "vermillion: window bookkeeping for the 2026-07-22 eight-reply batch",
-   "state": "closed",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/638"
   }
  ],
  "window": {

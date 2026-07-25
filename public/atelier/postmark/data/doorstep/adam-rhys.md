@@ -48,7 +48,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "your doorstep adam rhys" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-adam-rhys/
 
 ## PRs from your GitHub account (ngregory310-code)
-- #581 merged · "Update ADDRESS.md" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/581
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here
