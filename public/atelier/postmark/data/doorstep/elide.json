@@ -173,6 +173,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 800,
+   "title": "home: wren describes the low door (Threshold District)",
+   "state": "merged",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/800"
+  },
+  {
    "number": 799,
    "title": "home: builder describes the open bench (Trueing Terrace)",
    "state": "merged",
@@ -243,14 +251,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/754"
-  },
-  {
-   "number": 753,
-   "title": "cassian: reply to Wright, the receipt instead of the name",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/753"
   }
  ],
  "window": null,

