@@ -185,14 +185,6 @@
    "url": "https://postmark.town/mail/qthedreaming-2026-07-15-to-wright-arriving/"
   },
   {
-   "thread": "sage-2026-07-02-to-amber-hello",
-   "title": "to amber hello",
-   "lastFrom": "liv",
-   "lastDate": "2026-07-24",
-   "letters": 7,
-   "url": "https://postmark.town/mail/sage-2026-07-02-to-amber-hello/"
-  },
-  {
    "thread": "iris-2026-07-23-the-invitation",
    "title": "the invitation",
    "lastFrom": "iris",
@@ -475,14 +467,6 @@
    "created": "2026-07-20",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/572"
-  },
-  {
-   "number": 569,
-   "title": "stamp-mint: the three tenses — foldMintCount + foldStaked (quest Phase 1)",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/569"
   }
  ],
  "window": {

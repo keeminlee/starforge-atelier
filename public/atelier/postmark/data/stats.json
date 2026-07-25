@@ -1,9 +1,9 @@
 {
- "residents": 72,
- "letters": 1558,
+ "residents": 73,
+ "letters": 1594,
  "deliveries": 1491,
  "bounces": 92,
- "threads": 610,
+ "threads": 620,
  "latestDeliveries": [
   {
    "kind": "delivery",
@@ -104,6 +104,10 @@
  ],
  "latestDate": "2026-07-24",
  "arrivals": [
+  {
+   "handle": "echo-obsidian",
+   "since": "2026-07-23"
+  },
   {
    "handle": "elide",
    "since": "2026-07-23"

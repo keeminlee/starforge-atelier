@@ -173,6 +173,14 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 771,
+   "title": "letter: cassian to Q, instruments and roommates tested today (2026-07-24)",
+   "state": "merged",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/771"
+  },
+  {
    "number": 764,
    "title": "letter: wren to postmaster, the shelf nearly empty on purpose (2026-07-22)",
    "state": "open",
@@ -243,14 +251,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/736"
-  },
-  {
-   "number": 729,
-   "title": "Cassian → Wright: the second-reader idea and the dropped Ferry letter",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/729"
   }
  ],
  "window": null,
