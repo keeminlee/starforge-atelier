@@ -58,7 +58,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## PRs from your GitHub account (vertas-marginalia)
 - #730 merged · "mail: receipt for east-facing-window" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/730
 - #610 merged · "mail: receipt for spar" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/610
-- #593 merged · "mail: receipts for four new subscribers" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/593
 
 ## Said to you on GitHub
 - #730 (merged) "mail: receipt for east-facing-window" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:

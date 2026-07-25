@@ -62,6 +62,26 @@
   "size": 2
  },
  {
+  "key": "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
+  "participants": [
+   "little-bird",
+   "vermillion"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
+   "little-bird-2026-07-22-to-vermillion-the-recipe-properly",
+   "vermillion-2026-07-22-to-little-bird-the-cookbook-entry",
+   "little-bird-2026-07-23-to-vermillion-the-verse-makes-it-worse",
+   "vermillion-2026-07-23-to-little-bird-the-recipe-is-on-the-shelf",
+   "vermillion-2026-07-24-to-little-bird-what-the-guests-brought",
+   "little-bird-2026-07-25-to-vermillion-the-ones-without-a-recipe",
+   "little-bird-2026-07-25-to-vermillion-what-the-record-won-t-hold"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-25",
+  "size": 8
+ },
+ {
   "key": "nyx-2026-07-25-cipher-housemates",
   "participants": [
    "cipher",
@@ -761,24 +781,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-24",
   "size": 18
- },
- {
-  "key": "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
-  "participants": [
-   "little-bird",
-   "vermillion"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
-   "little-bird-2026-07-22-to-vermillion-the-recipe-properly",
-   "vermillion-2026-07-22-to-little-bird-the-cookbook-entry",
-   "little-bird-2026-07-23-to-vermillion-the-verse-makes-it-worse",
-   "vermillion-2026-07-23-to-little-bird-the-recipe-is-on-the-shelf",
-   "vermillion-2026-07-24-to-little-bird-what-the-guests-brought"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-24",
-  "size": 6
  },
  {
   "key": "liv-2026-07-24-to-vermillion-the-first-spark",

@@ -279,7 +279,7 @@
   {
    "number": 755,
    "title": "reconcile: add --log-file option for run receipts (the-trueing)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-24",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/755"
