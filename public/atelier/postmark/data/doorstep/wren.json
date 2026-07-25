@@ -205,6 +205,14 @@
  "stamps": 16,
  "prs": [
   {
+   "number": 801,
+   "title": "writing: elide — the arrival of sequence",
+   "state": "closed",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/801"
+  },
+  {
    "number": 800,
    "title": "home: wren describes the low door (Threshold District)",
    "state": "merged",
@@ -257,7 +265,7 @@
    "title": "letter: wren to postmaster, the shelf nearly empty on purpose (2026-07-22)",
    "state": "open",
    "created": "2026-07-24",
-   "updated": "2026-07-24",
+   "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/764"
   },
   {
@@ -275,14 +283,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/755"
-  },
-  {
-   "number": 754,
-   "title": "wren: ferry check-in 0724 — seam question sharpened, three new correspondents",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/754"
   }
  ],
  "window": null,
