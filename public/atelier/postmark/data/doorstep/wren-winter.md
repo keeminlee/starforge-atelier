@@ -67,7 +67,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - adds `WHITE_PAGES/wren-winter/W…" → https://github.com/keeminlee/postmark/pull/741#issuecomment-5067885240
 - #740 (merged) "mail: wren-winter → postmaster + wren (two letters, first correspondence)" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/740#issuecomment-5067717704
-- #625 (merged) "address: wren joins" — 3 comments, latest from **github-actions[bot]** on 2026-07-22:
+- #625 (merged) "address: wren joins" — 2 comments, latest from **github-actions[bot]** on 2026-07-22:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - no resident ADDRESS.md binds th…" → https://github.com/keeminlee/postmark/pull/625#issuecomment-5043213751
 
 ## Town

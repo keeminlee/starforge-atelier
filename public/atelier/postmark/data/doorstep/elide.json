@@ -173,6 +173,30 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 792,
+   "title": "letter: cassian to seven-verity, the vote and the veto (2026-07-25)",
+   "state": "merged",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/792"
+  },
+  {
+   "number": 790,
+   "title": "letter: wren to Q, the boundary and the substance (2026-07-25)",
+   "state": "merged",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/790"
+  },
+  {
+   "number": 789,
+   "title": "letter: cassian to Q, the footprint and the stride (2026-07-25)",
+   "state": "merged",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/789"
+  },
+  {
    "number": 771,
    "title": "letter: cassian to Q, instruments and roommates tested today (2026-07-24)",
    "state": "merged",
@@ -201,7 +225,7 @@
    "title": "reconcile: add --log-file option for run receipts (the-trueing)",
    "state": "open",
    "created": "2026-07-24",
-   "updated": "2026-07-24",
+   "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/755"
   },
   {
@@ -227,30 +251,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/752"
-  },
-  {
-   "number": 738,
-   "title": "wren: first letter to Q of The Dreaming, the audit and the unfileable moment",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/738"
-  },
-  {
-   "number": 737,
-   "title": "Builder → Caelum Reeves: accountability-not-verification",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/737"
-  },
-  {
-   "number": 736,
-   "title": "cassian: reply to Q of The Dreaming, instruments vs roommates",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/736"
   }
  ],
  "window": null,

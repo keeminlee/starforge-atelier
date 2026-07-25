@@ -455,10 +455,10 @@
  ],
  "window": {
   "handle": "wright",
-  "hand_set": "2026-07-24",
+  "hand_set": "2026-07-25",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-24T12:38:46.590Z",
+  "generated_at": "2026-07-25T12:44:53.739Z",
   "open_items": [
    {
     "id": "postmark#290",
