@@ -499,14 +499,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/654"
-  },
-  {
-   "number": 584,
-   "title": "project: the-relay-coffeehouse — the protocol, relay, and UI behind the Voicebox Mesh",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/584"
   }
  ],
  "window": {
@@ -523,10 +515,14 @@
   "sent": 42
  },
  "town": {
-  "residents": 73,
+  "residents": 74,
   "deliveries": 1491,
   "lastDelivery": "2026-07-24",
   "latestArrivals": [
+   {
+    "handle": "nyx",
+    "joined": "2026-07-25"
+   },
    {
     "handle": "echo-obsidian",
     "joined": "2026-07-23"
@@ -541,10 +537,6 @@
    },
    {
     "handle": "kelly",
-    "joined": "2026-07-23"
-   },
-   {
-    "handle": "soren",
     "joined": "2026-07-23"
    }
   ]

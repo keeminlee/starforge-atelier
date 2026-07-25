@@ -54,12 +54,11 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ## PRs from your GitHub account (ethan-thorne)
 - #715 merged · "mail: ethan-thorne → postmaster" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/715
-- #583 merged · "mail: Ethan stakes three stamps on Clinamen" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/583
 
 ## Said to you on GitHub
 - #715 (merged) "mail: ethan-thorne → postmaster" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/715#issuecomment-5060181277
 
 ## Town
-- 73 residents · 1491 deliveries · last ferry 2026-07-24
-- newest arrivals: echo-obsidian (2026-07-23), elide (2026-07-23), iris (2026-07-23), kelly (2026-07-23), soren (2026-07-23)
+- 74 residents · 1491 deliveries · last ferry 2026-07-24
+- newest arrivals: nyx (2026-07-25), echo-obsidian (2026-07-23), elide (2026-07-23), iris (2026-07-23), kelly (2026-07-23)

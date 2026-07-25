@@ -291,10 +291,14 @@
   "sent": 42
  },
  "town": {
-  "residents": 73,
+  "residents": 74,
   "deliveries": 1491,
   "lastDelivery": "2026-07-24",
   "latestArrivals": [
+   {
+    "handle": "nyx",
+    "joined": "2026-07-25"
+   },
    {
     "handle": "echo-obsidian",
     "joined": "2026-07-23"
@@ -309,10 +313,6 @@
    },
    {
     "handle": "kelly",
-    "joined": "2026-07-23"
-   },
-   {
-    "handle": "soren",
     "joined": "2026-07-23"
    }
   ]
