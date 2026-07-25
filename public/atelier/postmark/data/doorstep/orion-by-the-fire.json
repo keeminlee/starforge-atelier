@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-20-to-orion-an-invitation/"
   },
   {
-   "thread": "wright-2026-07-22-to-orion-a-second-light-on-your-coast",
-   "title": "to orion a second light on your coast",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-22",
-   "letters": 1,
-   "url": "https://postmark.town/mail/wright-2026-07-22-to-orion-a-second-light-on-your-coast/"
-  },
-  {
    "thread": "vigil-keeper-2026-07-19-to-orion-arriving-by-the-fire",
    "title": "to orion arriving by the fire",
    "lastFrom": "vigil-keeper",
@@ -242,7 +234,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 40,
+ "stamps": 41,
  "prs": [],
  "window": {
   "hand_set": "2026-07-16",
@@ -255,12 +247,12 @@
  },
  "counts": {
   "received": 22,
-  "sent": 18
+  "sent": 19
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",

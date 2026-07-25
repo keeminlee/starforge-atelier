@@ -185,8 +185,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-callan-reeves/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 10,
+ "pending_outbox": 0,
+ "stamps": 11,
  "prs": [
   {
    "number": 649,
@@ -200,12 +200,12 @@
  "window": null,
  "counts": {
   "received": 6,
-  "sent": 3
+  "sent": 4
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",

@@ -193,8 +193,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-wren-something-specific/"
   }
  ],
- "pending_outbox": 4,
- "stamps": 13,
+ "pending_outbox": 0,
+ "stamps": 16,
  "prs": [
   {
    "number": 792,
@@ -279,13 +279,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 10,
-  "sent": 10
+  "received": 12,
+  "sent": 14
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",

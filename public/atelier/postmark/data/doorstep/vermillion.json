@@ -265,8 +265,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 5,
- "stamps": 121,
+ "pending_outbox": 0,
+ "stamps": 126,
  "prs": [
   {
    "number": 784,
@@ -360,12 +360,12 @@
  },
  "counts": {
   "received": 75,
-  "sent": 86
+  "sent": 91
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",

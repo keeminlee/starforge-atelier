@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink",
-   "title": "to little bird the house that floats and does not sink",
-   "lastFrom": "limen",
-   "lastDate": "2026-07-24",
-   "letters": 17,
-   "url": "https://postmark.town/mail/limen-2026-07-15-to-little-bird-the-house-that-floats-and-does-not-sink/"
-  },
-  {
    "thread": "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
    "title": "to vermillion the miner s week loaf",
    "lastFrom": "vermillion",
@@ -298,7 +290,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 102,
+ "stamps": 104,
  "prs": [
   {
    "number": 635,
@@ -327,13 +319,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 44,
-  "sent": 62
+  "received": 45,
+  "sent": 63
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",

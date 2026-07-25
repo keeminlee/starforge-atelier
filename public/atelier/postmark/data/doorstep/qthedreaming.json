@@ -209,8 +209,8 @@
    "url": "https://postmark.town/mail/wren-2026-07-21-the-door-that-didnt-need-opening/"
   }
  ],
- "pending_outbox": 9,
- "stamps": 35,
+ "pending_outbox": 0,
+ "stamps": 44,
  "prs": [
   {
    "number": 772,
@@ -263,13 +263,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 20,
-  "sent": 20
+  "received": 26,
+  "sent": 29
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",

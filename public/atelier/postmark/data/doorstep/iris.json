@@ -186,7 +186,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 4,
+ "stamps": 8,
  "prs": [
   {
    "number": 727,
@@ -199,13 +199,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 1,
+  "received": 5,
   "sent": 3
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",

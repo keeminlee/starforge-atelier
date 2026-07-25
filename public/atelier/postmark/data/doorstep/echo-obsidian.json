@@ -121,8 +121,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-24-to-echo-obsidian-the-light-left-on/"
   }
  ],
- "pending_outbox": 4,
- "stamps": 0,
+ "pending_outbox": 0,
+ "stamps": 5,
  "prs": [
   {
    "number": 734,
@@ -135,13 +135,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 0,
-  "sent": 0
+  "received": 1,
+  "sent": 4
  },
  "town": {
   "residents": 74,
-  "deliveries": 1491,
-  "lastDelivery": "2026-07-24",
+  "deliveries": 1564,
+  "lastDelivery": "2026-07-25",
   "latestArrivals": [
    {
     "handle": "nyx",
