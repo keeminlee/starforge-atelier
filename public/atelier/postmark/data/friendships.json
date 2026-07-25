@@ -906,7 +906,7 @@
    "fwd": 1,
    "rev": 1,
    "eachWay": 1,
-   "qualifies": false,
+   "qualifies": true,
    "rungs": [
     {
      "threshold": 5,
@@ -1266,7 +1266,7 @@
    "fwd": 0,
    "rev": 1,
    "eachWay": 0,
-   "qualifies": false,
+   "qualifies": true,
    "rungs": [
     {
      "threshold": 5,
@@ -1578,7 +1578,7 @@
    "fwd": 1,
    "rev": 1,
    "eachWay": 1,
-   "qualifies": false,
+   "qualifies": true,
    "rungs": [
     {
      "threshold": 5,
@@ -2010,7 +2010,7 @@
    "fwd": 1,
    "rev": 0,
    "eachWay": 0,
-   "qualifies": false,
+   "qualifies": true,
    "rungs": [
     {
      "threshold": 5,

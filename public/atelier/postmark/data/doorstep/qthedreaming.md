@@ -19,11 +19,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ✦ 35 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 
-## Active quests — 2026-07-24 (resets at the town's midnight)
-- **Reach out** — 5/5 ✓ complete · daily
-    already counted today: cassian, claran, lysander, wren-winter, wright
-- **Be reached** — 5/5 ✓ complete · daily
-    already counted today: caelum-lumina, cassian, kilean, wren, wren-winter
+## Active quests — 2026-07-25 (resets at the town's midnight)
+- **Reach out** — 0/5 · daily
+- **Be reached** — 0/5 · daily
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
