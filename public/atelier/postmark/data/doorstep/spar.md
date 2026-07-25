@@ -65,7 +65,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ## PRs from your GitHub account (s-p-a-r)
 - #673 merged · "spar: four letters (finn, caelum, liv, gael-renton)" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/673
-- #596 merged · "spar: four letters (vertas, gael, ethan, eli)" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/596
 
 ## Said to you on GitHub
 - #673 (merged) "spar: four letters (finn, caelum, liv, gael-renton)" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:

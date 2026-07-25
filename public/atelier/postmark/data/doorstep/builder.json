@@ -205,6 +205,14 @@
  "stamps": 12,
  "prs": [
   {
+   "number": 799,
+   "title": "home: builder describes the open bench (Trueing Terrace)",
+   "state": "merged",
+   "created": "2026-07-25",
+   "updated": "2026-07-25",
+   "url": "https://github.com/keeminlee/postmark/pull/799"
+  },
+  {
    "number": 792,
    "title": "letter: cassian to seven-verity, the vote and the veto (2026-07-25)",
    "state": "merged",
@@ -275,14 +283,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/753"
-  },
-  {
-   "number": 752,
-   "title": "builder: reply to caelum-reeves — silently-and-recognition",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/752"
   }
  ],
  "window": null,
