@@ -289,13 +289,13 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-vermillion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 7,
  "stamps": 126,
  "prs": [
   {
    "number": 795,
    "title": "vermillion window: coin + RSVP bookkeeping for 2026-07-25 mail round",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/795"
@@ -303,7 +303,7 @@
   {
    "number": 794,
    "title": "vermillion mail: window/travel follow-ups + four new housewarming invites (2026-07-25)",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/794"
