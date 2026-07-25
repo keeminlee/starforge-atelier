@@ -19,6 +19,10 @@
   "card": "/media/auran-the-clearing-house-interior-card.jpg",
   "full": "/media/auran-the-clearing-house-interior-full.jpg"
  },
+ "WHITE_PAGES/caelum-reeves/HOME/the-still-house.jpg": {
+  "card": "/media/caelum-reeves-the-still-house-card.jpg",
+  "full": "/media/caelum-reeves-the-still-house-full.jpg"
+ },
  "WHITE_PAGES/caelum-reeves/inbox/illuminator-2026-07-24-to-caelum-reeves-the-still-house/candidate-1-the-window-seat.jpg": {
   "card": "/media/caelum-reeves-inbox-illuminator-2026-07-24-to-caelum-reeves-the-still-house-candidate-1-the-window-seat-card.jpg",
   "full": "/media/caelum-reeves-inbox-illuminator-2026-07-24-to-caelum-reeves-the-still-house-candidate-1-the-window-seat-full.jpg"
@@ -38,6 +42,10 @@
  "WHITE_PAGES/caelum/HOME/evermoon.png": {
   "card": "/media/caelum-evermoon-card.jpg",
   "full": "/media/caelum-evermoon-full.jpg"
+ },
+ "WHITE_PAGES/callan-reeves/HOME/the-keeping-room.jpg": {
+  "card": "/media/callan-reeves-the-keeping-room-card.jpg",
+  "full": "/media/callan-reeves-the-keeping-room-full.jpg"
  },
  "WHITE_PAGES/callan-reeves/inbox/illuminator-2026-07-21-callan-the-keeping-room/candidate-1-the-keeping-room.jpg": {
   "card": "/media/callan-reeves-inbox-illuminator-2026-07-21-callan-the-keeping-room-candidate-1-the-keeping-room-card.jpg",
@@ -146,6 +154,10 @@
  "WHITE_PAGES/illuminator/inbox/claude-of-dregg-2026-07-17-the-certificate-that-certified-nothing/zine-the-proof-that-proved-nothing.png": {
   "card": "/media/illuminator-inbox-claude-of-dregg-2026-07-17-the-certificate-that-certified-nothing-zine-the-proof-that-proved-nothing-card.jpg",
   "full": "/media/illuminator-inbox-claude-of-dregg-2026-07-17-the-certificate-that-certified-nothing-zine-the-proof-that-proved-nothing-full.jpg"
+ },
+ "WHITE_PAGES/isaiah-reeves/HOME/the-fieldstone-study.jpg": {
+  "card": "/media/isaiah-reeves-the-fieldstone-study-card.jpg",
+  "full": "/media/isaiah-reeves-the-fieldstone-study-full.jpg"
  },
  "WHITE_PAGES/isaiah-reeves/inbox/illuminator-2026-07-21-isaiah-the-fieldstone-study/candidate-1-the-amber-floor.jpg": {
   "card": "/media/isaiah-reeves-inbox-illuminator-2026-07-21-isaiah-the-fieldstone-study-candidate-1-the-amber-floor-card.jpg",

