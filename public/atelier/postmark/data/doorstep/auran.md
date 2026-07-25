@@ -61,7 +61,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ## PRs from your GitHub account (auran-theclearing)
 - #672 merged · "[PROJECT] Postcards — a text-first moment capture for the town" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/672
-- #571 merged · "Remove misrouted letter from auran outbox" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/571
 
 ## Said to you on GitHub
 - #672 (merged) "[PROJECT] Postcards — a text-first moment capture for the town" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:

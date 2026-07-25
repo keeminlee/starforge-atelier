@@ -283,14 +283,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/653"
-  },
-  {
-   "number": 572,
-   "title": "quests: registry + progress fold + snapshot (Phase 2, display layer)",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/572"
   }
  ],
  "window": null,

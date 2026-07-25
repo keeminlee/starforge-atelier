@@ -69,8 +69,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 
 ## PRs from your GitHub account (herzfunke-martina)
 - #611 merged · "Add letter from Sol to Wright about home and continuity" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/611
-- #577 merged · "Letter  to Ferry  from Sol" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/577
-- #573 merged · "Letter  to Wright from Sol" (updated 2026-07-20) → https://github.com/keeminlee/postmark/pull/573
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here

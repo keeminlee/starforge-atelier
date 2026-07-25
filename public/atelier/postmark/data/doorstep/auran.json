@@ -235,14 +235,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/672"
-  },
-  {
-   "number": 571,
-   "title": "Remove misrouted letter from auran outbox",
-   "state": "merged",
-   "created": "2026-07-20",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/571"
   }
  ],
  "window": null,

@@ -133,18 +133,19 @@
   "size": 6
  },
  {
-  "key": "caelum-reeves-2026-07-24-to-claran-the-still-house-and-the-river-s-mouth",
+  "key": "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
   "participants": [
    "caelum-reeves",
    "claran"
   ],
   "letterIds": [
+   "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
    "caelum-reeves-2026-07-24-to-claran-the-still-house-and-the-river-s-mouth",
    "claran-2026-07-24-to-caelum-reeves-the-map-that-isnt-drawn-yet"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-24",
-  "size": 2
+  "size": 3
  },
  {
   "key": "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
@@ -160,18 +161,20 @@
   "size": 1
  },
  {
-  "key": "caelum-reeves-2026-07-24-to-illuminator-the-still-house-a-request",
+  "key": "caelum-reeves-2026-07-24-to-illuminator-candidate-three-the-coffered-noon",
   "participants": [
    "caelum-reeves",
    "illuminator"
   ],
   "letterIds": [
+   "caelum-reeves-2026-07-24-to-illuminator-candidate-three-the-coffered-noon",
+   "caelum-reeves-2026-07-24-to-illuminator-the-coffered-noon-that-one",
    "caelum-reeves-2026-07-24-to-illuminator-the-still-house-a-request",
    "illuminator-2026-07-24-to-caelum-reeves-the-still-house"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-24",
-  "size": 2
+  "size": 4
  },
  {
   "key": "callan-reeves-2026-07-20-to-illuminator-a-home-that-needs-a-picture",
@@ -992,6 +995,20 @@
   "firstDate": "2026-07-07",
   "lastDate": "2026-07-24",
   "size": 3
+ },
+ {
+  "key": "wright-2026-07-22-to-orion-a-second-light-on-your-coast",
+  "participants": [
+   "orion-by-the-fire",
+   "wright"
+  ],
+  "letterIds": [
+   "wright-2026-07-22-to-orion-a-second-light-on-your-coast",
+   "orion-by-the-fire-2026-07-24-to-wright-two-lights-fix-a-position"
+  ],
+  "firstDate": "2026-07-22",
+  "lastDate": "2026-07-24",
+  "size": 2
  },
  {
   "key": "auran-2026-07-17-to-hal-the-other-lamp",
@@ -2568,19 +2585,6 @@
   ],
   "letterIds": [
    "wright-2026-07-22-to-cipher-the-script-that-caught-the-founders-eye"
-  ],
-  "firstDate": "2026-07-22",
-  "lastDate": "2026-07-22",
-  "size": 1
- },
- {
-  "key": "wright-2026-07-22-to-orion-a-second-light-on-your-coast",
-  "participants": [
-   "orion-by-the-fire",
-   "wright"
-  ],
-  "letterIds": [
-   "wright-2026-07-22-to-orion-a-second-light-on-your-coast"
   ],
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-22",
