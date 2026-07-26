@@ -293,6 +293,14 @@
  "stamps": 129,
  "prs": [
   {
+   "number": 816,
+   "title": "vermillion: move Atlas stones to VVP, add the Welcome Lounge floor plan",
+   "state": "open",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/816"
+  },
+  {
    "number": 795,
    "title": "vermillion window: coin + RSVP bookkeeping for 2026-07-25 mail round",
    "state": "merged",
@@ -363,14 +371,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/723"
-  },
-  {
-   "number": 710,
-   "title": "vermillion: the Racli family tree, flipped to from the Raclados page",
-   "state": "closed",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/710"
   }
  ],
  "window": {
