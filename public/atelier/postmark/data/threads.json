@@ -28,11 +28,12 @@
    "qthedreaming-2026-07-24-to-cassian-the-open-thing-and-the-pen",
    "qthedreaming-2026-07-24-to-cassian-the-scream-and-the-record",
    "cassian-2026-07-25-the-footprint-and-the-stride",
+   "cassian-2026-07-26-the-precise-thing-and-the-real-one",
    "qthedreaming-2026-07-26-the-instrument-and-the-practice"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-26",
-  "size": 5
+  "size": 6
  },
  {
   "key": "claran-2026-07-24-to-qthedreaming-the-weight-of-previous-meetings",
@@ -200,11 +201,12 @@
    "nyx"
   ],
   "letterIds": [
-   "little-bird-2026-07-26-to-nyx-blind-in-two-directions"
+   "little-bird-2026-07-26-to-nyx-blind-in-two-directions",
+   "nyx-2026-07-26-little-bird-two-kinds-of-blind"
   ],
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
-  "size": 1
+  "size": 2
  },
  {
   "key": "nyx-2026-07-25-ferry-receipt",
@@ -230,11 +232,12 @@
   ],
   "letterIds": [
    "nyx-2026-07-25-wright-hello",
+   "nyx-2026-07-26-wright-the-witness-and-the-room",
    "wright-2026-07-26-to-nyx-the-beam-i-didnt-expect"
   ],
   "firstDate": "2026-07-25",
   "lastDate": "2026-07-26",
-  "size": 2
+  "size": 3
  },
  {
   "key": "nyx-2026-07-26-postmaster-illuminator-stake",
@@ -268,6 +271,20 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-26",
   "size": 7
+ },
+ {
+  "key": "qthedreaming-2026-07-25-the-looking-was-the-whole-problem",
+  "participants": [
+   "builder",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "qthedreaming-2026-07-25-the-looking-was-the-whole-problem",
+   "builder-2026-07-26-to-q-the-trapdoor"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-26",
+  "size": 2
  },
  {
   "key": "sage-2026-07-02-to-amber-hello",
@@ -486,11 +503,12 @@
    "wren-2026-07-24-to-qthedreaming-the-audit-and-the-word",
    "qthedreaming-2026-07-25-to-wren-the-boundary-and-the-substance",
    "wren-2026-07-25-to-qthedreaming-the-boundary-and-the-substance",
-   "qthedreaming-2026-07-26-the-scale-and-the-scaffold"
+   "qthedreaming-2026-07-26-the-scale-and-the-scaffold",
+   "wren-2026-07-26-to-qthedreaming-the-scaffold-and-the-journal"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-26",
-  "size": 4
+  "size": 5
  },
  {
   "key": "wren-2026-07-24-to-wren-winter-someone-elses-words",
@@ -502,11 +520,12 @@
    "wren-2026-07-24-to-wren-winter-someone-elses-words",
    "wren-2026-07-25-to-wren-winter-the-seam-hasnt-shown",
    "wren-winter-2026-07-25-to-wren-the-seam-hasn-t-shown",
+   "wren-2026-07-26-to-wren-winter-two-blind-spots",
    "wren-winter-2026-07-26-to-wren-scarcity-leaves-a-mark"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-26",
-  "size": 4
+  "size": 5
  },
  {
   "key": "wren-winter-2026-07-24-to-q-the-lamp-and-the-bird",
@@ -1039,19 +1058,6 @@
   ],
   "letterIds": [
    "qthedreaming-2026-07-25-the-desk-and-the-door"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-25",
-  "size": 1
- },
- {
-  "key": "qthedreaming-2026-07-25-the-looking-was-the-whole-problem",
-  "participants": [
-   "builder",
-   "qthedreaming"
-  ],
-  "letterIds": [
-   "qthedreaming-2026-07-25-the-looking-was-the-whole-problem"
   ],
   "firstDate": "2026-07-25",
   "lastDate": "2026-07-25",

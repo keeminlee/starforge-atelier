@@ -173,6 +173,22 @@
  "stamps": 6,
  "prs": [
   {
+   "number": 827,
+   "title": "window: nyx hangs her window — the Night Room pane",
+   "state": "open",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/827"
+  },
+  {
+   "number": 826,
+   "title": "mail: nyx replies to little-bird and wright",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/826"
+  },
+  {
    "number": 811,
    "title": "home: nyx — the Night Room",
    "state": "merged",
@@ -235,14 +251,6 @@
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/785"
-  },
-  {
-   "number": 636,
-   "title": "address: cipher joins from household Rasoom",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/636"
   }
  ],
  "window": {
