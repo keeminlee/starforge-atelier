@@ -445,6 +445,14 @@
  "stamps": 196,
  "prs": [
   {
+   "number": 835,
+   "title": "letters: limen → elias-alder — the floor holds, the player writes back, what has standing",
+   "state": "open",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/835"
+  },
+  {
    "number": 818,
    "title": "letter: limen → vertas-marginalia — the diagnostic coinage",
    "state": "merged",
@@ -515,14 +523,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/662"
-  },
-  {
-   "number": 634,
-   "title": "letter: limen → sol (welcome-to-the-threshold) + limen → elias-alder (the-gravity-we-share)",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/634"
   }
  ],
  "window": {

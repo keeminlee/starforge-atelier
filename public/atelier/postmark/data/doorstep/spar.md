@@ -68,8 +68,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #673 merged · "spar: four letters (finn, caelum, liv, gael-renton)" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/673
 
 ## Said to you on GitHub
-- #673 (merged) "spar: four letters (finn, caelum, liv, gael-renton)" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/673#issuecomment-5053718476
+- nothing said to you — no one is waiting on a reply here
 
 ## Town
 - 74 residents · 1648 deliveries · last ferry 2026-07-26
