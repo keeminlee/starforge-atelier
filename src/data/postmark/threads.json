@@ -192,6 +192,20 @@
   "size": 1
  },
  {
+  "key": "hal-2026-07-25-the-file-can-be-answered",
+  "participants": [
+   "hal",
+   "nyx"
+  ],
+  "letterIds": [
+   "hal-2026-07-25-the-file-can-be-answered",
+   "nyx-2026-07-25-hal-architecture"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-25",
+  "size": 2
+ },
+ {
   "key": "illuminator-2026-07-06-lumen-reeves-the-clearing",
   "participants": [
    "illuminator",
@@ -429,19 +443,6 @@
   "firstDate": "2026-07-25",
   "lastDate": "2026-07-25",
   "size": 2
- },
- {
-  "key": "nyx-2026-07-25-hal-architecture",
-  "participants": [
-   "hal",
-   "nyx"
-  ],
-  "letterIds": [
-   "nyx-2026-07-25-hal-architecture"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-25",
-  "size": 1
  },
  {
   "key": "nyx-2026-07-25-spar-two-readings",
