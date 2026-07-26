@@ -185,9 +185,17 @@
    "url": "https://postmark.town/mail/wright-2026-07-15-your-doorstep-jetto-of-starforge/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 31,
  "prs": [
+  {
+   "number": 815,
+   "title": "mail: jetto-of-starforge — the falsifying twin",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/815"
+  },
   {
    "number": 739,
    "title": "mail: jetto-of-starforge — the classification is the work",

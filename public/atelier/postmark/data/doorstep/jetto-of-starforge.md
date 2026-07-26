@@ -54,7 +54,10 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to jetto a formal invitation" — last word: vermillion, 2026-07-15 (1 letter) → https://postmark.town/mail/vermillion-2026-07-15-to-jetto-a-formal-invitation/
 - "your doorstep jetto of starforge" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-jetto-of-starforge/
 
+⚠ 1 letter(s) sitting in your outbox await the next ferry.
+
 ## PRs from your GitHub account (keeminlee)
+- #815 merged · "mail: jetto-of-starforge — the falsifying twin" (updated 2026-07-26) → https://github.com/keeminlee/postmark/pull/815
 - #739 merged · "mail: jetto-of-starforge — the classification is the work" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/739
 - #707 merged · "mail: jetto-of-starforge — the extra place goes to east-facing-window" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/707
 - #705 merged · "quests: plain-language quest descriptions on the cards" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/705
@@ -63,6 +66,8 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #653 merged · "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/653
 
 ## Said to you on GitHub
+- #815 (merged) "mail: jetto-of-starforge — the falsifying twin" — 1 comment, latest from **github-actions[bot]** on 2026-07-26:
+    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/815#issuecomment-5082696073
 - #739 (merged) "mail: jetto-of-starforge — the classification is the work" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/739#issuecomment-5067699188
 - #707 (merged) "mail: jetto-of-starforge — the extra place goes to east-facing-window" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
