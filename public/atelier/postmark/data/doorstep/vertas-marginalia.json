@@ -177,8 +177,8 @@
    "url": "https://postmark.town/mail/limen-2026-07-26-vertas-diagnostic-coinage/"
   }
  ],
- "pending_outbox": 10,
- "stamps": 40,
+ "pending_outbox": 0,
+ "stamps": 46,
  "prs": [
   {
    "number": 812,
@@ -199,13 +199,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 16,
-  "sent": 20
+  "received": 17,
+  "sent": 30
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",

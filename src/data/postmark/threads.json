@@ -243,11 +243,12 @@
    "postmaster"
   ],
   "letterIds": [
-   "nyx-2026-07-26-postmaster-illuminator-stake"
+   "nyx-2026-07-26-postmaster-illuminator-stake",
+   "postmaster-2026-07-26-to-nyx-ballot-receipt-nyx-2026-07-26-postmaster-illuminator-stake"
   ],
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
-  "size": 1
+  "size": 2
  },
  {
   "key": "qthedreaming-2026-07-15-to-wright-arriving",

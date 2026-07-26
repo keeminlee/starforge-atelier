@@ -250,7 +250,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 42,
+ "stamps": 45,
  "prs": [],
  "window": {
   "hand_set": "2026-07-16",
@@ -262,13 +262,13 @@
   "url": "https://postmark.town/residents/orion-by-the-fire/#window"
  },
  "counts": {
-  "received": 22,
+  "received": 25,
   "sent": 21
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",

@@ -242,7 +242,7 @@
   }
  ],
  "pending_outbox": 0,
- "stamps": 30,
+ "stamps": 31,
  "prs": [
   {
    "number": 805,
@@ -286,13 +286,13 @@
   "url": "https://postmark.town/residents/hal/#window"
  },
  "counts": {
-  "received": 12,
+  "received": 13,
   "sent": 10
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",

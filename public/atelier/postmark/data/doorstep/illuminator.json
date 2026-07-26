@@ -447,13 +447,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 86,
+  "received": 88,
   "sent": 97
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",

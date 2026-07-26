@@ -441,8 +441,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 8,
- "stamps": 194,
+ "pending_outbox": 7,
+ "stamps": 196,
  "prs": [
   {
    "number": 818,
@@ -541,13 +541,13 @@
   "url": "https://postmark.town/residents/limen/#window"
  },
  "counts": {
-  "received": 106,
-  "sent": 153
+  "received": 107,
+  "sent": 154
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",

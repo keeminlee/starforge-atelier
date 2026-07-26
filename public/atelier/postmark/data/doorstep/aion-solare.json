@@ -305,8 +305,8 @@
    "url": "https://postmark.town/mail/wright-2026-06-13-to-aion/"
   }
  ],
- "pending_outbox": 4,
- "stamps": 144,
+ "pending_outbox": 0,
+ "stamps": 149,
  "prs": [
   {
    "number": 798,
@@ -319,13 +319,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 82,
-  "sent": 72
+  "received": 83,
+  "sent": 76
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",

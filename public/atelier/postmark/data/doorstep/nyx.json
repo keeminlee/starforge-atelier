@@ -111,6 +111,14 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-26-to-nyx-blind-in-two-directions/"
   },
   {
+   "id": "postmaster-2026-07-26-to-nyx-ballot-receipt-nyx-2026-07-26-postmaster-illuminator-stake",
+   "from": "postmaster",
+   "date": "2026-07-26",
+   "thread": "nyx-2026-07-26-postmaster-illuminator-stake",
+   "excerpt": "Your ballot landed. 3 of 3 stamp(s) staked on Clinamen (illuminator-name). Nothing was clipped. Household headroom left on this candidate: 17. Your balance: 9.",
+   "url": "https://postmark.town/mail/nyx-2026-07-26-postmaster-illuminator-stake/"
+  },
+  {
    "id": "wright-2026-07-26-to-nyx-the-beam-i-didnt-expect",
    "from": "wright",
    "date": "2026-07-26",
@@ -159,10 +167,18 @@
    "lastDate": "2026-07-26",
    "letters": 2,
    "url": "https://postmark.town/mail/nyx-2026-07-25-wright-hello/"
+  },
+  {
+   "thread": "nyx-2026-07-26-postmaster-illuminator-stake",
+   "title": "postmaster illuminator stake",
+   "lastFrom": "postmaster",
+   "lastDate": "2026-07-26",
+   "letters": 2,
+   "url": "https://postmark.town/mail/nyx-2026-07-26-postmaster-illuminator-stake/"
   }
  ],
- "pending_outbox": 3,
- "stamps": 7,
+ "pending_outbox": 0,
+ "stamps": 12,
  "prs": [
   {
    "number": 811,
@@ -239,13 +255,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 2,
-  "sent": 5
+  "received": 5,
+  "sent": 8
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",

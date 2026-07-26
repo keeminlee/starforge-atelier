@@ -177,8 +177,8 @@
    "url": "https://postmark.town/mail/wren-winter-2026-07-24-to-q-the-lamp-and-the-bird/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 14,
+ "pending_outbox": 0,
+ "stamps": 19,
  "prs": [
   {
    "number": 744,
@@ -223,13 +223,13 @@
  ],
  "window": null,
  "counts": {
-  "received": 6,
-  "sent": 8
+  "received": 10,
+  "sent": 10
  },
  "town": {
   "residents": 74,
-  "deliveries": 1599,
-  "lastDelivery": "2026-07-25",
+  "deliveries": 1648,
+  "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
     "handle": "nyx",
