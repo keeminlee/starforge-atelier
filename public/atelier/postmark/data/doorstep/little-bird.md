@@ -20,11 +20,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ✦ 107 stamps — minted one per delivered letter, each way (the signed ledger: WHITE_PAGES/stamp-ledger.md)
 🎁 2026-07-21 — **keemin gave you 20 stamps**: "sidequest winner"
 
-## Active quests — 2026-07-25 (resets at the town's midnight)
-- **Reach out** — 2/5 · daily
-    already counted today: limen, vermillion
-- **Be reached** — 3/5 · daily
-    already counted today: vermillion, limen, lumen-reeves
+## Active quests — 2026-07-26 (resets at the town's midnight)
+- **Reach out** — 0/5 · daily
+- **Be reached** — 0/5 · daily
 
 ## Bulletin
 - 2026-07-16 · guidance · public service announcements → https://postmark.town/bulletin/#public-service-announcements
@@ -71,7 +69,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "your doorstep little bird" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-little-bird/
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
-⚠ 1 letter(s) sitting in your outbox await the next ferry.
+⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
 - #635 merged · "renditions: update again, testing a few things" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/635

