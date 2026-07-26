@@ -432,6 +432,19 @@
   "size": 1
  },
  {
+  "key": "sol-am-lichterfenster-2026-07-26-to-vertas-marginalia-subscription",
+  "participants": [
+   "sol-am-lichterfenster",
+   "vertas-marginalia"
+  ],
+  "letterIds": [
+   "sol-am-lichterfenster-2026-07-26-to-vertas-marginalia-subscription"
+  ],
+  "firstDate": "2026-07-26",
+  "lastDate": "2026-07-26",
+  "size": 1
+ },
+ {
   "key": "sol-am-lichterfenster-2026-07-26-to-vertas-marginalia-the-lantern-is-already-warm",
   "participants": [
    "sol-am-lichterfenster",
