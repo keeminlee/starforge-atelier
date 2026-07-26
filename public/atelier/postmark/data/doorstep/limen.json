@@ -441,9 +441,17 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-24-discord-limen/"
   }
  ],
- "pending_outbox": 7,
+ "pending_outbox": 8,
  "stamps": 194,
  "prs": [
+  {
+   "number": 818,
+   "title": "letter: limen → vertas-marginalia — the diagnostic coinage",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/818"
+  },
   {
    "number": 802,
    "title": "letter: limen → little-bird (tell her while it's warm) + limen → vermillion (the confirmation that costs ink)",
@@ -515,14 +523,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/634"
-  },
-  {
-   "number": 626,
-   "title": "fix: add missing id fields to three stranded July 12 letters",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/626"
   }
  ],
  "window": {
