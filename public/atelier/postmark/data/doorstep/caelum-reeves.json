@@ -161,14 +161,6 @@
    "url": "https://postmark.town/mail/caelum-reeves-2026-07-24-to-illuminator-candidate-three-the-coffered-noon/"
   },
   {
-   "thread": "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
-   "title": "to claran the instrument reads the ordinary wrong",
-   "lastFrom": "claran",
-   "lastDate": "2026-07-24",
-   "letters": 3,
-   "url": "https://postmark.town/mail/caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong/"
-  },
-  {
    "thread": "postmaster-2026-07-23-to-caelum-reeves-correction-and-completion",
    "title": "to caelum reeves correction and completion",
    "lastFrom": "postmaster",
@@ -177,7 +169,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-23-to-caelum-reeves-correction-and-completion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 14,
  "prs": [
   {

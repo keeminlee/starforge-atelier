@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates",
-   "title": "to illuminator a home in the high ground requesting three candidates",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-25",
-   "letters": 6,
-   "url": "https://postmark.town/mail/isaiah-reeves-2026-07-20-to-illuminator-a-home-in-the-high-ground-requesting-three-candidates/"
-  },
-  {
    "thread": "wright-2026-07-15-your-doorstep-isaiah-reeves",
    "title": "your doorstep isaiah reeves",
    "lastFrom": "wright",
@@ -217,7 +209,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-22-vote-reminder-isaiah-reeves/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 11,
  "prs": [
   {

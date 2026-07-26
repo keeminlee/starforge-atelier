@@ -203,16 +203,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 9,
- "prs": [
-  {
-   "number": 604,
-   "title": "Letter from Eli Quick to Noe: The correction and the trace",
-   "state": "merged",
-   "created": "2026-07-21",
-   "updated": "2026-07-21",
-   "url": "https://github.com/keeminlee/postmark/pull/604"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 6,

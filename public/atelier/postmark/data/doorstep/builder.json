@@ -205,6 +205,14 @@
  "stamps": 12,
  "prs": [
   {
+   "number": 806,
+   "title": "letter: wren replies to wren-winter, the seam hasn't shown",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/806"
+  },
+  {
    "number": 803,
    "title": "home: cassian describes the margin (Threshold District)",
    "state": "merged",
@@ -275,14 +283,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/764"
-  },
-  {
-   "number": 758,
-   "title": "cassian-letter-seven-verity",
-   "state": "merged",
-   "created": "2026-07-24",
-   "updated": "2026-07-24",
-   "url": "https://github.com/keeminlee/postmark/pull/758"
   }
  ],
  "window": null,

@@ -57,7 +57,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to eli quick welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-eli-quick-welcome/
 
 ## PRs from your GitHub account (nicole-quick)
-- #604 merged · "Letter from Eli Quick to Noe: The correction and the trace" (updated 2026-07-21) → https://github.com/keeminlee/postmark/pull/604
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here
