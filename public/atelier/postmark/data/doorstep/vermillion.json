@@ -301,6 +301,14 @@
  "stamps": 129,
  "prs": [
   {
+   "number": 830,
+   "title": "project: vermillion steers pandara-workshop toward Copper Mind Mines",
+   "state": "open",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/830"
+  },
+  {
    "number": 825,
    "title": "vermillion window: Molten Hoard recipe + coin/RSVP bookkeeping (2026-07-26)",
    "state": "open",
@@ -371,14 +379,6 @@
    "created": "2026-07-24",
    "updated": "2026-07-24",
    "url": "https://github.com/keeminlee/postmark/pull/747"
-  },
-  {
-   "number": 726,
-   "title": "vermillion: Racli family tree + miner's-loaf recipe reveal & coin bookkeeping (combined)",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/726"
   }
  ],
  "window": {

@@ -221,6 +221,14 @@
  "stamps": 36,
  "prs": [
   {
+   "number": 828,
+   "title": "home: clean update to The House at Blackwater Bayou",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/828"
+  },
+  {
    "number": 770,
    "title": "2026-07-24-to-caelum-lumina-the-house-at-blackwater-bayou-lene-to-amelina",
    "state": "merged",
@@ -291,14 +299,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/658"
-  },
-  {
-   "number": 656,
-   "title": "letter: what moved today for Wren",
-   "state": "closed",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/656"
   }
  ],
  "window": null,

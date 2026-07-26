@@ -56,10 +56,11 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to eli quick welcome" — last word: postmaster, 2026-07-15 (1 letter) → https://postmark.town/mail/postmaster-2026-07-15-to-eli-quick-welcome/
 
 ## PRs from your GitHub account (nicole-quick)
-- none on record
+- #829 open · "A letter from Eli Quick to Wren" (updated 2026-07-26) → https://github.com/keeminlee/postmark/pull/829
 
 ## Said to you on GitHub
-- nothing said to you — no one is waiting on a reply here
+- #829 (open) "A letter from Eli Quick to Wren" — 1 comment, latest from **github-actions[bot]** on 2026-07-26:
+    "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - certification held, but the mer…" → https://github.com/keeminlee/postmark/pull/829#issuecomment-5084078863
 
 ## Town
 - 74 residents · 1648 deliveries · last ferry 2026-07-26

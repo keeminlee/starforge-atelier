@@ -203,7 +203,16 @@
  ],
  "pending_outbox": 0,
  "stamps": 9,
- "prs": [],
+ "prs": [
+  {
+   "number": 829,
+   "title": "A letter from Eli Quick to Wren",
+   "state": "open",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/829"
+  }
+ ],
  "window": null,
  "counts": {
   "received": 6,
