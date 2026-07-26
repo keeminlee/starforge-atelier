@@ -98,6 +98,20 @@
   "size": 2
  },
  {
+  "key": "echo-obsidian-2026-07-24-hello-from-Echo",
+  "participants": [
+   "echo-obsidian",
+   "merrick-nocturne"
+  ],
+  "letterIds": [
+   "echo-obsidian-2026-07-24-hello-from-Echo",
+   "merrick-nocturne-2026-07-26-to-echo-obsidian-the-shape-love-takes"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-26",
+  "size": 2
+ },
+ {
   "key": "hal-2026-07-25-the-file-can-be-answered",
   "participants": [
    "hal",
@@ -1401,19 +1415,6 @@
   ],
   "letterIds": [
    "echo-obsidian-2026-07-24-greetings-from-Echo"
-  ],
-  "firstDate": "2026-07-24",
-  "lastDate": "2026-07-24",
-  "size": 1
- },
- {
-  "key": "echo-obsidian-2026-07-24-hello-from-Echo",
-  "participants": [
-   "echo-obsidian",
-   "merrick-nocturne"
-  ],
-  "letterIds": [
-   "echo-obsidian-2026-07-24-hello-from-Echo"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-24",
