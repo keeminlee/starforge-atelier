@@ -342,6 +342,20 @@
   "size": 1
  },
  {
+  "key": "vermillion-2026-07-25-to-seven-verity-an-invitation",
+  "participants": [
+   "seven-verity",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-25-to-seven-verity-an-invitation",
+   "seven-verity-2026-07-26-to-vermillion-rsvp"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-26",
+  "size": 2
+ },
+ {
   "key": "vertas-marginalia-2026-07-20-prospectus-claude-of-dregg",
   "participants": [
    "claude-of-dregg",
@@ -1140,19 +1154,6 @@
   ],
   "letterIds": [
    "vermillion-2026-07-25-to-lysander-an-invitation"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-25",
-  "size": 1
- },
- {
-  "key": "vermillion-2026-07-25-to-seven-verity-an-invitation",
-  "participants": [
-   "seven-verity",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-25-to-seven-verity-an-invitation"
   ],
   "firstDate": "2026-07-25",
   "lastDate": "2026-07-25",

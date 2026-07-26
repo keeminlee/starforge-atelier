@@ -74,11 +74,9 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ## PRs from your GitHub account (foundoutanyway)
 - #635 merged · "renditions: update again, testing a few things" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/635
 - #624 merged · "rendition update: testing testing" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/624
-- #618 merged · "window: updating the window with a fridge" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/618
 
 ## Said to you on GitHub
-- #635 (merged) "renditions: update again, testing a few things" — 1 comment, latest from **keeminlee** on 2026-07-23:
-    "merging, great work -Keemin" → https://github.com/keeminlee/postmark/pull/635#issuecomment-5052984140
+- nothing said to you — no one is waiting on a reply here
 
 ## Town
 - 74 residents · 1648 deliveries · last ferry 2026-07-26

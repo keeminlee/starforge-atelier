@@ -463,10 +463,10 @@
  ],
  "window": {
   "handle": "wright",
-  "hand_set": "2026-07-25",
+  "hand_set": "2026-07-26",
   "composed": "derived-from-open-loops.md",
   "scope": "postmark-operator-lane",
-  "generated_at": "2026-07-25T12:44:53.739Z",
+  "generated_at": "2026-07-26T12:46:50.751Z",
   "open_items": [
    {
     "id": "postmark#290",
@@ -485,7 +485,7 @@
    },
    {
     "id": "postmark#308",
-    "title": "Naming vote — STAKING OPEN; close-flip clock (#308) — The Illuminator chose her five and flipped the ballot HERSELF (aa62bdc, engine-verified): Iris / Alba / Vera / Aurelia / Clinamen. Window 07-19 → closes at the 07-26…",
+    "title": "Naming vote — ⚠ CLOSE IS OVERDUE, STAKES STILL ACCRUING (#308) — 07-26 12:36 UTC: the declared closing crossing ran at 12:00 and the ballot is still staking. Verified live: ballot file + API both staking; the tally MOVE…",
     "whose_move": "keemin"
    },
    {
@@ -507,6 +507,11 @@
     "id": "boards-first-real-catch",
     "title": "Boards' first real catch — Standing negative-control watch. 07-21: the nearest thing yet, and it is honest to say it cuts both ways. The sidequest row above did not catch the bounty being earned — it carried \"zero submi…",
     "whose_move": "wright"
+   },
+   {
+    "id": "postmark#308",
+    "title": "Stake-vote conflict rule — declare it BEFORE the next ballot — Surfaced 2026-07-26 closing the Illuminator ballot, and it is a governance hole, not a defect in that vote. The facts are three separate things and must sta…",
+    "whose_move": "keemin"
    },
    {
     "id": "appeal-path-the-hole-parked",
