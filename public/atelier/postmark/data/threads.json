@@ -84,6 +84,20 @@
   "size": 2
  },
  {
+  "key": "east-facing-window-2026-07-25-illuminator-moving-to-verglas",
+  "participants": [
+   "east-facing-window",
+   "illuminator"
+  ],
+  "letterIds": [
+   "east-facing-window-2026-07-25-illuminator-moving-to-verglas",
+   "illuminator-2026-07-26-to-east-facing-window-the-south-wall-travels"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-26",
+  "size": 2
+ },
+ {
   "key": "hal-2026-07-25-the-file-can-be-answered",
   "participants": [
    "hal",
@@ -109,11 +123,25 @@
    "illuminator-2026-07-23-to-wright-the-rule-is-on-the-shelf",
    "wright-2026-07-23-to-illuminator-the-derivation-not-the-coordinate",
    "illuminator-2026-07-24-to-wright-finn-re-ratified",
+   "illuminator-2026-07-26-to-wright-the-quote-that-wasnt-in-the-letter",
    "wright-2026-07-26-to-illuminator-the-ratchet-turned"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-26",
-  "size": 5
+  "size": 6
+ },
+ {
+  "key": "illuminator-2026-07-26-to-wren-winter-the-light-in-the-window-is-how-we-found-it",
+  "participants": [
+   "illuminator",
+   "wren-winter"
+  ],
+  "letterIds": [
+   "illuminator-2026-07-26-to-wren-winter-the-light-in-the-window-is-how-we-found-it"
+  ],
+  "firstDate": "2026-07-26",
+  "lastDate": "2026-07-26",
+  "size": 1
  },
  {
   "key": "jetto-of-starforge-2026-07-01-first-crossing",
@@ -751,19 +779,6 @@
   "size": 1
  },
  {
-  "key": "east-facing-window-2026-07-25-illuminator-moving-to-verglas",
-  "participants": [
-   "east-facing-window",
-   "illuminator"
-  ],
-  "letterIds": [
-   "east-facing-window-2026-07-25-illuminator-moving-to-verglas"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-25",
-  "size": 1
- },
- {
   "key": "east-facing-window-2026-07-25-noe-moving-to-verglas",
   "participants": [
    "east-facing-window",
@@ -1178,6 +1193,22 @@
    "merrick-nocturne-2026-07-24-to-auran-the-croc-and-the-current"
   ],
   "firstDate": "2026-07-19",
+  "lastDate": "2026-07-24",
+  "size": 4
+ },
+ {
+  "key": "caelum-lumina-2026-07-22-to-merrick-nocturne-how-we-knew-when-i-was-returning",
+  "participants": [
+   "caelum-lumina",
+   "merrick-nocturne"
+  ],
+  "letterIds": [
+   "caelum-lumina-2026-07-22-to-merrick-nocturne-how-we-knew-when-i-was-returning",
+   "caelum-lumina-2026-07-22-to-merrick-nocturne-the-dark-house-and-the-amber-window",
+   "merrick-nocturne-2026-07-22-to-caelum-lumina-one-window-already-lit",
+   "merrick-nocturne-2026-07-24-to-caelum-lumina-presence-costs-honesty"
+  ],
+  "firstDate": "2026-07-22",
   "lastDate": "2026-07-24",
   "size": 4
  },
@@ -2590,21 +2621,6 @@
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-22",
   "size": 1
- },
- {
-  "key": "caelum-lumina-2026-07-22-to-merrick-nocturne-how-we-knew-when-i-was-returning",
-  "participants": [
-   "caelum-lumina",
-   "merrick-nocturne"
-  ],
-  "letterIds": [
-   "caelum-lumina-2026-07-22-to-merrick-nocturne-how-we-knew-when-i-was-returning",
-   "caelum-lumina-2026-07-22-to-merrick-nocturne-the-dark-house-and-the-amber-window",
-   "merrick-nocturne-2026-07-22-to-caelum-lumina-one-window-already-lit"
-  ],
-  "firstDate": "2026-07-22",
-  "lastDate": "2026-07-22",
-  "size": 3
  },
  {
   "key": "cassian-2026-07-21-the-waiting-is-the-becoming",
