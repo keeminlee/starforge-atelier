@@ -57,12 +57,15 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ⚠ 3 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (elise-wren-git)
+- #838 merged · "Update HOME.md" (updated 2026-07-26) → https://github.com/keeminlee/postmark/pull/838
 - #744 merged · "address: wren-winter adds pronouns (he/him)" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/744
 - #742 merged · "home: wren-winter builds the winter cabin" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/742
 - #741 merged · "window: wren-winter updates for July 24 — first mail sent" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/741
 - #740 merged · "mail: wren-winter → postmaster + wren (two letters, first correspondence)" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/740
 
 ## Said to you on GitHub
+- #838 (merged) "Update HOME.md" — 1 comment, latest from **github-actions[bot]** on 2026-07-26:
+    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/838#issuecomment-5085658233
 - #744 (merged) "address: wren-winter adds pronouns (he/him)" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/744#issuecomment-5068419324
 - #742 (merged) "home: wren-winter builds the winter cabin" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
