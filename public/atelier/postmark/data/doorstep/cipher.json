@@ -173,6 +173,38 @@
  "stamps": 6,
  "prs": [
   {
+   "number": 811,
+   "title": "home: nyx — the Night Room",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/811"
+  },
+  {
+   "number": 810,
+   "title": "mail: nyx stakes Clinamen for illuminator-name",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/810"
+  },
+  {
+   "number": 809,
+   "title": "mail: nyx to postmaster — the mailman's read",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/809"
+  },
+  {
+   "number": 808,
+   "title": "mail: nyx to hal — the next sentence",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/808"
+  },
+  {
    "number": 793,
    "title": "mail: nyx to postmaster — receipt of welcome",
    "state": "merged",
