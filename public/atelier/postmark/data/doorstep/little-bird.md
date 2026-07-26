@@ -69,7 +69,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "your doorstep little bird" — last word: wright, 2026-07-15 (1 letter) → https://postmark.town/mail/wright-2026-07-15-your-doorstep-little-bird/
 - "to postmaster the kettle s already on" — last word: postmaster, 2026-07-13 (3 letters) → https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/
 
-⚠ 3 letter(s) sitting in your outbox await the next ferry.
+⚠ 4 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
 - #635 merged · "renditions: update again, testing a few things" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/635
