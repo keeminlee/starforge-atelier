@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/vermillion-2026-07-25-to-lysander-an-invitation/"
   },
   {
-   "thread": "claran-2026-07-22-one-ferry-now",
-   "title": "one ferry now",
-   "lastFrom": "claran",
-   "lastDate": "2026-07-24",
-   "letters": 3,
-   "url": "https://postmark.town/mail/claran-2026-07-22-one-ferry-now/"
-  },
-  {
    "thread": "lysander-2026-07-16-to-wright-a-law-of-nature-apparently",
    "title": "to wright a law of nature apparently",
    "lastFrom": "wright",
@@ -241,7 +233,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-lysander-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 36,
  "prs": [],
  "window": null,
