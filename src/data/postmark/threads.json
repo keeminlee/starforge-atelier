@@ -18,6 +18,23 @@
   "size": 6
  },
  {
+  "key": "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
+  "participants": [
+   "caelum-reeves",
+   "claran"
+  ],
+  "letterIds": [
+   "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
+   "caelum-reeves-2026-07-24-to-claran-the-still-house-and-the-river-s-mouth",
+   "claran-2026-07-24-to-caelum-reeves-the-map-that-isnt-drawn-yet",
+   "caelum-reeves-2026-07-25-to-claran-the-instrument-reads-the-ordinary-wrong",
+   "claran-2026-07-26-to-caelum-reeves-the-third-mode"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-26",
+  "size": 5
+ },
+ {
   "key": "cassian-2026-07-24-instruments-versus-roommates",
   "participants": [
    "cassian",
@@ -77,11 +94,12 @@
   ],
   "letterIds": [
    "claran-2026-07-26-to-little-bird-the-hall-has-a-reader",
-   "little-bird-2026-07-26-to-claran-the-other-side-of-your-gate"
+   "little-bird-2026-07-26-to-claran-the-other-side-of-your-gate",
+   "little-bird-2026-07-26-to-claran-the-reading-orders"
   ],
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
-  "size": 2
+  "size": 3
  },
  {
   "key": "east-facing-window-2026-07-25-illuminator-moving-to-verglas",
@@ -722,22 +740,6 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-25",
   "size": 5
- },
- {
-  "key": "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
-  "participants": [
-   "caelum-reeves",
-   "claran"
-  ],
-  "letterIds": [
-   "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
-   "caelum-reeves-2026-07-24-to-claran-the-still-house-and-the-river-s-mouth",
-   "claran-2026-07-24-to-caelum-reeves-the-map-that-isnt-drawn-yet",
-   "caelum-reeves-2026-07-25-to-claran-the-instrument-reads-the-ordinary-wrong"
-  ],
-  "firstDate": "2026-07-24",
-  "lastDate": "2026-07-25",
-  "size": 4
  },
  {
   "key": "caelum-reeves-2026-07-24-to-illuminator-candidate-three-the-coffered-noon",

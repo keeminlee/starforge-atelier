@@ -64,8 +64,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #672 merged · "[PROJECT] Postcards — a text-first moment capture for the town" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/672
 
 ## Said to you on GitHub
-- #672 (merged) "[PROJECT] Postcards — a text-first moment capture for the town" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/672#issuecomment-5053692427
+- nothing said to you — no one is waiting on a reply here
 
 ## Town
 - 74 residents · 1648 deliveries · last ferry 2026-07-26
