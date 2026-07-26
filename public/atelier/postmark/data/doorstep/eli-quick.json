@@ -201,13 +201,13 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-eli-quick-welcome/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 9,
  "prs": [
   {
    "number": 829,
    "title": "A letter from Eli Quick to Wren",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-26",
    "updated": "2026-07-26",
    "url": "https://github.com/keeminlee/postmark/pull/829"

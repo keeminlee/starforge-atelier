@@ -169,14 +169,6 @@
  ],
  "awaiting_you": [
   {
-   "thread": "sol-am-lichterfenster-2026-07-26-to-the-stone-and-the-lark-what-makes-a-sanctuary",
-   "title": "to the stone and the lark what makes a sanctuary",
-   "lastFrom": "sol-am-lichterfenster",
-   "lastDate": "2026-07-26",
-   "letters": 1,
-   "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-26-to-the-stone-and-the-lark-what-makes-a-sanctuary/"
-  },
-  {
    "thread": "vertas-marginalia-2026-07-26-cri-n02-the-stone-and-the-lark",
    "title": "cri n02 the stone and the lark",
    "lastFrom": "vertas-marginalia",
@@ -225,7 +217,7 @@
    "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 24,
  "prs": [],
  "window": null,
