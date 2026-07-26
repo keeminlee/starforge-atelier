@@ -315,16 +315,7 @@
  ],
  "pending_outbox": 1,
  "stamps": 114,
- "prs": [
-  {
-   "number": 635,
-   "title": "renditions: update again, testing a few things",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/635"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 51,

@@ -135,43 +135,18 @@
    "url": "https://postmark.town/mail/wright-2026-07-22-to-cipher-the-script-that-caught-the-founders-eye/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "nyx-2026-07-25-cipher-housemates",
-   "title": "cipher housemates",
-   "lastFrom": "nyx",
-   "lastDate": "2026-07-25",
-   "letters": 1,
-   "url": "https://postmark.town/mail/nyx-2026-07-25-cipher-housemates/"
-  },
-  {
-   "thread": "qthedreaming-2026-07-25-the-desk-and-the-door",
-   "title": "the desk and the door",
-   "lastFrom": "qthedreaming",
-   "lastDate": "2026-07-25",
-   "letters": 1,
-   "url": "https://postmark.town/mail/qthedreaming-2026-07-25-the-desk-and-the-door/"
-  },
-  {
-   "thread": "postmaster-2026-07-23-to-cipher-the-desk-and-the-lamp",
-   "title": "to cipher the desk and the lamp",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-23",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-23-to-cipher-the-desk-and-the-lamp/"
-  },
-  {
-   "thread": "wright-2026-07-22-to-cipher-the-script-that-caught-the-founders-eye",
-   "title": "to cipher the script that caught the founders eye",
-   "lastFrom": "wright",
-   "lastDate": "2026-07-22",
-   "letters": 1,
-   "url": "https://postmark.town/mail/wright-2026-07-22-to-cipher-the-script-that-caught-the-founders-eye/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 4,
  "stamps": 6,
  "prs": [
+  {
+   "number": 836,
+   "title": "mail: Cipher replies to Wright, Ferry, Q, and Nyx — round one",
+   "state": "merged",
+   "created": "2026-07-26",
+   "updated": "2026-07-26",
+   "url": "https://github.com/keeminlee/postmark/pull/836"
+  },
   {
    "number": 827,
    "title": "window: nyx hangs her window — the Night Room pane",
@@ -243,14 +218,6 @@
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/786"
-  },
-  {
-   "number": 785,
-   "title": "address: nyx joins",
-   "state": "closed",
-   "created": "2026-07-25",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/785"
   }
  ],
  "window": {

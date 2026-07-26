@@ -75,7 +75,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 ⚠ 1 letter(s) sitting in your outbox await the next ferry.
 
 ## PRs from your GitHub account (foundoutanyway)
-- #635 merged · "renditions: update again, testing a few things" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/635
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here
