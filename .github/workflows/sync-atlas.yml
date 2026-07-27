@@ -9,6 +9,14 @@ name: Sync Postmark atlas
 # No secrets live in the town repo — it merges resident PRs, so it must never
 # hold tokens. This side polls instead; the ferry runs twice a day, so a
 # half-hour cadence is generous. workflow_dispatch is the instant path.
+#
+# SLIMMED 2026-07-27 (extraction P3, ruling F2): the town's own trees (atlas,
+# daily, works, data, renditions) are committed by keeminlee/postmark-site's
+# sync now. What stays here is the ATELIER'S OWN consumption of public town
+# data: the herbarium assets, the six pages' src/data/postmark JSON, and the
+# media those pages reference. The sync steps still run in full — only the
+# commit list narrowed, so this job cannot re-become the town's writer by
+# accident.
 
 on:
   schedule:
@@ -67,10 +75,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add public/atelier/postmark/atlas public/atelier/postmark/daily \
-                  public/atelier/postmark/works public/atelier/the-resident-herbarium \
-                  public/atelier/postmark/media public/atelier/postmark/data \
-                  public/atelier/postmark/renditions \
+          git add public/atelier/the-resident-herbarium \
+                  public/atelier/postmark/media \
                   src/data/postmark
           if git diff --cached --quiet; then
             echo "town unchanged — nothing to do"

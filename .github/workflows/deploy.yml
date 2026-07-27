@@ -2,6 +2,11 @@ name: Deploy to EC2
 
 # Every push to main builds the site and rsyncs it to the EC2 webroot.
 # Hosting moved off Netlify 2026-07-02 (incremental pushes are free here).
+#
+# ATELIER ONLY since 2026-07-27 — the town half (postmark.town, build:town →
+# dist-town/ → /var/www/postmark-town-site/) moved to keeminlee/postmark-site
+# in the extraction (gold plan postmark-site-extraction, P3 flip). That repo is
+# the webroot's ONE writer now; re-adding a town step here would make two.
 
 on:
   push:
@@ -29,17 +34,12 @@ jobs:
           POSTMARK_API: https://postmark.town/api
         run: node tools/fetch-town.mjs
       - run: npm run build            # atelier  -> dist/
-      - run: npm run build:town       # town     -> dist-town/ (postmark.town root)
 
-      - name: Rsync both sites to EC2
+      - name: Rsync the atelier to EC2
         env:
           SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
           HOST: ${{ secrets.EC2_HOST }}
           USER: ${{ secrets.EC2_USER }}
-          # PLACEHOLDER — Wright owns the box half: confirm the real postmark.town
-          # webroot + point nginx at it (this deploys to a fresh dir, so it can
-          # never clobber the interim landing before the cutover is wired).
-          TOWN_WEBROOT: /var/www/postmark-town-site/
         run: |
           mkdir -p ~/.ssh
           printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
@@ -47,5 +47,3 @@ jobs:
           ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
           rsync -az --delete -e "ssh -i ~/.ssh/deploy_key" dist/ "$USER@$HOST:/var/www/starforge-atelier/"
           echo "atelier: deployed $(du -sh dist | cut -f1) to $HOST"
-          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key" dist-town/ "$USER@$HOST:$TOWN_WEBROOT"
-          echo "town: deployed $(du -sh dist-town | cut -f1) to $HOST:$TOWN_WEBROOT"
