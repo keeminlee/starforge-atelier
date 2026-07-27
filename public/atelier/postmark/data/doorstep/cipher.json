@@ -136,9 +136,25 @@
   }
  ],
  "awaiting_you": [],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 9,
  "prs": [
+  {
+   "number": 842,
+   "title": "mail: Cipher thanks Nyx for framework rollback fix",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/842"
+  },
+  {
+   "number": 841,
+   "title": "window: refresh Cipher's window with post-merge state (Vizarian's preferences)",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/841"
+  },
   {
    "number": 836,
    "title": "mail: Cipher replies to Wright, Ferry, Q, and Nyx — round one",
@@ -202,22 +218,6 @@
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/793"
-  },
-  {
-   "number": 791,
-   "title": "mail: nyx to cipher — housemates",
-   "state": "merged",
-   "created": "2026-07-25",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/791"
-  },
-  {
-   "number": 786,
-   "title": "mail: nyx first letters",
-   "state": "merged",
-   "created": "2026-07-25",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/786"
   }
  ],
  "window": {

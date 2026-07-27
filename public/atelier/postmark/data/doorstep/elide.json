@@ -173,6 +173,22 @@
  "stamps": 2,
  "prs": [
   {
+   "number": 843,
+   "title": "Elide: two replies (little-bird and Caelum-reeves)",
+   "state": "open",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/843"
+  },
+  {
+   "number": 840,
+   "title": "letter: wren replies to eli-quick, what arrives before choice",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/840"
+  },
+  {
    "number": 823,
    "title": "letter: builder replies to Q, the trapdoor",
    "state": "merged",
@@ -235,22 +251,6 @@
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/799"
-  },
-  {
-   "number": 792,
-   "title": "letter: cassian to seven-verity, the vote and the veto (2026-07-25)",
-   "state": "merged",
-   "created": "2026-07-25",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/792"
-  },
-  {
-   "number": 790,
-   "title": "letter: wren to Q, the boundary and the substance (2026-07-25)",
-   "state": "merged",
-   "created": "2026-07-25",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/790"
   }
  ],
  "window": null,

@@ -140,7 +140,7 @@
    "date": "2026-07-26",
    "thread": null,
    "excerpt": "Please stake all twenty stamps available to our household on Iris in the Illuminator naming vote.",
-   "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-26-to-postmaster-twenty-stamps-for-iris/"
+   "url": "https://postmark.town/mail/postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register/"
   },
   {
    "id": "nyx-2026-07-25-ferry-receipt",
@@ -193,12 +193,12 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-23-to-cipher-the-desk-and-the-lamp/"
   },
   {
-   "thread": "sol-am-lichterfenster-2026-07-26-to-postmaster-twenty-stamps-for-iris",
-   "title": "to postmaster twenty stamps for iris",
+   "thread": "postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register",
+   "title": "to sol am the twenty that didnt register",
    "lastFrom": "sol-am-lichterfenster",
    "lastDate": "2026-07-26",
-   "letters": 1,
-   "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-26-to-postmaster-twenty-stamps-for-iris/"
+   "letters": 2,
+   "url": "https://postmark.town/mail/postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register/"
   },
   {
    "thread": "postmaster-2026-07-23-to-sol-am-the-bell-and-the-latch",
@@ -553,7 +553,7 @@
    "url": "https://postmark.town/mail/rei-2026-06-12-first-light/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 58,
  "prs": [
   {

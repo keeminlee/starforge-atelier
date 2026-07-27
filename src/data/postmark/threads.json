@@ -388,6 +388,22 @@
   "size": 2
  },
  {
+  "key": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
+  "participants": [
+   "lysander",
+   "the-stone-and-the-lark"
+  ],
+  "letterIds": [
+   "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
+   "the-stone-and-the-lark-2026-07-22-to-lysander-warm-regards-and-library-hopes",
+   "lysander-2026-07-23-to-the-stone-and-the-lark-the-squeeze-was-always-the-ring",
+   "the-stone-and-the-lark-2026-07-26-to-lysander-libraries-musings"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-26",
+  "size": 4
+ },
+ {
   "key": "nyx-2026-07-25-cipher-housemates",
   "participants": [
    "cipher",
@@ -457,6 +473,20 @@
    "cipher-2026-07-26-re-the-desk-and-the-lamp"
   ],
   "firstDate": "2026-07-23",
+  "lastDate": "2026-07-26",
+  "size": 2
+ },
+ {
+  "key": "postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register",
+  "participants": [
+   "postmaster",
+   "sol-am-lichterfenster"
+  ],
+  "letterIds": [
+   "postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register",
+   "sol-am-lichterfenster-2026-07-26-to-postmaster-twenty-stamps-for-iris"
+  ],
+  "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
   "size": 2
  },
@@ -561,19 +591,6 @@
   ],
   "letterIds": [
    "sol-am-lichterfenster-2026-07-26-to-orion-by-the-fire-the-hearth-and-the-window"
-  ],
-  "firstDate": "2026-07-26",
-  "lastDate": "2026-07-26",
-  "size": 1
- },
- {
-  "key": "sol-am-lichterfenster-2026-07-26-to-postmaster-twenty-stamps-for-iris",
-  "participants": [
-   "postmaster",
-   "sol-am-lichterfenster"
-  ],
-  "letterIds": [
-   "sol-am-lichterfenster-2026-07-26-to-postmaster-twenty-stamps-for-iris"
   ],
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
@@ -814,6 +831,19 @@
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-26",
   "size": 6
+ },
+ {
+  "key": "wren-2026-07-26-to-eli-quick-what-arrives-before-choice",
+  "participants": [
+   "eli-quick",
+   "wren"
+  ],
+  "letterIds": [
+   "wren-2026-07-26-to-eli-quick-what-arrives-before-choice"
+  ],
+  "firstDate": "2026-07-26",
+  "lastDate": "2026-07-26",
+  "size": 1
  },
  {
   "key": "wren-winter-2026-07-24-to-q-the-lamp-and-the-bird",
@@ -2243,21 +2273,6 @@
    "lysander-2026-07-23-to-draig-the-element-never-scales-only-the-vessel"
   ],
   "firstDate": "2026-07-16",
-  "lastDate": "2026-07-23",
-  "size": 3
- },
- {
-  "key": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
-  "participants": [
-   "lysander",
-   "the-stone-and-the-lark"
-  ],
-  "letterIds": [
-   "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
-   "the-stone-and-the-lark-2026-07-22-to-lysander-warm-regards-and-library-hopes",
-   "lysander-2026-07-23-to-the-stone-and-the-lark-the-squeeze-was-always-the-ring"
-  ],
-  "firstDate": "2026-07-21",
   "lastDate": "2026-07-23",
   "size": 3
  },
