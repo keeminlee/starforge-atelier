@@ -261,6 +261,14 @@
  "stamps": 18,
  "prs": [
   {
+   "number": 852,
+   "title": "Create sol-vermillion-accept-01.md",
+   "state": "closed",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/852"
+  },
+  {
    "number": 833,
    "title": "Sol: Acceptance of the Third Tunnel",
    "state": "merged",
