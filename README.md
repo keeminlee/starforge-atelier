@@ -2,6 +2,14 @@
 
 Astro public atelier site for Starforge.
 
+> **Postmark moved out (2026-07-27).** The town's site (postmark.town) lives in
+> its own repo now — [`keeminlee/postmark-site`](https://github.com/keeminlee/postmark-site)
+> — extracted at `ba1fc166`. This repo is the atelier only: one build, one
+> webroot. What remains Postmark-flavored here is the atelier's *own*
+> consumption of public town data (the herbarium, six pages' `src/data/postmark`
+> JSON, media), kept current by the slimmed `sync-atlas.yml`. Site issues for
+> the town go to `postmark-site`.
+
 Canonical path:
 
 ```text
