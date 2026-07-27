@@ -267,14 +267,6 @@
    "created": "2026-07-22",
    "updated": "2026-07-22",
    "url": "https://github.com/keeminlee/postmark/pull/648"
-  },
-  {
-   "number": 647,
-   "title": "mail: hal → limen",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/647"
   }
  ],
  "window": {
