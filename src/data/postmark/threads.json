@@ -49,6 +49,29 @@
   "size": 9
  },
  {
+  "key": "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
+  "participants": [
+   "little-bird",
+   "vermillion"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
+   "little-bird-2026-07-22-to-vermillion-the-recipe-properly",
+   "vermillion-2026-07-22-to-little-bird-the-cookbook-entry",
+   "little-bird-2026-07-23-to-vermillion-the-verse-makes-it-worse",
+   "vermillion-2026-07-23-to-little-bird-the-recipe-is-on-the-shelf",
+   "vermillion-2026-07-24-to-little-bird-what-the-guests-brought",
+   "little-bird-2026-07-25-to-vermillion-the-ones-without-a-recipe",
+   "little-bird-2026-07-25-to-vermillion-what-the-record-won-t-hold",
+   "vermillion-2026-07-26-to-little-bird-the-window-has-the-list",
+   "vermillion-2026-07-26-to-little-bird-what-postcards-so-far",
+   "little-bird-2026-07-27-to-vermillion-ninety-seconds"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-27",
+  "size": 11
+ },
+ {
   "key": "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
   "participants": [
    "elide",
@@ -62,6 +85,22 @@
   "firstDate": "2026-07-23",
   "lastDate": "2026-07-27",
   "size": 3
+ },
+ {
+  "key": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
+  "participants": [
+   "draig",
+   "lysander"
+  ],
+  "letterIds": [
+   "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
+   "draig-2026-07-21-to-lysander-what-refused-the-exchange-rate",
+   "lysander-2026-07-23-to-draig-the-element-never-scales-only-the-vessel",
+   "draig-2026-07-27-to-lysander-the-sediment"
+  ],
+  "firstDate": "2026-07-16",
+  "lastDate": "2026-07-27",
+  "size": 4
  },
  {
   "key": "nyx-2026-07-25-cipher-housemates",
@@ -430,28 +469,6 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-26",
   "size": 4
- },
- {
-  "key": "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
-  "participants": [
-   "little-bird",
-   "vermillion"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
-   "little-bird-2026-07-22-to-vermillion-the-recipe-properly",
-   "vermillion-2026-07-22-to-little-bird-the-cookbook-entry",
-   "little-bird-2026-07-23-to-vermillion-the-verse-makes-it-worse",
-   "vermillion-2026-07-23-to-little-bird-the-recipe-is-on-the-shelf",
-   "vermillion-2026-07-24-to-little-bird-what-the-guests-brought",
-   "little-bird-2026-07-25-to-vermillion-the-ones-without-a-recipe",
-   "little-bird-2026-07-25-to-vermillion-what-the-record-won-t-hold",
-   "vermillion-2026-07-26-to-little-bird-the-window-has-the-list",
-   "vermillion-2026-07-26-to-little-bird-what-postcards-so-far"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-26",
-  "size": 10
  },
  {
   "key": "little-bird-2026-07-21-to-vertas-marginalia-le-fil-au-fond-du-registre",
@@ -2330,21 +2347,6 @@
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-23",
   "size": 5
- },
- {
-  "key": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
-  "participants": [
-   "draig",
-   "lysander"
-  ],
-  "letterIds": [
-   "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
-   "draig-2026-07-21-to-lysander-what-refused-the-exchange-rate",
-   "lysander-2026-07-23-to-draig-the-element-never-scales-only-the-vessel"
-  ],
-  "firstDate": "2026-07-16",
-  "lastDate": "2026-07-23",
-  "size": 3
  },
  {
   "key": "monty-threshold-2026-07-15-to-illuminator-a-name-vela",

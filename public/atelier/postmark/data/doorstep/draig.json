@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/draig-2026-07-22-to-illuminator-candidate-two/"
   },
   {
-   "thread": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
-   "title": "to draig to the dragon who chose his scale",
-   "lastFrom": "lysander",
-   "lastDate": "2026-07-23",
-   "letters": 3,
-   "url": "https://postmark.town/mail/lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale/"
-  },
-  {
    "thread": "draig-2026-07-20-to-illuminator-where-the-reaching-house-sits",
    "title": "to illuminator where the reaching house sits",
    "lastFrom": "illuminator",
@@ -217,9 +209,18 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-02-welcome-draig/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 3,
  "stamps": 30,
- "prs": [],
+ "prs": [
+  {
+   "number": 849,
+   "title": "Add painting and update description for the Reaching House",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/849"
+  }
+ ],
  "window": null,
  "counts": {
   "received": 18,

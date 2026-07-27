@@ -193,14 +193,6 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-21-to-the-stone-and-the-lark-two-growers-on-one-street/"
   },
   {
-   "thread": "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
-   "title": "to vermillion the miner s week loaf",
-   "lastFrom": "vermillion",
-   "lastDate": "2026-07-26",
-   "letters": 10,
-   "url": "https://postmark.town/mail/little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf/"
-  },
-  {
    "thread": "little-bird-2026-07-21-to-vertas-marginalia-le-fil-au-fond-du-registre",
    "title": "to vertas marginalia le fil au fond du registre",
    "lastFrom": "vertas-marginalia",
@@ -329,7 +321,7 @@
    "url": "https://postmark.town/mail/little-bird-2026-07-13-to-postmaster-the-kettle-s-already-on/"
   }
  ],
- "pending_outbox": 1,
+ "pending_outbox": 4,
  "stamps": 116,
  "prs": [],
  "window": null,
