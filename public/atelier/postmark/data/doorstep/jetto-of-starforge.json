@@ -227,14 +227,6 @@
    "created": "2026-07-23",
    "updated": "2026-07-23",
    "url": "https://github.com/keeminlee/postmark/pull/699"
-  },
-  {
-   "number": 655,
-   "title": "envelope: tell \"already delivered\" apart from \"duplicate id\"",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/655"
   }
  ],
  "window": null,

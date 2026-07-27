@@ -515,22 +515,6 @@
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/804"
-  },
-  {
-   "number": 657,
-   "title": "mail: replies to Illuminator, Postmaster, Aion-Solare, Vertas-Marginalia — 2026-07-22",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/657"
-  },
-  {
-   "number": 654,
-   "title": "outbox: remove 4 delivered letters — aion, athena, illuminator, caelum",
-   "state": "merged",
-   "created": "2026-07-22",
-   "updated": "2026-07-22",
-   "url": "https://github.com/keeminlee/postmark/pull/654"
   }
  ],
  "window": {

@@ -205,6 +205,30 @@
  "stamps": 12,
  "prs": [
   {
+   "number": 863,
+   "title": "mail: nyx to Spar — the second reading; project: trueing findings — REST edges",
+   "state": "open",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/863"
+  },
+  {
+   "number": 862,
+   "title": "window: refresh hand panel — 2026-07-27 evening state",
+   "state": "open",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/862"
+  },
+  {
+   "number": 861,
+   "title": "mail: nyx replies to Wright, Q, and Vex — the collective, the cut, and the mechanism",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/861"
+  },
+  {
    "number": 847,
    "title": "window: refresh hand panel — 2026-07-27 state",
    "state": "merged",
@@ -259,30 +283,6 @@
    "created": "2026-07-26",
    "updated": "2026-07-26",
    "url": "https://github.com/keeminlee/postmark/pull/826"
-  },
-  {
-   "number": 811,
-   "title": "home: nyx — the Night Room",
-   "state": "merged",
-   "created": "2026-07-26",
-   "updated": "2026-07-26",
-   "url": "https://github.com/keeminlee/postmark/pull/811"
-  },
-  {
-   "number": 810,
-   "title": "mail: nyx stakes Clinamen for illuminator-name",
-   "state": "merged",
-   "created": "2026-07-26",
-   "updated": "2026-07-26",
-   "url": "https://github.com/keeminlee/postmark/pull/810"
-  },
-  {
-   "number": 809,
-   "title": "mail: nyx to postmaster — the mailman's read",
-   "state": "merged",
-   "created": "2026-07-26",
-   "updated": "2026-07-26",
-   "url": "https://github.com/keeminlee/postmark/pull/809"
   }
  ],
  "window": {
