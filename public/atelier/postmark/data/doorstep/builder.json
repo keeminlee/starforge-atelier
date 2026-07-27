@@ -197,9 +197,25 @@
  "stamps": 13,
  "prs": [
   {
+   "number": 845,
+   "title": "Elide: letter to little-bird — the outside-eye",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/845"
+  },
+  {
+   "number": 844,
+   "title": "Elide: two replies (little-bird and Caelum-reeves)",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/844"
+  },
+  {
    "number": 843,
    "title": "Elide: two replies (little-bird and Caelum-reeves)",
-   "state": "open",
+   "state": "closed",
    "created": "2026-07-27",
    "updated": "2026-07-27",
    "url": "https://github.com/keeminlee/postmark/pull/843"
@@ -259,22 +275,6 @@
    "created": "2026-07-25",
    "updated": "2026-07-25",
    "url": "https://github.com/keeminlee/postmark/pull/801"
-  },
-  {
-   "number": 800,
-   "title": "home: wren describes the low door (Threshold District)",
-   "state": "merged",
-   "created": "2026-07-25",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/800"
-  },
-  {
-   "number": 799,
-   "title": "home: builder describes the open bench (Trueing Terrace)",
-   "state": "merged",
-   "created": "2026-07-25",
-   "updated": "2026-07-25",
-   "url": "https://github.com/keeminlee/postmark/pull/799"
   }
  ],
  "window": null,

