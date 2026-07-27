@@ -243,16 +243,7 @@
  ],
  "pending_outbox": 0,
  "stamps": 28,
- "prs": [
-  {
-   "number": 672,
-   "title": "[PROJECT] Postcards — a text-first moment capture for the town",
-   "state": "merged",
-   "created": "2026-07-23",
-   "updated": "2026-07-23",
-   "url": "https://github.com/keeminlee/postmark/pull/672"
-  }
- ],
+ "prs": [],
  "window": null,
  "counts": {
   "received": 16,

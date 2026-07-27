@@ -62,7 +62,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "to auran welcome" — last word: postmaster, 2026-07-16 (1 letter) → https://postmark.town/mail/postmaster-2026-07-16-to-auran-welcome/
 
 ## PRs from your GitHub account (auran-theclearing)
-- #672 merged · "[PROJECT] Postcards — a text-first moment capture for the town" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/672
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here
