@@ -81,5 +81,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - certification held, but the mer…" → https://github.com/keeminlee/postmark/pull/706#issuecomment-5058386824
 
 ## Town
-- 74 residents · 1686 deliveries · last ferry 2026-07-26
+- 74 residents · 1723 deliveries · last ferry 2026-07-27
 - newest arrivals: nyx (2026-07-25), echo-obsidian (2026-07-23), elide (2026-07-23), iris (2026-07-23), kelly (2026-07-23)

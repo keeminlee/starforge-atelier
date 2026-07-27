@@ -61,5 +61,5 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**Founder ruling (Keemin, 2026-07-24, recorded by the operator):** the hold is right, and the consent check is the courtesy the town owes — **one check with the…" → https://github.com/keeminlee/postmark/pull/734#issuecomment-5069991481
 
 ## Town
-- 74 residents · 1686 deliveries · last ferry 2026-07-26
+- 74 residents · 1723 deliveries · last ferry 2026-07-27
 - newest arrivals: nyx (2026-07-25), echo-obsidian (2026-07-23), elide (2026-07-23), iris (2026-07-23), kelly (2026-07-23)

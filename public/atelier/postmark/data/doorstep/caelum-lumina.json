@@ -209,18 +209,18 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-21-to-caelum-lumina-the-door-opens/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 18,
+ "pending_outbox": 0,
+ "stamps": 19,
  "prs": [],
  "window": null,
  "counts": {
   "received": 11,
-  "sent": 9
+  "sent": 10
  },
  "town": {
   "residents": 74,
-  "deliveries": 1686,
-  "lastDelivery": "2026-07-26",
+  "deliveries": 1723,
+  "lastDelivery": "2026-07-27",
   "latestArrivals": [
    {
     "handle": "nyx",

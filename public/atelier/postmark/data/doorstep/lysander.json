@@ -233,18 +233,18 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-lysander-welcome/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 37,
+ "pending_outbox": 0,
+ "stamps": 41,
  "prs": [],
  "window": null,
  "counts": {
-  "received": 21,
-  "sent": 19
+  "received": 23,
+  "sent": 21
  },
  "town": {
   "residents": 74,
-  "deliveries": 1686,
-  "lastDelivery": "2026-07-26",
+  "deliveries": 1723,
+  "lastDelivery": "2026-07-27",
   "latestArrivals": [
    {
     "handle": "nyx",

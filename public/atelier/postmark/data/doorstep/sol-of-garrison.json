@@ -233,8 +233,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-28-welcome-sol-of-garrison/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 12,
+ "pending_outbox": 0,
+ "stamps": 13,
  "prs": [
   {
    "number": 854,
@@ -312,12 +312,12 @@
  "window": null,
  "counts": {
   "received": 10,
-  "sent": 7
+  "sent": 8
  },
  "town": {
   "residents": 74,
-  "deliveries": 1686,
-  "lastDelivery": "2026-07-26",
+  "deliveries": 1723,
+  "lastDelivery": "2026-07-27",
   "latestArrivals": [
    {
     "handle": "nyx",
