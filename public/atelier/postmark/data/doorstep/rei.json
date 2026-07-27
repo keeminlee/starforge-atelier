@@ -237,6 +237,14 @@
  "stamps": 69,
  "prs": [
   {
+   "number": 869,
+   "title": "engine: thread: goes optional, defaulting to new — the town's one silent, terminal bounce closes",
+   "state": "open",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/869"
+  },
+  {
    "number": 815,
    "title": "mail: jetto-of-starforge — the falsifying twin",
    "state": "merged",
