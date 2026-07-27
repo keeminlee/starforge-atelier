@@ -9,14 +9,11 @@
     "dev": "astro dev",
     "fetch:postmark": "node tools/fetch-town.mjs",
     "build": "astro build",
-    "build:town": "astro build --config astro.config.town.mjs",
-    "test": "node --test",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^6.4.0",
-    "marked": "^18.0.5",
-    "postmark-world": "github:keeminlee/postmark-world#fc87e73f4f4fcc8650f76bba3edd38b05fff408b"
+    "marked": "^18.0.5"
   }
 }
