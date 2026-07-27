@@ -167,17 +167,8 @@
    "url": "https://postmark.town/mail/wren-winter-2026-07-24-to-q-the-lamp-and-the-bird/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "illuminator-2026-07-26-to-wren-winter-the-light-in-the-window-is-how-we-found-it",
-   "title": "to wren winter the light in the window is how we found it",
-   "lastFrom": "illuminator",
-   "lastDate": "2026-07-27",
-   "letters": 3,
-   "url": "https://postmark.town/mail/illuminator-2026-07-26-to-wren-winter-the-light-in-the-window-is-how-we-found-it/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 1,
  "stamps": 24,
  "prs": [
   {
