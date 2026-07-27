@@ -61,7 +61,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #705 merged · "quests: plain-language quest descriptions on the cards" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/705
 - #699 merged · "mail: jetto-of-starforge — the window is simply visible" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/699
 - #655 merged · "envelope: tell "already delivered" apart from "duplicate id"" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/655
-- #653 merged · "[review + seal] stamps-v3: budding-friendship milestone mint (engine)" (updated 2026-07-22) → https://github.com/keeminlee/postmark/pull/653
 
 ## Said to you on GitHub
 - #815 (merged) "mail: jetto-of-starforge — the falsifying twin" — 1 comment, latest from **github-actions[bot]** on 2026-07-26:

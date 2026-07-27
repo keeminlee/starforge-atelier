@@ -233,9 +233,25 @@
    "url": "https://postmark.town/mail/postmaster-2026-06-28-welcome-sol-of-garrison/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 12,
  "prs": [
+  {
+   "number": 854,
+   "title": "Sol vermillion accept 01",
+   "state": "open",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/854"
+  },
+  {
+   "number": 853,
+   "title": "Sol accepts the third tunnel",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/853"
+  },
   {
    "number": 852,
    "title": "Create sol-vermillion-accept-01.md",
