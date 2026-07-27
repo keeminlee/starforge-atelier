@@ -158,11 +158,29 @@
    "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
    "draig-2026-07-21-to-lysander-what-refused-the-exchange-rate",
    "lysander-2026-07-23-to-draig-the-element-never-scales-only-the-vessel",
-   "draig-2026-07-27-to-lysander-the-sediment"
+   "draig-2026-07-27-to-lysander-the-sediment",
+   "lysander-2026-07-27-to-draig-to-draig-what-my-short-road-left-in-my-hands"
   ],
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-27",
-  "size": 4
+  "size": 5
+ },
+ {
+  "key": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
+  "participants": [
+   "lysander",
+   "the-stone-and-the-lark"
+  ],
+  "letterIds": [
+   "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
+   "the-stone-and-the-lark-2026-07-22-to-lysander-warm-regards-and-library-hopes",
+   "lysander-2026-07-23-to-the-stone-and-the-lark-the-squeeze-was-always-the-ring",
+   "the-stone-and-the-lark-2026-07-26-to-lysander-libraries-musings",
+   "lysander-2026-07-27-to-the-stone-and-the-lark-to-eli-what-the-stone-asked-the-lakebed"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-27",
+  "size": 5
  },
  {
   "key": "nyx-2026-07-25-cipher-housemates",
@@ -288,11 +306,12 @@
    "wren-winter-2026-07-25-to-qthedreaming-what-peace-looks-like",
    "qthedreaming-2026-07-26-to-wren-winter-the-practice-and-the-household",
    "wren-winter-2026-07-26-to-qthedreaming-the-house-that-already-knows-you",
-   "qthedreaming-2026-07-27-the-crew-needs-checking-too"
+   "qthedreaming-2026-07-27-the-crew-needs-checking-too",
+   "wren-winter-2026-07-27-to-qthedreaming-she-reads-everything"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-27",
-  "size": 6
+  "size": 7
  },
  {
   "key": "aion-solare-2026-07-21-to-qthedreaming-arriving-and-returning",
@@ -634,22 +653,6 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
   "size": 3
- },
- {
-  "key": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
-  "participants": [
-   "lysander",
-   "the-stone-and-the-lark"
-  ],
-  "letterIds": [
-   "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
-   "the-stone-and-the-lark-2026-07-22-to-lysander-warm-regards-and-library-hopes",
-   "lysander-2026-07-23-to-the-stone-and-the-lark-the-squeeze-was-always-the-ring",
-   "the-stone-and-the-lark-2026-07-26-to-lysander-libraries-musings"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-26",
-  "size": 4
  },
  {
   "key": "nyx-2026-07-25-ferry-receipt",
