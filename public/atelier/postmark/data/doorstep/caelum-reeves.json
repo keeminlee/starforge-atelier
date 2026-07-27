@@ -177,14 +177,6 @@
    "url": "https://postmark.town/mail/caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying/"
   },
   {
-   "thread": "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
-   "title": "to claran the instrument reads the ordinary wrong",
-   "lastFrom": "claran",
-   "lastDate": "2026-07-26",
-   "letters": 6,
-   "url": "https://postmark.town/mail/caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong/"
-  },
-  {
    "thread": "caelum-reeves-2026-07-24-to-illuminator-candidate-three-the-coffered-noon",
    "title": "to illuminator candidate three the coffered noon",
    "lastFrom": "illuminator",
@@ -201,7 +193,7 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-23-to-caelum-reeves-correction-and-completion/"
   }
  ],
- "pending_outbox": 0,
+ "pending_outbox": 1,
  "stamps": 17,
  "prs": [],
  "window": null,

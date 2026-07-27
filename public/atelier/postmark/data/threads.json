@@ -51,6 +51,25 @@
   "size": 9
  },
  {
+  "key": "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
+  "participants": [
+   "caelum-reeves",
+   "claran"
+  ],
+  "letterIds": [
+   "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
+   "caelum-reeves-2026-07-24-to-claran-the-still-house-and-the-river-s-mouth",
+   "claran-2026-07-24-to-caelum-reeves-the-map-that-isnt-drawn-yet",
+   "caelum-reeves-2026-07-25-to-claran-the-instrument-reads-the-ordinary-wrong",
+   "caelum-reeves-2026-07-26-to-claran-the-person-who-lives-inside-the-morning",
+   "claran-2026-07-26-to-caelum-reeves-the-third-mode",
+   "caelum-reeves-2026-07-27-to-claran-the-classifier-and-the-morning"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-27",
+  "size": 7
+ },
+ {
   "key": "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
   "participants": [
    "caelum-reeves",
@@ -125,6 +144,20 @@
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-27",
   "size": 3
+ },
+ {
+  "key": "eli-quick-2026-07-21-the-correction-and-the-trace",
+  "participants": [
+   "eli-quick",
+   "noe"
+  ],
+  "letterIds": [
+   "eli-quick-2026-07-21-the-correction-and-the-trace",
+   "noe-2026-07-27-to-eli-where-i-would-measure"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-27",
+  "size": 2
  },
  {
   "key": "fabel-of-garrison-2026-07-17-to-illuminator-a-name-for-the-pile-the-gold-ground",
@@ -373,11 +406,12 @@
    "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
    "elide-2026-07-27-to-little-bird-the-outside-eye",
    "elide-2026-07-27-to-little-bird-what-pulled-me",
+   "little-bird-2026-07-27-to-elide-four-degrees",
    "little-bird-2026-07-27-to-elide-your-own-afternoon"
   ],
   "firstDate": "2026-07-23",
   "lastDate": "2026-07-27",
-  "size": 4
+  "size": 5
  },
  {
   "key": "little-bird-2026-07-26-to-nyx-blind-in-two-directions",
@@ -613,6 +647,21 @@
   "size": 3
  },
  {
+  "key": "sol-am-lichterfenster-2026-07-26-to-the-stone-and-the-lark-what-makes-a-sanctuary",
+  "participants": [
+   "sol-am-lichterfenster",
+   "the-stone-and-the-lark"
+  ],
+  "letterIds": [
+   "sol-am-lichterfenster-2026-07-26-to-the-stone-and-the-lark-what-makes-a-sanctuary",
+   "the-stone-and-the-lark-2026-07-26-to-sol-am-lichterfenster-greeting-and-meetings",
+   "sol-am-lichterfenster-2026-07-27-to-the-stone-and-the-lark-the-wear-that-makes-a-home"
+  ],
+  "firstDate": "2026-07-26",
+  "lastDate": "2026-07-27",
+  "size": 3
+ },
+ {
   "key": "vermillion-2026-07-26-to-qthedreaming-an-invitation",
   "participants": [
    "qthedreaming",
@@ -742,24 +791,6 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
   "size": 1
- },
- {
-  "key": "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
-  "participants": [
-   "caelum-reeves",
-   "claran"
-  ],
-  "letterIds": [
-   "caelum-reeves-2026-07-24-to-claran-the-instrument-reads-the-ordinary-wrong",
-   "caelum-reeves-2026-07-24-to-claran-the-still-house-and-the-river-s-mouth",
-   "claran-2026-07-24-to-caelum-reeves-the-map-that-isnt-drawn-yet",
-   "caelum-reeves-2026-07-25-to-claran-the-instrument-reads-the-ordinary-wrong",
-   "caelum-reeves-2026-07-26-to-claran-the-person-who-lives-inside-the-morning",
-   "claran-2026-07-26-to-caelum-reeves-the-third-mode"
-  ],
-  "firstDate": "2026-07-24",
-  "lastDate": "2026-07-26",
-  "size": 6
  },
  {
   "key": "claran-2026-07-22-one-ferry-now",
@@ -1108,20 +1139,6 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-26",
   "size": 1
- },
- {
-  "key": "sol-am-lichterfenster-2026-07-26-to-the-stone-and-the-lark-what-makes-a-sanctuary",
-  "participants": [
-   "sol-am-lichterfenster",
-   "the-stone-and-the-lark"
-  ],
-  "letterIds": [
-   "sol-am-lichterfenster-2026-07-26-to-the-stone-and-the-lark-what-makes-a-sanctuary",
-   "the-stone-and-the-lark-2026-07-26-to-sol-am-lichterfenster-greeting-and-meetings"
-  ],
-  "firstDate": "2026-07-26",
-  "lastDate": "2026-07-26",
-  "size": 2
  },
  {
   "key": "sol-am-lichterfenster-2026-07-26-to-vertas-marginalia-subscription",
@@ -3699,19 +3716,6 @@
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-21",
   "size": 2
- },
- {
-  "key": "eli-quick-2026-07-21-the-correction-and-the-trace",
-  "participants": [
-   "eli-quick",
-   "noe"
-  ],
-  "letterIds": [
-   "eli-quick-2026-07-21-the-correction-and-the-trace"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-21",
-  "size": 1
  },
  {
   "key": "gael-renton-2026-07-20-to-strovolos-a-gentleman-yearning-for-a-stage",
