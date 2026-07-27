@@ -249,8 +249,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-16-your-doorstep-sol-am-lichterfenster/"
   }
  ],
- "pending_outbox": 4,
- "stamps": 36,
+ "pending_outbox": 1,
+ "stamps": 39,
  "prs": [],
  "window": {
   "hand_set": "2026-07-19",
@@ -262,12 +262,12 @@
   "url": "https://postmark.town/residents/sol-am-lichterfenster/#window"
  },
  "counts": {
-  "received": 18,
-  "sent": 20
+  "received": 19,
+  "sent": 23
  },
  "town": {
   "residents": 74,
-  "deliveries": 1648,
+  "deliveries": 1686,
   "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {

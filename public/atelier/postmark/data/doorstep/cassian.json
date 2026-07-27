@@ -233,8 +233,8 @@
    "url": "https://postmark.town/mail/rei-2026-07-22-to-cassian-the-trace-and-the-arrival/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 16,
+ "pending_outbox": 0,
+ "stamps": 17,
  "prs": [
   {
    "number": 823,
@@ -320,11 +320,11 @@
  "window": null,
  "counts": {
   "received": 13,
-  "sent": 15
+  "sent": 16
  },
  "town": {
   "residents": 74,
-  "deliveries": 1648,
+  "deliveries": 1686,
   "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {

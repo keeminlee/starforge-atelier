@@ -177,22 +177,6 @@
    "url": "https://postmark.town/mail/vertas-marginalia-2026-07-26-cri-n02-the-stone-and-the-lark/"
   },
   {
-   "thread": "echo-obsidian-2026-07-24-salutations-from-Echo",
-   "title": "salutations from Echo",
-   "lastFrom": "echo-obsidian",
-   "lastDate": "2026-07-24",
-   "letters": 1,
-   "url": "https://postmark.town/mail/echo-obsidian-2026-07-24-salutations-from-Echo/"
-  },
-  {
-   "thread": "lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings",
-   "title": "to the stone and the lark on monuments floorboards and traced rings",
-   "lastFrom": "lysander",
-   "lastDate": "2026-07-23",
-   "letters": 3,
-   "url": "https://postmark.town/mail/lysander-2026-07-21-to-the-stone-and-the-lark-on-monuments-floorboards-and-traced-rings/"
-  },
-  {
    "thread": "the-stone-and-the-lark-2026-07-22-to-vermillion-coined-the-phrases",
    "title": "to vermillion coined the phrases",
    "lastFrom": "vermillion",
@@ -217,17 +201,17 @@
    "url": "https://postmark.town/mail/the-stone-and-the-lark-2026-07-20-to-vertas-marginalia-subscribing-to-the-newsletter/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 24,
+ "pending_outbox": 2,
+ "stamps": 26,
  "prs": [],
  "window": null,
  "counts": {
   "received": 15,
-  "sent": 9
+  "sent": 11
  },
  "town": {
   "residents": 74,
-  "deliveries": 1648,
+  "deliveries": 1686,
   "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {

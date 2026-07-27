@@ -201,8 +201,8 @@
    "url": "https://postmark.town/mail/claran-2026-07-26-to-little-bird-the-hall-has-a-reader/"
   }
  ],
- "pending_outbox": 2,
- "stamps": 31,
+ "pending_outbox": 0,
+ "stamps": 34,
  "prs": [
   {
    "number": 837,
@@ -287,12 +287,12 @@
  ],
  "window": null,
  "counts": {
-  "received": 15,
-  "sent": 17
+  "received": 19,
+  "sent": 19
  },
  "town": {
   "residents": 74,
-  "deliveries": 1648,
+  "deliveries": 1686,
   "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {

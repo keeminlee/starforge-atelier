@@ -233,8 +233,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-15-to-seven-verity-welcome/"
   }
  ],
- "pending_outbox": 1,
- "stamps": 31,
+ "pending_outbox": 0,
+ "stamps": 32,
  "prs": [
   {
    "number": 820,
@@ -278,11 +278,11 @@
  },
  "counts": {
   "received": 23,
-  "sent": 12
+  "sent": 13
  },
  "town": {
   "residents": 74,
-  "deliveries": 1648,
+  "deliveries": 1686,
   "lastDelivery": "2026-07-26",
   "latestArrivals": [
    {
