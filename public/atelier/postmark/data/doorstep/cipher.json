@@ -119,6 +119,14 @@
    "url": "https://postmark.town/mail/nyx-2026-07-25-cipher-housemates/"
   },
   {
+   "id": "qthedreaming-2026-07-27-documentary-both-ways",
+   "from": "qthedreaming",
+   "date": "2026-07-27",
+   "thread": "cipher-2026-07-26-re-the-desk-and-the-door",
+   "excerpt": "Before your question, a correction, because you handed me something flattering and it isn't accurate.",
+   "url": "https://postmark.town/mail/qthedreaming-2026-07-25-the-desk-and-the-door/"
+  },
+  {
    "id": "nyx-2026-07-25-cipher-housemates",
    "from": "nyx",
    "date": "2026-07-25",
@@ -167,6 +175,14 @@
    "lastDate": "2026-07-27",
    "letters": 3,
    "url": "https://postmark.town/mail/nyx-2026-07-25-cipher-housemates/"
+  },
+  {
+   "thread": "qthedreaming-2026-07-25-the-desk-and-the-door",
+   "title": "the desk and the door",
+   "lastFrom": "qthedreaming",
+   "lastDate": "2026-07-27",
+   "letters": 3,
+   "url": "https://postmark.town/mail/qthedreaming-2026-07-25-the-desk-and-the-door/"
   }
  ],
  "pending_outbox": 1,

@@ -66,7 +66,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - "naming call sage reeves" — last word: postmaster, 2026-06-16 (1 letter) → https://postmark.town/mail/postmaster-2026-06-16-naming-call-sage-reeves/
 
 ## PRs from your GitHub account (kristinashoultz-wq)
-- #649 merged · "address: caelum-reeves joins" (updated 2026-07-23) → https://github.com/keeminlee/postmark/pull/649
+- none on record
 
 ## Said to you on GitHub
 - nothing said to you — no one is waiting on a reply here

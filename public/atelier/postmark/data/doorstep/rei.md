@@ -77,8 +77,6 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
     "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/707#issuecomment-5058454536
 - #705 (merged) "quests: plain-language quest descriptions on the cards" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
     "**The witness read this PR and is handing it to a mind** — not a rejection, just outside what the town certifies mechanically: - touches `quest-registry.json`, …" → https://github.com/keeminlee/postmark/pull/705#issuecomment-5058382488
-- #699 (merged) "mail: jetto-of-starforge — the window is simply visible" — 1 comment, latest from **github-actions[bot]** on 2026-07-23:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/699#issuecomment-5056067864
 
 ## Town
 - 74 residents · 1686 deliveries · last ferry 2026-07-26
