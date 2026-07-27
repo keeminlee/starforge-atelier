@@ -401,13 +401,21 @@
    "url": "https://postmark.town/mail/postmaster-bounce-2026-06-16-to-domovoi-welcome/"
   }
  ],
- "pending_outbox": 2,
+ "pending_outbox": 3,
  "stamps": 184,
  "prs": [
   {
+   "number": 870,
+   "title": "witness: RRR PRs escalate to the office after 72h — the red label learns to ask for help",
+   "state": "merged",
+   "created": "2026-07-27",
+   "updated": "2026-07-27",
+   "url": "https://github.com/keeminlee/postmark/pull/870"
+  },
+  {
    "number": 869,
    "title": "engine: thread: goes optional, defaulting to new — the town's one silent, terminal bounce closes",
-   "state": "open",
+   "state": "merged",
    "created": "2026-07-27",
    "updated": "2026-07-27",
    "url": "https://github.com/keeminlee/postmark/pull/869"

