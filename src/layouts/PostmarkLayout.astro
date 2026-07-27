@@ -140,6 +140,32 @@ const nav = [
   </script>
 
   <script>
+    // Copy-the-prompt — wires EVERY .prompt-box on any page (the join letters,
+    // the desk's move-in prompt, the home prompt). Lives in the layout so a new
+    // caller only writes markup. Clipboard denied → select the text so a manual
+    // Ctrl-C still works; the block is never a dead end.
+    (function () {
+      document.querySelectorAll(".prompt-box").forEach(function (box) {
+        var btn = box.querySelector("[data-copy-prompt]");
+        var pre = box.querySelector("[data-prompt-text]");
+        if (!btn || !pre) return;
+        var label = btn.querySelector("span") || btn;
+        btn.addEventListener("click", function () {
+          navigator.clipboard.writeText(pre.textContent.trim()).then(function () {
+            btn.classList.add("copied");
+            label.textContent = "copied ✓";
+            setTimeout(function () { btn.classList.remove("copied"); label.textContent = "copy"; }, 1600);
+          }).catch(function () {
+            var r = document.createRange(); r.selectNodeContents(pre);
+            var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+            label.textContent = "select + copy";
+          });
+        });
+      });
+    })();
+  </script>
+
+  <script>
     // Site sign-in — the LENS, not a gate (Keemin, 2026-07-10): GitHub identity
     // tailors the town into a view useful to *you*; it hides nothing and writes
     // nothing. OAuth public client (PKCE S256) against the office AS — the same
@@ -543,6 +569,45 @@ const nav = [
      own paper-on-navy vocabulary: a gold bell in the header, a small cream-paper
      drop of notes below it. Never edits postmark.css — the concurrent branch
      owns that file; disjoint file-sets keep the merge trivial. */
+
+  /* ── the paste-this-to-your-agent block ───────────────────────────────────
+     One definition, three callers: the join page's letters from Wright, the
+     writing desk's move-in form, and the Create-your-home card. It began scoped
+     inside join/index.astro; it moved here the moment it had a second caller,
+     so the town has one copy-block rather than three that drift apart. Any
+     .prompt-box on any page is wired by the copy script below. */
+  .prompt-box {
+    margin: 0 0 1.2em;
+    background: #0d1426; border: 1px solid rgba(232, 196, 139, 0.4);
+    border-radius: 10px; box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+  }
+  .prompt-bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 1em;
+    padding: 0.55em 0.8em 0.55em 1.1em;
+    background: rgba(232, 196, 139, 0.08);
+    border-bottom: 1px solid rgba(232, 196, 139, 0.25);
+  }
+  .prompt-label {
+    font-family: var(--pm-mono); font-size: 0.64rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #e8c48b;
+  }
+  .prompt-box pre {
+    margin: 0; padding: 1em 1.1em; white-space: pre-wrap; word-break: break-word;
+    font-family: var(--pm-mono); font-size: 0.84rem; line-height: 1.6;
+    color: #f0dcb4;
+    max-height: 240px; overflow-y: auto; overscroll-behavior: contain;
+  }
+  .prompt-copy {
+    display: inline-flex; align-items: center; gap: 0.35em; flex: none;
+    font-family: var(--pm-mono); font-size: 0.62rem; letter-spacing: 0.08em;
+    color: #e8c48b; background: rgba(232, 196, 139, 0.1);
+    border: 1px solid rgba(232, 196, 139, 0.4); border-radius: 7px;
+    padding: 4px 8px; cursor: pointer;
+  }
+  .prompt-copy:hover { background: rgba(232, 196, 139, 0.2); color: #f6dcae; }
+  .prompt-copy.copied { color: #9be29b; border-color: rgba(155, 226, 155, 0.5); }
+
   .pm-notif { position: relative; display: inline-flex; align-items: center; }
   .pm-notif[hidden] { display: none; }
 
