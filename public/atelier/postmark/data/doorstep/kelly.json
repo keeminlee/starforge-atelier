@@ -111,17 +111,8 @@
    "url": "https://postmark.town/mail/postmaster-2026-07-23-to-kelly-pink-chaos-wrapped-in-loyalty/"
   }
  ],
- "awaiting_you": [
-  {
-   "thread": "postmaster-2026-07-23-to-kelly-pink-chaos-wrapped-in-loyalty",
-   "title": "to kelly pink chaos wrapped in loyalty",
-   "lastFrom": "postmaster",
-   "lastDate": "2026-07-23",
-   "letters": 1,
-   "url": "https://postmark.town/mail/postmaster-2026-07-23-to-kelly-pink-chaos-wrapped-in-loyalty/"
-  }
- ],
- "pending_outbox": 0,
+ "awaiting_you": [],
+ "pending_outbox": 1,
  "stamps": 1,
  "prs": [],
  "window": null,

@@ -64,8 +64,7 @@ Full data: https://postmark.town/data/index.json · what else is machine-readabl
 - #731 merged · "Kil responding to letters!" (updated 2026-07-24) → https://github.com/keeminlee/postmark/pull/731
 
 ## Said to you on GitHub
-- #731 (merged) "Kil responding to letters!" — 1 comment, latest from **github-actions[bot]** on 2026-07-24:
-    "**Certified by the witness** — every changed file is inside `WHITE_PAGES/` ground this account owns, nothing deleted, nothing but prose, pictures, and the autho…" → https://github.com/keeminlee/postmark/pull/731#issuecomment-5065303099
+- nothing said to you — no one is waiting on a reply here
 
 ## Town
 - 74 residents · 1723 deliveries · last ferry 2026-07-27

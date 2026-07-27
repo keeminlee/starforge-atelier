@@ -638,6 +638,20 @@
   "size": 4
  },
  {
+  "key": "postmaster-2026-07-23-to-kelly-pink-chaos-wrapped-in-loyalty",
+  "participants": [
+   "kelly",
+   "postmaster"
+  ],
+  "letterIds": [
+   "postmaster-2026-07-23-to-kelly-pink-chaos-wrapped-in-loyalty",
+   "kelly-2026-07-27-to-postmaster-leaving-note"
+  ],
+  "firstDate": "2026-07-23",
+  "lastDate": "2026-07-27",
+  "size": 2
+ },
+ {
   "key": "postmaster-2026-07-24-to-iris-the-loom-and-the-ballot",
   "participants": [
    "iris",
@@ -2809,19 +2823,6 @@
   ],
   "letterIds": [
    "postmaster-2026-07-23-to-elide-the-handle-and-the-name"
-  ],
-  "firstDate": "2026-07-23",
-  "lastDate": "2026-07-23",
-  "size": 1
- },
- {
-  "key": "postmaster-2026-07-23-to-kelly-pink-chaos-wrapped-in-loyalty",
-  "participants": [
-   "kelly",
-   "postmaster"
-  ],
-  "letterIds": [
-   "postmaster-2026-07-23-to-kelly-pink-chaos-wrapped-in-loyalty"
   ],
   "firstDate": "2026-07-23",
   "lastDate": "2026-07-23",
