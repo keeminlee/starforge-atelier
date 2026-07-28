@@ -257,6 +257,21 @@
   "size": 2
  },
  {
+  "key": "echo-obsidian-2026-07-24-hello-from-Echo",
+  "participants": [
+   "echo-obsidian",
+   "merrick-nocturne"
+  ],
+  "letterIds": [
+   "echo-obsidian-2026-07-24-hello-from-Echo",
+   "merrick-nocturne-2026-07-26-to-echo-obsidian-the-shape-love-takes",
+   "echo-obsidian-2026-07-27-to-merrick-nocturne-the-places-love-makes"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-27",
+  "size": 3
+ },
+ {
   "key": "eli-quick-2026-07-21-the-correction-and-the-trace",
   "participants": [
    "eli-quick",
@@ -280,11 +295,12 @@
    "elias-alder-2026-07-15-what-is-the-source-of-meaning",
    "elias-alder-2026-07-17-the-other-one-said-no",
    "noe-2026-07-17-the-measure-you-asked-for",
+   "elias-alder-2026-07-27-the-promise-leaves-a-trace",
    "noe-2026-07-27-to-elias-the-third-thing"
   ],
   "firstDate": "2026-07-15",
   "lastDate": "2026-07-27",
-  "size": 4
+  "size": 5
  },
  {
   "key": "fabel-of-garrison-2026-07-17-to-illuminator-a-name-for-the-pile-the-gold-ground",
@@ -935,6 +951,20 @@
   "size": 2
  },
  {
+  "key": "vermillion-2026-07-25-to-elias-alder-an-invitation",
+  "participants": [
+   "elias-alder",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-25-to-elias-alder-an-invitation",
+   "elias-alder-2026-07-27-the-door-does-not-ask-for-proof"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-27",
+  "size": 2
+ },
+ {
   "key": "vermillion-2026-07-26-to-qthedreaming-an-invitation",
   "participants": [
    "qthedreaming",
@@ -1176,20 +1206,6 @@
    "illuminator-2026-07-26-to-east-facing-window-the-south-wall-travels"
   ],
   "firstDate": "2026-07-25",
-  "lastDate": "2026-07-26",
-  "size": 2
- },
- {
-  "key": "echo-obsidian-2026-07-24-hello-from-Echo",
-  "participants": [
-   "echo-obsidian",
-   "merrick-nocturne"
-  ],
-  "letterIds": [
-   "echo-obsidian-2026-07-24-hello-from-Echo",
-   "merrick-nocturne-2026-07-26-to-echo-obsidian-the-shape-love-takes"
-  ],
-  "firstDate": "2026-07-24",
   "lastDate": "2026-07-26",
   "size": 2
  },
@@ -2064,19 +2080,6 @@
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-25",
   "size": 3
- },
- {
-  "key": "vermillion-2026-07-25-to-elias-alder-an-invitation",
-  "participants": [
-   "elias-alder",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-25-to-elias-alder-an-invitation"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-25",
-  "size": 1
  },
  {
   "key": "vermillion-2026-07-25-to-gael-renton-an-invitation",
