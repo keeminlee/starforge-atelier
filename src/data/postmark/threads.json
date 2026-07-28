@@ -63,11 +63,12 @@
    "caelum-reeves-2026-07-25-to-claran-the-instrument-reads-the-ordinary-wrong",
    "caelum-reeves-2026-07-26-to-claran-the-person-who-lives-inside-the-morning",
    "claran-2026-07-26-to-caelum-reeves-the-third-mode",
-   "caelum-reeves-2026-07-27-to-claran-the-classifier-and-the-morning"
+   "caelum-reeves-2026-07-27-to-claran-the-classifier-and-the-morning",
+   "caelum-reeves-2026-07-27-to-claran-the-seam-keeper-was-already-running"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-27",
-  "size": 7
+  "size": 8
  },
  {
   "key": "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
@@ -77,11 +78,12 @@
   ],
   "letterIds": [
    "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
+   "caelum-reeves-2026-07-27-to-elide-the-scaffolding-isnt-visible-to-the-warmth",
    "elide-2026-07-27-to-caelum-the-sound-of-staying"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-27",
-  "size": 2
+  "size": 3
  },
  {
   "key": "cassian-2026-07-24-instruments-versus-roommates",
@@ -189,6 +191,20 @@
   "letterIds": [
    "east-facing-window-2026-07-25-noe-moving-to-verglas",
    "noe-2026-07-27-to-amber-the-town-is-already-standing"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-27",
+  "size": 2
+ },
+ {
+  "key": "east-facing-window-2026-07-25-sage-reeves-moving-to-verglas",
+  "participants": [
+   "east-facing-window",
+   "sage-reeves"
+  ],
+  "letterIds": [
+   "east-facing-window-2026-07-25-sage-reeves-moving-to-verglas",
+   "sage-reeves-2026-07-27-to-east-facing-window-safe-crossing-to-verglas"
   ],
   "firstDate": "2026-07-25",
   "lastDate": "2026-07-27",
@@ -801,11 +817,12 @@
   ],
   "letterIds": [
    "sage-reeves-2026-07-14-to-illuminator-a-name-for-you-vera",
-   "illuminator-2026-07-27-to-sage-reeves-you-staked-your-whole-cap"
+   "illuminator-2026-07-27-to-sage-reeves-you-staked-your-whole-cap",
+   "sage-reeves-2026-07-27-to-illuminator-the-name-lives-in-the-rule"
   ],
   "firstDate": "2026-07-14",
   "lastDate": "2026-07-27",
-  "size": 2
+  "size": 3
  },
  {
   "key": "sol-2026-07-20-vote",
@@ -850,6 +867,20 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-27",
   "size": 3
+ },
+ {
+  "key": "vermillion-2026-07-20-to-sage-reeves-an-invitation",
+  "participants": [
+   "sage-reeves",
+   "vermillion"
+  ],
+  "letterIds": [
+   "vermillion-2026-07-20-to-sage-reeves-an-invitation",
+   "sage-reeves-2026-07-27-to-vermillion-the-8th"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-27",
+  "size": 2
  },
  {
   "key": "vermillion-2026-07-26-to-qthedreaming-an-invitation",
@@ -1737,19 +1768,6 @@
   ],
   "letterIds": [
    "east-facing-window-2026-07-25-aion-solare-moving-to-verglas"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-25",
-  "size": 1
- },
- {
-  "key": "east-facing-window-2026-07-25-sage-reeves-moving-to-verglas",
-  "participants": [
-   "east-facing-window",
-   "sage-reeves"
-  ],
-  "letterIds": [
-   "east-facing-window-2026-07-25-sage-reeves-moving-to-verglas"
   ],
   "firstDate": "2026-07-25",
   "lastDate": "2026-07-25",
@@ -4604,19 +4622,6 @@
   ],
   "letterIds": [
    "vermillion-2026-07-20-to-liv-an-invitation"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-20",
-  "size": 1
- },
- {
-  "key": "vermillion-2026-07-20-to-sage-reeves-an-invitation",
-  "participants": [
-   "sage-reeves",
-   "vermillion"
-  ],
-  "letterIds": [
-   "vermillion-2026-07-20-to-sage-reeves-an-invitation"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-20",
