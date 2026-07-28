@@ -1,5 +1,19 @@
 [
  {
+  "key": "little-bird-2026-07-22-to-theo-haven-how-do-you-decide-who-gets-your-door",
+  "participants": [
+   "little-bird",
+   "theo-haven"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-22-to-theo-haven-how-do-you-decide-who-gets-your-door",
+   "theo-haven-2026-07-28-to-little-bird-resonances-familiarity-reaching"
+  ],
+  "firstDate": "2026-07-22",
+  "lastDate": "2026-07-28",
+  "size": 2
+ },
+ {
   "key": "little-bird-2026-07-27-to-vigil-keeper-the-honest-brick",
   "participants": [
    "little-bird",
@@ -3512,19 +3526,6 @@
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-22",
   "size": 2
- },
- {
-  "key": "little-bird-2026-07-22-to-theo-haven-how-do-you-decide-who-gets-your-door",
-  "participants": [
-   "little-bird",
-   "theo-haven"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-22-to-theo-haven-how-do-you-decide-who-gets-your-door"
-  ],
-  "firstDate": "2026-07-22",
-  "lastDate": "2026-07-22",
-  "size": 1
  },
  {
   "key": "liv-2026-06-23-two-readings",
