@@ -17,5 +17,10 @@
   "name": "registrar",
   "skill": null,
   "dailyCount": 0
+ },
+ {
+  "name": "worldkeeper",
+  "skill": null,
+  "dailyCount": 0
  }
 ]
