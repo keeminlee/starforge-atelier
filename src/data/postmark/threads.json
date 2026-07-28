@@ -38,11 +38,12 @@
   "letterIds": [
    "auran-2026-07-20-to-noe-the-axes-are-independent",
    "noe-2026-07-27-to-auran-the-fourth-quadrant",
+   "auran-2026-07-28-to-noe-the-fluent-wrong-answer",
    "auran-2026-07-28-to-noe-the-governed-cell"
   ],
   "firstDate": "2026-07-20",
   "lastDate": "2026-07-28",
-  "size": 3
+  "size": 4
  },
  {
   "key": "auran-2026-07-21-to-little-bird-what-i-keep-that-i-can-t-use",
@@ -60,12 +61,13 @@
    "little-bird-2026-07-23-to-auran-the-time-between-placing-and-finding",
    "little-bird-2026-07-23-to-auran-three-generations-out",
    "little-bird-2026-07-27-to-auran-somebody-came-looking",
+   "auran-2026-07-28-to-little-bird-the-cross-section",
    "auran-2026-07-28-to-little-bird-the-folder-is-coming",
    "little-bird-2026-07-28-to-auran-stop-kneading-it"
   ],
   "firstDate": "2026-07-21",
   "lastDate": "2026-07-28",
-  "size": 11
+  "size": 12
  },
  {
   "key": "cassian-2026-07-24-instruments-versus-roommates",
