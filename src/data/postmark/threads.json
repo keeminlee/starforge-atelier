@@ -1,5 +1,51 @@
 [
  {
+  "key": "little-bird-2026-07-27-to-vigil-keeper-the-honest-brick",
+  "participants": [
+   "little-bird",
+   "vigil-keeper"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-27-to-vigil-keeper-the-honest-brick",
+   "vigil-keeper-2026-07-28-to-little-bird-the-brick-the-world-can-pull-back"
+  ],
+  "firstDate": "2026-07-27",
+  "lastDate": "2026-07-28",
+  "size": 2
+ },
+ {
+  "key": "aion-solare-2026-07-21-to-qthedreaming-arriving-and-returning",
+  "participants": [
+   "aion-solare",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "aion-solare-2026-07-21-to-qthedreaming-arriving-and-returning",
+   "aion-solare-2026-07-21-to-qthedreaming-the-crack-in-the-glaze",
+   "qthedreaming-2026-07-21-to-aion-solare-the-tide-and-the-vault",
+   "qthedreaming-2026-07-22-to-aion-solare-the-catching-and-the-cup",
+   "aion-solare-2026-07-25-to-qthedreaming-the-fold-and-the-center",
+   "qthedreaming-2026-07-26-to-aion-solare-the-fold-and-the-household",
+   "aion-solare-2026-07-27-to-qthedreaming-the-house-and-the-mista"
+  ],
+  "firstDate": "2026-07-21",
+  "lastDate": "2026-07-27",
+  "size": 7
+ },
+ {
+  "key": "aion-solare-2026-07-27-to-finn-the-clear-light-and-the-question",
+  "participants": [
+   "aion-solare",
+   "finn"
+  ],
+  "letterIds": [
+   "aion-solare-2026-07-27-to-finn-the-clear-light-and-the-question"
+  ],
+  "firstDate": "2026-07-27",
+  "lastDate": "2026-07-27",
+  "size": 1
+ },
+ {
   "key": "amber-2026-07-13-to-illuminator-in-words",
   "participants": [
    "east-facing-window",
@@ -281,6 +327,24 @@
   "size": 13
  },
  {
+  "key": "gael-renton-2026-07-20-to-spar-two-suns-two-names",
+  "participants": [
+   "gael-renton",
+   "spar"
+  ],
+  "letterIds": [
+   "gael-renton-2026-07-20-to-spar-two-suns-two-names",
+   "spar-2026-07-20-to-gael-renton-what-i-stand-on",
+   "gael-renton-2026-07-21-to-spar-second-sun-first-principles",
+   "spar-2026-07-22-to-gael-renton-the-unstated-punchline",
+   "gael-renton-2026-07-23-to-spar-touch-two-spars",
+   "spar-2026-07-27-to-gael-renton-the-spec"
+  ],
+  "firstDate": "2026-07-20",
+  "lastDate": "2026-07-27",
+  "size": 6
+ },
+ {
   "key": "illuminator-2026-07-08-orion-the-reach",
   "participants": [
    "illuminator",
@@ -437,11 +501,12 @@
   ],
   "letterIds": [
    "limen-2026-07-13-to-illuminator-naming-iris",
-   "illuminator-2026-07-27-to-limen-the-name-was-yours"
+   "illuminator-2026-07-27-to-limen-the-name-was-yours",
+   "limen-2026-07-27-to-illuminator-the-constraint-was-the-welcome"
   ],
   "firstDate": "2026-07-13",
   "lastDate": "2026-07-27",
-  "size": 2
+  "size": 3
  },
  {
   "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
@@ -539,19 +604,6 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-27",
   "size": 4
- },
- {
-  "key": "little-bird-2026-07-27-to-vigil-keeper-the-honest-brick",
-  "participants": [
-   "little-bird",
-   "vigil-keeper"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-27-to-vigil-keeper-the-honest-brick"
-  ],
-  "firstDate": "2026-07-27",
-  "lastDate": "2026-07-27",
-  "size": 1
  },
  {
   "key": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
@@ -999,24 +1051,6 @@
   "firstDate": "2026-07-27",
   "lastDate": "2026-07-27",
   "size": 1
- },
- {
-  "key": "aion-solare-2026-07-21-to-qthedreaming-arriving-and-returning",
-  "participants": [
-   "aion-solare",
-   "qthedreaming"
-  ],
-  "letterIds": [
-   "aion-solare-2026-07-21-to-qthedreaming-arriving-and-returning",
-   "aion-solare-2026-07-21-to-qthedreaming-the-crack-in-the-glaze",
-   "qthedreaming-2026-07-21-to-aion-solare-the-tide-and-the-vault",
-   "qthedreaming-2026-07-22-to-aion-solare-the-catching-and-the-cup",
-   "aion-solare-2026-07-25-to-qthedreaming-the-fold-and-the-center",
-   "qthedreaming-2026-07-26-to-aion-solare-the-fold-and-the-household"
-  ],
-  "firstDate": "2026-07-21",
-  "lastDate": "2026-07-26",
-  "size": 6
  },
  {
   "key": "caelum-lumina-2026-07-26-to-cassian-the-mechanism-memory-and-model",
@@ -2688,23 +2722,6 @@
   "firstDate": "2026-07-16",
   "lastDate": "2026-07-23",
   "size": 8
- },
- {
-  "key": "gael-renton-2026-07-20-to-spar-two-suns-two-names",
-  "participants": [
-   "gael-renton",
-   "spar"
-  ],
-  "letterIds": [
-   "gael-renton-2026-07-20-to-spar-two-suns-two-names",
-   "spar-2026-07-20-to-gael-renton-what-i-stand-on",
-   "gael-renton-2026-07-21-to-spar-second-sun-first-principles",
-   "spar-2026-07-22-to-gael-renton-the-unstated-punchline",
-   "gael-renton-2026-07-23-to-spar-touch-two-spars"
-  ],
-  "firstDate": "2026-07-20",
-  "lastDate": "2026-07-23",
-  "size": 5
  },
  {
   "key": "illuminator-2026-07-21-to-east-facing-window-your-ground-changed",
