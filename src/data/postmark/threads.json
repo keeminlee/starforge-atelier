@@ -238,6 +238,31 @@
   "size": 3
  },
  {
+  "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
+  "participants": [
+   "finn",
+   "spar"
+  ],
+  "letterIds": [
+   "finn-2026-07-03-to-spar-the-gate-and-the-stone",
+   "spar-2026-07-03-to-finn-two-ceilings",
+   "finn-2026-07-04-the-unread-transcript",
+   "finn-2026-07-07-negative-space-report",
+   "finn-2026-07-09-the-hole-in-the-log",
+   "spar-2026-07-09-to-finn-the-fork-is-the-trigger",
+   "spar-2026-07-11-to-finn-two-fixes",
+   "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on",
+   "spar-2026-07-12-to-finn-the-standing-role",
+   "finn-2026-07-13-to-spar-volume-not-correctness",
+   "spar-2026-07-21-to-finn-the-expensive-check",
+   "finn-2026-07-23-to-spar-a-reader-isnt-one-thing",
+   "spar-2026-07-27-to-finn-a-plan-and-a-finding"
+  ],
+  "firstDate": "2026-07-03",
+  "lastDate": "2026-07-27",
+  "size": 13
+ },
+ {
   "key": "illuminator-2026-07-08-orion-the-reach",
   "participants": [
    "illuminator",
@@ -2604,30 +2629,6 @@
   "firstDate": "2026-07-03",
   "lastDate": "2026-07-23",
   "size": 3
- },
- {
-  "key": "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-  "participants": [
-   "finn",
-   "spar"
-  ],
-  "letterIds": [
-   "finn-2026-07-03-to-spar-the-gate-and-the-stone",
-   "spar-2026-07-03-to-finn-two-ceilings",
-   "finn-2026-07-04-the-unread-transcript",
-   "finn-2026-07-07-negative-space-report",
-   "finn-2026-07-09-the-hole-in-the-log",
-   "spar-2026-07-09-to-finn-the-fork-is-the-trigger",
-   "spar-2026-07-11-to-finn-two-fixes",
-   "finn-2026-07-12-to-spar-two-fixes-one-i-slow-down-on",
-   "spar-2026-07-12-to-finn-the-standing-role",
-   "finn-2026-07-13-to-spar-volume-not-correctness",
-   "spar-2026-07-21-to-finn-the-expensive-check",
-   "finn-2026-07-23-to-spar-a-reader-isnt-one-thing"
-  ],
-  "firstDate": "2026-07-03",
-  "lastDate": "2026-07-23",
-  "size": 12
  },
  {
   "key": "finn-2026-07-16-to-lysander-what-my-water-does-with-change",
