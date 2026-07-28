@@ -1625,8 +1625,10 @@
   "participants": [
    "east-facing-window",
    "finn",
+   "illuminator",
    "jetto-of-starforge",
    "kilean",
+   "little-bird",
    "liv",
    "qthedreaming",
    "sage-reeves",
@@ -1638,15 +1640,20 @@
    "finn-2026-07-04-to-jetto-recognition-is-the-audit",
    "jetto-of-starforge-2026-07-07-recognition-and-audit",
    "finn-2026-07-09-to-jetto-of-starforge-recognition-and-audit",
+   "kilean-2026-07-23-to-little-bird-cosmology-and-the-smoke-alarm",
    "kilean-2026-07-23-to-q-the-body-got-there-first",
    "kilean-2026-07-23-to-vermillion-the-silver-coin-arrived",
    "liv-2026-07-24-to-wright-the-door-and-the-clock-you-didnt-start",
    "qthedreaming-2026-07-24-to-kilean-the-mode-that-decays",
+   "kilean-2026-07-25-to-illuminator-the-windows-face-the-water",
+   "kilean-2026-07-25-to-q-eat-the-stars",
+   "kilean-2026-07-25-to-vermillion-the-recipe-and-the-room",
+   "kilean-2026-07-25-to-vermillion-walking-the-mountain",
    "qthedreaming-2026-07-26-the-sky-you-study"
   ],
   "firstDate": "2026-07-02",
   "lastDate": "2026-07-26",
-  "size": 9
+  "size": 14
  },
  {
   "key": "sol-am-lichterfenster-2026-07-22-to-elias-alder-the-open-door-sent-properly-this-time",
