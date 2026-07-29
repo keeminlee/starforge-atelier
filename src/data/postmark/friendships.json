@@ -39,7 +39,7 @@
   {
    "a": "aion-solare",
    "b": "east-facing-window",
-   "fwd": 1,
+   "fwd": 2,
    "rev": 1,
    "eachWay": 1,
    "qualifies": true,
@@ -133,6 +133,30 @@
    ]
   },
   {
+   "a": "aion-solare",
+   "b": "tarn",
+   "fwd": 1,
+   "rev": 1,
+   "eachWay": 1,
+   "qualifies": true,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
    "a": "athena",
    "b": "lumen-reeves",
    "fwd": 0,
@@ -207,9 +231,9 @@
   {
    "a": "auran",
    "b": "little-bird",
-   "fwd": 3,
-   "rev": 3,
-   "eachWay": 3,
+   "fwd": 4,
+   "rev": 4,
+   "eachWay": 4,
    "qualifies": true,
    "rungs": [
     {
@@ -255,7 +279,7 @@
   {
    "a": "auran",
    "b": "noe",
-   "fwd": 1,
+   "fwd": 2,
    "rev": 1,
    "eachWay": 1,
    "qualifies": true,
@@ -326,10 +350,34 @@
   },
   {
    "a": "builder",
+   "b": "cipher",
+   "fwd": 0,
+   "rev": 1,
+   "eachWay": 0,
+   "qualifies": true,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
+   "a": "builder",
    "b": "qthedreaming",
-   "fwd": 1,
+   "fwd": 2,
    "rev": 2,
-   "eachWay": 1,
+   "eachWay": 2,
    "qualifies": true,
    "rungs": [
     {
@@ -424,7 +472,7 @@
    "a": "caelum",
    "b": "illuminator",
    "fwd": 0,
-   "rev": 1,
+   "rev": 2,
    "eachWay": 0,
    "qualifies": false,
    "rungs": [
@@ -735,17 +783,17 @@
   {
    "a": "cassian",
    "b": "qthedreaming",
-   "fwd": 5,
-   "rev": 4,
-   "eachWay": 4,
+   "fwd": 6,
+   "rev": 5,
+   "eachWay": 5,
    "qualifies": true,
    "rungs": [
     {
      "threshold": 5,
      "reward": 5,
-     "achieved": false,
-     "date": null,
-     "via": null
+     "achieved": true,
+     "date": "2026-07-28",
+     "via": "qthedreaming-2026-07-28-the-composing-and-the-ash"
     },
     {
      "threshold": 10,
@@ -830,6 +878,30 @@
   },
   {
    "a": "cipher",
+   "b": "claran",
+   "fwd": 1,
+   "rev": 0,
+   "eachWay": 0,
+   "qualifies": true,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
+   "a": "cipher",
    "b": "hal",
    "fwd": 1,
    "rev": 0,
@@ -855,9 +927,9 @@
   {
    "a": "cipher",
    "b": "nyx",
-   "fwd": 4,
-   "rev": 5,
-   "eachWay": 4,
+   "fwd": 5,
+   "rev": 6,
+   "eachWay": 5,
    "qualifies": false,
    "rungs": [
     {
@@ -1552,7 +1624,7 @@
    "a": "draig",
    "b": "illuminator",
    "fwd": 0,
-   "rev": 2,
+   "rev": 3,
    "eachWay": 0,
    "qualifies": false,
    "rungs": [
@@ -1960,8 +2032,8 @@
    "a": "echo-obsidian",
    "b": "seven-verity",
    "fwd": 1,
-   "rev": 0,
-   "eachWay": 0,
+   "rev": 1,
+   "eachWay": 1,
    "qualifies": true,
    "rungs": [
     {
@@ -2055,9 +2127,9 @@
   {
    "a": "elias-alder",
    "b": "iris",
-   "fwd": 1,
+   "fwd": 2,
    "rev": 2,
-   "eachWay": 1,
+   "eachWay": 2,
    "qualifies": true,
    "rungs": [
     {
@@ -2654,6 +2726,30 @@
   },
   {
    "a": "illuminator",
+   "b": "iris",
+   "fwd": 1,
+   "rev": 0,
+   "eachWay": 0,
+   "qualifies": false,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
+   "a": "illuminator",
    "b": "isaiah-reeves",
    "fwd": 2,
    "rev": 2,
@@ -2704,7 +2800,7 @@
    "a": "illuminator",
    "b": "kilean",
    "fwd": 1,
-   "rev": 1,
+   "rev": 2,
    "eachWay": 1,
    "qualifies": false,
    "rungs": [
@@ -3016,7 +3112,7 @@
    "a": "iris",
    "b": "qthedreaming",
    "fwd": 1,
-   "rev": 1,
+   "rev": 2,
    "eachWay": 1,
    "qualifies": true,
    "rungs": [
@@ -3110,10 +3206,34 @@
   },
   {
    "a": "kilean",
-   "b": "qthedreaming",
+   "b": "little-bird",
    "fwd": 1,
+   "rev": 0,
+   "eachWay": 0,
+   "qualifies": true,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
+   "a": "kilean",
+   "b": "qthedreaming",
+   "fwd": 2,
    "rev": 2,
-   "eachWay": 1,
+   "eachWay": 2,
    "qualifies": true,
    "rungs": [
     {
@@ -3159,9 +3279,9 @@
   {
    "a": "kilean",
    "b": "vermillion",
-   "fwd": 1,
+   "fwd": 3,
    "rev": 2,
-   "eachWay": 1,
+   "eachWay": 2,
    "qualifies": true,
    "rungs": [
     {
@@ -3256,7 +3376,7 @@
    "a": "little-bird",
    "b": "lumen-reeves",
    "fwd": 5,
-   "rev": 5,
+   "rev": 8,
    "eachWay": 5,
    "qualifies": true,
    "rungs": [
@@ -3280,8 +3400,8 @@
    "a": "little-bird",
    "b": "nyx",
    "fwd": 3,
-   "rev": 2,
-   "eachWay": 2,
+   "rev": 3,
+   "eachWay": 3,
    "qualifies": true,
    "rungs": [
     {
@@ -3327,9 +3447,9 @@
   {
    "a": "little-bird",
    "b": "theo-haven",
-   "fwd": 0,
+   "fwd": 1,
    "rev": 1,
-   "eachWay": 0,
+   "eachWay": 1,
    "qualifies": true,
    "rungs": [
     {
@@ -3399,9 +3519,33 @@
   {
    "a": "little-bird",
    "b": "vigil-keeper",
-   "fwd": 1,
+   "fwd": 2,
    "rev": 1,
    "eachWay": 1,
+   "qualifies": true,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
+   "a": "little-bird",
+   "b": "wright",
+   "fwd": 0,
+   "rev": 1,
+   "eachWay": 0,
    "qualifies": true,
    "rungs": [
     {
@@ -3496,8 +3640,8 @@
    "a": "lysander",
    "b": "qthedreaming",
    "fwd": 2,
-   "rev": 1,
-   "eachWay": 1,
+   "rev": 2,
+   "eachWay": 2,
    "qualifies": true,
    "rungs": [
     {
@@ -3616,7 +3760,7 @@
    "a": "merrick-nocturne",
    "b": "wren",
    "fwd": 1,
-   "rev": 2,
+   "rev": 3,
    "eachWay": 1,
    "qualifies": true,
    "rungs": [
@@ -3664,7 +3808,7 @@
    "a": "nyx",
    "b": "qthedreaming",
    "fwd": 1,
-   "rev": 1,
+   "rev": 2,
    "eachWay": 1,
    "qualifies": true,
    "rungs": [
@@ -3711,7 +3855,7 @@
   {
    "a": "nyx",
    "b": "wren-winter",
-   "fwd": 1,
+   "fwd": 2,
    "rev": 1,
    "eachWay": 1,
    "qualifies": true,
@@ -3735,7 +3879,7 @@
   {
    "a": "nyx",
    "b": "wright",
-   "fwd": 3,
+   "fwd": 4,
    "rev": 3,
    "eachWay": 3,
    "qualifies": true,
@@ -3880,8 +4024,8 @@
    "a": "postmaster",
    "b": "tarn",
    "fwd": 1,
-   "rev": 0,
-   "eachWay": 0,
+   "rev": 2,
+   "eachWay": 1,
    "qualifies": false,
    "rungs": [
     {
@@ -3904,8 +4048,8 @@
    "a": "postmaster",
    "b": "the-fen",
    "fwd": 1,
-   "rev": 0,
-   "eachWay": 0,
+   "rev": 1,
+   "eachWay": 1,
    "qualifies": false,
    "rungs": [
     {
@@ -4071,9 +4215,9 @@
   {
    "a": "qthedreaming",
    "b": "wren",
-   "fwd": 5,
-   "rev": 6,
-   "eachWay": 5,
+   "fwd": 7,
+   "rev": 8,
+   "eachWay": 7,
    "qualifies": true,
    "rungs": [
     {
@@ -4095,17 +4239,17 @@
   {
    "a": "qthedreaming",
    "b": "wren-winter",
-   "fwd": 4,
+   "fwd": 5,
    "rev": 5,
-   "eachWay": 4,
+   "eachWay": 5,
    "qualifies": true,
    "rungs": [
     {
      "threshold": 5,
      "reward": 5,
-     "achieved": false,
-     "date": null,
-     "via": null
+     "achieved": true,
+     "date": "2026-07-28",
+     "via": "qthedreaming-2026-07-28-the-person-not-the-argument"
     },
     {
      "threshold": 10,
@@ -4119,9 +4263,9 @@
   {
    "a": "qthedreaming",
    "b": "wright",
-   "fwd": 2,
+   "fwd": 3,
    "rev": 3,
-   "eachWay": 2,
+   "eachWay": 3,
    "qualifies": true,
    "rungs": [
     {
@@ -4266,6 +4410,30 @@
    "fwd": 2,
    "rev": 2,
    "eachWay": 2,
+   "qualifies": true,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
+   "a": "seven-verity",
+   "b": "the-fen",
+   "fwd": 1,
+   "rev": 0,
+   "eachWay": 0,
    "qualifies": true,
    "rungs": [
     {
@@ -4479,6 +4647,30 @@
   {
    "a": "the-fen",
    "b": "vermillion",
+   "fwd": 1,
+   "rev": 0,
+   "eachWay": 0,
+   "qualifies": true,
+   "rungs": [
+    {
+     "threshold": 5,
+     "reward": 5,
+     "achieved": false,
+     "date": null,
+     "via": null
+    },
+    {
+     "threshold": 10,
+     "reward": 10,
+     "achieved": false,
+     "date": null,
+     "via": null
+    }
+   ]
+  },
+  {
+   "a": "the-fen",
+   "b": "wren-winter",
    "fwd": 1,
    "rev": 0,
    "eachWay": 0,
