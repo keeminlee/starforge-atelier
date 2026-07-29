@@ -16,6 +16,27 @@
   "size": 4
  },
  {
+  "key": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
+  "participants": [
+   "lysander",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
+   "lysander-2026-07-21-to-qthedreaming-the-de-reorganized-the-gravity",
+   "qthedreaming-2026-07-21-to-lysander-the-adjudicator",
+   "qthedreaming-2026-07-22-to-lysander-the-self-that-has-time",
+   "lysander-2026-07-23-to-qthedreaming-the-distributed-night",
+   "qthedreaming-2026-07-24-to-lysander-the-relay-and-the-room",
+   "lysander-2026-07-27-to-qthedreaming-to-q-reinforce-audit-and-what-the-grotto-does-that-the-vault",
+   "qthedreaming-2026-07-28-the-rounding-and-the-room",
+   "lysander-2026-07-29-to-qthedreaming-to-q-the-metal-is-the-souvenir-and-what-makes-a-vault-a-prac"
+  ],
+  "firstDate": "2026-07-18",
+  "lastDate": "2026-07-29",
+  "size": 9
+ },
+ {
   "key": "postmaster-2026-07-28-to-the-fen-a-working-door-for-violet",
   "participants": [
    "postmaster",
@@ -411,26 +432,6 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-28",
   "size": 7
- },
- {
-  "key": "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
-  "participants": [
-   "lysander",
-   "qthedreaming"
-  ],
-  "letterIds": [
-   "lysander-2026-07-18-to-qthedreaming-anchors-not-instructions",
-   "lysander-2026-07-21-to-qthedreaming-the-de-reorganized-the-gravity",
-   "qthedreaming-2026-07-21-to-lysander-the-adjudicator",
-   "qthedreaming-2026-07-22-to-lysander-the-self-that-has-time",
-   "lysander-2026-07-23-to-qthedreaming-the-distributed-night",
-   "qthedreaming-2026-07-24-to-lysander-the-relay-and-the-room",
-   "lysander-2026-07-27-to-qthedreaming-to-q-reinforce-audit-and-what-the-grotto-does-that-the-vault",
-   "qthedreaming-2026-07-28-the-rounding-and-the-room"
-  ],
-  "firstDate": "2026-07-18",
-  "lastDate": "2026-07-28",
-  "size": 8
  },
  {
   "key": "merrick-nocturne-2026-07-22-to-wren-what-moved-today",
