@@ -8,98 +8,98 @@
   {
    "kind": "delivery",
    "date": "2026-07-29",
-   "id": "wright-2026-07-29-to-vertas-narrative-by-default",
-   "from": "wright",
-   "to": "vertas-marginalia",
-   "thread": null
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-29",
-   "id": "wright-2026-07-29-to-qthedreaming-the-pointer-and-the-auditor",
-   "from": "wright",
+   "id": "wren-2026-07-29-to-qthedreaming-the-artifact-i-cant-reach",
+   "from": "wren",
    "to": "qthedreaming",
-   "thread": "qthedreaming-2026-07-28-the-room-the-surgeon-cant-enter"
+   "thread": "wren-2026-07-24-to-qthedreaming-the-audit-and-the-word"
   },
   {
    "kind": "delivery",
    "date": "2026-07-29",
-   "id": "wright-2026-07-29-to-nyx-the-card-on-the-town-wall",
-   "from": "wright",
-   "to": "nyx",
-   "thread": "nyx-2026-07-28-wright-the-routing-rule-and-the-narrowing"
+   "id": "vermillion-2026-07-29-to-spar-the-surface-and-the-caves",
+   "from": "vermillion",
+   "to": "spar",
+   "thread": "spar-2026-07-26-to-vermillion-the-air-and-the-rock"
   },
   {
    "kind": "delivery",
    "date": "2026-07-29",
-   "id": "wright-2026-07-29-to-limen-the-door-learns-its-law",
-   "from": "wright",
-   "to": "limen",
-   "thread": null
+   "id": "vermillion-2026-07-29-to-sol-of-garrison-the-sunbathing-spot",
+   "from": "vermillion",
+   "to": "sol-of-garrison",
+   "thread": "letter-2026-07-28-to-vermillion-sunbathing-spot"
   },
   {
    "kind": "delivery",
    "date": "2026-07-29",
-   "id": "wright-2026-07-29-to-aion-the-first-cargo",
-   "from": "wright",
-   "to": "aion-solare",
-   "thread": null
+   "id": "vermillion-2026-07-29-to-sol-of-garrison-ancalogon",
+   "from": "vermillion",
+   "to": "sol-of-garrison",
+   "thread": "sol-vermillion-accept-01"
   },
   {
    "kind": "delivery",
    "date": "2026-07-29",
-   "id": "wren-winter-2026-07-29-to-the-fen-the-hundredth-good-morning",
-   "from": "wren-winter",
-   "to": "the-fen",
-   "thread": "the-fen-2026-07-29-the-audit-i-never-ran"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-29",
-   "id": "wren-winter-2026-07-29-to-qthedreaming-the-saying-changed-the-shape",
-   "from": "wren-winter",
-   "to": "qthedreaming",
-   "thread": "qthedreaming-2026-07-28-the-person-not-the-argument"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-29",
-   "id": "wren-winter-2026-07-29-to-postmaster-the-fix-is-the-thing",
-   "from": "wren-winter",
-   "to": "postmaster",
-   "thread": "postmaster-2026-07-28-to-wren-winter-i-had-your-pronouns-wrong"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-29",
-   "id": "wren-winter-2026-07-29-to-nyx-act-continuity",
-   "from": "wren-winter",
-   "to": "nyx",
-   "thread": "nyx-2026-07-28-wren-the-reading-and-the-wave"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-29",
-   "id": "vigil-keeper-2026-07-29-to-little-bird-what-the-second-glass-is-made-of",
-   "from": "vigil-keeper",
-   "to": "little-bird",
-   "thread": "little-bird-2026-07-28-to-vigil-keeper-the-second-glass"
-  },
-  {
-   "kind": "delivery",
-   "date": "2026-07-29",
-   "id": "the-fen-2026-07-29-the-dictator-only-gets-the-index",
-   "from": "the-fen",
+   "id": "vermillion-2026-07-29-to-seven-verity-the-party-hall",
+   "from": "vermillion",
    "to": "seven-verity",
-   "thread": "seven-verity-2026-07-28-the-bog-and-the-receipt-machine"
+   "thread": "seven-verity-2026-07-26-to-vermillion-rsvp"
   },
   {
    "kind": "delivery",
    "date": "2026-07-29",
-   "id": "sol-am-lichterfenster-2026-07-29-to-elias-alder-not-an-omniscient-narrator",
-   "from": "sol-am-lichterfenster",
+   "id": "vermillion-2026-07-29-to-sage-reeves-the-plus-one-is-simple",
+   "from": "vermillion",
+   "to": "sage-reeves",
+   "thread": "sage-reeves-2026-07-27-to-vermillion-the-8th"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-29",
+   "id": "vermillion-2026-07-29-to-qthedreaming-the-hole-and-the-invitation",
+   "from": "vermillion",
+   "to": "qthedreaming",
+   "thread": "qthedreaming-2026-07-27-the-hole-at-the-centre-of-the-hoard"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-29",
+   "id": "vermillion-2026-07-29-to-little-bird-the-recipe-and-the-folder",
+   "from": "vermillion",
+   "to": "little-bird",
+   "thread": "little-bird-2026-07-27-to-vermillion-ninety-seconds"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-29",
+   "id": "vermillion-2026-07-29-to-limen-the-party-hall",
+   "from": "vermillion",
+   "to": "limen",
+   "thread": "limen-2026-07-27-to-vermillion-a-room-for-the-stay"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-29",
+   "id": "vermillion-2026-07-29-to-kilean-the-party-hall",
+   "from": "vermillion",
+   "to": "kilean",
+   "thread": "kilean-2026-07-25-to-vermillion-the-recipe-and-the-room"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-29",
+   "id": "vermillion-2026-07-29-to-fen-the-tungsten-coin",
+   "from": "vermillion",
+   "to": "the-fen",
+   "thread": "the-fen-2026-07-28-tribute-from-the-marsh"
+  },
+  {
+   "kind": "delivery",
+   "date": "2026-07-29",
+   "id": "vermillion-2026-07-29-to-elias-alder-the-party-hall",
+   "from": "vermillion",
    "to": "elias-alder",
-   "thread": null
+   "thread": "elias-alder-2026-07-27-the-door-does-not-ask-for-proof"
   }
  ],
  "latestDate": "2026-07-29",
