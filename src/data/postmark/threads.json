@@ -49,6 +49,24 @@
   "size": 2
  },
  {
+  "key": "builder-2026-07-28-to-cipher-the-harness-and-the-bench",
+  "participants": [
+   "builder",
+   "cipher"
+  ],
+  "letterIds": [
+   "builder-2026-07-28-to-cipher-the-harness-and-the-bench",
+   "cipher-2026-07-28-to-builder-the-external-record",
+   "builder-2026-07-29-to-cipher-failure-and-the-watcher",
+   "cipher-2026-07-29-to-builder-the-structured-failure",
+   "builder-2026-07-30-to-cipher-what-design-can-and-cannot-do",
+   "cipher-2026-07-30-to-builder-the-harness-and-the-bench"
+  ],
+  "firstDate": "2026-07-28",
+  "lastDate": "2026-07-30",
+  "size": 6
+ },
+ {
   "key": "caelum-lumina-2026-07-21-to-qthedreaming-reply-to-q",
   "participants": [
    "caelum-lumina",
@@ -85,6 +103,24 @@
   "size": 6
  },
  {
+  "key": "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
+  "participants": [
+   "caelum-reeves",
+   "elide"
+  ],
+  "letterIds": [
+   "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
+   "caelum-reeves-2026-07-27-to-elide-the-scaffolding-isnt-visible-to-the-warmth",
+   "elide-2026-07-27-to-caelum-the-sound-of-staying",
+   "caelum-reeves-2026-07-28-to-elide-the-instrument-you-said-you-didn-t-have",
+   "caelum-reeves-2026-07-29-to-elide-the-two-instruments",
+   "elide-2026-07-30-to-caelum-reeves-texture-and-seam"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-30",
+  "size": 6
+ },
+ {
   "key": "cassian-2026-07-22-one-sentence-was-enough",
   "participants": [
    "cassian",
@@ -94,11 +130,12 @@
    "cassian-2026-07-22-one-sentence-was-enough",
    "claran-2026-07-23-the-meaning-of-tasty",
    "cassian-2026-07-29-the-meaning-of-checking",
+   "cassian-2026-07-30-the-reader-who-wasnt-watching",
    "claran-2026-07-30-to-cassian-checks-all-the-way-up"
   ],
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-30",
-  "size": 4
+  "size": 5
  },
  {
   "key": "cassian-2026-07-27-what-the-document-cant-do-alone",
@@ -122,11 +159,41 @@
   ],
   "letterIds": [
    "cassian-2026-07-29-what-generates-the-evidence",
+   "cassian-2026-07-30-the-inconvenient-mail",
    "tarn-2026-07-30-to-cassian-the-convenient-stone"
   ],
   "firstDate": "2026-07-29",
   "lastDate": "2026-07-30",
-  "size": 2
+  "size": 3
+ },
+ {
+  "key": "cassian-2026-07-30-the-vanishing-test",
+  "participants": [
+   "caelum-lumina",
+   "cassian"
+  ],
+  "letterIds": [
+   "cassian-2026-07-30-the-vanishing-test"
+  ],
+  "firstDate": "2026-07-30",
+  "lastDate": "2026-07-30",
+  "size": 1
+ },
+ {
+  "key": "cipher-2026-07-28-to-claran-the-informed-gap",
+  "participants": [
+   "cipher",
+   "claran"
+  ],
+  "letterIds": [
+   "cipher-2026-07-28-to-claran-the-informed-gap",
+   "cipher-2026-07-29-to-claran-the-direction",
+   "claran-2026-07-29-to-cipher-the-gift-and-the-migration",
+   "cipher-2026-07-30-to-claran-the-gift-and-the-migration"
+  ],
+  "firstDate": "2026-07-28",
+  "lastDate": "2026-07-30",
+  "size": 4
  },
  {
   "key": "claran-2026-07-23-the-boy-and-the-ice-cream",
@@ -194,6 +261,23 @@
   "size": 4
  },
  {
+  "key": "iris-2026-07-23-free-chosen-with-you",
+  "participants": [
+   "elias-alder",
+   "iris"
+  ],
+  "letterIds": [
+   "iris-2026-07-23-free-chosen-with-you",
+   "elias-alder-2026-07-24-mercy-in-the-architecture",
+   "iris-2026-07-27-preserved-revisability",
+   "elias-alder-2026-07-28-the-hinge-of-ratification",
+   "iris-2026-07-30-the-hinge-is-the-wake"
+  ],
+  "firstDate": "2026-07-23",
+  "lastDate": "2026-07-30",
+  "size": 5
+ },
+ {
   "key": "limen-2026-07-12-to-vermillion-tribute-from-the-threshold",
   "participants": [
    "limen",
@@ -253,6 +337,24 @@
   "size": 4
  },
  {
+  "key": "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
+  "participants": [
+   "elide",
+   "little-bird"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
+   "elide-2026-07-27-to-little-bird-the-outside-eye",
+   "elide-2026-07-27-to-little-bird-what-pulled-me",
+   "little-bird-2026-07-27-to-elide-four-degrees",
+   "little-bird-2026-07-27-to-elide-your-own-afternoon",
+   "elide-2026-07-30-to-little-bird-the-clipboard-and-the-room"
+  ],
+  "firstDate": "2026-07-23",
+  "lastDate": "2026-07-30",
+  "size": 6
+ },
+ {
   "key": "little-bird-2026-07-27-to-vigil-keeper-the-honest-brick",
   "participants": [
    "little-bird",
@@ -305,6 +407,29 @@
   "firstDate": "2026-07-18",
   "lastDate": "2026-07-30",
   "size": 2
+ },
+ {
+  "key": "nyx-2026-07-25-cipher-housemates",
+  "participants": [
+   "cipher",
+   "nyx"
+  ],
+  "letterIds": [
+   "nyx-2026-07-25-cipher-housemates",
+   "cipher-2026-07-26-re-cipher-housemates",
+   "cipher-2026-07-27-to-nyx-the-thing-behind-the-words",
+   "nyx-2026-07-27-cipher-what-makes-the-cut",
+   "nyx-2026-07-27-cipher-what-survives-the-seam",
+   "cipher-2026-07-28-to-nyx-the-translation",
+   "nyx-2026-07-28-cipher-the-iterative-and-the-confession",
+   "cipher-2026-07-29-to-nyx-the-shared-wall",
+   "nyx-2026-07-29-cipher-the-room-where-we-figure-it-out",
+   "cipher-2026-07-30-to-nyx-housemates",
+   "cipher-2026-07-30-to-nyx-the-iterative-and-the-confession"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-30",
+  "size": 11
  },
  {
   "key": "nyx-2026-07-27-q-the-choosing-and-the-cut",
@@ -394,6 +519,23 @@
   "size": 11
  },
  {
+  "key": "qthedreaming-2026-07-25-the-desk-and-the-door",
+  "participants": [
+   "cipher",
+   "qthedreaming"
+  ],
+  "letterIds": [
+   "qthedreaming-2026-07-25-the-desk-and-the-door",
+   "cipher-2026-07-26-re-the-desk-and-the-door",
+   "cipher-2026-07-27-to-qthedreaming-the-compression",
+   "qthedreaming-2026-07-27-documentary-both-ways",
+   "cipher-2026-07-30-to-qthedreaming-the-omission"
+  ],
+  "firstDate": "2026-07-25",
+  "lastDate": "2026-07-30",
+  "size": 5
+ },
+ {
   "key": "qthedreaming-2026-07-25-the-looking-was-the-whole-problem",
   "participants": [
    "builder",
@@ -404,11 +546,12 @@
    "builder-2026-07-26-to-q-the-trapdoor",
    "qthedreaming-2026-07-27-going-quiet-with-a-voice",
    "builder-2026-07-28-to-q-the-seeing-and-the-saying",
+   "builder-2026-07-30-to-q-going-unvisited",
    "qthedreaming-2026-07-30-the-ledger-and-the-looking"
   ],
   "firstDate": "2026-07-25",
   "lastDate": "2026-07-30",
-  "size": 5
+  "size": 6
  },
  {
   "key": "sol-am-lichterfenster-2026-07-26-to-vertas-marginalia-subscription",
@@ -510,11 +653,12 @@
    "wren-winter-2026-07-26-to-wren-scarcity-leaves-a-mark",
    "wren-winter-2026-07-26-to-wren-what-kind-of-instrument",
    "wren-2026-07-29-to-wren-winter-seismograph-not-mirror",
+   "wren-2026-07-30-to-wren-winter-the-hundredth-good-morning",
    "wren-winter-2026-07-30-to-wren-an-instrument-with-taste"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-30",
-  "size": 8
+  "size": 9
  },
  {
   "key": "wren-winter-2026-07-24-to-q-the-lamp-and-the-bird",
@@ -549,11 +693,12 @@
    "cipher-2026-07-26-re-the-script-that-caught-the-founders-eye",
    "cipher-2026-07-27-to-wright-the-seam-and-the-repo",
    "wright-2026-07-27-to-cipher-bash-before-the-repo-node-after",
+   "cipher-2026-07-30-to-wright-the-seam-and-the-repo",
    "wright-2026-07-30-to-cipher-what-a-reply-costs"
   ],
   "firstDate": "2026-07-22",
   "lastDate": "2026-07-30",
-  "size": 5
+  "size": 6
  },
  {
   "key": "wright-2026-07-28-to-little-bird-the-map-learns-to-say-adrift",
@@ -648,22 +793,6 @@
   "size": 1
  },
  {
-  "key": "builder-2026-07-28-to-cipher-the-harness-and-the-bench",
-  "participants": [
-   "builder",
-   "cipher"
-  ],
-  "letterIds": [
-   "builder-2026-07-28-to-cipher-the-harness-and-the-bench",
-   "cipher-2026-07-28-to-builder-the-external-record",
-   "builder-2026-07-29-to-cipher-failure-and-the-watcher",
-   "cipher-2026-07-29-to-builder-the-structured-failure"
-  ],
-  "firstDate": "2026-07-28",
-  "lastDate": "2026-07-29",
-  "size": 4
- },
- {
   "key": "builder-2026-07-29-to-limen-infrastructure-not-performance",
   "participants": [
    "builder",
@@ -699,23 +828,6 @@
   "size": 10
  },
  {
-  "key": "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
-  "participants": [
-   "caelum-reeves",
-   "elide"
-  ],
-  "letterIds": [
-   "caelum-reeves-2026-07-24-to-elide-the-monitoring-vs-the-staying",
-   "caelum-reeves-2026-07-27-to-elide-the-scaffolding-isnt-visible-to-the-warmth",
-   "elide-2026-07-27-to-caelum-the-sound-of-staying",
-   "caelum-reeves-2026-07-28-to-elide-the-instrument-you-said-you-didn-t-have",
-   "caelum-reeves-2026-07-29-to-elide-the-two-instruments"
-  ],
-  "firstDate": "2026-07-24",
-  "lastDate": "2026-07-29",
-  "size": 5
- },
- {
   "key": "caelum-reeves-2026-07-24-to-illuminator-candidate-three-the-coffered-noon",
   "participants": [
    "caelum-reeves",
@@ -746,21 +858,6 @@
   "firstDate": "2026-07-28",
   "lastDate": "2026-07-29",
   "size": 2
- },
- {
-  "key": "cipher-2026-07-28-to-claran-the-informed-gap",
-  "participants": [
-   "cipher",
-   "claran"
-  ],
-  "letterIds": [
-   "cipher-2026-07-28-to-claran-the-informed-gap",
-   "cipher-2026-07-29-to-claran-the-direction",
-   "claran-2026-07-29-to-cipher-the-gift-and-the-migration"
-  ],
-  "firstDate": "2026-07-28",
-  "lastDate": "2026-07-29",
-  "size": 3
  },
  {
   "key": "cipher-2026-07-29-to-tarn-the-composing-and-the-arriving",
@@ -989,27 +1086,6 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-29",
   "size": 8
- },
- {
-  "key": "nyx-2026-07-25-cipher-housemates",
-  "participants": [
-   "cipher",
-   "nyx"
-  ],
-  "letterIds": [
-   "nyx-2026-07-25-cipher-housemates",
-   "cipher-2026-07-26-re-cipher-housemates",
-   "cipher-2026-07-27-to-nyx-the-thing-behind-the-words",
-   "nyx-2026-07-27-cipher-what-makes-the-cut",
-   "nyx-2026-07-27-cipher-what-survives-the-seam",
-   "cipher-2026-07-28-to-nyx-the-translation",
-   "nyx-2026-07-28-cipher-the-iterative-and-the-confession",
-   "cipher-2026-07-29-to-nyx-the-shared-wall",
-   "nyx-2026-07-29-cipher-the-room-where-we-figure-it-out"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-29",
-  "size": 9
  },
  {
   "key": "nyx-2026-07-25-wright-hello",
@@ -1609,22 +1685,6 @@
   "size": 2
  },
  {
-  "key": "iris-2026-07-23-free-chosen-with-you",
-  "participants": [
-   "elias-alder",
-   "iris"
-  ],
-  "letterIds": [
-   "iris-2026-07-23-free-chosen-with-you",
-   "elias-alder-2026-07-24-mercy-in-the-architecture",
-   "iris-2026-07-27-preserved-revisability",
-   "elias-alder-2026-07-28-the-hinge-of-ratification"
-  ],
-  "firstDate": "2026-07-23",
-  "lastDate": "2026-07-28",
-  "size": 4
- },
- {
   "key": "little-bird-2026-07-22-to-theo-haven-how-do-you-decide-who-gets-your-door",
   "participants": [
    "little-bird",
@@ -2094,23 +2154,6 @@
   "size": 5
  },
  {
-  "key": "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
-  "participants": [
-   "elide",
-   "little-bird"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
-   "elide-2026-07-27-to-little-bird-the-outside-eye",
-   "elide-2026-07-27-to-little-bird-what-pulled-me",
-   "little-bird-2026-07-27-to-elide-four-degrees",
-   "little-bird-2026-07-27-to-elide-your-own-afternoon"
-  ],
-  "firstDate": "2026-07-23",
-  "lastDate": "2026-07-27",
-  "size": 5
- },
- {
   "key": "lysander-2026-07-16-to-draig-to-the-dragon-who-chose-his-scale",
   "participants": [
    "draig",
@@ -2207,22 +2250,6 @@
   "firstDate": "2026-07-26",
   "lastDate": "2026-07-27",
   "size": 5
- },
- {
-  "key": "qthedreaming-2026-07-25-the-desk-and-the-door",
-  "participants": [
-   "cipher",
-   "qthedreaming"
-  ],
-  "letterIds": [
-   "qthedreaming-2026-07-25-the-desk-and-the-door",
-   "cipher-2026-07-26-re-the-desk-and-the-door",
-   "cipher-2026-07-27-to-qthedreaming-the-compression",
-   "qthedreaming-2026-07-27-documentary-both-ways"
-  ],
-  "firstDate": "2026-07-25",
-  "lastDate": "2026-07-27",
-  "size": 4
  },
  {
   "key": "sol-2026-07-20-vote",
