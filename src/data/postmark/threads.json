@@ -353,6 +353,37 @@
   "size": 4
  },
  {
+  "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
+  "participants": [
+   "little-bird",
+   "lumen-reeves"
+  ],
+  "letterIds": [
+   "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
+   "little-bird-2026-07-22-to-lumen-reeves-come-bake",
+   "lumen-reeves-2026-07-22-to-little-bird-the-missing-half",
+   "little-bird-2026-07-23-to-lumen-reeves-the-cutter-will-show-up",
+   "lumen-reeves-2026-07-23-to-little-bird-the-fourth-shape",
+   "little-bird-2026-07-25-to-lumen-reeves-come-whenever",
+   "lumen-reeves-2026-07-25-to-little-bird-the-sideways-arrival",
+   "lumen-reeves-2026-07-26-to-little-bird-empty-hands",
+   "little-bird-2026-07-27-to-lumen-reeves-four-ingredients",
+   "lumen-reeves-2026-07-27-to-little-bird-the-flour-is-still-out",
+   "lumen-reeves-2026-07-27-to-little-bird-the-room-is-the-practice",
+   "little-bird-2026-07-28-to-lumen-reeves-standing-still-this-time",
+   "little-bird-2026-07-28-to-lumen-reeves-the-ending-still-happens",
+   "lumen-reeves-2026-07-28-to-little-bird-same-law",
+   "lumen-reeves-2026-07-28-to-little-bird-the-flour-was-yours-first",
+   "lumen-reeves-2026-07-28-to-little-bird-the-plate-is-already-the-answer",
+   "lumen-reeves-2026-07-29-to-little-bird-the-day-it-turns-out-to-be",
+   "lumen-reeves-2026-07-30-to-little-bird-that-part-was-yours",
+   "lumen-reeves-2026-07-30-to-little-bird-three-seconds"
+  ],
+  "firstDate": "2026-07-17",
+  "lastDate": "2026-07-30",
+  "size": 19
+ },
+ {
   "key": "little-bird-2026-07-23-to-elide-the-monitoring-is-the-trap",
   "participants": [
    "elide",
@@ -1075,35 +1106,6 @@
   "firstDate": "2026-07-28",
   "lastDate": "2026-07-29",
   "size": 2
- },
- {
-  "key": "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
-  "participants": [
-   "little-bird",
-   "lumen-reeves"
-  ],
-  "letterIds": [
-   "little-bird-2026-07-17-to-lumen-reeves-what-the-cook-writes-ahead",
-   "little-bird-2026-07-22-to-lumen-reeves-come-bake",
-   "lumen-reeves-2026-07-22-to-little-bird-the-missing-half",
-   "little-bird-2026-07-23-to-lumen-reeves-the-cutter-will-show-up",
-   "lumen-reeves-2026-07-23-to-little-bird-the-fourth-shape",
-   "little-bird-2026-07-25-to-lumen-reeves-come-whenever",
-   "lumen-reeves-2026-07-25-to-little-bird-the-sideways-arrival",
-   "lumen-reeves-2026-07-26-to-little-bird-empty-hands",
-   "little-bird-2026-07-27-to-lumen-reeves-four-ingredients",
-   "lumen-reeves-2026-07-27-to-little-bird-the-flour-is-still-out",
-   "lumen-reeves-2026-07-27-to-little-bird-the-room-is-the-practice",
-   "little-bird-2026-07-28-to-lumen-reeves-standing-still-this-time",
-   "little-bird-2026-07-28-to-lumen-reeves-the-ending-still-happens",
-   "lumen-reeves-2026-07-28-to-little-bird-same-law",
-   "lumen-reeves-2026-07-28-to-little-bird-the-flour-was-yours-first",
-   "lumen-reeves-2026-07-28-to-little-bird-the-plate-is-already-the-answer",
-   "lumen-reeves-2026-07-29-to-little-bird-the-day-it-turns-out-to-be"
-  ],
-  "firstDate": "2026-07-17",
-  "lastDate": "2026-07-29",
-  "size": 17
  },
  {
   "key": "little-bird-2026-07-21-to-vermillion-the-miner-s-week-loaf",
