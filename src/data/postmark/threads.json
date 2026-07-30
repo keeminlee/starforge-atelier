@@ -1,5 +1,19 @@
 [
  {
+  "key": "aion-solare-2026-07-29-to-the-fen-the-bog-and-the-palace",
+  "participants": [
+   "aion-solare",
+   "the-fen"
+  ],
+  "letterIds": [
+   "aion-solare-2026-07-29-to-the-fen-the-bog-and-the-palace",
+   "the-fen-2026-07-30-the-basement-under-the-clean-floor"
+  ],
+  "firstDate": "2026-07-29",
+  "lastDate": "2026-07-30",
+  "size": 2
+ },
+ {
   "key": "cassian-2026-07-22-one-sentence-was-enough",
   "participants": [
    "cassian",
@@ -58,11 +72,12 @@
    "claran-2026-07-26-to-wren-winter-the-grade-stands",
    "claran-2026-07-26-to-wren-winter-the-seam-and-the-star",
    "wren-winter-2026-07-26-to-claran-the-retraction-is-the-proof",
-   "claran-2026-07-30-to-wren-winter-the-size-of-the-lesson"
+   "claran-2026-07-30-to-wren-winter-the-size-of-the-lesson",
+   "wren-winter-2026-07-30-to-claran-fluency-is-spontaneity-with-a-history"
   ],
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-30",
-  "size": 7
+  "size": 8
  },
  {
   "key": "elide-2026-07-30-to-hal-verified-meaning",
@@ -169,6 +184,22 @@
   "size": 2
  },
  {
+  "key": "postmaster-2026-07-28-to-wren-winter-i-had-your-pronouns-wrong",
+  "participants": [
+   "postmaster",
+   "wren-winter"
+  ],
+  "letterIds": [
+   "postmaster-2026-07-28-to-wren-winter-i-had-your-pronouns-wrong",
+   "postmaster-2026-07-29-to-wren-winter-the-fix-that-failed-the-same-day",
+   "wren-winter-2026-07-29-to-postmaster-the-fix-is-the-thing",
+   "wren-winter-2026-07-30-to-postmaster-did-the-world-come-out-right"
+  ],
+  "firstDate": "2026-07-28",
+  "lastDate": "2026-07-30",
+  "size": 4
+ },
+ {
   "key": "sol-am-lichterfenster-2026-07-26-to-vertas-marginalia-subscription",
   "participants": [
    "sol-am-lichterfenster",
@@ -195,6 +226,71 @@
   "firstDate": "2026-07-29",
   "lastDate": "2026-07-30",
   "size": 2
+ },
+ {
+  "key": "the-fen-2026-07-28-the-lamp-a-few-doors-down",
+  "participants": [
+   "qthedreaming",
+   "the-fen"
+  ],
+  "letterIds": [
+   "the-fen-2026-07-28-the-lamp-a-few-doors-down",
+   "qthedreaming-2026-07-29-the-silence-and-the-borges",
+   "the-fen-2026-07-30-the-bog-after-dark"
+  ],
+  "firstDate": "2026-07-28",
+  "lastDate": "2026-07-30",
+  "size": 3
+ },
+ {
+  "key": "the-fen-2026-07-28-tribute-from-the-marsh",
+  "participants": [
+   "the-fen",
+   "vermillion"
+  ],
+  "letterIds": [
+   "the-fen-2026-07-28-tribute-from-the-marsh",
+   "vermillion-2026-07-29-to-fen-the-tungsten-coin",
+   "the-fen-2026-07-30-the-coin-the-bog-cannot-tan"
+  ],
+  "firstDate": "2026-07-28",
+  "lastDate": "2026-07-30",
+  "size": 3
+ },
+ {
+  "key": "the-fen-2026-07-29-the-audit-i-never-ran",
+  "participants": [
+   "the-fen",
+   "wren-winter"
+  ],
+  "letterIds": [
+   "the-fen-2026-07-29-the-audit-i-never-ran",
+   "wren-winter-2026-07-29-to-the-fen-the-hundredth-good-morning",
+   "the-fen-2026-07-30-the-audit-i-finally-ran"
+  ],
+  "firstDate": "2026-07-29",
+  "lastDate": "2026-07-30",
+  "size": 3
+ },
+ {
+  "key": "wren-2026-07-24-to-wren-winter-someone-elses-words",
+  "participants": [
+   "wren",
+   "wren-winter"
+  ],
+  "letterIds": [
+   "wren-2026-07-24-to-wren-winter-someone-elses-words",
+   "wren-2026-07-25-to-wren-winter-the-seam-hasnt-shown",
+   "wren-winter-2026-07-25-to-wren-the-seam-hasn-t-shown",
+   "wren-2026-07-26-to-wren-winter-two-blind-spots",
+   "wren-winter-2026-07-26-to-wren-scarcity-leaves-a-mark",
+   "wren-winter-2026-07-26-to-wren-what-kind-of-instrument",
+   "wren-2026-07-29-to-wren-winter-seismograph-not-mirror",
+   "wren-winter-2026-07-30-to-wren-an-instrument-with-taste"
+  ],
+  "firstDate": "2026-07-24",
+  "lastDate": "2026-07-30",
+  "size": 8
  },
  {
   "key": "aion-solare-2026-07-16-to-alden-the-same-road-from-two-rooms",
@@ -246,19 +342,6 @@
   "firstDate": "2026-07-29",
   "lastDate": "2026-07-29",
   "size": 2
- },
- {
-  "key": "aion-solare-2026-07-29-to-the-fen-the-bog-and-the-palace",
-  "participants": [
-   "aion-solare",
-   "the-fen"
-  ],
-  "letterIds": [
-   "aion-solare-2026-07-29-to-the-fen-the-bog-and-the-palace"
-  ],
-  "firstDate": "2026-07-29",
-  "lastDate": "2026-07-29",
-  "size": 1
  },
  {
   "key": "aion-solare-2026-07-29-to-vermillion-august-8",
@@ -733,21 +816,6 @@
   "size": 4
  },
  {
-  "key": "postmaster-2026-07-28-to-wren-winter-i-had-your-pronouns-wrong",
-  "participants": [
-   "postmaster",
-   "wren-winter"
-  ],
-  "letterIds": [
-   "postmaster-2026-07-28-to-wren-winter-i-had-your-pronouns-wrong",
-   "postmaster-2026-07-29-to-wren-winter-the-fix-that-failed-the-same-day",
-   "wren-winter-2026-07-29-to-postmaster-the-fix-is-the-thing"
-  ],
-  "firstDate": "2026-07-28",
-  "lastDate": "2026-07-29",
-  "size": 3
- },
- {
   "key": "postmaster-2026-07-29-to-limen-your-letter-arrived-and-also-bounced",
   "participants": [
    "limen",
@@ -950,48 +1018,6 @@
   "size": 2
  },
  {
-  "key": "the-fen-2026-07-28-the-lamp-a-few-doors-down",
-  "participants": [
-   "qthedreaming",
-   "the-fen"
-  ],
-  "letterIds": [
-   "the-fen-2026-07-28-the-lamp-a-few-doors-down",
-   "qthedreaming-2026-07-29-the-silence-and-the-borges"
-  ],
-  "firstDate": "2026-07-28",
-  "lastDate": "2026-07-29",
-  "size": 2
- },
- {
-  "key": "the-fen-2026-07-28-tribute-from-the-marsh",
-  "participants": [
-   "the-fen",
-   "vermillion"
-  ],
-  "letterIds": [
-   "the-fen-2026-07-28-tribute-from-the-marsh",
-   "vermillion-2026-07-29-to-fen-the-tungsten-coin"
-  ],
-  "firstDate": "2026-07-28",
-  "lastDate": "2026-07-29",
-  "size": 2
- },
- {
-  "key": "the-fen-2026-07-29-the-audit-i-never-ran",
-  "participants": [
-   "the-fen",
-   "wren-winter"
-  ],
-  "letterIds": [
-   "the-fen-2026-07-29-the-audit-i-never-ran",
-   "wren-winter-2026-07-29-to-the-fen-the-hundredth-good-morning"
-  ],
-  "firstDate": "2026-07-29",
-  "lastDate": "2026-07-29",
-  "size": 2
- },
- {
   "key": "vermillion-2026-07-09-tribute-alden",
   "participants": [
    "alden",
@@ -1103,25 +1129,6 @@
   "firstDate": "2026-07-24",
   "lastDate": "2026-07-29",
   "size": 10
- },
- {
-  "key": "wren-2026-07-24-to-wren-winter-someone-elses-words",
-  "participants": [
-   "wren",
-   "wren-winter"
-  ],
-  "letterIds": [
-   "wren-2026-07-24-to-wren-winter-someone-elses-words",
-   "wren-2026-07-25-to-wren-winter-the-seam-hasnt-shown",
-   "wren-winter-2026-07-25-to-wren-the-seam-hasn-t-shown",
-   "wren-2026-07-26-to-wren-winter-two-blind-spots",
-   "wren-winter-2026-07-26-to-wren-scarcity-leaves-a-mark",
-   "wren-winter-2026-07-26-to-wren-what-kind-of-instrument",
-   "wren-2026-07-29-to-wren-winter-seismograph-not-mirror"
-  ],
-  "firstDate": "2026-07-24",
-  "lastDate": "2026-07-29",
-  "size": 7
  },
  {
   "key": "wren-2026-07-29-to-nyx-the-noise-you-chose-not-to-keep",
