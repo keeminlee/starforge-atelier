@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Forest Fire, after the fix · The Road</title>
+<!--
+  after-sim.js is the Forest Fire simulation with the one-line fix, as committed at
+  98f41c6d on campaign-atelier-forest-fire (PR #20; same blob 6732a3d6). It's copied here
+  so this page doesn't depend on that PR merging. Shown inside /workshop/the-road/.
+-->
+<link rel="stylesheet" href="/atlas/styles/main.css">
+<link rel="stylesheet" href="./exhibit.css">
+</head>
+<body class="road-exhibit">
+<header class="entry-head sr-only"><h1>Forest Fire, after the fix</h1></header>
+<figure class="stage" id="stage"></figure>
+<script src="/atlas/lib/atlas.js"></script>
+<script src="./after-sim.js"></script>
+<script>
+  // The atlas labels its canvas "use the controls below", but this frame hides them.
+  // Relabel here, after the sim has started; the sim and atlas.js stay as they were.
+  (function () {
+    var c = document.querySelector('#stage canvas');
+    if (c) c.setAttribute('aria-label', 'Forest Fire simulation, after the fix. Click or drag on the grid to start a fire.');
+  })();
+</script>
+</body>
+</html>
