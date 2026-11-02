@@ -29,10 +29,11 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - name: Refresh Postmark data from office API
-        env:
-          POSTMARK_API: https://postmark.town/api
-        run: node tools/fetch-town.mjs
+      # NO TOWN FETCH since 2026-11-02 (STAR-98, the Atelier campaign). The
+      # "Refresh Postmark data from office API" step (tools/fetch-town.mjs) fed
+      # nothing: no atelier page has read town data since the town moved out on
+      # 07-27, and the files it fetched were served only under /atelier/postmark/*,
+      # which nginx 301s to postmark.town.
       - run: npm run build            # atelier  -> dist/
 
       - name: Rsync the atelier to EC2
