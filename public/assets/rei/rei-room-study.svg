@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" width="1440" height="1000">
+  <!-- A text-free study of the first Rei-room prototype: its panel geometry, with colours
+       sampled from the original screenshot. Bars stand in for type. -->
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) scale(620 520)">
+      <stop offset="0" stop-color="#2f2623"/>
+      <stop offset="1" stop-color="#121018"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#312b3a"/>
+      <stop offset="1" stop-color="#2b2434"/>
+    </linearGradient>
+    <radialGradient id="lantern" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ebb766" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#ebb766" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1440" height="1000" fill="#121018"/>
+  <rect width="1440" height="1000" fill="url(#glow)"/>
+
+  <!-- title and subtitle -->
+  <rect x="130" y="70" width="268" height="40" rx="12" fill="#f4ead8" opacity="0.88"/>
+  <rect x="130" y="135" width="620" height="10" rx="5" fill="#b8a994" opacity="0.5"/>
+  <rect x="130" y="162" width="345" height="10" rx="5" fill="#b8a994" opacity="0.5"/>
+
+  <!-- lantern button -->
+  <circle cx="1267" cy="138" r="70" fill="url(#lantern)"/>
+  <rect x="1225" y="96" width="84" height="84" rx="24" fill="#17151d" stroke="#473a2f" stroke-width="1.5"/>
+  <circle cx="1267" cy="138" r="10" fill="#ebb766"/>
+
+  <!-- three status cards -->
+  <g stroke="#473a2f" stroke-width="1.5" fill="#19171f">
+    <rect x="130" y="209" width="384" height="88" rx="14"/>
+    <rect x="527" y="209" width="385" height="88" rx="14"/>
+    <rect x="925" y="209" width="384" height="88" rx="14"/>
+  </g>
+  <g fill="#f2bd6b">
+    <rect x="145" y="225" width="38" height="8" rx="4"/>
+    <rect x="542" y="225" width="52" height="8" rx="4"/>
+    <rect x="940" y="225" width="86" height="8" rx="4"/>
+  </g>
+  <g fill="#f4ead8" opacity="0.55">
+    <rect x="145" y="250" width="345" height="9" rx="4.5"/>
+    <rect x="145" y="271" width="44" height="9" rx="4.5"/>
+    <rect x="542" y="250" width="277" height="9" rx="4.5"/>
+    <rect x="940" y="250" width="320" height="9" rx="4.5"/>
+  </g>
+
+  <!-- the three large panels -->
+  <g stroke="#584741" stroke-width="1.5" fill="url(#panel)">
+    <rect x="130" y="316" width="681" height="240" rx="22"/>
+    <rect x="130" y="573" width="382" height="396" rx="22"/>
+    <rect x="828" y="316" width="481" height="653" rx="22"/>
+  </g>
+  <g fill="#f2bd6b">
+    <rect x="151" y="342" width="143" height="11" rx="5.5"/>
+    <rect x="151" y="599" width="144" height="11" rx="5.5"/>
+    <rect x="849" y="342" width="149" height="11" rx="5.5"/>
+  </g>
+
+  <!-- lantern wall: lede and three small cards -->
+  <g fill="#b8a994" opacity="0.6">
+    <rect x="151" y="379" width="632" height="9" rx="4.5"/>
+    <rect x="151" y="404" width="20" height="9" rx="4.5"/>
+  </g>
+  <g stroke="#554444" stroke-width="1.5" fill="#332a3c">
+    <rect x="151" y="437" width="204" height="98" rx="14"/>
+    <rect x="368" y="437" width="204" height="98" rx="14"/>
+    <rect x="585" y="437" width="205" height="98" rx="14"/>
+  </g>
+  <g fill="#b8a994" opacity="0.7">
+    <rect x="166" y="457" width="44" height="8" rx="4"/>
+    <rect x="383" y="457" width="53" height="8" rx="4"/>
+    <rect x="600" y="457" width="33" height="8" rx="4"/>
+  </g>
+  <g fill="#f4ead8" opacity="0.6">
+    <rect x="166" y="484" width="149" height="10" rx="5"/>
+    <rect x="166" y="506" width="107" height="10" rx="5"/>
+    <rect x="383" y="484" width="168" height="10" rx="5"/>
+    <rect x="383" y="506" width="74" height="10" rx="5"/>
+    <rect x="600" y="484" width="142" height="10" rx="5"/>
+    <rect x="600" y="506" width="99" height="10" rx="5"/>
+  </g>
+
+  <!-- memory shelf: lede, alive-thread card, two pills -->
+  <g fill="#b8a994" opacity="0.6">
+    <rect x="151" y="636" width="328" height="9" rx="4.5"/>
+    <rect x="151" y="661" width="286" height="9" rx="4.5"/>
+    <rect x="151" y="687" width="130" height="9" rx="4.5"/>
+  </g>
+  <rect x="151" y="720" width="340" height="228" rx="18" fill="#393541" stroke="#534f5a" stroke-width="1.5"/>
+  <rect x="166" y="739" width="100" height="8" rx="4" fill="#9cbfa7"/>
+  <g fill="#f4ead8" opacity="0.6">
+    <rect x="166" y="765" width="280" height="10" rx="5"/>
+    <rect x="166" y="789" width="128" height="10" rx="5"/>
+  </g>
+  <g fill="#403c48" stroke="#534f5a" stroke-width="1.5">
+    <rect x="166" y="816" width="310" height="61" rx="30.5"/>
+    <rect x="166" y="888" width="310" height="45" rx="22.5"/>
+  </g>
+  <g fill="#b8a994" opacity="0.45">
+    <rect x="176" y="828" width="78" height="7" rx="3.5"/>
+    <rect x="176" y="844" width="266" height="7" rx="3.5"/>
+    <rect x="176" y="860" width="54" height="7" rx="3.5"/>
+    <rect x="176" y="900" width="261" height="7" rx="3.5"/>
+    <rect x="176" y="916" width="103" height="7" rx="3.5"/>
+  </g>
+
+  <!-- window to HQ: four bullets, two cards with pills, closing note -->
+  <g fill="#f4ead8" opacity="0.6">
+    <circle cx="852" cy="384" r="3"/>
+    <circle cx="852" cy="409" r="3"/>
+    <circle cx="852" cy="435" r="3"/>
+    <circle cx="852" cy="460" r="3"/>
+    <rect x="867" y="379" width="184" height="10" rx="5"/>
+    <rect x="867" y="404" width="253" height="10" rx="5"/>
+    <rect x="867" y="430" width="195" height="10" rx="5"/>
+    <rect x="867" y="455" width="294" height="10" rx="5"/>
+  </g>
+  <g fill="#393541" stroke="#534f5a" stroke-width="1.5">
+    <rect x="849" y="488" width="439" height="181" rx="18"/>
+    <rect x="849" y="686" width="439" height="166" rx="18"/>
+  </g>
+  <g fill="#9cbfa7">
+    <rect x="864" y="507" width="96" height="8" rx="4"/>
+    <rect x="864" y="705" width="173" height="8" rx="4"/>
+  </g>
+  <g fill="#f4ead8" opacity="0.6">
+    <rect x="864" y="533" width="395" height="10" rx="5"/>
+    <rect x="864" y="558" width="358" height="10" rx="5"/>
+    <rect x="864" y="583" width="322" height="10" rx="5"/>
+    <rect x="864" y="731" width="394" height="10" rx="5"/>
+    <rect x="864" y="756" width="384" height="10" rx="5"/>
+    <rect x="864" y="781" width="173" height="10" rx="5"/>
+  </g>
+  <g fill="#403c48" stroke="#534f5a" stroke-width="1.5">
+    <rect x="864" y="609" width="409" height="46" rx="23"/>
+    <rect x="864" y="808" width="281" height="30" rx="15"/>
+  </g>
+  <g fill="#b8a994" opacity="0.45">
+    <rect x="874" y="621" width="367" height="7" rx="3.5"/>
+    <rect x="874" y="637" width="107" height="7" rx="3.5"/>
+    <rect x="874" y="820" width="261" height="7" rx="3.5"/>
+  </g>
+  <g fill="#b8a994" opacity="0.6">
+    <rect x="849" y="879" width="396" height="9" rx="4.5"/>
+    <rect x="849" y="904" width="148" height="9" rx="4.5"/>
+  </g>
+
+  <!-- the next row, just beginning -->
+  <g stroke="#584741" stroke-width="1.5" fill="url(#panel)">
+    <rect x="130" y="986" width="382" height="60" rx="22"/>
+    <rect x="530" y="986" width="380" height="60" rx="22"/>
+    <rect x="928" y="986" width="381" height="60" rx="22"/>
+  </g>
+</svg>
