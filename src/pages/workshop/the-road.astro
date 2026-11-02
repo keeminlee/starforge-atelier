@@ -5,15 +5,17 @@
 // Fire resize fix), with the bug itself to try. The two simulations live in
 // public/workshop/the-road/forest-fire/: a frozen copy of the sim as it was at 4c757675
 // (the exhibit of the bug) and the fixed sim from 98f41c6d. Nothing loads or runs until
-// the visitor presses "Turn it", so it never competes with the page around it.
+// the visitor presses "Narrow both windows", so it never competes with the page around it.
 //
-// The turn is a change of WIDTH, wide to narrow, the way a window narrows when a phone
-// turns upright. The sim sizes its grid from its frame's width (height = width x 0.6),
-// and the bug throws only when the grid shrinks; a wider window keeps it running. Each
-// frame's height follows the sim's own shape (canvas plus one readout line), so there are
-// no empty bands, and the size changes in one step, so each sim sees one resize, not a
-// transition's dozens. The "turn" is shown only by tilting the frame's outer wrapper,
-// which doesn't resize the frame's viewport; under reduced motion, nothing moves.
+// The demonstration is a change of WIDTH, wide to narrow, the way a window narrows when a
+// phone turns upright. The sim sizes its grid from its frame's width (height = width x
+// 0.6), and the bug throws only when the grid shrinks. Each frame's height follows the
+// sim's own shape (canvas plus one readout line), so there are no empty bands, and the
+// size changes in one step, so each sim sees one resize, not a transition's dozens.
+// Nothing rotates or animates: the buttons name what they do (Rei's wording read, 11-02).
+//
+// Nothing around the comparison moves at the press or the narrowing: the slots, the line
+// under the old copy, the stills note and the second button keep their room throughout.
 //
 // Error text is shown without hosts: message, function and file only. The live line under
 // a frame is cleaned the same way when it's shown.
@@ -65,7 +67,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     <header class="tr-head">
       <p class="tr-kick">The Workshop · The Road, chapter one</p>
       <h1>The forest that stopped burning</h1>
-      <p class="tr-lede">One of the simulations in the <a href="/atelier/atlas-of-emergence/">Atlas of Emergence</a> froze whenever its window got narrower. A wider window kept it running. This page follows the fix from the first sign of trouble to the decision, which hasn't been made yet.</p>
+      <p class="tr-lede">One of the simulations in the <a href="/atelier/atlas-of-emergence/">Atlas of Emergence</a> froze when a narrower window shrank its grid. This page follows the fix from the first sign of trouble to a person's decision.</p>
     </header>
 
     <section class="tr-card tr-compare" aria-labelledby="tr-compare-h">
@@ -91,8 +93,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       <p class="tr-still-note">The pictures are stills of each copy after its window narrowed and widened again.</p>
 
       <div class="tr-controls">
-        <button type="button" class="tr-btn tr-turn"><span class="tr-turn-label">Turn it</span><span class="tr-sizer" aria-hidden="true">Turn it back</span></button>
-        <button type="button" class="tr-btn tr-stop" hidden>Stop and reset</button>
+        <button type="button" class="tr-btn tr-turn"><span class="tr-turn-label">Narrow both windows</span><span class="tr-sizer" aria-hidden="true">Narrow both windows</span><span class="tr-sizer" aria-hidden="true">Widen both windows</span></button>
+        <button type="button" class="tr-btn tr-stop is-idle">Stop and reset</button>
       </div>
       <p class="tr-status" role="status" aria-live="polite"></p>
     </section>
@@ -212,19 +214,11 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       display: block; width: 100%; max-width: 520px; height: auto;
       border: 1px solid var(--rule); border-radius: 10px;
     }
-    .the-road .tr-tilt {
+    .the-road .tr-window {
       border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; line-height: 0;
       background: #06070a; max-width: 100%;
     }
-    .the-road .tr-tilt iframe { display: block; border: 0; }
-    @media (prefers-reduced-motion: no-preference) {
-      .the-road .tr-tilt.is-turning { animation: tr-tilt 0.55s ease-in-out; }
-    }
-    @keyframes tr-tilt {
-      0% { transform: rotate(0deg); }
-      45% { transform: rotate(-6deg); }
-      100% { transform: rotate(0deg); }
-    }
+    .the-road .tr-window iframe { display: block; border: 0; }
     .the-road .tr-frame figcaption {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2em 0.8em; margin-top: 0.55em;
       font: 600 0.82rem/1.4 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em;
@@ -243,11 +237,16 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       padding: 0.7em 1.4em; cursor: pointer;
     }
     .the-road .tr-btn:hover { background: #aab676; }
-    /* the turn button is as wide as its longer label at all times, so relabelling it
-       at the turn doesn't move the buttons */
+    /* the first button is as wide as its longer label at all times, so relabelling it
+       doesn't move the buttons */
     .the-road .tr-turn { display: inline-grid; }
     .the-road .tr-turn > span { grid-area: 1 / 1; text-align: center; }
     .the-road .tr-turn .tr-sizer { visibility: hidden; }
+    /* before the press, the second button and the stills note keep their room unseen
+       (visibility, not display), so nothing moves at the press; an unseen button is out
+       of the tab order and the accessibility tree */
+    .the-road .tr-stop.is-idle,
+    .the-road .tr-still-note.is-running { visibility: hidden; }
     .the-road .tr-btn[aria-disabled="true"] { opacity: 0.6; cursor: progress; }
     .the-road .tr-stop { color: var(--ink); background: transparent; border-color: var(--faint); }
     .the-road .tr-stop:hover { background: var(--bg-3); }
@@ -337,10 +336,10 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
   </style>
 
   <script>
-    // "Turn it": nothing loads until the press. Then both copies load at full width, run
-    // for a beat, and narrow in one step, so each sim's own resize code runs once. Each
-    // frame's height follows the sim's shape. Everything the status line says is read from
-    // the sims themselves.
+    // "Narrow both windows": nothing loads until the press. Then both copies load at full
+    // width, run for a beat, and narrow in one step, so each sim's own resize code runs
+    // once. Each frame's height follows the sim's shape. Everything the status line says is
+    // read from the sims themselves.
     const root = document.querySelector(".the-road");
     if (root) {
       const turnBtn = root.querySelector(".tr-turn") as HTMLButtonElement;
@@ -369,10 +368,11 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       let poll = 0, beat = 0, verdict = 0, loadedAt = 0;
 
       const turnLabel = root.querySelector(".tr-turn-label") as HTMLElement;
-      // While the frames are loaded, the line under the old copy keeps its room, so the
-      // error appearing at the turn doesn't push the buttons down. Until a real error
-      // arrives it holds the expected message, invisible and hidden from screen readers;
-      // the real error replaces it.
+      const NARROW_LABEL = "Narrow both windows", WIDEN_LABEL = "Widen both windows";
+      // The line under the old copy keeps its room from page load, so neither the press
+      // nor the error appearing at the narrowing pushes the buttons down. Until a real
+      // error arrives it holds the expected message, invisible and hidden from screen
+      // readers; the real error replaces it.
       const EXPECTED = "Error inside this frame: RangeError: offset is out of bounds at ForestFire.step (before-sim.js:142)";
       const reserveErr = (f: Frame) => {
         f.err.textContent = EXPECTED; f.err.style.visibility = "hidden";
@@ -423,7 +423,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         const h = (w: number) => Math.round(w * 0.6) + READOUT;
         return { wide, narrow, h };
       };
-      // one step: width and height set together, once
+      // one step: width and height set together, once. The slot always holds the wide
+      // frame's height, from page load, whether it shows a still or a frame.
       const shape = (orient: "wide" | "narrow") => {
         const { wide, narrow, h } = dims();
         const w = orient === "narrow" ? narrow : wide;
@@ -434,13 +435,10 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           f.iframe.style.height = h(w) + "px";
         }
       };
-      const tilt = () => {
-        for (const f of frames) {
-          if (!f.wrap) continue;
-          f.wrap.classList.remove("is-turning");
-          void f.wrap.offsetWidth; // restart the animation
-          f.wrap.classList.add("is-turning");
-        }
+      // the resting state: stills in full-height slots, the error line's room held
+      const rest = () => {
+        shape("wide");
+        for (const f of frames) { if (f.side === "before") reserveErr(f); else clearErr(f); }
       };
       const sample = () => {
         const now = performance.now();
@@ -477,22 +475,21 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       const turn = (orient: "wide" | "narrow") => {
         state = orient;
         turnBtn.removeAttribute("aria-disabled");
-        turnLabel.textContent = orient === "narrow" ? "Turn it back" : "Turn it";
+        turnLabel.textContent = orient === "narrow" ? WIDEN_LABEL : NARROW_LABEL;
         status.textContent = orient === "narrow" ? "Narrowing both frames." : "Widening both frames again.";
         shape(orient);
-        tilt();
         report(orient);
       };
       const load = () => {
         state = "loading";
         loadedAt = performance.now();
         turnBtn.setAttribute("aria-disabled", "true");
-        stopBtn.hidden = false;
-        stillNote.hidden = true;
+        stopBtn.classList.remove("is-idle");
+        stillNote.classList.add("is-running");
         status.textContent = "Loading both copies. They run at full width for a moment, then narrow.";
         for (const f of frames) {
           const wrap = document.createElement("div");
-          wrap.className = "tr-tilt";
+          wrap.className = "tr-window";
           const ifr = document.createElement("iframe");
           ifr.src = f.src;
           ifr.title = f.title;
@@ -509,7 +506,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
                 showErr(f, `Error inside this frame: ${f.error}`);
               });
               // The atlas keeps a sim paused under prefers-reduced-motion; pressing
-              // "Turn it" is the visitor asking for it to run.
+              // "Narrow both windows" is the visitor asking for it to run.
               const s = sim(f);
               if (s && !s.running) s.play();
             } catch { /* same-origin frames; nothing to do if it fails */ }
@@ -547,15 +544,14 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           if (f.wrap) f.wrap.remove();
           f.wrap = null; f.iframe = null; f.seen = []; f.error = null;
           f.poster.hidden = false;
-          f.slot.style.minHeight = "";
           f.tick.textContent = "";
-          clearErr(f);
         }
         state = "idle";
+        rest();
         turnBtn.removeAttribute("aria-disabled");
-        turnLabel.textContent = "Turn it";
-        stopBtn.hidden = true;
-        stillNote.hidden = false;
+        turnLabel.textContent = NARROW_LABEL;
+        stopBtn.classList.add("is-idle");
+        stillNote.classList.remove("is-running");
         status.textContent = "Stopped and reset. Nothing is running.";
         if (hadFocus) turnBtn.focus();
       };
@@ -589,9 +585,9 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       window.addEventListener("resize", measureAll);
       measureAll();
       window.addEventListener("resize", () => {
-        if (state === "idle") return;
         shape(state === "narrow" ? "narrow" : "wide");
       });
+      rest();
     }
   </script>
 </BaseLayout>
