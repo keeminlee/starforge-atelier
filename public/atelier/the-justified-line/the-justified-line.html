@@ -19,7 +19,7 @@ input[type=range]{accent-color:var(--lantern);width:280px}
 textarea{width:100%;max-width:900px;margin:0 auto 1.5em;display:block;background:var(--panel);color:var(--ink);
 border:1px solid var(--line);border-radius:5px;padding:.8em 1em;font:inherit;font-size:.92rem;resize:vertical;min-height:76px}
 .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-@media(max-width:880px){.pair{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:880px){.pair{grid-template-columns:minmax(0,1fr)}.col{overflow-x:auto}}
 .col h2{margin:0 0 .2em;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lantern);font-weight:400}
 .col .cap{color:var(--dim);font-size:.8rem;margin:0 0 .8em;min-height:2.6em}
 .sheet{background:var(--paper);color:var(--paperink);border-radius:4px;padding:20px 22px;
