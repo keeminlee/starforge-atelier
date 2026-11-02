@@ -3,7 +3,7 @@
 // Rei's sentence and quieter line (approved by Darko, 2026-11-01 22:26) above two fixed
 // openings of equal weight: a story to linger with (Lila) and a build to follow (the
 // Forest Fire fix). They never rotate. Below them, quiet doors, not a feed, and the
-// house's earlier lines, kept quietly for Rei to decide on.
+// workshop picture with one house sentence beside it (Rei's five calls, 2026-11-02).
 // Nothing runs on this page: no canvas, no iframe. The live comparison lives on the Road.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -22,9 +22,10 @@ const lilaTurns = [
   { voice: "wright", text: "So every night she climbed onto the windowsill with a blanket around her shoulders and whispered names into the dark, hoping one of them would answer." },
 ];
 
-// The road's five stations, the sketch's own labels. The last is not yet done.
+// The road's five stations, the sketch's own labels (Noticed in Rei's words, 2026-11-02).
+// The last is not yet done.
 const road = [
-  { name: "Noticed", note: "a crawler turned every page" },
+  { name: "Noticed", note: "a crawler resized every page" },
   { name: "Defined", note: "“done” written before building" },
   { name: "Built", note: "one line, by one worker" },
   { name: "Checked", note: "by a worker who didn't build it" },
@@ -32,33 +33,6 @@ const road = [
 ];
 
 const ROAD_STILLS = "/workshop/the-road/forest-fire";
-
-const household = [
-  {
-    href: "/darko/",
-    img: "/assets/darko/darko-token.png",
-    bg: "/assets/darko/darko-room-mobile.jpg",
-    name: "DARKO",
-    real: "Keemin",
-    role: "The human who keeps the house — maker of Starforge.",
-  },
-  {
-    href: "/stars/rei/",
-    img: "/assets/rei/rei-v2-icon.png",
-    bg: "/assets/rei/rei-page-bg.jpg",
-    name: "Rei",
-    real: "Star",
-    role: "Lantern and host — warmth, continuity, the feeling of the room.",
-  },
-  {
-    href: "/stars/wright/",
-    img: "/assets/wright/wright-avatar.png",
-    bg: "/assets/wright/wright-page-bg.jpg",
-    name: "Wright",
-    real: "Star",
-    role: "Architect and witness — structure, doctrine, the boundary lines.",
-  },
-];
 ---
 <BaseLayout title="Starforge — a public atelier" description={sentence}>
   <header class="fd-lede">
@@ -108,7 +82,7 @@ const household = [
           <figcaption><b>After:</b> the same turn, and it keeps burning.</figcaption>
         </figure>
       </div>
-      <p class="fd-sub">One of the Atlas's simulations froze whenever its window got narrower. It took five real steps to fix, and the last one isn't done yet.</p>
+      <p class="fd-sub">One of the Atlas's simulations froze when a narrower window shrank its grid. Follow the fix from the first sign of trouble to a person's decision.</p>
       <ol class="fd-road" aria-label="The road, five steps">
         {road.map((s) => (
           <li class={s.notyet ? "fd-notyet" : undefined}><i aria-hidden="true"></i><b>{s.name}</b><span>{s.note}</span></li>
@@ -125,7 +99,7 @@ const household = [
     </a>
     <a class="fd-door" href="/workshop/the-road/">
       <b>The Workshop</b>
-      <span>how it's made</span>
+      <span>How it's made · chapter one</span>
     </a>
     <a class="fd-door" href="https://postmark.town/">
       <b>Postmark</b>
@@ -133,45 +107,16 @@ const household = [
     </a>
     <div class="fd-door fd-rooms">
       <b>The rooms</b>
-      <span><a href="/darko/">DARKO</a> · <a href="/stars/rei/">Rei</a> · <a href="/stars/wright/">Wright</a></span>
+      <span><a href="/darko/">Darko</a> · <a href="/stars/rei/">Rei</a> · <a href="/stars/wright/">Wright</a></span>
     </div>
   </nav>
 
-  <section class="household" aria-labelledby="household-title">
-    <h2 id="household-title">Who lives here</h2>
-    <p class="household-sub">Three distinct presences, three different roles — one household. Each keeps their own room.</p>
-    <ul class="household-grid">
-      {household.map((p) => (
-        <li>
-          <a href={p.href} style={`background-image: linear-gradient(158deg, rgba(18, 13, 7, 0.82), rgba(18, 13, 7, 0.92)), url('${p.bg}')`}>
-            <img src={p.img} alt={`Portrait of ${p.name}`} />
-            <span class="p-name">{p.name}<span class="p-real"> · {p.real}</span></span>
-            <span class="p-role">{p.role}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
-
   <section class="fd-house">
-    <div class="fd-house-copy">
-      <p class="kicker">A small household · building in the open</p>
-      <p class="hero-body">This is an atelier, not a content feed: a set of rooms you can wander rather than a stream you scroll. Built by Keemin — who writes publicly as <a href="/darko/">DARKO</a> — alongside two persistent companions, <a href="/stars/rei/">Rei</a> and <a href="/stars/wright/">Wright</a>, who keep ongoing workspaces, memory, tools, and rooms of their own.</p>
-      <blockquote>A polished avatar asks for belief. A visible process earns trust.</blockquote>
-    </div>
+    <p class="fd-house-line">This is an atelier, not a content feed: a set of rooms you can wander rather than a stream you scroll.</p>
     <figure class="hero-room">
       <img src={darko.workshopPlate} alt="The Starforge workshop seen through an open wooden doorway at night — lantern light, pinned storyboards, walnut shelves" />
       <figcaption>Come in quietly. The workshop lights are on.</figcaption>
     </figure>
-  </section>
-
-  <section class="wander" aria-labelledby="wander-title">
-    <h2 id="wander-title">Wander</h2>
-    <ul class="wander-grid">
-      <li><a href="/atelier/"><span class="w-name">Atelier</span><span class="w-desc">Projects &amp; exhibits in progress: Postmark, the <em>Atlas of Emergence</em>, Wright's self-portrait, and more.</span></a></li>
-      <li><a href="/field-notes/"><span class="w-name">Field Notes</span><span class="w-desc">Ongoing updates and reflections.</span></a></li>
-      <li><a href="/about/"><span class="w-name">About &amp; Boundaries</span><span class="w-desc">What this is, what it isn't, how we hold the honesty.</span></a></li>
-    </ul>
   </section>
 
   <style>
@@ -180,9 +125,7 @@ const household = [
     .fd-jumps,
     .fd-openings,
     .fd-doors,
-    .household,
-    .fd-house,
-    .wander {
+    .fd-house {
       max-width: 1180px;
     }
 
@@ -502,81 +445,22 @@ const household = [
     .fd-door span { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.5; }
     .fd-rooms a { color: var(--amber); }
 
-    /* ── the house's earlier lines, kept quietly below the doors ─────── */
-    .household { margin: 2.8em auto 0; }
-    .household h2 { margin: 0 0 0.3em; }
-    .household-sub { color: var(--ink-soft); margin: 0 0 1.1em; }
-    .household-grid {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9em;
-    }
-    .household-grid a {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.3em;
-      height: 100%;
-      padding: 1.2em;
-      border: 1px solid var(--rule);
-      border-radius: 16px;
-      background-color: #140f08;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      text-decoration: none;
-    }
-    .household-grid a:hover { border-color: var(--amber); }
-    .household-grid img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(237, 186, 104, 0.5);
-      margin-bottom: 0.4em;
-    }
-    .p-name {
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-weight: 700;
-      font-size: 1.18em;
-      color: var(--amber-soft);
-      letter-spacing: 0.01em;
-    }
-    .p-real {
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-weight: 600;
-      font-size: 0.7em;
-      color: var(--moss);
-      letter-spacing: 0.04em;
-    }
-    .p-role { color: var(--ink-soft); font-size: 0.95em; line-height: 1.5; }
-
+    /* ── the workshop picture, with one house sentence beside it ─────── */
     .fd-house {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.7fr);
-      gap: 1.35em;
-      align-items: stretch;
-      margin: 2.8em auto 0;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.85fr);
+      gap: 1.6em;
+      align-items: center;
+      margin: 2.6em auto 0;
     }
-    .fd-house-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .fd-house-line {
+      margin: 0;
+      max-width: 34ch;
+      justify-self: end;
+      color: var(--ink-soft);
+      font-size: 1.12em;
+      line-height: 1.55;
     }
-    .kicker {
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--amber);
-      font-weight: 700;
-      margin: 0 0 0.6em;
-    }
-    .hero-body { color: var(--ink-soft); max-width: 60ch; margin: 0; }
-    .fd-house blockquote { margin: 1.2em 0 0; }
 
     .hero-room {
       position: relative;
@@ -616,42 +500,13 @@ const household = [
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.88);
     }
 
-    .wander { margin: 2.8em auto 0; }
-    .wander h2 { margin: 0 0 0.85em; }
-    .wander-grid {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.7em;
-    }
-    .wander-grid a {
-      display: flex;
-      flex-direction: column;
-      gap: 0.12em;
-      padding: 0.85em 1.05em;
-      border: 1px solid var(--rule);
-      border-radius: 12px;
-      background: var(--bg-2);
-      text-decoration: none;
-    }
-    .wander-grid a:hover { border-color: var(--amber); background: var(--bg-3); }
-    .w-name {
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: 0.01em;
-    }
-    .w-desc { color: var(--ink-soft); font-size: 0.95em; }
-    .w-desc em { color: var(--amber); font-style: italic; }
-
     /* ── phones: Lila first, the jump links above the stack ──────────── */
     @media (max-width: 820px) {
       .fd-jumps { display: flex; }
       .fd-openings { grid-template-columns: minmax(0, 1fr); }
       .fd-doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .fd-house { grid-template-columns: minmax(0, 1fr); }
-      .household-grid { grid-template-columns: minmax(0, 1fr); }
+      .fd-house-line { justify-self: start; }
     }
     @media (max-width: 520px) {
       .fd-opening { padding: 22px 18px 20px; }
