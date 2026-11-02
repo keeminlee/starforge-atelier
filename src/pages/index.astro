@@ -74,7 +74,7 @@ const household = [
     <article class="fd-opening fd-story" id="story" aria-labelledby="story-title">
       <p class="fd-kick">A story to linger with</p>
       <div class="fd-window" aria-hidden="true"><span class="fd-star">✦</span><span class="fd-roof"></span></div>
-      <h2 id="story-title">Lila and the Little Star</h2>
+      <h2 id="story-title"><a href="/atelier/lila-and-the-little-star/">Lila and the Little Star</a></h2>
       <div class="fd-turns">
         {lilaTurns.map((t) => <p class={`fd-turn fd-${t.voice}`}>{t.text}</p>)}
       </div>
@@ -91,14 +91,20 @@ const household = [
 
     <article class="fd-opening fd-build" id="build" aria-labelledby="build-title">
       <p class="fd-kick">A build to follow</p>
-      <h2 id="build-title">The forest that stopped burning</h2>
+      <h2 id="build-title"><a href="/workshop/the-road/">The forest that stopped burning</a></h2>
       <div class="fd-compare">
         <figure class="fd-frame">
-          <img src={`${ROAD_STILLS}/ff-before.png`} width="714" height="428" alt="Still of the copy before the fix, after its window narrowed and widened again: the grid is all black." />
-          <figcaption><b>Before:</b> turn the phone, and the forest goes dark.</figcaption>
+          <div class="fd-still">
+            <img src={`${ROAD_STILLS}/ff-before.png`} width="714" height="428" alt="Still of the copy before the fix, after its window narrowed and widened again: the grid is all black." />
+            <span class="fd-chip" aria-hidden="true">before the fix</span>
+          </div>
+          <figcaption><b>Before:</b> turn the phone upright, and the forest goes dark.</figcaption>
         </figure>
         <figure class="fd-frame">
-          <img src={`${ROAD_STILLS}/ff-after.png`} width="714" height="428" alt="Still of the copy after the fix, after the same resizes: a green forest with dark burned patches and amber fire fronts." />
+          <div class="fd-still">
+            <img src={`${ROAD_STILLS}/ff-after.png`} width="714" height="428" alt="Still of the copy after the fix, after the same resizes: a green forest with dark burned patches and amber fire fronts." />
+            <span class="fd-chip" aria-hidden="true">after the fix</span>
+          </div>
           <figcaption><b>After:</b> the same turn, and it keeps burning.</figcaption>
         </figure>
       </div>
@@ -250,6 +256,16 @@ const household = [
       font-size: clamp(1.5rem, 3vw, 2.1rem);
       line-height: 1.15;
     }
+    /* the titles open their pages too (the text links below stay) */
+    .fd-opening h2 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .fd-opening h2 a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.14em;
+    }
     .fd-go {
       margin: auto 0 0;
       padding-top: 1.1em;
@@ -353,7 +369,9 @@ const household = [
       border: 1px solid var(--rule);
     }
     .fd-build .fd-kick { color: var(--moss); }
-    .fd-build .fd-go { color: var(--moss); }
+    /* a lit moss, so the build's way in reads as clearly as the story's gold */
+    .fd-build { --moss-lit: #c9d38e; }
+    .fd-build .fd-go { color: var(--moss-lit); }
     .fd-build .fd-go a:hover { color: var(--amber-soft); }
 
     .fd-compare {
@@ -363,13 +381,40 @@ const household = [
       margin: 0.2em 0 1em;
     }
     .fd-frame { margin: 0; min-width: 0; }
+    /* each still in a visible frame, labelled, so the dark one reads as a dark canvas */
+    .fd-still {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(244, 214, 160, 0.34);
+      border-radius: 8px;
+      background: #05070c;
+    }
+    .fd-still::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.55), inset 0 0 26px rgba(255, 247, 217, 0.06);
+      pointer-events: none;
+    }
     .fd-frame img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      border: 1px solid var(--rule);
-      background: #05070c;
+    }
+    .fd-chip {
+      position: absolute;
+      left: 7px;
+      top: 7px;
+      z-index: 1;
+      padding: 0.18em 0.55em;
+      border: 1px solid rgba(244, 214, 160, 0.3);
+      border-radius: 999px;
+      background: rgba(20, 16, 9, 0.86);
+      color: var(--ink-soft);
+      font: 600 0.7rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
     }
     .fd-frame figcaption {
       margin-top: 0.45em;
@@ -424,9 +469,11 @@ const household = [
       border: 2px solid var(--moss);
     }
     .fd-road b { display: block; color: var(--ink); font-size: 0.82rem; }
-    .fd-road span { display: block; color: var(--faint); }
+    /* notes at 4.5:1 or better on the wood; the unfinished station stays fainter */
+    .fd-road span { display: block; color: var(--ink-soft); }
     .fd-road .fd-notyet i { background: var(--bg-2); border: 2px dashed var(--faint); }
-    .fd-road .fd-notyet b { color: var(--faint); }
+    .fd-road .fd-notyet b,
+    .fd-road .fd-notyet span { color: #a99a80; }
 
     /* ── quiet doors, not a feed ─────────────────────────────────────── */
     .fd-doors {
