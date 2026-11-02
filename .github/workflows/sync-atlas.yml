@@ -1,5 +1,20 @@
 name: Sync Postmark atlas
 
+# RETIRED (2026-11-02, STAR-98, the Atelier campaign). This workflow does
+# nothing now: its schedule is gone and its job is guarded with an always-false
+# `if:`, so a manual dispatch skips it too. Retired in place, not deleted, so the
+# story reads on disk. Why:
+#   - Dead since before 09-28. Every run failed in extract-town.mjs
+#     (`pngload: libspng read error`, an image in the town checkout sharp
+#     can't decode), and GitHub set it to disabled_inactivity on 09-28.
+#   - Its source moved: keeminlee/postmark is postmark-town/postmark now.
+#   - Nothing on the atelier reads its output. No page has imported
+#     src/data/postmark since the town moved out on 07-27, and nginx 301s
+#     every /atelier/postmark/* sub-path to postmark.town.
+#   - Run again, it would rewrite public/atelier/the-resident-herbarium, a
+#     dated work of Wright's ("collected 2026-07-30").
+# Everything below is the workflow as it stood, kept as history.
+#
 # The town draws its own map (keeminlee/postmark, PROJECTS/build-the-town/atlas)
 # and Ferry rewrites his Daily (TOWN_BULLETIN/ferrys-daily.html) every round.
 # This job keeps both hosted copies current: check out the town repo, run the
@@ -19,8 +34,7 @@ name: Sync Postmark atlas
 # accident.
 
 on:
-  schedule:
-    - cron: "*/30 * * * *"
+  # RETIRED 2026-11-02: the schedule (cron "*/30 * * * *") is removed.
   workflow_dispatch:
 
 permissions:
@@ -33,6 +47,8 @@ concurrency:
 
 jobs:
   sync:
+    # RETIRED 2026-11-02 (STAR-98): the job can't run, even on dispatch.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
