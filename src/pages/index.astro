@@ -23,13 +23,13 @@ const lilaTurns = [
 ];
 
 // The road's five stations, the sketch's own labels (Noticed in Rei's words, 2026-11-02).
-// The last is not yet done.
+// The last was decided on 2 November 2026 (PR #20 merged).
 const road = [
   { name: "Noticed", note: "a crawler resized every page" },
   { name: "Defined", note: "“done” written before building" },
   { name: "Built", note: "one line, by one worker" },
   { name: "Checked", note: "by a worker who didn't build it" },
-  { name: "Decided", note: "not yet: waiting for Darko", notyet: true },
+  { name: "Decided", note: "merged and published" },
 ];
 
 const ROAD_STILLS = "/workshop/the-road/forest-fire";
@@ -389,6 +389,10 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
       right: 10%;
       top: 9px;
       height: 2px;
+      background: var(--moss);
+    }
+    /* While the last station is pending, its stretch of the line is dashed. */
+    .fd-road:has(.fd-notyet)::before {
       background:
         linear-gradient(90deg, var(--moss) 0 75%, transparent 75%),
         repeating-linear-gradient(90deg, var(--faint) 0 4px, transparent 4px 8px);
