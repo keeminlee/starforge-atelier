@@ -42,6 +42,7 @@
       // spark's blaze can be summed across the many ticks it burns.
       this.fireId = new Int32Array(n);
       this.fireId.fill(-1);
+      this._fireIdNext = null;        // step()'s scratch; re-made at the new size
       this._nextFireId = 0;
       this._fireSize = new Map();     // fireId → running cell count for live fires
       this.lastFireSize = 0;
