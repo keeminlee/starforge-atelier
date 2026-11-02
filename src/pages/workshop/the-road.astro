@@ -26,7 +26,8 @@ const ASSETS = "/workshop/the-road/forest-fire";
 const PR = "https://github.com/keeminlee/starforge-atelier/pull/20";
 
 const errorHead = "RangeError: offset is out of bounds";
-const errorRest = "\n    at ForestFire.step (sim.js:142)";
+// "…/" marks where the local host and path were cut; nothing else is left out
+const errorRest = "\n    at Int32Array.set (<anonymous>)\n    at ForestFire.step (…/sim.js:142:19)";
 
 const verdictLines = `VERDICT before: errors=1 allResizesStillRunning=false
 VERDICT after: errors=0 allResizesStillRunning=true`;
@@ -47,13 +48,13 @@ const diffLines = `public/atlas/entries/forest-fire/sim.js
 const NL = String.fromCharCode(10);
 const diffRows = diffLines.split(NL).map((text) => ({ text: text + NL, add: text.startsWith("+") }));
 
-// the reviewer's probe output; "…" marks lines left out
+// the reviewer's probe output; a "…" line marks lines left out, and "…/" the cut host and path
 const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: true)
   …
   [after 390x844] ALIVE=false (ticks +0, gridChanged=false)
   …
  S1 page errors: 1
-   390x844: RangeError: offset is out of bounds @ at ForestFire.step (sim.js:142)`;
+   390x844: RangeError: offset is out of bounds @ at ForestFire.step (…/sim.js:142:19)`;
 ---
 <BaseLayout
   title="The Road, chapter one: the forest that stopped burning — Starforge"
@@ -90,7 +91,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       <p class="tr-still-note">The pictures are stills of each copy after its window narrowed and widened again.</p>
 
       <div class="tr-controls">
-        <button type="button" class="tr-btn tr-turn">Turn it</button>
+        <button type="button" class="tr-btn tr-turn"><span class="tr-turn-label">Turn it</span><span class="tr-sizer" aria-hidden="true">Turn it back</span></button>
         <button type="button" class="tr-btn tr-stop" hidden>Stop and reset</button>
       </div>
       <p class="tr-status" role="status" aria-live="polite"></p>
@@ -107,7 +108,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
             <div class="tr-body">
               <p>It loaded each of the site's 131 pages at desktop size, then resized it to a phone held upright, a phone held sideways, and back. One page threw an error and stopped moving: the Forest Fire simulation.</p>
               <p class="tr-cap">The error, from the old code on that resize:</p>
-              <pre class="tr-artifact" tabindex="0"><code><span class="tr-red">{errorHead}</span>{errorRest}</code></pre>
+              <div class="tr-code"><pre class="tr-artifact" tabindex="0"><code><span class="tr-red">{errorHead}</span>{errorRest}</code></pre></div>
               <p>In that run, the clock stayed at t=111 from then on.</p>
             </div>
           </details>
@@ -124,7 +125,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
                 <li>After each resize, the simulation still moves: its clock and its counts of trees and burning cells change.</li>
               </ul>
               <p class="tr-cap">The check's last line, on the old code and on the fix:</p>
-              <pre class="tr-artifact" tabindex="0"><code>{verdictLines}</code></pre>
+              <div class="tr-code"><pre class="tr-artifact" tabindex="0"><code>{verdictLines}</code></pre></div>
             </div>
           </details>
         </li>
@@ -136,7 +137,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
               <p class="tr-gloss">The worker is a Plumb, named for the plumb line, which shows what's truly vertical.</p>
               <p>The simulation kept a scratch buffer sized for its grid. A resize rebuilt the grid but kept the old buffer. When the grid got smaller, copying the old buffer into it threw the error, and the animation stopped for good. The fix clears the buffer whenever the grid is rebuilt, so it's made again at the right size.</p>
               <p>The error happens only when the grid shrinks, which is why the frames above get narrower.</p>
-              <pre class="tr-artifact" tabindex="0"><code>{diffRows.map((r) => (r.add ? <span class="tr-grn">{r.text}</span> : r.text))}</code></pre>
+              <div class="tr-code"><pre class="tr-artifact" tabindex="0"><code>{diffRows.map((r) => (r.add ? <span class="tr-grn">{r.text}</span> : r.text))}</code></pre></div>
               <p><a href={`${PR}/files`}>See the change on GitHub</a></p>
             </div>
           </details>
@@ -148,7 +149,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
             <div class="tr-body">
               <p class="tr-gloss">This worker is a Truey: a wall is true when it's plumb, level and square.</p>
               <p>It built the old code and the fix in separate copies and wrote its own test. On the old code, it got the same error, and the clock stopped:</p>
-              <pre class="tr-artifact" tabindex="0"><code>{reproLines}</code></pre>
+              <div class="tr-code"><pre class="tr-artifact" tabindex="0"><code>{reproLines}</code></pre></div>
               <p>Then it tried three paths the builder hadn't:</p>
               <ol class="tr-paths">
                 <li><b>Widen only,</b> from phone to desktop. Neither copy threw an error, but the old code lost track of which fire up to 663 burning cells belonged to. The fix lost none.</li>
@@ -204,9 +205,9 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     .the-road .tr-frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
     @media (max-width: 600px) { .the-road .tr-frames { grid-template-columns: minmax(0, 1fr); gap: 18px; } }
     .the-road .tr-frame { margin: 0; min-width: 0; }
-    /* the slot keeps the wide frame's height so nothing below moves at the turn; the frame
-       sits at its bottom, so the caption stays right under it */
-    .the-road .tr-slot { display: flex; align-items: flex-end; justify-content: center; min-width: 0; }
+    /* the slot keeps the wide frame's height so nothing below moves at the turn; the
+       narrowed frame sits centred in it, so the space around it reads as deliberate */
+    .the-road .tr-slot { display: flex; align-items: center; justify-content: center; min-width: 0; }
     .the-road .tr-slot img {
       display: block; width: 100%; max-width: 520px; height: auto;
       border: 1px solid var(--rule); border-radius: 10px;
@@ -242,6 +243,11 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       padding: 0.7em 1.4em; cursor: pointer;
     }
     .the-road .tr-btn:hover { background: #aab676; }
+    /* the turn button is as wide as its longer label at all times, so relabelling it
+       at the turn doesn't move the buttons */
+    .the-road .tr-turn { display: inline-grid; }
+    .the-road .tr-turn > span { grid-area: 1 / 1; text-align: center; }
+    .the-road .tr-turn .tr-sizer { visibility: hidden; }
     .the-road .tr-btn[aria-disabled="true"] { opacity: 0.6; cursor: progress; }
     .the-road .tr-stop { color: var(--ink); background: transparent; border-color: var(--faint); }
     .the-road .tr-stop:hover { background: var(--bg-3); }
@@ -301,6 +307,20 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       max-width: 100%;
     }
     .the-road .tr-artifact code { font: inherit; }
+    /* A box that's wider than its column says so: a soft fade at its right edge, and
+       room at the end of each line once scrolled there. The script sets is-overflowing
+       only when the box really overflows (scrollWidth > clientWidth), and at-end once
+       it's scrolled to the end, which lifts the fade. Boxes that fit show nothing. */
+    .the-road .tr-code { position: relative; margin: 0 0 0.9em; min-width: 0; }
+    .the-road .tr-code > .tr-artifact { margin: 0; }
+    .the-road .tr-code.is-overflowing > .tr-artifact { padding-right: 2.5em; }
+    .the-road .tr-code::after {
+      content: ""; position: absolute; top: 1px; right: 1px; bottom: 1px; width: 2.75em;
+      /* no transition: the cue is set at load, and nothing may animate before the press */
+      border-radius: 0 5px 5px 0; pointer-events: none; opacity: 0;
+      background: linear-gradient(to right, rgba(16, 12, 7, 0), #100c07 85%);
+    }
+    .the-road .tr-code.is-overflowing:not(.at-end)::after { opacity: 1; }
     .the-road .tr-red { color: var(--tr-red); }
     .the-road .tr-grn { color: var(--moss); }
 
@@ -348,6 +368,24 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       let state: "idle" | "loading" | "wide" | "narrow" = "idle";
       let poll = 0, beat = 0, verdict = 0, loadedAt = 0;
 
+      const turnLabel = root.querySelector(".tr-turn-label") as HTMLElement;
+      // While the frames are loaded, the line under the old copy keeps its room, so the
+      // error appearing at the turn doesn't push the buttons down. Until a real error
+      // arrives it holds the expected message, invisible and hidden from screen readers;
+      // the real error replaces it.
+      const EXPECTED = "Error inside this frame: RangeError: offset is out of bounds at ForestFire.step (before-sim.js:142)";
+      const reserveErr = (f: Frame) => {
+        f.err.textContent = EXPECTED; f.err.style.visibility = "hidden";
+        f.err.setAttribute("aria-hidden", "true"); f.err.hidden = false;
+      };
+      const showErr = (f: Frame, text: string) => {
+        f.err.textContent = text; f.err.style.visibility = "";
+        f.err.removeAttribute("aria-hidden"); f.err.hidden = false;
+      };
+      const clearErr = (f: Frame) => {
+        f.err.hidden = true; f.err.textContent = ""; f.err.style.visibility = "";
+        f.err.removeAttribute("aria-hidden");
+      };
       const sim = (f: Frame): any => {
         try {
           const A = (f.iframe?.contentWindow as any)?.Atlas;
@@ -439,7 +477,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       const turn = (orient: "wide" | "narrow") => {
         state = orient;
         turnBtn.removeAttribute("aria-disabled");
-        turnBtn.textContent = orient === "narrow" ? "Turn it back" : "Turn it";
+        turnLabel.textContent = orient === "narrow" ? "Turn it back" : "Turn it";
         status.textContent = orient === "narrow" ? "Narrowing both frames." : "Widening both frames again.";
         shape(orient);
         tilt();
@@ -459,7 +497,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           ifr.src = f.src;
           ifr.title = f.title;
           f.wrap = wrap; f.iframe = ifr; f.error = null; f.seen = [];
-          f.err.hidden = true; f.err.textContent = "";
+          if (f.side === "before") reserveErr(f); else clearErr(f);
           ifr.addEventListener("load", () => {
             try {
               const w = ifr.contentWindow as any;
@@ -468,8 +506,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
                 // notice arrives as an error event with no error object, and isn't one
                 if (!e.error) return;
                 f.error = clean(e.error);
-                f.err.textContent = `Error inside this frame: ${f.error}`;
-                f.err.hidden = false;
+                showErr(f, `Error inside this frame: ${f.error}`);
               });
               // The atlas keeps a sim paused under prefers-reduced-motion; pressing
               // "Turn it" is the visitor asking for it to run.
@@ -512,11 +549,11 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           f.poster.hidden = false;
           f.slot.style.minHeight = "";
           f.tick.textContent = "";
-          f.err.hidden = true; f.err.textContent = "";
+          clearErr(f);
         }
         state = "idle";
         turnBtn.removeAttribute("aria-disabled");
-        turnBtn.textContent = "Turn it";
+        turnLabel.textContent = "Turn it";
         stopBtn.hidden = true;
         stillNote.hidden = false;
         status.textContent = "Stopped and reset. Nothing is running.";
@@ -530,6 +567,27 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         // while loading, the turn comes on its own
       });
       stopBtn.addEventListener("click", stop);
+
+      // Code boxes: the scroll cue shows only on a box that overflows. Measured without
+      // the cue's own end padding, so the padding can't keep the cue on.
+      const codes = Array.from(root.querySelectorAll<HTMLElement>(".tr-code"));
+      const pre = (w: HTMLElement) => w.querySelector("pre") as HTMLElement;
+      const atEnd = (w: HTMLElement) => {
+        const p = pre(w);
+        w.classList.toggle("at-end", w.classList.contains("is-overflowing") && p.scrollLeft + p.clientWidth >= p.scrollWidth - 1);
+      };
+      const measure = (w: HTMLElement) => {
+        const p = pre(w);
+        w.classList.remove("is-overflowing");
+        const over = p.clientWidth > 0 && p.scrollWidth > p.clientWidth + 1;
+        w.classList.toggle("is-overflowing", over);
+        atEnd(w);
+      };
+      const measureAll = () => codes.forEach(measure);
+      for (const w of codes) pre(w).addEventListener("scroll", () => atEnd(w), { passive: true });
+      root.querySelectorAll("details").forEach((d) => d.addEventListener("toggle", measureAll));
+      window.addEventListener("resize", measureAll);
+      measureAll();
       window.addEventListener("resize", () => {
         if (state === "idle") return;
         shape(state === "narrow" ? "narrow" : "wide");
