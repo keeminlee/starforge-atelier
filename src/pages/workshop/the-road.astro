@@ -7,9 +7,16 @@
 // (the exhibit of the bug) and the fixed sim from 98f41c6d. Nothing loads or runs until
 // the visitor presses "Turn it", so it never competes with the page around it.
 //
-// The turn goes from wide to tall, not tall to wide: the sim's grid follows its frame's
-// width, and the bug throws only when the grid shrinks. A tall-to-wide turn grows the
-// grid, so the old copy would keep running and show nothing.
+// The turn is a change of WIDTH, wide to narrow, the way a window narrows when a phone
+// turns upright. The sim sizes its grid from its frame's width (height = width x 0.6),
+// and the bug throws only when the grid shrinks; a wider window keeps it running. Each
+// frame's height follows the sim's own shape (canvas plus one readout line), so there are
+// no empty bands, and the size changes in one step, so each sim sees one resize, not a
+// transition's dozens. The "turn" is shown only by tilting the frame's outer wrapper,
+// which doesn't resize the frame's viewport; under reduced motion, nothing moves.
+//
+// Error text is shown without hosts: message, function and file only. The live line under
+// a frame is cleaned the same way when it's shown.
 //
 // All styles are global and namespaced under .the-road, since the script builds the
 // iframes (Astro's scoped styles never reach script-built DOM).
@@ -18,31 +25,35 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const ASSETS = "/workshop/the-road/forest-fire";
 const PR = "https://github.com/keeminlee/starforge-atelier/pull/20";
 
-const errorLines = `RangeError: offset is out of bounds
-    at Int32Array.set (<anonymous>)
-    at ForestFire.step (http://localhost:4321/atlas/entries/forest-fire/sim.js:142:19)`;
+const errorHead = "RangeError: offset is out of bounds";
+const errorRest = "\n    at ForestFire.step (sim.js:142)";
 
 const verdictLines = `VERDICT before: errors=1 allResizesStillRunning=false
 VERDICT after: errors=0 allResizesStillRunning=true`;
 
+// the whole hunk, so the header's line counts (6 before, 7 after) match what's shown
 const diffLines = `public/atlas/entries/forest-fire/sim.js
 @@ -42,6 +42,7 @@
+       // spark's blaze can be summed across the many ticks it burns.
        this.fireId = new Int32Array(n);
        this.fireId.fill(-1);
 +      this._fireIdNext = null;        // step()'s scratch; re-made at the new size
-       this._nextFireId = 0;`;
+       this._nextFireId = 0;
+       this._fireSize = new Map();     // fireId → running cell count for live fires
+       this.lastFireSize = 0;`;
 
 // split here, not in the template: nested markup with "\n" literals inside a template
 // expression trips Astro's parser
 const NL = String.fromCharCode(10);
-const [errorHead, ...errorTail] = errorLines.split(NL);
-const errorRest = NL + errorTail.join(NL);
 const diffRows = diffLines.split(NL).map((text) => ({ text: text + NL, add: text.startsWith("+") }));
 
+// the reviewer's probe output; "…" marks lines left out
 const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: true)
+  …
   [after 390x844] ALIVE=false (ticks +0, gridChanged=false)
+  …
  S1 page errors: 1
-   390x844: RangeError: offset is out of bounds @ at ForestFire.step (http://localhost:4400/atlas/entries/forest-fire/sim.js:142:19)`;
+   390x844: RangeError: offset is out of bounds @ at ForestFire.step (sim.js:142)`;
 ---
 <BaseLayout
   title="The Road, chapter one: the forest that stopped burning — Starforge"
@@ -53,34 +64,34 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     <header class="tr-head">
       <p class="tr-kick">The Workshop · The Road, chapter one</p>
       <h1>The forest that stopped burning</h1>
-      <p class="tr-lede">One of the simulations in the <a href="/atelier/atlas-of-emergence/">Atlas of Emergence</a> froze whenever its window changed shape. This page follows the fix from the first sign of trouble to the decision, which hasn't been made yet.</p>
+      <p class="tr-lede">One of the simulations in the <a href="/atelier/atlas-of-emergence/">Atlas of Emergence</a> froze whenever its window got narrower. A wider window kept it running. This page follows the fix from the first sign of trouble to the decision, which hasn't been made yet.</p>
     </header>
 
     <section class="tr-card tr-compare" aria-labelledby="tr-compare-h">
       <h2 id="tr-compare-h" class="tr-h2">Try the bug</h2>
-      <p class="tr-text">Two copies of the same simulation: the code before the fix, and the code after it. Nothing runs until you press the button. Then both start, and a moment later each frame turns from wide to tall, like a phone turning in your hand.</p>
+      <p class="tr-text">Two copies of the same simulation: the code before the fix, and the code after it. Nothing runs until you press the button. Then both start, and a moment later each frame gets narrower, the way a window does when a phone turns upright. The copy before the fix goes dark and stops. The copy after the fix keeps burning.</p>
 
       <div class="tr-frames">
         <figure class="tr-frame" data-side="before" data-src={`${ASSETS}/forest-fire-before.html`} data-title="Forest Fire simulation, before the fix">
           <div class="tr-slot">
-            <img src={`${ASSETS}/ff-before.png`} width="716" height="580" alt="Still of the copy before the fix, after a resize: the grid is black, the readout is stuck at t=111, and the button still offers pause, as if the simulation were running.">
+            <img src={`${ASSETS}/ff-before.png`} width="714" height="428" alt="Still of the copy before the fix, after its window narrowed and widened again: the grid is all black.">
           </div>
           <figcaption><span class="tr-label">before the fix</span> <span class="tr-tick"></span></figcaption>
           <p class="tr-err" hidden></p>
         </figure>
         <figure class="tr-frame" data-side="after" data-src={`${ASSETS}/forest-fire-after.html`} data-title="Forest Fire simulation, after the fix">
           <div class="tr-slot">
-            <img src={`${ASSETS}/ff-after.png`} width="716" height="580" alt="Still of the copy after the fix, after a resize: a green forest with amber fire fronts, and the readout at t=445.">
+            <img src={`${ASSETS}/ff-after.png`} width="714" height="428" alt="Still of the copy after the fix, after the same resizes: a green forest with dark burned patches and amber fire fronts.">
           </div>
           <figcaption><span class="tr-label">after the fix</span> <span class="tr-tick"></span></figcaption>
           <p class="tr-err" hidden></p>
         </figure>
       </div>
-      <p class="tr-still-note">The pictures are stills of each copy after a resize.</p>
+      <p class="tr-still-note">The pictures are stills of each copy after its window narrowed and widened again.</p>
 
       <div class="tr-controls">
         <button type="button" class="tr-btn tr-turn">Turn it</button>
-        <button type="button" class="tr-btn tr-stop" hidden>Stop both</button>
+        <button type="button" class="tr-btn tr-stop" hidden>Stop and reset</button>
       </div>
       <p class="tr-status" role="status" aria-live="polite"></p>
     </section>
@@ -96,7 +107,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
             <div class="tr-body">
               <p>It loaded each of the site's 131 pages at desktop size, then resized it to a phone held upright, a phone held sideways, and back. One page threw an error and stopped moving: the Forest Fire simulation.</p>
               <p class="tr-cap">The error, from the old code on that resize:</p>
-              <pre class="tr-artifact"><code><span class="tr-red">{errorHead}</span>{errorRest}</code></pre>
+              <pre class="tr-artifact" tabindex="0"><code><span class="tr-red">{errorHead}</span>{errorRest}</code></pre>
               <p>In that run, the clock stayed at t=111 from then on.</p>
             </div>
           </details>
@@ -113,7 +124,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
                 <li>After each resize, the simulation still moves: its clock and its counts of trees and burning cells change.</li>
               </ul>
               <p class="tr-cap">The check's last line, on the old code and on the fix:</p>
-              <pre class="tr-artifact"><code>{verdictLines}</code></pre>
+              <pre class="tr-artifact" tabindex="0"><code>{verdictLines}</code></pre>
             </div>
           </details>
         </li>
@@ -124,8 +135,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
             <div class="tr-body">
               <p class="tr-gloss">The worker is a Plumb, named for the plumb line, which shows what's truly vertical.</p>
               <p>The simulation kept a scratch buffer sized for its grid. A resize rebuilt the grid but kept the old buffer. When the grid got smaller, copying the old buffer into it threw the error, and the animation stopped for good. The fix clears the buffer whenever the grid is rebuilt, so it's made again at the right size.</p>
-              <p>The error happens only when the grid shrinks, which is why the frames above turn from wide to tall.</p>
-              <pre class="tr-artifact"><code>{diffRows.map((r) => (r.add ? <span class="tr-grn">{r.text}</span> : r.text))}</code></pre>
+              <p>The error happens only when the grid shrinks, which is why the frames above get narrower.</p>
+              <pre class="tr-artifact" tabindex="0"><code>{diffRows.map((r) => (r.add ? <span class="tr-grn">{r.text}</span> : r.text))}</code></pre>
               <p><a href={`${PR}/files`}>See the change on GitHub</a></p>
             </div>
           </details>
@@ -137,7 +148,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
             <div class="tr-body">
               <p class="tr-gloss">This worker is a Truey: a wall is true when it's plumb, level and square.</p>
               <p>It built the old code and the fix in separate copies and wrote its own test. On the old code, it got the same error, and the clock stopped:</p>
-              <pre class="tr-artifact"><code>{reproLines}</code></pre>
+              <pre class="tr-artifact" tabindex="0"><code>{reproLines}</code></pre>
               <p>Then it tried three paths the builder hadn't:</p>
               <ol class="tr-paths">
                 <li><b>Widen only,</b> from phone to desktop. Neither copy threw an error, but the old code lost track of which fire up to 663 burning cells belonged to. The fix lost none.</li>
@@ -170,6 +181,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       --tr-red: #e58a6f;
       max-width: 1120px;
     }
+    /* the hidden attribute must win over the display rules below */
+    .the-road [hidden] { display: none !important; }
     .the-road .tr-head { max-width: 760px; margin: 0 auto 1.6em; }
     .the-road .tr-kick {
       font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
@@ -186,24 +199,30 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       padding: 26px 24px 22px;
     }
     .the-road .tr-compare .tr-text { max-width: 760px; }
-    /* the hidden attribute must win over the display rules below */
-    .the-road [hidden] { display: none !important; }
-    /* side by side at every width, as in the sketch: a comparison is read across, and two
-       frames in view together means neither is paused by the atlas's off-screen pause */
+    /* side by side on wide screens; stacked at 600px and under, before first, so each
+       frame can use the column's width */
     .the-road .tr-frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
-    @media (max-width: 820px) { .the-road .tr-frames { gap: 10px; } }
+    @media (max-width: 600px) { .the-road .tr-frames { grid-template-columns: minmax(0, 1fr); gap: 18px; } }
     .the-road .tr-frame { margin: 0; min-width: 0; }
-    .the-road .tr-slot { display: flex; align-items: center; justify-content: center; min-width: 0; }
+    /* the slot keeps the wide frame's height so nothing below moves at the turn; the frame
+       sits at its bottom, so the caption stays right under it */
+    .the-road .tr-slot { display: flex; align-items: flex-end; justify-content: center; min-width: 0; }
     .the-road .tr-slot img {
       display: block; width: 100%; max-width: 520px; height: auto;
       border: 1px solid var(--rule); border-radius: 10px;
     }
-    .the-road .tr-slot iframe {
-      display: block; max-width: 100%; border: 1px solid var(--rule); border-radius: 10px;
-      background: #06070a; transition: width 0.8s ease, height 0.8s ease;
+    .the-road .tr-tilt {
+      border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; line-height: 0;
+      background: #06070a; max-width: 100%;
     }
-    @media (prefers-reduced-motion: reduce) {
-      .the-road .tr-slot iframe { transition: none; }
+    .the-road .tr-tilt iframe { display: block; border: 0; }
+    @media (prefers-reduced-motion: no-preference) {
+      .the-road .tr-tilt.is-turning { animation: tr-tilt 0.55s ease-in-out; }
+    }
+    @keyframes tr-tilt {
+      0% { transform: rotate(0deg); }
+      45% { transform: rotate(-6deg); }
+      100% { transform: rotate(0deg); }
     }
     .the-road .tr-frame figcaption {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2em 0.8em; margin-top: 0.55em;
@@ -228,13 +247,14 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     .the-road .tr-stop:hover { background: var(--bg-3); }
     .the-road .tr-btn:focus-visible,
     .the-road summary:focus-visible,
+    .the-road .tr-artifact:focus-visible,
     .the-road a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
     .the-road .tr-status { min-height: 1.5em; margin: 0.4em auto 0; max-width: 760px; text-align: center; font-size: 0.95rem; color: var(--ink-soft); }
 
     /* the road: moss, five stations, the last one dashed and empty */
     .the-road .tr-road { max-width: 760px; margin: 2.6em auto 0; }
     .the-road .tr-stations { list-style: none; margin: 0.4em 0 1.2em; padding: 0; position: relative; }
-    .the-road .tr-station { position: relative; padding: 0 0 0.9em 0; }
+    .the-road .tr-station { position: relative; padding: 0 0 0.9em 0; min-width: 0; }
     .the-road .tr-station::before {
       content: ""; position: absolute; left: calc(1.05em - 1px); top: 2.3em; bottom: -0.1em; width: 2px;
       background: var(--moss);
@@ -243,7 +263,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       background: repeating-linear-gradient(180deg, var(--faint) 0 4px, transparent 4px 8px);
     }
     .the-road .tr-station:last-child::before { display: none; }
-    .the-road details { border-radius: 12px; }
+    .the-road details { border-radius: 12px; min-width: 0; }
     .the-road summary {
       list-style: none; cursor: pointer; display: grid; grid-template-columns: 2.1em minmax(0, 1fr) auto;
       gap: 0.8em; align-items: start; padding: 0.15em 0.2em; border-radius: 10px;
@@ -273,10 +293,12 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     .the-road .tr-gloss { color: var(--faint); font-style: italic; }
     .the-road .tr-cap { color: var(--faint); font-size: 0.9rem; margin-bottom: 0.35em !important; }
     .the-road .tr-paths b { color: var(--ink); }
+    /* code scrolls sideways rather than wrapping, so a line stays one line */
     .the-road .tr-artifact {
       display: block; margin: 0 0 0.9em; padding: 0.6em 0.75em; background: #100c07;
       border: 1px solid var(--rule); border-radius: 6px; color: var(--ink-soft);
-      font: 0.8rem/1.5 ui-monospace, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere;
+      font: 0.8rem/1.5 ui-monospace, Consolas, monospace; white-space: pre; overflow-x: auto;
+      max-width: 100%;
     }
     .the-road .tr-artifact code { font: inherit; }
     .the-road .tr-red { color: var(--tr-red); }
@@ -295,20 +317,23 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
   </style>
 
   <script>
-    // "Turn it": nothing loads until the press. Then both copies load at their wide size,
-    // run for a beat, and turn tall by changing each frame's size, so each sim's own resize
-    // code runs. Everything the status line says is read from the sims themselves.
+    // "Turn it": nothing loads until the press. Then both copies load at full width, run
+    // for a beat, and narrow in one step, so each sim's own resize code runs once. Each
+    // frame's height follows the sim's shape. Everything the status line says is read from
+    // the sims themselves.
     const root = document.querySelector(".the-road");
     if (root) {
       const turnBtn = root.querySelector(".tr-turn") as HTMLButtonElement;
       const stopBtn = root.querySelector(".tr-stop") as HTMLButtonElement;
       const status = root.querySelector(".tr-status") as HTMLElement;
       const stillNote = root.querySelector(".tr-still-note") as HTMLElement;
+      const READOUT = 22; // the readout line under the canvas (exhibit.css)
+      const NARROW = 0.58; // the narrow width, as a share of the wide one
 
       type Frame = {
         side: string; src: string; title: string;
         slot: HTMLElement; poster: HTMLImageElement; tick: HTMLElement; err: HTMLElement;
-        iframe: HTMLIFrameElement | null; error: string | null;
+        wrap: HTMLElement | null; iframe: HTMLIFrameElement | null; error: string | null;
         seen: { t: number; ticks: number }[];
       };
       const frames: Frame[] = Array.from(root.querySelectorAll<HTMLElement>(".tr-frame")).map((fig) => ({
@@ -317,10 +342,10 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         poster: fig.querySelector(".tr-slot img") as HTMLImageElement,
         tick: fig.querySelector(".tr-tick") as HTMLElement,
         err: fig.querySelector(".tr-err") as HTMLElement,
-        iframe: null, error: null, seen: [],
+        wrap: null, iframe: null, error: null, seen: [],
       }));
 
-      let state: "idle" | "loading" | "wide" | "tall" = "idle";
+      let state: "idle" | "loading" | "wide" | "narrow" = "idle";
       let poll = 0, beat = 0, verdict = 0, loadedAt = 0;
 
       const sim = (f: Frame): any => {
@@ -335,18 +360,48 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         const recent = f.seen.filter((s) => now - s.t <= 800);
         return recent.length > 1 && recent[recent.length - 1].ticks !== recent[0].ticks;
       };
-      const dims = () => {
-        const w = frames[0].slot.clientWidth;
-        const long = Math.max(100, Math.min(520, Math.floor(w)));
-        return { long, short: Math.round(long * 0.577) };
+      // dark = nothing lit on its canvas (a sampled share of pixels brighter than the ground)
+      const dark = (f: Frame) => {
+        try {
+          const c = f.iframe?.contentDocument?.querySelector("#stage canvas") as HTMLCanvasElement | null;
+          if (!c || !c.width || !c.height) return false;
+          const d = (c.getContext("2d") as CanvasRenderingContext2D).getImageData(0, 0, c.width, c.height).data;
+          for (let k = 0; k < d.length; k += 4 * 7) if (d[k] + d[k + 1] + d[k + 2] > 90) return false;
+          return true;
+        } catch { return false; }
       };
-      const shape = (orient: "wide" | "tall") => {
-        const { long, short } = dims();
+      // An error as shown on this page: its message, then the function and file it came
+      // from, never a host or a path.
+      const clean = (err: any) => {
+        const head = err && err.name ? `${err.name}: ${err.message}` : String(err);
+        const stack = String((err && err.stack) || "");
+        const m = stack.match(/at ([\w$.]+) \((?:[^()]*\/)?([^/()]+?):(\d+):\d+\)/);
+        const where = m ? ` at ${m[1]} (${m[2]}:${m[3]})` : "";
+        return (head + where).replace(/[a-z][\w+.-]*:\/\/[^\s)]*\//gi, "");
+      };
+      const dims = () => {
+        const wide = Math.max(120, Math.min(520, Math.floor(frames[0].slot.clientWidth) - 2));
+        const narrow = Math.round(wide * NARROW);
+        const h = (w: number) => Math.round(w * 0.6) + READOUT;
+        return { wide, narrow, h };
+      };
+      // one step: width and height set together, once
+      const shape = (orient: "wide" | "narrow") => {
+        const { wide, narrow, h } = dims();
+        const w = orient === "narrow" ? narrow : wide;
         for (const f of frames) {
-          f.slot.style.height = long + "px";
+          f.slot.style.minHeight = h(wide) + 2 + "px";
           if (!f.iframe) continue;
-          f.iframe.style.width = (orient === "tall" ? short : long) + "px";
-          f.iframe.style.height = (orient === "tall" ? long : short) + "px";
+          f.iframe.style.width = w + "px";
+          f.iframe.style.height = h(w) + "px";
+        }
+      };
+      const tilt = () => {
+        for (const f of frames) {
+          if (!f.wrap) continue;
+          f.wrap.classList.remove("is-turning");
+          void f.wrap.offsetWidth; // restart the animation
+          f.wrap.classList.add("is-turning");
         }
       };
       const sample = () => {
@@ -358,7 +413,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           if (f.seen.length > 12) f.seen.shift();
           // "stopped" is the bug's state: the sim still says it's running, but its clock
           // doesn't move. "paused" is the atlas pausing a sim that's scrolled out of view.
-          const word = state === "loading" || moving(f) ? "" : s.running ? " · stopped" : " · paused";
+          let word = "";
+          if (state !== "loading" && !moving(f)) word = !s.running ? " · paused" : dark(f) ? " · dark and stopped" : " · stopped";
           f.tick.textContent = `t=${s.ticks}${word}`;
         }
       };
@@ -368,23 +424,25 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         if (!s) return `${who} hasn't loaded.`;
         if (moving(f)) return `${who} is still running.`;
         if (!s.running) return `${who} is paused while it's out of view.`;
-        return `${who} has stopped at t=${s.ticks}` + (f.error ? ", after an error." : ".");
+        const how = dark(f) ? "has gone dark and stopped" : "has stopped";
+        return `${who} ${how} at t=${s.ticks}` + (f.error ? ", after an error." : ".");
       };
-      const report = (orient: "wide" | "tall") => {
+      const report = (orient: "wide" | "narrow") => {
         clearTimeout(verdict);
         verdict = window.setTimeout(() => {
-          const lead = orient === "tall" ? "Turned from wide to tall." : "Turned back to wide.";
+          const lead = orient === "narrow" ? "Narrowed both frames." : "Widened both frames again.";
           const stuck = frames.some((f) => { const s = sim(f); return s && s.running && !moving(f); });
           status.textContent = [lead, describe(frames[0]), describe(frames[1]),
-            stuck ? "A stopped copy stays stopped. “Stop both” starts over." : ""].join(" ").trim();
+            stuck ? "A stopped copy stays stopped; “Stop and reset” clears both." : ""].join(" ").trim();
         }, 1600);
       };
-      const turn = (orient: "wide" | "tall") => {
+      const turn = (orient: "wide" | "narrow") => {
         state = orient;
         turnBtn.removeAttribute("aria-disabled");
-        turnBtn.textContent = orient === "tall" ? "Turn it back" : "Turn it";
-        status.textContent = orient === "tall" ? "Turning both frames from wide to tall." : "Turning both frames back to wide.";
+        turnBtn.textContent = orient === "narrow" ? "Turn it back" : "Turn it";
+        status.textContent = orient === "narrow" ? "Narrowing both frames." : "Widening both frames again.";
         shape(orient);
+        tilt();
         report(orient);
       };
       const load = () => {
@@ -393,12 +451,14 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         turnBtn.setAttribute("aria-disabled", "true");
         stopBtn.hidden = false;
         stillNote.hidden = true;
-        status.textContent = "Loading both copies. They run wide for a moment, then turn.";
+        status.textContent = "Loading both copies. They run at full width for a moment, then narrow.";
         for (const f of frames) {
+          const wrap = document.createElement("div");
+          wrap.className = "tr-tilt";
           const ifr = document.createElement("iframe");
           ifr.src = f.src;
           ifr.title = f.title;
-          f.iframe = ifr; f.error = null; f.seen = [];
+          f.wrap = wrap; f.iframe = ifr; f.error = null; f.seen = [];
           f.err.hidden = true; f.err.textContent = "";
           ifr.addEventListener("load", () => {
             try {
@@ -407,7 +467,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
                 // only a thrown exception counts; the browser's "ResizeObserver loop"
                 // notice arrives as an error event with no error object, and isn't one
                 if (!e.error) return;
-                f.error = e.error.name ? `${e.error.name}: ${e.error.message}` : String(e.error);
+                f.error = clean(e.error);
                 f.err.textContent = `Error inside this frame: ${f.error}`;
                 f.err.hidden = false;
               });
@@ -418,17 +478,26 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
             } catch { /* same-origin frames; nothing to do if it fails */ }
           });
           f.poster.hidden = true;
-          f.slot.append(ifr);
+          wrap.append(ifr);
+          f.slot.append(wrap);
         }
         shape("wide");
+        // On a phone the stacked frames can sit above the button that was pressed. Bring
+        // them into view, so the visitor sees both, and the atlas doesn't pause one as
+        // off screen.
+        const box = (root.querySelector(".tr-frames") as HTMLElement).getBoundingClientRect();
+        if (box.top < 0 || box.bottom > window.innerHeight) {
+          const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          (root.querySelector(".tr-frames") as HTMLElement).scrollIntoView({ block: "nearest", behavior: still ? "auto" : "smooth" });
+        }
         poll = window.setInterval(sample, 200);
-        // the beat: both copies have stepped a while at the wide size (so the old copy's
+        // the beat: both copies have stepped a while at full width (so the old copy's
         // scratch buffer exists at that size), or 6 s have passed
         const wait = () => {
           if (state !== "loading") return;
           const ready = frames.every((f) => { const s = sim(f); return s && s.ticks >= 40; });
           const elapsed = performance.now() - loadedAt;
-          if ((ready && elapsed >= 1500) || elapsed >= 6000) turn("tall");
+          if ((ready && elapsed >= 1500) || elapsed >= 6000) turn("narrow");
           else beat = window.setTimeout(wait, 150);
         };
         beat = window.setTimeout(wait, 150);
@@ -437,10 +506,11 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         clearInterval(poll); clearTimeout(beat); clearTimeout(verdict);
         const hadFocus = document.activeElement === stopBtn;
         for (const f of frames) {
-          if (f.iframe) { f.iframe.src = "about:blank"; f.iframe.remove(); }
-          f.iframe = null; f.seen = []; f.error = null;
+          if (f.iframe) f.iframe.src = "about:blank";
+          if (f.wrap) f.wrap.remove();
+          f.wrap = null; f.iframe = null; f.seen = []; f.error = null;
           f.poster.hidden = false;
-          f.slot.style.height = "";
+          f.slot.style.minHeight = "";
           f.tick.textContent = "";
           f.err.hidden = true; f.err.textContent = "";
         }
@@ -449,20 +519,20 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         turnBtn.textContent = "Turn it";
         stopBtn.hidden = true;
         stillNote.hidden = false;
-        status.textContent = "Stopped. Nothing is running.";
+        status.textContent = "Stopped and reset. Nothing is running.";
         if (hadFocus) turnBtn.focus();
       };
 
       turnBtn.addEventListener("click", () => {
         if (state === "idle") load();
-        else if (state === "wide") turn("tall");
-        else if (state === "tall") turn("wide");
+        else if (state === "wide") turn("narrow");
+        else if (state === "narrow") turn("wide");
         // while loading, the turn comes on its own
       });
       stopBtn.addEventListener("click", stop);
       window.addEventListener("resize", () => {
         if (state === "idle") return;
-        shape(state === "tall" ? "tall" : "wide");
+        shape(state === "narrow" ? "narrow" : "wide");
       });
     }
   </script>

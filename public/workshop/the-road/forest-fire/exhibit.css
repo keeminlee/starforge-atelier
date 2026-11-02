@@ -1,22 +1,20 @@
 /* The Road's two Forest Fire exhibits, shown in small frames on /workshop/the-road/.
    The sims and the atlas library are untouched; this only fits the stage to the frame.
-   The canvas is sized so a wide frame always gives a wider grid than a tall one: the
-   bug fires only when the grid shrinks, so a turn from wide to tall must shrink it. */
-html, body { height: 100%; margin: 0; overflow: hidden; }
-body.road-exhibit {
-  background: #06070a;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-}
-.road-exhibit .stage {
-  margin: 0; border: 0; border-radius: 0;
-  /* the canvas is width x 0.6, and one readout line sits under it */
-  width: min(100vw, calc((100vh - 22px) / 0.6));
-}
+   The stage takes the frame's full width. The sim sizes its canvas from that width
+   (height = width x 0.6), and one 22px readout line sits under it, so the page sets each
+   frame's height to round(width x 0.6) + 22 and there are no empty bands. */
+html, body { margin: 0; overflow: hidden; }
+body.road-exhibit { background: #06070a; }
+/* width AND height pinned to the frame: canvas + readout fill 100vh exactly, and the
+   stage's height never changes on its own when the canvas is resized, so the atlas's
+   ResizeObserver sees one resize per frame size change, not a second for the height */
+.road-exhibit .stage { margin: 0; border: 0; border-radius: 0; width: 100vw; height: 100vh; overflow: hidden; }
 /* The controls rail would take most of a small frame's height. The canvas still takes
    a click or drag to start a fire, as on the atlas page. */
 .road-exhibit .stage .controls { display: none; }
 .road-exhibit .stage .readout {
-  margin: 0; padding: 3px 8px 4px; font-size: 11px; line-height: 15px;
+  margin: 0; padding: 3px 8px 4px; height: 22px; box-sizing: border-box;
+  font-size: 11px; line-height: 15px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .sr-only {

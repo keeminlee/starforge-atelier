@@ -20,5 +20,13 @@
 <figure class="stage" id="stage"></figure>
 <script src="/atlas/lib/atlas.js"></script>
 <script src="./before-sim.js"></script>
+<script>
+  // The atlas labels its canvas "use the controls below", but this frame hides them.
+  // Relabel here, after the sim has started; the sim and atlas.js stay as they were.
+  (function () {
+    var c = document.querySelector('#stage canvas');
+    if (c) c.setAttribute('aria-label', 'Forest Fire simulation, before the fix. Click or drag on the grid to start a fire.');
+  })();
+</script>
 </body>
 </html>
