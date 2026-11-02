@@ -1,0 +1,9 @@
+# starforge-atelier.online
+# Everything here is public and crawlable. Pages that opt out do it per page,
+# with BaseLayout's `noindex` prop (a robots meta tag), and are left out of the
+# sitemap below. Nothing is disallowed here, so crawlers can read that tag.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://starforge-atelier.online/sitemap.xml
