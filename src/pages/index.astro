@@ -446,17 +446,17 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
     .fd-rooms a { color: var(--amber); }
 
     /* ── the workshop picture, with one house sentence beside it ─────── */
+    /* the same two columns as the openings, so the sentence starts on the doors' left edge */
     .fd-house {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.85fr);
-      gap: 1.6em;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
       align-items: center;
       margin: 2.6em auto 0;
     }
     .fd-house-line {
       margin: 0;
-      max-width: 34ch;
-      justify-self: end;
+      max-width: 36ch;
       color: var(--ink-soft);
       font-size: 1.12em;
       line-height: 1.55;
@@ -506,7 +506,6 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
       .fd-openings { grid-template-columns: minmax(0, 1fr); }
       .fd-doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .fd-house { grid-template-columns: minmax(0, 1fr); }
-      .fd-house-line { justify-self: start; }
     }
     @media (max-width: 520px) {
       .fd-opening { padding: 22px 18px 20px; }
