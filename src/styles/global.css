@@ -222,8 +222,9 @@ blockquote {
   50% { opacity: 1; }
 }
 
-/* Phones: 44px tap targets for the header nav (WCAG 2.5.5), and room under the
-   page's last line so the BGM pill never sits on text. Desktop is untouched. */
+/* Phones: 44px tap targets for the header nav (WCAG 2.5.5), and room at the bottom
+   so the page's last lines can scroll clear of the BGM pill. Mid-page, the fixed
+   pill can still sit over text. Desktop is untouched. */
 @media (max-width: 600px) {
   /* Padding grows the target; the matching negative inline margin keeps the
      visible spacing and the wrapping exactly as before. */
