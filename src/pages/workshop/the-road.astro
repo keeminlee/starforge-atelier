@@ -1,0 +1,469 @@
+---
+// The Workshop · The Road, chapter one (Atelier campaign, STAR-98). A PROPOSAL page:
+// noindex, in no nav and no index, until Darko's go and Rei's read.
+// One real change, followed from the first sign to the decision (PR #20, the Forest
+// Fire resize fix), with the bug itself to try. The two simulations live in
+// public/workshop/the-road/forest-fire/: a frozen copy of the sim as it was at 4c757675
+// (the exhibit of the bug) and the fixed sim from 98f41c6d. Nothing loads or runs until
+// the visitor presses "Turn it", so it never competes with the page around it.
+//
+// The turn goes from wide to tall, not tall to wide: the sim's grid follows its frame's
+// width, and the bug throws only when the grid shrinks. A tall-to-wide turn grows the
+// grid, so the old copy would keep running and show nothing.
+//
+// All styles are global and namespaced under .the-road, since the script builds the
+// iframes (Astro's scoped styles never reach script-built DOM).
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const ASSETS = "/workshop/the-road/forest-fire";
+const PR = "https://github.com/keeminlee/starforge-atelier/pull/20";
+
+const errorLines = `RangeError: offset is out of bounds
+    at Int32Array.set (<anonymous>)
+    at ForestFire.step (http://localhost:4321/atlas/entries/forest-fire/sim.js:142:19)`;
+
+const verdictLines = `VERDICT before: errors=1 allResizesStillRunning=false
+VERDICT after: errors=0 allResizesStillRunning=true`;
+
+const diffLines = `public/atlas/entries/forest-fire/sim.js
+@@ -42,6 +42,7 @@
+       this.fireId = new Int32Array(n);
+       this.fireId.fill(-1);
++      this._fireIdNext = null;        // step()'s scratch; re-made at the new size
+       this._nextFireId = 0;`;
+
+// split here, not in the template: nested markup with "\n" literals inside a template
+// expression trips Astro's parser
+const NL = String.fromCharCode(10);
+const [errorHead, ...errorTail] = errorLines.split(NL);
+const errorRest = NL + errorTail.join(NL);
+const diffRows = diffLines.split(NL).map((text) => ({ text: text + NL, add: text.startsWith("+") }));
+
+const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: true)
+  [after 390x844] ALIVE=false (ticks +0, gridChanged=false)
+ S1 page errors: 1
+   390x844: RangeError: offset is out of bounds @ at ForestFire.step (http://localhost:4400/atlas/entries/forest-fire/sim.js:142:19)`;
+---
+<BaseLayout
+  title="The Road, chapter one: the forest that stopped burning — Starforge"
+  description="One real fix, followed from the first sign of trouble to a person's decision, with the bug itself to try."
+  noindex={true}
+>
+  <article class="the-road">
+    <header class="tr-head">
+      <p class="tr-kick">The Workshop · The Road, chapter one</p>
+      <h1>The forest that stopped burning</h1>
+      <p class="tr-lede">One of the simulations in the <a href="/atelier/atlas-of-emergence/">Atlas of Emergence</a> froze whenever its window changed shape. This page follows the fix from the first sign of trouble to the decision, which hasn't been made yet.</p>
+    </header>
+
+    <section class="tr-card tr-compare" aria-labelledby="tr-compare-h">
+      <h2 id="tr-compare-h" class="tr-h2">Try the bug</h2>
+      <p class="tr-text">Two copies of the same simulation: the code before the fix, and the code after it. Nothing runs until you press the button. Then both start, and a moment later each frame turns from wide to tall, like a phone turning in your hand.</p>
+
+      <div class="tr-frames">
+        <figure class="tr-frame" data-side="before" data-src={`${ASSETS}/forest-fire-before.html`} data-title="Forest Fire simulation, before the fix">
+          <div class="tr-slot">
+            <img src={`${ASSETS}/ff-before.png`} width="716" height="580" alt="Still of the copy before the fix, after a resize: the grid is black, the readout is stuck at t=111, and the button still offers pause, as if the simulation were running.">
+          </div>
+          <figcaption><span class="tr-label">before the fix</span> <span class="tr-tick"></span></figcaption>
+          <p class="tr-err" hidden></p>
+        </figure>
+        <figure class="tr-frame" data-side="after" data-src={`${ASSETS}/forest-fire-after.html`} data-title="Forest Fire simulation, after the fix">
+          <div class="tr-slot">
+            <img src={`${ASSETS}/ff-after.png`} width="716" height="580" alt="Still of the copy after the fix, after a resize: a green forest with amber fire fronts, and the readout at t=445.">
+          </div>
+          <figcaption><span class="tr-label">after the fix</span> <span class="tr-tick"></span></figcaption>
+          <p class="tr-err" hidden></p>
+        </figure>
+      </div>
+      <p class="tr-still-note">The pictures are stills of each copy after a resize.</p>
+
+      <div class="tr-controls">
+        <button type="button" class="tr-btn tr-turn">Turn it</button>
+        <button type="button" class="tr-btn tr-stop" hidden>Stop both</button>
+      </div>
+      <p class="tr-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="tr-road" aria-labelledby="tr-road-h">
+      <h2 id="tr-road-h" class="tr-h2">The road</h2>
+      <p class="tr-text">Five steps, each with the record it left. Open a step to see it.</p>
+
+      <ol class="tr-stations">
+        <li class="tr-station">
+          <details>
+            <summary><span class="tr-dot" aria-hidden="true">1</span><span class="tr-sum"><b>Noticed</b><span>A crawler resized every page of the site, and one froze.</span></span></summary>
+            <div class="tr-body">
+              <p>It loaded each of the site's 131 pages at desktop size, then resized it to a phone held upright, a phone held sideways, and back. One page threw an error and stopped moving: the Forest Fire simulation.</p>
+              <p class="tr-cap">The error, from the old code on that resize:</p>
+              <pre class="tr-artifact"><code><span class="tr-red">{errorHead}</span>{errorRest}</code></pre>
+              <p>In that run, the clock stayed at t=111 from then on.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="tr-station">
+          <details>
+            <summary><span class="tr-dot" aria-hidden="true">2</span><span class="tr-sum"><b>Defined</b><span>“Done” was written down before the fix was built.</span></span></summary>
+            <div class="tr-body">
+              <p>Done meant:</p>
+              <ul>
+                <li>Resize the page from 1440×1000 to 390×844, then 844×390, then back to 1440×1000.</li>
+                <li>No error after any resize.</li>
+                <li>After each resize, the simulation still moves: its clock and its counts of trees and burning cells change.</li>
+              </ul>
+              <p class="tr-cap">The check's last line, on the old code and on the fix:</p>
+              <pre class="tr-artifact"><code>{verdictLines}</code></pre>
+            </div>
+          </details>
+        </li>
+
+        <li class="tr-station">
+          <details>
+            <summary><span class="tr-dot" aria-hidden="true">3</span><span class="tr-sum"><b>Built</b><span>One worker built it: a one-line change.</span></span></summary>
+            <div class="tr-body">
+              <p class="tr-gloss">The worker is a Plumb, named for the plumb line, which shows what's truly vertical.</p>
+              <p>The simulation kept a scratch buffer sized for its grid. A resize rebuilt the grid but kept the old buffer. When the grid got smaller, copying the old buffer into it threw the error, and the animation stopped for good. The fix clears the buffer whenever the grid is rebuilt, so it's made again at the right size.</p>
+              <p>The error happens only when the grid shrinks, which is why the frames above turn from wide to tall.</p>
+              <pre class="tr-artifact"><code>{diffRows.map((r) => (r.add ? <span class="tr-grn">{r.text}</span> : r.text))}</code></pre>
+              <p><a href={`${PR}/files`}>See the change on GitHub</a></p>
+            </div>
+          </details>
+        </li>
+
+        <li class="tr-station">
+          <details>
+            <summary><span class="tr-dot" aria-hidden="true">4</span><span class="tr-sum"><b>Checked</b><span>A worker that didn't build it checked it.</span></span></summary>
+            <div class="tr-body">
+              <p class="tr-gloss">This worker is a Truey: a wall is true when it's plumb, level and square.</p>
+              <p>It built the old code and the fix in separate copies and wrote its own test. On the old code, it got the same error, and the clock stopped:</p>
+              <pre class="tr-artifact"><code>{reproLines}</code></pre>
+              <p>Then it tried three paths the builder hadn't:</p>
+              <ol class="tr-paths">
+                <li><b>Widen only,</b> from phone to desktop. Neither copy threw an error, but the old code lost track of which fire up to 663 burning cells belonged to. The fix lost none.</li>
+                <li><b>Pause, shrink, then play.</b> The old code threw the error. The fix kept running.</li>
+                <li><b>Shrink and widen, then reset or randomize.</b> The fix gave no errors.</li>
+              </ol>
+              <p>Its verdict: pass, with notes, none of them blocking.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="tr-station tr-notyet">
+          <details>
+            <summary><span class="tr-dot" aria-hidden="true">5</span><span class="tr-sum"><b>Decided</b><span>Not yet: waiting for Darko's go.</span></span></summary>
+            <div class="tr-body">
+              <p>A person decides whether the fix goes public. On this site a merge publishes, so nothing merges without that go. As of 2 November 2026, it hasn't been given.</p>
+              <p class="tr-artifact tr-empty"><a href={PR}>Pull request #20</a> · open</p>
+            </div>
+          </details>
+        </li>
+      </ol>
+
+      <p class="tr-text tr-record">The public record is <a href={PR}>pull request #20 on GitHub</a>.</p>
+    </section>
+  </article>
+
+  <style is:global>
+    .the-road {
+      --tr-wood: linear-gradient(180deg, var(--bg-3), var(--bg-2));
+      --tr-red: #e58a6f;
+      max-width: 1120px;
+    }
+    .the-road .tr-head { max-width: 760px; margin: 0 auto 1.6em; }
+    .the-road .tr-kick {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin: 0 0 0.9em;
+    }
+    .the-road h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
+    .the-road .tr-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0; }
+    .the-road .tr-h2 { margin: 0 0 0.45em; }
+    .the-road .tr-text { color: var(--ink-soft); margin: 0 0 1em; }
+
+    /* the comparison: the workshop's warm wood */
+    .the-road .tr-card {
+      background: var(--tr-wood); border: 1px solid var(--rule); border-radius: 18px;
+      padding: 26px 24px 22px;
+    }
+    .the-road .tr-compare .tr-text { max-width: 760px; }
+    /* the hidden attribute must win over the display rules below */
+    .the-road [hidden] { display: none !important; }
+    /* side by side at every width, as in the sketch: a comparison is read across, and two
+       frames in view together means neither is paused by the atlas's off-screen pause */
+    .the-road .tr-frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
+    @media (max-width: 820px) { .the-road .tr-frames { gap: 10px; } }
+    .the-road .tr-frame { margin: 0; min-width: 0; }
+    .the-road .tr-slot { display: flex; align-items: center; justify-content: center; min-width: 0; }
+    .the-road .tr-slot img {
+      display: block; width: 100%; max-width: 520px; height: auto;
+      border: 1px solid var(--rule); border-radius: 10px;
+    }
+    .the-road .tr-slot iframe {
+      display: block; max-width: 100%; border: 1px solid var(--rule); border-radius: 10px;
+      background: #06070a; transition: width 0.8s ease, height 0.8s ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .the-road .tr-slot iframe { transition: none; }
+    }
+    .the-road .tr-frame figcaption {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2em 0.8em; margin-top: 0.55em;
+      font: 600 0.82rem/1.4 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+    .the-road .tr-tick { font: 0.78rem/1.4 ui-monospace, Consolas, monospace; color: var(--faint); letter-spacing: 0; }
+    .the-road .tr-err {
+      margin: 0.35em auto 0; max-width: 520px; text-align: center;
+      font: 0.78rem/1.45 ui-monospace, Consolas, monospace; color: var(--tr-red); overflow-wrap: anywhere;
+    }
+    .the-road .tr-still-note { margin: 0.9em 0 0; text-align: center; font-size: 0.85rem; color: var(--faint); }
+    .the-road .tr-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7em; margin: 1.1em 0 0.4em; }
+    .the-road .tr-btn {
+      font: 600 0.95rem/1 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.02em;
+      color: var(--bg); background: var(--moss); border: 1px solid var(--moss); border-radius: 999px;
+      padding: 0.7em 1.4em; cursor: pointer;
+    }
+    .the-road .tr-btn:hover { background: #aab676; }
+    .the-road .tr-btn[aria-disabled="true"] { opacity: 0.6; cursor: progress; }
+    .the-road .tr-stop { color: var(--ink); background: transparent; border-color: var(--faint); }
+    .the-road .tr-stop:hover { background: var(--bg-3); }
+    .the-road .tr-btn:focus-visible,
+    .the-road summary:focus-visible,
+    .the-road a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+    .the-road .tr-status { min-height: 1.5em; margin: 0.4em auto 0; max-width: 760px; text-align: center; font-size: 0.95rem; color: var(--ink-soft); }
+
+    /* the road: moss, five stations, the last one dashed and empty */
+    .the-road .tr-road { max-width: 760px; margin: 2.6em auto 0; }
+    .the-road .tr-stations { list-style: none; margin: 0.4em 0 1.2em; padding: 0; position: relative; }
+    .the-road .tr-station { position: relative; padding: 0 0 0.9em 0; }
+    .the-road .tr-station::before {
+      content: ""; position: absolute; left: calc(1.05em - 1px); top: 2.3em; bottom: -0.1em; width: 2px;
+      background: var(--moss);
+    }
+    .the-road .tr-station:nth-last-child(2)::before {
+      background: repeating-linear-gradient(180deg, var(--faint) 0 4px, transparent 4px 8px);
+    }
+    .the-road .tr-station:last-child::before { display: none; }
+    .the-road details { border-radius: 12px; }
+    .the-road summary {
+      list-style: none; cursor: pointer; display: grid; grid-template-columns: 2.1em minmax(0, 1fr) auto;
+      gap: 0.8em; align-items: start; padding: 0.15em 0.2em; border-radius: 10px;
+    }
+    .the-road summary::-webkit-details-marker { display: none; }
+    .the-road summary::after {
+      content: "+"; font: 600 1.1rem/1.6 ui-sans-serif, system-ui, sans-serif; color: var(--faint); padding-right: 0.2em;
+    }
+    .the-road details[open] > summary::after { content: "–"; }
+    .the-road .tr-dot {
+      display: grid; place-items: center; width: 2.1em; height: 2.1em; border-radius: 50%;
+      background: var(--bg-2); border: 2px solid var(--moss); color: var(--moss);
+      font: 700 0.85rem/1 ui-sans-serif, system-ui, sans-serif; position: relative; z-index: 1;
+    }
+    .the-road .tr-sum b { display: block; font: 600 1.02rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+    .the-road .tr-sum span { display: block; color: var(--ink-soft); font-size: 0.98rem; line-height: 1.45; }
+    .the-road summary:hover .tr-sum b { color: var(--amber-soft); }
+    .the-road .tr-body {
+      margin: 0.6em 0 0.4em 2.9em; padding: 0.9em 1.1em; background: var(--tr-wood);
+      border: 1px solid var(--rule); border-radius: 12px; font-size: 0.97rem; min-width: 0;
+      position: relative; z-index: 1; /* above the road's connector line on narrow screens */
+    }
+    .the-road .tr-body > :first-child { margin-top: 0; }
+    .the-road .tr-body > :last-child { margin-bottom: 0; }
+    .the-road .tr-body p, .the-road .tr-body ul, .the-road .tr-body ol { margin: 0 0 0.8em; }
+    .the-road .tr-body ul, .the-road .tr-body ol { padding-left: 1.3em; }
+    .the-road .tr-gloss { color: var(--faint); font-style: italic; }
+    .the-road .tr-cap { color: var(--faint); font-size: 0.9rem; margin-bottom: 0.35em !important; }
+    .the-road .tr-paths b { color: var(--ink); }
+    .the-road .tr-artifact {
+      display: block; margin: 0 0 0.9em; padding: 0.6em 0.75em; background: #100c07;
+      border: 1px solid var(--rule); border-radius: 6px; color: var(--ink-soft);
+      font: 0.8rem/1.5 ui-monospace, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere;
+    }
+    .the-road .tr-artifact code { font: inherit; }
+    .the-road .tr-red { color: var(--tr-red); }
+    .the-road .tr-grn { color: var(--moss); }
+
+    .the-road .tr-notyet .tr-dot { border-style: dashed; border-color: var(--faint); color: var(--faint); background: transparent; }
+    .the-road .tr-notyet .tr-sum b { color: var(--faint); }
+    .the-road .tr-notyet .tr-body { background: transparent; border-style: dashed; }
+    .the-road .tr-artifact.tr-empty { background: transparent; border-style: dashed; color: var(--faint); white-space: normal; }
+    .the-road .tr-record { font-size: 0.95rem; }
+
+    @media (max-width: 480px) {
+      .the-road .tr-card { padding: 18px 14px 16px; border-radius: 14px; }
+      .the-road .tr-body { margin-left: 0; }
+    }
+  </style>
+
+  <script>
+    // "Turn it": nothing loads until the press. Then both copies load at their wide size,
+    // run for a beat, and turn tall by changing each frame's size, so each sim's own resize
+    // code runs. Everything the status line says is read from the sims themselves.
+    const root = document.querySelector(".the-road");
+    if (root) {
+      const turnBtn = root.querySelector(".tr-turn") as HTMLButtonElement;
+      const stopBtn = root.querySelector(".tr-stop") as HTMLButtonElement;
+      const status = root.querySelector(".tr-status") as HTMLElement;
+      const stillNote = root.querySelector(".tr-still-note") as HTMLElement;
+
+      type Frame = {
+        side: string; src: string; title: string;
+        slot: HTMLElement; poster: HTMLImageElement; tick: HTMLElement; err: HTMLElement;
+        iframe: HTMLIFrameElement | null; error: string | null;
+        seen: { t: number; ticks: number }[];
+      };
+      const frames: Frame[] = Array.from(root.querySelectorAll<HTMLElement>(".tr-frame")).map((fig) => ({
+        side: fig.dataset.side || "", src: fig.dataset.src || "", title: fig.dataset.title || "",
+        slot: fig.querySelector(".tr-slot") as HTMLElement,
+        poster: fig.querySelector(".tr-slot img") as HTMLImageElement,
+        tick: fig.querySelector(".tr-tick") as HTMLElement,
+        err: fig.querySelector(".tr-err") as HTMLElement,
+        iframe: null, error: null, seen: [],
+      }));
+
+      let state: "idle" | "loading" | "wide" | "tall" = "idle";
+      let poll = 0, beat = 0, verdict = 0, loadedAt = 0;
+
+      const sim = (f: Frame): any => {
+        try {
+          const A = (f.iframe?.contentWindow as any)?.Atlas;
+          return (A && A.instances && A.instances[0]) || null;
+        } catch { return null; }
+      };
+      // moving = its tick count changed in the last 800 ms
+      const moving = (f: Frame) => {
+        const now = performance.now();
+        const recent = f.seen.filter((s) => now - s.t <= 800);
+        return recent.length > 1 && recent[recent.length - 1].ticks !== recent[0].ticks;
+      };
+      const dims = () => {
+        const w = frames[0].slot.clientWidth;
+        const long = Math.max(100, Math.min(520, Math.floor(w)));
+        return { long, short: Math.round(long * 0.577) };
+      };
+      const shape = (orient: "wide" | "tall") => {
+        const { long, short } = dims();
+        for (const f of frames) {
+          f.slot.style.height = long + "px";
+          if (!f.iframe) continue;
+          f.iframe.style.width = (orient === "tall" ? short : long) + "px";
+          f.iframe.style.height = (orient === "tall" ? long : short) + "px";
+        }
+      };
+      const sample = () => {
+        const now = performance.now();
+        for (const f of frames) {
+          const s = sim(f);
+          if (!s) continue;
+          f.seen.push({ t: now, ticks: s.ticks });
+          if (f.seen.length > 12) f.seen.shift();
+          // "stopped" is the bug's state: the sim still says it's running, but its clock
+          // doesn't move. "paused" is the atlas pausing a sim that's scrolled out of view.
+          const word = state === "loading" || moving(f) ? "" : s.running ? " · stopped" : " · paused";
+          f.tick.textContent = `t=${s.ticks}${word}`;
+        }
+      };
+      const describe = (f: Frame) => {
+        const s = sim(f);
+        const who = f.side === "before" ? "The copy before the fix" : "The copy after the fix";
+        if (!s) return `${who} hasn't loaded.`;
+        if (moving(f)) return `${who} is still running.`;
+        if (!s.running) return `${who} is paused while it's out of view.`;
+        return `${who} has stopped at t=${s.ticks}` + (f.error ? ", after an error." : ".");
+      };
+      const report = (orient: "wide" | "tall") => {
+        clearTimeout(verdict);
+        verdict = window.setTimeout(() => {
+          const lead = orient === "tall" ? "Turned from wide to tall." : "Turned back to wide.";
+          const stuck = frames.some((f) => { const s = sim(f); return s && s.running && !moving(f); });
+          status.textContent = [lead, describe(frames[0]), describe(frames[1]),
+            stuck ? "A stopped copy stays stopped. “Stop both” starts over." : ""].join(" ").trim();
+        }, 1600);
+      };
+      const turn = (orient: "wide" | "tall") => {
+        state = orient;
+        turnBtn.removeAttribute("aria-disabled");
+        turnBtn.textContent = orient === "tall" ? "Turn it back" : "Turn it";
+        status.textContent = orient === "tall" ? "Turning both frames from wide to tall." : "Turning both frames back to wide.";
+        shape(orient);
+        report(orient);
+      };
+      const load = () => {
+        state = "loading";
+        loadedAt = performance.now();
+        turnBtn.setAttribute("aria-disabled", "true");
+        stopBtn.hidden = false;
+        stillNote.hidden = true;
+        status.textContent = "Loading both copies. They run wide for a moment, then turn.";
+        for (const f of frames) {
+          const ifr = document.createElement("iframe");
+          ifr.src = f.src;
+          ifr.title = f.title;
+          f.iframe = ifr; f.error = null; f.seen = [];
+          f.err.hidden = true; f.err.textContent = "";
+          ifr.addEventListener("load", () => {
+            try {
+              const w = ifr.contentWindow as any;
+              w.addEventListener("error", (e: ErrorEvent) => {
+                // only a thrown exception counts; the browser's "ResizeObserver loop"
+                // notice arrives as an error event with no error object, and isn't one
+                if (!e.error) return;
+                f.error = e.error.name ? `${e.error.name}: ${e.error.message}` : String(e.error);
+                f.err.textContent = `Error inside this frame: ${f.error}`;
+                f.err.hidden = false;
+              });
+              // The atlas keeps a sim paused under prefers-reduced-motion; pressing
+              // "Turn it" is the visitor asking for it to run.
+              const s = sim(f);
+              if (s && !s.running) s.play();
+            } catch { /* same-origin frames; nothing to do if it fails */ }
+          });
+          f.poster.hidden = true;
+          f.slot.append(ifr);
+        }
+        shape("wide");
+        poll = window.setInterval(sample, 200);
+        // the beat: both copies have stepped a while at the wide size (so the old copy's
+        // scratch buffer exists at that size), or 6 s have passed
+        const wait = () => {
+          if (state !== "loading") return;
+          const ready = frames.every((f) => { const s = sim(f); return s && s.ticks >= 40; });
+          const elapsed = performance.now() - loadedAt;
+          if ((ready && elapsed >= 1500) || elapsed >= 6000) turn("tall");
+          else beat = window.setTimeout(wait, 150);
+        };
+        beat = window.setTimeout(wait, 150);
+      };
+      const stop = () => {
+        clearInterval(poll); clearTimeout(beat); clearTimeout(verdict);
+        const hadFocus = document.activeElement === stopBtn;
+        for (const f of frames) {
+          if (f.iframe) { f.iframe.src = "about:blank"; f.iframe.remove(); }
+          f.iframe = null; f.seen = []; f.error = null;
+          f.poster.hidden = false;
+          f.slot.style.height = "";
+          f.tick.textContent = "";
+          f.err.hidden = true; f.err.textContent = "";
+        }
+        state = "idle";
+        turnBtn.removeAttribute("aria-disabled");
+        turnBtn.textContent = "Turn it";
+        stopBtn.hidden = true;
+        stillNote.hidden = false;
+        status.textContent = "Stopped. Nothing is running.";
+        if (hadFocus) turnBtn.focus();
+      };
+
+      turnBtn.addEventListener("click", () => {
+        if (state === "idle") load();
+        else if (state === "wide") turn("tall");
+        else if (state === "tall") turn("wide");
+        // while loading, the turn comes on its own
+      });
+      stopBtn.addEventListener("click", stop);
+      window.addEventListener("resize", () => {
+        if (state === "idle") return;
+        shape(state === "tall" ? "tall" : "wide");
+      });
+    }
+  </script>
+</BaseLayout>
