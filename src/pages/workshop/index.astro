@@ -1,0 +1,212 @@
+---
+// The Workshop · the bench (Atelier campaign, STAR-98; notes/workshop-plan.md § 1). A
+// PROPOSAL page: noindex, in no nav, until Darko's say.
+// Five made things on one bench (Rei's read of the sketch, 2026-11-02). Only the Road is
+// built, so only the Road is a door. The other four are still being made, and say so: no
+// link, a dashed outline, muted, and "being made" in words. Nothing on them pretends to be
+// interactive. The entry line is Rei's draft, word for word.
+//
+// On phones the bench is itself the short list: one column, the four unbuilt pieces
+// compact, so the five questions sit together under the entry line, with no answers
+// between them. (The plan's phone list is jump links; links to unbuilt pieces would be
+// doors, which its § 3 rules out, so the bench is the list instead.)
+// Nothing runs on this page: the Road's pair is its two stills and their captions, the
+// ones the front door shows.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const ROAD = "/workshop/the-road/";
+const ROAD_STILLS = "/workshop/the-road/forest-fire";
+
+// the four pieces not yet built, each with its one-line question (workshop-plan § 1)
+const making = [
+  { name: "The Hands", question: "who works here, and why the work is split" },
+  { name: "The Walls", question: "the rules that hold, and what earned each" },
+  { name: "The Memory", question: "how a house of agents remembers" },
+  { name: "The Rig", question: "where the workers run" },
+];
+---
+<BaseLayout
+  title="The Workshop: how it's made — Starforge"
+  description="Start with one thing we made. Then follow the hands, habits and machinery that helped it happen."
+  noindex={true}
+>
+  <article class="workshop">
+    <header class="ws-head">
+      <p class="ws-kick">The Workshop</p>
+      <h1>How it's made</h1>
+      <p class="ws-lede">Start with one thing we made. Then follow the hands, habits and machinery that helped it happen.</p>
+    </header>
+
+    {/* a list, not a tour: no order to walk in (Rei's read). role="list" because some
+         browsers drop list semantics when list-style is none */}
+    <ul class="ws-bench" role="list">
+      {/* One door: the title's link is the card's only tab stop, and its ::after covers
+          the whole card, pictures included. The heading and its line come first in
+          reading order, so the stills' alt text arrives with context; CSS shows the
+          stills first. */}
+      <li class="ws-piece ws-door">
+        <h2 class="ws-name"><a href={ROAD}>The Road, chapter one: the forest that stopped burning</a></h2>
+        <p class="ws-line">One real fix, followed from the first sign of trouble to a person's decision, with the bug itself to try.</p>
+        <div class="ws-pair">
+          <figure class="ws-frame">
+            <div class="ws-still">
+              <img src={`${ROAD_STILLS}/ff-before.png`} width="714" height="428" alt="Still of the copy before the fix, after its window narrowed and widened again: the grid is all black." />
+              {/* the Road's own word for this state, so the black reads as the exhibit, not a
+                  failed image; the alt text already says it */}
+              <span class="ws-dark" aria-hidden="true">dark and stopped</span>
+              <span class="ws-chip" aria-hidden="true">before the fix</span>
+            </div>
+            <figcaption><b>Before:</b> turn the phone upright, and the forest goes dark.</figcaption>
+          </figure>
+          <figure class="ws-frame">
+            <div class="ws-still">
+              <img src={`${ROAD_STILLS}/ff-after.png`} width="714" height="428" alt="Still of the copy after the fix, after the same resizes: a green forest with dark burned patches and amber fire fronts." />
+              <span class="ws-chip" aria-hidden="true">after the fix</span>
+            </div>
+            <figcaption><b>After:</b> the same turn, and it keeps burning.</figcaption>
+          </figure>
+        </div>
+        {/* the call to action is the card itself; this says so without being a second link */}
+        <p class="ws-go" aria-hidden="true">Walk the whole road →</p>
+      </li>
+
+      {making.map((p) => (
+        <li class="ws-piece ws-making">
+          {/* heard as "The Hands, being made": the comma is in the name's own inline run,
+              unseen, so no space comes before it */}
+          <h2 class="ws-name"><span class="ws-label">{p.name}<span class="ws-sep">,</span></span> <span class="ws-state">being made</span></h2>
+          <p class="ws-line">{p.question}</p>
+        </li>
+      ))}
+    </ul>
+  </article>
+
+  <style>
+    .workshop { max-width: 1120px; }
+
+    .ws-head { max-width: 760px; margin: 0 auto 1.8em; }
+    .ws-kick {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin: 0 0 0.9em;
+    }
+    .ws-head h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
+    .ws-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0; }
+
+    /* the bench: one row of five on wide screens, the Road two places wide */
+    .ws-bench {
+      list-style: none; margin: 0; padding: 0;
+      display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px;
+    }
+    .ws-piece { position: relative; min-width: 0; display: flex; flex-direction: column; border-radius: 14px; padding: 14px 14px 12px; }
+    .ws-name { margin: 0 0 0.3em; font: 600 1rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0; }
+    .ws-line { margin: 0; font-size: 0.95rem; line-height: 1.45; }
+
+    /* the one door: the workshop's warm wood, moss for the Road */
+    .ws-door {
+      grid-column: span 2;
+      background: linear-gradient(180deg, var(--bg-3), var(--bg-2));
+      border: 1px solid var(--moss);
+    }
+    /* the stills come first to the eye; the heading and its line come first in the DOM */
+    .ws-pair { order: -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 0.85em; }
+    .ws-frame { margin: 0; min-width: 0; }
+    /* each still in a visible frame, labelled, so the dark one reads as a dark canvas */
+    .ws-still {
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(244, 214, 160, 0.34); border-radius: 8px; background: #05070c;
+    }
+    .ws-still img { display: block; width: 100%; height: auto; }
+    .ws-chip {
+      position: absolute; left: 6px; top: 6px; padding: 0.15em 0.5em; pointer-events: none;
+      border: 1px solid rgba(244, 214, 160, 0.3); border-radius: 999px; background: rgba(20, 16, 9, 0.86);
+      color: var(--ink-soft); font: 600 0.66rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.03em; white-space: nowrap;
+    }
+    /* the front door's captions, in its type */
+    .ws-frame figcaption { margin-top: 0.45em; font-size: 0.84rem; line-height: 1.4; color: var(--ink-soft); }
+    .ws-frame figcaption b { color: var(--ink); font: 600 0.78rem/1 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em; }
+    .ws-door .ws-name { font-size: 1.08rem; }
+    .ws-door .ws-name a { color: var(--ink); text-decoration: none; }
+    /* the stretched link: the title's link covers the whole card, so the card is one door
+       with one tab stop, and a click on the pictures goes where the title goes */
+    .ws-door .ws-name a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 14px; }
+    .ws-door:hover { border-color: #aab676; }
+    .ws-door:hover .ws-name a { color: var(--amber-soft); }
+    .ws-door .ws-name a:focus-visible { outline: none; }
+    .ws-door .ws-name a:focus-visible::after { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 14px; }
+    .ws-door .ws-line { color: var(--ink-soft); }
+    .ws-go {
+      margin: auto 0 0; padding-top: 0.7em; color: #c9d38e;
+      font: 600 0.9rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      text-decoration: underline; text-decoration-color: rgba(201, 211, 142, 0.45); text-underline-offset: 2px;
+    }
+    .ws-door:hover .ws-go { color: var(--amber-soft); }
+
+    /* still being made: no link, a dashed outline, muted, and it says so in its heading.
+       Opaque, in the card tone, so the page texture can't show through as ghost shapes. */
+    /* Short labelled slots beside the Road, not frames stretched to its height. The tag
+       lives inside the heading (heard with the name, once) but shows under the question:
+       the heading spans three rows as a subgrid, the name in the first and the tag in the
+       third, and the question takes the second. */
+    .ws-making {
+      align-self: start; display: grid; grid-template-rows: auto auto auto;
+      border: 1px dashed var(--faint); background: var(--bg-2);
+    }
+    .ws-making .ws-name {
+      grid-row: 1 / span 3; grid-column: 1; display: grid; grid-template-rows: subgrid;
+      margin: 0; color: #a99a80;
+    }
+    .ws-making .ws-label { grid-row: 1; margin-bottom: 0.3em; }
+    .ws-making .ws-line { grid-row: 2; grid-column: 1; color: #a99a80; }
+    /* the comma is for the ear: unseen, but in the name's own inline run */
+    .ws-sep { opacity: 0; }
+    /* Small capitals rather than text-transform, which Chromium carries into the
+       heading's name as "BEING MADE" */
+    .ws-state {
+      grid-row: 3; margin-top: 0.6em;
+      font: 600 0.86rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      font-variant-caps: all-small-caps; letter-spacing: 0.12em; color: var(--faint);
+    }
+    /* the before still's state, in the Road's own words, quiet on the black */
+    .ws-dark {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      pointer-events: none; white-space: nowrap; color: var(--faint);
+      font: 600 0.72rem/1 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.06em;
+    }
+
+    /* Without subgrid (Chrome and Edge before 117, Safari before 16) the rows above are
+       dropped and the heading's parts would sit on top of the question. There, the card
+       falls back to plain flow: the name, "being made" under it, then the question. Placed
+       before the phone rules, which still win at their widths. */
+    @supports not (grid-template-rows: subgrid) {
+      .ws-making { display: block; }
+      .ws-making .ws-name { display: block; }
+      .ws-making .ws-label { display: block; margin-bottom: 0.15em; }
+      .ws-making .ws-state { display: block; margin: 0 0 0.4em; }
+    }
+
+    /* middle widths: the Road across the top, the four in a row beneath it */
+    @media (max-width: 900px) {
+      .ws-bench { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+      .ws-door { grid-column: 1 / -1; }
+      .ws-pair { max-width: 560px; }
+    }
+
+    /* phones: one column, and the four unbuilt pieces compact, so the bench is the list */
+    @media (max-width: 600px) {
+      .ws-head { margin-bottom: 1.3em; }
+      .ws-bench { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+      .ws-piece { padding: 12px 12px 10px; border-radius: 12px; }
+      .ws-door .ws-name a::after,
+      .ws-door .ws-name a:focus-visible::after { border-radius: 12px; }
+      /* the tag sits at the end of the heading's own line */
+      .ws-making { padding: 9px 12px; }
+      .ws-making .ws-name {
+        grid-row: 1; display: flex; justify-content: space-between; align-items: baseline; gap: 0.8em; margin: 0 0 0.1em;
+      }
+      .ws-making .ws-label { margin: 0; }
+      .ws-making .ws-state { margin: 0; }
+      .ws-making .ws-line { font-size: 0.9rem; }
+    }
+  </style>
+</BaseLayout>
