@@ -16,6 +16,9 @@
 //
 // Nothing around the comparison moves at the press or the narrowing: the slots, the line
 // under the old copy, the stills note and the second button keep their room throughout.
+// The one exception is a screen narrow enough to stack the frames (600px and under):
+// there the line under the old copy takes its room at the press, not at load, so it
+// isn't an empty band between the frames at rest. From the narrowing on, nothing moves.
 //
 // Error text is shown without hosts: message, function and file only. The live line under
 // a frame is cleaned the same way when it's shown.
@@ -229,6 +232,10 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       margin: 0.35em auto 0; max-width: 520px; text-align: center;
       font: 0.78rem/1.45 ui-monospace, Consolas, monospace; color: var(--tr-red); overflow-wrap: anywhere;
     }
+    /* Stacked, the held line would sit as an empty band between the two frames at rest,
+       so there its room is held from the press instead: the one shift lands with the
+       press itself, and nothing moves from the narrowing on. */
+    @media (max-width: 600px) { .the-road .tr-err.is-resting { display: none; } }
     .the-road .tr-still-note { margin: 0.9em 0 0; text-align: center; font-size: 0.85rem; color: var(--faint); }
     /* the first button sits in the middle column, so it's centred whether or not the
        second shows; the second takes the column to its right. Where the two don't fit on
@@ -386,17 +393,20 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       // error arrives it holds the expected message, invisible and hidden from screen
       // readers; the real error replaces it.
       const EXPECTED = "Error inside this frame: RangeError: offset is out of bounds at ForestFire.step (before-sim.js:142)";
-      const reserveErr = (f: Frame) => {
+      // (On a narrow screen the room is held from the press, not from load: is-resting.)
+      const reserveErr = (f: Frame, resting = false) => {
         f.err.textContent = EXPECTED; f.err.style.visibility = "hidden";
         f.err.setAttribute("aria-hidden", "true"); f.err.hidden = false;
+        f.err.classList.toggle("is-resting", resting);
       };
       const showErr = (f: Frame, text: string) => {
         f.err.textContent = text; f.err.style.visibility = "";
         f.err.removeAttribute("aria-hidden"); f.err.hidden = false;
+        f.err.classList.remove("is-resting");
       };
       const clearErr = (f: Frame) => {
         f.err.hidden = true; f.err.textContent = ""; f.err.style.visibility = "";
-        f.err.removeAttribute("aria-hidden");
+        f.err.removeAttribute("aria-hidden"); f.err.classList.remove("is-resting");
       };
       const sim = (f: Frame): any => {
         try {
@@ -450,7 +460,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       // the resting state: stills in full-height slots, the error line's room held
       const rest = () => {
         shape("wide");
-        for (const f of frames) { if (f.side === "before") reserveErr(f); else clearErr(f); }
+        for (const f of frames) { if (f.side === "before") reserveErr(f, true); else clearErr(f); }
       };
       const sample = () => {
         const now = performance.now();
