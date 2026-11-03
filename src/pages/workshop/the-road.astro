@@ -236,7 +236,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       background: #06070a; max-width: 100%;
     }
     .the-road .tr-window iframe { display: block; border: 0; }
-    .the-road .tr-frame figcaption {
+    .the-road .tr-frame figcaption,
+    .the-road .tr-cap-probe {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2em 0.8em; margin-top: 0.55em;
       font: 600 0.82rem/1.4 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em;
       color: var(--ink);
@@ -502,15 +503,29 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       // The caption's room: as many lines as the longest it will say needs at this width
       // ("before the fix" and "t=… · dark and stopped" wrap onto two lines on some
       // screens), so a longer caption at the narrowing moves nothing below it.
+      // Measured on hidden copies (as the status line is), never on the live captions:
+      // emptying a live caption's room to measure it, even for one forced layout, lets the
+      // browser's scroll anchoring follow it and scroll the page.
       const CAPTION_WIDEST = ["t=999 · dark and stopped", "t=99999 · stopped"];
+      const capHold = document.createElement("div");
+      Object.assign(capHold.style, { position: "absolute", width: "0", height: "0", overflow: "hidden" });
+      const capProbes = frames.map((f) => {
+        const p = document.createElement("div");
+        p.className = "tr-cap-probe";
+        p.setAttribute("aria-hidden", "true");
+        Object.assign(p.style, { position: "absolute", visibility: "hidden", left: "0", top: "0", margin: "0" });
+        for (const n of Array.from((f.tick.parentElement as HTMLElement).childNodes)) p.append(n.cloneNode(true));
+        capHold.append(p);
+        return p;
+      });
+      card.append(capHold);
       const holdCaptions = () => {
         let need = 0;
-        for (const f of frames) {
-          const cap = f.tick.parentElement as HTMLElement, was = f.tick.textContent;
-          cap.style.removeProperty("min-height");
-          for (const text of CAPTION_WIDEST) { f.tick.textContent = text; need = Math.max(need, cap.offsetHeight); }
-          f.tick.textContent = was;
-        }
+        frames.forEach((f, i) => {
+          const p = capProbes[i], tick = p.querySelector(".tr-tick") as HTMLElement;
+          p.style.width = (f.tick.parentElement as HTMLElement).getBoundingClientRect().width + "px";
+          for (const text of CAPTION_WIDEST) { tick.textContent = text; need = Math.max(need, p.offsetHeight); }
+        });
         for (const f of frames) (f.tick.parentElement as HTMLElement).style.minHeight = need + "px";
       };
       // one step: width and height set together, once. The slot always holds the taller
@@ -627,6 +642,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       const load = () => {
         state = "loading";
         loadedAt = performance.now();
+        // where the frames stack, the press takes room (the error line's is unheld at rest)
+        const takesRoom = getComputedStyle(frames[0].err).display === "none";
         card.classList.remove("is-resting");
         turnBtn.setAttribute("aria-disabled", "true");
         stopBtn.classList.remove("is-idle");
@@ -665,16 +682,17 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         // them into view, so the visitor sees both, and the atlas doesn't pause one as
         // off screen. The room taken at the press (600px and under) can push the button
         // itself down, so the same one scroll also keeps the button fully on screen,
-        // and the button wins if both can't fit. It runs once, here, long before the
-        // narrowing.
+        // and the button wins if both can't fit. Where the press takes no room (above
+        // 600px) only the frames are considered, as before. Half a pixel is not "off
+        // screen". It runs once, here, long before the narrowing.
         const vh = window.innerHeight;
         const box = (root.querySelector(".tr-frames") as HTMLElement).getBoundingClientRect();
         const btn = turnBtn.getBoundingClientRect();
         let by = 0;
-        if (box.top < 0) by = box.top;
-        else if (box.bottom > vh) by = Math.min(box.bottom - vh, box.top);
-        by = Math.min(Math.max(by, btn.bottom - vh), btn.top);
-        by = by > 0 ? Math.ceil(by) : Math.floor(by);   // whole pixels, never a hair short
+        if (box.top < -0.5) by = Math.round(box.top);
+        else if (box.bottom > vh + 0.5) by = Math.round(Math.min(box.bottom - vh, box.top));
+        // whole pixels, rounded so the button is never a hair off either edge
+        if (takesRoom) by = Math.min(Math.max(by, Math.ceil(btn.bottom - vh)), Math.floor(btn.top));
         if (by !== 0) {
           const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
           window.scrollBy({ top: by, behavior: still ? "auto" : "smooth" });
