@@ -167,7 +167,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           <details>
             <summary><span class="tr-dot" aria-hidden="true">5</span><span class="tr-sum"><b>Decided</b><span>Merged and published on 2 November 2026.</span></span></summary>
             <div class="tr-body">
-              <p>A person decides whether the fix goes public. On this site a merge publishes, so nothing merges without that go. Darko and Wright read the record together on 2 November 2026 and merged it that evening. The Forest Fire simulation in the Atlas runs the fixed code now.</p>
+              <p>A person decides whether the fix goes public. On this site a merge publishes, so nothing merges without that go. It was merged on the evening of 2 November 2026, and the Forest Fire simulation in the Atlas runs the fixed code now.</p>
               <p class="tr-artifact"><a href={PR}>Pull request #20</a> · merged</p>
             </div>
           </details>
@@ -256,7 +256,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     .the-road a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
     .the-road .tr-status { min-height: 1.5em; margin: 0.4em auto 0; max-width: 760px; text-align: center; font-size: 0.95rem; color: var(--ink-soft); }
 
-    /* the road: moss, five stations, the last one dashed and empty */
+    /* the road: moss, five stations; a pending station (.tr-notyet) is dashed and empty */
     .the-road .tr-road { max-width: 760px; margin: 2.6em auto 0; }
     .the-road .tr-stations { list-style: none; margin: 0.4em 0 1.2em; padding: 0; position: relative; }
     .the-road .tr-station { position: relative; padding: 0 0 0.9em 0; min-width: 0; }
@@ -264,7 +264,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       content: ""; position: absolute; left: calc(1.05em - 1px); top: 2.3em; bottom: -0.1em; width: 2px;
       background: var(--moss);
     }
-    .the-road .tr-station:nth-last-child(2)::before {
+    .the-road .tr-station:has(+ .tr-notyet)::before {
       background: repeating-linear-gradient(180deg, var(--faint) 0 4px, transparent 4px 8px);
     }
     .the-road .tr-station:last-child::before { display: none; }

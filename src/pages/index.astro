@@ -24,7 +24,7 @@ const lilaTurns = [
 
 // The road's five stations, the sketch's own labels (Noticed in Rei's words, 2026-11-02).
 // The last was decided on 2 November 2026 (PR #20 merged).
-const road = [
+const road: { name: string; note: string; notyet?: boolean }[] = [
   { name: "Noticed", note: "a crawler resized every page" },
   { name: "Defined", note: "“done” written before building" },
   { name: "Built", note: "one line, by one worker" },
