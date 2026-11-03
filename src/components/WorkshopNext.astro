@@ -1,8 +1,8 @@
 ---
 // The Workshop · the path through the chapters (Atelier campaign, STAR-98; the integration
 // brief, item 2). One link at the foot of each chapter, in the bench's order: the Road, the
-// Hands, the Walls, the Memory, the Rig, and from the Rig back to the bench. The arrow is
-// for the eye; the link's name is its words.
+// Hands, the Walls, the Memory, the Rig, and from the Rig back to the bench, worded as the
+// tour's end. The arrow is for the eye; the link's name is its words.
 const ORDER = [
   { href: "/workshop/the-road/", title: "The Road" },
   { href: "/workshop/the-hands/", title: "The Hands" },
@@ -22,7 +22,7 @@ const next = ORDER[i + 1];
 <p class="ws-next">
   {next
     ? <a href={next.href}>Next in the Workshop: {next.title}<span aria-hidden="true"> →</span></a>
-    : <a href="/workshop/">The Workshop<span aria-hidden="true"> →</span></a>}
+    : <a href="/workshop/">That's the whole Workshop. Back to the bench<span aria-hidden="true"> →</span></a>}
 </p>
 
 <style>

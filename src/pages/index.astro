@@ -468,13 +468,15 @@ const bench = [
     .fd-workshop .fd-go { color: var(--amber-soft); }
     .fd-workshop .fd-go a:hover { color: #fff1d6; }
 
-    /* the bench in miniature: each piece's object beside its name, on one plank */
+    /* the bench in miniature: a plain list, each piece's object beside its name. No boxes
+       and no hover, so nothing in it looks pressable: the opening's one way in is its
+       title and its go link */
     .fd-bench {
       list-style: none;
-      margin: 0.1em 0 0.4em;
+      margin: 0.2em 0 0.4em;
       padding: 0;
       display: grid;
-      gap: 8px;
+      gap: 12px;
       font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
     }
     .fd-bench li {
@@ -483,12 +485,8 @@ const bench = [
       align-items: center;
       column-gap: 0.85em;
       min-width: 0;
-      padding: 8px 10px 8px 8px;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      background: rgba(20, 16, 9, 0.45);
     }
-    .fd-bench-name { color: var(--ink); font-size: 0.9rem; font-weight: 600; }
+    .fd-bench-name { color: var(--ink-soft); font-size: 0.92rem; }
     /* the Road's object is its pair of stills, dark and lit, at the size of the others */
     .fd-bench-pair {
       display: grid;

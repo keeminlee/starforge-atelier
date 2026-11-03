@@ -22,6 +22,7 @@
 // prefers-reduced-motion.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import WorkshopNext from "../../../components/WorkshopNext.astro";
+import SourcesSummary from "../../../components/SourcesSummary.astro";
 
 const layers = [
   { id: "pods", n: 1, label: "Pods" },
@@ -128,10 +129,11 @@ const ARROW = " → ";
 
         <section class="rg-layer" id="rg-flow" data-layer="flow" aria-labelledby="rg-flow-h">
           <div class="rg-slice rg-slice-flow" aria-hidden="true">
+            <p class="rg-variant rg-variant-first">in Postmark</p>
             <ol class="rg-steps">
               {FLOW.map((s) => <li class="rg-step">{s}</li>)}
             </ol>
-            <p class="rg-variant">for a campaign, the middle reads</p>
+            <p class="rg-variant">in a campaign like the one that built this site, the middle reads</p>
             <ol class="rg-steps rg-steps-campaign">
               <li class="rg-step rg-step-gap">…</li>
               {FLOW_CAMPAIGN.map((s) => <li class="rg-step">{s}</li>)}
@@ -139,7 +141,7 @@ const ARROW = " → ";
           </div>
           <div class="rg-explain">
             <h3 id="rg-flow-h" class="rg-name"><span class="rg-n" aria-hidden="true">5</span>The flow</h3>
-            <p class="rg-para">In Jetto's words, the work flows like this: “{FLOW.join(ARROW)}.” For a campaign, the middle reads “…{FLOW_CAMPAIGN.join(ARROW)}.”</p>
+            <p class="rg-para">In Postmark, the work flows like this, in Jetto's words: “{FLOW.join(ARROW)}.” In a campaign like the one that built this site, the middle reads: “…{FLOW_CAMPAIGN.join(ARROW)}.”</p>
           </div>
         </section>
       </div>
@@ -152,7 +154,7 @@ const ARROW = " → ";
 
     <details class="rg-sources">
       {/* the open/closed mark is an aria-hidden span, so the summary is named "Sources" */}
-      <summary><span class="rg-mark" aria-hidden="true"></span>Sources</summary>
+      <SourcesSummary />
       <ul>
         <li>Jetto's notes on what may be shown of the rig, 1 and 3 November 2026: the pods and their leads, the Arti, the doorbell's three words, the throttle, the flow, the lines quoted as his, and that a copy has one holder at a time (jetto-answers, rig-copy-for-jetto).</li>
         <li>Darko's rulings of 2 November 2026, as Jetto gave them: a campaign's own branches and who decides its merge, and the night bells (rig-copy-for-jetto).</li>
@@ -213,7 +215,7 @@ const ARROW = " → ";
       display: inline-grid; place-items: center; width: 1.45em; height: 1.45em; border-radius: 50%;
       border: 1px solid currentColor; font-size: 0.78em;
     }
-    .rg-btn:focus-visible, .the-rig a:focus-visible, .rg-sources summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+    .rg-btn:focus-visible, .the-rig a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
     .rg-status { min-height: 1.5em; margin: 0 0 0.8em; font-size: 0.92rem; color: var(--faint); }
 
     /* the cross-section: one block, layers separated by cut lines */
@@ -304,6 +306,7 @@ const ARROW = " → ";
     }
     .rg-step-gap { border-style: dashed; }
     .rg-variant { margin: 0.75em 0 0.4em; color: var(--ink-soft); font: italic 0.82rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; }
+    .rg-variant-first { margin-top: 0; }
 
     /* Lit and dimmed, once the script runs. Dimmed is by colour, never opacity: every
        dimmed label stays at --faint or brighter on the section's ground (5:1 and up). Lit
@@ -338,13 +341,6 @@ const ARROW = " → ";
 
     .rg-note { max-width: 760px; margin: 2.4em auto 0; }
     .rg-sources { max-width: 760px; margin: 2em auto 0; font-size: 0.88rem; color: var(--faint); }
-    .rg-sources summary {
-      display: inline-block; cursor: pointer; padding: 0.3em 0; color: var(--ink-soft);
-      font: 600 0.86rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em;
-    }
-    .rg-sources summary::-webkit-details-marker { display: none; }
-    .rg-mark::before { content: "+ "; color: var(--faint); }
-    .rg-sources[open] .rg-mark::before { content: "– "; }
     .rg-sources ul { margin: 0.5em 0 0; padding-left: 1.2em; }
     .rg-sources li { margin: 0 0 0.35em; }
 

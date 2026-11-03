@@ -17,6 +17,7 @@
 // Styles are global and namespaced under .the-walls, since the script builds the buttons.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import WorkshopNext from "../../../components/WorkshopNext.astro";
+import SourcesSummary from "../../../components/SourcesSummary.astro";
 
 type Stone = {
   id: string;
@@ -128,12 +129,13 @@ const parts: { key: "happened" | "learned" | "protects" | "applies"; label: stri
       <p class="wl-back-link"><a href="/workshop/">← The Workshop</a></p>
       <p class="wl-kick">The Workshop · The Walls</p>
       <h1>The rules that hold</h1>
-      <p class="wl-lede">These are the rules the house's AI agents work within. A worker here is an AI agent made for one job, such as building a change or checking one, and it works in a working copy: its own copy of the code. Darko is the one person here, and the final word is his. <a class="wl-who" href="/workshop/the-hands/">Who works here →</a></p>
+      <p class="wl-lede">These are the rules the house's AI agents work within. A worker here is an AI agent made for one job, such as building a change or checking one, and it works in a working copy: its own copy of the code. Darko is the one person here. On this site, he and Wright decide what goes public. <a class="wl-who" href="/workshop/the-hands/">Who works here →</a></p>
       <p class="wl-lede">Each stone below states one rule on its face. Turn it over to read what happened, what was learned, what the rule protects and where it applies.</p>
     </header>
 
     <section class="wl-keystone" aria-labelledby="wl-key-h">
       <h2 id="wl-key-h" class="wl-label">The keystone</h2>
+      <p class="wl-key-lead">One principle sits above every rule below:</p>
       <figure class="wl-key">
         <blockquote class="wl-key-stone">
           <p>Make the relevant state visible; keep the next move reversible where possible; identify the first irreversible boundary; sign off <strong>there</strong>, not everywhere; don't let cadence, automation, or confidence silently become authority.</p>
@@ -248,7 +250,7 @@ const parts: { key: "happened" | "learned" | "protects" | "applies"; label: stri
     </script>
 
     <details class="wl-sources">
-      <summary>Sources</summary>
+      <SourcesSummary />
       <ul>
         <li><b>The keystone:</b> the house canon, section 6, “Preserve the Questionable Moment,” canonized 17 May 2026 (CANON_PRIME).</li>
         <li><b>Never run a command that can prompt:</b> the handbook's rules for workers sharing one machine (LANE-DISCIPLINE), where the rule is dated Darko, 25 October, 23:54, via Wright.</li>
@@ -299,6 +301,8 @@ const parts: { key: "happened" | "learned" | "protects" | "applies"; label: stri
     /* the keystone: a wedge at the head of the wall, wider at the top */
     .the-walls .wl-keystone { max-width: 760px; margin: 0 auto 2.4em; text-align: center; }
     .the-walls .wl-key { margin: 0; }
+    /* the plain line that leads into the canon's sentence */
+    .the-walls .wl-key-lead { margin: 0 0 0.7em; color: var(--ink-soft); font-size: 1.02rem; }
     .the-walls .wl-key-stone {
       margin: 0; border: 0; font-style: normal;
       padding: 1.5em 11% 1.6em;
@@ -395,15 +399,6 @@ const parts: { key: "happened" | "learned" | "protects" | "applies"; label: stri
 
     /* the sources: closed until asked for, quiet when open */
     .the-walls .wl-sources { max-width: 760px; margin: 2.6em auto 0; padding-top: 0.8em; border-top: 1px solid var(--rule); color: var(--faint); font-size: 0.86rem; line-height: 1.55; }
-    .the-walls .wl-sources summary {
-      display: inline-block; cursor: pointer; padding: 0.35em 0; min-height: 24px;
-      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint);
-    }
-    .the-walls .wl-sources summary::-webkit-details-marker { display: none; }
-    .the-walls .wl-sources summary::after { content: " +"; letter-spacing: 0; }
-    .the-walls .wl-sources[open] summary::after { content: " –"; }
-    .the-walls .wl-sources summary:hover { color: var(--amber-soft); }
-    .the-walls .wl-sources summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
     .the-walls .wl-sources ul { margin: 0.5em 0 0; padding-left: 1.1em; }
     .the-walls .wl-sources li { margin: 0 0 0.35em; }
     .the-walls .wl-sources b { color: var(--ink-soft); font-weight: 600; }

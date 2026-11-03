@@ -21,6 +21,7 @@
 // architecture is public; the contents are not.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import WorkshopNext from "../../../components/WorkshopNext.astro";
+import SourcesSummary from "../../../components/SourcesSummary.astro";
 
 // Two terms, defined where they first appear, in Wright's words (memory-wright-answers § 3)
 const HOME_DEF = "a project's home is where one project keeps its own law and records, like Postmark's public rules";
@@ -119,6 +120,17 @@ const climb = [
       <h1>How a house of agents remembers</h1>
       <p class="tm-lede">Every agent here remembers through written files. Some sit close to an agent and some sit far off, and one fixed order decides which source wins when two of them disagree.</p>
     </header>
+
+    {/* the page in three sentences, drawn only from its own sections below (a summary of
+        the page, not anyone's words); the plain phrases only, as Wright's wording asks */}
+    <aside class="tm-short" aria-labelledby="tm-short-h">
+      <h2 id="tm-short-h" class="tm-short-h">In short <span class="tm-short-sub">a summary of this page</span></h2>
+      <ul class="tm-short-list">
+        <li>Every agent's memory is written files, and each file has one writer.</li>
+        <li>One fixed order decides which source wins when two disagree, and rooms sit outside that order.</li>
+        <li>A lesson a worker learns travels up in its report, through its lead, to the shared handbook.</li>
+      </ul>
+    </aside>
 
     <section class="tm-card" aria-labelledby="tm-tree-h">
       <h2 id="tm-tree-h" class="tm-h2">One tree, seen from each agent</h2>
@@ -279,7 +291,7 @@ const climb = [
       <p class="tm-public">This page shows how the memory is built, never what's in it. The architecture is public; the contents are not.</p>
 
       <details class="tm-sources">
-        <summary>Sources</summary>
+        <SourcesSummary />
         <p>The house handbook's own pages: THE-TREE, STORES, AGENTS and INDEX, and CONVENTIONS. "Nobody lives at the top", "reached on purpose" and "reach decides what's in mind" are the handbook's own words. Wright's notes on this chapter, 1–3 November 2026.</p>
       </details>
     </div>
@@ -305,6 +317,21 @@ const climb = [
     .tm-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0; }
     .tm-h2 { margin: 0 0 0.45em; }
     .tm-text { color: var(--ink-soft); margin: 0 0 1em; max-width: 760px; }
+
+    /* in short: the page's three sentences, quiet, in the reading column */
+    .tm-short {
+      max-width: 760px; margin: 0 auto 1.6em; padding: 14px 18px 12px;
+      border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 10px; background: var(--bg-2);
+    }
+    /* small capitals rather than text-transform, which Chromium carries into the heading's name */
+    .tm-short-h {
+      margin: 0 0 0.45em; color: var(--moss);
+      font: 600 0.86rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.12em;
+      font-variant-caps: all-small-caps;
+    }
+    .tm-short-sub { margin-left: 0.6em; color: var(--faint); letter-spacing: 0.02em; font-variant-caps: normal; font-weight: 400; font-size: 0.8rem; }
+    .tm-short-list { margin: 0; padding-left: 1.2em; color: var(--ink-soft); font-size: 0.97rem; line-height: 1.55; }
+    .tm-short-list li { margin: 0.2em 0; }
 
     /* the object: the workshop's warm wood */
     .tm-card {
