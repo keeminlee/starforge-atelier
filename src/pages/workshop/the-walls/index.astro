@@ -1,0 +1,424 @@
+---
+// The Workshop · The Walls (Atelier campaign, STAR-98; notes/workshop-plan.md § 2). A
+// PROPOSAL page: noindex, in no nav, until Darko's say. The bench links it in later.
+// The rules that hold, and what earned each. The keystone is CANON § 6, the principle the
+// stones answer to (Wright's ruling 6, 2026-11-02); its sentence is whole, and Darko may
+// strike it (Q-P4). Five stones: warm brown faces, paper backs (Rei's call 3). Each face
+// states a rule, with a scope line where the rule alone reads as absolute; each back gives
+// what happened, what was learned, what it protects and where it applies, sourced to
+// notes/walls-stones.md as ruled by Wright (ANSWERS.md, "Wright on the Walls' sourcing
+// sheet"), with round 2's Truey and Snag notes. A date appears only where the record gives
+// one; times live in the Sources, not in the stones.
+//
+// Every word is in the HTML: without JavaScript, each stone shows its face and its back.
+// The inline script below the wall turns each face into a real button (aria-expanded) and
+// lays the stones face up, except Delete nothing, which stays turned over so the gesture is
+// shown before it's asked for. It runs as the page parses, so the wall doesn't jump.
+// Styles are global and namespaced under .the-walls, since the script builds the buttons.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+type Stone = {
+  id: string;
+  rule: string;
+  scope?: string;
+  turned?: boolean;
+  happened: string;
+  learned: string;
+  protects: string;
+  applies: string;
+  history?: { heading: string; versions: { label: string; text: string; old?: boolean }[] };
+};
+
+// Copy is plain HTML strings, written here (set:html); nothing in them comes from outside.
+// Wright is glossed where he first appears in the HTML (the first stone) and on the stone
+// turned over at load, which is where most visitors first meet him.
+const WRIGHT = "Wright, one of Darko's two AI companions";
+
+const stones: Stone[] = [
+  {
+    // the parent rule comes first; "Delete nothing" grew from it
+    id: "never-prompt",
+    rule: "Never run a command that can prompt.",
+    scope: "A prompt here is a command that stops and waits for someone to answer a question.",
+    happened: `Darko set it down on 25 October, through ${WRIGHT}. The record gives the rule's date and its reason, not a single incident. It's the rule that “Delete nothing” grew from.`,
+    learned:
+      "A command that stops to ask is abandoned and reported, never waited on. Deleting is the commonest trigger, so a brief puts the rule in its practical form: don't delete; name what should go.",
+    protects: "Every other worker running at the same time. One prompt stalls every worker until Darko answers it.",
+    applies: "Every worker, on every command it runs. A worker running unattended uses commands that never stop to ask.",
+  },
+  {
+    // turned over at load: its record is the plainest, a dated delete and what it led to
+    id: "delete-nothing",
+    rule: "Delete nothing.",
+    scope: "For every worker that builds or checks.",
+    turned: true,
+    happened: `On 30 October 2026, a worker's delete command reached Darko's permission prompt. From then on, ${WRIGHT}, has made it his rule that every worker's brief carries, in writing, the walls every worker works within. On 31 October and 1 November, two workers cleared files out of working copies they didn't hold.`,
+    learned: "A worker in a shared working copy can't tell what's safe to remove.",
+    protects: "Work and records that aren't the worker's.",
+    applies:
+      "Every worker that builds or checks. A worker lists what should go, and leaves it. Deleting happens only on Darko's word, for a named list. A campaign's own branches are outside this rule, by Darko's ruling of 2 November 2026.",
+  },
+  {
+    id: "publish",
+    rule: "Building a change isn't the decision to publish it.",
+    happened:
+      "On this site, merging a change into the branch the live site is built from publishes it. Darko noted that if checking each proposed change for fit is overwhelming, it has become code review. On 2 November 2026, he ruled the current form, below.",
+    history: {
+      heading: "What changed: who decides a merge, and how",
+      versions: [
+        {
+          label: "Until the morning of 2 November 2026",
+          old: true,
+          text: "Merging into the live site's branch publishes, so Darko merges, or says go for one named proposed change. The campaign's workers never merge.",
+        },
+        {
+          label: "Since then",
+          text: "A campaign's own branches are its own to organize, merge and delete. Merging into the live site's branch publishes, so every such merge is Darko's and Wright's, decided on the campaign's written account of what was built, and Wright carries it out.",
+        },
+      ],
+    },
+    learned:
+      "Whether the right thing was built is a different question from whether the code is correct. The first is Darko's and Wright's, read from a written account of what was built. The second is the campaign's own, checked by a worker that didn't build it.",
+    protects:
+      "What the public sees, and the decision itself: what goes public is decided by Darko and Wright, reading what was built, not by the worker that built it.",
+    applies:
+      "On this site. Only a merge into the branch the live site is built from publishes, and that merge is Darko's and Wright's, from a written account of what was built. Postmark, the house's main work, ships differently: its code goes out in a weekly release, with Darko's approval, and a release tag.",
+  },
+  {
+    id: "never-grades",
+    rule: "A builder never grades its own work.",
+    happened:
+      "On 8 October, fresh reviewers found a real defect the lane's own tests had passed: the tests of the worker that built it.",
+    learned:
+      "The builder holds the design and tests what it built. The reviewer holds the ruling and asks what the build does at its edges, reading it “against the ruling, not against the builder's account of it.”",
+    protects:
+      "The match between what was asked for and what was built. A builder's own tests can share its blind spots, and a test can even pin a flaw in place as if it were wanted.",
+    applies:
+      "Every pairing of a builder and a reviewer in the house. “Done” is written down before building, and a worker that didn't build the change checks it.",
+  },
+  {
+    id: "own-copy",
+    rule: "Every worker has its own copy, and claims it first.",
+    scope: "In Postmark's shared copies.",
+    happened:
+      "On 9 July, a reset in another agent's live working copy earned this rule, and Wright named it “the single most important discipline.” The handbook says most rules like this one were earned the hard way: workers lost copies, wiped each other's work that wasn't yet recorded, and stalled the night.",
+    learned:
+      "Ask “whose copy is this?” before any write. A copy has one owner at a time. Claiming it is the first command on a copy, nothing touches it until the claim succeeds, and a refused claim means the worker doesn't touch that copy.",
+    protects: "Other workers' work in progress, including files not yet recorded in the project's history, and test runs still going.",
+    applies:
+      "Postmark's shared working copies, which a worker claims by name before touching and releases when it hands in. This site's campaign builds in copies of its own. The first question, whose copy this is, applies everywhere.",
+  },
+];
+
+const parts: { key: "happened" | "learned" | "protects" | "applies"; label: string }[] = [
+  { key: "happened", label: "What happened" },
+  { key: "learned", label: "What was learned" },
+  { key: "protects", label: "What it protects" },
+  { key: "applies", label: "Where it applies" },
+];
+---
+<BaseLayout
+  title="The Walls: the rules that hold — Starforge"
+  description="The rules the house's AI agents work within, and what earned each."
+  noindex={true}
+>
+  <article class="the-walls">
+    <header class="wl-head">
+      <p class="wl-back-link"><a href="/workshop/">← The Workshop</a></p>
+      <p class="wl-kick">The Workshop · The Walls</p>
+      <h1>The rules that hold</h1>
+      <p class="wl-lede">These are the rules the house's AI agents work within. A worker here is an AI agent made for one job, such as building a change or checking one, and it works in a working copy: its own copy of the code. Darko is the one person here, and the final word is his. <a class="wl-who" href="/workshop/the-hands/">Who works here →</a></p>
+      <p class="wl-lede">Each stone below states one rule on its face. Turn it over to read what happened, what was learned, what the rule protects and where it applies.</p>
+    </header>
+
+    <section class="wl-keystone" aria-labelledby="wl-key-h">
+      <h2 id="wl-key-h" class="wl-label">The keystone</h2>
+      <figure class="wl-key">
+        <blockquote class="wl-key-stone">
+          <p>Make the relevant state visible; keep the next move reversible where possible; identify the first irreversible boundary; sign off <strong>there</strong>, not everywhere; don't let cadence, automation, or confidence silently become authority.</p>
+        </blockquote>
+        <figcaption class="wl-key-cap">The house canon, § 6: “Preserve the Questionable Moment.” Canonized 17 May 2026.</figcaption>
+      </figure>
+      <p class="wl-key-note">No one mistake earned it; it's the principle every stone below answers to.</p>
+    </section>
+
+    <section class="wl-wall" aria-labelledby="wl-wall-h">
+      <h2 id="wl-wall-h" class="wl-label">The stones</h2>
+      <p class="wl-intro">One stone, Delete nothing, is already turned over.</p>
+
+      <ul class="wl-stones" role="list">
+        {stones.map((s) => (
+          <li class="wl-stone" id={`stone-${s.id}`} data-turned={s.turned ? "" : undefined}>
+            <div class="wl-face">
+              <h3 class="wl-face-h"><span class="wl-rule">{s.rule}</span></h3>
+              {s.scope && <p class="wl-scope" id={`scope-${s.id}`}>{s.scope}</p>}
+            </div>
+            <div class="wl-back" id={`back-${s.id}`}>
+              <dl class="wl-parts">
+                {parts.map((p) => (
+                  <div class={`wl-part wl-part-${p.key}`}>
+                    <dt>{p.label}</dt>
+                    <dd set:html={s[p.key]} />
+                  </div>
+                ))}
+              </dl>
+              {s.history && (
+                <div class="wl-history">
+                  <p class="wl-history-h">{s.history.heading}</p>
+                  <div class="wl-versions">
+                    {s.history.versions.map((v) => (
+                      <div class={v.old ? "wl-version is-old" : "wl-version"}>
+                        <p class="wl-version-h">{v.label}{v.old && <span class="wl-tag"> · superseded</span>}</p>
+                        <p set:html={v.text} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <script is:inline>
+      // Each face becomes a button that turns its stone over. Without this script every
+      // back stays shown, so every word is readable. The animation lives in CSS, under
+      // prefers-reduced-motion: no-preference only.
+      (function () {
+        var wall = document.querySelector(".the-walls .wl-stones");
+        if (!wall) return;
+        var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+        // A stone turned over by the visitor whose back runs below the window comes into
+        // view by the least scroll that shows it, never past its own face.
+        var reveal = function (stone) {
+          var r = stone.getBoundingClientRect();
+          var room = window.innerHeight;
+          if (r.bottom <= room) return;
+          var by = Math.min(r.bottom - room + 16, r.top - 16);
+          if (by > 0) window.scrollBy({ top: by, behavior: still && still.matches ? "auto" : "smooth" });
+        };
+        var stones = wall.querySelectorAll(".wl-stone");
+        for (var i = 0; i < stones.length; i++) (function (stone) {
+          var h = stone.querySelector(".wl-face-h");
+          var rule = h.querySelector(".wl-rule");
+          var scopeP = stone.querySelector(".wl-scope");
+          var back = stone.querySelector(".wl-back");
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "wl-turn";
+          btn.setAttribute("aria-controls", back.id);
+          btn.appendChild(rule);
+          // the scope line moves inside the button, so a tap on it turns the stone too; it
+          // is heard as the button's description, and kept out of its name
+          if (scopeP) {
+            var scope = document.createElement("span");
+            scope.className = "wl-scope";
+            scope.id = scopeP.id;
+            scope.textContent = scopeP.textContent;
+            scope.setAttribute("aria-hidden", "true");
+            scopeP.parentNode.removeChild(scopeP);
+            btn.appendChild(scope);
+            btn.setAttribute("aria-describedby", scope.id);
+          }
+          var hint = document.createElement("span");
+          hint.className = "wl-hint";
+          hint.setAttribute("aria-hidden", "true");
+          btn.appendChild(hint);
+          h.appendChild(btn);
+          stone.classList.add("is-live");
+          var set = function (open, byVisitor) {
+            btn.setAttribute("aria-expanded", open ? "true" : "false");
+            hint.textContent = open ? "Turn it back" : "Turn it over";
+            stone.classList.toggle("is-turned", open);
+            back.hidden = !open;
+            back.classList.remove("is-turning");
+            if (open && byVisitor) {
+              void back.offsetWidth; // restart the animation on a quick second turn
+              back.classList.add("is-turning");
+              reveal(stone);
+            }
+          };
+          back.addEventListener("animationend", function () { back.classList.remove("is-turning"); });
+          btn.addEventListener("click", function () { set(btn.getAttribute("aria-expanded") !== "true", true); });
+          set(stone.hasAttribute("data-turned"), false);
+        })(stones[i]);
+      })();
+    </script>
+
+    <details class="wl-sources">
+      <summary>Sources</summary>
+      <ul>
+        <li><b>The keystone:</b> the house canon, section 6, “Preserve the Questionable Moment,” canonized 17 May 2026 (CANON_PRIME).</li>
+        <li><b>Never run a command that can prompt:</b> the handbook's rules for workers sharing one machine (LANE-DISCIPLINE), where the rule is dated Darko, 25 October, 23:54, via Wright.</li>
+        <li><b>Delete nothing:</b> Wright's record, for 30 October 2026, and his ruling on this page's sources, 2 November 2026; the building worker's instructions, from Wright, 1 November 2026, for 31 October and 1 November (plumb.md); the handbook's rules for workers sharing one machine (LANE-DISCIPLINE); the handbook's note on deleting (MOVES-AND-STATES); Darko's ruling of 2 November 2026, 09:10 EST, on a campaign's own branches (ARTI, section 5).</li>
+        <li><b>Building a change isn't the decision to publish it:</b> Darko's ruling of 2 November 2026, 09:10 EST, in the campaign worker's type (ARTI, section 5); Darko's note of 2 November 2026, 08:39 EST, in that file's earlier version; the contract for the house's agents (EXPERT-CONTRACT); this campaign's brief, before and after the ruling; Wright's ruling on how Postmark ships, 2 November 2026.</li>
+        <li><b>A builder never grades its own work:</b> the handbook's rules for building and reviewing (STAFFING-AND-REVIEW); the reviewing worker's type (TRUEY); the campaign worker's type (ARTI).</li>
+        <li><b>Every worker has its own copy, and claims it first:</b> the handbook's rules for workers sharing one machine (LANE-DISCIPLINE); the campaign worker's type (ARTI); Wright's ruling on this stone's scope, 2 November 2026.</li>
+      </ul>
+    </details>
+  </article>
+
+  <style is:global>
+    .the-walls {
+      --wl-face: linear-gradient(165deg, #6e4c2d 0%, #563a22 52%, #47301c 100%);
+      --wl-face-edge: #7f5a37;
+      --wl-mortar: #0f0c08;
+      --wl-paper: #efe6d4;
+      --wl-paper-ink: #2a2116;
+      --wl-paper-label: #7a5634;
+      --wl-paper-rule: #d8c9ad;
+      max-width: 860px;
+    }
+    .the-walls [hidden] { display: none !important; }
+
+    .the-walls .wl-head { max-width: 760px; margin: 0 auto 1.8em; }
+    .the-walls .wl-kick {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin: 0 0 0.9em;
+    }
+    /* the way back to the bench, in the kicker's type, above it (as on the Road) */
+    .the-walls .wl-back-link { font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.06em; margin: -0.45em 0 0.25em; }
+    .the-walls .wl-back-link a { display: inline-block; padding: 0.45em 0; color: var(--moss); text-decoration-color: rgba(151, 162, 102, 0.5); }
+    .the-walls .wl-back-link a:hover { color: var(--amber-soft); }
+    .the-walls h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
+    .the-walls .wl-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0 0 0.7em; }
+    .the-walls .wl-lede:last-child { margin-bottom: 0; }
+    /* padded to a 24px target, as the back link is */
+    .the-walls .wl-who { display: inline-block; padding: 0.45em 0; white-space: nowrap; font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif; font-weight: 600; font-size: 0.9em; }
+    .the-walls a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+    .the-walls .wl-label {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin: 0 0 0.8em;
+    }
+
+    /* the keystone: a wedge at the head of the wall, wider at the top */
+    .the-walls .wl-keystone { max-width: 760px; margin: 0 auto 2.4em; text-align: center; }
+    .the-walls .wl-key { margin: 0; }
+    .the-walls .wl-key-stone {
+      margin: 0; border: 0; font-style: normal;
+      padding: 1.5em 11% 1.6em;
+      background: var(--wl-face);
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+      color: var(--amber-soft);
+    }
+    .the-walls .wl-key-stone p { margin: 0; font-size: 1.12rem; line-height: 1.55; }
+    .the-walls .wl-key-stone strong { color: #fff1d6; }
+    .the-walls .wl-key-cap { margin: 0.8em 0 0; font: 600 0.84rem/1.45 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink-soft); letter-spacing: 0.01em; }
+    .the-walls .wl-key-note { margin: 0.5em 0 0; color: var(--faint); font-size: 0.95rem; }
+
+    /* the wall: stones set in dark mortar, laid in a running bond on wide screens; a
+       turned stone shifts less, so its open back stays near the column's middle */
+    .the-walls .wl-wall { max-width: 860px; margin: 0 auto; }
+    /* the label and intro keep the header's column; the wall itself is a little wider */
+    .the-walls .wl-wall > .wl-label { max-width: 760px; margin-left: auto; margin-right: auto; }
+    .the-walls .wl-intro { color: var(--ink-soft); margin: 0 auto 1em; max-width: 760px; }
+    .the-walls .wl-stones {
+      list-style: none; margin: 0; padding: 10px;
+      display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px;
+      background: var(--wl-mortar); border: 1px solid var(--rule); border-radius: 16px;
+    }
+    @media (min-width: 761px) {
+      .the-walls .wl-stone:nth-child(odd) { margin-right: 6%; }
+      .the-walls .wl-stone:nth-child(even) { margin-left: 6%; }
+      .the-walls .wl-stone.is-turned:nth-child(odd),
+      .the-walls .wl-stone:not(.is-live):nth-child(odd) { margin-right: 2%; }
+      .the-walls .wl-stone.is-turned:nth-child(even),
+      .the-walls .wl-stone:not(.is-live):nth-child(even) { margin-left: 2%; }
+    }
+    /* hand-cut: each stone's corners differ a little */
+    .the-walls .wl-stone { min-width: 0; border-radius: 12px 9px 13px 10px; overflow: hidden; border: 1px solid var(--wl-face-edge); background: var(--wl-paper); }
+    .the-walls .wl-stone:nth-child(3n+2) { border-radius: 9px 13px 10px 12px; }
+    .the-walls .wl-stone:nth-child(3n) { border-radius: 13px 10px 12px 9px; }
+
+    /* the face: the rule, and under it a scope line where the rule alone reads absolute */
+    .the-walls .wl-face {
+      position: relative; padding: 18px 20px; background: var(--wl-face);
+      box-shadow: inset 0 1px 0 rgba(255, 226, 180, 0.14); color: var(--amber-soft);
+    }
+    .the-walls .wl-face-h { margin: 0; font: 600 1.15rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0; color: inherit; }
+    .the-walls .wl-scope { display: block; margin: 0.3em 0 0; font: 400 0.9rem/1.45 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: #e6cda3; }
+    /* once the script has made the face a button: rule and hint on one row, the scope
+       under the rule; the button's ::after covers the whole face, so all of it is the target */
+    .the-walls .wl-turn {
+      display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1em; align-items: start;
+      width: 100%; margin: 0; padding: 0; text-align: left;
+      font: inherit; color: inherit; background: transparent; border: 0; border-radius: 0; cursor: pointer;
+    }
+    .the-walls .wl-turn .wl-rule { grid-column: 1; grid-row: 1; }
+    .the-walls .wl-turn .wl-scope { grid-column: 1; grid-row: 2; }
+    .the-walls .wl-turn .wl-hint { grid-column: 2; grid-row: 1; }
+    .the-walls .wl-turn::after { content: ""; position: absolute; inset: 0; }
+    .the-walls .wl-turn:focus-visible { outline: none; }
+    .the-walls .wl-turn:focus-visible::after { outline: 2px solid var(--amber); outline-offset: -4px; border-radius: 9px; }
+    .the-walls .wl-face:hover .wl-rule { color: #fff1d6; }
+    .the-walls .wl-hint {
+      padding: 0.3em 0.75em; border: 1px solid rgba(244, 214, 160, 0.45); border-radius: 999px; white-space: nowrap;
+      font: 600 0.78rem/1.2 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em;
+      color: #f0d3a2; background: rgba(20, 14, 8, 0.28);
+    }
+    .the-walls .wl-face:hover .wl-hint { border-color: var(--amber-soft); color: #fff1d6; }
+    /* a stone lying face up is the face alone; its paper shows once turned */
+    .the-walls .is-live:not(.is-turned) { background: transparent; }
+
+    /* the paper back: the four parts in one column, each label beside its text */
+    .the-walls .wl-back { background: var(--wl-paper); color: var(--wl-paper-ink); padding: 16px 20px 18px; }
+    .the-walls .wl-parts { margin: 0; display: grid; gap: 12px; }
+    .the-walls .wl-part { min-width: 0; display: grid; grid-template-columns: 10.5em minmax(0, 1fr); column-gap: 1.2em; }
+    .the-walls .wl-part + .wl-part { padding-top: 12px; border-top: 1px solid var(--wl-paper-rule); }
+    .the-walls .wl-part dt {
+      margin: 0.15em 0 0; color: var(--wl-paper-label);
+      font: 700 0.76rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .the-walls .wl-part dd { margin: 0; font-size: 0.97rem; line-height: 1.55; }
+    /* a rule that changed keeps both wordings, the old one marked, never struck out */
+    .the-walls .wl-history { margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid var(--wl-paper-rule); }
+    .the-walls .wl-history-h { margin: 0 0 0.6em; color: var(--wl-paper-label); font: 700 0.76rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.1em; text-transform: uppercase; }
+    .the-walls .wl-versions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .the-walls .wl-version { min-width: 0; padding: 10px 12px; border: 1px solid var(--wl-paper-rule); border-radius: 8px; background: #f6efe1; }
+    .the-walls .wl-version.is-old { background: transparent; border-style: dashed; color: #4e4130; }
+    .the-walls .wl-version p { margin: 0; font-size: 0.93rem; line-height: 1.5; }
+    .the-walls .wl-version .wl-version-h { margin: 0 0 0.3em; font: 600 0.82rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--wl-paper-ink); }
+    .the-walls .wl-tag { color: var(--wl-paper-label); font-weight: 600; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .the-walls .wl-back.is-turning { animation: wl-turn 0.42s cubic-bezier(0.2, 0.7, 0.2, 1); transform-origin: 50% 0; }
+    }
+    @keyframes wl-turn {
+      from { opacity: 0; transform: perspective(1000px) rotateX(-70deg); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* the sources: closed until asked for, quiet when open */
+    .the-walls .wl-sources { max-width: 760px; margin: 2.6em auto 0; padding-top: 0.8em; border-top: 1px solid var(--rule); color: var(--faint); font-size: 0.86rem; line-height: 1.55; }
+    .the-walls .wl-sources summary {
+      display: inline-block; cursor: pointer; padding: 0.35em 0; min-height: 24px;
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint);
+    }
+    .the-walls .wl-sources summary::-webkit-details-marker { display: none; }
+    .the-walls .wl-sources summary::after { content: " +"; letter-spacing: 0; }
+    .the-walls .wl-sources[open] summary::after { content: " –"; }
+    .the-walls .wl-sources summary:hover { color: var(--amber-soft); }
+    .the-walls .wl-sources summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+    .the-walls .wl-sources ul { margin: 0.5em 0 0; padding-left: 1.1em; }
+    .the-walls .wl-sources li { margin: 0 0 0.35em; }
+    .the-walls .wl-sources b { color: var(--ink-soft); font-weight: 600; }
+
+    /* phones: one column of stones; on a face the rule, its scope, then the hint; on a
+       back each label above its text */
+    @media (max-width: 600px) {
+      .the-walls .wl-key-stone { padding: 1.2em 8% 1.3em; clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); }
+      .the-walls .wl-key-stone p { font-size: 1.02rem; }
+      .the-walls .wl-stones { padding: 7px; gap: 7px; border-radius: 13px; }
+      .the-walls .wl-face { padding: 14px 14px; }
+      .the-walls .wl-face-h { font-size: 1.05rem; }
+      .the-walls .wl-turn { grid-template-columns: minmax(0, 1fr); }
+      .the-walls .wl-turn .wl-hint { grid-column: 1; grid-row: 3; justify-self: start; margin-top: 0.6em; }
+      .the-walls .wl-back { padding: 14px 14px 16px; }
+      .the-walls .wl-part { grid-template-columns: minmax(0, 1fr); }
+      .the-walls .wl-part dt { margin: 0 0 0.2em; }
+      .the-walls .wl-versions { grid-template-columns: minmax(0, 1fr); }
+    }
+  </style>
+</BaseLayout>
