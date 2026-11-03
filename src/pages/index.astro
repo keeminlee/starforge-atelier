@@ -1,11 +1,15 @@
 ---
 // The front door (Atelier campaign, STAR-98, PLAN § 1), built to sketch v2.
-// Rei's sentence and quieter line (approved by Darko, 2026-11-01 22:26) above two fixed
-// openings of equal weight: a story to linger with (Lila) and a build to follow (the
-// Forest Fire fix). They never rotate. Below them, quiet doors, not a feed, and the
-// workshop picture with one house sentence beside it (Rei's five calls, 2026-11-02).
+// Rei's sentence and quieter line (approved by Darko, 2026-11-01 22:26) above three fixed
+// openings of equal weight: a story to linger with (Lila), a build to follow (the Forest
+// Fire fix), and the house that makes them (the Workshop's bench, in miniature). The third
+// is Darko's ruling, 2026-11-02 18:47, relayed by Wright: once more than one chapter
+// stands, the Workshop gets an equal opening, not a quiet door. They never rotate. Below
+// them, quiet doors, not a feed, and the workshop picture with one house sentence beside it
+// (Rei's five calls, 2026-11-02).
 // Nothing runs on this page: no canvas, no iframe. The live comparison lives on the Road.
 import BaseLayout from "../layouts/BaseLayout.astro";
+import WorkshopMark from "../components/WorkshopMark.astro";
 
 const sentence =
   "Starforge is where Darko, two AI companions, and a small working house of agents make stories, worlds, and the tools that bring them to life.";
@@ -33,6 +37,17 @@ const road: { name: string; note: string; notyet?: boolean }[] = [
 ];
 
 const ROAD_STILLS = "/workshop/the-road/forest-fire";
+
+// The bench in miniature: the five pieces in the bench's order, each with the bench's own
+// object (the Road's is its pair of stills). A list, not five links: the opening's title
+// and its go link are the way in.
+const bench = [
+  { name: "The Road" },
+  { name: "The Hands", mark: "hands" },
+  { name: "The Walls", mark: "walls" },
+  { name: "The Memory", mark: "memory" },
+  { name: "The Rig", mark: "rig" },
+] as const;
 ---
 <BaseLayout title="Starforge — a public atelier" description={sentence}>
   <header class="fd-lede">
@@ -40,8 +55,8 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
     <p class="fd-line">Start with a story, or follow how one small thing gets made.</p>
   </header>
 
-  <nav class="fd-jumps" aria-label="Two ways in">
-    <a href="#story">↓ a story</a><span aria-hidden="true">·</span><a href="#build">↓ a build</a>
+  <nav class="fd-jumps" aria-label="Three ways in">
+    <a href="#story">↓ a story</a><span aria-hidden="true">·</span><a href="#build">↓ a build</a><span aria-hidden="true">·</span><a href="#workshop">↓ the workshop</a>
   </nav>
 
   <section class="fd-openings">
@@ -90,16 +105,34 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
       </ol>
       <p class="fd-go"><a href="/workshop/the-road/">Walk the whole road →</a></p>
     </article>
+
+    <article class="fd-opening fd-workshop" id="workshop" aria-labelledby="workshop-title">
+      <p class="fd-kick">The house that makes them</p>
+      <h2 id="workshop-title"><a href="/workshop/">The Workshop</a></h2>
+      <p class="fd-sub">Start with one thing we made. Then follow the hands, habits and machinery that helped it happen.</p>
+      <ul class="fd-bench" role="list">
+        {bench.map((p) => (
+          <li>
+            {"mark" in p ? (
+              <WorkshopMark piece={p.mark} />
+            ) : (
+              <span class="fd-bench-pair" aria-hidden="true">
+                <img src={`${ROAD_STILLS}/ff-before.png`} width="714" height="428" alt="" />
+                <img src={`${ROAD_STILLS}/ff-after.png`} width="714" height="428" alt="" />
+              </span>
+            )}
+            <span class="fd-bench-name">{p.name}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="fd-go"><a href="/workshop/">Step into the Workshop →</a></p>
+    </article>
   </section>
 
   <nav class="fd-doors" aria-label="Doors">
     <a class="fd-door" href="/atelier/">
       <b>The Atelier</b>
       <span>Where the work lives — Postmark, the Atlas of Emergence, Wright's self-portrait, and more. An open process, not a finished product.</span>
-    </a>
-    <a class="fd-door" href="/workshop/the-road/">
-      <b>The Workshop</b>
-      <span>How it's made · chapter one</span>
     </a>
     <a class="fd-door" href="https://postmark.town/">
       <b>Postmark</b>
@@ -174,10 +207,10 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
     }
     .fd-jumps a:hover { color: var(--amber); }
 
-    /* ── the two openings: equal weight, fixed, never rotating ───────── */
+    /* ── the three openings: equal weight, fixed, never rotating ─────── */
     .fd-openings {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
       align-items: stretch;
     }
@@ -198,6 +231,8 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
       margin: 0 0 0.45em;
       font-size: clamp(1.5rem, 3vw, 2.1rem);
       line-height: 1.15;
+      /* three to a row, a title can wrap: no word left alone on its last line */
+      text-wrap: balance;
     }
     /* the titles open their pages too (the text links below stay) */
     .fd-opening h2 a {
@@ -422,10 +457,56 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
     .fd-road .fd-notyet b,
     .fd-road .fd-notyet span { color: #a99a80; }
 
+    /* C: the house that makes them: the same warm wood, lit by the lantern's amber */
+    .fd-workshop {
+      background:
+        radial-gradient(circle at 82% 8%, rgba(237, 186, 104, 0.12), transparent 16rem),
+        linear-gradient(180deg, var(--bg-3), var(--bg-2));
+      border: 1px solid rgba(237, 186, 104, 0.3);
+    }
+    .fd-workshop .fd-kick { color: var(--amber); }
+    .fd-workshop .fd-go { color: var(--amber-soft); }
+    .fd-workshop .fd-go a:hover { color: #fff1d6; }
+
+    /* the bench in miniature: a plain list, each piece's object beside its name. No boxes
+       and no hover, so nothing in it looks pressable: the opening's one way in is its
+       title and its go link */
+    .fd-bench {
+      list-style: none;
+      margin: 0.2em 0 0.4em;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    }
+    .fd-bench li {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      align-items: center;
+      column-gap: 0.85em;
+      min-width: 0;
+    }
+    .fd-bench-name { color: var(--ink-soft); font-size: 0.92rem; }
+    /* the Road's object is its pair of stills, dark and lit, at the size of the others */
+    .fd-bench-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2px;
+      width: 48px;
+    }
+    .fd-bench-pair img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(244, 214, 160, 0.34);
+      border-radius: 3px;
+      background: #05070c;
+    }
+
     /* ── quiet doors, not a feed ─────────────────────────────────────── */
     .fd-doors {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
       margin: 26px auto 0;
     }
@@ -504,11 +585,21 @@ const ROAD_STILLS = "/workshop/the-road/forest-fire";
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.88);
     }
 
+    /* ── middle widths: the story and the build side by side, the workshop under them,
+       its bench in a row of five ─────────────────────────────────────── */
+    @media (max-width: 1099px) and (min-width: 821px) {
+      .fd-openings { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .fd-workshop { grid-column: 1 / -1; }
+      .fd-workshop .fd-bench { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    }
+
     /* ── phones: Lila first, the jump links above the stack ──────────── */
     @media (max-width: 820px) {
       .fd-jumps { display: flex; }
       .fd-openings { grid-template-columns: minmax(0, 1fr); }
       .fd-doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      /* three doors in two columns: the rooms take the second row whole */
+      .fd-rooms { grid-column: 1 / -1; }
       .fd-house { grid-template-columns: minmax(0, 1fr); }
     }
     @media (max-width: 520px) {

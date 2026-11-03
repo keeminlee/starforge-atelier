@@ -1,0 +1,405 @@
+---
+// The Workshop · The Rig, a cutaway (Atelier campaign, STAR-98; notes/workshop-plan.md § 5).
+// A PROPOSAL page: noindex, in no nav and no index, until Darko's say. Jetto read the first
+// draft (notes/rig-copy-for-jetto.md § Jetto's read); his lines are quoted as his.
+//
+// Shape only, by Jetto's public line: the pod names and their leads, the Arti type, the
+// doorbell's three words, that a heavy-build throttle exists, the pool and its claims, a
+// guard on every tool call that refuses what no worker may do, and the flow. Never on this
+// page: counts of seats, workers, copies or anything else; users, hosts, ids, paths; what
+// the guard refuses in specific terms; where it does or doesn't run; who each bell wakes.
+//
+// The chips are kinds, never counts: one plural label per kind, so no seat count is
+// implied. The pool is drawn as one band with a texture, never as separate copies, and the
+// throttle as a plain band, no more than its sentence says.
+//
+// The object is a cutaway, five layers of one machine. Without JavaScript all five show,
+// stacked, each with its paragraph. The script adds the layer buttons (aria-pressed), lights
+// the chosen layer, folds the others' paragraphs, says which layer is shown in a live
+// region, and brings a chosen layer's text into view by the minimum. A layer's picture row
+// is the same action as its button, with no tab stop of its own. Dimmed layers dim by
+// colour, never opacity, so every dimmed label keeps at least 4.5:1. Nothing animates under
+// prefers-reduced-motion.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import WorkshopNext from "../../../components/WorkshopNext.astro";
+import SourcesSummary from "../../../components/SourcesSummary.astro";
+
+const layers = [
+  { id: "pods", n: 1, label: "Pods" },
+  { id: "pool", n: 2, label: "Pool" },
+  { id: "guard", n: 3, label: "Guard" },
+  { id: "bells", n: 4, label: "Bells" },
+  { id: "flow", n: 5, label: "Flow" },
+];
+
+// Jetto's words, verbatim (notes/rig-copy-for-jetto.md § Jetto's read)
+const FLOW = ["a brief", "a worker in its own copy", "guarded tools", "checks", "a reviewer that didn't build it", "Wright's fit word and the merge", "Darko approves what ships"];
+const FLOW_CAMPAIGN = ["its own branches", "its own reviewers", "a debrief", "Darko and Wright decide the merge"];
+const ARROW = " → ";
+---
+<BaseLayout
+  title="The Rig: where the workers run — Starforge"
+  description="A cutaway of the rig the house's workers run on: the pods, the pool, the guard, the bells and the flow."
+  noindex={true}
+>
+  <article class="the-rig">
+    <header class="rg-head">
+      <p class="rg-back"><a href="/workshop/">← The Workshop</a></p>
+      <p class="rg-kick">The Workshop · The Rig</p>
+      <h1>Where the workers run</h1>
+      <p class="rg-lede">The house's workers are AI agents, each made for one job. The rig is the machinery they run on. Here it is cut open: the pods the workers are sorted into, the pool they build in, the guard every action passes, the bells they ring, and the way the work flows through.</p>
+      <figure class="rg-why">
+        <blockquote><p>“The rig is where many hands can build at once without stepping on each other or on the town: each worker gets its own copy, a guard on every action, and a bell that says what kind of news is waiting.”</p></blockquote>
+        <figcaption><span aria-hidden="true">— </span>Jetto, who keeps the machinery</figcaption>
+      </figure>
+    </header>
+
+    <section class="rg-card" aria-labelledby="rg-cut-h">
+      <h2 id="rg-cut-h" class="rg-h2">The cutaway</h2>
+      <p class="rg-text">Five layers of one machine, drawn one above another so they can be read in order, not because each rests on the one above.<span class="rg-js-only" hidden> Choose a layer to light it.</span></p>
+
+      <div class="rg-controls" role="group" aria-label="Layers of the cutaway" hidden>
+        {layers.map((l) => (
+          <button type="button" class="rg-btn" data-show={l.id} aria-pressed="false" aria-controls={`rg-${l.id}`}>
+            <span class="rg-btn-n" aria-hidden="true">{l.n}</span> {l.label}
+          </button>
+        ))}
+        <button type="button" class="rg-btn rg-btn-all" data-show="all" aria-pressed="false">All five</button>
+      </div>
+      <p class="rg-status" role="status" aria-live="polite"></p>
+
+      <div class="rg-section">
+        <section class="rg-layer" id="rg-pods" data-layer="pods" aria-labelledby="rg-pods-h">
+          <div class="rg-slice rg-slice-pods" aria-hidden="true">
+            <div class="rg-pod">
+              <b>platform</b>
+              <span class="rg-lead">lead: Rivet</span>
+              <span class="rg-chips"><span class="rg-chip rg-chip-b">builders</span><span class="rg-chip rg-chip-c">checkers</span></span>
+            </div>
+            <div class="rg-pod">
+              <b>world</b>
+              <span class="rg-lead">lead: Bevel</span>
+              <span class="rg-chips"><span class="rg-chip rg-chip-b">builders</span><span class="rg-chip rg-chip-c">checkers</span></span>
+            </div>
+            <div class="rg-pod">
+              <b>starforge</b>
+              <span class="rg-lead">no lead</span>
+              <span class="rg-chips"><span class="rg-chip rg-chip-k">campaigns</span></span>
+            </div>
+            <p class="rg-key"><span class="rg-key-i rg-key-b">builders</span> · <span class="rg-key-i rg-key-c">checkers</span> · <span class="rg-key-i rg-key-k">campaigns</span></p>
+          </div>
+          <div class="rg-explain">
+            <h3 id="rg-pods-h" class="rg-name"><span class="rg-n" aria-hidden="true">1</span>The pods</h3>
+            <p class="rg-para">The workers are sorted into pods. The platform pod builds Postmark's platform, and its lead is Rivet. The world pod builds Postmark's world, and its lead is Bevel. Each of those two has builders and checkers. The starforge pod holds the long campaigns, and it has no lead. Each campaign is run by an Arti, a kind of worker that runs one long campaign from a folder of notes and staffs its own builders and checkers. A campaign works only on its own branches. What merges is decided by Darko and Wright, from the campaign's debrief.</p>
+          </div>
+        </section>
+
+        <section class="rg-layer" id="rg-pool" data-layer="pool" aria-labelledby="rg-pool-h">
+          <div class="rg-slice rg-slice-pool" aria-hidden="true">
+            <div class="rg-band rg-copies"><span>working copies, each claimed by name</span></div>
+            <div class="rg-band rg-throttle"><span>heavy builds share a throttle</span></div>
+          </div>
+          <div class="rg-explain">
+            <h3 id="rg-pool-h" class="rg-name"><span class="rg-n" aria-hidden="true">2</span>The pool</h3>
+            <p class="rg-para">On the rig, builders work in copies of the code kept in a shared pool. A worker claims a copy by name before it touches it, and gives it back when it hands in its work. A copy has one holder at a time, and a refused claim means the worker doesn't touch that copy. Heavy builds share a throttle.</p>
+          </div>
+        </section>
+
+        <section class="rg-layer" id="rg-guard" data-layer="guard" aria-labelledby="rg-guard-h">
+          <div class="rg-slice rg-slice-guard" aria-hidden="true">
+            <div class="rg-gate"><span>every tool call passes the guard</span></div>
+          </div>
+          <div class="rg-explain">
+            <h3 id="rg-guard-h" class="rg-name"><span class="rg-n" aria-hidden="true">3</span>The guard</h3>
+            <p class="rg-para">On the rig, every tool call a worker makes passes a guard first, and the guard refuses what no worker may do. It's there because rules in written instructions were missed, more than once; a check that runs on every action doesn't depend on anyone reading them. In the house's handbook, a rule that a check can enforce becomes a guard. What exactly it refuses stays off this page, so the page can't serve as a map for getting around it.</p>
+          </div>
+        </section>
+
+        <section class="rg-layer" id="rg-bells" data-layer="bells" aria-labelledby="rg-bells-h">
+          <div class="rg-slice rg-slice-bells" aria-hidden="true">
+            <span class="rg-bell rg-bell-f">FINISHED</span>
+            <span class="rg-bell rg-bell-b">BLOCKED</span>
+            <span class="rg-bell rg-bell-x">FAULT</span>
+          </div>
+          <div class="rg-explain">
+            <h3 id="rg-bells-h" class="rg-name"><span class="rg-n" aria-hidden="true">4</span>The bells</h3>
+            <p class="rg-para">When there's news, a doorbell rings, and it carries one word: FINISHED, BLOCKED or FAULT. The details are written down first, in the record, so the bell only has to say what kind of news is waiting there. At night, only the urgent rings; the rest waits for morning.</p>
+          </div>
+        </section>
+
+        <section class="rg-layer" id="rg-flow" data-layer="flow" aria-labelledby="rg-flow-h">
+          <div class="rg-slice rg-slice-flow" aria-hidden="true">
+            <p class="rg-variant rg-variant-first">in Postmark</p>
+            <ol class="rg-steps">
+              {FLOW.map((s) => <li class="rg-step">{s}</li>)}
+            </ol>
+            <p class="rg-variant">in a campaign like the one that revamped this site, the middle reads</p>
+            <ol class="rg-steps rg-steps-campaign">
+              <li class="rg-step rg-step-gap">…</li>
+              {FLOW_CAMPAIGN.map((s) => <li class="rg-step">{s}</li>)}
+            </ol>
+          </div>
+          <div class="rg-explain">
+            <h3 id="rg-flow-h" class="rg-name"><span class="rg-n" aria-hidden="true">5</span>The flow</h3>
+            <p class="rg-para">In Postmark, the work flows like this, in Jetto's words: “{FLOW.join(ARROW)}.” In a campaign like the one that revamped this site, the middle reads: “…{FLOW_CAMPAIGN.join(ARROW)}.”</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="rg-note" aria-labelledby="rg-keep-h">
+      <h2 id="rg-keep-h" class="rg-h2">Who keeps it</h2>
+      <p class="rg-text">Jetto keeps the machinery: builds, releases, the rig, and the upkeep of the town's agents. Jetto is one of the agents who each keep one part of the work.</p>
+    </section>
+
+    <details class="rg-sources">
+      {/* the open/closed mark is an aria-hidden span, so the summary is named "Sources" */}
+      <SourcesSummary />
+      <ul>
+        <li>Jetto's notes on what may be shown of the rig, 1 and 3 November 2026: the pods and their leads, the Arti, the doorbell's three words, the throttle, the flow, the lines quoted as his, and that a copy has one holder at a time (jetto-answers, rig-copy-for-jetto).</li>
+        <li>Darko's rulings of 2 November 2026, as Jetto gave them: a campaign's own branches and who decides its merge, and the night bells (rig-copy-for-jetto).</li>
+        <li>The campaign's own map of how the house works, read for accuracy by Wright and Jetto: what each pod builds, what an Arti is, and who keeps the machinery (MAP).</li>
+        <li>The house handbook's page on lane discipline: claiming a copy by name before touching it (LANE-DISCIPLINE).</li>
+        <li>The house handbook's index of its craft pages: a rule a check can enforce becomes a guard (CRAFT/INDEX).</li>
+        <li>Wright's ruling of 2 November 2026: the guard is shown here, in the Rig, rather than among the Walls (ANSWERS).</li>
+      </ul>
+    </details>
+
+    <WorkshopNext from="/workshop/the-rig/" />
+  </article>
+
+  <style>
+    .the-rig { max-width: 1120px; }
+    .rg-head { max-width: 760px; margin: 0 auto 1.6em; }
+    /* the way back to the bench, in the kicker's type, above it (as on the Road) */
+    .rg-back { font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.06em; margin: -0.45em 0 0.25em; }
+    /* padded to a 24px target */
+    .rg-back a { display: inline-block; padding: 0.45em 0; color: var(--moss); text-decoration-color: rgba(151, 162, 102, 0.5); }
+    .rg-back a:hover { color: var(--amber-soft); }
+    .rg-kick {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin: 0 0 0.9em;
+    }
+    .rg-head h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
+    .rg-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0; }
+    /* Jetto's line on why the rig exists, quoted as his */
+    /* in the house's own blockquote (global.css), its rail and italic; the name under it */
+    .rg-why { margin: 1.3em 0 0; }
+    .rg-why blockquote { margin: 0; }
+    .rg-why p { margin: 0; }
+    .rg-why figcaption {
+      margin-top: 0.45em; padding-left: calc(1.1em + 3px); color: var(--faint);
+      font: 600 0.84rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.02em;
+    }
+    .rg-h2 { margin: 0 0 0.45em; }
+    .rg-text { color: var(--ink-soft); margin: 0 0 1em; }
+
+    /* the card: the workshop's warm wood, as the Road's */
+    .rg-card {
+      background: linear-gradient(180deg, var(--bg-3), var(--bg-2)); border: 1px solid var(--rule);
+      border-radius: 18px; padding: 26px 24px 22px;
+    }
+
+    /* the layer buttons: shown only once the script runs */
+    .rg-controls { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 0.6em; }
+    .rg-controls[hidden] { display: none; }
+    .rg-btn {
+      display: inline-flex; align-items: center; gap: 0.45em; min-height: 2.5em;
+      font: 600 0.92rem/1 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.02em;
+      color: var(--ink); background: transparent; border: 1px solid var(--faint); border-radius: 999px;
+      padding: 0.55em 1.05em; cursor: pointer;
+    }
+    .rg-btn:hover { background: var(--bg-3); }
+    .rg-btn[aria-pressed="true"] { color: var(--bg); background: var(--moss); border-color: var(--moss); }
+    .rg-btn-n {
+      display: inline-grid; place-items: center; width: 1.45em; height: 1.45em; border-radius: 50%;
+      border: 1px solid currentColor; font-size: 0.78em;
+    }
+    .rg-btn:focus-visible, .the-rig a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+    .rg-status { min-height: 1.5em; margin: 0 0 0.8em; font-size: 0.92rem; color: var(--faint); }
+
+    /* the cross-section: one block, layers separated by cut lines */
+    .rg-section { border: 1px solid var(--rule); border-radius: 14px; background: #120e08; overflow: hidden; }
+    .rg-layer {
+      display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 18px 24px; align-items: center;
+      padding: 18px 20px; border-top: 2px dashed var(--rule);
+    }
+    .rg-layer:first-child { border-top: 0; }
+    .rg-name { display: flex; align-items: center; gap: 0.55em; margin: 0 0 0.35em; font: 600 1.05rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+    .rg-n {
+      display: inline-grid; place-items: center; width: 1.8em; height: 1.8em; border-radius: 50%; flex: none;
+      border: 2px solid var(--moss); color: var(--moss); font-size: 0.8rem;
+    }
+    .rg-para { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
+
+    /* layer 1: the pods, three named boxes, chips as kinds, and a key to the chip colours */
+    .rg-slice-pods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .rg-pod {
+      display: flex; flex-direction: column; gap: 0.2em; min-width: 0;
+      border: 2px solid var(--rule); border-radius: 12px; padding: 10px 11px; background: #17130d;
+    }
+    .rg-pod b { font: 600 0.98rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--amber-soft); }
+    .rg-lead { color: var(--ink-soft); font-size: 0.85rem; }
+    .rg-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 0.4em; }
+    .rg-chip {
+      font: 600 0.72rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink-soft);
+      border: 1px solid var(--faint); border-radius: 999px; padding: 0.15em 0.6em;
+    }
+    .rg-chip-b { border-color: var(--moss); }
+    .rg-chip-c { border-color: #8fc4f2; }
+    .rg-key {
+      grid-column: 1 / -1; margin: 0; color: var(--ink-soft);
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.02em;
+    }
+    .rg-key-i::before {
+      content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.35em; vertical-align: -0.05em;
+      border-radius: 50%; border: 2px solid var(--faint);
+    }
+    .rg-key-b::before { border-color: var(--moss); }
+    .rg-key-c::before { border-color: #8fc4f2; }
+
+    /* layer 2: the pool as one textured band (no separate copies drawn); the throttle a
+       plain band, no more than its sentence says */
+    .rg-slice-pool { display: grid; gap: 8px; }
+    .rg-band {
+      display: flex; align-items: center; justify-content: center; text-align: center; min-height: 2.6em;
+      border-radius: 10px; padding: 0.5em 0.8em;
+      font: 600 0.82rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink);
+    }
+    .rg-band span { background: #120e08; border-radius: 6px; padding: 0.1em 0.45em; }
+    .rg-copies {
+      border: 1px solid var(--moss);
+      background: repeating-linear-gradient(90deg, #1d1710 0 14px, #262013 14px 16px);
+    }
+    .rg-throttle { border: 1px solid var(--rule); background: #1a150e; color: var(--ink-soft); }
+
+    /* layer 3: the guard, one dashed gate across the whole width */
+    .rg-gate {
+      display: flex; align-items: center; justify-content: center; text-align: center; min-height: 2.8em;
+      border: 2px dashed var(--amber); border-radius: 10px; padding: 0.5em 0.8em;
+      color: var(--amber-soft); font: 600 0.85rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      background: repeating-linear-gradient(135deg, rgba(237, 186, 104, 0.07) 0 8px, transparent 8px 16px);
+    }
+    .rg-gate span { background: #120e08; border-radius: 6px; padding: 0.1em 0.45em; }
+
+    /* layer 4: the three words */
+    .rg-slice-bells { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .rg-bell {
+      font: 700 0.8rem/1 ui-monospace, Consolas, monospace; letter-spacing: 0.04em;
+      padding: 0.6em 0.9em; border-radius: 999px; border: 1px solid var(--rule); background: var(--bg-2);
+    }
+    .rg-bell-f { color: #b5c27a; }
+    .rg-bell-b { color: var(--amber-soft); }
+    .rg-bell-x { color: #e58a6f; }
+
+    /* layer 5: the flow, Jetto's steps with arrows between, and the campaign's middle */
+    .rg-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; }
+    .rg-step {
+      position: relative; margin-left: 1.35em;
+      font: 600 0.76rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink-soft);
+      border: 1px solid var(--rule); border-radius: 8px; padding: 0.3em 0.55em; background: #17130d;
+    }
+    .rg-step:first-child { margin-left: 0; }
+    /* the arrow sits in the gap between the boxes, not inside the next one */
+    .rg-step + .rg-step::before {
+      content: "→"; color: var(--moss); position: absolute; left: -1.2em; top: 50%; transform: translateY(-50%);
+    }
+    .rg-step-gap { border-style: dashed; }
+    .rg-variant { margin: 0.75em 0 0.4em; color: var(--ink-soft); font: italic 0.82rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; }
+    .rg-variant-first { margin-top: 0; }
+
+    /* Lit and dimmed, once the script runs. Dimmed is by colour, never opacity: every
+       dimmed label stays at --faint or brighter on the section's ground (5:1 and up). Lit
+       has the rail, the tint and a heavier heading. */
+    .rg-layer.is-dim .rg-name { color: var(--faint); font-weight: 500; }
+    .rg-layer.is-dim .rg-n { border-color: var(--faint); color: var(--faint); }
+    .rg-layer.is-dim .rg-pod b,
+    .rg-layer.is-dim .rg-lead,
+    .rg-layer.is-dim .rg-chip,
+    .rg-layer.is-dim .rg-key,
+    .rg-layer.is-dim .rg-band,
+    .rg-layer.is-dim .rg-gate,
+    .rg-layer.is-dim .rg-bell,
+    .rg-layer.is-dim .rg-step,
+    .rg-layer.is-dim .rg-variant,
+    .rg-layer.is-dim .rg-step + .rg-step::before { color: var(--faint); }
+    .rg-layer.is-dim .rg-pod,
+    .rg-layer.is-dim .rg-chip,
+    .rg-layer.is-dim .rg-copies,
+    .rg-layer.is-dim .rg-gate,
+    .rg-layer.is-dim .rg-bell,
+    .rg-layer.is-dim .rg-step { border-color: var(--rule); }
+    .rg-layer.is-dim .rg-key-i::before { border-color: var(--rule); }
+    .rg-layer.is-lit { background: #1a170d; box-shadow: inset 4px 0 0 var(--moss); }
+    .rg-layer.is-lit .rg-name { font-weight: 700; }
+    /* the picture row is the same action as its button; it has no tab stop of its own */
+    .the-rig.is-enhanced .rg-slice { cursor: pointer; }
+    @media (prefers-reduced-motion: no-preference) {
+      .rg-layer { transition: background-color 0.2s ease; }
+      .rg-slice * { transition: color 0.2s ease, border-color 0.2s ease; }
+    }
+
+    .rg-note { max-width: 760px; margin: 2.4em auto 0; }
+    .rg-sources { max-width: 760px; margin: 2em auto 0; font-size: 0.88rem; color: var(--faint); }
+    .rg-sources ul { margin: 0.5em 0 0; padding-left: 1.2em; }
+    .rg-sources li { margin: 0 0 0.35em; }
+
+    @media (max-width: 760px) {
+      .rg-layer { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+      .rg-explain { order: -1; }
+    }
+    @media (max-width: 520px) {
+      .rg-card { padding: 18px 14px 16px; border-radius: 14px; }
+      .rg-layer { padding: 14px 12px; }
+      .rg-slice-pods { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+      .rg-pod { flex-direction: row; flex-wrap: wrap; align-items: baseline; column-gap: 0.7em; }
+      .rg-chips { margin-top: 0.1em; }
+    }
+  </style>
+
+  <script>
+    // The layer buttons. The page works without this: all five layers show, each with its
+    // paragraph. With it, one layer is lit at a time (or all five), the others dim and fold
+    // their paragraphs, the live region says which is shown, and a chosen layer's text is
+    // brought into view by the minimum. A layer's picture row does what its button does.
+    const root = document.querySelector(".the-rig") as HTMLElement | null;
+    if (root) {
+      const controls = root.querySelector(".rg-controls") as HTMLElement;
+      const status = root.querySelector(".rg-status") as HTMLElement;
+      const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>(".rg-btn"));
+      const layers = Array.from(root.querySelectorAll<HTMLElement>(".rg-layer"));
+      const name = (el: HTMLElement) => (el.querySelector(".rg-name")?.textContent || "").replace(/^\d+/, "").trim();
+      const still = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const show = (which: string, announce: boolean) => {
+        for (const b of buttons) b.setAttribute("aria-pressed", String(b.dataset.show === which));
+        layers.forEach((l) => {
+          const on = which === "all" || l.dataset.layer === which;
+          l.classList.toggle("is-lit", which !== "all" && on);
+          l.classList.toggle("is-dim", !on);
+          (l.querySelector(".rg-para") as HTMLElement).hidden = !on;
+        });
+        if (!announce) return;
+        if (which === "all") { status.textContent = `Showing all ${layers.length === 5 ? "five" : layers.length} layers.`; return; }
+        const i = layers.findIndex((l) => l.dataset.layer === which);
+        status.textContent = `Showing layer ${i + 1} of ${layers.length}: ${name(layers[i]).toLowerCase()}.`;
+        // the chosen layer's text, into view by the least scroll, only if it's off screen
+        const text = layers[i].querySelector(".rg-explain") as HTMLElement;
+        const r = text.getBoundingClientRect();
+        if (r.top < 0 || r.bottom > window.innerHeight) {
+          text.scrollIntoView({ block: "nearest", behavior: still() ? "auto" : "smooth" });
+        }
+      };
+
+      for (const b of buttons) b.addEventListener("click", () => show(b.dataset.show || "all", true));
+      for (const l of layers) {
+        l.querySelector(".rg-slice")?.addEventListener("click", () => show(l.dataset.layer || "all", true));
+      }
+      controls.hidden = false;
+      root.querySelector(".rg-js-only")?.removeAttribute("hidden");
+      root.classList.add("is-enhanced");
+      show("pods", false);
+      status.textContent = `Showing layer 1 of ${layers.length}: the pods.`;
+    }
+  </script>
+</BaseLayout>
