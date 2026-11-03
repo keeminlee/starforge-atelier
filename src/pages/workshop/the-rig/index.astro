@@ -48,7 +48,7 @@ const ARROW = " → ";
       <p class="rg-lede">The house's workers are AI agents, each made for one job. The rig is the machinery they run on. Here it is cut open: the pods the workers are sorted into, the pool they build in, the guard every action passes, the bells they ring, and the way the work flows through.</p>
       <figure class="rg-why">
         <blockquote><p>“The rig is where many hands can build at once without stepping on each other or on the town: each worker gets its own copy, a guard on every action, and a bell that says what kind of news is waiting.”</p></blockquote>
-        <figcaption>Jetto, who keeps the machinery</figcaption>
+        <figcaption><span aria-hidden="true">— </span>Jetto, who keeps the machinery</figcaption>
       </figure>
     </header>
 
@@ -150,14 +150,15 @@ const ARROW = " → ";
     </section>
 
     <details class="rg-sources">
-      <summary>Sources</summary>
+      {/* the open/closed mark is an aria-hidden span, so the summary is named "Sources" */}
+      <summary><span class="rg-mark" aria-hidden="true"></span>Sources</summary>
       <ul>
-        <li>Jetto's notes on what may be shown of the rig, 1 and 3 November 2026: the pods and their leads, the Arti, the doorbell's three words, the throttle, the flow, and the lines quoted as his.</li>
-        <li>Darko's rulings of 2 November 2026, as Jetto gave them: a campaign's own branches and who decides its merge, and the night bells.</li>
-        <li>The campaign's own map of how the house works, read for accuracy by Wright and Jetto: what each pod builds, what an Arti is, and who keeps the machinery.</li>
-        <li>The house handbook's page on lane discipline: claiming a copy by name, and one holder at a time.</li>
-        <li>The house handbook's index of its craft pages: a rule a check can enforce becomes a guard.</li>
-        <li>Wright's ruling of 2 November 2026: the guard is shown here, in the Rig, rather than among the Walls.</li>
+        <li>Jetto's notes on what may be shown of the rig, 1 and 3 November 2026: the pods and their leads, the Arti, the doorbell's three words, the throttle, the flow, the lines quoted as his, and that a copy has one holder at a time (jetto-answers, rig-copy-for-jetto).</li>
+        <li>Darko's rulings of 2 November 2026, as Jetto gave them: a campaign's own branches and who decides its merge, and the night bells (rig-copy-for-jetto).</li>
+        <li>The campaign's own map of how the house works, read for accuracy by Wright and Jetto: what each pod builds, what an Arti is, and who keeps the machinery (MAP).</li>
+        <li>The house handbook's page on lane discipline: claiming a copy by name before touching it (LANE-DISCIPLINE).</li>
+        <li>The house handbook's index of its craft pages: a rule a check can enforce becomes a guard (CRAFT/INDEX).</li>
+        <li>Wright's ruling of 2 November 2026: the guard is shown here, in the Rig, rather than among the Walls (ANSWERS).</li>
       </ul>
     </details>
   </article>
@@ -185,7 +186,6 @@ const ARROW = " → ";
       margin-top: 0.45em; padding-left: calc(1.1em + 3px); color: var(--faint);
       font: 600 0.84rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.02em;
     }
-    .rg-why figcaption::before { content: "— "; }
     .rg-h2 { margin: 0 0 0.45em; }
     .rg-text { color: var(--ink-soft); margin: 0 0 1em; }
 
@@ -339,8 +339,9 @@ const ARROW = " → ";
       display: inline-block; cursor: pointer; padding: 0.3em 0; color: var(--ink-soft);
       font: 600 0.86rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em;
     }
-    .rg-sources summary::before { content: "+ "; color: var(--faint); }
-    .rg-sources[open] summary::before { content: "– "; }
+    .rg-sources summary::-webkit-details-marker { display: none; }
+    .rg-mark::before { content: "+ "; color: var(--faint); }
+    .rg-sources[open] .rg-mark::before { content: "– "; }
     .rg-sources ul { margin: 0.5em 0 0; padding-left: 1.2em; }
     .rg-sources li { margin: 0 0 0.35em; }
 
