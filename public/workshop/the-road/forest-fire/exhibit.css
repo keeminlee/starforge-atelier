@@ -1,22 +1,32 @@
 /* The Road's two Forest Fire exhibits, shown in small frames on /workshop/the-road/.
    The sims and the atlas library are untouched; this only fits the stage to the frame.
    The stage takes the frame's full width. The sim sizes its canvas from that width
-   (height = width x 0.6), and one 22px readout line sits under it, so the page sets each
-   frame's height to round(width x 0.6) + 22 and there are no empty bands. */
+   (height = width x 0.6), and the line under it (strip.js) takes the rest: the page sets
+   each frame's height to round(width x 0.6) plus as many 15px lines as the clock, the
+   tree cover and the burning count need at that width, so there are no empty bands. */
 html, body { margin: 0; overflow: hidden; }
 body.road-exhibit { background: #06070a; }
-/* width AND height pinned to the frame: canvas + readout fill 100vh exactly, and the
+/* width AND height pinned to the frame: canvas + line fill 100vh exactly, and the
    stage's height never changes on its own when the canvas is resized, so the atlas's
    ResizeObserver sees one resize per frame size change, not a second for the height */
-.road-exhibit .stage { margin: 0; border: 0; border-radius: 0; width: 100vw; height: 100vh; overflow: hidden; }
+.road-exhibit .stage {
+  margin: 0; border: 0; border-radius: 0; width: 100vw; height: 100vh; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.road-exhibit .stage canvas { flex: none; }
 /* The controls rail would take most of a small frame's height. The canvas still takes
    a click or drag to start a fire, as on the atlas page. */
 .road-exhibit .stage .controls { display: none; }
-.road-exhibit .stage .readout {
-  margin: 0; padding: 3px 8px 4px; height: 22px; box-sizing: border-box;
-  font-size: 11px; line-height: 15px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+/* the atlas's own one-line readout stays in the page, unseen; strip.js mirrors it.
+   The line's type must match the page's measure of it (STRIP in the-road.astro). */
+.road-exhibit .stage .readout { display: none; }
+.road-exhibit .road-strip {
+  flex: 1 1 auto; min-height: 0; margin: 0; padding: 3px 8px 4px; box-sizing: border-box;
+  font-family: var(--mono); font-size: 11px; line-height: 15px; color: var(--ink-faint);
+  background: var(--panel-2); overflow: hidden;
 }
+/* a line strip.js can't split into fields is shown whole, broken wherever it must */
+.road-exhibit .road-strip.is-raw { overflow-wrap: anywhere; }
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
