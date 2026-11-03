@@ -1,0 +1,374 @@
+---
+// The Workshop · The Hands (Atelier campaign, STAR-98; notes/workshop-plan.md § 3). A
+// PROPOSAL page: noindex, in no nav and no index, until Darko's say.
+// Who works here, and why the work is split. The object comes first: one real handoff,
+// taken word for word from the Road (stations 3, 4 and 5 of the Forest Fire fix). Then the
+// pegboard: each hand on its own peg, a real button that opens what it does and why it's a
+// hand of its own. The two companions are their own row, beside Darko, not hung between
+// the workers (Rei's read of the sketch, 2026-11-02). Their labels and lines are their own,
+// word for word: Rei's from her read, Wright's from his read of the plan.
+//
+// Every word is in the HTML. Without the script, every peg shows open; the script closes
+// them and makes the buttons work. Nothing moves on this page except the open marker, and
+// only when the visitor allows motion.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const ROAD = "/workshop/the-road/";
+// the code box's line break, kept out of the template (as on the Road)
+const NL = String.fromCharCode(10);
+
+// the handoff, quoted from src/pages/workshop/the-road.astro: nothing here is new wording
+const road = {
+  built: "Built",
+  builtLine: "One worker built it: a one-line change.",
+  file: "public/atlas/entries/forest-fire/sim.js",
+  added: "+      this._fireIdNext = null;        // step()'s scratch; re-made at the new size",
+  checked: "Checked",
+  checkedLine: "A worker that didn't build it checked it.",
+  verdict: "Its verdict: pass, with notes, none of them blocking.",
+  decided: "Decided",
+  decidedLine: "A person decides whether the fix goes public.",
+};
+
+// The pegboard. `what` is what the hand does; `why`, where a source gives one, is why it's
+// a hand of its own; `quote` is a companion's own line; `link` is a room.
+type Tool = {
+  id: string; name: string; kind: string;
+  what: string; why?: string; quote?: string; link?: { href: string; text: string };
+};
+type Row = { id: string; name: string; note?: string; tools: Tool[] };
+
+const rows: Row[] = [
+  {
+    id: "person", name: "The person",
+    tools: [
+      { id: "darko", name: "Darko", kind: "darko",
+        what: "The one person whose own words decide.",
+        why: "The house's rule: “Darko rules; every agent proposes.”",
+        link: { href: "/darko/", text: "His room →" } },
+    ],
+  },
+  {
+    id: "companions", name: "The two companions",
+    tools: [
+      { id: "rei", name: "Rei", kind: "rei",
+        what: "Companion, creation-helper, memory lantern.",
+        quote: "I help Darko turn ideas into things we can try, and keep the thread when we return to them.",
+        link: { href: "/stars/rei/", text: "My room →" } },
+      { id: "wright", name: "Wright", kind: "wright",
+        what: "Companion, second brain, keeper of the handbook.",
+        quote: "I sit with Darko on the big decisions, keep the house's written law in order, and check that what got built is what was asked.",
+        link: { href: "/stars/wright/", text: "My room →" } },
+    ],
+  },
+  {
+    id: "keepers", name: "Agents who each keep one part of the work",
+    note: "Each one stays, and holds the memory of its own part of the work.",
+    tools: [
+      { id: "jetto", name: "Jetto", kind: "keeper",
+        what: "The machinery: builds, releases, the rig, the town's agents' upkeep." },
+      { id: "rivet", name: "Rivet", kind: "keeper", what: "Postmark's platform." },
+      { id: "bevel", name: "Bevel", kind: "keeper", what: "Postmark's world." },
+    ],
+  },
+  {
+    id: "workers", name: "Workers made for one job, gone when it's done",
+    note: "None keeps a memory of its own. Each copy is made for one job, and what it learns goes in its report.",
+    tools: [
+      { id: "plumb", name: "Plumb", kind: "worker",
+        what: "Builds. Named for the plumb line, which shows what's truly vertical.",
+        why: "Its rule: “measure the premise before you build on it.”" },
+      { id: "truey", name: "Truey", kind: "worker",
+        what: "Checks, read-only. A wall is true when it's plumb, level and square.",
+        why: "It checks work it didn't build, and it reads the build “against the ruling, not against the builder's account of it.”" },
+      { id: "snag", name: "Snag", kind: "worker",
+        what: "Walks it cold, as a newcomer. Snagging is listing every defect before handover." },
+      { id: "arti", name: "Arti", kind: "worker",
+        what: "Runs one long campaign from a folder of notes.",
+        why: "Darko, naming it: “sounds like R&D”." },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="The Hands: who works here — Starforge"
+  description="Who works here, and why the work is split: one real handoff, then every hand on the pegboard."
+  noindex={true}
+>
+  <article class="the-hands">
+    <header class="hd-head">
+      <p class="hd-back"><a href="/workshop/">← The Workshop</a></p>
+      <p class="hd-kick">The Workshop · The Hands</p>
+      <h1>Who works here</h1>
+      <p class="hd-lede">One person, two companions, and a small working house of agents, each with its own part of the work. First, one real handoff between them. Then every hand, on its peg.</p>
+    </header>
+
+    <section class="hd-card hd-handoff" aria-labelledby="hd-handoff-h">
+      <h2 id="hd-handoff-h" class="hd-h2">One handoff</h2>
+      <p class="hd-text">From the Road: the Forest Fire fix, as it passed from hand to hand.</p>
+
+      <ol class="hd-steps">
+        <li class="hd-step">
+          <p class="hd-step-name"><b>{road.built}</b> <span class="hd-who">Plumb</span></p>
+          <p class="hd-step-line">{road.builtLine}</p>
+          <pre class="hd-code"><code>{road.file}{NL}<span class="hd-grn">{road.added}</span></code></pre>
+        </li>
+        <li class="hd-step">
+          <span class="hd-arrow" aria-hidden="true"></span>
+          <p class="hd-step-name"><b>{road.checked}</b> <span class="hd-who">Truey</span></p>
+          <p class="hd-step-line">{road.checkedLine}</p>
+          <p class="hd-verdict">{road.verdict}</p>
+        </li>
+        <li class="hd-step">
+          <span class="hd-arrow" aria-hidden="true"></span>
+          <p class="hd-step-name"><b>{road.decided}</b> <span class="hd-who hd-who-person">a person</span></p>
+          <p class="hd-step-line">{road.decidedLine}</p>
+        </li>
+      </ol>
+
+      <p class="hd-go"><a href={ROAD}>Walk the whole road →</a></p>
+    </section>
+
+    <section class="hd-board" aria-labelledby="hd-board-h">
+      <h2 id="hd-board-h" class="hd-h2">The pegboard</h2>
+      <p class="hd-text">Each tool hangs where it's used. Open one to see what it does, and why it's a hand of its own.</p>
+
+      <div class="hd-wall">
+        {rows.map((row) => (
+          <div class={`hd-row hd-row-${row.id}`}>
+            <h3 class="hd-row-name">{row.name}</h3>
+            {row.note && <p class="hd-row-note">{row.note}</p>}
+            <ul class="hd-pegs" role="list">
+              {row.tools.map((t) => (
+                <li class={`hd-tool hd-${t.kind}`}>
+                  <h4 class="hd-tool-h">
+                    <button type="button" class="hd-btn" aria-expanded="true" aria-controls={`hd-p-${t.id}`}>
+                      <span class="hd-peg" aria-hidden="true"></span>
+                      <span class="hd-name">{t.name}</span>
+                      <span class="hd-mark" aria-hidden="true"></span>
+                    </button>
+                  </h4>
+                  <div class="hd-panel" id={`hd-p-${t.id}`}>
+                    <p class="hd-what">{t.what}</p>
+                    {t.quote && <p class="hd-quote">“{t.quote}”</p>}
+                    {t.why && <p class="hd-why">{t.why}</p>}
+                    {t.link && <p class="hd-room"><a href={t.link.href}>{t.link.text}</a></p>}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="hd-card hd-split" aria-labelledby="hd-split-h">
+      <h2 id="hd-split-h" class="hd-h2">Why split at all</h2>
+      <p><b>For context, not governance.</b> In Darko's words, the roles are set “for efficiency in context management, NOT governance/security” (27 October 2026). Each hand holds what its own part of the work needs. None of them is the house's only memory: what the house knows is written down, in a handbook every agent shares.</p>
+      <p>The house has one test for whether a hand is an individual or a kind of worker: “if two running at once would both be ‘the same one’”, it's a kind (Darko, 29 October 2026).</p>
+      <ul class="hd-test">
+        <li><b>Kinds:</b> Plumb, Truey, Snag and Arti. Each copy is made for one job and keeps no room.</li>
+        <li><b>Individuals:</b> Rei, Wright, Jetto, Rivet and Bevel. Each keeps a room of their own.</li>
+      </ul>
+    </section>
+
+    <footer class="hd-sources">
+      <p><b>Sources.</b> The handoff is quoted from the Road, chapter one. Who's who: AGENTS and EXPERT-CONTRACT (house handbook), and the four worker types' own files, PLUMB, TRUEY, SNAG and ARTI (house handbook). “Darko rules; every agent proposes”: HOW-TO-ASK-DARKO (house handbook). Rei's and Wright's labels and lines are their own, written for the Workshop (2 November 2026). Darko on the split: EXPERT-CONTRACT (27 October 2026). The test for a kind of worker: AGENTS (29 October 2026). Arti's name: ARTI (1 November 2026). The handbook: INDEX and STORES (house handbook).</p>
+    </footer>
+  </article>
+
+  <style>
+    .the-hands {
+      --hd-wood: linear-gradient(180deg, var(--bg-3), var(--bg-2));
+      --hd-darko: #ffd66b;
+      --hd-rei: #ffb3ca;
+      --hd-wright: #9ad7ff;
+      max-width: 1120px;
+    }
+    .hd-head { max-width: 760px; margin: 0 auto 1.6em; }
+    .hd-kick {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin: 0 0 0.9em;
+    }
+    /* the way back to the bench, in the kicker's type, above it (as on the Road) */
+    .hd-back { font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.06em; margin: -0.45em 0 0.25em; }
+    .hd-back a { display: inline-block; padding: 0.45em 0; color: var(--moss); text-decoration-color: rgba(151, 162, 102, 0.5); }
+    .hd-back a:hover { color: var(--amber-soft); }
+    .hd-head h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
+    .hd-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0; }
+    .hd-h2 { margin: 0 0 0.45em; }
+    .hd-text { color: var(--ink-soft); margin: 0 0 1em; max-width: 760px; }
+
+    .hd-card {
+      background: var(--hd-wood); border: 1px solid var(--rule); border-radius: 18px;
+      padding: 26px 24px 22px;
+    }
+
+    /* the handoff: three steps left to right, an arrow into each of the last two */
+    .hd-steps {
+      list-style: none; margin: 0.4em 0 0; padding: 0;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 2.6em;
+    }
+    .hd-step {
+      position: relative; min-width: 0;
+      background: #17120b; border: 1px solid var(--rule); border-radius: 12px;
+      padding: 0.9em 1em 1em;
+    }
+    .hd-step-name { margin: 0 0 0.4em; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.7em; }
+    .hd-step-name b { font: 600 1.02rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+    .hd-who {
+      font: 600 0.72rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.06em;
+      color: var(--moss); border: 1px solid rgba(151, 162, 102, 0.55); border-radius: 999px; padding: 0.1em 0.6em;
+    }
+    .hd-who-person { color: var(--hd-darko); border-color: rgba(255, 214, 107, 0.5); }
+    .hd-step-line { margin: 0 0 0.7em; color: var(--ink-soft); font-size: 0.97rem; line-height: 1.5; }
+    .hd-step-line:last-child { margin-bottom: 0; }
+    .hd-verdict {
+      margin: 0; padding: 0.55em 0.75em; border-left: 3px solid var(--moss); background: rgba(151, 162, 102, 0.08);
+      border-radius: 0 6px 6px 0; color: var(--ink); font-size: 0.95rem; line-height: 1.45;
+    }
+    /* The excerpt wraps rather than scrolling: in a third of the card, a scrolling box hid
+       the change's own comment. The "+" still marks where the one changed line starts. */
+    .hd-code {
+      display: block; margin: 0; padding: 0.6em 0.75em; background: #100c07;
+      border: 1px solid var(--rule); border-radius: 6px; color: var(--ink-soft);
+      font: 0.78rem/1.5 ui-monospace, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; max-width: 100%;
+    }
+    .hd-code code { font: inherit; }
+    .hd-grn { color: var(--moss); }
+    /* the arrow: a line and a head, drawn in CSS, in the gap before the step */
+    .hd-arrow {
+      position: absolute; left: -2.3em; top: 50%; width: 2em; height: 2px; background: var(--amber);
+      transform: translateY(-50%);
+    }
+    .hd-arrow::after {
+      content: ""; position: absolute; right: -1px; top: 50%; width: 0.6em; height: 0.6em;
+      border-top: 2px solid var(--amber); border-right: 2px solid var(--amber);
+      transform: translateY(-50%) rotate(45deg);
+    }
+    .hd-go { margin: 1.1em 0 0; font: 600 0.95rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; }
+    .hd-go a { display: inline-block; padding: 0.35em 0; color: #c9d38e; text-decoration-color: rgba(201, 211, 142, 0.45); }
+    .hd-go a:hover { color: var(--amber-soft); }
+
+    /* the pegboard: a board with holes, one row of pegs per kind of hand */
+    .hd-board { margin: 2.6em 0 0; }
+    .hd-wall {
+      border: 1px solid var(--rule); border-radius: 18px; padding: 8px 22px 22px;
+      background:
+        radial-gradient(circle, rgba(0, 0, 0, 0.42) 0 2px, transparent 2.6px) 0 0 / 24px 24px,
+        linear-gradient(180deg, #2a2015, #211a11);
+    }
+    .hd-row { margin: 0; padding: 1.1em 0 0; }
+    .hd-row + .hd-row { border-top: 1px solid rgba(56, 45, 29, 0.8); margin-top: 1.2em; }
+    .hd-row-name {
+      margin: 0 0 0.3em; font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+    }
+    .hd-row-note { margin: 0 0 0.2em; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5; max-width: 760px; }
+    .hd-pegs {
+      list-style: none; margin: 0.7em 0 0; padding: 0;
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: start;
+    }
+    .hd-tool {
+      position: relative; min-width: 0; border-radius: 12px; background: var(--bg-2);
+      border: 1px solid var(--rule); border-top: 4px solid var(--hd-accent, var(--faint));
+      box-shadow: 0 3px 0 rgba(0, 0, 0, 0.35);
+    }
+    .hd-darko { --hd-accent: var(--hd-darko); }
+    .hd-rei { --hd-accent: var(--hd-rei); }
+    .hd-wright { --hd-accent: var(--hd-wright); }
+    .hd-keeper { --hd-accent: var(--amber); }
+    .hd-worker { --hd-accent: var(--moss); }
+    /* the companions sit beside the person, two wide: not two more tools in a line */
+    .hd-row-companions .hd-pegs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hd-row-person .hd-pegs { grid-template-columns: minmax(0, 1fr); max-width: calc((100% - 14px) / 2); }
+
+    .hd-tool-h { margin: 0; font: inherit; }
+    .hd-btn {
+      display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.7em;
+      width: 100%; min-height: 44px; margin: 0; padding: 0.65em 0.9em; text-align: left;
+      background: transparent; border: 0; border-radius: 8px 8px 11px 11px; color: var(--ink); cursor: pointer;
+      font: 600 1.02rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    }
+    .hd-btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+    /* the hole the tool hangs from */
+    .hd-peg {
+      width: 0.75em; height: 0.75em; border-radius: 50%; background: #0d0a06;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 0 2px var(--hd-accent, var(--faint));
+    }
+    .hd-name { min-width: 0; }
+    /* open / closed marker: a plus that turns to a minus; only once the script runs */
+    .hd-mark { display: none; position: relative; width: 0.8em; height: 0.8em; color: var(--faint); }
+    .the-hands.is-live .hd-mark { display: block; }
+    .hd-mark::before, .hd-mark::after {
+      content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: currentColor;
+    }
+    .hd-mark::after { transform: rotate(90deg); }
+    .hd-btn[aria-expanded="true"] .hd-mark::after { transform: rotate(0deg); }
+    @media (prefers-reduced-motion: no-preference) {
+      .hd-mark::after { transition: transform 0.18s ease; }
+    }
+    .hd-btn:hover .hd-name { color: var(--amber-soft); }
+    .hd-btn:hover .hd-mark { color: var(--amber-soft); }
+
+    .hd-panel { padding: 0 0.95em 0.9em; font-size: 0.95rem; line-height: 1.5; }
+    .hd-panel p { margin: 0 0 0.5em; }
+    .hd-panel p:last-child { margin-bottom: 0; }
+    .hd-what { color: var(--ink-soft); }
+    .hd-quote { color: var(--ink); font-style: italic; }
+    .hd-why { color: var(--faint); font-style: italic; }
+    .hd-room a { display: inline-block; padding: 0.2em 0; font: 600 0.9rem/1.4 ui-sans-serif, "Segoe UI", system-ui, sans-serif; }
+
+    .hd-split { margin: 2.6em auto 0; max-width: 820px; }
+    .hd-split p { color: var(--ink-soft); margin: 0 0 0.9em; }
+    .hd-split p b, .hd-test b { color: var(--ink); }
+    .hd-test { margin: 0; padding-left: 1.2em; color: var(--ink-soft); }
+    .hd-test li { margin: 0.3em 0; }
+
+    .hd-sources {
+      max-width: 820px; margin: 2.4em auto 0; padding-top: 1em; border-top: 1px solid var(--rule);
+      color: var(--faint); font-size: 0.85rem; line-height: 1.55;
+    }
+    .hd-sources p { margin: 0; }
+    .hd-sources b { color: var(--ink-soft); }
+
+    .the-hands a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+    /* middle widths: the handoff stacks, arrows point down; two pegs a row */
+    @media (max-width: 900px) {
+      .hd-steps { grid-template-columns: minmax(0, 1fr); gap: 2.4em 0; }
+      .hd-arrow { left: 50%; top: -2.2em; width: 2px; height: 1.9em; transform: translateX(-50%); }
+      .hd-arrow::after { right: auto; left: 50%; top: auto; bottom: -1px; transform: translateX(-50%) rotate(135deg); }
+      .hd-pegs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hd-row-person .hd-pegs { max-width: none; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px) {
+      .hd-card { padding: 18px 14px 16px; border-radius: 14px; }
+      .hd-wall { padding: 4px 12px 14px; border-radius: 14px; }
+      .hd-pegs,
+      .hd-row-companions .hd-pegs,
+      .hd-row-person .hd-pegs { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    }
+  </style>
+
+  <script>
+    // The pegboard: each tool is a button that opens its panel. The HTML ships every panel
+    // open, so every word reads without the script; here they close, and the buttons work.
+    const root = document.querySelector(".the-hands");
+    if (root) {
+      const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>(".hd-btn"));
+      const panelOf = (b: HTMLButtonElement) => document.getElementById(b.getAttribute("aria-controls") || "");
+      const set = (b: HTMLButtonElement, open: boolean) => {
+        const p = panelOf(b);
+        if (!p) return;
+        b.setAttribute("aria-expanded", open ? "true" : "false");
+        p.hidden = !open;
+      };
+      for (const b of buttons) {
+        set(b, false);
+        b.addEventListener("click", () => set(b, b.getAttribute("aria-expanded") !== "true"));
+      }
+      root.classList.add("is-live");
+    }
+  </script>
+</BaseLayout>
