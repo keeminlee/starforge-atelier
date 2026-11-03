@@ -16,6 +16,7 @@
 // shown before it's asked for. It runs as the page parses, so the wall doesn't jump.
 // Styles are global and namespaced under .the-walls, since the script builds the buttons.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import WorkshopNext from "../../../components/WorkshopNext.astro";
 
 type Stone = {
   id: string;
@@ -257,6 +258,8 @@ const parts: { key: "happened" | "learned" | "protects" | "applies"; label: stri
         <li><b>Every worker has its own copy, and claims it first:</b> the handbook's rules for workers sharing one machine (LANE-DISCIPLINE); the campaign worker's type (ARTI); Wright's ruling on this stone's scope, 2 November 2026.</li>
       </ul>
     </details>
+
+    <WorkshopNext from="/workshop/the-walls/" />
   </article>
 
   <style is:global>

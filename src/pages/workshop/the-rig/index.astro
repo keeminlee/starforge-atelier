@@ -21,6 +21,7 @@
 // colour, never opacity, so every dimmed label keeps at least 4.5:1. Nothing animates under
 // prefers-reduced-motion.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import WorkshopNext from "../../../components/WorkshopNext.astro";
 
 const layers = [
   { id: "pods", n: 1, label: "Pods" },
@@ -161,6 +162,8 @@ const ARROW = " → ";
         <li>Wright's ruling of 2 November 2026: the guard is shown here, in the Rig, rather than among the Walls (ANSWERS).</li>
       </ul>
     </details>
+
+    <WorkshopNext from="/workshop/the-rig/" />
   </article>
 
   <style>

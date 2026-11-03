@@ -20,6 +20,7 @@
 // Never shown: any room's or file's contents, file names inside rooms, or counts. The
 // architecture is public; the contents are not.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import WorkshopNext from "../../../components/WorkshopNext.astro";
 
 // Two terms, defined where they first appear, in Wright's words (memory-wright-answers § 3)
 const HOME_DEF = "a project's home is where one project keeps its own law and records, like Postmark's public rules";
@@ -282,6 +283,8 @@ const climb = [
         <p>The house handbook's own pages: THE-TREE, STORES, AGENTS and INDEX, and CONVENTIONS. "Nobody lives at the top", "reached on purpose" and "reach decides what's in mind" are the handbook's own words. Wright's notes on this chapter, 1–3 November 2026.</p>
       </details>
     </div>
+
+    <WorkshopNext from="/workshop/the-memory/" />
   </article>
 
   <style>

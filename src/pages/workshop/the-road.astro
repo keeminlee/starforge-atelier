@@ -28,6 +28,7 @@
 // All styles are global and namespaced under .the-road, since the script builds the
 // iframes (Astro's scoped styles never reach script-built DOM).
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import WorkshopNext from "../../components/WorkshopNext.astro";
 
 const ASSETS = "/workshop/the-road/forest-fire";
 const PR = "https://github.com/keeminlee/starforge-atelier/pull/20";
@@ -182,6 +183,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
 
       <p class="tr-text tr-record">The public record is <a href={PR}>pull request #20 on GitHub</a>.</p>
     </section>
+
+    <WorkshopNext from="/workshop/the-road/" />
   </article>
 
   <style is:global>

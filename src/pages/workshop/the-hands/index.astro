@@ -15,6 +15,7 @@
 // its face instead, with no button. Nothing moves on this page except the open marker, and
 // only when the visitor allows motion.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import WorkshopNext from "../../../components/WorkshopNext.astro";
 
 const ROAD = "/workshop/the-road/";
 // the code box's line break, kept out of the template (as on the Road)
@@ -260,6 +261,8 @@ const rows: Row[] = [
         </ul>
       </details>
     </footer>
+
+    <WorkshopNext from="/workshop/the-hands/" />
   </article>
 
   <style>
@@ -268,6 +271,8 @@ const rows: Row[] = [
       --hd-darko: #ffd66b;
       --hd-rei: #ffb3ca;
       --hd-wright: #9ad7ff;
+      /* the next chapter's link keeps the sources' column */
+      --ws-next-max: 820px;
       max-width: 1120px;
     }
     .hd-head { max-width: 760px; margin: 0 auto 1.6em; }
