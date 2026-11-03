@@ -82,7 +82,7 @@ const stones: Stone[] = [
     protects:
       "What the public sees, and the decision itself: what goes public is decided by Darko and Wright, reading what was built, not by the worker that built it.",
     applies:
-      "On this site. Only a merge into the branch the live site is built from publishes, and that merge is Darko's and Wright's, from a written account of what was built. Postmark, the house's main work, ships differently: its code goes out in a weekly release, with Darko's approval, marked with a version tag.",
+      "On this site. Only a merge into the branch the live site is built from publishes, and that merge is Darko's and Wright's, from a written account of what was built. Postmark, the house's main work, ships differently: its code goes out in a weekly release, with Darko's approval, and a release tag.",
   },
   {
     id: "never-grades",
@@ -127,7 +127,7 @@ const parts: { key: "happened" | "learned" | "protects" | "applies"; label: stri
       <p class="wl-back-link"><a href="/workshop/">← The Workshop</a></p>
       <p class="wl-kick">The Workshop · The Walls</p>
       <h1>The rules that hold</h1>
-      <p class="wl-lede">These are the rules the house's AI agents work within. A worker here is an AI agent made for one job, such as building a change or checking one, and it works in a working copy: its own copy of the code. Darko is the one person whose word decides. <a class="wl-who" href="/workshop/the-hands/">Who works here →</a></p>
+      <p class="wl-lede">These are the rules the house's AI agents work within. A worker here is an AI agent made for one job, such as building a change or checking one, and it works in a working copy: its own copy of the code. Darko is the one person here, and the final word is his. <a class="wl-who" href="/workshop/the-hands/">Who works here →</a></p>
       <p class="wl-lede">Each stone below states one rule on its face. Turn it over to read what happened, what was learned, what the rule protects and where it applies.</p>
     </header>
 
@@ -284,7 +284,8 @@ const parts: { key: "happened" | "learned" | "protects" | "applies"; label: stri
     .the-walls h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
     .the-walls .wl-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0 0 0.7em; }
     .the-walls .wl-lede:last-child { margin-bottom: 0; }
-    .the-walls .wl-who { white-space: nowrap; font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif; font-weight: 600; font-size: 0.9em; }
+    /* padded to a 24px target, as the back link is */
+    .the-walls .wl-who { display: inline-block; padding: 0.45em 0; white-space: nowrap; font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif; font-weight: 600; font-size: 0.9em; }
     .the-walls a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
 
     .the-walls .wl-label {
