@@ -124,11 +124,11 @@ const climb = [
     {/* the page in three sentences, drawn only from its own sections below (a summary of
         the page, not anyone's words); the plain phrases only, as Wright's wording asks */}
     <aside class="tm-short" aria-labelledby="tm-short-h">
-      <h2 id="tm-short-h" class="tm-short-h">In short <span class="tm-short-sub">a summary of this page</span></h2>
+      <h2 id="tm-short-h" class="tm-short-h">In short<span class="tm-short-colon">:</span> <span class="tm-short-sub">a summary of this page</span></h2>
       <ul class="tm-short-list">
         <li>Every agent's memory is written files, and each file has one writer.</li>
         <li>One fixed order decides which source wins when two disagree, and rooms sit outside that order.</li>
-        <li>A lesson a worker learns travels up in its report, through its lead, to the shared handbook.</li>
+        <li>In one real example, a lesson a worker learned travelled up in its report, through its lead, to a line in the shared handbook.</li>
       </ul>
     </aside>
 
@@ -329,6 +329,9 @@ const climb = [
       font: 600 0.86rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.12em;
       font-variant-caps: all-small-caps;
     }
+    /* heard, not seen, and kept inline: tm-sr's absolute position makes the span a block,
+       and Chromium then names the heading "In short : …", with a space before the colon */
+    .tm-short-colon { clip-path: inset(50%); }
     .tm-short-sub { margin-left: 0.6em; color: var(--faint); letter-spacing: 0.02em; font-variant-caps: normal; font-weight: 400; font-size: 0.8rem; }
     .tm-short-list { margin: 0; padding-left: 1.2em; color: var(--ink-soft); font-size: 0.97rem; line-height: 1.55; }
     .tm-short-list li { margin: 0.2em 0; }
