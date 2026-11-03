@@ -24,11 +24,8 @@
   (function () {
     var c = document.querySelector('#stage canvas');
     if (c) c.setAttribute('aria-label', 'Forest Fire simulation, after the fix. Click or drag on the grid to start a fire.');
-    // The line under the canvas keeps only the atlas's own clock and frame rate: the
-    // sim's counts run far wider than this small frame and were cut off.
-    var s = window.Atlas && Atlas.instances[0];
-    if (s) s.readout(function () { return ''; });
   })();
 </script>
+<script src="./strip.js"></script>
 </body>
 </html>

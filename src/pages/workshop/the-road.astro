@@ -10,15 +10,17 @@
 // The demonstration is a change of WIDTH, wide to narrow, the way a window narrows when a
 // phone turns upright. The sim sizes its grid from its frame's width (height = width x
 // 0.6), and the bug throws only when the grid shrinks. Each frame's height follows the
-// sim's own shape (canvas plus one readout line), so there are no empty bands, and the
-// size changes in one step, so each sim sees one resize, not a transition's dozens.
-// Nothing rotates or animates: the buttons name what they do (Rei's wording read, 11-02).
+// sim's own shape (canvas plus the readout's lines at that width), so there are no empty
+// bands, and the size changes in one step, so each sim sees one resize, not a
+// transition's dozens. Nothing rotates or animates: the buttons name what they do (Rei's
+// wording read, 11-02).
 //
-// Nothing around the comparison moves at the press or the narrowing: the slots, the line
-// under the old copy, the stills note and the second button keep their room throughout.
-// The one exception is a screen narrow enough to stack the frames (600px and under):
-// there the line under the old copy takes its room at the press, not at load, so it
-// isn't an empty band between the frames at rest. From the narrowing on, nothing moves.
+// Nothing around the comparison moves at the press or the narrowing: the slots, the
+// captions, the line under the old copy, the stills note and the second button keep their
+// room throughout. The one exception is a screen narrow enough to stack the frames (600px
+// and under): there the line under the old copy and a caption's second line take their
+// room at the press, not at load, so they aren't an empty band between the frames at
+// rest. From the narrowing on, nothing moves.
 //
 // Error text is shown without hosts: message, function and file only. The live line under
 // a frame is cleaned the same way when it's shown.
@@ -232,10 +234,14 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       margin: 0.35em auto 0; max-width: 520px; text-align: center;
       font: 0.78rem/1.45 ui-monospace, Consolas, monospace; color: var(--tr-red); overflow-wrap: anywhere;
     }
-    /* Stacked, the held line would sit as an empty band between the two frames at rest,
-       so there its room is held from the press instead: the one shift lands with the
-       press itself, and nothing moves from the narrowing on. */
-    @media (max-width: 600px) { .the-road .tr-err.is-resting { display: none; } }
+    /* Stacked, the held line (and a caption's held second line) would sit as an empty
+       band between the two frames at rest, so there their room is held from the press
+       instead: the one shift lands with the press itself, and nothing moves from the
+       narrowing on. The script sets each caption's room as an inline min-height. */
+    @media (max-width: 600px) {
+      .the-road .tr-frames.is-resting .tr-err { display: none; }
+      .the-road .tr-frames.is-resting figcaption { min-height: 0 !important; }
+    }
     .the-road .tr-still-note { margin: 0.9em 0 0; text-align: center; font-size: 0.85rem; color: var(--faint); }
     /* the first button sits in the middle column, so it's centred whether or not the
        second shows; the second takes the column to its right. Where the two don't fit on
@@ -365,8 +371,8 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       const stopBtn = root.querySelector(".tr-stop") as HTMLButtonElement;
       const status = root.querySelector(".tr-status") as HTMLElement;
       const stillNote = root.querySelector(".tr-still-note") as HTMLElement;
-      const READOUT = 22; // the readout line under the canvas (exhibit.css)
       const NARROW = 0.58; // the narrow width, as a share of the wide one
+      const frameBox = root.querySelector(".tr-frames") as HTMLElement;
 
       type Frame = {
         side: string; src: string; title: string;
@@ -393,20 +399,19 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       // error arrives it holds the expected message, invisible and hidden from screen
       // readers; the real error replaces it.
       const EXPECTED = "Error inside this frame: RangeError: offset is out of bounds at ForestFire.step (before-sim.js:142)";
-      // (On a narrow screen the room is held from the press, not from load: is-resting.)
-      const reserveErr = (f: Frame, resting = false) => {
+      // (On a screen that stacks the frames, this room and the caption's are held from
+      // the press, not from load: .tr-frames.is-resting.)
+      const reserveErr = (f: Frame) => {
         f.err.textContent = EXPECTED; f.err.style.visibility = "hidden";
         f.err.setAttribute("aria-hidden", "true"); f.err.hidden = false;
-        f.err.classList.toggle("is-resting", resting);
       };
       const showErr = (f: Frame, text: string) => {
         f.err.textContent = text; f.err.style.visibility = "";
         f.err.removeAttribute("aria-hidden"); f.err.hidden = false;
-        f.err.classList.remove("is-resting");
       };
       const clearErr = (f: Frame) => {
         f.err.hidden = true; f.err.textContent = ""; f.err.style.visibility = "";
-        f.err.removeAttribute("aria-hidden"); f.err.classList.remove("is-resting");
+        f.err.removeAttribute("aria-hidden");
       };
       const sim = (f: Frame): any => {
         try {
@@ -439,28 +444,64 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         const where = m ? ` at ${m[1]} (${m[2]}:${m[3]})` : "";
         return (head + where).replace(/[a-z][\w+.-]*:\/\/[^\s)]*\//gi, "");
       };
+      // The line under each canvas (the exhibits' strip.js) wraps between its fields and
+      // always shows the clock, the tree cover and the burning count. Its height at a
+      // width is however many lines those take at their widest, measured here in the
+      // line's own type (exhibit.css .road-strip; the font is the atlas's --mono).
+      const NB = String.fromCharCode(160);
+      const STRIP_WIDEST = ["t=999999", "cover 100.0%", "burning 99999"].map((s) => s.split(" ").join(NB)).join(NB + "· ");
+      const stripProbe = document.createElement("p");
+      stripProbe.setAttribute("aria-hidden", "true");
+      Object.assign(stripProbe.style, {
+        position: "absolute", visibility: "hidden", left: "0", top: "0", margin: "0",
+        padding: "3px 8px 4px", boxSizing: "border-box", fontSize: "11px", lineHeight: "15px",
+        fontFamily: '"SFMono-Regular", "JetBrains Mono", "Consolas", ui-monospace, monospace',
+      });
+      stripProbe.textContent = STRIP_WIDEST;
+      // held in a box of no size that clips, so the probe never widens the page
+      const probeHold = document.createElement("div");
+      Object.assign(probeHold.style, { position: "absolute", width: "0", height: "0", overflow: "hidden" });
+      probeHold.append(stripProbe);
+      root.append(probeHold);
+      const stripH = (w: number) => { stripProbe.style.width = w + "px"; return stripProbe.offsetHeight; };
       const dims = () => {
         const wide = Math.max(120, Math.min(520, Math.floor(frames[0].slot.clientWidth) - 2));
         const narrow = Math.round(wide * NARROW);
-        const h = (w: number) => Math.round(w * 0.6) + READOUT;
+        const h = (w: number) => Math.round(w * 0.6) + stripH(w);
         return { wide, narrow, h };
       };
-      // one step: width and height set together, once. The slot always holds the wide
-      // frame's height, from page load, whether it shows a still or a frame.
+      // The caption's room: as many lines as the longest it will say needs at this width
+      // ("before the fix" and "t=… · dark and stopped" wrap onto two lines on some
+      // screens), so a longer caption at the narrowing moves nothing below it.
+      const CAPTION_WIDEST = ["t=999 · dark and stopped", "t=99999 · stopped"];
+      const holdCaptions = () => {
+        let need = 0;
+        for (const f of frames) {
+          const cap = f.tick.parentElement as HTMLElement, was = f.tick.textContent;
+          cap.style.removeProperty("min-height");
+          for (const text of CAPTION_WIDEST) { f.tick.textContent = text; need = Math.max(need, cap.offsetHeight); }
+          f.tick.textContent = was;
+        }
+        for (const f of frames) (f.tick.parentElement as HTMLElement).style.minHeight = need + "px";
+      };
+      // one step: width and height set together, once. The slot always holds the taller
+      // of the wide and the narrow frame, from page load, whether it shows a still or a frame.
       const shape = (orient: "wide" | "narrow") => {
         const { wide, narrow, h } = dims();
         const w = orient === "narrow" ? narrow : wide;
         for (const f of frames) {
-          f.slot.style.minHeight = h(wide) + 2 + "px";
+          f.slot.style.minHeight = Math.max(h(wide), h(narrow)) + 2 + "px";
           if (!f.iframe) continue;
           f.iframe.style.width = w + "px";
           f.iframe.style.height = h(w) + "px";
         }
+        holdCaptions();
       };
       // the resting state: stills in full-height slots, the error line's room held
       const rest = () => {
+        frameBox.classList.add("is-resting");
         shape("wide");
-        for (const f of frames) { if (f.side === "before") reserveErr(f, true); else clearErr(f); }
+        for (const f of frames) { if (f.side === "before") reserveErr(f); else clearErr(f); }
       };
       const sample = () => {
         const now = performance.now();
@@ -476,17 +517,17 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           f.tick.textContent = `t=${s.ticks}${word}`;
           // A copy that isn't moving keeps the last line its sim wrote under the canvas,
           // counts and all, so the line says what the caption says instead. A sim that
-          // moves again writes its own line over this.
+          // moves again writes its own line over this (strip.js).
           if (word) strip(f, f.tick.textContent, `t=${s.ticks}`);
         }
       };
-      // a frame too narrow for the whole line gets the clock alone; the caption has the rest
+      // a frame too small for the whole line gets the clock alone; the caption has the rest
       const strip = (f: Frame, text: string, short: string) => {
         try {
-          const el = f.iframe?.contentDocument?.querySelector("#stage .readout") as HTMLElement | null;
+          const el = f.iframe?.contentDocument?.querySelector("#stage .road-strip") as HTMLElement | null;
           if (!el) return;
           if (el.textContent !== text) el.textContent = text;
-          if (el.scrollWidth > el.clientWidth) el.textContent = short;
+          if (el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1) el.textContent = short;
         } catch { /* same-origin frames; nothing to do if it fails */ }
       };
       const describe = (f: Frame) => {
@@ -518,6 +559,7 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       const load = () => {
         state = "loading";
         loadedAt = performance.now();
+        frameBox.classList.remove("is-resting");
         turnBtn.setAttribute("aria-disabled", "true");
         stopBtn.classList.remove("is-idle");
         stillNote.classList.add("is-running");
