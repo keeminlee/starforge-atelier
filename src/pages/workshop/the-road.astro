@@ -227,6 +227,10 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     /* The frame inside moves within its slot at each turn. Left as a scroll anchor, the
        browser would scroll the page to follow it, and everything else would move. */
     .the-road .tr-slot { overflow-anchor: none; }
+    /* Likewise the captions: the clock's words change length while a visitor reads (a
+       copy scrolled out of view reads "paused"), and a caption followed as the anchor
+       would scroll the page with it. */
+    .the-road .tr-frame figcaption { overflow-anchor: none; }
     .the-road .tr-slot img {
       display: block; width: 100%; max-width: 520px; height: auto;
       border: 1px solid var(--rule); border-radius: 10px;
