@@ -230,7 +230,19 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
       font: 0.78rem/1.45 ui-monospace, Consolas, monospace; color: var(--tr-red); overflow-wrap: anywhere;
     }
     .the-road .tr-still-note { margin: 0.9em 0 0; text-align: center; font-size: 0.85rem; color: var(--faint); }
-    .the-road .tr-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7em; margin: 1.1em 0 0.4em; }
+    /* the first button sits in the middle column, so it's centred whether or not the
+       second shows; the second takes the column to its right. Where the two don't fit on
+       one line, each takes its own row, centred. */
+    .the-road .tr-controls {
+      display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.7em;
+      margin: 1.1em 0 0.4em; container-type: inline-size;
+    }
+    .the-road .tr-controls .tr-turn { grid-column: 2; }
+    .the-road .tr-controls .tr-stop { grid-column: 3; justify-self: start; }
+    @container (max-width: 34em) {
+      .the-road .tr-controls .tr-turn,
+      .the-road .tr-controls .tr-stop { grid-column: 1 / -1; justify-self: center; }
+    }
     .the-road .tr-btn {
       font: 600 0.95rem/1 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.02em;
       color: var(--bg); background: var(--moss); border: 1px solid var(--moss); border-radius: 999px;
@@ -452,7 +464,20 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
           let word = "";
           if (state !== "loading" && !moving(f)) word = !s.running ? " · paused" : dark(f) ? " · dark and stopped" : " · stopped";
           f.tick.textContent = `t=${s.ticks}${word}`;
+          // A copy that isn't moving keeps the last line its sim wrote under the canvas,
+          // counts and all, so the line says what the caption says instead. A sim that
+          // moves again writes its own line over this.
+          if (word) strip(f, f.tick.textContent, `t=${s.ticks}`);
         }
+      };
+      // a frame too narrow for the whole line gets the clock alone; the caption has the rest
+      const strip = (f: Frame, text: string, short: string) => {
+        try {
+          const el = f.iframe?.contentDocument?.querySelector("#stage .readout") as HTMLElement | null;
+          if (!el) return;
+          if (el.textContent !== text) el.textContent = text;
+          if (el.scrollWidth > el.clientWidth) el.textContent = short;
+        } catch { /* same-origin frames; nothing to do if it fails */ }
       };
       const describe = (f: Frame) => {
         const s = sim(f);
