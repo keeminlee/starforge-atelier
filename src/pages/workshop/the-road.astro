@@ -215,6 +215,9 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
     /* the slot keeps the wide frame's height so nothing below moves at the turn; the
        narrowed frame sits centred in it, so the space around it reads as deliberate */
     .the-road .tr-slot { display: flex; align-items: center; justify-content: center; min-width: 0; }
+    /* The frame inside moves within its slot at each turn. Left as a scroll anchor, the
+       browser would scroll the page to follow it, and everything else would move. */
+    .the-road .tr-slot { overflow-anchor: none; }
     .the-road .tr-slot img {
       display: block; width: 100%; max-width: 520px; height: auto;
       border: 1px solid var(--rule); border-radius: 10px;
@@ -651,11 +654,21 @@ const reproLines = ` resize -> 390x844: sim width 714 -> 344 (onResize fired: tr
         shape("wide");
         // On a phone the stacked frames can sit above the button that was pressed. Bring
         // them into view, so the visitor sees both, and the atlas doesn't pause one as
-        // off screen.
+        // off screen. The room taken at the press (600px and under) can push the button
+        // itself down, so the same one scroll also keeps the button fully on screen,
+        // and the button wins if both can't fit. It runs once, here, long before the
+        // narrowing.
+        const vh = window.innerHeight;
         const box = (root.querySelector(".tr-frames") as HTMLElement).getBoundingClientRect();
-        if (box.top < 0 || box.bottom > window.innerHeight) {
+        const btn = turnBtn.getBoundingClientRect();
+        let by = 0;
+        if (box.top < 0) by = box.top;
+        else if (box.bottom > vh) by = Math.min(box.bottom - vh, box.top);
+        by = Math.min(Math.max(by, btn.bottom - vh), btn.top);
+        by = by > 0 ? Math.ceil(by) : Math.floor(by);   // whole pixels, never a hair short
+        if (by !== 0) {
           const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          (root.querySelector(".tr-frames") as HTMLElement).scrollIntoView({ block: "nearest", behavior: still ? "auto" : "smooth" });
+          window.scrollBy({ top: by, behavior: still ? "auto" : "smooth" });
         }
         poll = window.setInterval(sample, 200);
         // the beat: both copies have stepped a while at full width (so the old copy's
