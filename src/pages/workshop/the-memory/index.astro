@@ -1,0 +1,405 @@
+---
+// The Workshop · The Memory (Atelier campaign, STAR-98; notes/workshop-plan.md § 4). A
+// PROPOSAL page: noindex, in no nav and no index, until Darko's say. Wright reads it first.
+//
+// The object first: one tree, seen from where each agent stands. Pick an agent and the
+// tree re-roots there. What's within reach of mind changes; which source wins a
+// disagreement doesn't, and that ordering is drawn once, outside the part that changes.
+// Wright's wording (his MAP read, item 8): the plain phrases come before the words "rank"
+// and "reach", which appear only in the last section.
+//
+// Without JavaScript the picker stays hidden, Wright's tree shows, and a sentence says
+// what re-rooting would change. Every tree is also written out in words below the picture.
+//
+// Never shown: any room's or file's contents, file names inside rooms, or counts. The
+// architecture is public; the contents are not.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+// Each agent's own view of the tree, by steps away (THE-TREE, via MAP § 4). Where an
+// agent is rooted is named only where the source names it: Wright at the handbook, an
+// expert at its own part of the work, a worker at its brief. Rei's isn't named there.
+const FAR = [
+  "Each project's own home",
+  "The parts of the work other agents keep",
+  "Workers' briefs",
+  "The house's doctrine, reached on purpose",
+];
+const agents = [
+  {
+    id: "wright", button: "Wright", whose: "Wright's tree", name: "Wright",
+    label: "Companion, second brain, keeper of the handbook.",
+    root: "His own room: who he is, plus a map.",
+    near: [{ text: "The shared handbook", note: "where he's rooted" }],
+    far: FAR,
+  },
+  {
+    id: "rei", button: "Rei", whose: "Rei's tree", name: "Rei",
+    label: "Companion, creation-helper, memory lantern.",
+    root: "Her own room: who she is, plus a map.",
+    near: [{ text: "The shared handbook" }],
+    far: FAR,
+  },
+  {
+    id: "jetto", button: "Jetto", whose: "Jetto's tree", name: "Jetto",
+    label: "Keeps the machinery.",
+    root: "His own room: who he is, plus a map.",
+    near: [{ text: "His part of the work: the machinery", note: "where he's rooted" }, { text: "The shared handbook" }],
+    far: FAR,
+  },
+  {
+    id: "worker", button: "A worker made for one job", whose: "The tree of a worker made for one job", name: "A worker made for one job",
+    label: "Given a short reading list, gone when it's done.",
+    root: "Its brief. It has no room.",
+    near: [{ text: "The shared handbook" }, { text: "The short reading list its brief names" }],
+    far: [],
+    farNone: "Nothing else. What it reads for the job is its whole tree.",
+  },
+];
+const DEFAULT = "wright";
+
+// what the live region says when a tree is picked
+const near = (a: (typeof agents)[number]) =>
+  a.near.map((n) => n.text.charAt(0).toLowerCase() + n.text.slice(1)).join(", and ");
+const summary = (a: (typeof agents)[number]) =>
+  `Showing ${a.id === "worker" ? "the tree of a worker made for one job" : a.whose}. One step away: ${near(a)}. Which source wins a disagreement: unchanged.`;
+
+// which source wins a disagreement, higher first: the same for everyone (THE-TREE's
+// rank, from the doctrine down; MAP § 4 keeps doctrine's own internal order off the site)
+const ladder = [
+  "The house's doctrine",
+  "The shared handbook",
+  "A project's own home",
+  "One part of the work",
+  "A worker's brief",
+];
+
+// where a new memory goes (Wright's third addition, as given)
+const homes = [
+  { kind: "Foundational to everyone", home: "the shared handbook" },
+  { kind: "One project's", home: "that project's own home" },
+  { kind: "One agent's", home: "its own room" },
+];
+---
+<BaseLayout
+  title="The Memory: how a house of agents remembers — Starforge"
+  description="Every agent here remembers through written files. Pick one, and see what sits close to it, and what stays the same for everyone."
+  noindex={true}
+>
+  <article class="the-memory">
+    <header class="tm-head">
+      <p class="tm-back"><a href="/workshop/">← The Workshop</a></p>
+      <p class="tm-kick">The Workshop · The Memory</p>
+      <h1>How a house of agents remembers</h1>
+      <p class="tm-lede">Every agent here remembers through written files. Some sit close to an agent and some sit far off, and one fixed order decides which source wins when two of them disagree.</p>
+    </header>
+
+    <section class="tm-card" aria-labelledby="tm-tree-h">
+      <h2 id="tm-tree-h" class="tm-h2">One tree, seen from each agent</h2>
+      <p class="tm-text">The house's memory is one tree. Each agent stands somewhere different in it, so the tree looks different from each one. Pick an agent, and the tree re-roots there.</p>
+
+      {/* the picker exists only with the script; without it, the sentences below explain */}
+      <div class="tm-picker" role="group" aria-label="Pick an agent" hidden>
+        {agents.map((a) => (
+          <button type="button" class="tm-pick" data-agent={a.id} aria-pressed={a.id === DEFAULT ? "true" : "false"}>{a.button}</button>
+        ))}
+      </div>
+      <p class="tm-rule">Re-rooting changes what's within reach of mind. It never changes which source wins a disagreement.</p>
+      <p class="tm-nojs">Shown here is Wright's tree. All four trees are written out in words below.</p>
+
+      <div class="tm-split">
+        <div class="tm-changes">
+          <h3 class="tm-h3"><span class="tm-tag">What changes<span class="tm-sr">:</span></span> What's within reach of mind</h3>
+          {agents.map((a) => (
+            <figure class="tm-tree" data-agent={a.id} data-summary={summary(a)} hidden={a.id !== DEFAULT}>
+              <figcaption class="tm-whose">{a.whose}</figcaption>
+              <div class="tm-tier tm-t0">
+                <p class="tm-tier-label">Holds at wake</p>
+                <div class="tm-node tm-root">
+                  <b>{a.name}</b>
+                  <span class="tm-label">{a.label}</span>
+                  <span class="tm-held">{a.root}</span>
+                </div>
+              </div>
+              <div class="tm-tier tm-t1">
+                <p class="tm-tier-label">One step away</p>
+                <ul class="tm-nodes" role="list">
+                  {a.near.map((n) => (
+                    <li class="tm-node tm-near">{n.text}{n.note && <span class="tm-note"><span class="tm-sr">, </span>{n.note}</span>}</li>
+                  ))}
+                </ul>
+              </div>
+              <div class="tm-tier tm-t2">
+                <p class="tm-tier-label">{a.far.length > 0 ? "Further: found by walking the map" : "Further"}</p>
+                {a.far.length > 0 ? (
+                  <ul class="tm-nodes" role="list">
+                    {a.far.map((f) => <li class="tm-node tm-far">{f}</li>)}
+                  </ul>
+                ) : (
+                  <p class="tm-none">{a.farNone}</p>
+                )}
+              </div>
+            </figure>
+          ))}
+        </div>
+
+        <div class="tm-stays">
+          <h3 class="tm-h3"><span class="tm-tag">What doesn't change<span class="tm-sr">:</span></span> Which source wins a disagreement</h3>
+          <p class="tm-small">The same for everyone. When two sources disagree, the higher one wins, however far from mind it sits.</p>
+          <ol class="tm-ladder">
+            {ladder.map((r) => <li>{r}</li>)}
+          </ol>
+          <p class="tm-small">Nobody lives at the top: no agent is rooted there.</p>
+        </div>
+      </div>
+
+      <p class="tm-status" role="status" aria-live="polite"></p>
+
+      <details class="tm-words">
+        <summary>All four trees, in words</summary>
+        <dl>
+          {agents.map((a) => (
+            <>
+              <dt>{a.name}</dt>
+              <dd>
+                Holds at wake: {a.root.charAt(0).toLowerCase() + a.root.slice(1)}{" "}
+                One step away: {a.near.map((n) => (n.note ? `${n.text.toLowerCase()} (${n.note})` : n.text.toLowerCase())).join(", and ")}.{" "}
+                {a.far.length > 0
+                  ? `Further, found by walking the map: ${a.far.map((f) => f.charAt(0).toLowerCase() + f.slice(1)).join("; ")}.`
+                  : a.farNone}
+              </dd>
+            </>
+          ))}
+        </dl>
+      </details>
+    </section>
+
+    <div class="tm-explain">
+      <section aria-labelledby="tm-wake-h">
+        <h2 id="tm-wake-h" class="tm-h2">What an agent wakes holding</h2>
+        <p>Each agent that keeps its own memory wakes holding a small core, loaded every time: who it is, plus a map. Everything else is found by walking that map.</p>
+        <p>That core is there in every session before the agent decides anything. The shared handbook sits one step from it, because every agent uses the handbook, not because of where it stands in the order.</p>
+        <p>A worker made for one job wakes holding its brief instead.</p>
+      </section>
+
+      <section aria-labelledby="tm-tend-h">
+        <h2 id="tm-tend-h" class="tm-h2">How memory is tended</h2>
+        <ol class="tm-tending">
+          <li><b>During the work:</b> a checkpoint before a context is compressed.</li>
+          <li><b>At the end of the day:</b> a closing pass.</li>
+          <li><b>Each night:</b> a pass that checks the record against what actually happened.</li>
+        </ol>
+        <p>Everything the house knows lives in written files, so any agent can wake and find its footing.</p>
+        <p>A worker made for one job keeps no memory to tend. What it learns goes in its report.</p>
+      </section>
+
+      <section aria-labelledby="tm-goes-h">
+        <h2 id="tm-goes-h" class="tm-h2">Where a new memory goes</h2>
+        <ul class="tm-homes" role="list">
+          {homes.map((h) => (
+            <li><span class="tm-kind">{h.kind}</span><span class="tm-arrow" aria-hidden="true">→</span><span class="tm-home"><span class="tm-sr">goes to </span>{h.home}</span></li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="tm-files-h">
+        <h2 id="tm-files-h" class="tm-h2">Written files, one writer each</h2>
+        <p>Every agent's memory is written files, and each file has one writer.</p>
+        <ul class="tm-list">
+          <li>A room is one agent's own, and only that agent writes in it.</li>
+          <li>The shared handbook has one keeper for each of its parts.</li>
+          <li>Agents who keep their own memory have rooms. Workers made for one job don't: they write reports, not memory.</li>
+          <li>When a file is replaced, the old one is retired, not erased.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="tm-words-h">
+        <h2 id="tm-words-h" class="tm-h2">The house's own words for this</h2>
+        <p>Inside the house, which source wins a disagreement is called <b>rank</b>, and what's within reach of mind is called <b>reach</b>. Rank is the same for everyone. Reach is each agent's own: how many steps away a thing is. Rank decides which source wins; reach decides what's in mind.</p>
+      </section>
+
+      <p class="tm-public">This page shows how the memory is built, never what's in it. The architecture is public; the contents are not.</p>
+
+      <p class="tm-sources"><b>Sources:</b> THE-TREE, STORES, AGENTS and INDEX (house handbook); CONVENTIONS (house handbook); Wright's notes on this chapter's wording, 1 and 2 November 2026.</p>
+    </div>
+  </article>
+
+  <style>
+    .the-memory { max-width: 1120px; }
+    /* the hidden attribute must win over the display rules below */
+    .the-memory [hidden] { display: none !important; }
+
+    .tm-head { max-width: 760px; margin: 0 auto 1.6em; }
+    .tm-kick {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin: 0 0 0.9em;
+    }
+    /* the way back to the bench, as on the Road: padded to a 24px target */
+    .tm-back { font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.06em; margin: -0.45em 0 0.25em; }
+    .tm-back a { display: inline-block; padding: 0.45em 0; color: var(--moss); text-decoration-color: rgba(151, 162, 102, 0.5); }
+    .tm-back a:hover { color: var(--amber-soft); }
+    .tm-head h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
+    .tm-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0; }
+    .tm-h2 { margin: 0 0 0.45em; }
+    .tm-text { color: var(--ink-soft); margin: 0 0 1em; max-width: 760px; }
+
+    /* the object: the workshop's warm wood */
+    .tm-card {
+      background: linear-gradient(180deg, var(--bg-3), var(--bg-2)); border: 1px solid var(--rule);
+      border-radius: 18px; padding: 26px 24px 22px;
+    }
+
+    .tm-picker { display: flex; flex-wrap: wrap; gap: 0.6em; margin: 0 0 0.9em; }
+    .tm-pick {
+      font: 600 0.95rem/1.2 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.02em;
+      color: var(--ink); background: transparent; border: 1px solid var(--faint); border-radius: 999px;
+      padding: 0.6em 1.2em; min-height: 44px; cursor: pointer;
+    }
+    .tm-pick:hover { background: var(--bg-3); }
+    .tm-pick[aria-pressed="true"] { color: var(--bg); background: var(--moss); border-color: var(--moss); }
+    .tm-pick:focus-visible,
+    .tm-words summary:focus-visible,
+    .the-memory a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+    .tm-rule { margin: 0 0 0.3em; color: var(--ink); max-width: 760px; }
+    /* only without the script: the script hides it */
+    .tm-nojs { margin: 0 0 0.3em; color: var(--faint); font-size: 0.92rem; }
+
+    /* what changes beside what doesn't; stacked on narrow screens */
+    .tm-split { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 22px; margin-top: 1.1em; align-items: start; }
+    @media (max-width: 820px) { .tm-split { grid-template-columns: minmax(0, 1fr); } }
+    .tm-changes, .tm-stays { min-width: 0; border: 1px solid var(--rule); border-radius: 14px; padding: 16px; background: var(--bg-2); }
+    .tm-stays { border-style: solid; border-color: rgba(237, 186, 104, 0.45); }
+    .tm-h3 { margin: 0 0 0.8em; font: 600 1rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+    .tm-tag {
+      display: block; margin-bottom: 0.25em; color: var(--faint);
+      font: 600 0.7rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .tm-small { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 0.8em; }
+    .tm-small:last-child { margin: 0.8em 0 0; color: var(--faint); }
+
+    /* the tree: the agent at the top, then one step away, then further off. Stems join
+       the tiers down the middle. */
+    .tm-tree { margin: 0; }
+    .tm-whose { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .tm-tier { position: relative; text-align: center; }
+    .tm-t1, .tm-t2 { padding-top: 26px; }
+    .tm-t1::before, .tm-t2::before {
+      content: ""; position: absolute; left: calc(50% - 1px); top: 2px; height: 20px; width: 2px; background: var(--moss);
+    }
+    .tm-t2::before { background: repeating-linear-gradient(180deg, var(--faint) 0 4px, transparent 4px 8px); }
+    .tm-tier-label {
+      margin: 0 0 0.45em; color: var(--faint);
+      font: 600 0.7rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .tm-nodes { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .tm-node {
+      min-width: 0; max-width: 100%; border-radius: 10px; padding: 0.5em 0.8em; text-align: center;
+      font: 600 0.88rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    }
+    .tm-root {
+      display: inline-flex; flex-direction: column; gap: 0.2em; max-width: 26em;
+      background: var(--bg-3); border: 2px solid var(--moss); color: var(--ink); padding: 0.7em 1em;
+    }
+    .tm-root b { font-size: 1.05rem; color: #c9d38e; }
+    .tm-label { font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 0.84rem; }
+    .tm-held { font-weight: 600; color: var(--ink); }
+    .tm-near { background: var(--bg-3); border: 1px solid var(--amber); color: var(--amber-soft); }
+    .tm-note { display: block; font-weight: 400; font-size: 0.78rem; color: var(--ink-soft); }
+    .tm-far { background: transparent; border: 1px dashed var(--faint); color: var(--ink-soft); font-weight: 400; }
+    .tm-none { margin: 0 auto; max-width: 26em; color: var(--ink-soft); font-size: 0.9rem; font-style: italic; }
+    /* a picked tree settles in; never under reduced motion */
+    @media (prefers-reduced-motion: no-preference) {
+      .tm-tree.is-new { animation: tm-in 0.22s ease-out; }
+      @keyframes tm-in { from { opacity: 0.25; } to { opacity: 1; } }
+    }
+
+    /* which source wins: a fixed ladder, higher wins */
+    .tm-ladder { list-style: none; margin: 0; padding: 0; counter-reset: rung; display: grid; gap: 6px; }
+    .tm-ladder li {
+      counter-increment: rung; display: grid; grid-template-columns: 1.9em minmax(0, 1fr); align-items: center; gap: 0.6em;
+      padding: 0.45em 0.7em; border-radius: 8px; background: var(--bg-3); border: 1px solid var(--rule);
+      font: 600 0.9rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink);
+    }
+    .tm-ladder li::before {
+      content: counter(rung); display: grid; place-items: center; width: 1.9em; height: 1.9em; border-radius: 50%;
+      border: 1px solid var(--amber); color: var(--amber); font-size: 0.8rem;
+    }
+
+    .tm-status { min-height: 1.5em; margin: 1em 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+    .tm-words { margin-top: 0.6em; border-top: 1px solid var(--rule); padding-top: 0.6em; }
+    .tm-words summary {
+      cursor: pointer; display: inline-block; padding: 0.35em 0.2em; border-radius: 6px; min-height: 24px;
+      font: 600 0.92rem/1.4 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink-soft);
+    }
+    .tm-words summary:hover { color: var(--amber-soft); }
+    /* the Road's open/close mark */
+    .tm-words summary::-webkit-details-marker { display: none; }
+    .tm-words summary::after { content: " +"; color: var(--faint); }
+    .tm-words[open] > summary::after { content: " –"; }
+    .tm-words dl { margin: 0.6em 0 0; max-width: 760px; }
+    .tm-words dt { font: 600 0.92rem/1.4 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink); margin-top: 0.6em; }
+    .tm-words dd { margin: 0.15em 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+    /* the explanation: one reading column */
+    .tm-explain { max-width: 760px; margin: 2.6em auto 0; }
+    .tm-explain section { margin: 0 0 2em; }
+    .tm-explain p { margin: 0 0 0.8em; }
+    .tm-tending { margin: 0 0 1em; padding-left: 1.4em; }
+    .tm-tending li { margin: 0.35em 0; }
+    .tm-tending b, .tm-list b { color: var(--ink); }
+    .tm-list { margin: 0; padding-left: 1.3em; }
+    .tm-list li { margin: 0.35em 0; }
+    .tm-homes { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .tm-homes li {
+      display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.8em;
+      padding: 0.6em 0.9em; border: 1px solid var(--rule); border-radius: 10px; background: var(--bg-2);
+    }
+    .tm-kind { font: 600 0.95rem/1.35 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+    .tm-arrow { color: var(--amber); }
+    .tm-home { color: var(--amber-soft); }
+    .tm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .tm-public { color: var(--ink); }
+    .tm-sources { margin-top: 2em !important; color: var(--faint); font-size: 0.85rem; }
+    .tm-sources b { color: var(--ink-soft); font-weight: 600; }
+
+    @media (max-width: 480px) {
+      .tm-card { padding: 18px 14px 16px; border-radius: 14px; }
+      .tm-changes, .tm-stays { padding: 12px; }
+      .tm-homes li { grid-template-columns: minmax(0, 1fr); gap: 0.15em; }
+      .tm-arrow { display: none; }
+    }
+  </style>
+
+  <script>
+    // The picker: one tree at a time. The ordering of which source wins sits outside the
+    // part that changes, so nothing here touches it.
+    const root = document.querySelector(".the-memory");
+    if (root) {
+      const picker = root.querySelector(".tm-picker") as HTMLElement;
+      const nojs = root.querySelector(".tm-nojs") as HTMLElement;
+      const status = root.querySelector(".tm-status") as HTMLElement;
+      const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>(".tm-pick"));
+      const trees = Array.from(root.querySelectorAll<HTMLElement>(".tm-tree"));
+
+      const pick = (id: string) => {
+        for (const b of buttons) b.setAttribute("aria-pressed", String(b.dataset.agent === id));
+        for (const t of trees) {
+          const on = t.dataset.agent === id;
+          if (on && t.hidden) {
+            t.classList.remove("is-new");
+            void t.offsetWidth; // restart the settle-in
+            t.classList.add("is-new");
+          }
+          t.hidden = !on;
+        }
+        const shown = trees.find((t) => t.dataset.agent === id);
+        status.textContent = shown?.dataset.summary || "";
+      };
+
+      for (const b of buttons) b.addEventListener("click", () => pick(b.dataset.agent || ""));
+      picker.hidden = false;
+      nojs.hidden = true;
+    }
+  </script>
+</BaseLayout>
