@@ -1,0 +1,144 @@
+---
+// The Workshop · the bench (Atelier campaign, STAR-98; notes/workshop-plan.md § 1). A
+// PROPOSAL page: noindex, in no nav, until Darko's say.
+// Five made things on one bench (Rei's read of the sketch, 2026-11-02). Only the Road is
+// built, so only the Road is a door. The other four are still being made, and say so: no
+// link, a dashed outline, muted, and "being made" in words. Nothing on them pretends to be
+// interactive. The entry line is Rei's draft, word for word.
+//
+// On phones the bench is itself the short list: one column, the four unbuilt pieces
+// compact, so all five questions sit near the top with no answers to walk through.
+// Nothing runs on this page: the Road's pair is its two stills, the ones the front door
+// shows.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const ROAD = "/workshop/the-road/";
+const ROAD_STILLS = "/workshop/the-road/forest-fire";
+
+// the four pieces not yet built, each with its one-line question (workshop-plan § 1)
+const making = [
+  { name: "The Hands", question: "who works here, and why the work is split" },
+  { name: "The Walls", question: "the rules that hold, and what earned each" },
+  { name: "The Memory", question: "how a house of agents remembers" },
+  { name: "The Rig", question: "where the workers run" },
+];
+---
+<BaseLayout
+  title="The Workshop: how it's made — Starforge"
+  description="Start with one thing we made. Then follow the hands, habits and machinery that helped it happen."
+  noindex={true}
+>
+  <article class="workshop">
+    <header class="ws-head">
+      <p class="ws-kick">The Workshop</p>
+      <h1>How it's made</h1>
+      <p class="ws-lede">Start with one thing we made. Then follow the hands, habits and machinery that helped it happen.</p>
+    </header>
+
+    <ol class="ws-bench" aria-label="The bench, five pieces">
+      <li class="ws-piece ws-door">
+        <div class="ws-pair">
+          <figure class="ws-frame">
+            <img src={`${ROAD_STILLS}/ff-before.png`} width="714" height="428" alt="Still of the copy before the fix, after its window narrowed and widened again: the grid is all black." />
+            <span class="ws-chip" aria-hidden="true">before the fix</span>
+          </figure>
+          <figure class="ws-frame">
+            <img src={`${ROAD_STILLS}/ff-after.png`} width="714" height="428" alt="Still of the copy after the fix, after the same resizes: a green forest with dark burned patches and amber fire fronts." />
+            <span class="ws-chip" aria-hidden="true">after the fix</span>
+          </figure>
+        </div>
+        <h2 class="ws-name"><a href={ROAD}>The Road, chapter one: the forest that stopped burning</a></h2>
+        <p class="ws-line">One real fix, from the first sign of trouble to a person's decision</p>
+        <p class="ws-go"><a href={ROAD}>Walk the whole road →</a></p>
+      </li>
+
+      {making.map((p) => (
+        <li class="ws-piece ws-making">
+          <h2 class="ws-name">{p.name}</h2>
+          <p class="ws-line">{p.question}</p>
+          <p class="ws-state">being made</p>
+        </li>
+      ))}
+    </ol>
+  </article>
+
+  <style>
+    .workshop { max-width: 1120px; }
+
+    .ws-head { max-width: 760px; margin: 0 auto 1.8em; }
+    .ws-kick {
+      font: 600 0.74rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin: 0 0 0.9em;
+    }
+    .ws-head h1 { margin: 0 0 0.35em; font-size: clamp(2rem, 5vw, 3rem); }
+    .ws-lede { color: var(--ink-soft); font-size: 1.08em; margin: 0; }
+
+    /* the bench: one row of five on wide screens, the Road two places wide */
+    .ws-bench {
+      list-style: none; margin: 0; padding: 0;
+      display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px;
+    }
+    .ws-piece { min-width: 0; display: flex; flex-direction: column; border-radius: 14px; padding: 14px 14px 12px; }
+    .ws-name { margin: 0 0 0.3em; font: 600 1rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; letter-spacing: 0; }
+    .ws-line { margin: 0; font-size: 0.95rem; line-height: 1.45; }
+
+    /* the one door: the workshop's warm wood, moss for the Road */
+    .ws-door {
+      grid-column: span 2;
+      background: linear-gradient(180deg, var(--bg-3), var(--bg-2));
+      border: 1px solid var(--moss);
+    }
+    .ws-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 0.85em; }
+    /* each still in a visible frame, labelled, so the dark one reads as a dark canvas */
+    .ws-frame {
+      position: relative; margin: 0; min-width: 0; overflow: hidden;
+      border: 1px solid rgba(244, 214, 160, 0.34); border-radius: 8px; background: #05070c;
+    }
+    .ws-frame img { display: block; width: 100%; height: auto; }
+    .ws-chip {
+      position: absolute; left: 6px; top: 6px; padding: 0.15em 0.5em;
+      border: 1px solid rgba(244, 214, 160, 0.3); border-radius: 999px; background: rgba(20, 16, 9, 0.86);
+      color: var(--ink-soft); font: 600 0.66rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.03em; white-space: nowrap;
+    }
+    .ws-door .ws-name { font-size: 1.08rem; }
+    .ws-door .ws-name a { color: var(--ink); text-decoration: none; }
+    .ws-door .ws-name a:hover { color: var(--amber-soft); }
+    .ws-door .ws-line { color: var(--ink-soft); }
+    .ws-go { margin: auto 0 0; padding-top: 0.7em; font: 600 0.9rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif; }
+    .ws-go a { color: #c9d38e; }
+    .ws-go a:hover { color: var(--amber-soft); }
+    .ws-door a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 3px; }
+
+    /* still being made: no link, a dashed outline, muted, and it says so */
+    .ws-making { border: 1px dashed var(--faint); background: transparent; }
+    .ws-making .ws-name { color: #a99a80; }
+    .ws-making .ws-line { color: #a99a80; }
+    .ws-state {
+      margin: auto 0 0; padding-top: 0.8em;
+      font: 600 0.7rem/1.3 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
+    }
+
+    /* middle widths: the Road across the top, the four in a row beneath it */
+    @media (max-width: 900px) {
+      .ws-bench { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+      .ws-door { grid-column: 1 / -1; }
+      .ws-pair { max-width: 560px; }
+    }
+
+    /* phones: one column, and the four unbuilt pieces compact, so the bench is the list */
+    @media (max-width: 600px) {
+      .ws-head { margin-bottom: 1.3em; }
+      .ws-bench { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+      .ws-piece { padding: 12px 12px 10px; border-radius: 12px; }
+      .ws-making {
+        display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 0.8em; align-items: baseline;
+        padding: 9px 12px;
+      }
+      .ws-making .ws-name { grid-column: 1; grid-row: 1; margin: 0; }
+      .ws-making .ws-state { grid-column: 2; grid-row: 1; margin: 0; padding: 0; }
+      .ws-making .ws-line { grid-column: 1 / -1; grid-row: 2; font-size: 0.9rem; }
+    }
+  </style>
+</BaseLayout>
