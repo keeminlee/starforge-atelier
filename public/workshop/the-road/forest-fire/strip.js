@@ -8,8 +8,8 @@
 
    The room is set by the page (the frame's height less the canvas). Which fields fit is
    decided against each number grown by a digit (to three at least), so the set holds
-   while the numbers grow;
-   it's decided again when the room changes or the line no longer fits. */
+   while the numbers grow; it's decided again when the room changes or the line no
+   longer fits. */
 (function () {
   var stage = document.getElementById('stage');
   var readout = stage && stage.querySelector('.readout');
@@ -52,6 +52,11 @@
   var render = function () {
     var fields = fieldsOf(readout.textContent);
     if (!fields.length) return;
+    // A line this can't read (one field, or none of the three it always shows) is shown
+    // as the atlas wrote it, wrapped anywhere, rather than as nothing.
+    var raw = fields.length < 2 || !pick(fields, CORE).length;
+    strip.classList.toggle('is-raw', raw);
+    if (raw) { keys = null; strip.textContent = readout.textContent; return; }
     var now = strip.clientWidth + 'x' + strip.clientHeight;
     if (!keys || now !== room) { keys = choose(fields); room = now; }
     if (!fits(join(pick(fields, keys)))) { keys = choose(fields); fits(join(pick(fields, keys))); }
