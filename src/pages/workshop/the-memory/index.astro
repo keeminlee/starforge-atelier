@@ -6,8 +6,8 @@
 // the root of the tree ("root" means only that, everywhere on the page). What's within
 // reach of mind changes; which source wins a disagreement doesn't, and that order is drawn
 // once, beside the tree. A pick lights the agent's own rung on the order with a class,
-// never a reorder: Jetto lights "one part of the work", a worker "a worker's brief". Wright
-// and Rei light no rung, since rooms sit outside the order, and Wright's sentences on rooms
+// never a reorder: Jetto lights "the shared handbook" (Wright, round 3), a worker "a worker's
+// brief". Wright and Rei light no rung, since rooms sit outside the order, and Wright's sentences on rooms
 // light instead (memory-wright-answers.md § 1).
 // Wright's wording (his MAP read, item 8): the plain phrases come before the words "rank"
 // and "reach", which appear only in the last section.
@@ -33,8 +33,8 @@ const FAR = [
   { text: "Workers' briefs" },
   { text: "The house's doctrine, and what the house is for, reached on purpose" },
 ];
-// Jetto's own part of the work comes first in his tree, so the definition rides there
-const FAR_JETTO = FAR.map((f) => (f.note === PART_DEF ? { text: f.text } : f));
+// Jetto's place on the ladder is the handbook, not one part of the work (Wright, round 3)
+const JETTO_PLACE = "Jetto's part is how the whole house builds and runs, so his place on the ladder is the handbook itself, whose craft pages he keeps.";
 const SAME = "Wright's and Rei's trees have the same shape; what differs is whose room is at the root.";
 const ROOMS_OUTSIDE = "No rung lights, because rooms are outside the order.";
 const agents = [
@@ -56,8 +56,8 @@ const agents = [
     id: "jetto", button: "Jetto", whose: "Jetto's tree", name: "Jetto",
     label: "Keeps the machinery.",
     root: "From his own room: who he is, plus a map.",
-    near: [{ text: "His part of the work: the machinery", note: PART_DEF }, { text: "The shared handbook" }],
-    far: FAR_JETTO, lights: "part", ladderSaid: "One part of the work lights up.",
+    near: [{ text: "His part of the work: the machinery", note: JETTO_PLACE }, { text: "The shared handbook" }],
+    far: FAR, lights: "handbook", ladderSaid: "The shared handbook lights up.",
   },
   {
     id: "worker", button: "A worker made for one job", whose: "The tree of a worker made for one job", name: "A worker made for one job",
@@ -90,12 +90,12 @@ const ladder = [
   { id: "brief", text: "A worker's brief" },
 ];
 
-// where a new memory goes (Wright's third addition, as given, plus his example's report)
+// where a new memory goes (Wright's third addition, as given; the worker's report rides
+// under his example instead, since a report isn't a new memory)
 const homes = [
   { kind: "Foundational to everyone", home: "the shared handbook" },
   { kind: "One project's", home: "that project's own home" },
   { kind: "One agent's", home: "its own room" },
-  { kind: "A worker's lesson", home: "its report, which its lead reads" },
 ];
 
 // Wright's example, as a climb: each stop with the words of his paragraph it stands for
@@ -238,7 +238,7 @@ const climb = [
             <li><span class="tm-kind">{h.kind}</span><span class="tm-arrow" aria-hidden="true">→</span><span class="tm-home"><span class="tm-sr">goes to </span>{h.home}</span></li>
           ))}
         </ul>
-        <p class="tm-after">None of these goes to the top two rungs: even a lesson for everyone lands in the handbook.</p>
+        <p class="tm-after">None of these goes to the top two rungs. Even a lesson for everyone lands in the handbook. What the house is for, and its doctrine, change only on purpose: the purpose is Darko's to set, and the doctrine changes in a deliberate, written-down act that carries his direction, never because something was learned along the way.</p>
       </section>
 
       <section aria-labelledby="tm-walk-h">
@@ -254,6 +254,9 @@ const climb = [
             </li>
           ))}
         </ol>
+        <ul class="tm-homes tm-report" role="list">
+          <li><span class="tm-kind">A worker's lesson</span><span class="tm-arrow" aria-hidden="true">→</span><span class="tm-home"><span class="tm-sr">goes to </span>its report, which its lead reads</span></li>
+        </ul>
       </section>
 
       <section aria-labelledby="tm-files-h">
@@ -434,6 +437,8 @@ const climb = [
     .tm-arrow { color: var(--amber); }
     .tm-home { color: var(--amber-soft); }
     .tm-after { color: var(--ink-soft); }
+    /* the worker's report, under the climb that shows it */
+    .tm-report { margin-top: 1.2em; }
     .tm-gloss { color: var(--faint); font-style: italic; font-size: 0.92rem; }
 
     /* the climb: first stop at the bottom, so the eye walks up; rungs lit, the carried
